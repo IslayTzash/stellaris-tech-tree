@@ -28,10 +28,17 @@ $(document).ready(function() {
         image: 'img/' + key + '.png',
         HTMLclass: tech.area.toLowerCase(),
         data: tech,
+        collapsed: tech.key == 'tech_colonization_1',
         text: {},
         // collapsed: tech.area != 'Society'
       };
     });
+
+    function isTier1_1(tech) {
+      return tech.data.tier == 1
+        && tech.data.subtier == 1
+        && tech.parent.data.tier == 0;
+    }
 
     techs = techs.map(function(tech) {
       tech.text.name = tech.data.name;
@@ -62,18 +69,17 @@ $(document).ready(function() {
           })[0];
       }
 
-      let isTier1_1 = tech.data.tier == 1
-          && tech.data.subtier == 1
-          && tech.parent.data.tier == 0;
-      let tierDifference = isTier1_1
+      let tierDifference = isTier1_1(tech)
           ? 0
           : tech.data.tier - tech.parent.data.tier;
-      let subtierDifference = isTier1_1
+      let subtierDifference = isTier1_1(tech)
           ? 0
           : tech.data.subtier - tech.parent.data.subtier;
       let nestedTech = tech;
-      while ( tierDifference > 0 ||
-              (tech.data.tier > 0 && tierDifference == 0 && subtierDifference > 1) ) {
+      while ( ! isTier1_1(nestedTech)
+              && (tierDifference > 0 ||
+                  (tech.data.tier > 0
+                   && tierDifference == 0 && subtierDifference > 1) ) ) {
         if ( tierDifference > 0 ) {
           if ( nestedTech.data.subtier == 1 ) {
             var pseudo = {
