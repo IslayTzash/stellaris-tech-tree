@@ -28,6 +28,24 @@ body { background: #fff; }
 }
 
 .society { border: 4px solid #5ACA9C }
+span.society-research::before {
+    background: url("../img/society_research.png") center center no-repeat;
+    content:  url("../img/blank11px.png");
+    width: 11px;
+    height: 11px;
+}
+span.engineering-research::before {
+    background: url("../img/engineering_research.png") center center no-repeat;
+    content:  url("../img/blank11px.png");
+    width: 11px;
+    height: 11px;
+}
+span.physics-research::before {
+    background: url("../img/physics_research.png") center center no-repeat;
+    content:  url("../img/blank11px.png");
+    width: 11px;
+    height: 11px;
+}
 .engineering { border: 4px solid #E29C43 }
 .physics { border: 4px solid #4396E2 }
 

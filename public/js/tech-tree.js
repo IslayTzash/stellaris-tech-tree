@@ -23,36 +23,34 @@ $(document).ready(function() {
       return (tech.tier == 0 || tech.weight > 0)
         && Object.keys(tech)[0].search(/^@\w+$/) == -1;
     }).map(function(tech) {
-      let key = tech['key'];
+      let key = tech.key;
+      let tier = tech.tier > 0
+          ? ' (Tier ' + tech.tier + ')'
+          : ' (Starting)';
+      let costClass = tech.area.toLowerCase() + '-research';
+      let cost = tech.tier > 0
+          ? 'Cost: <span class="' + costClass + '">' + tech.cost + '</span>'
+          : '';
+      let weight = tech.tier > 0
+          ? 'Weight: ' + tech.weight
+          : '';
+      let category = tech.category + tier;
+
       return {
         HTMLid: key,
-        image: 'img/' + key + '.png',
         HTMLclass: tech.area.toLowerCase(),
         data: tech,
         collapsed: tech.key == 'tech_colonization_1',
-        text: {},
+        innerHTML: '<img src="img/' + key + '.png" />'
+          + '<p class="node-name">' + tech.name + '</p>'
+          + '<p class="node-title">' + category + '</p>'
+          + ( tech.start_tech || tech.tier == 0 ? '' : [cost, weight].join(', '))
         // collapsed: tech.area != 'Society'
       };
     });
 
-    function isTier1_1(tech) {
-      return tech.data.tier == 1 && tech.parent.data.tier == 0;
-    }
-
     techs = techs.map(function(tech) {
-      tech.text.name = tech.data.name;
-      let tier = tech.data.tier > 0
-          ? ' (Tier ' + tech.data.tier + ')'
-          : ' (Starting)';
-      let cost = tech.data.tier > 0
-          ? 'Base Cost: ' + tech.data.cost
-          : '';
-      let weight = tech.data.tier > 0
-          ? 'Base Weight: ' + tech.data.weight
-          : '';
-      let category = tech.data.category + tier + '\n';
-      tech.text.title = cost
-      tech.text.desc = category;
+      let key = tech.data.key;
 
       if ( tech.data.tier === 0 || tech.data.prerequisite === null) {
         tech.parent = rootNode;
@@ -69,9 +67,7 @@ $(document).ready(function() {
           })[0];
       }
 
-      let tierDifference = isTier1_1(tech)
-          ? 0
-          : tech.data.tier - tech.parent.data.tier;
+      let tierDifference = tech.data.tier - tech.parent.data.tier;
       let nestedTech = tech;
       while ( tierDifference > 0 ) {
         var pseudo = {
