@@ -1,7 +1,11 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 from lex import tokens
 from os import listdir, path
 from ply.yacc import yacc
 from pprint import pprint
+import codecs
 import json
 import re
 import ruamel.yaml as yaml
@@ -109,32 +113,64 @@ def p_expression_block(tokens):
 def p_error(p):
     raise Exception("Syntax error in input: {}".format(str(p)))
 
+try:
+    tree_name = sys.argv[1]
+except IndexError:
+    sys.exit('No Stellaris tree name provided!')
+
 
 try:
-    directory = sys.argv[1]
+    directories = sys.argv[2:]
 except IndexError:
-    sys.exit('No Stellaris technology directory provided!')
+    sys.exit('No Stellaris game directories provided!')
 
-file_paths = [path.join(directory, filename) for filename
-             in listdir(directory)
-             if path.isfile(path.join(directory, filename))]
-data = ''
-for file_path in file_paths:
+tech_file_paths = []
+loc_file_paths = []
+for directory in directories:
+    tech_dir = path.join(directory, 'common/technology')
+    tech_file_paths += [path.join(tech_dir, filename) for filename
+                  in listdir(tech_dir)
+                  if path.isfile(path.join(tech_dir, filename))]
+
+    loc_dir = path.join(directory, 'localisation')
+    loc_file_paths += [path.join(loc_dir, filename) for filename
+                      in listdir(loc_dir)
+                      if path.isfile(path.join(loc_dir, filename))
+                      and filename.endswith('l_english.yml')
+                      and 'event' not in filename
+                      and 'horizonsignal' not in filename]
+
+tech_data = ''
+for file_path in tech_file_paths:
     sys.stderr.write('Processing {} ...\n'.format(path.basename(file_path)))
-    data += open(file_path).read()
+    tech_data += open(file_path).read()
 
-script = yacc().parse(data)
+script = yacc().parse(tech_data)
 technologies = []
 at_vars = {}
 
 def localized_strings():
-    yaml_file = open('/home/richard/stellaris/game/localisation/technology_l_english.yml')
-    bad_yaml = yaml_file.read()
-    good_yaml = re.sub(r'^ ', '  ',
-                       re.sub(r'(?<!(?:: |[\\\w.]{2}| "))"([\w ]+)"', r'\"\1\"',
-                              re.sub(r'(?<=\w):\d (?=")', ': ', bad_yaml)), flags=re.M)
+    loc_data = { }
+    for file_path in loc_file_paths:
+        sys.stderr.write('Processing {} ...\n'.format(path.basename(file_path)))
+        not_yaml = codecs.open(file_path, 'r', 'utf-8-sig').read()
+        still_not_yaml = re.sub(ur'§[A-Z!]', '', not_yaml)
+        hardly_yaml = re.sub(r'(?<=\w):\d (?=")', ': ', still_not_yaml)
+        resembles_yaml = re.sub(ur'''(?<=[a-z ]{2}|\\n| "|[.,] )"([\w,'!?§.\[\] ]+?)"''',
+                          r'\"\1\"',
+                             hardly_yaml)
+        actual_yaml = re.sub(r'^ ', '  ', resembles_yaml, flags=re.M)
 
-    return yaml.load(good_yaml, Loader=yaml.Loader)['l_english']
+        try:
+            file_data = yaml.load(actual_yaml, Loader=yaml.Loader)
+            loc_map = file_data['l_english']
+            loc_data.update(loc_map)
+        except (yaml.parser.ParserError) as error:
+            sys.stderr.write(str(error) + '\n')
+            sys.stderr.write("Could't process {}.\n".format(path.basename(file_path)))
+            continue
+
+    return loc_data
 
 
 def is_start_tech(tech):
@@ -208,7 +244,7 @@ def weight(tech):
     return at_vars[string] if str(string).startswith('@') else string
 
 
-localized = localized_strings()
+loc_data = localized_strings()
 
 for tech in script:
     if tech.keys()[0].startswith('@'):
@@ -224,8 +260,8 @@ for tech in script:
                             {'weight_modifier': [None]})['weight_modifier']
 
     try:
-        replaceable_description = localized[key + '_desc']
-        description = localized[replaceable_description.replace('$', '')] if \
+        replaceable_description = loc_data[key + '_desc']
+        description = loc_data[replaceable_description.replace('$', '')] if \
                       replaceable_description.startswith('$') else \
                       replaceable_description
     except KeyError:
@@ -236,14 +272,14 @@ for tech in script:
             'key': key,
             'tier': tier(tech),
             'subtier': subtier(tech),
-            'name': localized[key],
+            'name': loc_data[key],
             'desc': description,
             'cost': cost(tech),
             'weight': weight(tech),
             'weight_modifiers': weight_modifiers,
             'area': area.title(),
             'start_tech': is_start_tech(tech),
-            'category': localized[category],
+            'category': loc_data[category],
             'prerequisite': prerequisite(tech)
         })
     except KeyError:
@@ -251,4 +287,4 @@ for tech in script:
 
 jsonified = json.dumps(technologies, indent=2, separators=(',', ': '))
 # print jsonified
-open('public/techs.json', 'w').write(jsonified)
+open(path.join('public', tree_name, 'techs.json'), 'w').write(jsonified)

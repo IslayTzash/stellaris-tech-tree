@@ -41,7 +41,7 @@ $(document).ready(function() {
         HTMLclass: tech.area.toLowerCase(),
         data: tech,
         collapsed: tech.key == 'tech_colonization_1',
-        innerHTML: '<img src="img/' + key + '.png" />'
+        innerHTML: '<img src="../img/' + key + '.png" />'
           + '<p class="node-name">' + tech.name + '</p>'
           + '<p class="node-title">' + category + '</p>'
           + ( tech.start_tech || tech.tier == 0 ? '' : [cost, weight].join(', '))
