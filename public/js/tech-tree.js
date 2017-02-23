@@ -14,9 +14,7 @@ let config = {
 let rootNode = {HTMLid: 'root', data: {tier: 0, subtier: 0}};
 
 $(document).ready(function() {
-  $.get('techs.json', function(techData) {
-
-
+  $.getJSON('techs.json', function(techData) {
     let techs = techData.filter(function(tech) {
       return (tech.tier == 0 || tech.weight > 0)
         && Object.keys(tech)[0].search(/^@\w+$/) == -1;
