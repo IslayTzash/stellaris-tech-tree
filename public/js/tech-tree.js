@@ -41,7 +41,7 @@ $(document).ready(function() {
         HTMLclass: tech.area.toLowerCase(),
         data: tech,
         collapsed: tech.key == 'tech_colonization_1',
-        innerHTML: '<img src="../img/' + key + '.png" />'
+        innerHTML: '<div class="icon" style="background-image:url(../img/' + key + '.png)"></div>'
           + '<p class="node-name">' + tech.name + '</p>'
           + '<p class="node-title">' + category + '</p>'
           + ( tech.start_tech || tech.tier == 0 ? '' : [cost, weight].join(', '))
@@ -57,6 +57,7 @@ $(document).ready(function() {
       }
       else {
         let parentKey = tech.data.prerequisite;
+        console.log('Looking for ' + parentKey);
         tech.parent = parentKey.match('-pseudoParent')
           ? { HTMLid: tech.HTMLid + '-pseudoParent',
               parent: rootNode,
@@ -67,6 +68,8 @@ $(document).ready(function() {
           })[0];
       }
 
+      console.log(tech.data.key)
+      console.log(tech)
       let tierDifference = tech.data.tier - tech.parent.data.tier;
       let nestedTech = tech;
       while ( tierDifference > 1 ) {

@@ -34,7 +34,7 @@ def t_newline(token):
 
 
 def t_BAREWORD(token):
-    '[a-zA-Z]\w*'
+    '[a-zA-Z][-\w]*'
     return token
 
 

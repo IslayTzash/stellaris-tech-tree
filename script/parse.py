@@ -156,7 +156,7 @@ def localized_strings():
         not_yaml = codecs.open(file_path, 'r', 'utf-8-sig').read()
         still_not_yaml = re.sub(ur'§[A-Z!]', '', not_yaml)
         hardly_yaml = re.sub(r'(?<=\w):\d (?=")', ': ', still_not_yaml)
-        resembles_yaml = re.sub(ur'''(?<=[a-z ]{2}|\\n| "|[.,] )"([\w,'!?§.\[\] ]+?)"''',
+        resembles_yaml = re.sub(ur'''(?<=[a-z ]{2}|\\n| "|[.,] )"(.+?)"''',
                           r'\"\1\"',
                              hardly_yaml)
         actual_yaml = re.sub(r'^ ', '  ', resembles_yaml, flags=re.M)
@@ -253,6 +253,10 @@ for tech in script:
         continue
 
     key = tech.keys()[0]
+
+    if 'akx_' in key:
+        continue
+
     area = next(iter(key for key in tech[key] if key.keys()[0] == 'area'))['area']
     category = next(iter(key for key in tech[key] if key.keys()[0] == 'category'))['category'][0]
     weight_modifiers = next(iter(
@@ -260,30 +264,38 @@ for tech in script:
                             {'weight_modifier': [None]})['weight_modifier']
 
     try:
-        replaceable_description = loc_data[key + '_desc']
-        description = loc_data[replaceable_description.replace('$', '')] if \
-                      replaceable_description.startswith('$') else \
-                      replaceable_description
+        name = loc_data[key]
+    except KeyError:
+        name = key
+
+    try:
+        description = loc_data[key + '_desc']
+        description = loc_data[description.replace('$', '')] if \
+                      description.startswith('$') else \
+                      description
     except KeyError:
         description = ''
 
     try:
-        technologies.append({
-            'key': key,
-            'tier': tier(tech),
-            'subtier': subtier(tech),
-            'name': loc_data[key],
-            'desc': description,
-            'cost': cost(tech),
-            'weight': weight(tech),
-            'weight_modifiers': weight_modifiers,
-            'area': area.title(),
-            'start_tech': is_start_tech(tech),
-            'category': loc_data[category],
-            'prerequisite': prerequisite(tech)
-        })
-    except KeyError:
-        continue
+        prereq = prerequisite(tech)
+    except IndexError:
+        print key
+        prereq = None
+
+    technologies.append({
+        'key': key,
+        'tier': tier(tech),
+        'subtier': subtier(tech),
+        'name': name,
+        'desc': description,
+        'cost': cost(tech),
+        'weight': weight(tech),
+        'weight_modifiers': weight_modifiers,
+        'area': area.title(),
+        'start_tech': is_start_tech(tech),
+        'category': loc_data[category],
+        'prerequisite': prereq
+    })
 
 jsonified = json.dumps(technologies, indent=2, separators=(',', ': '))
 # print jsonified
