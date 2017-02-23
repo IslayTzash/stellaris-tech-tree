@@ -69,7 +69,7 @@ $(document).ready(function() {
 
       let tierDifference = tech.data.tier - tech.parent.data.tier;
       let nestedTech = tech;
-      while ( tierDifference > 0 ) {
+      while ( tierDifference > 1 ) {
         var pseudo = {
           HTMLid: nestedTech.HTMLid + '-pseudoParent',
           parent: nestedTech.parent, pseudo: true,
