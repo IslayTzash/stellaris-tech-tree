@@ -113,7 +113,7 @@ def p_error(p):
 try:
     directory = sys.argv[1]
 except IndexError:
-    sys.exit(2, 'No Stellaris technology directory provided!')
+    sys.exit('No Stellaris technology directory provided!')
 
 file_paths = [path.join(directory, filename) for filename
              in listdir(directory)
@@ -219,6 +219,9 @@ for tech in script:
     key = tech.keys()[0]
     area = next(iter(key for key in tech[key] if key.keys()[0] == 'area'))['area']
     category = next(iter(key for key in tech[key] if key.keys()[0] == 'category'))['category'][0]
+    weight_modifiers = next(iter(
+        key for key in tech[key] if key.keys()[0] == 'weight_modifier'),
+                            {'weight_modifier': [None]})['weight_modifier']
 
     try:
         replaceable_description = localized[key + '_desc']
@@ -237,6 +240,7 @@ for tech in script:
             'desc': description,
             'cost': cost(tech),
             'weight': weight(tech),
+            'weight_modifiers': weight_modifiers,
             'area': area.title(),
             'start_tech': is_start_tech(tech),
             'category': localized[category],

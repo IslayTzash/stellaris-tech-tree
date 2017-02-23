@@ -3,6 +3,7 @@
 let config = {
   container: '#tech-tree',
   rootOrientation: 'WEST', // NORTH || EAST || WEST || SOUTH
+  nodeAlign: 'TOP',
   // levelSeparation: 30,
   hideRootNode: true,
   siblingSeparation: 20,
@@ -52,13 +53,11 @@ $(document).ready(function() {
       tech.text.title = cost
       tech.text.desc = category;
 
-      if ( tech.data.tier === 0 ) {
+      if ( tech.data.tier === 0 || tech.data.prerequisite === null) {
         tech.parent = rootNode;
       }
       else {
-        let parentKey = tech.data.prerequisite === null
-            ? tech.HTMLid + '-pseudoParent'
-            : tech.data.prerequisite;
+        let parentKey = tech.data.prerequisite;
         tech.parent = parentKey.match('-pseudoParent')
           ? { HTMLid: tech.HTMLid + '-pseudoParent',
               parent: rootNode,
@@ -77,6 +76,7 @@ $(document).ready(function() {
           : tech.data.subtier - tech.parent.data.subtier;
       let nestedTech = tech;
       while ( ! isTier1_1(nestedTech)
+              && nestedTech.parent != rootNode
               && (tierDifference > 0 ||
                   (tech.data.tier > 0
                    && tierDifference == 0 && subtierDifference > 1) ) ) {
