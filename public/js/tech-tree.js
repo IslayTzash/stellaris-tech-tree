@@ -2,14 +2,17 @@
 
 let config = {
   container: '#tech-tree',
-  rootOrientation:  'NORTH', // NORTH || EAST || WEST || SOUTH
+  rootOrientation: 'WEST', // NORTH || EAST || WEST || SOUTH
   // levelSeparation: 30,
   hideRootNode: true,
   siblingSeparation: 20,
   subTeeSeparation:  20,
-  scrollbar: 'None',
+  scrollbar: 'fancy',
   connectors: { type: 'step' },
-  node: { HTMLclass: 'tech' }
+  node: {
+    HTMLclass: 'tech',
+    collapsable: true
+  }
 };
 let rootNode = {HTMLid: 'root', data: {tier: 0, subtier: 0}};
 
@@ -23,6 +26,7 @@ $(document).ready(function() {
       return {
         HTMLid: key,
         image: 'img/' + key + '.png',
+        HTMLclass: tech.area.toLowerCase(),
         data: tech,
         text: {},
         // collapsed: tech.area != 'Society'
