@@ -22,7 +22,7 @@ $(document).ready(function() {
       let key = tech['key'];
       return {
         HTMLid: key,
-        image: '/img/' + key + '.png',
+        image: 'img/' + key + '.png',
         data: tech,
         text: {},
         // collapsed: tech.area != 'Society'
