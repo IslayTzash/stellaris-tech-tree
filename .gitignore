@@ -1,0 +1,3 @@
+*.pyc
+script/parser.out
+script/parsetab.py
