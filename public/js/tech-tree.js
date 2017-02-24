@@ -40,7 +40,7 @@ $(document).ready(function() {
         HTMLid: key,
         HTMLclass: tech.area.toLowerCase(),
         data: tech,
-        collapsed: tech.key == 'tech_colonization_1',
+        // collapsed: tech.key == 'tech_colonization_1',
         innerHTML: '<div class="icon" style="background-image:url(img/' + key + '.png)"></div>'
           + '<p class="node-name">' + tech.name + '</p>'
           + '<p class="node-title">' + category + '</p>'
