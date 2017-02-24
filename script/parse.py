@@ -146,7 +146,7 @@ for file_path in tech_file_paths:
     tech_data += open(file_path).read()
 
 script = yacc().parse(tech_data)
-technologies = []
+technologies = {}
 at_vars = {}
 
 def localized_strings():
@@ -282,7 +282,7 @@ for tech in script:
         print key
         prereq = None
 
-    technologies.append({
+    technologies.update({key: {
         'key': key,
         'tier': tier(tech),
         'subtier': subtier(tech),
@@ -295,8 +295,8 @@ for tech in script:
         'start_tech': is_start_tech(tech),
         'category': loc_data[category],
         'prerequisite': prereq
-    })
+    }})
 
-jsonified = json.dumps(technologies, indent=2, separators=(',', ': '))
+jsonified = json.dumps(technologies.values(), indent=2, separators=(',', ': '))
 # print jsonified
 open(path.join('public', tree_name, 'techs.json'), 'w').write(jsonified)
