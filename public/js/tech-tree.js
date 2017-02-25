@@ -27,7 +27,7 @@ $(document).ready(function() {
       let tier = tech.tier > 0
           ? ' (Tier ' + tech.tier + ')'
           : ' (Starting)';
-      let costClass = tech.area.toLowerCase() + '-research';
+      let costClass = tech.area + '-research';
       let cost = tech.tier > 0
           ? 'Cost: <span class="' + costClass + '">' + tech.cost + '</span>'
           : '';
@@ -38,7 +38,7 @@ $(document).ready(function() {
 
       return {
         HTMLid: key,
-        HTMLclass: tech.area.toLowerCase(),
+        HTMLclass: tech.area,
         data: tech,
         // collapsed: tech.key == 'tech_colonization_1',
         innerHTML: '<div class="icon" style="background-image:url(img/' + key + '.png)"></div>'

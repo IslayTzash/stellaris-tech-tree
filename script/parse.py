@@ -8,6 +8,7 @@ from pprint import pprint
 import argparse
 import codecs
 import json
+import operator
 import re
 import ruamel.yaml as yaml
 import sys
@@ -337,12 +338,15 @@ for tech in script:
         'base_factor': tech_base_factor,
         'base_weight': tech_base_weight,
         'weight_modifiers': weight_modifiers,
-        'area': area.title(),
+        'area': area,
         'start_tech': is_start_tech(tech),
         'category': loc_data[category],
         'prerequisite': prereq
     })
 
+technologies.sort(key=operator.itemgetter('tier'))
+technologies.sort(
+    key=lambda tech: {'physics': 1, 'society': 2, 'engineering': 3}[tech['area']])
 jsonified = json.dumps(technologies, indent=2, separators=(',', ': '))
 # print jsonified
 open(path.join('public', tree_label, 'techs.json'), 'w').write(jsonified)
