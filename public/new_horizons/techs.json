@@ -710,7 +710,7 @@
       }
     ],
     "start_tech": false,
-    "desc": "Description WIP",
+    "desc": "Nuclear Electronics is a subfield of electronics that deals with the faster and more accurate circuitry required for Nuclear Physics and Elementary Particle Physics",
     "category": "Computing",
     "name": "Nuclear Electronics Labs",
     "area": "physics",
@@ -744,7 +744,7 @@
       }
     ],
     "start_tech": false,
-    "desc": "Description WIP",
+    "desc": "Through advancements in radio, optical, and spectrographic analysis, it is now possible to design sensor suites which enable starships to more accurately determine target types and track object in the vacuum of space. Weapons now lock on to hull composition, exhaust plasma, and shield frequencies to better track enemy vessels.",
     "category": "Computing",
     "name": "Comprehensive Sensor Suite",
     "area": "physics",
@@ -778,7 +778,7 @@
       }
     ],
     "start_tech": false,
-    "desc": "Description WIP",
+    "desc": "Increases in optical computer technologies has led to more efficient and powerful optical matrices and consequently, greater performance than first generation designs.",
     "category": "Computing",
     "name": "Optical Secondary Computer Core",
     "area": "physics",
@@ -846,7 +846,7 @@
       }
     ],
     "start_tech": false,
-    "desc": "Description WIP",
+    "desc": "The Navigational Deflector provides rudamentary protection from space debris during space-flight. Such systems are necessary for superluminal space flight as even the smallest grain of space dust could otherwise seriously cripple a starship during warp travel. Additionally, deflector arrays are capable of emitting charged particle beams.",
     "category": "Field Manipulation",
     "name": "Navigational Deflector Array",
     "area": "physics",
@@ -897,7 +897,7 @@
       }
     ],
     "start_tech": false,
-    "desc": "Description WIP",
+    "desc": "An early warp drive design, the Coleopteric Warp Engine utilizes a ring-like outboard coil manifold rather than common linear warp nacelles. This technology is an icon of early Vulcan warp technology as well as early warp technologies used by humans during the mid 21st century.",
     "category": "Field Manipulation",
     "name": "Coleopteric Warp Engine design",
     "area": "physics",
@@ -1085,7 +1085,7 @@
     "tier": 2,
     "cost": 300,
     "key": "tech_phaser_cannon_1",
-    "base_factor": 0,
+    "base_factor": 0.0,
     "base_weight": 1,
     "weight_modifiers": [
       {
@@ -1119,7 +1119,7 @@
     "tier": 2,
     "cost": 300,
     "key": "tech_phaser_1",
-    "base_factor": 0,
+    "base_factor": 0.0,
     "base_weight": 1,
     "weight_modifiers": [
       {
@@ -1187,7 +1187,7 @@
     "tier": 2,
     "cost": 300,
     "key": "tech_disruptor_cannon_1",
-    "base_factor": 0,
+    "base_factor": 0.0,
     "base_weight": 1,
     "weight_modifiers": [
       {
@@ -1221,7 +1221,7 @@
     "tier": 2,
     "cost": 300,
     "key": "tech_plasma_disruptor_beam_1",
-    "base_factor": 0,
+    "base_factor": 0.0,
     "base_weight": 1,
     "weight_modifiers": [
       {
@@ -1255,7 +1255,7 @@
     "tier": 2,
     "cost": 300,
     "key": "tech_plasma_cannon_1",
-    "base_factor": 0,
+    "base_factor": 0.0,
     "base_weight": 1,
     "weight_modifiers": [
       {
@@ -1289,7 +1289,7 @@
     "tier": 2,
     "cost": 300,
     "key": "tech_antiproton_cannon_1",
-    "base_factor": 0,
+    "base_factor": 0.0,
     "base_weight": 1,
     "weight_modifiers": [
       {
@@ -1323,7 +1323,7 @@
     "tier": 2,
     "cost": 300,
     "key": "tech_polaron_beam_1",
-    "base_factor": 0,
+    "base_factor": 0.0,
     "base_weight": 1,
     "weight_modifiers": [
       {
@@ -1357,7 +1357,7 @@
     "tier": 2,
     "cost": 300,
     "key": "tech_tetryon_cannon_1",
-    "base_factor": 0,
+    "base_factor": 0.0,
     "base_weight": 1,
     "weight_modifiers": [
       {
@@ -1740,9 +1740,6 @@
           {
             "OR": [
               {
-                "has_technology": "tech_physics_exploration_68"
-              },
-              {
                 "has_technology": "tech_physics_militarized_69"
               },
               {
@@ -1771,7 +1768,7 @@
       }
     ],
     "start_tech": false,
-    "desc": "Description WIP",
+    "desc": "Warp engines which are optimized for the greatest efficiency possible.",
     "category": "Field Manipulation",
     "name": "Exploration Warp Engine specialization",
     "area": "physics",
@@ -1797,9 +1794,6 @@
                 "has_technology": "tech_physics_exploration_68"
               },
               {
-                "has_technology": "tech_physics_militarized_69"
-              },
-              {
                 "has_technology": "tech_physics_artificial_70"
               }
             ]
@@ -1825,7 +1819,7 @@
       }
     ],
     "start_tech": false,
-    "desc": "Description WIP",
+    "desc": "Warp Engines which are optimized for the greatest possible combat effectiveness, leading to improved charge times and vastly improved speed at the cost of slightly reduced range.",
     "category": "Field Manipulation",
     "name": "Militarized Warp Engine Specialization",
     "area": "physics",
@@ -1852,9 +1846,6 @@
               },
               {
                 "has_technology": "tech_physics_militarized_69"
-              },
-              {
-                "has_technology": "tech_physics_artificial_70"
               }
             ]
           }
@@ -1896,7 +1887,7 @@
       }
     ],
     "start_tech": false,
-    "desc": "Description WIP",
+    "desc": "The Artificial Quantum Singularity holds the potential to be the most powerful method of energy generation known. Such a singularity is little more than a miniature black hole with a rapid decay rate. The particles emitted from the decay can be captured and guided using quantum fields.",
     "category": "Field Manipulation",
     "name": "Artificial Quantum Singularity",
     "area": "physics",
@@ -1999,17 +1990,7 @@
             "factor": 0
           },
           {
-            "OR": [
-              {
-                "has_technology": "tech_physics_beam_132"
-              },
-              {
-                "has_technology": "tech_physics_beam_132"
-              },
-              {
-                "has_technology": "tech_physics_beam_132"
-              }
-            ]
+            "OR": []
           }
         ]
       },
@@ -2053,17 +2034,7 @@
             "factor": 0
           },
           {
-            "OR": [
-              {
-                "has_technology": "tech_physics_cannon_135"
-              },
-              {
-                "has_technology": "tech_physics_cannon_135"
-              },
-              {
-                "has_technology": "tech_physics_cannon_135"
-              }
-            ]
+            "OR": []
           }
         ]
       },
@@ -2107,17 +2078,7 @@
             "factor": 0
           },
           {
-            "OR": [
-              {
-                "has_technology": "tech_physics_explosive_136"
-              },
-              {
-                "has_technology": "tech_physics_explosive_136"
-              },
-              {
-                "has_technology": "tech_physics_explosive_136"
-              }
-            ]
+            "OR": []
           }
         ]
       },
@@ -2152,7 +2113,7 @@
     "tier": 3,
     "cost": 600,
     "key": "tech_physics_dervish_149",
-    "base_factor": 0,
+    "base_factor": 0.0,
     "base_weight": 1,
     "weight_modifiers": [
       {
@@ -2231,6 +2192,54 @@
     "area": "physics",
     "is_dangerous": false,
     "prerequisite": null
+  },
+  {
+    "is_rare": false,
+    "tier": 3,
+    "cost": 600,
+    "key": "tech_physics_dual-bank_163",
+    "base_factor": 1.5,
+    "base_weight": 85,
+    "weight_modifiers": [
+      {
+        "modifier": [
+          {
+            "factor": 1.25
+          },
+          {
+            "research_leader": [
+              {
+                "area": "physics"
+              },
+              {
+                "has_trait": "leader_trait_expertise_particles"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "modifier": [
+          {
+            "factor": 0
+          },
+          {
+            "NOR": [
+              {
+                "is_species_class": "FED"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "start_tech": false,
+    "desc": "Description WIP",
+    "category": "Particles",
+    "name": "Dual-Bank Phaser emitter",
+    "area": "physics",
+    "is_dangerous": false,
+    "prerequisite": "tech_society_ushaan_377"
   },
   {
     "is_rare": false,
@@ -2380,7 +2389,7 @@
     "start_tech": false,
     "desc": "Description WIP",
     "category": "Particles",
-    "name": "Starbase Phaser Defense Module",
+    "name": "Starbase Phaser Defence Module",
     "area": "physics",
     "is_dangerous": false,
     "prerequisite": "tech_physics_phaser_158"
@@ -2479,7 +2488,7 @@
     "start_tech": false,
     "desc": "Description WIP",
     "category": "Particles",
-    "name": "Starbase Disruptor Defense Module",
+    "name": "Starbase Disruptor Defence Module",
     "area": "physics",
     "is_dangerous": false,
     "prerequisite": "tech_physics_swivel_204"
@@ -2629,7 +2638,7 @@
     "start_tech": false,
     "desc": "Description WIP",
     "category": "Particles",
-    "name": "Starbase Plasma Defense Module",
+    "name": "Starbase Plasma Defence Module",
     "area": "physics",
     "is_dangerous": false,
     "prerequisite": "tech_physics_plasma_250"
@@ -2779,7 +2788,7 @@
     "start_tech": false,
     "desc": "Description WIP",
     "category": "Particles",
-    "name": "Starbase Anti-Matter Defense Module",
+    "name": "Starbase Anti-Matter Defence Module",
     "area": "physics",
     "is_dangerous": false,
     "prerequisite": "tech_physics_anti-proton_279"
@@ -2895,7 +2904,7 @@
     "start_tech": false,
     "desc": "Description WIP",
     "category": "Particles",
-    "name": "Starbase Polaron Defense module",
+    "name": "Starbase Polaron Defence module",
     "area": "physics",
     "is_dangerous": false,
     "prerequisite": "tech_engineering_large_533"
@@ -3045,7 +3054,7 @@
     "start_tech": false,
     "desc": "Description WIP",
     "category": "Particles",
-    "name": "Starbase Tetryon Defense module",
+    "name": "Starbase Tetryon Defence module",
     "area": "physics",
     "is_dangerous": false,
     "prerequisite": "tech_physics_tetryon_330"
@@ -3125,7 +3134,7 @@
       }
     ],
     "start_tech": false,
-    "desc": "Description WIP",
+    "desc": "Advancements in sensor technology have led to breakthroughs in long-range subspace and tachyon detection capabilities. Tied with existing optical, spectrographic, and radio arrays, it is now possible to greatly improve analysis speeds and with deep analysis of subspace fields, increase the probability of making new discoveries.",
     "category": "Computing",
     "name": "Stellar Cartography Lab",
     "area": "physics",
@@ -3173,9 +3182,9 @@
       }
     ],
     "start_tech": false,
-    "desc": "Description WIP",
+    "desc": "The Magnetron High-Resolution Combat Array, uses variances in magnetic fields emitted by objects to further tune targeting computers of starships which allows forgreatly increased accuracy of all onboard weapon systems.",
     "category": "Computing",
-    "name": "Magneton Long-Range High-resolution Array",
+    "name": "Magneton High-resolution Combat sensor suite",
     "area": "physics",
     "is_dangerous": false,
     "prerequisite": "tech_physics_subspace_34"
@@ -3221,7 +3230,7 @@
       }
     ],
     "start_tech": false,
-    "desc": "Description WIP",
+    "desc": "The Orbital Sensor Array has a complex suite of long range and high resolution sensors which enable the satellite to operate as a dedicated watch tower, vastly increasing the overall sensing capabilities of colonized star systems. Can be constructed through existing spaceports.",
     "category": "Computing",
     "name": "Orbital Sensor Array",
     "area": "physics",
@@ -3255,7 +3264,7 @@
       }
     ],
     "start_tech": false,
-    "desc": "Description WIP",
+    "desc": "The signal jammer uses white noise in all known subspace frequencies to jam the targeting computers of enemy starships, lowering their ability to track their targets.",
     "category": "Computing",
     "name": "Signal Jammer",
     "area": "physics",
@@ -3303,7 +3312,7 @@
       }
     ],
     "start_tech": false,
-    "desc": "Description WIP",
+    "desc": "Advancements into Duotronics computer hardware have led to better combat performance than the first generation designs.",
     "category": "Computing",
     "name": "Duotronic Secondary Computer Core",
     "area": "physics",
@@ -3371,7 +3380,7 @@
       }
     ],
     "start_tech": false,
-    "desc": "Description WIP",
+    "desc": "Transwarp Drives are unique in that they tunnel through space instead of move through it. Unlike traditional warp drives, a type of artifical wormhole is created which the starship can travel through. This allows for vastly increased speed. However, the Transwarp Drive is a dangerous technology in that it requires more time to charge and can prevent rapid escape from enemy vessels.",
     "category": "Field Manipulation",
     "name": "Experimental Transpwarp Drive",
     "area": "physics",
@@ -3623,7 +3632,7 @@
       }
     ],
     "start_tech": false,
-    "desc": "Description WIP",
+    "desc": "Tractor Beams are beams of Gravitons that affect the targeted object and allow it to be moved or held in place, often to tow disabled or damged ships, but also to hold it still for attack.",
     "category": "Field Manipulation",
     "name": "Tractor beam",
     "area": "physics",
@@ -3711,54 +3720,6 @@
     "area": "physics",
     "is_dangerous": false,
     "prerequisite": "tech_physics_aceton_133"
-  },
-  {
-    "is_rare": false,
-    "tier": 4,
-    "cost": 1000,
-    "key": "tech_physics_dual-bank_163",
-    "base_factor": 1.5,
-    "base_weight": 80,
-    "weight_modifiers": [
-      {
-        "modifier": [
-          {
-            "factor": 1.25
-          },
-          {
-            "research_leader": [
-              {
-                "area": "physics"
-              },
-              {
-                "has_trait": "leader_trait_expertise_particles"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "modifier": [
-          {
-            "factor": 0
-          },
-          {
-            "NOR": [
-              {
-                "is_species_class": "FED"
-              }
-            ]
-          }
-        ]
-      }
-    ],
-    "start_tech": false,
-    "desc": "Description WIP",
-    "category": "Particles",
-    "name": "Dual-Bank Phaser emitter",
-    "area": "physics",
-    "is_dangerous": false,
-    "prerequisite": "tech_physics_phaser_158"
   },
   {
     "is_rare": false,
@@ -3992,7 +3953,7 @@
     "start_tech": false,
     "desc": "Description WIP",
     "category": "Particles",
-    "name": "Phaser-mount automated defense systems",
+    "name": "Phaser-mount automated Defence systems",
     "area": "physics",
     "is_dangerous": false,
     "prerequisite": "tech_society_combined_397"
@@ -4173,7 +4134,7 @@
     "start_tech": false,
     "desc": "Description WIP",
     "category": "Particles",
-    "name": "Disruptor-mount automated defense Battery",
+    "name": "Disruptor-mount automated Defence Battery",
     "area": "physics",
     "is_dangerous": false,
     "prerequisite": "tech_physics_swivel_204"
@@ -4863,7 +4824,7 @@
     "start_tech": false,
     "desc": "Aligning defensive and offensive weapon execution paradigms allows for increased efficiency.",
     "category": "Computing",
-    "name": "Synchronized Defenses",
+    "name": "Synchronized Defences",
     "area": "physics",
     "is_dangerous": false,
     "prerequisite": "tech_physics_basic_5"
@@ -5153,14 +5114,7 @@
             "factor": 0
           },
           {
-            "OR": [
-              {
-                "has_technology": "tech_physics_covariant_101"
-              },
-              {
-                "has_technology": "tech_physics_regenerative_102"
-              }
-            ]
+            "has_technology": "tech_physics_regenerative_102"
           }
         ]
       },
@@ -5204,14 +5158,7 @@
             "factor": 0
           },
           {
-            "OR": [
-              {
-                "has_technology": "tech_physics_covariant_101"
-              },
-              {
-                "has_technology": "tech_physics_regenerative_102"
-              }
-            ]
+            "has_technology": "tech_physics_covariant_101"
           }
         ]
       },
@@ -5658,9 +5605,6 @@
           {
             "OR": [
               {
-                "has_technology": "tech_physics_modulated_184"
-              },
-              {
                 "has_technology": "tech_physics_coherent_185"
               },
               {
@@ -5730,9 +5674,6 @@
             "OR": [
               {
                 "has_technology": "tech_physics_modulated_184"
-              },
-              {
-                "has_technology": "tech_physics_coherent_185"
               },
               {
                 "has_technology": "tech_physics_modular_186"
@@ -5806,9 +5747,6 @@
                 "has_technology": "tech_physics_coherent_185"
               },
               {
-                "has_technology": "tech_physics_modular_186"
-              },
-              {
                 "has_technology": "tech_physics_tunneling_187"
               }
             ]
@@ -5878,9 +5816,6 @@
               },
               {
                 "has_technology": "tech_physics_modular_186"
-              },
-              {
-                "has_technology": "tech_physics_tunneling_187"
               }
             ]
           }
@@ -6106,9 +6041,6 @@
           {
             "OR": [
               {
-                "has_technology": "tech_physics_tetryonic_224"
-              },
-              {
                 "has_technology": "tech_physics_tetryonic_225"
               },
               {
@@ -6164,9 +6096,6 @@
             "OR": [
               {
                 "has_technology": "tech_physics_tetryonic_224"
-              },
-              {
-                "has_technology": "tech_physics_tetryonic_225"
               },
               {
                 "has_technology": "tech_physics_plasma_226"
@@ -6226,9 +6155,6 @@
                 "has_technology": "tech_physics_tetryonic_225"
               },
               {
-                "has_technology": "tech_physics_plasma_226"
-              },
-              {
                 "has_technology": "tech_physics_plasma_227"
               }
             ]
@@ -6284,9 +6210,6 @@
               },
               {
                 "has_technology": "tech_physics_plasma_226"
-              },
-              {
-                "has_technology": "tech_physics_plasma_227"
               }
             ]
           }
@@ -6468,14 +6391,7 @@
             "factor": 0
           },
           {
-            "OR": [
-              {
-                "has_technology": "tech_physics_phased_256"
-              },
-              {
-                "has_technology": "tech_physics_compressed_257"
-              }
-            ]
+            "has_technology": "tech_physics_compressed_257"
           }
         ]
       },
@@ -6519,14 +6435,7 @@
             "factor": 0
           },
           {
-            "OR": [
-              {
-                "has_technology": "tech_physics_phased_256"
-              },
-              {
-                "has_technology": "tech_physics_compressed_257"
-              }
-            ]
+            "has_technology": "tech_physics_phased_256"
           }
         ]
       },
@@ -6672,14 +6581,7 @@
             "factor": 0
           },
           {
-            "OR": [
-              {
-                "has_technology": "tech_physics_anti-photon_285"
-              },
-              {
-                "has_technology": "tech_physics_proton_286"
-              }
-            ]
+            "has_technology": "tech_physics_proton_286"
           }
         ]
       },
@@ -6723,14 +6625,7 @@
             "factor": 0
           },
           {
-            "OR": [
-              {
-                "has_technology": "tech_physics_anti-photon_285"
-              },
-              {
-                "has_technology": "tech_physics_proton_286"
-              }
-            ]
+            "has_technology": "tech_physics_anti-photon_285"
           }
         ]
       },
@@ -6842,14 +6737,7 @@
             "factor": 0
           },
           {
-            "OR": [
-              {
-                "has_technology": "tech_physics_phased_310"
-              },
-              {
-                "has_technology": "tech_physics_neutral_311"
-              }
-            ]
+            "has_technology": "tech_physics_neutral_311"
           }
         ]
       },
@@ -6893,14 +6781,7 @@
             "factor": 0
           },
           {
-            "OR": [
-              {
-                "has_technology": "tech_physics_phased_310"
-              },
-              {
-                "has_technology": "tech_physics_neutral_311"
-              }
-            ]
+            "has_technology": "tech_physics_phased_310"
           }
         ]
       },
@@ -7046,14 +6927,7 @@
             "factor": 0
           },
           {
-            "OR": [
-              {
-                "has_technology": "tech_physics_modulated_337"
-              },
-              {
-                "has_technology": "tech_physics_tunneling_338"
-              }
-            ]
+            "has_technology": "tech_physics_tunneling_338"
           }
         ]
       },
@@ -7097,14 +6971,7 @@
             "factor": 0
           },
           {
-            "OR": [
-              {
-                "has_technology": "tech_physics_modulated_337"
-              },
-              {
-                "has_technology": "tech_physics_tunneling_338"
-              }
-            ]
+            "has_technology": "tech_physics_modulated_337"
           }
         ]
       },
@@ -7352,7 +7219,7 @@
       }
     ],
     "start_tech": false,
-    "desc": "Description WIP",
+    "desc": "These sensors have been tuned to more precisely detect the decay of tachyons emitted by all FTL capable starships, resulting in increased detection range and tracking capabilities.",
     "category": "Computing",
     "name": "Inverse Tachyon Sensors",
     "area": "physics",
@@ -7400,9 +7267,9 @@
       }
     ],
     "start_tech": false,
-    "desc": "The Deuterium-Tritium fusion reaction releases more then four times the energy amount when compared to a Deuterium-Deuterium fusion, but to achieve fusion one must penetrate the coulomb barrier and the temperature requirements are much higher. Integrating a phase discriminator in the confinement beam to circumvent the coulomb barrier will allow the production of a safer, more powerful and efficient reactor.",
+    "desc": "Pure Deuterium-Deuterium fusion reaction releases more than four times the energy compared to typical Deuterium-Tritium or early stage He3 reactors. However, for many years they were beyond the grasp of our technology, as they require maintaining a temperature that\u2019s twice as high. Integrating a phase discriminator in the confinement tokamak allows us to pierce the coulomb barrier and to develop a safer, more efficient and powerful fusion reactor.",
     "category": "Field Manipulation",
-    "name": "Pure Deuterium/Tritium Reaction",
+    "name": "Pure Deuterium Reaction",
     "area": "physics",
     "is_dangerous": false,
     "prerequisite": "tech_physics_carbon_56"
@@ -7448,7 +7315,7 @@
       }
     ],
     "start_tech": false,
-    "desc": "Description WIP",
+    "desc": "Zero Point Energy is a type of energy which is derived from the quantum vacuum. Using advancements in quantum theory, it is now possible to enhance power generation throughout all known planetary and orbital power generation systems.",
     "category": "Field Manipulation",
     "name": "Zero Point Energy",
     "area": "physics",
@@ -8122,7 +7989,7 @@
       }
     ],
     "start_tech": false,
-    "desc": "Description WIP",
+    "desc": "Through advancements in Stellar Cartography, dedicated labs are now possible.",
     "category": "Computing",
     "name": "Astrometrics Lab",
     "area": "physics",
@@ -8252,7 +8119,7 @@
       }
     ],
     "start_tech": false,
-    "desc": "Description WIP",
+    "desc": "Named after Dr. Paul Manheim and related to the Manheim Effect, noted during a failed experiment, it was discovered that it would be possible to open a window into another dimension. Upon further investigation, the Manheim effect also produced a closed temporal loop. It may be possible to create duplicates of starships for a short period of time using the theories which came out of Dr. Manheim's research.",
     "category": "Field Manipulation",
     "name": "Manheim Gravity/Time interactions",
     "area": "physics",
@@ -9986,7 +9853,7 @@
       }
     ],
     "start_tech": false,
-    "desc": "Recent advances into Isolinear computer chips allow for remarkable breakthoughts in software development. Now, for the first time, AI research presents fresh conundrums as the system itself begins to contemplate it's own existence...",
+    "desc": "Recent advances into Isolinear computer chips allow for remarkable break thoughts in software development. Now, for the first time, AI research presents fresh conundrums as the system itself begins to contemplate it's own existence...",
     "category": "Computing",
     "name": "Self Aware AI",
     "area": "physics",
@@ -10064,7 +9931,7 @@
       }
     ],
     "start_tech": false,
-    "desc": "Description WIP",
+    "desc": "Research into advanced subspace physics has made it possible to detect tiny ripples which cause slight variability in subspace. These variations in the normal frequencies of subspace have never been able to be so accurately detected before. Application of this discovery has led to an even greater detection capability for long range dedicated sensor arrays and are especially good at peering through plasma interference.",
     "category": "Computing",
     "name": "Trans-Spectral Sensor Array",
     "area": "physics",
@@ -10132,7 +9999,7 @@
       }
     ],
     "start_tech": false,
-    "desc": "Description WIP",
+    "desc": "Temporal shields are in a constant state of temporal flux. This flux prevents some types of phase-variable weapons from penetrating shields as they could with more traditional shielding technologies. Additionally, these shields are capable of protecting a starship from temporal disturbances of various types by shifting the starship slightly out of phase with normal space-time.",
     "category": "Field Manipulation",
     "name": "Temporal Shielding",
     "area": "physics",
@@ -10602,7 +10469,7 @@
       }
     ],
     "start_tech": false,
-    "desc": "The Echo Papa 607 was an advanced weapon system developed by the arms dealers of Minos. Intended to be a complete weapon of war, the Echo Papa 607 was able to automatically send out small drones to gather intelligence, take prisoners, and mount attacks. The main advantage of the system was its progressive adaptability; each time a drone was destroyed, data on enemy equipment and tactics was returned to the parent system and a new drone was manufactured which improved on the previous model, countering the enemy's abilities. ",
+    "desc": "The Echo Papa 607 was an advanced weapon system developed by the arms dealers of Minos. Intended to be a complete weapon of war, the Echo Papa 607 was able to automatically send out small drones to gather intelligence, take prisoners, and mount attacks. The main advantage of the system was its progressive adaptability; each time a drone was destroyed, data on enemy equipment and tactics was returned to the parent system and a new drone was manufactured which improved on the previous model, countering the enemy's abilities.",
     "category": "Computing",
     "name": "Minos EP607 Weapon system",
     "area": "physics",
@@ -10738,7 +10605,7 @@
       }
     ],
     "start_tech": false,
-    "desc": "Omicron radiation is an energy form which can only be created by certain forms of matter-antimatter reactions, and which can be toxic to certain forms of humanoid life. Extremely rare, omicron particles can be utilized in holography and to replenish antimatter reserves. ",
+    "desc": "Omicron radiation is an energy form which can only be created by certain forms of matter-antimatter reactions, and which can be toxic to certain forms of humanoid life. Extremely rare, omicron particles can be utilized in holography and to replenish antimatter reserves.",
     "category": "Computing",
     "name": "Omicron Radiation Manipulation",
     "area": "physics",
@@ -10874,7 +10741,7 @@
       }
     ],
     "start_tech": false,
-    "desc": "Description WIP",
+    "desc": "Sensors that penetrate even the most advanced interference caused by natural and unnatural means leading to vastly increased range and detection capabilites.",
     "category": "Computing",
     "name": "Multiphasic Sensors",
     "area": "physics",
@@ -11030,7 +10897,7 @@
       }
     ],
     "start_tech": false,
-    "desc": "Description WIP",
+    "desc": "Temporal Mechanics, or Temporal Science is an advanced field of research involving the interactions between matter and energy with the space-time continuum. More specifically, temporal mechanics is the study of time itself.",
     "category": "Field Manipulation",
     "name": "Temporal Mechanics",
     "area": "physics",
@@ -13179,9 +13046,9 @@
       }
     ],
     "start_tech": true,
-    "desc": "Description WIP",
+    "desc": "There may come a time when other races regard our worlds with great envy, and draw plans to attack us. We must be ready.",
     "category": "Statecraft",
-    "name": "Planetary Defenses",
+    "name": "Planetary Defences",
     "area": "society",
     "is_dangerous": false,
     "prerequisite": null
@@ -13327,7 +13194,7 @@
     "tier": 1,
     "cost": 100,
     "key": "tech_society_the_372",
-    "base_factor": 0,
+    "base_factor": 0.0,
     "base_weight": 1,
     "weight_modifiers": [
       {
@@ -13361,12 +13228,9 @@
     "tier": 1,
     "cost": 100,
     "key": "tech_society_bank_373",
-    "base_factor": 0,
+    "base_factor": 0.0,
     "base_weight": 1,
     "weight_modifiers": [
-      {
-        "factor": 1.5
-      },
       {
         "modifier": [
           {
@@ -13412,12 +13276,9 @@
     "tier": 1,
     "cost": 100,
     "key": "tech_society_post-scarcity_374",
-    "base_factor": 0,
+    "base_factor": 0.0,
     "base_weight": 1,
     "weight_modifiers": [
-      {
-        "factor": 1.5
-      },
       {
         "modifier": [
           {
@@ -13463,12 +13324,9 @@
     "tier": 1,
     "cost": 100,
     "key": "tech_society_teaching_375",
-    "base_factor": 0,
+    "base_factor": 0.0,
     "base_weight": 1,
     "weight_modifiers": [
-      {
-        "factor": 1.5
-      },
       {
         "modifier": [
           {
@@ -13514,12 +13372,9 @@
     "tier": 1,
     "cost": 100,
     "key": "tech_society_rules_376",
-    "base_factor": 0,
+    "base_factor": 0.0,
     "base_weight": 1,
     "weight_modifiers": [
-      {
-        "factor": 1.5
-      },
       {
         "modifier": [
           {
@@ -13553,7 +13408,7 @@
       }
     ],
     "start_tech": false,
-    "desc": "Description WIP",
+    "desc": "The Rules of Acquisition are the cornerstone of Ferengi culture, a list of numbered aphorisms that describe how to do business, exemplified by rules such as Rule 1, \"Once you have their money, you never give it back\"",
     "category": "Statecraft",
     "name": "Rules of Acquisition",
     "area": "society",
@@ -13565,12 +13420,9 @@
     "tier": 1,
     "cost": 100,
     "key": "tech_society_ushaan_377",
-    "base_factor": 0,
-    "base_weight": 1,
+    "base_factor": 1.5,
+    "base_weight": 95,
     "weight_modifiers": [
-      {
-        "factor": 1.5
-      },
       {
         "modifier": [
           {
@@ -13616,12 +13468,9 @@
     "tier": 1,
     "cost": 100,
     "key": "tech_society_benzite_378",
-    "base_factor": 0,
+    "base_factor": 0.0,
     "base_weight": 1,
     "weight_modifiers": [
-      {
-        "factor": 1.5
-      },
       {
         "modifier": [
           {
@@ -13667,12 +13516,9 @@
     "tier": 1,
     "cost": 100,
     "key": "tech_society_words_379",
-    "base_factor": 0,
+    "base_factor": 0.0,
     "base_weight": 1,
     "weight_modifiers": [
-      {
-        "factor": 1.5
-      },
       {
         "modifier": [
           {
@@ -13718,12 +13564,9 @@
     "tier": 1,
     "cost": 100,
     "key": "tech_society_the_380",
-    "base_factor": 0,
+    "base_factor": 0.0,
     "base_weight": 1,
     "weight_modifiers": [
-      {
-        "factor": 1.5
-      },
       {
         "modifier": [
           {
@@ -13769,12 +13612,9 @@
     "tier": 1,
     "cost": 100,
     "key": "tech_society_ritualized_381",
-    "base_factor": 0,
+    "base_factor": 0.0,
     "base_weight": 1,
     "weight_modifiers": [
-      {
-        "factor": 1.5
-      },
       {
         "modifier": [
           {
@@ -13878,7 +13718,7 @@
     "start_tech": false,
     "desc": "Description WIP",
     "category": "Statecraft",
-    "name": "Global Defense Initiative",
+    "name": "Global Defence Initiative",
     "area": "society",
     "is_dangerous": false,
     "prerequisite": "tech_defense_army"
@@ -13954,7 +13794,7 @@
       }
     ],
     "start_tech": false,
-    "desc": "Description WIP",
+    "desc": "Black Ops activities are those covert operations that require at the very least plausible deniability, when the government cannot be seen to take actions that nevertheless need to be taken.",
     "category": "Statecraft",
     "name": "Black Ops Initiative",
     "area": "society",
@@ -14176,16 +14016,6 @@
       {
         "modifier": [
           {
-            "is_ai": "yes"
-          },
-          {
-            "factor": 5
-          }
-        ]
-      },
-      {
-        "modifier": [
-          {
             "factor": 2
           },
           {
@@ -14194,6 +14024,16 @@
                 "has_technology": "tech_colonization_1"
               }
             ]
+          }
+        ]
+      },
+      {
+        "modifier": [
+          {
+            "is_ai": "yes"
+          },
+          {
+            "factor": 5
           }
         ]
       }
@@ -14422,14 +14262,7 @@
             "factor": 0
           },
           {
-            "OR": [
-              {
-                "has_technology": "tech_society_interstellar_427"
-              },
-              {
-                "has_technology": "tech_society_ministry_434"
-              }
-            ]
+            "has_technology": "tech_society_ministry_434"
           }
         ]
       },
@@ -14490,14 +14323,7 @@
             "factor": 0
           },
           {
-            "OR": [
-              {
-                "has_technology": "tech_society_interstellar_427"
-              },
-              {
-                "has_technology": "tech_society_ministry_434"
-              }
-            ]
+            "has_technology": "tech_society_interstellar_427"
           }
         ]
       },
@@ -14909,7 +14735,7 @@
       }
     ],
     "start_tech": false,
-    "desc": "Description WIP",
+    "desc": "Tactical disruption of natural habitats combined with converging search-and-destroy patterns can effectively eliminate hostile wildlife in a very short span of time.",
     "category": "New Worlds",
     "name": "Dangerous Wildlife Removal",
     "area": "society",
@@ -14972,7 +14798,7 @@
       }
     ],
     "start_tech": false,
-    "desc": "Description WIP",
+    "desc": "Specialized aerosol construction stabilizers can be used to quickly and cleanly seal existing sinkholes as well as stabilize any subterranean hollows that may give rise to them.",
     "category": "New Worlds",
     "name": "Deep Sinkhole Removal",
     "area": "society",
@@ -15035,7 +14861,7 @@
       }
     ],
     "start_tech": false,
-    "desc": "Description WIP",
+    "desc": "Flash deforestation is, in and of itself, nothing revolutionary. Accomplishing it in a tightly controlled area on a strict schedule, however, is.",
     "category": "New Worlds",
     "name": "Dense Jungle Removal",
     "area": "society",
@@ -15098,7 +14924,7 @@
       }
     ],
     "start_tech": false,
-    "desc": "Description WIP",
+    "desc": "Flash-vaporization engines quickly and efficiently erase glacial ice, at the expense of some increased heat and atmospheric humidity in the local area.",
     "category": "New Worlds",
     "name": "Massive Glacier Removal",
     "area": "society",
@@ -15161,7 +14987,7 @@
       }
     ],
     "start_tech": false,
-    "desc": "Description WIP",
+    "desc": "Sometimes there is very little difference between terraformation and demolition.",
     "category": "New Worlds",
     "name": "Mountain Range Removal",
     "area": "society",
@@ -15224,7 +15050,7 @@
       }
     ],
     "start_tech": false,
-    "desc": "Description WIP",
+    "desc": "Focused drainage and detox efforts allow for the complete eradication of swampland.",
     "category": "New Worlds",
     "name": "Noxious Swamp Removal",
     "area": "society",
@@ -15287,7 +15113,7 @@
       }
     ],
     "start_tech": false,
-    "desc": "Description WIP",
+    "desc": "Introducing hydrogels engineered for stabilization allows for near-instantaneous solidification of quicksand basins.",
     "category": "New Worlds",
     "name": "Quicksand Basin Removal",
     "area": "society",
@@ -15350,7 +15176,7 @@
       }
     ],
     "start_tech": false,
-    "desc": "Description WIP",
+    "desc": "Specialized drones can mechanically clear vast swaths of toxic kelp with minimal use of biocides.",
     "category": "New Worlds",
     "name": "Toxic Kelp Removal",
     "area": "society",
@@ -15413,7 +15239,7 @@
       }
     ],
     "start_tech": false,
-    "desc": "Description WIP",
+    "desc": "Tectonic stabilization techniques allow for the pacification of active volcanoes.",
     "category": "New Worlds",
     "name": "Volcano Removal",
     "area": "society",
@@ -15565,7 +15391,7 @@
     "tier": 3,
     "cost": 600,
     "key": "tech_society_the_382",
-    "base_factor": 0,
+    "base_factor": 0.0,
     "base_weight": 1,
     "weight_modifiers": [
       {
@@ -16333,14 +16159,7 @@
             "factor": 0
           },
           {
-            "OR": [
-              {
-                "has_technology": "tech_society_civilian_504"
-              },
-              {
-                "has_technology": "tech_society_frontier_505"
-              }
-            ]
+            "has_technology": "tech_society_frontier_505"
           }
         ]
       },
@@ -16401,14 +16220,7 @@
             "factor": 0
           },
           {
-            "OR": [
-              {
-                "has_technology": "tech_society_civilian_504"
-              },
-              {
-                "has_technology": "tech_society_frontier_505"
-              }
-            ]
+            "has_technology": "tech_society_civilian_504"
           }
         ]
       },
@@ -16448,7 +16260,7 @@
       }
     ],
     "start_tech": false,
-    "desc": "Description WIP",
+    "desc": "History has proven collectives to be the most efficient social structure for settler enclaves.",
     "category": "New Worlds",
     "name": "Frontier Collectives",
     "area": "society",
@@ -18016,8 +17828,8 @@
     "tier": 5,
     "cost": 1500,
     "key": "tech_society_genesis_509",
-    "base_factor": 1.0,
-    "base_weight": 20,
+    "base_factor": 0.0,
+    "base_weight": 1,
     "weight_modifiers": [
       {
         "modifier": [
@@ -18042,7 +17854,7 @@
     "category": "New Worlds",
     "name": "Genesis Device",
     "area": "society",
-    "is_dangerous": true,
+    "is_dangerous": false,
     "prerequisite": "tech_terraforming_base_1"
   },
   {
@@ -19388,7 +19200,7 @@
       }
     ],
     "start_tech": false,
-    "desc": "Description WIP",
+    "desc": "Further study into the hazardous environments found on other planets help alleviate the difficulties that colonizers encounter in their day-to-day lives on foreign worlds.",
     "category": "New Worlds",
     "name": "Hostile Environment Adaptation",
     "area": "society",
@@ -21147,16 +20959,6 @@
       {
         "modifier": [
           {
-            "is_ai": "yes"
-          },
-          {
-            "factor": 5
-          }
-        ]
-      },
-      {
-        "modifier": [
-          {
             "factor": 2
           },
           {
@@ -21165,6 +20967,16 @@
                 "has_technology": "tech_spaceport_2"
               }
             ]
+          }
+        ]
+      },
+      {
+        "modifier": [
+          {
+            "is_ai": "yes"
+          },
+          {
+            "factor": 5
           }
         ]
       }
@@ -21219,16 +21031,6 @@
       {
         "modifier": [
           {
-            "is_ai": "yes"
-          },
-          {
-            "factor": 5
-          }
-        ]
-      },
-      {
-        "modifier": [
-          {
             "factor": 2
           },
           {
@@ -21239,10 +21041,20 @@
             ]
           }
         ]
+      },
+      {
+        "modifier": [
+          {
+            "is_ai": "yes"
+          },
+          {
+            "factor": 5
+          }
+        ]
       }
     ],
     "start_tech": false,
-    "desc": "Significantly larger than the patrol frigate, the destroyer is a very cheap and effective frontline ship that is capable of being quickly produced while fielding tons of offensive capabilites for its price. However, a major increase in maintenance costs makes them hard to sustain in peace times. ",
+    "desc": "Significantly larger than the patrol frigate, the destroyer is a very cheap and effective frontline ship that is capable of being quickly produced while fielding tons of offensive capabilites for its price. However, a major increase in maintenance costs makes them hard to sustain in peace times.",
     "category": "Industry",
     "name": "Destroyer Bluepints",
     "area": "engineering",
@@ -21276,9 +21088,9 @@
       }
     ],
     "start_tech": false,
-    "desc": "Description WIP",
+    "desc": "",
     "category": "Industry",
-    "name": "Defense Satellites",
+    "name": "tech_engineering_defense_556",
     "area": "engineering",
     "is_dangerous": false,
     "prerequisite": "tech_space_construction"
@@ -21413,16 +21225,6 @@
       {
         "modifier": [
           {
-            "is_ai": "yes"
-          },
-          {
-            "factor": 5
-          }
-        ]
-      },
-      {
-        "modifier": [
-          {
             "factor": 2
           },
           {
@@ -21431,6 +21233,16 @@
                 "has_technology": "tech_engineering_mineral_588"
               }
             ]
+          }
+        ]
+      },
+      {
+        "modifier": [
+          {
+            "is_ai": "yes"
+          },
+          {
+            "factor": 5
           }
         ]
       }
@@ -21491,14 +21303,7 @@
             "factor": 0
           },
           {
-            "OR": [
-              {
-                "has_technology": "tech_engineering_light_609"
-              },
-              {
-                "has_technology": "tech_engineering_heavy_610"
-              }
-            ]
+            "has_technology": "tech_engineering_heavy_610"
           }
         ]
       },
@@ -21542,14 +21347,7 @@
             "factor": 0
           },
           {
-            "OR": [
-              {
-                "has_technology": "tech_engineering_light_609"
-              },
-              {
-                "has_technology": "tech_engineering_heavy_610"
-              }
-            ]
+            "has_technology": "tech_engineering_light_609"
           }
         ]
       },
@@ -21654,7 +21452,7 @@
       }
     ],
     "start_tech": false,
-    "desc": "Description WIP",
+    "desc": "Solar Sails are large mirrors that can be used as a propulsion system, powered by radiation pressure from solar winds.",
     "category": "Materials",
     "name": "Solar Sails",
     "area": "engineering",
@@ -21675,14 +21473,7 @@
             "factor": 0
           },
           {
-            "OR": [
-              {
-                "has_technology": "tech_engineering_advanced_649"
-              },
-              {
-                "has_technology": "tech_engineering_global_650"
-              }
-            ]
+            "has_technology": "tech_engineering_global_650"
           }
         ]
       },
@@ -21767,14 +21558,7 @@
             "factor": 0
           },
           {
-            "OR": [
-              {
-                "has_technology": "tech_engineering_advanced_649"
-              },
-              {
-                "has_technology": "tech_engineering_global_650"
-              }
-            ]
+            "has_technology": "tech_engineering_advanced_649"
           }
         ]
       },
@@ -21872,7 +21656,7 @@
       }
     ],
     "start_tech": false,
-    "desc": "Description WIP",
+    "desc": "Nuclear Explosives use a critical mass of fissile material to create a powerful explosion.",
     "category": "Rocketry",
     "name": "Nuclear Explosives",
     "area": "engineering",
@@ -21949,16 +21733,6 @@
       {
         "modifier": [
           {
-            "is_ai": "yes"
-          },
-          {
-            "factor": 5
-          }
-        ]
-      },
-      {
-        "modifier": [
-          {
             "factor": 2
           },
           {
@@ -21967,6 +21741,16 @@
                 "has_technology": "tech_engineering_large_533"
               }
             ]
+          }
+        ]
+      },
+      {
+        "modifier": [
+          {
+            "is_ai": "yes"
+          },
+          {
+            "factor": 5
           }
         ]
       }
@@ -22007,14 +21791,7 @@
             "factor": 0
           },
           {
-            "OR": [
-              {
-                "has_technology": "tech_engineering_advanced_547"
-              },
-              {
-                "has_technology": "tech_engineering_advanced_721"
-              }
-            ]
+            "has_technology": "tech_engineering_advanced_721"
           }
         ]
       },
@@ -22038,16 +21815,6 @@
       {
         "modifier": [
           {
-            "is_ai": "yes"
-          },
-          {
-            "factor": 5
-          }
-        ]
-      },
-      {
-        "modifier": [
-          {
             "factor": 2
           },
           {
@@ -22056,6 +21823,16 @@
                 "has_technology": "tech_engineering_advanced_547"
               }
             ]
+          }
+        ]
+      },
+      {
+        "modifier": [
+          {
+            "is_ai": "yes"
+          },
+          {
+            "factor": 5
           }
         ]
       }
@@ -22130,16 +21907,6 @@
       {
         "modifier": [
           {
-            "is_ai": "yes"
-          },
-          {
-            "factor": 5
-          }
-        ]
-      },
-      {
-        "modifier": [
-          {
             "factor": 2
           },
           {
@@ -22148,6 +21915,16 @@
                 "has_technology": "tech_engineering_dilithium_593"
               }
             ]
+          }
+        ]
+      },
+      {
+        "modifier": [
+          {
+            "is_ai": "yes"
+          },
+          {
+            "factor": 5
           }
         ]
       }
@@ -22249,7 +22026,7 @@
       }
     ],
     "start_tech": false,
-    "desc": "Description WIP",
+    "desc": "Using superior construction methods, we can increase the density of the hull plating relay matrix along the exterior hull. Each relay polarizes the hull at a different frequency, increasing the density, strength and efficiency of the polarizing field.",
     "category": "Materials",
     "name": "Improved Polarized Hull Plating",
     "area": "engineering",
@@ -22476,9 +22253,6 @@
           {
             "OR": [
               {
-                "has_technology": "tech_engineering_advanced_711"
-              },
-              {
                 "has_technology": "tech_engineering_advanced_712"
               },
               {
@@ -22533,9 +22307,6 @@
                 "has_technology": "tech_engineering_advanced_711"
               },
               {
-                "has_technology": "tech_engineering_advanced_712"
-              },
-              {
                 "has_technology": "tech_engineering_advanced_713"
               }
             ]
@@ -22588,9 +22359,6 @@
               },
               {
                 "has_technology": "tech_engineering_advanced_712"
-              },
-              {
-                "has_technology": "tech_engineering_advanced_713"
               }
             ]
           }
@@ -22627,7 +22395,7 @@
     "tier": 2,
     "cost": 300,
     "key": "tech_engineering_bird-of-prey_716",
-    "base_factor": 0,
+    "base_factor": 0.0,
     "base_weight": 1,
     "weight_modifiers": [
       {
@@ -22661,7 +22429,7 @@
     "tier": 2,
     "cost": 300,
     "key": "tech_engineering_starship-class_717",
-    "base_factor": 0,
+    "base_factor": 0.0,
     "base_weight": 1,
     "weight_modifiers": [
       {
@@ -22718,14 +22486,7 @@
             "factor": 0
           },
           {
-            "OR": [
-              {
-                "has_technology": "tech_engineering_advanced_721"
-              },
-              {
-                "has_technology": "tech_engineering_advanced_547"
-              }
-            ]
+            "has_technology": "tech_engineering_advanced_547"
           }
         ]
       },
@@ -22783,16 +22544,6 @@
       {
         "modifier": [
           {
-            "is_ai": "yes"
-          },
-          {
-            "factor": 5
-          }
-        ]
-      },
-      {
-        "modifier": [
-          {
             "factor": 2
           },
           {
@@ -22801,6 +22552,16 @@
                 "has_technology": "tech_spaceport_3"
               }
             ]
+          }
+        ]
+      },
+      {
+        "modifier": [
+          {
+            "is_ai": "yes"
+          },
+          {
+            "factor": 5
           }
         ]
       }
@@ -22855,16 +22616,6 @@
       {
         "modifier": [
           {
-            "is_ai": "yes"
-          },
-          {
-            "factor": 5
-          }
-        ]
-      },
-      {
-        "modifier": [
-          {
             "factor": 2
           },
           {
@@ -22873,6 +22624,16 @@
                 "has_technology": "tech_engineering_cruiser_542"
               }
             ]
+          }
+        ]
+      },
+      {
+        "modifier": [
+          {
+            "is_ai": "yes"
+          },
+          {
+            "factor": 5
           }
         ]
       }
@@ -22912,7 +22673,7 @@
       }
     ],
     "start_tech": false,
-    "desc": "Description WIP",
+    "desc": "Moving Ship-building into Orbit allows the construction of larger ships that do not need to be capable of atmospheric flight",
     "category": "Industry",
     "name": "Orbital Dockyard",
     "area": "engineering",
@@ -23198,7 +22959,7 @@
       }
     ],
     "start_tech": false,
-    "desc": "Magnesite is an oxide form of magnesium, one of the lightest Engineering metals on Earth. It's light weight and good toughness and machinability make it an ideal choice for starship hulls on Corvettes or Destroyers when speed is preferred to higher armor\u00a0and\u00a0hull integrity",
+    "desc": "Magnesite is an oxide form of magnesium, one of the lightest Engineering metals on Earth. Its light weight and high toughness and machinability make it an ideal choice for starship hulls on Corvettes or Destroyers when speed is preferred to higher armor\u00a0and\u00a0hull integrity",
     "category": "Materials",
     "name": "Magnesite Hull",
     "area": "engineering",
@@ -23232,7 +22993,7 @@
       }
     ],
     "start_tech": false,
-    "desc": "Description WIP",
+    "desc": "Duranium Alloy is an extremely strong metal alloy that is used by many species for starship hulls due to its suitability as armour.",
     "category": "Materials",
     "name": "Duranium Alloy Hull",
     "area": "engineering",
@@ -23301,14 +23062,7 @@
             "factor": 0
           },
           {
-            "OR": [
-              {
-                "has_technology": "tech_engineering_impulse_631"
-              },
-              {
-                "has_technology": "tech_engineering_low_632"
-              }
-            ]
+            "has_technology": "tech_engineering_low_632"
           }
         ]
       },
@@ -23352,14 +23106,7 @@
             "factor": 0
           },
           {
-            "OR": [
-              {
-                "has_technology": "tech_engineering_impulse_631"
-              },
-              {
-                "has_technology": "tech_engineering_low_632"
-              }
-            ]
+            "has_technology": "tech_engineering_impulse_631"
           }
         ]
       },
@@ -23416,7 +23163,7 @@
       }
     ],
     "start_tech": false,
-    "desc": "Description WIP",
+    "desc": "Photon Torpedoes are Warp-capable tactical weapons with a Matter/Antimatter explosive charge",
     "category": "Rocketry",
     "name": "Photon Torpedo",
     "area": "engineering",
@@ -23464,7 +23211,7 @@
       }
     ],
     "start_tech": false,
-    "desc": "Description WIP",
+    "desc": "Pylons mounted on a Spaceport capable of firing Photon Torpedoes as defensive weapons.",
     "category": "Rocketry",
     "name": "Photon Torpedo Spaceport Pylon",
     "area": "engineering",
@@ -23581,14 +23328,7 @@
             "factor": 0
           },
           {
-            "OR": [
-              {
-                "has_technology": "tech_engineering_heavy_687"
-              },
-              {
-                "has_technology": "tech_engineering_noble_688"
-              }
-            ]
+            "has_technology": "tech_engineering_noble_688"
           }
         ]
       },
@@ -23632,14 +23372,7 @@
             "factor": 0
           },
           {
-            "OR": [
-              {
-                "has_technology": "tech_engineering_heavy_687"
-              },
-              {
-                "has_technology": "tech_engineering_noble_688"
-              }
-            ]
+            "has_technology": "tech_engineering_heavy_687"
           }
         ]
       },
@@ -23697,16 +23430,6 @@
       {
         "modifier": [
           {
-            "is_ai": "yes"
-          },
-          {
-            "factor": 5
-          }
-        ]
-      },
-      {
-        "modifier": [
-          {
             "factor": 2
           },
           {
@@ -23715,6 +23438,16 @@
                 "has_technology": "tech_spaceport_4"
               }
             ]
+          }
+        ]
+      },
+      {
+        "modifier": [
+          {
+            "is_ai": "yes"
+          },
+          {
+            "factor": 5
           }
         ]
       }
@@ -23769,16 +23502,6 @@
       {
         "modifier": [
           {
-            "is_ai": "yes"
-          },
-          {
-            "factor": 5
-          }
-        ]
-      },
-      {
-        "modifier": [
-          {
             "factor": 2
           },
           {
@@ -23789,10 +23512,20 @@
             ]
           }
         ]
+      },
+      {
+        "modifier": [
+          {
+            "is_ai": "yes"
+          },
+          {
+            "factor": 5
+          }
+        ]
       }
     ],
     "start_tech": false,
-    "desc": "Battlecruisers field the largest torpedo batteries of any known ship design. Their strong salvoes are able to obliterate smaller vessels in an instant, but high maintenance and weak defensive systems limit their ability to serve as the core for a fleet. ",
+    "desc": "Battlecruisers field the largest torpedo batteries of any known ship design. Their strong salvoes are able to obliterate smaller vessels in an instant, but high maintenance and weak defensive systems limit their ability to serve as the core for a fleet.",
     "category": "Industry",
     "name": "Battlecruiser blueprints",
     "area": "engineering",
@@ -23844,16 +23577,6 @@
       {
         "modifier": [
           {
-            "is_ai": "yes"
-          },
-          {
-            "factor": 5
-          }
-        ]
-      },
-      {
-        "modifier": [
-          {
             "factor": 2
           },
           {
@@ -23862,6 +23585,16 @@
                 "has_technology": "tech_engineering_next-level_548"
               }
             ]
+          }
+        ]
+      },
+      {
+        "modifier": [
+          {
+            "is_ai": "yes"
+          },
+          {
+            "factor": 5
           }
         ]
       }
@@ -24322,14 +24055,7 @@
             "factor": 0
           },
           {
-            "OR": [
-              {
-                "has_technology": "tech_engineering_high-yield_656"
-              },
-              {
-                "has_technology": "tech_engineering_rapid_657"
-              }
-            ]
+            "has_technology": "tech_engineering_rapid_657"
           }
         ]
       },
@@ -24373,14 +24099,7 @@
             "factor": 0
           },
           {
-            "OR": [
-              {
-                "has_technology": "tech_engineering_high-yield_656"
-              },
-              {
-                "has_technology": "tech_engineering_rapid_657"
-              }
-            ]
+            "has_technology": "tech_engineering_high-yield_656"
           }
         ]
       },
@@ -24565,16 +24284,6 @@
       {
         "modifier": [
           {
-            "is_ai": "yes"
-          },
-          {
-            "factor": 5
-          }
-        ]
-      },
-      {
-        "modifier": [
-          {
             "factor": 2
           },
           {
@@ -24583,6 +24292,16 @@
                 "has_technology": "tech_engineering_deep_536"
               }
             ]
+          }
+        ]
+      },
+      {
+        "modifier": [
+          {
+            "is_ai": "yes"
+          },
+          {
+            "factor": 5
           }
         ]
       }
@@ -24640,16 +24359,6 @@
       {
         "modifier": [
           {
-            "is_ai": "yes"
-          },
-          {
-            "factor": 5
-          }
-        ]
-      },
-      {
-        "modifier": [
-          {
             "factor": 2
           },
           {
@@ -24658,6 +24367,16 @@
                 "has_technology": "tech_engineering_next-level_549"
               }
             ]
+          }
+        ]
+      },
+      {
+        "modifier": [
+          {
+            "is_ai": "yes"
+          },
+          {
+            "factor": 5
           }
         ]
       }
@@ -25281,16 +25000,6 @@
       {
         "modifier": [
           {
-            "is_ai": "yes"
-          },
-          {
-            "factor": 5
-          }
-        ]
-      },
-      {
-        "modifier": [
-          {
             "factor": 2
           },
           {
@@ -25299,6 +25008,16 @@
                 "has_technology": "tech_spaceport_5"
               }
             ]
+          }
+        ]
+      },
+      {
+        "modifier": [
+          {
+            "is_ai": "yes"
+          },
+          {
+            "factor": 5
           }
         ]
       }
@@ -25353,16 +25072,6 @@
       {
         "modifier": [
           {
-            "is_ai": "yes"
-          },
-          {
-            "factor": 5
-          }
-        ]
-      },
-      {
-        "modifier": [
-          {
             "factor": 2
           },
           {
@@ -25371,6 +25080,16 @@
                 "has_technology": "tech_engineering_battleship_544"
               }
             ]
+          }
+        ]
+      },
+      {
+        "modifier": [
+          {
+            "is_ai": "yes"
+          },
+          {
+            "factor": 5
           }
         ]
       }
@@ -25666,7 +25385,7 @@
       }
     ],
     "start_tech": false,
-    "desc": "Description WIP",
+    "desc": "Contracting out Engineering to private companies allows costs to be brought down and financial risks to be offloaded.",
     "category": "Industry",
     "name": "Private Engineering contractors",
     "area": "engineering",
@@ -25796,7 +25515,7 @@
       }
     ],
     "start_tech": false,
-    "desc": "Ablative armor is\u00a0was originally designed as a primitive heat shielding for spacecraft. Over time it has been refined into an armor designed to disintegrate at a controlled rate under directed energy blasts, providing an additional layer of defense for starships.\u00a0",
+    "desc": "Ablative armor is\u00a0was originally designed as a primitive heat shielding for spacecraft. Over time it has been refined into an armor designed to disintegrate at a controlled rate under directed energy blasts, providing an additional layer of defense for starships.",
     "category": "Materials",
     "name": "Ablative Armor",
     "area": "engineering",
@@ -25912,7 +25631,7 @@
       }
     ],
     "start_tech": false,
-    "desc": "This new explosive is could be used as anything between a small anti-personnel explosive to weapons of mass destruction to destroy large installations such as space stations.",
+    "desc": "This new explosive can be used as anything from a small anti-personnel explosive to a weapon of mass destruction capable of destroying large installations such as space stations.",
     "category": "Rocketry",
     "name": "Tricobalt Explosives",
     "area": "engineering",
@@ -25947,16 +25666,6 @@
       {
         "modifier": [
           {
-            "is_ai": "yes"
-          },
-          {
-            "factor": 5
-          }
-        ]
-      },
-      {
-        "modifier": [
-          {
             "factor": 2
           },
           {
@@ -25965,6 +25674,16 @@
                 "has_technology": "tech_spaceport_6"
               }
             ]
+          }
+        ]
+      },
+      {
+        "modifier": [
+          {
+            "is_ai": "yes"
+          },
+          {
+            "factor": 5
           }
         ]
       }
@@ -26019,16 +25738,6 @@
       {
         "modifier": [
           {
-            "is_ai": "yes"
-          },
-          {
-            "factor": 5
-          }
-        ]
-      },
-      {
-        "modifier": [
-          {
             "factor": 2
           },
           {
@@ -26039,10 +25748,20 @@
             ]
           }
         ]
+      },
+      {
+        "modifier": [
+          {
+            "is_ai": "yes"
+          },
+          {
+            "factor": 5
+          }
+        ]
       }
     ],
     "start_tech": false,
-    "desc": "If you get into a fight, strike first, and strike hard!' This advice serves as the inspiration for the design behind the heavy escort. Able to quickly jump to high Warp speeds, ships of this class carry impressive offensive capabilities despite their small size and high maneuverability. ",
+    "desc": "If you get into a fight, strike first, and strike hard!' This advice serves as the inspiration for the design behind the heavy escort. Able to quickly jump to high Warp speeds, ships of this class carry impressive offensive capabilities despite their small size and high maneuverability.",
     "category": "Industry",
     "name": "Heavy Escort blueprints",
     "area": "engineering",
@@ -26413,9 +26132,6 @@
           {
             "OR": [
               {
-                "has_technology": "tech_engineering_quantum_667"
-              },
-              {
                 "has_technology": "tech_engineering_type-8_668"
               },
               {
@@ -26502,9 +26218,6 @@
             "OR": [
               {
                 "has_technology": "tech_engineering_quantum_667"
-              },
-              {
-                "has_technology": "tech_engineering_type-8_668"
               },
               {
                 "has_technology": "tech_engineering_polaron_669"
@@ -26617,9 +26330,6 @@
               },
               {
                 "has_technology": "tech_engineering_type-8_668"
-              },
-              {
-                "has_technology": "tech_engineering_polaron_669"
               }
             ]
           }
@@ -26702,14 +26412,7 @@
             "factor": 0
           },
           {
-            "OR": [
-              {
-                "has_technology": "tech_engineering_phased_691"
-              },
-              {
-                "has_technology": "tech_engineering_enriched_692"
-              }
-            ]
+            "has_technology": "tech_engineering_enriched_692"
           }
         ]
       },
@@ -26770,14 +26473,7 @@
             "factor": 0
           },
           {
-            "OR": [
-              {
-                "has_technology": "tech_engineering_phased_691"
-              },
-              {
-                "has_technology": "tech_engineering_enriched_692"
-              }
-            ]
+            "has_technology": "tech_engineering_phased_691"
           }
         ]
       },
@@ -27126,16 +26822,6 @@
       {
         "modifier": [
           {
-            "is_ai": "yes"
-          },
-          {
-            "factor": 5
-          }
-        ]
-      },
-      {
-        "modifier": [
-          {
             "factor": 2
           },
           {
@@ -27144,6 +26830,16 @@
                 "has_technology": "tech_engineering_planetary_539"
               }
             ]
+          }
+        ]
+      },
+      {
+        "modifier": [
+          {
+            "is_ai": "yes"
+          },
+          {
+            "factor": 5
           }
         ]
       }
@@ -27161,7 +26857,7 @@
     "tier": 8,
     "cost": 3500,
     "key": "tech_engineering_assault_546",
-    "base_factor": 0,
+    "base_factor": 0.0,
     "base_weight": 1,
     "weight_modifiers": [
       {
@@ -27184,16 +26880,6 @@
       {
         "modifier": [
           {
-            "is_ai": "yes"
-          },
-          {
-            "factor": 5
-          }
-        ]
-      },
-      {
-        "modifier": [
-          {
             "factor": 2
           },
           {
@@ -27204,10 +26890,20 @@
             ]
           }
         ]
+      },
+      {
+        "modifier": [
+          {
+            "is_ai": "yes"
+          },
+          {
+            "factor": 5
+          }
+        ]
       }
     ],
     "start_tech": false,
-    "desc": "The most advanced starship design the Milky Way has seen in a long time, assault cruisers are equipped with powerful forward spinal weapons, capable of obliterating opponents from afar while still fielding enough normal beam and torpedeo weaponry to deal with other ships up close. Its high maintenance and cost make this ship class more of a luxury, however. ",
+    "desc": "The most advanced starship design the Milky Way has seen in a long time, assault cruisers are equipped with powerful forward spinal weapons, capable of obliterating opponents from afar while still fielding enough normal beam and torpedeo weaponry to deal with other ships up close. Its high maintenance and cost make this ship class more of a luxury, however.",
     "category": "Industry",
     "name": "Assault Cruiser blueprints",
     "area": "engineering",
@@ -27269,7 +26965,7 @@
       }
     ],
     "start_tech": false,
-    "desc": "Multi-Vector Assault Mode uses advanced compartmentalization and automation systems to\u00a0split itself into three separate warp-capable craft, becoming an entire squadron operating either semi-independently or in concert with its other sections. ",
+    "desc": "Multi-Vector Assault Mode uses advanced compartmentalization and automation systems to\u00a0split itself into three separate warp-capable craft, becoming an entire squadron operating either semi-independently or in concert with its other sections.",
     "category": "Industry",
     "name": "Multi-Vector Attack Mode",
     "area": "engineering",
@@ -27603,7 +27299,7 @@
       }
     ],
     "start_tech": false,
-    "desc": "Description WIP",
+    "desc": "Bussard Collectors are devices that collect Hydrogen, particularly in its Deuterium form, to replenish fuel for Warp Engines. Generally mounted at the front of the Warp nacelles, they can be reconfigured to collect other useful gases.",
     "category": "Materials",
     "name": "Bussard Ramjet",
     "area": "engineering",
@@ -27624,14 +27320,7 @@
             "factor": 0
           },
           {
-            "OR": [
-              {
-                "has_technology": "tech_engineering_armor_670"
-              },
-              {
-                "has_technology": "tech_engineering_shield_671"
-              }
-            ]
+            "has_technology": "tech_engineering_shield_671"
           }
         ]
       },
@@ -27692,14 +27381,7 @@
             "factor": 0
           },
           {
-            "OR": [
-              {
-                "has_technology": "tech_engineering_armor_670"
-              },
-              {
-                "has_technology": "tech_engineering_shield_671"
-              }
-            ]
+            "has_technology": "tech_engineering_armor_670"
           }
         ]
       },
@@ -27760,14 +27442,7 @@
             "factor": 0
           },
           {
-            "OR": [
-              {
-                "has_technology": "tech_engineering_rapid_672"
-              },
-              {
-                "has_technology": "tech_engineering_high-yield_673"
-              }
-            ]
+            "has_technology": "tech_engineering_high-yield_673"
           }
         ]
       },
@@ -27811,14 +27486,7 @@
             "factor": 0
           },
           {
-            "OR": [
-              {
-                "has_technology": "tech_engineering_rapid_672"
-              },
-              {
-                "has_technology": "tech_engineering_high-yield_673"
-              }
-            ]
+            "has_technology": "tech_engineering_rapid_672"
           }
         ]
       },
@@ -27862,14 +27530,7 @@
             "factor": 0
           },
           {
-            "OR": [
-              {
-                "has_technology": "tech_engineering_heavy_674"
-              },
-              {
-                "has_technology": "tech_engineering_rapid_675"
-              }
-            ]
+            "has_technology": "tech_engineering_rapid_675"
           }
         ]
       },
@@ -27933,14 +27594,7 @@
             "factor": 0
           },
           {
-            "OR": [
-              {
-                "has_technology": "tech_engineering_heavy_674"
-              },
-              {
-                "has_technology": "tech_engineering_rapid_675"
-              }
-            ]
+            "has_technology": "tech_engineering_heavy_674"
           }
         ]
       },
@@ -28413,7 +28067,7 @@
       }
     ],
     "start_tech": false,
-    "desc": "Description WIP",
+    "desc": "Using a technology similar to replicators, this generator can create an nearly impenetrable layer of additional armor outside of the normal hull of the ship.",
     "category": "Materials",
     "name": "Ablative Generator",
     "area": "engineering",

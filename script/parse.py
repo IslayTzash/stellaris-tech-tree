@@ -309,7 +309,7 @@ def base_factor(tech):
     except (StopIteration, KeyError, IndexError):
         factor = 1.0
 
-    return factor
+    return float(factor)
 
 
 loc_data = localized_strings()
