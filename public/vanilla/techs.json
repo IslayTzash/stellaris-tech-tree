@@ -1,14 +1,11 @@
 [
   {
-    "weight": 100,
-    "subtier": 1,
+    "tier": 2,
     "cost": 360,
     "key": "tech_lasers_1",
-    "tier": 0,
+    "base_factor": 0.5,
+    "base_weight": 100,
     "weight_modifiers": [
-      {
-        "factor": 0.5
-      },
       {
         "modifier": [
           {
@@ -67,7 +64,7 @@
         ]
       }
     ],
-    "start_tech": true,
+    "start_tech": false,
     "desc": "Laser weapons fire focused beams of light at targets, causing damage through the generation of intense heat.\n\n",
     "category": "Particles",
     "name": "Red Lasers",
@@ -75,11 +72,11 @@
     "prerequisite": null
   },
   {
-    "weight": 90,
-    "subtier": 3,
+    "tier": 1,
     "cost": 600,
     "key": "tech_lasers_2",
-    "tier": 1,
+    "base_factor": 1.0,
+    "base_weight": 90,
     "weight_modifiers": [
       {
         "modifier": [
@@ -147,11 +144,11 @@
     "prerequisite": "tech_lasers_1"
   },
   {
-    "weight": 75,
-    "subtier": 1,
+    "tier": 2,
     "cost": 1000,
     "key": "tech_lasers_3",
-    "tier": 2,
+    "base_factor": 1.0,
+    "base_weight": 75,
     "weight_modifiers": [
       {
         "modifier": [
@@ -219,11 +216,11 @@
     "prerequisite": "tech_lasers_2"
   },
   {
-    "weight": 65,
-    "subtier": 3,
+    "tier": 2,
     "cost": 1800,
     "key": "tech_lasers_4",
-    "tier": 2,
+    "base_factor": 1.0,
+    "base_weight": 65,
     "weight_modifiers": [
       {
         "modifier": [
@@ -291,11 +288,11 @@
     "prerequisite": "tech_lasers_3"
   },
   {
-    "weight": 50,
-    "subtier": 1,
+    "tier": 3,
     "cost": 3000,
     "key": "tech_lasers_5",
-    "tier": 3,
+    "base_factor": 1.0,
+    "base_weight": 50,
     "weight_modifiers": [
       {
         "modifier": [
@@ -363,11 +360,11 @@
     "prerequisite": "tech_lasers_4"
   },
   {
-    "weight": 50,
-    "subtier": 1,
+    "tier": 3,
     "cost": 3000,
     "key": "tech_energy_lance_1",
-    "tier": 3,
+    "base_factor": 1.0,
+    "base_weight": 50,
     "weight_modifiers": [
       {
         "modifier": [
@@ -435,11 +432,11 @@
     "prerequisite": "tech_lasers_5"
   },
   {
-    "weight": 35,
-    "subtier": 4,
+    "tier": 3,
     "cost": 6000,
     "key": "tech_energy_lance_2",
-    "tier": 3,
+    "base_factor": 1.0,
+    "base_weight": 35,
     "weight_modifiers": [
       {
         "modifier": [
@@ -507,11 +504,11 @@
     "prerequisite": "tech_energy_lance_1"
   },
   {
-    "weight": 75,
-    "subtier": 1,
+    "tier": 2,
     "cost": 1000,
     "key": "tech_plasma_1",
-    "tier": 2,
+    "base_factor": 1.0,
+    "base_weight": 75,
     "weight_modifiers": [
       {
         "modifier": [
@@ -593,11 +590,11 @@
     "prerequisite": null
   },
   {
-    "weight": 65,
-    "subtier": 3,
+    "tier": 2,
     "cost": 1800,
     "key": "tech_plasma_2",
-    "tier": 2,
+    "base_factor": 1.0,
+    "base_weight": 65,
     "weight_modifiers": [
       {
         "modifier": [
@@ -665,11 +662,11 @@
     "prerequisite": "tech_plasma_1"
   },
   {
-    "weight": 50,
-    "subtier": 1,
+    "tier": 3,
     "cost": 3000,
     "key": "tech_plasma_3",
-    "tier": 3,
+    "base_factor": 1.0,
+    "base_weight": 50,
     "weight_modifiers": [
       {
         "modifier": [
@@ -737,11 +734,11 @@
     "prerequisite": "tech_plasma_2"
   },
   {
-    "weight": 45,
-    "subtier": 2,
+    "tier": 3,
     "cost": 4000,
     "key": "tech_arc_emitter_1",
-    "tier": 3,
+    "base_factor": 1.0,
+    "base_weight": 45,
     "weight_modifiers": [
       {
         "modifier": [
@@ -823,11 +820,11 @@
     "prerequisite": "tech_plasma_3"
   },
   {
-    "weight": 35,
-    "subtier": 4,
+    "tier": 3,
     "cost": 6000,
     "key": "tech_arc_emitter_2",
-    "tier": 3,
+    "base_factor": 1.0,
+    "base_weight": 35,
     "weight_modifiers": [
       {
         "modifier": [
@@ -895,11 +892,11 @@
     "prerequisite": "tech_arc_emitter_1"
   },
   {
-    "weight": 75,
-    "subtier": 1,
+    "tier": 2,
     "cost": 1000,
     "key": "tech_disruptors_1",
-    "tier": 2,
+    "base_factor": 1.0,
+    "base_weight": 75,
     "weight_modifiers": [
       {
         "modifier": [
@@ -981,11 +978,11 @@
     "prerequisite": null
   },
   {
-    "weight": 65,
-    "subtier": 3,
+    "tier": 2,
     "cost": 1800,
     "key": "tech_disruptors_2",
-    "tier": 2,
+    "base_factor": 1.0,
+    "base_weight": 65,
     "weight_modifiers": [
       {
         "modifier": [
@@ -1053,11 +1050,11 @@
     "prerequisite": "tech_disruptors_1"
   },
   {
-    "weight": 50,
-    "subtier": 1,
+    "tier": 3,
     "cost": 3000,
     "key": "tech_disruptors_3",
-    "tier": 3,
+    "base_factor": 1.0,
+    "base_weight": 50,
     "weight_modifiers": [
       {
         "modifier": [
@@ -1125,11 +1122,11 @@
     "prerequisite": "tech_disruptors_2"
   },
   {
-    "weight": 70,
-    "subtier": 2,
+    "tier": 3,
     "cost": 1400,
     "key": "tech_energy_torpedoes_1",
-    "tier": 3,
+    "base_factor": 1.0,
+    "base_weight": 70,
     "weight_modifiers": [
       {
         "modifier": [
@@ -1211,11 +1208,11 @@
     "prerequisite": "tech_disruptors_1"
   },
   {
-    "weight": 50,
-    "subtier": 1,
+    "tier": 3,
     "cost": 3000,
     "key": "tech_energy_torpedoes_2",
-    "tier": 3,
+    "base_factor": 1.0,
+    "base_weight": 50,
     "weight_modifiers": [
       {
         "modifier": [
@@ -1283,11 +1280,11 @@
     "prerequisite": "tech_energy_torpedoes_1"
   },
   {
-    "weight": 95,
-    "subtier": 2,
+    "tier": 1,
     "cost": 480,
     "key": "tech_pd_tracking_1",
-    "tier": 1,
+    "base_factor": 1.0,
+    "base_weight": 95,
     "weight_modifiers": [
       {
         "modifier": [
@@ -1315,11 +1312,11 @@
     "prerequisite": "tech_administrative_ai"
   },
   {
-    "weight": 70,
-    "subtier": 2,
+    "tier": 2,
     "cost": 1400,
     "key": "tech_pd_tracking_2",
-    "tier": 2,
+    "base_factor": 1.0,
+    "base_weight": 70,
     "weight_modifiers": [
       {
         "modifier": [
@@ -1347,11 +1344,11 @@
     "prerequisite": "tech_pd_tracking_1"
   },
   {
-    "weight": 40,
-    "subtier": 3,
+    "tier": 3,
     "cost": 5000,
     "key": "tech_pd_tracking_3",
-    "tier": 3,
+    "base_factor": 1.0,
+    "base_weight": 40,
     "weight_modifiers": [
       {
         "modifier": [
@@ -1379,128 +1376,12 @@
     "prerequisite": "tech_pd_tracking_2"
   },
   {
-    "weight": 0,
-    "subtier": 1,
-    "cost": 6000,
-    "key": "tech_extradimensional_weapon_1",
     "tier": 3,
-    "weight_modifiers": [
-      null
-    ],
-    "start_tech": false,
-    "desc": "Applying 5th-dimensional energy manipulation principles on lower dimensional planes allows for the creation of powerful energy weapons.\n\n",
-    "category": "Particles",
-    "name": "Extradimensional Weaponry",
-    "area": "Physics",
-    "prerequisite": null
-  },
-  {
-    "weight": 0,
-    "subtier": 1,
-    "cost": 720,
-    "key": "tech_mining_drone_weapon_1",
-    "tier": 1,
-    "weight_modifiers": [
-      null
-    ],
-    "start_tech": false,
-    "desc": "Using strong-focus lenses in combination with an oscillating firing frequence help create lasers strong enough to mine asteroids, or shoot down hostiles.\n\n",
-    "category": "Particles",
-    "name": "Mining Drone Lasers",
-    "area": "Physics",
-    "prerequisite": null
-  },
-  {
-    "weight": 0,
-    "subtier": 1,
-    "cost": 1400,
-    "key": "tech_space_cloud_weapon_1",
-    "tier": 2,
-    "weight_modifiers": [
-      null
-    ],
-    "start_tech": false,
-    "desc": "Void Clouds use the electrical charges generated by the dense gases that make up most of their core to release bolts of burning plasma. Using the same gas composition together with a specialized conduit allows for powerful lightning weaponry.\n\n",
-    "category": "Particles",
-    "name": "Cloud Lightning Conduits",
-    "area": "Physics",
-    "prerequisite": null
-  },
-  {
-    "weight": 0,
-    "subtier": 1,
-    "cost": 480,
-    "key": "tech_blue_crystal_weapon_1",
-    "tier": 1,
-    "weight_modifiers": [
-      null
-    ],
-    "start_tech": false,
-    "desc": "Crystalline Entities store stellar raditation within their prismatic bodies and can focus it to emit laser-like beams. Using the sapphire type's prismatic pattern as a base we can construct laser capacitors that produce energy at a similar wavelength.\n\n",
-    "category": "Particles",
-    "name": "Blue Crystal Capacitors",
-    "area": "Physics",
-    "prerequisite": null
-  },
-  {
-    "weight": 0,
-    "subtier": 1,
-    "cost": 720,
-    "key": "tech_green_crystal_weapon_1",
-    "tier": 1,
-    "weight_modifiers": [
-      null
-    ],
-    "start_tech": false,
-    "desc": "Crystalline Entities store stellar raditation within their prismatic bodies and can focus it to emit laser-like beams. Using the emerald type's prismatic pattern as a base we can construct laser capacitors that produce energy at a similar wavelength.\n\n",
-    "category": "Particles",
-    "name": "Green Crystal Capacitors",
-    "area": "Physics",
-    "prerequisite": null
-  },
-  {
-    "weight": 0,
-    "subtier": 1,
-    "cost": 1400,
-    "key": "tech_yellow_crystal_weapon_1",
-    "tier": 2,
-    "weight_modifiers": [
-      null
-    ],
-    "start_tech": false,
-    "desc": "Crystalline Entities store stellar raditation within their prismatic bodies and can focus it to emit laser-like beams. Using the topaz type's prismatic pattern as a base we can construct laser capacitors that produce energy at a similar wavelength.\n\n",
-    "category": "Particles",
-    "name": "Yellow Crystal Capacitors",
-    "area": "Physics",
-    "prerequisite": null
-  },
-  {
-    "weight": 0,
-    "subtier": 1,
-    "cost": 2200,
-    "key": "tech_red_crystal_weapon_1",
-    "tier": 2,
-    "weight_modifiers": [
-      null
-    ],
-    "start_tech": false,
-    "desc": "Crystalline Entities store stellar raditation within their prismatic bodies and can focus it to emit laser-like beams. Using the ruby type's prismatic pattern as a base we can construct laser capacitors that produce energy at a similar wavelength.\n\n",
-    "category": "Particles",
-    "name": "Red Crystal Capacitors",
-    "area": "Physics",
-    "prerequisite": null
-  },
-  {
-    "weight": 25,
-    "subtier": 1,
     "cost": 3000,
     "key": "tech_repeatable_improved_tile_food_output",
-    "tier": 3,
-    "weight_modifiers": [
-      {
-        "factor": "@repatableTechFactor"
-      }
-    ],
+    "base_factor": 0.5,
+    "base_weight": 25,
+    "weight_modifiers": [],
     "start_tech": false,
     "desc": "Transgenic crops offer the nutritional elements of several standard food crops in one convenient package.\n\n",
     "category": "Biology",
@@ -1509,16 +1390,12 @@
     "prerequisite": "tech_gene_crops"
   },
   {
-    "weight": 25,
-    "subtier": 1,
+    "tier": 3,
     "cost": 3000,
     "key": "tech_repeatable_improved_sector_cap",
-    "tier": 3,
-    "weight_modifiers": [
-      {
-        "factor": "@repatableTechFactor"
-      }
-    ],
+    "base_factor": 0.5,
+    "base_weight": 25,
+    "weight_modifiers": [],
     "start_tech": false,
     "desc": "Improved FTL communication channels allow for more coherent administrative direction.\n\n",
     "category": "Statecraft",
@@ -1527,16 +1404,12 @@
     "prerequisite": "tech_adaptive_bureaucracy"
   },
   {
-    "weight": 25,
-    "subtier": 1,
+    "tier": 3,
     "cost": 3000,
     "key": "tech_repeatable_improved_core_system_cap",
-    "tier": 3,
-    "weight_modifiers": [
-      {
-        "factor": "@repatableTechFactor"
-      }
-    ],
+    "base_factor": 0.5,
+    "base_weight": 25,
+    "weight_modifiers": [],
     "start_tech": false,
     "desc": "Restructuring the managerial web linking core worlds to the capital can help alleviate the administrative stressors and information chokepoints that frequently arise within a budding empire.\n\n",
     "category": "Statecraft",
@@ -1545,16 +1418,12 @@
     "prerequisite": "tech_adaptive_bureaucracy"
   },
   {
-    "weight": 25,
-    "subtier": 1,
+    "tier": 3,
     "cost": 3000,
     "key": "tech_repeatable_improved_leader_cap",
-    "tier": 3,
-    "weight_modifiers": [
-      {
-        "factor": "@repatableTechFactor"
-      }
-    ],
+    "base_factor": 0.5,
+    "base_weight": 25,
+    "weight_modifiers": [],
     "start_tech": false,
     "desc": "The concept of managing individuals as resources within larger systems of production must, by necessity, become more flexible as the potential natures of the managed individuals grow ever more numerous.\n\n",
     "category": "Statecraft",
@@ -1563,16 +1432,12 @@
     "prerequisite": "tech_adaptive_bureaucracy"
   },
   {
-    "weight": 25,
-    "subtier": 1,
+    "tier": 3,
     "cost": 3000,
     "key": "tech_repeatable_reduced_leader_cost",
-    "tier": 3,
-    "weight_modifiers": [
-      {
-        "factor": "@repatableTechFactor"
-      }
-    ],
+    "base_factor": 0.5,
+    "base_weight": 25,
+    "weight_modifiers": [],
     "start_tech": false,
     "desc": "Propaganda programs and subtle manipulation of economic records drive down the cost of employing top-tier Leaders.",
     "category": "Statecraft",
@@ -1581,16 +1446,12 @@
     "prerequisite": "tech_adaptive_bureaucracy"
   },
   {
-    "weight": 25,
-    "subtier": 1,
+    "tier": 3,
     "cost": 3000,
     "key": "tech_repeatable_improved_edict_length",
-    "tier": 3,
-    "weight_modifiers": [
-      {
-        "factor": "@repatableTechFactor"
-      }
-    ],
+    "base_factor": 0.5,
+    "base_weight": 25,
+    "weight_modifiers": [],
     "start_tech": false,
     "desc": "More aggressive information campaigns improve the populace's receptiveness to Edicts.\n\n",
     "category": "Statecraft",
@@ -1599,16 +1460,12 @@
     "prerequisite": "tech_artificial_moral_codes"
   },
   {
-    "weight": 25,
-    "subtier": 1,
+    "tier": 3,
     "cost": 3000,
     "key": "tech_repeatable_improved_army_damage",
-    "tier": 3,
-    "weight_modifiers": [
-      {
-        "factor": "@repatableTechFactor"
-      }
-    ],
+    "base_factor": 0.5,
+    "base_weight": 25,
+    "weight_modifiers": [],
     "start_tech": false,
     "desc": "Iterating on the standard conditioning regimen for ground troops has proven to make them more effective in direct combat.\n\n",
     "category": "Military Theory",
@@ -1617,16 +1474,12 @@
     "prerequisite": "tech_combat_training"
   },
   {
-    "weight": 25,
-    "subtier": 1,
+    "tier": 3,
     "cost": 3000,
     "key": "tech_repeatable_improved_army_health",
-    "tier": 3,
-    "weight_modifiers": [
-      {
-        "factor": "@repatableTechFactor"
-      }
-    ],
+    "base_factor": 0.5,
+    "base_weight": 25,
+    "weight_modifiers": [],
     "start_tech": false,
     "desc": "Careful tuning of pain receptors allow soldiers to fight through what would previously have been debilitating injuries.\n\n",
     "category": "Military Theory",
@@ -1635,16 +1488,12 @@
     "prerequisite": "tech_combat_training"
   },
   {
-    "weight": 25,
-    "subtier": 1,
+    "tier": 3,
     "cost": 3000,
     "key": "tech_repeatable_improved_leader_life_span",
-    "tier": 3,
-    "weight_modifiers": [
-      {
-        "factor": "@repatableTechFactor"
-      }
-    ],
+    "base_factor": 0.5,
+    "base_weight": 25,
+    "weight_modifiers": [],
     "start_tech": false,
     "desc": "Regimens of periodic cell revitalization treatments keep the leader class spry and active beyond traditionally expected lifespans.\n\n",
     "category": "Biology",
@@ -1653,16 +1502,12 @@
     "prerequisite": "tech_vitality_boosters"
   },
   {
-    "weight": 25,
-    "subtier": 1,
+    "tier": 3,
     "cost": 3000,
     "key": "tech_repeatable_improved_border_range",
-    "tier": 3,
-    "weight_modifiers": [
-      {
-        "factor": "@repatableTechFactor"
-      }
-    ],
+    "base_factor": 0.5,
+    "base_weight": 25,
+    "weight_modifiers": [],
     "start_tech": false,
     "desc": "Unencoded broadcasts signaling our claims on nearby systems are a basic but effective foreign policy tool.\n\n",
     "category": "Statecraft",
@@ -1671,16 +1516,12 @@
     "prerequisite": "tech_galactic_ambitions"
   },
   {
-    "weight": 25,
-    "subtier": 1,
+    "tier": 3,
     "cost": 3000,
     "key": "tech_repeatable_improved_slave_mineral_output",
-    "tier": 3,
-    "weight_modifiers": [
-      {
-        "factor": "@repatableTechFactor"
-      }
-    ],
+    "base_factor": 0.5,
+    "base_weight": 25,
+    "weight_modifiers": [],
     "start_tech": false,
     "desc": "Chemically optimizing diets for indentured workers allow them to perform above projected productivity curves.",
     "category": "Biology",
@@ -1689,15 +1530,13 @@
     "prerequisite": "tech_neural_implants"
   },
   {
-    "weight": 0,
-    "subtier": 1,
+    "tier": 0,
     "cost": 0,
     "key": "tech_spaceport_1",
-    "tier": 0,
-    "weight_modifiers": [
-      null
-    ],
-    "start_tech": false,
+    "base_factor": 1.0,
+    "base_weight": 0,
+    "weight_modifiers": [],
+    "start_tech": true,
     "desc": "The spaceport is a planet's foothold in space, a center for trade and commerce as well as home base for military and civilian vessels.",
     "category": "Voidcraft",
     "name": "Spaceport",
@@ -1705,11 +1544,11 @@
     "prerequisite": null
   },
   {
-    "weight": 90,
-    "subtier": 3,
+    "tier": 1,
     "cost": 600,
     "key": "tech_spaceport_2",
-    "tier": 1,
+    "base_factor": 1.0,
+    "base_weight": 90,
     "weight_modifiers": [
       {
         "modifier": [
@@ -1787,11 +1626,11 @@
     "prerequisite": "tech_space_construction"
   },
   {
-    "weight": 75,
-    "subtier": 1,
+    "tier": 1,
     "cost": 1000,
     "key": "tech_spaceport_3",
-    "tier": 2,
+    "base_factor": 1.0,
+    "base_weight": 75,
     "weight_modifiers": [
       {
         "modifier": [
@@ -1885,11 +1724,11 @@
     "prerequisite": "tech_spaceport_2"
   },
   {
-    "weight": 70,
-    "subtier": 2,
+    "tier": 2,
     "cost": 1400,
     "key": "tech_spaceport_4",
-    "tier": 2,
+    "base_factor": 1.0,
+    "base_weight": 70,
     "weight_modifiers": [
       {
         "modifier": [
@@ -1983,11 +1822,11 @@
     "prerequisite": "tech_spaceport_3"
   },
   {
-    "weight": 60,
-    "subtier": 4,
+    "tier": 2,
     "cost": 2200,
     "key": "tech_spaceport_5",
-    "tier": 2,
+    "base_factor": 1.0,
+    "base_weight": 60,
     "weight_modifiers": [
       {
         "modifier": [
@@ -2081,11 +1920,11 @@
     "prerequisite": "tech_spaceport_4"
   },
   {
-    "weight": 45,
-    "subtier": 2,
+    "tier": 3,
     "cost": 4000,
     "key": "tech_spaceport_6",
-    "tier": 3,
+    "base_factor": 1.0,
+    "base_weight": 45,
     "weight_modifiers": [
       {
         "modifier": [
@@ -2179,11 +2018,11 @@
     "prerequisite": "tech_spaceport_5"
   },
   {
-    "weight": 75,
-    "subtier": 1,
+    "tier": 2,
     "cost": 1000,
     "key": "tech_cruiser_yard",
-    "tier": 2,
+    "base_factor": 1.0,
+    "base_weight": 75,
     "weight_modifiers": [
       {
         "modifier": [
@@ -2211,11 +2050,11 @@
     "prerequisite": "tech_spaceport_5"
   },
   {
-    "weight": 60,
-    "subtier": 4,
+    "tier": 2,
     "cost": 2200,
     "key": "tech_battleship_yard",
-    "tier": 2,
+    "base_factor": 1.0,
+    "base_weight": 60,
     "weight_modifiers": [
       {
         "modifier": [
@@ -2243,11 +2082,11 @@
     "prerequisite": "tech_spaceport_6"
   },
   {
-    "weight": 75,
-    "subtier": 1,
+    "tier": 2,
     "cost": 1000,
     "key": "tech_strike_craft_1",
-    "tier": 2,
+    "base_factor": 1.0,
+    "base_weight": 75,
     "weight_modifiers": [
       {
         "modifier": [
@@ -2275,11 +2114,11 @@
     "prerequisite": "tech_spaceport_5"
   },
   {
-    "weight": 70,
-    "subtier": 2,
+    "tier": 2,
     "cost": 1400,
     "key": "tech_strike_craft_2",
-    "tier": 2,
+    "base_factor": 1.0,
+    "base_weight": 70,
     "weight_modifiers": [
       {
         "modifier": [
@@ -2307,11 +2146,11 @@
     "prerequisite": "tech_strike_craft_1"
   },
   {
-    "weight": 60,
-    "subtier": 4,
+    "tier": 2,
     "cost": 2200,
     "key": "tech_strike_craft_3",
-    "tier": 2,
+    "base_factor": 1.0,
+    "base_weight": 60,
     "weight_modifiers": [
       {
         "modifier": [
@@ -2339,15 +2178,13 @@
     "prerequisite": "tech_strike_craft_2"
   },
   {
-    "weight": 0,
-    "subtier": 1,
+    "tier": 0,
     "cost": 360,
     "key": "tech_assault_armies",
-    "tier": 0,
-    "weight_modifiers": [
-      null
-    ],
-    "start_tech": false,
+    "base_factor": 1.0,
+    "base_weight": 0,
+    "weight_modifiers": [],
+    "start_tech": true,
     "desc": "The invasion of another world is a staggering enterprise. There are immense logistical challenges that must be overcome before we can muster our first interplanetary armies.\n\n",
     "category": "Voidcraft",
     "name": "Interplanetary Expeditionary Forces",
@@ -2355,15 +2192,12 @@
     "prerequisite": "tech_defense_army"
   },
   {
-    "weight": 95,
-    "subtier": 2,
+    "tier": 1,
     "cost": 480,
     "key": "tech_ship_armor_1",
-    "tier": 1,
+    "base_factor": 1.25,
+    "base_weight": 95,
     "weight_modifiers": [
-      {
-        "factor": 1.25
-      },
       {
         "modifier": [
           {
@@ -2390,15 +2224,12 @@
     "prerequisite": "tech_spaceport_1"
   },
   {
-    "weight": 85,
-    "subtier": 4,
+    "tier": 1,
     "cost": 720,
     "key": "tech_ship_armor_2",
-    "tier": 1,
+    "base_factor": 1.25,
+    "base_weight": 85,
     "weight_modifiers": [
-      {
-        "factor": 1.25
-      },
       {
         "modifier": [
           {
@@ -2425,15 +2256,12 @@
     "prerequisite": "tech_ship_armor_1"
   },
   {
-    "weight": 70,
-    "subtier": 2,
+    "tier": 2,
     "cost": 1400,
     "key": "tech_ship_armor_3",
-    "tier": 2,
+    "base_factor": 1.25,
+    "base_weight": 70,
     "weight_modifiers": [
-      {
-        "factor": 1.25
-      },
       {
         "modifier": [
           {
@@ -2460,15 +2288,12 @@
     "prerequisite": "tech_ship_armor_2"
   },
   {
-    "weight": 60,
-    "subtier": 4,
+    "tier": 2,
     "cost": 2200,
     "key": "tech_ship_armor_4",
-    "tier": 2,
+    "base_factor": 1.25,
+    "base_weight": 60,
     "weight_modifiers": [
-      {
-        "factor": 1.25
-      },
       {
         "modifier": [
           {
@@ -2495,15 +2320,12 @@
     "prerequisite": "tech_ship_armor_3"
   },
   {
-    "weight": 40,
-    "subtier": 3,
+    "tier": 3,
     "cost": 5000,
     "key": "tech_ship_armor_5",
-    "tier": 3,
+    "base_factor": 1.25,
+    "base_weight": 40,
     "weight_modifiers": [
-      {
-        "factor": 1.25
-      },
       {
         "modifier": [
           {
@@ -2530,11 +2352,11 @@
     "prerequisite": "tech_ship_armor_4"
   },
   {
-    "weight": 0,
-    "subtier": 1,
+    "tier": 1,
     "cost": 1400,
     "key": "tech_crystal_armor_1",
-    "tier": 1,
+    "base_factor": 1.0,
+    "base_weight": 0,
     "weight_modifiers": [
       {
         "modifier": [
@@ -2555,31 +2377,13 @@
     "prerequisite": null
   },
   {
-    "weight": 0,
-    "subtier": 1,
-    "cost": 4000,
-    "key": "tech_crystal_armor_2",
-    "tier": 2,
-    "weight_modifiers": [
-      null
-    ],
-    "start_tech": false,
-    "desc": "Introducing Crystalline matter into the forging process further improves the ultra-hard qualities of crystal-infused metals.\n\n",
-    "category": "Materials",
-    "name": "Crystal-Forged Plating",
-    "area": "Engineering",
-    "prerequisite": null
-  },
-  {
-    "weight": 0,
-    "subtier": 1,
+    "tier": 0,
     "cost": 0,
     "key": "tech_thrusters_1",
-    "tier": 0,
-    "weight_modifiers": [
-      null
-    ],
-    "start_tech": false,
+    "base_factor": 1.0,
+    "base_weight": 0,
+    "weight_modifiers": [],
+    "start_tech": true,
     "desc": "Simple yet moderately effective chemical thrusters that rely on combustible propellant to function.\n\n",
     "category": "Rocketry",
     "name": "Chemical Thrusters",
@@ -2587,15 +2391,12 @@
     "prerequisite": null
   },
   {
-    "weight": 100,
-    "subtier": 1,
+    "tier": 1,
     "cost": 360,
     "key": "tech_thrusters_2",
-    "tier": 1,
+    "base_factor": 1.25,
+    "base_weight": 100,
     "weight_modifiers": [
-      {
-        "factor": 1.25
-      },
       {
         "modifier": [
           {
@@ -2642,15 +2443,12 @@
     "prerequisite": "tech_thrusters_1"
   },
   {
-    "weight": 75,
-    "subtier": 1,
+    "tier": 2,
     "cost": 1000,
     "key": "tech_thrusters_3",
-    "tier": 2,
+    "base_factor": 1.25,
+    "base_weight": 75,
     "weight_modifiers": [
-      {
-        "factor": 1.25
-      },
       {
         "modifier": [
           {
@@ -2697,15 +2495,12 @@
     "prerequisite": "tech_thrusters_2"
   },
   {
-    "weight": 50,
-    "subtier": 1,
+    "tier": 3,
     "cost": 3000,
     "key": "tech_thrusters_4",
-    "tier": 3,
+    "base_factor": 1.25,
+    "base_weight": 50,
     "weight_modifiers": [
-      {
-        "factor": 1.25
-      },
       {
         "modifier": [
           {
@@ -2742,15 +2537,13 @@
     "prerequisite": "tech_thrusters_3"
   },
   {
-    "weight": 0,
-    "subtier": 1,
+    "tier": 0,
     "cost": 0,
     "key": "tech_space_defense_station_1",
-    "tier": 0,
-    "weight_modifiers": [
-      null
-    ],
-    "start_tech": false,
+    "base_factor": 1.0,
+    "base_weight": 0,
+    "weight_modifiers": [],
+    "start_tech": true,
     "desc": "This will enable the construction of defensive deep space platforms far from the gravity wells of a planetary body.\n\n",
     "category": "Voidcraft",
     "name": "Deep Space Outposts",
@@ -2758,11 +2551,11 @@
     "prerequisite": "tech_space_construction"
   },
   {
-    "weight": 75,
-    "subtier": 1,
+    "tier": 2,
     "cost": 1000,
     "key": "tech_space_defense_station_2",
-    "tier": 2,
+    "base_factor": 1.0,
+    "base_weight": 75,
     "weight_modifiers": [
       {
         "modifier": [
@@ -2827,11 +2620,11 @@
     "prerequisite": "tech_space_defense_station_1"
   },
   {
-    "weight": 50,
-    "subtier": 1,
+    "tier": 3,
     "cost": 3000,
     "key": "tech_space_defense_station_3",
-    "tier": 3,
+    "base_factor": 1.0,
+    "base_weight": 50,
     "weight_modifiers": [
       {
         "modifier": [
@@ -2886,11 +2679,11 @@
     "prerequisite": "tech_space_defense_station_2"
   },
   {
-    "weight": 65,
-    "subtier": 3,
+    "tier": 2,
     "cost": 1800,
     "key": "tech_space_defense_station_improvement",
-    "tier": 2,
+    "base_factor": 1.0,
+    "base_weight": 65,
     "weight_modifiers": [
       {
         "modifier": [
@@ -2949,15 +2742,13 @@
     "prerequisite": "tech_space_defense_station_2"
   },
   {
-    "weight": 0,
-    "subtier": 1,
+    "tier": 0,
     "cost": 0,
     "key": "tech_basic_industry",
-    "tier": 0,
-    "weight_modifiers": [
-      null
-    ],
-    "start_tech": false,
+    "base_factor": 1.0,
+    "base_weight": 0,
+    "weight_modifiers": [],
+    "start_tech": true,
     "desc": "The basic industrial infrastructure that is required to become a spacefaring civilization.\n\n",
     "category": "Industry",
     "name": "Industrial Base",
@@ -2965,15 +2756,12 @@
     "prerequisite": null
   },
   {
-    "weight": 100,
-    "subtier": 1,
+    "tier": 1,
     "cost": 360,
     "key": "tech_powered_exoskeletons",
-    "tier": 1,
+    "base_factor": 1.5,
+    "base_weight": 100,
     "weight_modifiers": [
-      {
-        "factor": 1.5
-      },
       {
         "modifier": [
           {
@@ -3000,11 +2788,11 @@
     "prerequisite": "tech_basic_industry"
   },
   {
-    "weight": 100,
-    "subtier": 1,
+    "tier": 1,
     "cost": 360,
     "key": "tech_mining_network_2",
-    "tier": 1,
+    "base_factor": 1.0,
+    "base_weight": 100,
     "weight_modifiers": [
       {
         "modifier": [
@@ -3032,11 +2820,11 @@
     "prerequisite": "tech_basic_industry"
   },
   {
-    "weight": 75,
-    "subtier": 1,
+    "tier": 2,
     "cost": 1000,
     "key": "tech_mining_network_3",
-    "tier": 2,
+    "base_factor": 1.0,
+    "base_weight": 75,
     "weight_modifiers": [
       {
         "modifier": [
@@ -3064,11 +2852,11 @@
     "prerequisite": "tech_mining_network_2"
   },
   {
-    "weight": 60,
-    "subtier": 4,
+    "tier": 2,
     "cost": 2200,
     "key": "tech_mining_network_4",
-    "tier": 2,
+    "base_factor": 1.0,
+    "base_weight": 60,
     "weight_modifiers": [
       {
         "modifier": [
@@ -3096,11 +2884,11 @@
     "prerequisite": "tech_mining_network_3"
   },
   {
-    "weight": 100,
-    "subtier": 1,
+    "tier": 1,
     "cost": 360,
     "key": "tech_mineral_processing_1",
-    "tier": 1,
+    "base_factor": 1.0,
+    "base_weight": 100,
     "weight_modifiers": [
       {
         "modifier": [
@@ -3128,11 +2916,11 @@
     "prerequisite": "tech_mining_network_2"
   },
   {
-    "weight": 75,
-    "subtier": 1,
+    "tier": 2,
     "cost": 1000,
     "key": "tech_mineral_processing_2",
-    "tier": 2,
+    "base_factor": 1.0,
+    "base_weight": 75,
     "weight_modifiers": [
       {
         "modifier": [
@@ -3160,11 +2948,11 @@
     "prerequisite": "tech_mineral_processing_1"
   },
   {
-    "weight": 100,
-    "subtier": 1,
+    "tier": 1,
     "cost": 360,
     "key": "tech_engineering_lab_1",
-    "tier": 1,
+    "base_factor": 1.0,
+    "base_weight": 100,
     "weight_modifiers": [
       {
         "modifier": [
@@ -3250,11 +3038,11 @@
     "prerequisite": "tech_basic_science_lab_1"
   },
   {
-    "weight": 75,
-    "subtier": 1,
+    "tier": 2,
     "cost": 1000,
     "key": "tech_engineering_lab_2",
-    "tier": 2,
+    "base_factor": 1.0,
+    "base_weight": 75,
     "weight_modifiers": [
       {
         "modifier": [
@@ -3330,11 +3118,11 @@
     "prerequisite": "tech_engineering_lab_1"
   },
   {
-    "weight": 45,
-    "subtier": 2,
+    "tier": 3,
     "cost": 4000,
     "key": "tech_engineering_lab_3",
-    "tier": 3,
+    "base_factor": 1.0,
+    "base_weight": 45,
     "weight_modifiers": [
       {
         "modifier": [
@@ -3410,15 +3198,12 @@
     "prerequisite": "tech_engineering_lab_2"
   },
   {
-    "weight": 90,
-    "subtier": 3,
+    "tier": 1,
     "cost": 600,
     "key": "tech_robotic_workers",
-    "tier": 1,
+    "base_factor": 1.5,
+    "base_weight": 90,
     "weight_modifiers": [
-      {
-        "factor": 1.5
-      },
       {
         "modifier": [
           {
@@ -3465,11 +3250,11 @@
     "prerequisite": "tech_powered_exoskeletons"
   },
   {
-    "weight": 75,
-    "subtier": 1,
+    "tier": 2,
     "cost": 1000,
     "key": "tech_droid_workers",
-    "tier": 2,
+    "base_factor": 1.0,
+    "base_weight": 75,
     "weight_modifiers": [
       {
         "modifier": [
@@ -3522,11 +3307,11 @@
     "prerequisite": "tech_robotic_workers"
   },
   {
-    "weight": 45,
-    "subtier": 2,
+    "tier": 3,
     "cost": 4000,
     "key": "tech_synthetic_workers",
-    "tier": 3,
+    "base_factor": 1.0,
+    "base_weight": 45,
     "weight_modifiers": [
       {
         "modifier": [
@@ -3608,11 +3393,11 @@
     "prerequisite": "tech_droid_workers"
   },
   {
-    "weight": 40,
-    "subtier": 3,
+    "tier": 3,
     "cost": 5000,
     "key": "tech_synthetic_leaders",
-    "tier": 3,
+    "base_factor": 1.0,
+    "base_weight": 40,
     "weight_modifiers": [
       {
         "modifier": [
@@ -3716,15 +3501,12 @@
     "prerequisite": "tech_synthetic_workers"
   },
   {
-    "weight": 50,
-    "subtier": 1,
+    "tier": 0,
     "cost": 0,
     "key": "tech_space_construction",
-    "tier": 0,
+    "base_factor": 1,
+    "base_weight": 50,
     "weight_modifiers": [
-      {
-        "factor": 1
-      },
       {
         "modifier": [
           {
@@ -3736,7 +3518,7 @@
         ]
       }
     ],
-    "start_tech": false,
+    "start_tech": true,
     "desc": "Construction in space presents our engineers with new design challenges that must be solved before we can build orbital stations above other worlds.\n\n",
     "category": "Industry",
     "name": "Offworld Construction",
@@ -3744,15 +3526,12 @@
     "prerequisite": null
   },
   {
-    "weight": 75,
-    "subtier": 1,
+    "tier": 2,
     "cost": 1000,
     "key": "tech_afterburners_1",
-    "tier": 2,
+    "base_factor": 1.25,
+    "base_weight": 75,
     "weight_modifiers": [
-      {
-        "factor": 1.25
-      },
       {
         "modifier": [
           {
@@ -3799,15 +3578,12 @@
     "prerequisite": "tech_thrusters_2"
   },
   {
-    "weight": 50,
-    "subtier": 1,
+    "tier": 3,
     "cost": 3000,
     "key": "tech_afterburners_2",
-    "tier": 3,
+    "base_factor": 1.25,
+    "base_weight": 50,
     "weight_modifiers": [
-      {
-        "factor": 1.25
-      },
       {
         "modifier": [
           {
@@ -3834,15 +3610,12 @@
     "prerequisite": "tech_afterburners_1"
   },
   {
-    "weight": 100,
-    "subtier": 1,
+    "tier": 2,
     "cost": 360,
     "key": "tech_mass_drivers_1",
-    "tier": 0,
+    "base_factor": 0.5,
+    "base_weight": 100,
     "weight_modifiers": [
-      {
-        "factor": 0.5
-      },
       {
         "modifier": [
           {
@@ -3901,7 +3674,7 @@
         ]
       }
     ],
-    "start_tech": true,
+    "start_tech": false,
     "desc": "These electromagnetic projectile launchers use magnets to accelerate armor-piercing rounds towards targets at high speeds.\n\n",
     "category": "Materials",
     "name": "Mass Drivers",
@@ -3909,11 +3682,11 @@
     "prerequisite": null
   },
   {
-    "weight": 90,
-    "subtier": 3,
+    "tier": 1,
     "cost": 600,
     "key": "tech_mass_drivers_2",
-    "tier": 1,
+    "base_factor": 1.0,
+    "base_weight": 90,
     "weight_modifiers": [
       {
         "modifier": [
@@ -3981,11 +3754,11 @@
     "prerequisite": "tech_mass_drivers_1"
   },
   {
-    "weight": 75,
-    "subtier": 1,
+    "tier": 2,
     "cost": 1000,
     "key": "tech_mass_drivers_3",
-    "tier": 2,
+    "base_factor": 1.0,
+    "base_weight": 75,
     "weight_modifiers": [
       {
         "modifier": [
@@ -4053,11 +3826,11 @@
     "prerequisite": "tech_mass_drivers_2"
   },
   {
-    "weight": 65,
-    "subtier": 3,
+    "tier": 2,
     "cost": 1800,
     "key": "tech_mass_drivers_4",
-    "tier": 2,
+    "base_factor": 1.0,
+    "base_weight": 65,
     "weight_modifiers": [
       {
         "modifier": [
@@ -4125,11 +3898,11 @@
     "prerequisite": "tech_mass_drivers_3"
   },
   {
-    "weight": 50,
-    "subtier": 1,
+    "tier": 3,
     "cost": 3000,
     "key": "tech_mass_drivers_5",
-    "tier": 3,
+    "base_factor": 1.0,
+    "base_weight": 50,
     "weight_modifiers": [
       {
         "modifier": [
@@ -4197,11 +3970,11 @@
     "prerequisite": "tech_mass_drivers_4"
   },
   {
-    "weight": 50,
-    "subtier": 1,
+    "tier": 3,
     "cost": 3000,
     "key": "tech_kinetic_artillery_1",
-    "tier": 3,
+    "base_factor": 1.0,
+    "base_weight": 50,
     "weight_modifiers": [
       {
         "modifier": [
@@ -4269,11 +4042,11 @@
     "prerequisite": "tech_mass_drivers_4"
   },
   {
-    "weight": 40,
-    "subtier": 3,
+    "tier": 3,
     "cost": 5000,
     "key": "tech_kinetic_artillery_2",
-    "tier": 3,
+    "base_factor": 1.0,
+    "base_weight": 40,
     "weight_modifiers": [
       {
         "modifier": [
@@ -4341,11 +4114,11 @@
     "prerequisite": "tech_kinetic_artillery_1"
   },
   {
-    "weight": 45,
-    "subtier": 2,
+    "tier": 3,
     "cost": 4000,
     "key": "tech_mass_accelerator_1",
-    "tier": 3,
+    "base_factor": 1.0,
+    "base_weight": 45,
     "weight_modifiers": [
       {
         "modifier": [
@@ -4413,11 +4186,11 @@
     "prerequisite": "tech_mass_drivers_5"
   },
   {
-    "weight": 35,
-    "subtier": 4,
+    "tier": 3,
     "cost": 6000,
     "key": "tech_mass_accelerator_2",
-    "tier": 3,
+    "base_factor": 1.0,
+    "base_weight": 35,
     "weight_modifiers": [
       {
         "modifier": [
@@ -4485,11 +4258,11 @@
     "prerequisite": "tech_mass_accelerator_1"
   },
   {
-    "weight": 75,
-    "subtier": 1,
+    "tier": 2,
     "cost": 1000,
     "key": "tech_autocannons_1",
-    "tier": 2,
+    "base_factor": 1.0,
+    "base_weight": 75,
     "weight_modifiers": [
       {
         "modifier": [
@@ -4571,11 +4344,11 @@
     "prerequisite": "tech_mass_drivers_2"
   },
   {
-    "weight": 65,
-    "subtier": 3,
+    "tier": 2,
     "cost": 1800,
     "key": "tech_autocannons_2",
-    "tier": 2,
+    "base_factor": 1.0,
+    "base_weight": 65,
     "weight_modifiers": [
       {
         "modifier": [
@@ -4643,11 +4416,11 @@
     "prerequisite": "tech_autocannons_1"
   },
   {
-    "weight": 50,
-    "subtier": 1,
+    "tier": 3,
     "cost": 3000,
     "key": "tech_autocannons_3",
-    "tier": 3,
+    "base_factor": 1.0,
+    "base_weight": 50,
     "weight_modifiers": [
       {
         "modifier": [
@@ -4715,11 +4488,11 @@
     "prerequisite": "tech_autocannons_2"
   },
   {
-    "weight": 65,
-    "subtier": 3,
+    "tier": 2,
     "cost": 1800,
     "key": "tech_flak_batteries_1",
-    "tier": 2,
+    "base_factor": 1.0,
+    "base_weight": 65,
     "weight_modifiers": [
       {
         "modifier": [
@@ -4787,11 +4560,11 @@
     "prerequisite": "tech_autocannons_2"
   },
   {
-    "weight": 50,
-    "subtier": 1,
+    "tier": 3,
     "cost": 3000,
     "key": "tech_flak_batteries_2",
-    "tier": 3,
+    "base_factor": 1.0,
+    "base_weight": 50,
     "weight_modifiers": [
       {
         "modifier": [
@@ -4859,15 +4632,12 @@
     "prerequisite": "tech_flak_batteries_1"
   },
   {
-    "weight": 100,
-    "subtier": 1,
+    "tier": 1,
     "cost": 360,
     "key": "tech_missiles_1",
-    "tier": 0,
+    "base_factor": 0.5,
+    "base_weight": 100,
     "weight_modifiers": [
-      {
-        "factor": 0.5
-      },
       {
         "modifier": [
           {
@@ -4926,7 +4696,7 @@
         ]
       }
     ],
-    "start_tech": true,
+    "start_tech": false,
     "desc": "Space-to-space missiles equipped with high-yield nuclear warheads. Although based on old pre-space technology, these crude fire-and-forget weapons can be surprisingly effective at range.\n\n",
     "category": "Rocketry",
     "name": "Nuclear Missiles",
@@ -4934,11 +4704,11 @@
     "prerequisite": null
   },
   {
-    "weight": 90,
-    "subtier": 3,
+    "tier": 1,
     "cost": 600,
     "key": "tech_missiles_2",
-    "tier": 1,
+    "base_factor": 1.0,
+    "base_weight": 90,
     "weight_modifiers": [
       {
         "modifier": [
@@ -5006,11 +4776,11 @@
     "prerequisite": "tech_missiles_1"
   },
   {
-    "weight": 75,
-    "subtier": 1,
+    "tier": 2,
     "cost": 1000,
     "key": "tech_missiles_3",
-    "tier": 2,
+    "base_factor": 1.0,
+    "base_weight": 75,
     "weight_modifiers": [
       {
         "modifier": [
@@ -5078,11 +4848,11 @@
     "prerequisite": "tech_missiles_2"
   },
   {
-    "weight": 65,
-    "subtier": 3,
+    "tier": 2,
     "cost": 1800,
     "key": "tech_missiles_4",
-    "tier": 2,
+    "base_factor": 1.0,
+    "base_weight": 65,
     "weight_modifiers": [
       {
         "modifier": [
@@ -5150,11 +4920,11 @@
     "prerequisite": "tech_missiles_3"
   },
   {
-    "weight": 50,
-    "subtier": 1,
+    "tier": 3,
     "cost": 3000,
     "key": "tech_missiles_5",
-    "tier": 3,
+    "base_factor": 1.0,
+    "base_weight": 50,
     "weight_modifiers": [
       {
         "modifier": [
@@ -5222,11 +4992,11 @@
     "prerequisite": "tech_missiles_4"
   },
   {
-    "weight": 75,
-    "subtier": 1,
+    "tier": 2,
     "cost": 1000,
     "key": "tech_swarmer_missiles_1",
-    "tier": 2,
+    "base_factor": 1.0,
+    "base_weight": 75,
     "weight_modifiers": [
       {
         "modifier": [
@@ -5294,11 +5064,11 @@
     "prerequisite": "tech_missiles_4"
   },
   {
-    "weight": 50,
-    "subtier": 1,
+    "tier": 3,
     "cost": 3000,
     "key": "tech_swarmer_missiles_2",
-    "tier": 3,
+    "base_factor": 1.0,
+    "base_weight": 50,
     "weight_modifiers": [
       {
         "modifier": [
@@ -5366,11 +5136,11 @@
     "prerequisite": "tech_swarmer_missiles_1"
   },
   {
-    "weight": 95,
-    "subtier": 2,
+    "tier": 1,
     "cost": 480,
     "key": "tech_torpedoes_1",
-    "tier": 1,
+    "base_factor": 1.0,
+    "base_weight": 95,
     "weight_modifiers": [
       {
         "modifier": [
@@ -5438,11 +5208,11 @@
     "prerequisite": "tech_missiles_2"
   },
   {
-    "weight": 70,
-    "subtier": 2,
+    "tier": 2,
     "cost": 1400,
     "key": "tech_torpedoes_2",
-    "tier": 2,
+    "base_factor": 1.0,
+    "base_weight": 70,
     "weight_modifiers": [
       {
         "modifier": [
@@ -5510,11 +5280,11 @@
     "prerequisite": "tech_torpedoes_1"
   },
   {
-    "weight": 45,
-    "subtier": 2,
+    "tier": 3,
     "cost": 4000,
     "key": "tech_torpedoes_3",
-    "tier": 3,
+    "base_factor": 1.0,
+    "base_weight": 45,
     "weight_modifiers": [
       {
         "modifier": [
@@ -5582,75 +5352,11 @@
     "prerequisite": "tech_torpedoes_2"
   },
   {
-    "weight": 0,
-    "subtier": 1,
-    "cost": 2200,
-    "key": "tech_amoeba_strike_craft_1",
-    "tier": 2,
-    "weight_modifiers": [
-      null
-    ],
-    "start_tech": false,
-    "desc": "By breeding Space Amoebas in captivity, we can program their symbiotic flagella to act as organic strike craft for our navy.\n\n",
-    "category": "Biology",
-    "name": "Amoeba Breeding Program",
-    "area": "Society",
-    "prerequisite": null
-  },
-  {
-    "weight": 0,
-    "subtier": 1,
-    "cost": 5000,
-    "key": "tech_swarm_strike_craft_1",
-    "tier": 3,
-    "weight_modifiers": [
-      null
-    ],
-    "start_tech": false,
-    "desc": "Collecting specimens from defeated Prethoryn enables us to clone and genetically program a war-brood of our own.\n\n",
-    "category": "Biology",
-    "name": "Swarm Spawning Pools",
-    "area": "Society",
-    "prerequisite": null
-  },
-  {
-    "weight": 0,
-    "subtier": 1,
-    "cost": 5000,
-    "key": "tech_scourge_missile_1",
-    "tier": 3,
-    "weight_modifiers": [
-      null
-    ],
-    "start_tech": false,
-    "desc": "By analyzing the biological weaponry employed by the Swarm we can create self-propelled projectiles weapons spreading the very same horrific destruction.\n\n",
-    "category": "Biology",
-    "name": "Scourge Missiles",
-    "area": "Society",
-    "prerequisite": null
-  },
-  {
-    "weight": 0,
-    "subtier": 1,
-    "cost": 600,
-    "key": "tech_space_whale_weapon_1",
     "tier": 1,
-    "weight_modifiers": [
-      null
-    ],
-    "start_tech": false,
-    "desc": "Adapting the Tiyanki method of siphoning energy from gaseous matter, it is possible to construct weapons draining energy from enemy ships.\n\n",
-    "category": "Biology",
-    "name": "Frequency Tuning",
-    "area": "Society",
-    "prerequisite": null
-  },
-  {
-    "weight": 100,
-    "subtier": 1,
     "cost": 360,
     "key": "tech_databank_uplinks",
-    "tier": 1,
+    "base_factor": 1.0,
+    "base_weight": 100,
     "weight_modifiers": [
       {
         "modifier": [
@@ -5678,11 +5384,11 @@
     "prerequisite": null
   },
   {
-    "weight": 75,
-    "subtier": 1,
+    "tier": 2,
     "cost": 1000,
     "key": "tech_improved_databank_uplinks",
-    "tier": 2,
+    "base_factor": 1.0,
+    "base_weight": 75,
     "weight_modifiers": [
       {
         "modifier": [
@@ -5710,15 +5416,13 @@
     "prerequisite": "tech_databank_uplinks"
   },
   {
-    "weight": 0,
-    "subtier": 1,
+    "tier": 0,
     "cost": 0,
     "key": "tech_basic_science_lab_1",
-    "tier": 0,
-    "weight_modifiers": [
-      null
-    ],
-    "start_tech": false,
+    "base_factor": 1.0,
+    "base_weight": 0,
+    "weight_modifiers": [],
+    "start_tech": true,
     "desc": "Testable predictions of observable phenomena.",
     "category": "Computing",
     "name": "Scientific Method",
@@ -5726,11 +5430,11 @@
     "prerequisite": null
   },
   {
-    "weight": 65,
-    "subtier": 3,
+    "tier": 2,
     "cost": 1800,
     "key": "tech_curator_lab",
-    "tier": 2,
+    "base_factor": 1.0,
+    "base_weight": 65,
     "weight_modifiers": [
       {
         "modifier": [
@@ -5792,11 +5496,11 @@
     "prerequisite": null
   },
   {
-    "weight": 65,
-    "subtier": 3,
+    "tier": 2,
     "cost": 1800,
     "key": "tech_archeology_lab",
-    "tier": 2,
+    "base_factor": 1.0,
+    "base_weight": 65,
     "weight_modifiers": [
       {
         "modifier": [
@@ -5858,11 +5562,11 @@
     "prerequisite": null
   },
   {
-    "weight": 100,
-    "subtier": 1,
+    "tier": 1,
     "cost": 360,
     "key": "tech_physics_lab_1",
-    "tier": 1,
+    "base_factor": 1.0,
+    "base_weight": 100,
     "weight_modifiers": [
       {
         "modifier": [
@@ -5948,11 +5652,11 @@
     "prerequisite": "tech_basic_science_lab_1"
   },
   {
-    "weight": 75,
-    "subtier": 1,
+    "tier": 2,
     "cost": 1000,
     "key": "tech_physics_lab_2",
-    "tier": 2,
+    "base_factor": 1.0,
+    "base_weight": 75,
     "weight_modifiers": [
       {
         "modifier": [
@@ -6028,11 +5732,11 @@
     "prerequisite": "tech_physics_lab_1"
   },
   {
-    "weight": 50,
-    "subtier": 1,
+    "tier": 3,
     "cost": 3000,
     "key": "tech_physics_lab_3",
-    "tier": 3,
+    "base_factor": 1.0,
+    "base_weight": 50,
     "weight_modifiers": [
       {
         "modifier": [
@@ -6108,11 +5812,11 @@
     "prerequisite": "tech_physics_lab_2"
   },
   {
-    "weight": 75,
-    "subtier": 1,
+    "tier": 2,
     "cost": 1000,
     "key": "tech_global_research_initiative",
-    "tier": 2,
+    "base_factor": 1.0,
+    "base_weight": 75,
     "weight_modifiers": [
       {
         "modifier": [
@@ -6209,11 +5913,11 @@
     "prerequisite": "tech_physics_lab_1"
   },
   {
-    "weight": 100,
-    "subtier": 1,
+    "tier": 1,
     "cost": 360,
     "key": "tech_administrative_ai",
-    "tier": 1,
+    "base_factor": 1.0,
+    "base_weight": 100,
     "weight_modifiers": [
       {
         "modifier": [
@@ -6241,14 +5945,12 @@
     "prerequisite": "tech_basic_science_lab_1"
   },
   {
-    "weight": 90,
-    "subtier": 3,
+    "tier": 1,
     "cost": 600,
     "key": "tech_cryostasis_1",
-    "tier": 1,
-    "weight_modifiers": [
-      null
-    ],
+    "base_factor": 1.0,
+    "base_weight": 90,
+    "weight_modifiers": [],
     "start_tech": false,
     "desc": "By giving control of the colony ship to an Artificial Intelligence, the crew and colonists can be suspended in a deep sleep.",
     "category": "Computing",
@@ -6257,14 +5959,12 @@
     "prerequisite": "tech_administrative_ai"
   },
   {
-    "weight": 75,
-    "subtier": 1,
+    "tier": 2,
     "cost": 1000,
     "key": "tech_cryostasis_2",
-    "tier": 2,
-    "weight_modifiers": [
-      null
-    ],
+    "base_factor": 1.0,
+    "base_weight": 75,
+    "weight_modifiers": [],
     "start_tech": false,
     "desc": "Sufficiently advanced systems are capable of optimizing themselves if they are made acutely aware of the purpose for which they were made.",
     "category": "Computing",
@@ -6273,11 +5973,11 @@
     "prerequisite": "tech_self_aware_logic"
   },
   {
-    "weight": 75,
-    "subtier": 1,
+    "tier": 2,
     "cost": 1000,
     "key": "tech_self_aware_logic",
-    "tier": 2,
+    "base_factor": 1.0,
+    "base_weight": 75,
     "weight_modifiers": [
       {
         "modifier": [
@@ -6305,11 +6005,11 @@
     "prerequisite": "tech_administrative_ai"
   },
   {
-    "weight": 70,
-    "subtier": 2,
+    "tier": 2,
     "cost": 1400,
     "key": "tech_automated_exploration",
-    "tier": 2,
+    "base_factor": 1.0,
+    "base_weight": 70,
     "weight_modifiers": [
       {
         "modifier": [
@@ -6430,11 +6130,11 @@
     "prerequisite": "tech_self_aware_logic"
   },
   {
-    "weight": 60,
-    "subtier": 4,
+    "tier": 3,
     "cost": 2200,
     "key": "tech_sentient_ai",
-    "tier": 3,
+    "base_factor": 1.0,
+    "base_weight": 60,
     "weight_modifiers": [
       {
         "modifier": [
@@ -6552,11 +6252,11 @@
     "prerequisite": "tech_self_aware_logic"
   },
   {
-    "weight": 95,
-    "subtier": 2,
+    "tier": 1,
     "cost": 480,
     "key": "tech_combat_computers_1",
-    "tier": 1,
+    "base_factor": 1.0,
+    "base_weight": 95,
     "weight_modifiers": [
       {
         "modifier": [
@@ -6624,11 +6324,11 @@
     "prerequisite": "tech_administrative_ai"
   },
   {
-    "weight": 70,
-    "subtier": 2,
+    "tier": 2,
     "cost": 1400,
     "key": "tech_combat_computers_2",
-    "tier": 2,
+    "base_factor": 1.0,
+    "base_weight": 70,
     "weight_modifiers": [
       {
         "modifier": [
@@ -6656,11 +6356,11 @@
     "prerequisite": "tech_combat_computers_1"
   },
   {
-    "weight": 50,
-    "subtier": 1,
+    "tier": 3,
     "cost": 3000,
     "key": "tech_combat_computers_3",
-    "tier": 3,
+    "base_factor": 1.0,
+    "base_weight": 50,
     "weight_modifiers": [
       {
         "modifier": [
@@ -6734,11 +6434,11 @@
     "prerequisite": "tech_combat_computers_2"
   },
   {
-    "weight": 95,
-    "subtier": 2,
+    "tier": 1,
     "cost": 480,
     "key": "tech_synchronized_defences",
-    "tier": 1,
+    "base_factor": 1.0,
+    "base_weight": 95,
     "weight_modifiers": [
       {
         "modifier": [
@@ -6820,15 +6520,13 @@
     "prerequisite": "tech_administrative_ai"
   },
   {
-    "weight": 0,
-    "subtier": 1,
+    "tier": 0,
     "cost": 0,
     "key": "tech_fission_power",
-    "tier": 0,
-    "weight_modifiers": [
-      null
-    ],
-    "start_tech": false,
+    "base_factor": 1.0,
+    "base_weight": 0,
+    "weight_modifiers": [],
+    "start_tech": true,
     "desc": "This energy source generates power through induced fission, but it also produces harmful nuclear waste.\n\n",
     "category": "Industry",
     "name": "Fission Power",
@@ -6836,15 +6534,12 @@
     "prerequisite": null
   },
   {
-    "weight": 95,
-    "subtier": 2,
+    "tier": 1,
     "cost": 480,
     "key": "tech_fusion_power",
-    "tier": 1,
+    "base_factor": 1.5,
+    "base_weight": 95,
     "weight_modifiers": [
-      {
-        "factor": 1.5
-      },
       {
         "modifier": [
           {
@@ -6891,15 +6586,12 @@
     "prerequisite": "tech_fission_power"
   },
   {
-    "weight": 75,
-    "subtier": 1,
+    "tier": 2,
     "cost": 1000,
     "key": "tech_cold_fusion_power",
-    "tier": 2,
+    "base_factor": 1.5,
+    "base_weight": 75,
     "weight_modifiers": [
-      {
-        "factor": 1.5
-      },
       {
         "modifier": [
           {
@@ -6946,15 +6638,12 @@
     "prerequisite": "tech_fusion_power"
   },
   {
-    "weight": 60,
-    "subtier": 4,
+    "tier": 3,
     "cost": 3000,
     "key": "tech_antimatter_power",
-    "tier": 3,
+    "base_factor": 1.5,
+    "base_weight": 60,
     "weight_modifiers": [
-      {
-        "factor": 1.5
-      },
       {
         "modifier": [
           {
@@ -7001,15 +6690,12 @@
     "prerequisite": "tech_cold_fusion_power"
   },
   {
-    "weight": 35,
-    "subtier": 4,
+    "tier": 3,
     "cost": 6000,
     "key": "tech_zero_point_power",
-    "tier": 3,
+    "base_factor": 1.5,
+    "base_weight": 35,
     "weight_modifiers": [
-      {
-        "factor": 1.5
-      },
       {
         "modifier": [
           {
@@ -7046,15 +6732,12 @@
     "prerequisite": "tech_antimatter_power"
   },
   {
-    "weight": 100,
-    "subtier": 1,
+    "tier": 1,
     "cost": 360,
     "key": "tech_shields_1",
-    "tier": 1,
+    "base_factor": 1.25,
+    "base_weight": 100,
     "weight_modifiers": [
-      {
-        "factor": 1.25
-      },
       {
         "modifier": [
           {
@@ -7081,15 +6764,12 @@
     "prerequisite": null
   },
   {
-    "weight": 90,
-    "subtier": 3,
+    "tier": 1,
     "cost": 600,
     "key": "tech_shields_2",
-    "tier": 1,
+    "base_factor": 1.25,
+    "base_weight": 90,
     "weight_modifiers": [
-      {
-        "factor": 1.25
-      },
       {
         "modifier": [
           {
@@ -7116,15 +6796,12 @@
     "prerequisite": "tech_shields_1"
   },
   {
-    "weight": 75,
-    "subtier": 1,
+    "tier": 2,
     "cost": 1000,
     "key": "tech_shields_3",
-    "tier": 2,
+    "base_factor": 1.25,
+    "base_weight": 75,
     "weight_modifiers": [
-      {
-        "factor": 1.25
-      },
       {
         "modifier": [
           {
@@ -7151,15 +6828,12 @@
     "prerequisite": "tech_shields_2"
   },
   {
-    "weight": 65,
-    "subtier": 3,
+    "tier": 2,
     "cost": 1800,
     "key": "tech_shields_4",
-    "tier": 2,
+    "base_factor": 1.25,
+    "base_weight": 65,
     "weight_modifiers": [
-      {
-        "factor": 1.25
-      },
       {
         "modifier": [
           {
@@ -7186,15 +6860,12 @@
     "prerequisite": "tech_shields_3"
   },
   {
-    "weight": 45,
-    "subtier": 2,
+    "tier": 3,
     "cost": 4000,
     "key": "tech_shields_5",
-    "tier": 3,
+    "base_factor": 1.25,
+    "base_weight": 45,
     "weight_modifiers": [
-      {
-        "factor": 1.25
-      },
       {
         "modifier": [
           {
@@ -7221,11 +6892,11 @@
     "prerequisite": "tech_shields_4"
   },
   {
-    "weight": 70,
-    "subtier": 2,
+    "tier": 2,
     "cost": 1400,
     "key": "tech_shield_rechargers_1",
-    "tier": 2,
+    "base_factor": 1.0,
+    "base_weight": 70,
     "weight_modifiers": [
       {
         "modifier": [
@@ -7253,11 +6924,11 @@
     "prerequisite": "tech_shields_3"
   },
   {
-    "weight": 60,
-    "subtier": 4,
+    "tier": 2,
     "cost": 2200,
     "key": "tech_shield_recharge_aura_1",
-    "tier": 2,
+    "base_factor": 1.0,
+    "base_weight": 60,
     "weight_modifiers": [
       {
         "modifier": [
@@ -7309,16 +6980,12 @@
     "prerequisite": "tech_shields_4"
   },
   {
-    "weight": 85,
-    "subtier": 4,
+    "tier": 2,
     "cost": 720,
     "key": "tech_planetary_shield_generator",
-    "tier": 2,
-    "weight_modifiers": [
-      {
-        "factor": 0.25
-      }
-    ],
+    "base_factor": 0.25,
+    "base_weight": 85,
+    "weight_modifiers": [],
     "start_tech": false,
     "desc": "Generating a strong energy shield within a planetary atmosphere is a greater challenge than in the vacuum of space, but it offers a potent defense against orbital bombardment.",
     "category": "Field Manipulation",
@@ -7327,11 +6994,11 @@
     "prerequisite": "tech_shields_2"
   },
   {
-    "weight": 100,
-    "subtier": 1,
+    "tier": 1,
     "cost": 360,
     "key": "tech_sensors_2",
-    "tier": 1,
+    "base_factor": 1.0,
+    "base_weight": 100,
     "weight_modifiers": [
       {
         "modifier": [
@@ -7359,11 +7026,11 @@
     "prerequisite": null
   },
   {
-    "weight": 75,
-    "subtier": 1,
+    "tier": 2,
     "cost": 1000,
     "key": "tech_sensors_3",
-    "tier": 2,
+    "base_factor": 1.0,
+    "base_weight": 75,
     "weight_modifiers": [
       {
         "modifier": [
@@ -7391,11 +7058,11 @@
     "prerequisite": "tech_sensors_2"
   },
   {
-    "weight": 50,
-    "subtier": 1,
+    "tier": 3,
     "cost": 3000,
     "key": "tech_sensors_4",
-    "tier": 3,
+    "base_factor": 1.0,
+    "base_weight": 50,
     "weight_modifiers": [
       {
         "modifier": [
@@ -7423,11 +7090,11 @@
     "prerequisite": "tech_sensors_3"
   },
   {
-    "weight": 95,
-    "subtier": 2,
+    "tier": 1,
     "cost": 480,
     "key": "tech_orbital_sensor_array",
-    "tier": 1,
+    "base_factor": 1.0,
+    "base_weight": 95,
     "weight_modifiers": [
       {
         "modifier": [
@@ -7547,15 +7214,13 @@
     "prerequisite": "tech_sensors_2"
   },
   {
-    "weight": 0,
-    "subtier": 1,
+    "tier": 0,
     "cost": 0,
     "key": "tech_power_plant_1",
-    "tier": 0,
-    "weight_modifiers": [
-      null
-    ],
-    "start_tech": false,
+    "base_factor": 1.0,
+    "base_weight": 0,
+    "weight_modifiers": [],
+    "start_tech": true,
     "desc": "Capacitors capable of storing vast amounts of energy is one of the cornerstones for any modern civilization.",
     "category": "Industry",
     "name": "High-Energy Capacitors",
@@ -7563,11 +7228,11 @@
     "prerequisite": null
   },
   {
-    "weight": 100,
-    "subtier": 1,
+    "tier": 1,
     "cost": 360,
     "key": "tech_power_plant_2",
-    "tier": 1,
+    "base_factor": 1.0,
+    "base_weight": 100,
     "weight_modifiers": [
       {
         "modifier": [
@@ -7595,11 +7260,11 @@
     "prerequisite": "tech_power_plant_1"
   },
   {
-    "weight": 85,
-    "subtier": 4,
+    "tier": 1,
     "cost": 720,
     "key": "tech_power_plant_3",
-    "tier": 1,
+    "base_factor": 1.0,
+    "base_weight": 85,
     "weight_modifiers": [
       {
         "modifier": [
@@ -7627,11 +7292,11 @@
     "prerequisite": "tech_power_plant_2"
   },
   {
-    "weight": 65,
-    "subtier": 3,
+    "tier": 2,
     "cost": 1800,
     "key": "tech_power_plant_4",
-    "tier": 2,
+    "base_factor": 1.0,
+    "base_weight": 65,
     "weight_modifiers": [
       {
         "modifier": [
@@ -7659,11 +7324,11 @@
     "prerequisite": "tech_power_plant_3"
   },
   {
-    "weight": 100,
-    "subtier": 1,
+    "tier": 1,
     "cost": 360,
     "key": "tech_solar_panel_network",
-    "tier": 1,
+    "base_factor": 1.0,
+    "base_weight": 100,
     "weight_modifiers": [
       {
         "modifier": [
@@ -7701,11 +7366,11 @@
     "prerequisite": "tech_space_construction"
   },
   {
-    "weight": 100,
-    "subtier": 1,
+    "tier": 1,
     "cost": 360,
     "key": "tech_power_hub_1",
-    "tier": 1,
+    "base_factor": 1.0,
+    "base_weight": 100,
     "weight_modifiers": [
       {
         "modifier": [
@@ -7733,11 +7398,11 @@
     "prerequisite": "tech_power_plant_1"
   },
   {
-    "weight": 75,
-    "subtier": 1,
+    "tier": 2,
     "cost": 1000,
     "key": "tech_power_hub_2",
-    "tier": 2,
+    "base_factor": 1.0,
+    "base_weight": 75,
     "weight_modifiers": [
       {
         "modifier": [
@@ -7765,15 +7430,12 @@
     "prerequisite": "tech_power_hub_1"
   },
   {
-    "weight": 0,
-    "subtier": 1,
+    "tier": 0,
     "cost": 0,
     "key": "tech_wormhole_generation_1",
-    "tier": 0,
+    "base_factor": 1,
+    "base_weight": 0,
     "weight_modifiers": [
-      {
-        "factor": 1
-      },
       {
         "modifier": [
           {
@@ -7792,7 +7454,7 @@
         ]
       }
     ],
-    "start_tech": false,
+    "start_tech": true,
     "desc": "By tunneling directly through subspace, a temporary conduit can be established between two different points in normal space. Travel between these points would be near instantaneous.\n\n",
     "category": "Field Manipulation",
     "name": "Subspace Wormholes",
@@ -7800,11 +7462,11 @@
     "prerequisite": null
   },
   {
-    "weight": 75,
-    "subtier": 1,
+    "tier": 2,
     "cost": 1000,
     "key": "tech_wormhole_generation_2",
-    "tier": 2,
+    "base_factor": 1.0,
+    "base_weight": 75,
     "weight_modifiers": [
       {
         "modifier": [
@@ -7832,11 +7494,11 @@
     "prerequisite": "tech_wormhole_generation_1"
   },
   {
-    "weight": 50,
-    "subtier": 1,
+    "tier": 3,
     "cost": 3000,
     "key": "tech_wormhole_generation_3",
-    "tier": 3,
+    "base_factor": 1.0,
+    "base_weight": 50,
     "weight_modifiers": [
       {
         "modifier": [
@@ -7864,15 +7526,12 @@
     "prerequisite": "tech_wormhole_generation_2"
   },
   {
-    "weight": 0,
-    "subtier": 1,
+    "tier": 0,
     "cost": 0,
     "key": "tech_hyper_drive_1",
-    "tier": 0,
+    "base_factor": 1,
+    "base_weight": 0,
     "weight_modifiers": [
-      {
-        "factor": 1
-      },
       {
         "modifier": [
           {
@@ -7891,7 +7550,7 @@
         ]
       }
     ],
-    "start_tech": false,
+    "start_tech": true,
     "desc": "Like the strands of a spider web, the extra-dimensional realm of hyperspace runs between the gravity wells of most stars. Faster than light travel is theoretically possible along these hyperlanes.\n\n",
     "category": "Particles",
     "name": "Hyperspace Travel",
@@ -7899,11 +7558,11 @@
     "prerequisite": null
   },
   {
-    "weight": 75,
-    "subtier": 1,
+    "tier": 2,
     "cost": 1000,
     "key": "tech_hyper_drive_2",
-    "tier": 2,
+    "base_factor": 1.0,
+    "base_weight": 75,
     "weight_modifiers": [
       {
         "modifier": [
@@ -7931,11 +7590,11 @@
     "prerequisite": "tech_hyper_drive_1"
   },
   {
-    "weight": 50,
-    "subtier": 1,
+    "tier": 3,
     "cost": 3000,
     "key": "tech_hyper_drive_3",
-    "tier": 3,
+    "base_factor": 1.0,
+    "base_weight": 50,
     "weight_modifiers": [
       {
         "modifier": [
@@ -7963,11 +7622,11 @@
     "prerequisite": "tech_hyper_drive_2"
   },
   {
-    "weight": 75,
-    "subtier": 1,
+    "tier": 2,
     "cost": 1000,
     "key": "tech_hyperlane_mapping",
-    "tier": 2,
+    "base_factor": 1.0,
+    "base_weight": 75,
     "weight_modifiers": [
       {
         "modifier": [
@@ -8039,17 +7698,13 @@
     "prerequisite": null
   },
   {
-    "weight": 0,
-    "subtier": 1,
+    "tier": 0,
     "cost": 0,
     "key": "tech_warp_drive_1",
-    "tier": 0,
-    "weight_modifiers": [
-      {
-        "factor": 0
-      }
-    ],
-    "start_tech": false,
+    "base_factor": 0,
+    "base_weight": 0,
+    "weight_modifiers": [],
+    "start_tech": true,
     "desc": "By enveloping a vessel in a warp field and forming a subspace bubble around it, velocities exceeding the speed of light are theoretically possible.\n\n",
     "category": "Field Manipulation",
     "name": "Warp Travel",
@@ -8057,11 +7712,11 @@
     "prerequisite": null
   },
   {
-    "weight": 75,
-    "subtier": 1,
+    "tier": 2,
     "cost": 1000,
     "key": "tech_warp_drive_2",
-    "tier": 2,
+    "base_factor": 1.0,
+    "base_weight": 75,
     "weight_modifiers": [
       {
         "modifier": [
@@ -8089,11 +7744,11 @@
     "prerequisite": "tech_warp_drive_1"
   },
   {
-    "weight": 50,
-    "subtier": 1,
+    "tier": 3,
     "cost": 3000,
     "key": "tech_warp_drive_3",
-    "tier": 3,
+    "base_factor": 1.0,
+    "base_weight": 50,
     "weight_modifiers": [
       {
         "modifier": [
@@ -8121,15 +7776,12 @@
     "prerequisite": "tech_warp_drive_2"
   },
   {
-    "weight": 50,
-    "subtier": 1,
+    "tier": 3,
     "cost": 3000,
     "key": "tech_jump_drive_1",
-    "tier": 3,
+    "base_factor": 0.1,
+    "base_weight": 50,
     "weight_modifiers": [
-      {
-        "factor": 0.1
-      },
       {
         "modifier": [
           {
@@ -8204,11 +7856,11 @@
     "prerequisite": "tech_zero_point_power"
   },
   {
-    "weight": 60,
-    "subtier": 4,
+    "tier": 2,
     "cost": 2200,
     "key": "tech_aura_quantum_destabilizer",
-    "tier": 2,
+    "base_factor": 1.0,
+    "base_weight": 60,
     "weight_modifiers": [
       {
         "modifier": [
@@ -8270,124 +7922,12 @@
     "prerequisite": "tech_shields_3"
   },
   {
-    "weight": 0,
-    "subtier": 1,
-    "cost": 7000,
-    "key": "tech_dragon_armor",
     "tier": 3,
-    "weight_modifiers": [
-      {
-        "factor": 0
-      }
-    ],
-    "start_tech": false,
-    "desc": "The Ether Drake's scales are made up of multiple layers of unique mineral nanostructures. Unorthodox manufacturing techniques allow us to closely emulate these self-repairing structures.",
-    "category": "Materials",
-    "name": "Artificial Dragonscales",
-    "area": "Engineering",
-    "prerequisite": null
-  },
-  {
-    "weight": 0,
-    "subtier": 1,
-    "cost": 7000,
-    "key": "tech_enigmatic_deflector",
-    "tier": 3,
-    "weight_modifiers": [
-      {
-        "factor": 0
-      }
-    ],
-    "start_tech": false,
-    "desc": "These deflectors operate in ways that seem to defy the laws of nature. Somehow they can manage to muster a protective field many times greater than what could seem possible.",
-    "category": "Field Manipulation",
-    "name": "Enigmatic Deflectors",
-    "area": "Physics",
-    "prerequisite": null
-  },
-  {
-    "weight": 0,
-    "subtier": 1,
-    "cost": 7000,
-    "key": "tech_enigmatic_power_core",
-    "tier": 3,
-    "weight_modifiers": [
-      {
-        "factor": 0
-      }
-    ],
-    "start_tech": false,
-    "desc": "These generators cause particles to interact with each other in ways that seem to defy nature. Somehow they can put out more power than what would seem possibe.",
-    "category": "Particles",
-    "name": "Enigmatic Power Generation",
-    "area": "Physics",
-    "prerequisite": null
-  },
-  {
-    "weight": 0,
-    "subtier": 1,
-    "cost": 7000,
-    "key": "tech_enigmatic_encoder",
-    "tier": 3,
-    "weight_modifiers": [
-      {
-        "factor": 0
-      }
-    ],
-    "start_tech": false,
-    "desc": "The Enigmatic Encoder scrambles flight path data according to some indeterminable design before feeding it back to fleet command.",
-    "category": "Computing",
-    "name": "Enigmatic Encoder",
-    "area": "Physics",
-    "prerequisite": null
-  },
-  {
-    "weight": 0,
-    "subtier": 1,
-    "cost": 7000,
-    "key": "tech_enigmatic_decoder",
-    "tier": 3,
-    "weight_modifiers": [
-      {
-        "factor": 0
-      }
-    ],
-    "start_tech": false,
-    "desc": "While producing average results in standard tests, the accuracy of Enigmatic Decoder's prediction algorithms seemingly increases as the target's flight path grows more erratic.",
-    "category": "Computing",
-    "name": "Enigmatic Decoder",
-    "area": "Physics",
-    "prerequisite": null
-  },
-  {
-    "weight": 0,
-    "subtier": 1,
-    "cost": 7000,
-    "key": "tech_enigmatic_disruption_field",
-    "tier": 3,
-    "weight_modifiers": [
-      {
-        "factor": 0
-      }
-    ],
-    "start_tech": false,
-    "desc": "By flooding a localized area with weak, randomly-modulated electromagnetic pulses, enemy shield and weapons systems can be partially disrupted.",
-    "category": "Field Manipulation",
-    "name": "Enigmatic Disruption Field",
-    "area": "Physics",
-    "prerequisite": null
-  },
-  {
-    "weight": 25,
-    "subtier": 1,
     "cost": 3000,
     "key": "tech_repeatable_improved_tile_mineral_output",
-    "tier": 3,
-    "weight_modifiers": [
-      {
-        "factor": "@repatableTechFactor"
-      }
-    ],
+    "base_factor": 0.5,
+    "base_weight": 25,
+    "weight_modifiers": [],
     "start_tech": false,
     "desc": "Changes in how mineral deposits are evaluated relative to each other lead to more efficient boring patterns.\n\n",
     "category": "Industry",
@@ -8396,16 +7936,12 @@
     "prerequisite": "tech_mineral_processing_2"
   },
   {
-    "weight": 25,
-    "subtier": 1,
+    "tier": 3,
     "cost": 3000,
     "key": "tech_repeatable_improved_military_station_damage",
-    "tier": 3,
-    "weight_modifiers": [
-      {
-        "factor": "@repatableTechFactor"
-      }
-    ],
+    "base_factor": 0.5,
+    "base_weight": 25,
+    "weight_modifiers": [],
     "start_tech": false,
     "desc": "Cross-linking weapon systems to fire in staggered volleys improves the actual damage output of Military Stations over time.\n\n",
     "category": "Voidcraft",
@@ -8414,16 +7950,12 @@
     "prerequisite": "tech_space_defense_station_2"
   },
   {
-    "weight": 25,
-    "subtier": 1,
+    "tier": 3,
     "cost": 3000,
     "key": "tech_repeatable_improved_military_station_health",
-    "tier": 3,
-    "weight_modifiers": [
-      {
-        "factor": "@repatableTechFactor"
-      }
-    ],
+    "base_factor": 0.5,
+    "base_weight": 25,
+    "weight_modifiers": [],
     "start_tech": false,
     "desc": "Additional layers of armor plating within the structure itself improves the resilience of Military Stations.\n\n",
     "category": "Voidcraft",
@@ -8432,16 +7964,12 @@
     "prerequisite": "tech_space_defense_station_2"
   },
   {
-    "weight": 25,
-    "subtier": 1,
+    "tier": 3,
     "cost": 3000,
     "key": "tech_repeatable_improved_ship_health",
-    "tier": 3,
-    "weight_modifiers": [
-      {
-        "factor": "@repatableTechFactor"
-      }
-    ],
+    "base_factor": 0.5,
+    "base_weight": 25,
+    "weight_modifiers": [],
     "start_tech": false,
     "desc": "Further increasing compartmentalization of shipboard spaces allows ships to sustain more damage before hull integrity reaches critically low levels.\n\n",
     "category": "Voidcraft",
@@ -8450,16 +7978,12 @@
     "prerequisite": "tech_spaceport_4"
   },
   {
-    "weight": 25,
-    "subtier": 1,
+    "tier": 3,
     "cost": 3000,
     "key": "tech_repeatable_improved_armor_output",
-    "tier": 3,
-    "weight_modifiers": [
-      {
-        "factor": "@repatableTechFactor"
-      }
-    ],
+    "base_factor": 0.5,
+    "base_weight": 25,
+    "weight_modifiers": [],
     "start_tech": false,
     "desc": "Compressing suitable materials into ultra-dense forms is a cheap and efficient way to improve their ability to absorb weapons-grade impacts.\n\n",
     "category": "Materials",
@@ -8468,16 +7992,12 @@
     "prerequisite": "tech_ship_armor_3"
   },
   {
-    "weight": 25,
-    "subtier": 1,
+    "tier": 3,
     "cost": 3000,
     "key": "tech_repeatable_weapon_type_explosive_damage",
-    "tier": 3,
-    "weight_modifiers": [
-      {
-        "factor": "@repatableTechFactor"
-      }
-    ],
+    "base_factor": 0.5,
+    "base_weight": 25,
+    "weight_modifiers": [],
     "start_tech": false,
     "desc": "With the chemical reaction tightly controlled by missile-board microprocessors, warhead detonations can be tuned for maximum effect for local conditions at the time of impact.\n\n",
     "category": "Rocketry",
@@ -8486,16 +8006,12 @@
     "prerequisite": "tech_missiles_3"
   },
   {
-    "weight": 25,
-    "subtier": 1,
+    "tier": 3,
     "cost": 3000,
     "key": "tech_repeatable_weapon_type_explosive_fire_rate",
-    "tier": 3,
-    "weight_modifiers": [
-      {
-        "factor": "@repatableTechFactor"
-      }
-    ],
+    "base_factor": 0.5,
+    "base_weight": 25,
+    "weight_modifiers": [],
     "start_tech": false,
     "desc": "Advances in miniaturization allow for more rapid loading and discharging of rocket-propelled payloads.\n\n",
     "category": "Rocketry",
@@ -8504,16 +8020,12 @@
     "prerequisite": "tech_missiles_3"
   },
   {
-    "weight": 25,
-    "subtier": 1,
+    "tier": 3,
     "cost": 3000,
     "key": "tech_repeatable_weapon_type_kinetic_damage",
-    "tier": 3,
-    "weight_modifiers": [
-      {
-        "factor": "@repatableTechFactor"
-      }
-    ],
+    "base_factor": 0.5,
+    "base_weight": 25,
+    "weight_modifiers": [],
     "start_tech": false,
     "desc": "Ultra-dense slugs can punch through even the strongest of projected shields.\n\n",
     "category": "Materials",
@@ -8522,16 +8034,12 @@
     "prerequisite": "tech_mass_drivers_3"
   },
   {
-    "weight": 25,
-    "subtier": 1,
+    "tier": 3,
     "cost": 3000,
     "key": "tech_repeatable_weapon_type_kinetic_fire_rate",
-    "tier": 3,
-    "weight_modifiers": [
-      {
-        "factor": "@repatableTechFactor"
-      }
-    ],
+    "base_factor": 0.5,
+    "base_weight": 25,
+    "weight_modifiers": [],
     "start_tech": false,
     "desc": "Minor technical advances combine with improved shipboard routines for handling munitions to provide a noticeable boost in fire rate.\n\n",
     "category": "Materials",
@@ -8540,16 +8048,12 @@
     "prerequisite": "tech_mass_drivers_3"
   },
   {
-    "weight": 25,
-    "subtier": 1,
+    "tier": 3,
     "cost": 3000,
     "key": "tech_repeatable_weapon_type_strike_craft_fire_damage",
-    "tier": 3,
-    "weight_modifiers": [
-      {
-        "factor": "@repatableTechFactor"
-      }
-    ],
+    "base_factor": 0.5,
+    "base_weight": 25,
+    "weight_modifiers": [],
     "start_tech": false,
     "desc": "Increasing the speed at which fighter pilots can process and act upon enemy positioning data elevates strike craft a few steps up the food chain.\n\n",
     "category": "Voidcraft",
@@ -8558,16 +8062,12 @@
     "prerequisite": "tech_spaceport_5"
   },
   {
-    "weight": 25,
-    "subtier": 1,
+    "tier": 3,
     "cost": 3000,
     "key": "tech_repeatable_weapon_type_strike_craft_fire_rate",
-    "tier": 3,
-    "weight_modifiers": [
-      {
-        "factor": "@repatableTechFactor"
-      }
-    ],
+    "base_factor": 0.5,
+    "base_weight": 25,
+    "weight_modifiers": [],
     "start_tech": false,
     "desc": "Circulating excess heat from weapons discharge in order to prime munitions as they are loaded increases the rate of fire of strike craft weaponry.\n\n",
     "category": "Voidcraft",
@@ -8576,15 +8076,13 @@
     "prerequisite": "tech_spaceport_5"
   },
   {
-    "weight": 0,
-    "subtier": 1,
+    "tier": 0,
     "cost": 0,
     "key": "tech_defense_army",
-    "tier": 0,
-    "weight_modifiers": [
-      null
-    ],
-    "start_tech": false,
+    "base_factor": 1.0,
+    "base_weight": 0,
+    "weight_modifiers": [],
+    "start_tech": true,
     "desc": "There may come a time when intellects, vast and cool and unsympathetic, regard our worlds with envy and draw plans against us. We must be ready.\n\n",
     "category": "Military Theory",
     "name": "Planetary Defenses",
@@ -8592,15 +8090,13 @@
     "prerequisite": null
   },
   {
-    "weight": 0,
-    "subtier": 1,
+    "tier": 0,
     "cost": 0,
     "key": "tech_eco_simulation",
-    "tier": 0,
-    "weight_modifiers": [
-      null
-    ],
-    "start_tech": false,
+    "base_factor": 1.0,
+    "base_weight": 0,
+    "weight_modifiers": [],
+    "start_tech": true,
     "desc": "Large-scale hydroponics farms producing nutrient-rich produce helps sustain a growing population while minimizing negative environmental impact.\n\n",
     "category": "Biology",
     "name": "Hydroponics",
@@ -8608,11 +8104,11 @@
     "prerequisite": null
   },
   {
-    "weight": 100,
-    "subtier": 1,
+    "tier": 1,
     "cost": 360,
     "key": "tech_orbital_hydroponics",
-    "tier": 1,
+    "base_factor": 1.0,
+    "base_weight": 100,
     "weight_modifiers": [
       {
         "modifier": [
@@ -8660,11 +8156,11 @@
     "prerequisite": "tech_eco_simulation"
   },
   {
-    "weight": 100,
-    "subtier": 1,
+    "tier": 1,
     "cost": 360,
     "key": "tech_hydroponics",
-    "tier": 1,
+    "base_factor": 1.0,
+    "base_weight": 100,
     "weight_modifiers": [
       {
         "modifier": [
@@ -8712,11 +8208,11 @@
     "prerequisite": "tech_eco_simulation"
   },
   {
-    "weight": 75,
-    "subtier": 1,
+    "tier": 2,
     "cost": 1000,
     "key": "tech_gene_crops",
-    "tier": 2,
+    "base_factor": 1.0,
+    "base_weight": 75,
     "weight_modifiers": [
       {
         "modifier": [
@@ -8764,11 +8260,11 @@
     "prerequisite": "tech_hydroponics"
   },
   {
-    "weight": 60,
-    "subtier": 4,
+    "tier": 2,
     "cost": 2200,
     "key": "tech_nano_vitality_crops",
-    "tier": 2,
+    "base_factor": 1.0,
+    "base_weight": 60,
     "weight_modifiers": [
       {
         "modifier": [
@@ -8816,11 +8312,11 @@
     "prerequisite": "tech_gene_crops"
   },
   {
-    "weight": 40,
-    "subtier": 3,
+    "tier": 3,
     "cost": 5000,
     "key": "tech_nutrient_replication",
-    "tier": 3,
+    "base_factor": 1.0,
+    "base_weight": 40,
     "weight_modifiers": [
       {
         "modifier": [
@@ -8868,11 +8364,11 @@
     "prerequisite": "tech_nano_vitality_crops"
   },
   {
-    "weight": 100,
-    "subtier": 1,
+    "tier": 1,
     "cost": 360,
     "key": "tech_biolab_1",
-    "tier": 1,
+    "base_factor": 1.0,
+    "base_weight": 100,
     "weight_modifiers": [
       {
         "modifier": [
@@ -8958,11 +8454,11 @@
     "prerequisite": "tech_basic_science_lab_1"
   },
   {
-    "weight": 75,
-    "subtier": 1,
+    "tier": 2,
     "cost": 1000,
     "key": "tech_biolab_2",
-    "tier": 2,
+    "base_factor": 1.0,
+    "base_weight": 75,
     "weight_modifiers": [
       {
         "modifier": [
@@ -9038,11 +8534,11 @@
     "prerequisite": "tech_biolab_1"
   },
   {
-    "weight": 50,
-    "subtier": 1,
+    "tier": 3,
     "cost": 3000,
     "key": "tech_biolab_3",
-    "tier": 3,
+    "base_factor": 1.0,
+    "base_weight": 50,
     "weight_modifiers": [
       {
         "modifier": [
@@ -9118,11 +8614,11 @@
     "prerequisite": "tech_biolab_2"
   },
   {
-    "weight": 95,
-    "subtier": 2,
+    "tier": 1,
     "cost": 480,
     "key": "tech_alien_life_studies",
-    "tier": 1,
+    "base_factor": 1.0,
+    "base_weight": 95,
     "weight_modifiers": [
       {
         "modifier": [
@@ -9184,16 +8680,12 @@
     "prerequisite": null
   },
   {
-    "weight": 100,
-    "subtier": 1,
+    "tier": 1,
     "cost": 360,
     "key": "tech_colonization_1",
-    "tier": 1,
-    "weight_modifiers": [
-      {
-        "factor": 1000
-      }
-    ],
+    "base_factor": 1000,
+    "base_weight": 100,
+    "weight_modifiers": [],
     "start_tech": false,
     "desc": "Calculating required resources and gear required to establish a planetary colony allows us to herd brave pioneers into grand \"ark ships\", confident that they will survive the long voyage across the stars to a new home.\n\n",
     "category": "New Worlds",
@@ -9202,11 +8694,11 @@
     "prerequisite": "tech_spaceport_1"
   },
   {
-    "weight": 75,
-    "subtier": 1,
+    "tier": 2,
     "cost": 1000,
     "key": "tech_colonization_2",
-    "tier": 2,
+    "base_factor": 1.0,
+    "base_weight": 75,
     "weight_modifiers": [
       {
         "modifier": [
@@ -9234,11 +8726,11 @@
     "prerequisite": "tech_colonization_1"
   },
   {
-    "weight": 60,
-    "subtier": 4,
+    "tier": 2,
     "cost": 2200,
     "key": "tech_colonization_3",
-    "tier": 2,
+    "base_factor": 1.0,
+    "base_weight": 60,
     "weight_modifiers": [
       {
         "modifier": [
@@ -9266,11 +8758,11 @@
     "prerequisite": "tech_colonization_2"
   },
   {
-    "weight": 45,
-    "subtier": 2,
+    "tier": 3,
     "cost": 4000,
     "key": "tech_colonization_4",
-    "tier": 3,
+    "base_factor": 1.0,
+    "base_weight": 45,
     "weight_modifiers": [
       {
         "modifier": [
@@ -9298,11 +8790,11 @@
     "prerequisite": "tech_colonization_3"
   },
   {
-    "weight": 35,
-    "subtier": 4,
+    "tier": 3,
     "cost": 6000,
     "key": "tech_colonization_5",
-    "tier": 3,
+    "base_factor": 1.0,
+    "base_weight": 35,
     "weight_modifiers": [
       {
         "modifier": [
@@ -9330,11 +8822,11 @@
     "prerequisite": "tech_colonization_4"
   },
   {
-    "weight": 65,
-    "subtier": 3,
+    "tier": 2,
     "cost": 1800,
     "key": "tech_tomb_world_adaption",
-    "tier": 2,
+    "base_factor": 1.0,
+    "base_weight": 65,
     "weight_modifiers": [
       {
         "modifier": [
@@ -9376,15 +8868,12 @@
     "prerequisite": "tech_colonization_2"
   },
   {
-    "weight": 95,
-    "subtier": 2,
+    "tier": 1,
     "cost": 480,
     "key": "tech_frontier_health",
-    "tier": 1,
+    "base_factor": 2,
+    "base_weight": 95,
     "weight_modifiers": [
-      {
-        "factor": 2
-      },
       {
         "modifier": [
           {
@@ -9411,15 +8900,12 @@
     "prerequisite": "tech_genome_mapping"
   },
   {
-    "weight": 75,
-    "subtier": 1,
+    "tier": 2,
     "cost": 1000,
     "key": "tech_frontier_hospital",
-    "tier": 2,
+    "base_factor": 2,
+    "base_weight": 75,
     "weight_modifiers": [
-      {
-        "factor": 2
-      },
       {
         "modifier": [
           {
@@ -9446,11 +8932,11 @@
     "prerequisite": "tech_frontier_health"
   },
   {
-    "weight": 90,
-    "subtier": 3,
+    "tier": 1,
     "cost": 600,
     "key": "tech_frontier_collectives",
-    "tier": 1,
+    "base_factor": 1.0,
+    "base_weight": 90,
     "weight_modifiers": [
       {
         "modifier": [
@@ -9533,11 +9019,11 @@
     "prerequisite": "tech_colonization_1"
   },
   {
-    "weight": 60,
-    "subtier": 4,
+    "tier": 2,
     "cost": 2200,
     "key": "tech_frontier_commissars",
-    "tier": 2,
+    "base_factor": 1.0,
+    "base_weight": 60,
     "weight_modifiers": [
       {
         "modifier": [
@@ -9640,11 +9126,11 @@
     "prerequisite": "tech_frontier_collectives"
   },
   {
-    "weight": 90,
-    "subtier": 3,
+    "tier": 1,
     "cost": 600,
     "key": "tech_frontier_initiatives",
-    "tier": 1,
+    "base_factor": 1.0,
+    "base_weight": 90,
     "weight_modifiers": [
       {
         "modifier": [
@@ -9747,11 +9233,11 @@
     "prerequisite": "tech_colonization_1"
   },
   {
-    "weight": 60,
-    "subtier": 4,
+    "tier": 2,
     "cost": 2200,
     "key": "tech_frontier_traditions",
-    "tier": 2,
+    "base_factor": 1.0,
+    "base_weight": 60,
     "weight_modifiers": [
       {
         "modifier": [
@@ -9844,11 +9330,11 @@
     "prerequisite": "tech_frontier_initiatives"
   },
   {
-    "weight": 95,
-    "subtier": 2,
+    "tier": 1,
     "cost": 480,
     "key": "tech_tb_mountain_range",
-    "tier": 1,
+    "base_factor": 1.0,
+    "base_weight": 95,
     "weight_modifiers": [
       {
         "modifier": [
@@ -9917,11 +9403,11 @@
     "prerequisite": "tech_colonization_1"
   },
   {
-    "weight": 95,
-    "subtier": 2,
+    "tier": 1,
     "cost": 480,
     "key": "tech_tb_volcano",
-    "tier": 1,
+    "base_factor": 1.0,
+    "base_weight": 95,
     "weight_modifiers": [
       {
         "modifier": [
@@ -9990,11 +9476,11 @@
     "prerequisite": "tech_colonization_1"
   },
   {
-    "weight": 95,
-    "subtier": 2,
+    "tier": 1,
     "cost": 480,
     "key": "tech_tb_dangerous_wildlife",
-    "tier": 1,
+    "base_factor": 1.0,
+    "base_weight": 95,
     "weight_modifiers": [
       {
         "modifier": [
@@ -10063,11 +9549,11 @@
     "prerequisite": "tech_colonization_1"
   },
   {
-    "weight": 95,
-    "subtier": 2,
+    "tier": 1,
     "cost": 480,
     "key": "tech_tb_dense_jungle",
-    "tier": 1,
+    "base_factor": 1.0,
+    "base_weight": 95,
     "weight_modifiers": [
       {
         "modifier": [
@@ -10136,11 +9622,11 @@
     "prerequisite": "tech_colonization_1"
   },
   {
-    "weight": 95,
-    "subtier": 2,
+    "tier": 1,
     "cost": 480,
     "key": "tech_tb_quicksand_basin",
-    "tier": 1,
+    "base_factor": 1.0,
+    "base_weight": 95,
     "weight_modifiers": [
       {
         "modifier": [
@@ -10209,11 +9695,11 @@
     "prerequisite": "tech_colonization_1"
   },
   {
-    "weight": 95,
-    "subtier": 2,
+    "tier": 1,
     "cost": 480,
     "key": "tech_tb_noxious_swamp",
-    "tier": 1,
+    "base_factor": 1.0,
+    "base_weight": 95,
     "weight_modifiers": [
       {
         "modifier": [
@@ -10282,11 +9768,11 @@
     "prerequisite": "tech_colonization_1"
   },
   {
-    "weight": 95,
-    "subtier": 2,
+    "tier": 1,
     "cost": 480,
     "key": "tech_tb_massive_glacier",
-    "tier": 1,
+    "base_factor": 1.0,
+    "base_weight": 95,
     "weight_modifiers": [
       {
         "modifier": [
@@ -10355,11 +9841,11 @@
     "prerequisite": "tech_colonization_1"
   },
   {
-    "weight": 95,
-    "subtier": 2,
+    "tier": 1,
     "cost": 480,
     "key": "tech_tb_toxic_kelp",
-    "tier": 1,
+    "base_factor": 1.0,
+    "base_weight": 95,
     "weight_modifiers": [
       {
         "modifier": [
@@ -10428,11 +9914,11 @@
     "prerequisite": "tech_colonization_1"
   },
   {
-    "weight": 95,
-    "subtier": 2,
+    "tier": 1,
     "cost": 480,
     "key": "tech_tb_deep_sinkhole",
-    "tier": 1,
+    "base_factor": 1.0,
+    "base_weight": 95,
     "weight_modifiers": [
       {
         "modifier": [
@@ -10501,11 +9987,11 @@
     "prerequisite": "tech_colonization_1"
   },
   {
-    "weight": 90,
-    "subtier": 3,
+    "tier": 1,
     "cost": 600,
     "key": "tech_terrestrial_sculpting",
-    "tier": 1,
+    "base_factor": 1.0,
+    "base_weight": 90,
     "weight_modifiers": [
       {
         "modifier": [
@@ -10554,11 +10040,11 @@
     "prerequisite": "tech_colonization_1"
   },
   {
-    "weight": 70,
-    "subtier": 2,
+    "tier": 2,
     "cost": 1400,
     "key": "tech_atmospheric_manipulation",
-    "tier": 2,
+    "base_factor": 1.0,
+    "base_weight": 70,
     "weight_modifiers": [
       {
         "modifier": [
@@ -10590,11 +10076,11 @@
     "prerequisite": "tech_terrestrial_sculpting"
   },
   {
-    "weight": 50,
-    "subtier": 1,
+    "tier": 3,
     "cost": 3000,
     "key": "tech_climate_restoration",
-    "tier": 3,
+    "base_factor": 1.0,
+    "base_weight": 50,
     "weight_modifiers": [
       {
         "modifier": [
@@ -10626,15 +10112,12 @@
     "prerequisite": "tech_atmospheric_manipulation"
   },
   {
-    "weight": 35,
-    "subtier": 4,
+    "tier": 3,
     "cost": 6000,
     "key": "tech_gaia_creation",
-    "tier": 3,
+    "base_factor": 0.1,
+    "base_weight": 35,
     "weight_modifiers": [
-      {
-        "factor": 0.1
-      },
       {
         "modifier": [
           {
@@ -10665,11 +10148,11 @@
     "prerequisite": "tech_climate_restoration"
   },
   {
-    "weight": 100,
-    "subtier": 1,
+    "tier": 1,
     "cost": 360,
     "key": "tech_genome_mapping",
-    "tier": 1,
+    "base_factor": 1.0,
+    "base_weight": 100,
     "weight_modifiers": [
       {
         "modifier": [
@@ -10697,11 +10180,11 @@
     "prerequisite": null
   },
   {
-    "weight": 75,
-    "subtier": 1,
+    "tier": 2,
     "cost": 1000,
     "key": "tech_vitality_boosters",
-    "tier": 2,
+    "base_factor": 1.0,
+    "base_weight": 75,
     "weight_modifiers": [
       {
         "modifier": [
@@ -10729,11 +10212,11 @@
     "prerequisite": "tech_genome_mapping"
   },
   {
-    "weight": 85,
-    "subtier": 4,
+    "tier": 2,
     "cost": 720,
     "key": "tech_epigenetic_triggers",
-    "tier": 2,
+    "base_factor": 1.0,
+    "base_weight": 85,
     "weight_modifiers": [
       {
         "modifier": [
@@ -10815,11 +10298,11 @@
     "prerequisite": "tech_genome_mapping"
   },
   {
-    "weight": 75,
-    "subtier": 1,
+    "tier": 2,
     "cost": 1000,
     "key": "tech_cloning",
-    "tier": 2,
+    "base_factor": 1.0,
+    "base_weight": 75,
     "weight_modifiers": [
       {
         "modifier": [
@@ -10847,11 +10330,11 @@
     "prerequisite": "tech_vitality_boosters"
   },
   {
-    "weight": 70,
-    "subtier": 2,
+    "tier": 2,
     "cost": 1400,
     "key": "tech_gene_banks",
-    "tier": 2,
+    "base_factor": 1.0,
+    "base_weight": 70,
     "weight_modifiers": [
       {
         "modifier": [
@@ -10948,11 +10431,11 @@
     "prerequisite": "tech_cloning"
   },
   {
-    "weight": 45,
-    "subtier": 2,
+    "tier": 3,
     "cost": 4000,
     "key": "tech_gene_seed_purification",
-    "tier": 3,
+    "base_factor": 1.0,
+    "base_weight": 45,
     "weight_modifiers": [
       {
         "modifier": [
@@ -11093,11 +10576,11 @@
     "prerequisite": "tech_gene_tailoring"
   },
   {
-    "weight": 65,
-    "subtier": 3,
+    "tier": 2,
     "cost": 1800,
     "key": "tech_morphogenetic_field_mastery",
-    "tier": 2,
+    "base_factor": 1.0,
+    "base_weight": 65,
     "weight_modifiers": [
       {
         "modifier": [
@@ -11255,11 +10738,11 @@
     "prerequisite": "tech_epigenetic_triggers"
   },
   {
-    "weight": 60,
-    "subtier": 4,
+    "tier": 2,
     "cost": 2200,
     "key": "tech_gene_tailoring",
-    "tier": 2,
+    "base_factor": 1.0,
+    "base_weight": 60,
     "weight_modifiers": [
       {
         "modifier": [
@@ -11287,11 +10770,11 @@
     "prerequisite": "tech_cloning"
   },
   {
-    "weight": 45,
-    "subtier": 2,
+    "tier": 3,
     "cost": 4000,
     "key": "tech_gene_expressions",
-    "tier": 3,
+    "base_factor": 1.0,
+    "base_weight": 45,
     "weight_modifiers": [
       {
         "modifier": [
@@ -11384,11 +10867,11 @@
     "prerequisite": "tech_gene_tailoring"
   },
   {
-    "weight": 60,
-    "subtier": 4,
+    "tier": 2,
     "cost": 2200,
     "key": "tech_selected_lineages",
-    "tier": 2,
+    "base_factor": 1.0,
+    "base_weight": 60,
     "weight_modifiers": [
       {
         "modifier": [
@@ -11481,11 +10964,11 @@
     "prerequisite": "tech_vitality_boosters"
   },
   {
-    "weight": 45,
-    "subtier": 2,
+    "tier": 3,
     "cost": 4000,
     "key": "tech_capacity_boosters",
-    "tier": 3,
+    "base_factor": 1.0,
+    "base_weight": 45,
     "weight_modifiers": [
       {
         "modifier": [
@@ -11586,33 +11069,12 @@
     "prerequisite": "tech_selected_lineages"
   },
   {
-    "weight": 40,
-    "subtier": 3,
-    "cost": 5000,
-    "key": "tech_regenerative_hull_tissue",
-    "tier": 3,
-    "weight_modifiers": [
-      {
-        "factor": 0
-      }
-    ],
-    "start_tech": false,
-    "desc": "A genetically altered version of silicon-based bacteria could potentially be manipulated to regenerate non-organic materials.\n\n",
-    "category": "Materials",
-    "name": "Regenerative Hull Tissue",
-    "area": "Society",
-    "prerequisite": null
-  },
-  {
-    "weight": 100,
-    "subtier": 1,
+    "tier": 1,
     "cost": 360,
     "key": "tech_doctrine_fleet_size_1",
-    "tier": 1,
+    "base_factor": 3,
+    "base_weight": 100,
     "weight_modifiers": [
-      {
-        "factor": 3
-      },
       {
         "modifier": [
           {
@@ -11679,15 +11141,12 @@
     "prerequisite": null
   },
   {
-    "weight": 90,
-    "subtier": 3,
+    "tier": 1,
     "cost": 600,
     "key": "tech_doctrine_fleet_size_2",
-    "tier": 1,
+    "base_factor": 3,
+    "base_weight": 90,
     "weight_modifiers": [
-      {
-        "factor": 3
-      },
       {
         "modifier": [
           {
@@ -11754,15 +11213,12 @@
     "prerequisite": "tech_doctrine_fleet_size_1"
   },
   {
-    "weight": 75,
-    "subtier": 1,
+    "tier": 2,
     "cost": 1000,
     "key": "tech_doctrine_fleet_size_3",
-    "tier": 2,
+    "base_factor": 3,
+    "base_weight": 75,
     "weight_modifiers": [
-      {
-        "factor": 3
-      },
       {
         "modifier": [
           {
@@ -11829,15 +11285,12 @@
     "prerequisite": "tech_doctrine_fleet_size_2"
   },
   {
-    "weight": 60,
-    "subtier": 4,
+    "tier": 2,
     "cost": 2200,
     "key": "tech_doctrine_fleet_size_4",
-    "tier": 2,
+    "base_factor": 3,
+    "base_weight": 60,
     "weight_modifiers": [
-      {
-        "factor": 3
-      },
       {
         "modifier": [
           {
@@ -11904,15 +11357,12 @@
     "prerequisite": "tech_doctrine_fleet_size_3"
   },
   {
-    "weight": 50,
-    "subtier": 1,
+    "tier": 3,
     "cost": 3000,
     "key": "tech_doctrine_fleet_size_5",
-    "tier": 3,
+    "base_factor": 3,
+    "base_weight": 50,
     "weight_modifiers": [
-      {
-        "factor": 3
-      },
       {
         "modifier": [
           {
@@ -11979,11 +11429,11 @@
     "prerequisite": "tech_doctrine_fleet_size_4"
   },
   {
-    "weight": 85,
-    "subtier": 4,
+    "tier": 1,
     "cost": 720,
     "key": "tech_interstellar_fleet_traditions",
-    "tier": 1,
+    "base_factor": 1.0,
+    "base_weight": 85,
     "weight_modifiers": [
       {
         "modifier": [
@@ -12051,11 +11501,11 @@
     "prerequisite": "tech_doctrine_fleet_size_2"
   },
   {
-    "weight": 95,
-    "subtier": 2,
+    "tier": 1,
     "cost": 480,
     "key": "tech_doctrine_fleet_support",
-    "tier": 1,
+    "base_factor": 1.0,
+    "base_weight": 95,
     "weight_modifiers": [
       {
         "modifier": [
@@ -12123,11 +11573,11 @@
     "prerequisite": "tech_doctrine_fleet_size_1"
   },
   {
-    "weight": 70,
-    "subtier": 2,
+    "tier": 2,
     "cost": 1400,
     "key": "tech_doctrine_command_matrix",
-    "tier": 2,
+    "base_factor": 1.0,
+    "base_weight": 70,
     "weight_modifiers": [
       {
         "modifier": [
@@ -12216,11 +11666,11 @@
     "prerequisite": "tech_doctrine_fleet_size_3"
   },
   {
-    "weight": 85,
-    "subtier": 4,
+    "tier": 2,
     "cost": 720,
     "key": "tech_doctrine_refit_standards",
-    "tier": 2,
+    "base_factor": 1.0,
+    "base_weight": 85,
     "weight_modifiers": [
       {
         "modifier": [
@@ -12288,11 +11738,11 @@
     "prerequisite": "tech_doctrine_fleet_size_2"
   },
   {
-    "weight": 100,
-    "subtier": 1,
+    "tier": 1,
     "cost": 360,
     "key": "tech_centralized_command",
-    "tier": 1,
+    "base_factor": 1.0,
+    "base_weight": 100,
     "weight_modifiers": [
       {
         "modifier": [
@@ -12360,11 +11810,11 @@
     "prerequisite": null
   },
   {
-    "weight": 85,
-    "subtier": 4,
+    "tier": 1,
     "cost": 720,
     "key": "tech_combat_training",
-    "tier": 1,
+    "base_factor": 1.0,
+    "base_weight": 85,
     "weight_modifiers": [
       {
         "modifier": [
@@ -12432,11 +11882,11 @@
     "prerequisite": "tech_centralized_command"
   },
   {
-    "weight": 60,
-    "subtier": 4,
+    "tier": 2,
     "cost": 2200,
     "key": "tech_psionic_theory",
-    "tier": 2,
+    "base_factor": 1.0,
+    "base_weight": 60,
     "weight_modifiers": [
       {
         "modifier": [
@@ -12612,11 +12062,11 @@
     "prerequisite": null
   },
   {
-    "weight": 50,
-    "subtier": 1,
+    "tier": 3,
     "cost": 3000,
     "key": "tech_telepathy",
-    "tier": 3,
+    "base_factor": 1.0,
+    "base_weight": 50,
     "weight_modifiers": [
       {
         "modifier": [
@@ -12751,11 +12201,11 @@
     "prerequisite": "tech_psionic_theory"
   },
   {
-    "weight": 50,
-    "subtier": 1,
+    "tier": 3,
     "cost": 3000,
     "key": "tech_precognition_interface",
-    "tier": 3,
+    "base_factor": 1.0,
+    "base_weight": 50,
     "weight_modifiers": [
       {
         "modifier": [
@@ -12890,15 +12340,12 @@
     "prerequisite": "tech_telepathy"
   },
   {
-    "weight": 35,
-    "subtier": 4,
+    "tier": 3,
     "cost": 6000,
     "key": "tech_psi_jump_drive_1",
-    "tier": 3,
+    "base_factor": 0.1,
+    "base_weight": 35,
     "weight_modifiers": [
-      {
-        "factor": 0.1
-      },
       {
         "modifier": [
           {
@@ -12959,11 +12406,11 @@
     "prerequisite": "tech_precognition_interface"
   },
   {
-    "weight": 95,
-    "subtier": 2,
+    "tier": 1,
     "cost": 480,
     "key": "tech_purity_campaigns",
-    "tier": 1,
+    "base_factor": 1.0,
+    "base_weight": 95,
     "weight_modifiers": [
       {
         "modifier": [
@@ -13045,11 +12492,11 @@
     "prerequisite": "tech_planetary_government"
   },
   {
-    "weight": 95,
-    "subtier": 2,
+    "tier": 1,
     "cost": 480,
     "key": "tech_symbol_unity",
-    "tier": 1,
+    "base_factor": 1.0,
+    "base_weight": 95,
     "weight_modifiers": [
       {
         "modifier": [
@@ -13098,11 +12545,11 @@
     "prerequisite": "tech_planetary_government"
   },
   {
-    "weight": 95,
-    "subtier": 2,
+    "tier": 1,
     "cost": 480,
     "key": "tech_visitor_center",
-    "tier": 1,
+    "base_factor": 1.0,
+    "base_weight": 95,
     "weight_modifiers": [
       {
         "modifier": [
@@ -13175,11 +12622,11 @@
     "prerequisite": null
   },
   {
-    "weight": 75,
-    "subtier": 1,
+    "tier": 2,
     "cost": 1000,
     "key": "tech_xeno_diplomacy",
-    "tier": 2,
+    "base_factor": 1.0,
+    "base_weight": 75,
     "weight_modifiers": [
       {
         "modifier": [
@@ -13275,11 +12722,11 @@
     "prerequisite": null
   },
   {
-    "weight": 75,
-    "subtier": 1,
+    "tier": 2,
     "cost": 1000,
     "key": "tech_xeno_integration",
-    "tier": 2,
+    "base_factor": 1.0,
+    "base_weight": 75,
     "weight_modifiers": [
       {
         "modifier": [
@@ -13396,11 +12843,11 @@
     "prerequisite": null
   },
   {
-    "weight": 85,
-    "subtier": 4,
+    "tier": 1,
     "cost": 720,
     "key": "tech_galactic_ambitions",
-    "tier": 1,
+    "base_factor": 1.0,
+    "base_weight": 85,
     "weight_modifiers": [
       {
         "modifier": [
@@ -13476,11 +12923,11 @@
     "prerequisite": null
   },
   {
-    "weight": 65,
-    "subtier": 3,
+    "tier": 2,
     "cost": 1800,
     "key": "tech_manifest_destiny",
-    "tier": 2,
+    "base_factor": 1.0,
+    "base_weight": 65,
     "weight_modifiers": [
       {
         "modifier": [
@@ -13556,11 +13003,11 @@
     "prerequisite": "tech_galactic_ambitions"
   },
   {
-    "weight": 90,
-    "subtier": 3,
+    "tier": 1,
     "cost": 600,
     "key": "tech_paradise_dome",
-    "tier": 1,
+    "base_factor": 1.0,
+    "base_weight": 90,
     "weight_modifiers": [
       {
         "modifier": [
@@ -13602,11 +13049,11 @@
     "prerequisite": "tech_planetary_unification"
   },
   {
-    "weight": 90,
-    "subtier": 3,
+    "tier": 1,
     "cost": 600,
     "key": "tech_virtual_combat_arena",
-    "tier": 1,
+    "base_factor": 1.0,
+    "base_weight": 90,
     "weight_modifiers": [
       {
         "modifier": [
@@ -13682,15 +13129,13 @@
     "prerequisite": "tech_centralized_command"
   },
   {
-    "weight": 0,
-    "subtier": 1,
+    "tier": 0,
     "cost": 0,
     "key": "tech_planetary_government",
-    "tier": 0,
-    "weight_modifiers": [
-      null
-    ],
-    "start_tech": false,
+    "base_factor": 1.0,
+    "base_weight": 0,
+    "weight_modifiers": [],
+    "start_tech": true,
     "desc": "Once a colony has been firmly established and pioneers turn into citizens, the need for a strong local government providing stability trumps the colonial need for flexibility.\n\n",
     "category": "Statecraft",
     "name": "Planetary Government",
@@ -13698,15 +13143,12 @@
     "prerequisite": null
   },
   {
-    "weight": 100,
-    "subtier": 1,
+    "tier": 1,
     "cost": 360,
     "key": "tech_planetary_unification",
-    "tier": 1,
+    "base_factor": 4,
+    "base_weight": 100,
     "weight_modifiers": [
-      {
-        "factor": 4
-      },
       {
         "modifier": [
           {
@@ -13737,15 +13179,12 @@
     "prerequisite": "tech_planetary_government"
   },
   {
-    "weight": 85,
-    "subtier": 4,
+    "tier": 1,
     "cost": 720,
     "key": "tech_colonial_centralization",
-    "tier": 1,
+    "base_factor": 4,
+    "base_weight": 85,
     "weight_modifiers": [
-      {
-        "factor": 4
-      },
       {
         "modifier": [
           {
@@ -13772,15 +13211,12 @@
     "prerequisite": "tech_planetary_unification"
   },
   {
-    "weight": 70,
-    "subtier": 2,
+    "tier": 2,
     "cost": 1400,
     "key": "tech_galactic_administration",
-    "tier": 2,
+    "base_factor": 4,
+    "base_weight": 70,
     "weight_modifiers": [
-      {
-        "factor": 4
-      },
       {
         "modifier": [
           {
@@ -13807,11 +13243,11 @@
     "prerequisite": "tech_colonial_centralization"
   },
   {
-    "weight": 65,
-    "subtier": 3,
+    "tier": 2,
     "cost": 1800,
     "key": "tech_galactic_markets",
-    "tier": 2,
+    "base_factor": 1.0,
+    "base_weight": 65,
     "weight_modifiers": [
       {
         "modifier": [
@@ -13913,11 +13349,11 @@
     "prerequisite": "tech_galactic_administration"
   },
   {
-    "weight": 75,
-    "subtier": 1,
+    "tier": 2,
     "cost": 1000,
     "key": "tech_hyper_entertainment_forum",
-    "tier": 2,
+    "base_factor": 1.0,
+    "base_weight": 75,
     "weight_modifiers": [
       {
         "modifier": [
@@ -13983,11 +13419,11 @@
     "prerequisite": "tech_colonial_centralization"
   },
   {
-    "weight": 70,
-    "subtier": 2,
+    "tier": 2,
     "cost": 1400,
     "key": "tech_galactic_benevolence",
-    "tier": 2,
+    "base_factor": 1.0,
+    "base_weight": 70,
     "weight_modifiers": [
       {
         "modifier": [
@@ -14084,11 +13520,11 @@
     "prerequisite": "tech_galactic_administration"
   },
   {
-    "weight": 95,
-    "subtier": 2,
+    "tier": 1,
     "cost": 480,
     "key": "tech_adaptive_bureaucracy",
-    "tier": 1,
+    "base_factor": 1.0,
+    "base_weight": 95,
     "weight_modifiers": [
       {
         "modifier": [
@@ -14164,11 +13600,11 @@
     "prerequisite": "tech_planetary_unification"
   },
   {
-    "weight": 70,
-    "subtier": 2,
+    "tier": 2,
     "cost": 1400,
     "key": "tech_living_state",
-    "tier": 2,
+    "base_factor": 1.0,
+    "base_weight": 70,
     "weight_modifiers": [
       {
         "modifier": [
@@ -14261,11 +13697,11 @@
     "prerequisite": "tech_colonial_centralization"
   },
   {
-    "weight": 45,
-    "subtier": 2,
+    "tier": 3,
     "cost": 4000,
     "key": "tech_collective_self",
-    "tier": 3,
+    "base_factor": 1.0,
+    "base_weight": 45,
     "weight_modifiers": [
       {
         "modifier": [
@@ -14375,11 +13811,11 @@
     "prerequisite": "tech_living_state"
   },
   {
-    "weight": 90,
-    "subtier": 3,
+    "tier": 1,
     "cost": 600,
     "key": "tech_neural_implants",
-    "tier": 1,
+    "base_factor": 1.0,
+    "base_weight": 90,
     "weight_modifiers": [
       {
         "modifier": [
@@ -14478,11 +13914,11 @@
     "prerequisite": null
   },
   {
-    "weight": 65,
-    "subtier": 3,
+    "tier": 2,
     "cost": 1400,
     "key": "tech_artificial_moral_codes",
-    "tier": 2,
+    "base_factor": 1.0,
+    "base_weight": 65,
     "weight_modifiers": [
       {
         "modifier": [
@@ -14510,11 +13946,11 @@
     "prerequisite": null
   },
   {
-    "weight": 60,
-    "subtier": 4,
+    "tier": 2,
     "cost": 2200,
     "key": "tech_synthetic_thought_patterns",
-    "tier": 2,
+    "base_factor": 1.0,
+    "base_weight": 60,
     "weight_modifiers": [
       {
         "modifier": [
@@ -14559,11 +13995,11 @@
     "prerequisite": "tech_artificial_moral_codes"
   },
   {
-    "weight": 40,
-    "subtier": 3,
+    "tier": 3,
     "cost": 5000,
     "key": "tech_will_to_power",
-    "tier": 3,
+    "base_factor": 1.0,
+    "base_weight": 40,
     "weight_modifiers": [
       {
         "modifier": [
@@ -14656,16 +14092,12 @@
     "prerequisite": "tech_synthetic_thought_patterns"
   },
   {
-    "weight": 25,
-    "subtier": 1,
+    "tier": 3,
     "cost": 3000,
     "key": "tech_repeatable_improved_tile_energy_output",
-    "tier": 3,
-    "weight_modifiers": [
-      {
-        "factor": "@repatableTechFactor"
-      }
-    ],
+    "base_factor": 0.5,
+    "base_weight": 25,
+    "weight_modifiers": [],
     "start_tech": false,
     "desc": "Minor improvements to transmission efficiency adds up to a sizeable reduction in overall energy loss.\n\n",
     "category": "Industry",
@@ -14674,16 +14106,12 @@
     "prerequisite": "tech_power_plant_3"
   },
   {
-    "weight": 25,
-    "subtier": 1,
+    "tier": 3,
     "cost": 3000,
     "key": "tech_repeatable_improved_shield_output",
-    "tier": 3,
-    "weight_modifiers": [
-      {
-        "factor": "@repatableTechFactor"
-      }
-    ],
+    "base_factor": 0.5,
+    "base_weight": 25,
+    "weight_modifiers": [],
     "start_tech": false,
     "desc": "The basic mechanics of ship shields are complex, but they can be adjusted and improved in a multitude of ways.\n\n",
     "category": "Field Manipulation",
@@ -14692,16 +14120,12 @@
     "prerequisite": "tech_shields_4"
   },
   {
-    "weight": 25,
-    "subtier": 1,
+    "tier": 3,
     "cost": 3000,
     "key": "tech_repeatable_weapon_type_energy_damage",
-    "tier": 3,
-    "weight_modifiers": [
-      {
-        "factor": "@repatableTechFactor"
-      }
-    ],
+    "base_factor": 0.5,
+    "base_weight": 25,
+    "weight_modifiers": [],
     "start_tech": false,
     "desc": "Perfecting the firing cadence of laser weaponry is a task that could keep the engineering elite of any given planet busy for centuries.\n\n",
     "category": "Particles",
@@ -14710,16 +14134,12 @@
     "prerequisite": "tech_lasers_4"
   },
   {
-    "weight": 25,
-    "subtier": 1,
+    "tier": 3,
     "cost": 3000,
     "key": "tech_repeatable_weapon_type_energy_fire_rate",
-    "tier": 3,
-    "weight_modifiers": [
-      {
-        "factor": "@repatableTechFactor"
-      }
-    ],
+    "base_factor": 0.5,
+    "base_weight": 25,
+    "weight_modifiers": [],
     "start_tech": false,
     "desc": "New developments in tech cooling regularly surface, improving the stability and efficiency of our weapons systems, keeping them from blowing up the ships upon which they are mounted.\n\n",
     "category": "Particles",
@@ -14728,16 +14148,12 @@
     "prerequisite": "tech_lasers_2"
   },
   {
-    "weight": 25,
-    "subtier": 1,
+    "tier": 3,
     "cost": 3000,
     "key": "tech_repeatable_improved_planet_sensor_range",
-    "tier": 3,
-    "weight_modifiers": [
-      {
-        "factor": "@repatableTechFactor"
-      }
-    ],
+    "base_factor": 0.5,
+    "base_weight": 25,
+    "weight_modifiers": [],
     "start_tech": false,
     "desc": "As our fleets roam every further from our ancestral home, our sensor technology continuously pushes past the limits of old.\n\n",
     "category": "Voidcraft",
@@ -14746,16 +14162,12 @@
     "prerequisite": "tech_sensors_3"
   },
   {
-    "weight": 25,
-    "subtier": 1,
+    "tier": 3,
     "cost": 3000,
     "key": "tech_repeatable_reduced_building_cost",
-    "tier": 3,
-    "weight_modifiers": [
-      {
-        "factor": "@repatableTechFactor"
-      }
-    ],
+    "base_factor": 0.5,
+    "base_weight": 25,
+    "weight_modifiers": [],
     "start_tech": false,
     "desc": "Increasingly powerful computation paradigms allow us to adapt individual construction projects to planetary and ultra-local gravitational conditions.\n\n",
     "category": "Computing",
@@ -14764,16 +14176,12 @@
     "prerequisite": "tech_physics_lab_2"
   },
   {
-    "weight": 25,
-    "subtier": 1,
+    "tier": 3,
     "cost": 3000,
     "key": "tech_repeatable_reduced_building_time",
-    "tier": 3,
-    "weight_modifiers": [
-      {
-        "factor": "@repatableTechFactor"
-      }
-    ],
+    "base_factor": 0.5,
+    "base_weight": 25,
+    "weight_modifiers": [],
     "start_tech": false,
     "desc": "The application of game and puzzle theory has the potential to greatly optimize modular assembly and construction.\n\n",
     "category": "Computing",
@@ -14782,15 +14190,12 @@
     "prerequisite": "tech_physics_lab_2"
   },
   {
-    "weight": 90,
-    "subtier": 3,
+    "tier": 1,
     "cost": 600,
     "key": "tech_mine_garanthium",
-    "tier": 1,
+    "base_factor": 2,
+    "base_weight": 90,
     "weight_modifiers": [
-      {
-        "factor": 2
-      },
       {
         "modifier": [
           {
@@ -14849,15 +14254,12 @@
     "prerequisite": "tech_mineral_processing_1"
   },
   {
-    "weight": 90,
-    "subtier": 3,
+    "tier": 1,
     "cost": 600,
     "key": "tech_lythuric_gas",
-    "tier": 1,
+    "base_factor": 2,
+    "base_weight": 90,
     "weight_modifiers": [
-      {
-        "factor": 2
-      },
       {
         "modifier": [
           {
@@ -14916,15 +14318,12 @@
     "prerequisite": "tech_sensors_2"
   },
   {
-    "weight": 90,
-    "subtier": 3,
+    "tier": 1,
     "cost": 600,
     "key": "tech_engos_vapor",
-    "tier": 1,
+    "base_factor": 2,
+    "base_weight": 90,
     "weight_modifiers": [
-      {
-        "factor": 2
-      },
       {
         "modifier": [
           {
@@ -14983,15 +14382,12 @@
     "prerequisite": "tech_genome_mapping"
   },
   {
-    "weight": 90,
-    "subtier": 3,
+    "tier": 1,
     "cost": 600,
     "key": "tech_mine_teldar",
-    "tier": 1,
+    "base_factor": 2,
+    "base_weight": 90,
     "weight_modifiers": [
-      {
-        "factor": 2
-      },
       {
         "modifier": [
           {
@@ -15050,15 +14446,12 @@
     "prerequisite": "tech_mineral_processing_1"
   },
   {
-    "weight": 90,
-    "subtier": 3,
+    "tier": 1,
     "cost": 600,
     "key": "tech_pitharan_dust",
-    "tier": 1,
+    "base_factor": 2,
+    "base_weight": 90,
     "weight_modifiers": [
-      {
-        "factor": 2
-      },
       {
         "modifier": [
           {
@@ -15117,15 +14510,12 @@
     "prerequisite": "tech_genome_mapping"
   },
   {
-    "weight": 90,
-    "subtier": 3,
+    "tier": 1,
     "cost": 600,
     "key": "tech_mine_orillium",
-    "tier": 1,
+    "base_factor": 2,
+    "base_weight": 90,
     "weight_modifiers": [
-      {
-        "factor": 2
-      },
       {
         "modifier": [
           {
@@ -15184,15 +14574,12 @@
     "prerequisite": "tech_mineral_processing_1"
   },
   {
-    "weight": 45,
-    "subtier": 2,
+    "tier": 3,
     "cost": 4000,
     "key": "tech_mine_neutronium",
-    "tier": 3,
+    "base_factor": 2,
+    "base_weight": 45,
     "weight_modifiers": [
-      {
-        "factor": 2
-      },
       {
         "modifier": [
           {
@@ -15219,33 +14606,12 @@
     "prerequisite": "tech_sensors_4"
   },
   {
-    "weight": 35,
-    "subtier": 4,
-    "cost": 6000,
-    "key": "tech_mine_living_metal",
-    "tier": 3,
-    "weight_modifiers": [
-      {
-        "factor": 0
-      }
-    ],
-    "start_tech": false,
-    "desc": "Mining and processing the rare living metals is exceedingly difficult, but successful application of the mutable alloys yields incomparable advantages.",
-    "category": "Materials",
-    "name": "Living Metal",
-    "area": "Engineering",
-    "prerequisite": "tech_space_construction"
-  },
-  {
-    "weight": 100,
-    "subtier": 1,
+    "tier": 1,
     "cost": 360,
     "key": "tech_mine_betharian",
-    "tier": 1,
+    "base_factor": 2,
+    "base_weight": 100,
     "weight_modifiers": [
-      {
-        "factor": 2
-      },
       {
         "modifier": [
           {
@@ -15303,11 +14669,11 @@
     "prerequisite": "tech_space_construction"
   },
   {
-    "weight": 60,
-    "subtier": 4,
+    "tier": 2,
     "cost": 2200,
     "key": "tech_mine_zro",
-    "tier": 2,
+    "base_factor": 1.0,
+    "base_weight": 60,
     "weight_modifiers": [
       {
         "modifier": [
@@ -15376,15 +14742,12 @@
     "prerequisite": "tech_sensors_3"
   },
   {
-    "weight": 75,
-    "subtier": 1,
+    "tier": 2,
     "cost": 1000,
     "key": "tech_mine_satramene",
-    "tier": 2,
+    "base_factor": 2,
+    "base_weight": 75,
     "weight_modifiers": [
-      {
-        "factor": 2
-      },
       {
         "modifier": [
           {
@@ -15411,11 +14774,11 @@
     "prerequisite": "tech_sensors_3"
   },
   {
-    "weight": 45,
-    "subtier": 2,
+    "tier": 3,
     "cost": 4000,
     "key": "tech_mine_dark_matter",
-    "tier": 3,
+    "base_factor": 1.0,
+    "base_weight": 45,
     "weight_modifiers": [
       {
         "modifier": [

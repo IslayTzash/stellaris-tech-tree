@@ -5,11 +5,38 @@ from lex import tokens
 from os import listdir, path
 from ply.yacc import yacc
 from pprint import pprint
+import argparse
 import codecs
 import json
 import re
 import ruamel.yaml as yaml
 import sys
+
+
+# Process CLI arguments:
+def valid_label(label):
+    if not re.match(r'^\w+$', label):
+        raise argparse.ArgumentTypeError('Must match [a-z0-9_]')
+
+    return label.lower()
+
+
+def valid_dirs(directory):
+    if not path.isdir(directory):
+        message = "'{}' not found or not a directory".format(directory)
+        raise argparse.ArgumentTypeError(message)
+
+    return directory
+
+arg_parser = argparse.ArgumentParser(
+    description='Parse Stellaris tech and localization files')
+arg_parser.add_argument('label', type=valid_label)
+arg_parser.add_argument('directories', nargs='+', type=valid_dirs)
+
+args = arg_parser.parse_args()
+tree_label = args.label
+directories = args.directories
+
 
 def p_script(tokens):
     'script : statements'
@@ -113,24 +140,33 @@ def p_expression_block(tokens):
 def p_error(p):
     raise Exception("Syntax error in input: {}".format(str(p)))
 
-try:
-    tree_name = sys.argv[1]
-except IndexError:
-    sys.exit('No Stellaris tree name provided!')
 
-
-try:
-    directories = sys.argv[2:]
-except IndexError:
-    sys.exit('No Stellaris game directories provided!')
+def parse_weight_modifier(modifier):
+    pass
 
 tech_file_paths = []
 loc_file_paths = []
+tech_filenames = set()
 for directory in directories:
     tech_dir = path.join(directory, 'common/technology')
-    tech_file_paths += [path.join(tech_dir, filename) for filename
-                  in listdir(tech_dir)
-                  if path.isfile(path.join(tech_dir, filename))]
+    print 'Loading {} ...'.format(tech_dir)
+    for filename in listdir(tech_dir):
+        file_path = path.join(tech_dir, filename)
+        if not path.isfile(file_path):
+            continue
+
+        # If filename already loaded, replace old one with new:
+        if filename in tech_filenames:
+            path_to_delete = next(iter(
+                file_path for file_path
+                in tech_file_paths
+                if path.basename(file_path) == filename
+            ))
+            print 'Removing {} ...'.format(path_to_delete)
+            tech_file_paths.remove(path_to_delete)
+
+        tech_filenames.add(filename)
+        tech_file_paths.append(path.join(tech_dir, filename))
 
     loc_dir = path.join(directory, 'localisation')
     loc_file_paths += [path.join(loc_dir, filename) for filename
@@ -146,7 +182,6 @@ for file_path in tech_file_paths:
     tech_data += open(file_path).read()
 
 script = yacc().parse(tech_data)
-technologies = {}
 at_vars = {}
 
 def localized_strings():
@@ -174,27 +209,24 @@ def localized_strings():
 
 
 def is_start_tech(tech):
-    key = tech.keys()[0]
-    if key in ['tech_lasers_1', 'tech_mass_drivers_1', 'tech_missiles_1']:
-        value = True
-    else:
-        try:
-            yes_no = next(iter(key for key in tech[key] if key.keys()[0] == 'category'))['start_tech'][0]
-            value = True if value == 'yes' else False
-        except KeyError:
-            value = False
+    try:
+        yes_no = next(iter(key for key in tech[key] if key.keys()[0] == 'start_tech'))['start_tech']
+        value = True if yes_no == 'yes' else False
+    except StopIteration:
+        value = True if tier(tech) == 0 else False
 
     return value
 
 def prerequisite(tech):
-    key = tech.keys()[0]
+    tech_key = tech.keys()[0]
     if key in ['tech_biolab_1', 'tech_physics_lab_1',
                'tech_engineering_lab_1']:
         return 'tech_basic_science_lab_1'
 
     try:
         value = next(iter(
-            subkey for subkey in tech[key] if subkey.keys()[0] == 'prerequisites'
+            subkey for subkey in tech[tech_key]
+            if subkey.keys()[0] == 'prerequisites'
         ))['prerequisites'][0]
     except StopIteration:
         value = None
@@ -202,49 +234,47 @@ def prerequisite(tech):
     return value
 
 def tier(tech):
-    key = tech.keys()[0]
-    if key in ['tech_lasers_1', 'tech_mass_drivers_1', 'tech_missiles_1']:
-        tier = 0
-    else:
-        tier = next(iter(key for key in tech[key] if key.keys()[0] == 'tier'))['tier']
-
-        try:
-            weight_var = next(iter(key for key in tech[key] if key.keys()[0] == 'weight'))['weight']
-            weight_tier = int(re.match(r'@tier(\d)weight\d', weight_var).group(1))
-            if weight_tier > tier:
-                tier = weight_tier
-        except (TypeError, AttributeError, StopIteration):
-            pass
+    tier = next(
+        iter(key for key in tech[key] if key.keys()[0] == 'tier')
+    )['tier']
 
     return tier
-
-def subtier(tech):
-    try:
-        weight_var = next(iter(key for key in tech[key] if key.keys()[0] == 'weight'))['weight']
-        subtier = int(re.match(r'@tier\dweight(\d)', weight_var).group(1))
-    except TypeError:
-        subtier = 1
-    except AttributeError:
-        subtier = 1
-    except StopIteration:
-        subtier = 1
-
-    return subtier
 
 def cost(tech):
     string = next(iter(key for key in tech[key] if key.keys()[0] == 'cost'))['cost']
     return at_vars[string] if str(string).startswith('@') else string
 
 
-def weight(tech):
+def base_weight(tech):
+    tech_key = tech.keys()[0]
+
     try:
         string = next(iter(key for key in tech[key] if key.keys()[0] == 'weight'))['weight']
+        weight = at_vars[string] \
+                      if str(string).startswith('@') \
+                      else string
     except StopIteration:
-        string = 0
-    return at_vars[string] if str(string).startswith('@') else string
+        weight = 0
+
+    return weight
+
+def base_factor(tech):
+    try:
+        string = next(
+            iter(key for key in tech[key]
+                 if key.keys()[0] == 'weight_modifier')
+        )['weight_modifier'][0]['factor']
+        factor = at_vars[string] \
+                      if str(string).startswith('@') \
+                         else string
+    except (StopIteration, KeyError):
+        factor = 1.0
+
+    return factor
 
 
 loc_data = localized_strings()
+technologies = []
 
 for tech in script:
     if tech.keys()[0].startswith('@'):
@@ -259,9 +289,25 @@ for tech in script:
 
     area = next(iter(key for key in tech[key] if key.keys()[0] == 'area'))['area']
     category = next(iter(key for key in tech[key] if key.keys()[0] == 'category'))['category'][0]
-    weight_modifiers = next(iter(
-        key for key in tech[key] if key.keys()[0] == 'weight_modifier'),
-                            {'weight_modifier': [None]})['weight_modifier']
+
+    tech_base_weight = base_weight(tech)
+    tech_base_factor = base_factor(tech)
+    try:
+        modifier_list = next(iter(key for key in tech[key]
+                                  if key.keys()[0] == 'weight_modifier')
+        )['weight_modifier']
+        weight_modifiers = modifier_list[1:] \
+                           if modifier_list[0].keys() == ['factor'] \
+                              else modifier_list
+
+    except(StopIteration, KeyError):
+        weight_modifiers = []
+
+    if not is_start_tech(tech) \
+       and tech_base_weight * tech_base_factor == 0 \
+       and len(weight_modifiers) == 0:
+        continue
+
 
     try:
         name = loc_data[key]
@@ -282,21 +328,21 @@ for tech in script:
         print key
         prereq = None
 
-    technologies.update({key: {
+    technologies.append({
         'key': key,
         'tier': tier(tech),
-        'subtier': subtier(tech),
         'name': name,
         'desc': description,
         'cost': cost(tech),
-        'weight': weight(tech),
+        'base_factor': tech_base_factor,
+        'base_weight': tech_base_weight,
         'weight_modifiers': weight_modifiers,
         'area': area.title(),
         'start_tech': is_start_tech(tech),
         'category': loc_data[category],
         'prerequisite': prereq
-    }})
+    })
 
-jsonified = json.dumps(technologies.values(), indent=2, separators=(',', ': '))
+jsonified = json.dumps(technologies, indent=2, separators=(',', ': '))
 # print jsonified
-open(path.join('public', tree_name, 'techs.json'), 'w').write(jsonified)
+open(path.join('public', tree_label, 'techs.json'), 'w').write(jsonified)

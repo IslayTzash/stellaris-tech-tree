@@ -20,7 +20,7 @@ let rootNode = {HTMLid: 'root', data: {tier: 0}};
 $(document).ready(function() {
   $.getJSON('techs.json', function(techData) {
     let techs = techData.filter(function(tech) {
-      return (tech.tier == 0 || tech.weight > 0)
+      return (tech.tier == 0 || tech.base_weight > 0)
         && Object.keys(tech)[0].search(/^@\w+$/) == -1;
     }).map(function(tech) {
       let key = tech.key;
@@ -32,7 +32,7 @@ $(document).ready(function() {
           ? 'Cost: <span class="' + costClass + '">' + tech.cost + '</span>'
           : '';
       let weight = tech.tier > 0
-          ? 'Weight: ' + tech.weight
+          ? 'Weight: ' + tech.base_weight
           : '';
       let category = tech.category + tier;
 
@@ -67,6 +67,7 @@ $(document).ready(function() {
           })[0];
       }
 
+      console.log(tech);
       let tierDifference = tech.data.tier - tech.parent.data.tier;
       let nestedTech = tech;
       while ( tierDifference > 1 && nestedTech.parent != rootNode ) {
