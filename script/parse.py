@@ -228,10 +228,31 @@ def localized_strings():
 
 def is_start_tech(tech):
     try:
-        yes_no = next(iter(key for key in tech[key] if key.keys()[0] == 'start_tech'))['start_tech']
+        yes_no = next(iter(key for key in tech[key]
+                           if key.keys()[0] == 'start_tech'))['start_tech']
         value = True if yes_no == 'yes' else False
     except StopIteration:
         value = True if tier(tech) == 0 else False
+
+    return value
+
+def is_dangerous(tech):
+    try:
+        yes_no = next(iter(key for key in tech[key]
+                           if key.keys()[0] == 'is_dangerous'))['is_dangerous']
+        value = True if yes_no == 'yes' else False
+    except StopIteration:
+        value = False
+
+    return value
+
+def is_rare(tech):
+    try:
+        yes_no = next(iter(key for key in tech[key]
+                           if key.keys()[0] == 'is_rare'))['is_rare']
+        value = True if yes_no == 'yes' else False
+    except StopIteration:
+        value = False
 
     return value
 
@@ -351,6 +372,8 @@ for tech in script:
         'weight_modifiers': weight_modifiers,
         'area': area,
         'start_tech': is_start_tech(tech),
+        'is_rare': is_rare(tech),
+        'is_dangerous': is_dangerous(tech),
         'category': loc_data[category],
         'prerequisite': prerequisite(tech)
     })

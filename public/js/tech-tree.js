@@ -35,17 +35,18 @@ $(document).ready(function() {
           ? 'Weight: ' + tech.base_weight
           : '';
       let category = tech.category + tier;
+      let htmlClass = tech.area + (tech.is_dangerous ? ' dangerous' : '');
 
       return {
         HTMLid: key,
-        HTMLclass: tech.area,
+        HTMLclass: htmlClass,
         data: tech,
-        // collapsed: tech.key == 'tech_colonization_1',
         innerHTML: '<div class="icon" style="background-image:url(img/' + key + '.png)"></div>'
-          + '<p class="node-name">' + tech.name + '</p>'
+          + '<p class="node-name">'
+          + tech.name
+          + '</p>'
           + '<p class="node-title">' + category + '</p>'
           + ( tech.start_tech || tech.tier == 0 ? '' : [cost, weight].join(', '))
-        // collapsed: tech.area != 'Society'
       };
     });
 

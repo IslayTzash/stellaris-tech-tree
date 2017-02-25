@@ -1,5 +1,6 @@
 [
   {
+    "is_rare": false,
     "tier": 0,
     "cost": 0,
     "key": "tech_basic_science_lab_1",
@@ -11,9 +12,11 @@
     "category": "Computing",
     "name": "Scientific Method",
     "area": "physics",
+    "is_dangerous": false,
     "prerequisite": null
   },
   {
+    "is_rare": false,
     "tier": 0,
     "cost": 0,
     "key": "tech_fission_power",
@@ -25,9 +28,11 @@
     "category": "Industry",
     "name": "Fission Power",
     "area": "physics",
+    "is_dangerous": false,
     "prerequisite": null
   },
   {
+    "is_rare": false,
     "tier": 0,
     "cost": 0,
     "key": "tech_power_plant_1",
@@ -39,9 +44,11 @@
     "category": "Industry",
     "name": "High-Energy Capacitors",
     "area": "physics",
+    "is_dangerous": false,
     "prerequisite": null
   },
   {
+    "is_rare": false,
     "tier": 0,
     "cost": 0,
     "key": "tech_wormhole_generation_1",
@@ -71,9 +78,11 @@
     "category": "Field Manipulation",
     "name": "Subspace Wormholes",
     "area": "physics",
+    "is_dangerous": false,
     "prerequisite": null
   },
   {
+    "is_rare": false,
     "tier": 0,
     "cost": 0,
     "key": "tech_hyper_drive_1",
@@ -103,9 +112,11 @@
     "category": "Particles",
     "name": "Hyperspace Travel",
     "area": "physics",
+    "is_dangerous": false,
     "prerequisite": null
   },
   {
+    "is_rare": false,
     "tier": 0,
     "cost": 0,
     "key": "tech_warp_drive_1",
@@ -117,9 +128,11 @@
     "category": "Field Manipulation",
     "name": "Warp Travel",
     "area": "physics",
+    "is_dangerous": false,
     "prerequisite": null
   },
   {
+    "is_rare": false,
     "tier": 1,
     "cost": 600,
     "key": "tech_lasers_2",
@@ -189,9 +202,11 @@
     "category": "Particles",
     "name": "Blue Lasers",
     "area": "physics",
+    "is_dangerous": false,
     "prerequisite": "tech_lasers_1"
   },
   {
+    "is_rare": false,
     "tier": 1,
     "cost": 480,
     "key": "tech_pd_tracking_1",
@@ -221,9 +236,11 @@
     "category": "Computing",
     "name": "Active Countermeasures",
     "area": "physics",
+    "is_dangerous": false,
     "prerequisite": "tech_administrative_ai"
   },
   {
+    "is_rare": false,
     "tier": 1,
     "cost": 360,
     "key": "tech_databank_uplinks",
@@ -253,9 +270,11 @@
     "category": "Computing",
     "name": "Databank Uplinks",
     "area": "physics",
+    "is_dangerous": false,
     "prerequisite": null
   },
   {
+    "is_rare": false,
     "tier": 1,
     "cost": 360,
     "key": "tech_physics_lab_1",
@@ -343,9 +362,11 @@
     "category": "Computing",
     "name": "Quantum Theory",
     "area": "physics",
+    "is_dangerous": false,
     "prerequisite": "tech_basic_science_lab_1"
   },
   {
+    "is_rare": false,
     "tier": 1,
     "cost": 360,
     "key": "tech_administrative_ai",
@@ -375,9 +396,11 @@
     "category": "Computing",
     "name": "Administrative AI",
     "area": "physics",
+    "is_dangerous": false,
     "prerequisite": "tech_basic_science_lab_1"
   },
   {
+    "is_rare": false,
     "tier": 1,
     "cost": 600,
     "key": "tech_cryostasis_1",
@@ -389,9 +412,11 @@
     "category": "Computing",
     "name": "AI-Controlled Colony Ships",
     "area": "physics",
+    "is_dangerous": false,
     "prerequisite": "tech_administrative_ai"
   },
   {
+    "is_rare": false,
     "tier": 1,
     "cost": 480,
     "key": "tech_combat_computers_1",
@@ -461,9 +486,11 @@
     "category": "Computing",
     "name": "Specialized Combat Computers",
     "area": "physics",
+    "is_dangerous": false,
     "prerequisite": "tech_administrative_ai"
   },
   {
+    "is_rare": true,
     "tier": 1,
     "cost": 480,
     "key": "tech_synchronized_defences",
@@ -547,9 +574,11 @@
     "category": "Computing",
     "name": "Synchronized Defenses",
     "area": "physics",
+    "is_dangerous": false,
     "prerequisite": "tech_administrative_ai"
   },
   {
+    "is_rare": false,
     "tier": 1,
     "cost": 480,
     "key": "tech_fusion_power",
@@ -599,9 +628,11 @@
     "category": "Particles",
     "name": "Fusion Power",
     "area": "physics",
+    "is_dangerous": false,
     "prerequisite": "tech_fission_power"
   },
   {
+    "is_rare": false,
     "tier": 1,
     "cost": 360,
     "key": "tech_shields_1",
@@ -631,9 +662,11 @@
     "category": "Field Manipulation",
     "name": "Deflectors",
     "area": "physics",
+    "is_dangerous": false,
     "prerequisite": null
   },
   {
+    "is_rare": false,
     "tier": 1,
     "cost": 600,
     "key": "tech_shields_2",
@@ -663,9 +696,11 @@
     "category": "Field Manipulation",
     "name": "Improved Deflectors",
     "area": "physics",
+    "is_dangerous": false,
     "prerequisite": "tech_shields_1"
   },
   {
+    "is_rare": false,
     "tier": 1,
     "cost": 360,
     "key": "tech_sensors_2",
@@ -695,9 +730,11 @@
     "category": "Voidcraft",
     "name": "Gravitic Sensors",
     "area": "physics",
+    "is_dangerous": false,
     "prerequisite": null
   },
   {
+    "is_rare": true,
     "tier": 1,
     "cost": 480,
     "key": "tech_orbital_sensor_array",
@@ -819,9 +856,11 @@
     "category": "Voidcraft",
     "name": "Orbital Sensor Arrays",
     "area": "physics",
+    "is_dangerous": false,
     "prerequisite": "tech_sensors_2"
   },
   {
+    "is_rare": false,
     "tier": 1,
     "cost": 360,
     "key": "tech_power_plant_2",
@@ -851,9 +890,11 @@
     "category": "Industry",
     "name": "Field Modulation",
     "area": "physics",
+    "is_dangerous": false,
     "prerequisite": "tech_power_plant_1"
   },
   {
+    "is_rare": false,
     "tier": 1,
     "cost": 720,
     "key": "tech_power_plant_3",
@@ -883,9 +924,11 @@
     "category": "Industry",
     "name": "Quantum Energy States",
     "area": "physics",
+    "is_dangerous": false,
     "prerequisite": "tech_power_plant_2"
   },
   {
+    "is_rare": false,
     "tier": 1,
     "cost": 360,
     "key": "tech_solar_panel_network",
@@ -925,9 +968,11 @@
     "category": "Industry",
     "name": "Orbital Energy Conversion",
     "area": "physics",
+    "is_dangerous": false,
     "prerequisite": "tech_space_construction"
   },
   {
+    "is_rare": false,
     "tier": 1,
     "cost": 360,
     "key": "tech_power_hub_1",
@@ -957,9 +1002,11 @@
     "category": "Industry",
     "name": "Global Energy Management",
     "area": "physics",
+    "is_dangerous": false,
     "prerequisite": "tech_power_plant_1"
   },
   {
+    "is_rare": false,
     "tier": 1,
     "cost": 600,
     "key": "tech_lythuric_gas",
@@ -1021,9 +1068,11 @@
     "category": "Field Manipulation",
     "name": "Lythuric Gas Refining",
     "area": "physics",
+    "is_dangerous": false,
     "prerequisite": "tech_sensors_2"
   },
   {
+    "is_rare": false,
     "tier": 2,
     "cost": 360,
     "key": "tech_lasers_1",
@@ -1093,9 +1142,11 @@
     "category": "Particles",
     "name": "Red Lasers",
     "area": "physics",
+    "is_dangerous": false,
     "prerequisite": null
   },
   {
+    "is_rare": false,
     "tier": 2,
     "cost": 1000,
     "key": "tech_lasers_3",
@@ -1165,9 +1216,11 @@
     "category": "Particles",
     "name": "UV Lasers",
     "area": "physics",
+    "is_dangerous": false,
     "prerequisite": "tech_lasers_2"
   },
   {
+    "is_rare": false,
     "tier": 2,
     "cost": 1800,
     "key": "tech_lasers_4",
@@ -1237,9 +1290,11 @@
     "category": "Particles",
     "name": "X-Ray Lasers",
     "area": "physics",
+    "is_dangerous": false,
     "prerequisite": "tech_lasers_3"
   },
   {
+    "is_rare": false,
     "tier": 2,
     "cost": 1000,
     "key": "tech_plasma_1",
@@ -1323,9 +1378,11 @@
     "category": "Particles",
     "name": "Plasma Throwers",
     "area": "physics",
+    "is_dangerous": false,
     "prerequisite": null
   },
   {
+    "is_rare": false,
     "tier": 2,
     "cost": 1800,
     "key": "tech_plasma_2",
@@ -1395,9 +1452,11 @@
     "category": "Particles",
     "name": "Plasma Accelerators",
     "area": "physics",
+    "is_dangerous": false,
     "prerequisite": "tech_plasma_1"
   },
   {
+    "is_rare": false,
     "tier": 2,
     "cost": 1000,
     "key": "tech_disruptors_1",
@@ -1481,9 +1540,11 @@
     "category": "Particles",
     "name": "Disruptors",
     "area": "physics",
+    "is_dangerous": false,
     "prerequisite": null
   },
   {
+    "is_rare": false,
     "tier": 2,
     "cost": 1800,
     "key": "tech_disruptors_2",
@@ -1553,9 +1614,11 @@
     "category": "Particles",
     "name": "Ion Disruptors",
     "area": "physics",
+    "is_dangerous": false,
     "prerequisite": "tech_disruptors_1"
   },
   {
+    "is_rare": false,
     "tier": 2,
     "cost": 1400,
     "key": "tech_pd_tracking_2",
@@ -1585,9 +1648,11 @@
     "category": "Computing",
     "name": "Interlinked Support Systems",
     "area": "physics",
+    "is_dangerous": false,
     "prerequisite": "tech_pd_tracking_1"
   },
   {
+    "is_rare": false,
     "tier": 2,
     "cost": 1000,
     "key": "tech_improved_databank_uplinks",
@@ -1617,9 +1682,11 @@
     "category": "Computing",
     "name": "Uplink Miniaturization",
     "area": "physics",
+    "is_dangerous": false,
     "prerequisite": "tech_databank_uplinks"
   },
   {
+    "is_rare": true,
     "tier": 2,
     "cost": 1800,
     "key": "tech_curator_lab",
@@ -1683,9 +1750,11 @@
     "category": "Computing",
     "name": "Curator Exploration Lab",
     "area": "physics",
+    "is_dangerous": false,
     "prerequisite": null
   },
   {
+    "is_rare": true,
     "tier": 2,
     "cost": 1800,
     "key": "tech_archeology_lab",
@@ -1749,9 +1818,11 @@
     "category": "Computing",
     "name": "Curator Archeology Lab",
     "area": "physics",
+    "is_dangerous": false,
     "prerequisite": null
   },
   {
+    "is_rare": false,
     "tier": 2,
     "cost": 1000,
     "key": "tech_physics_lab_2",
@@ -1829,9 +1900,11 @@
     "category": "Computing",
     "name": "Applied Quantum Physics",
     "area": "physics",
+    "is_dangerous": false,
     "prerequisite": "tech_physics_lab_1"
   },
   {
+    "is_rare": true,
     "tier": 2,
     "cost": 1000,
     "key": "tech_global_research_initiative",
@@ -1930,9 +2003,11 @@
     "category": "Statecraft",
     "name": "Global Research Initiative",
     "area": "physics",
+    "is_dangerous": false,
     "prerequisite": "tech_physics_lab_1"
   },
   {
+    "is_rare": false,
     "tier": 2,
     "cost": 1000,
     "key": "tech_cryostasis_2",
@@ -1944,9 +2019,11 @@
     "category": "Computing",
     "name": "Self-Aware Colony Ships",
     "area": "physics",
+    "is_dangerous": false,
     "prerequisite": "tech_self_aware_logic"
   },
   {
+    "is_rare": false,
     "tier": 2,
     "cost": 1000,
     "key": "tech_self_aware_logic",
@@ -1976,9 +2053,11 @@
     "category": "Computing",
     "name": "Self-aware Logic",
     "area": "physics",
+    "is_dangerous": false,
     "prerequisite": "tech_administrative_ai"
   },
   {
+    "is_rare": false,
     "tier": 2,
     "cost": 1400,
     "key": "tech_automated_exploration",
@@ -2101,9 +2180,11 @@
     "category": "Computing",
     "name": "Automated Exploration Protocols",
     "area": "physics",
+    "is_dangerous": false,
     "prerequisite": "tech_self_aware_logic"
   },
   {
+    "is_rare": false,
     "tier": 2,
     "cost": 1400,
     "key": "tech_combat_computers_2",
@@ -2133,9 +2214,11 @@
     "category": "Computing",
     "name": "Extended Combat Algorithms",
     "area": "physics",
+    "is_dangerous": false,
     "prerequisite": "tech_combat_computers_1"
   },
   {
+    "is_rare": false,
     "tier": 2,
     "cost": 1000,
     "key": "tech_cold_fusion_power",
@@ -2185,9 +2268,11 @@
     "category": "Particles",
     "name": "Cold Fusion Power",
     "area": "physics",
+    "is_dangerous": false,
     "prerequisite": "tech_fusion_power"
   },
   {
+    "is_rare": false,
     "tier": 2,
     "cost": 1000,
     "key": "tech_shields_3",
@@ -2217,9 +2302,11 @@
     "category": "Field Manipulation",
     "name": "Shields",
     "area": "physics",
+    "is_dangerous": false,
     "prerequisite": "tech_shields_2"
   },
   {
+    "is_rare": false,
     "tier": 2,
     "cost": 1800,
     "key": "tech_shields_4",
@@ -2249,9 +2336,11 @@
     "category": "Field Manipulation",
     "name": "Advanced Shields",
     "area": "physics",
+    "is_dangerous": false,
     "prerequisite": "tech_shields_3"
   },
   {
+    "is_rare": false,
     "tier": 2,
     "cost": 1400,
     "key": "tech_shield_rechargers_1",
@@ -2281,9 +2370,11 @@
     "category": "Field Manipulation",
     "name": "Shield Capacitors",
     "area": "physics",
+    "is_dangerous": false,
     "prerequisite": "tech_shields_3"
   },
   {
+    "is_rare": true,
     "tier": 2,
     "cost": 2200,
     "key": "tech_shield_recharge_aura_1",
@@ -2337,9 +2428,11 @@
     "category": "Field Manipulation",
     "name": "Capacitor Fields",
     "area": "physics",
+    "is_dangerous": false,
     "prerequisite": "tech_shields_4"
   },
   {
+    "is_rare": true,
     "tier": 2,
     "cost": 720,
     "key": "tech_planetary_shield_generator",
@@ -2351,9 +2444,11 @@
     "category": "Field Manipulation",
     "name": "Planetary Shields",
     "area": "physics",
+    "is_dangerous": false,
     "prerequisite": "tech_shields_2"
   },
   {
+    "is_rare": false,
     "tier": 2,
     "cost": 1000,
     "key": "tech_sensors_3",
@@ -2383,9 +2478,11 @@
     "category": "Voidcraft",
     "name": "Subspace Sensors",
     "area": "physics",
+    "is_dangerous": false,
     "prerequisite": "tech_sensors_2"
   },
   {
+    "is_rare": false,
     "tier": 2,
     "cost": 1800,
     "key": "tech_power_plant_4",
@@ -2415,9 +2512,11 @@
     "category": "Industry",
     "name": "Quantum Field Manipulation",
     "area": "physics",
+    "is_dangerous": false,
     "prerequisite": "tech_power_plant_3"
   },
   {
+    "is_rare": false,
     "tier": 2,
     "cost": 1000,
     "key": "tech_power_hub_2",
@@ -2447,9 +2546,11 @@
     "category": "Industry",
     "name": "Planetary Power Grid",
     "area": "physics",
+    "is_dangerous": false,
     "prerequisite": "tech_power_hub_1"
   },
   {
+    "is_rare": false,
     "tier": 2,
     "cost": 1000,
     "key": "tech_wormhole_generation_2",
@@ -2479,9 +2580,11 @@
     "category": "Field Manipulation",
     "name": "Wormhole Calibration Matrix",
     "area": "physics",
+    "is_dangerous": false,
     "prerequisite": "tech_wormhole_generation_1"
   },
   {
+    "is_rare": false,
     "tier": 2,
     "cost": 1000,
     "key": "tech_hyper_drive_2",
@@ -2511,9 +2614,11 @@
     "category": "Particles",
     "name": "Hyperlane Breach Points",
     "area": "physics",
+    "is_dangerous": false,
     "prerequisite": "tech_hyper_drive_1"
   },
   {
+    "is_rare": true,
     "tier": 2,
     "cost": 1000,
     "key": "tech_hyperlane_mapping",
@@ -2587,9 +2692,11 @@
     "category": "Particles",
     "name": "Hyperlane Mapping",
     "area": "physics",
+    "is_dangerous": false,
     "prerequisite": null
   },
   {
+    "is_rare": false,
     "tier": 2,
     "cost": 1000,
     "key": "tech_warp_drive_2",
@@ -2619,9 +2726,11 @@
     "category": "Field Manipulation",
     "name": "Warp Field Stabilizers",
     "area": "physics",
+    "is_dangerous": false,
     "prerequisite": "tech_warp_drive_1"
   },
   {
+    "is_rare": true,
     "tier": 2,
     "cost": 2200,
     "key": "tech_aura_quantum_destabilizer",
@@ -2685,9 +2794,11 @@
     "category": "Field Manipulation",
     "name": "Quantum Destabilizer",
     "area": "physics",
+    "is_dangerous": false,
     "prerequisite": "tech_shields_3"
   },
   {
+    "is_rare": true,
     "tier": 2,
     "cost": 2200,
     "key": "tech_mine_zro",
@@ -2758,9 +2869,11 @@
     "category": "Psionics",
     "name": "Zro Distillation",
     "area": "physics",
+    "is_dangerous": false,
     "prerequisite": "tech_sensors_3"
   },
   {
+    "is_rare": false,
     "tier": 2,
     "cost": 1000,
     "key": "tech_mine_satramene",
@@ -2790,9 +2903,11 @@
     "category": "Materials",
     "name": "Satramene Refining",
     "area": "physics",
+    "is_dangerous": false,
     "prerequisite": "tech_sensors_3"
   },
   {
+    "is_rare": false,
     "tier": 2,
     "cost": 1800,
     "key": "tech_sciencecruiser_1",
@@ -2900,9 +3015,11 @@
     "category": "Particles",
     "name": "Science Cruisers",
     "area": "physics",
+    "is_dangerous": false,
     "prerequisite": "tech_spaceport_2"
   },
   {
+    "is_rare": false,
     "tier": 2,
     "cost": 1800,
     "key": "tech_constructioncruiser_1",
@@ -3010,9 +3127,11 @@
     "category": "Particles",
     "name": "Construction Cruisers",
     "area": "physics",
+    "is_dangerous": false,
     "prerequisite": "tech_spaceport_2"
   },
   {
+    "is_rare": false,
     "tier": 2,
     "cost": 1800,
     "key": "tech_advanced_warship_components_1",
@@ -3120,9 +3239,11 @@
     "category": "Computing",
     "name": "Advanced Warship Components (Tier 1)",
     "area": "physics",
+    "is_dangerous": false,
     "prerequisite": "tech_spaceport_4"
   },
   {
+    "is_rare": false,
     "tier": 3,
     "cost": 3000,
     "key": "tech_lasers_5",
@@ -3192,9 +3313,11 @@
     "category": "Particles",
     "name": "Gamma Lasers",
     "area": "physics",
+    "is_dangerous": false,
     "prerequisite": "tech_lasers_4"
   },
   {
+    "is_rare": false,
     "tier": 3,
     "cost": 3000,
     "key": "tech_energy_lance_1",
@@ -3264,9 +3387,11 @@
     "category": "Particles",
     "name": "Particle Lances",
     "area": "physics",
+    "is_dangerous": false,
     "prerequisite": "tech_lasers_5"
   },
   {
+    "is_rare": false,
     "tier": 3,
     "cost": 6000,
     "key": "tech_energy_lance_2",
@@ -3336,9 +3461,11 @@
     "category": "Particles",
     "name": "Tachyon Lances",
     "area": "physics",
+    "is_dangerous": false,
     "prerequisite": "tech_energy_lance_1"
   },
   {
+    "is_rare": false,
     "tier": 3,
     "cost": 3000,
     "key": "tech_plasma_3",
@@ -3408,9 +3535,11 @@
     "category": "Particles",
     "name": "Plasma Cannons",
     "area": "physics",
+    "is_dangerous": false,
     "prerequisite": "tech_plasma_2"
   },
   {
+    "is_rare": false,
     "tier": 3,
     "cost": 4000,
     "key": "tech_arc_emitter_1",
@@ -3494,9 +3623,11 @@
     "category": "Particles",
     "name": "Arc Emitters",
     "area": "physics",
+    "is_dangerous": false,
     "prerequisite": "tech_plasma_3"
   },
   {
+    "is_rare": false,
     "tier": 3,
     "cost": 6000,
     "key": "tech_arc_emitter_2",
@@ -3566,9 +3697,11 @@
     "category": "Particles",
     "name": "Focused Arc Emitters",
     "area": "physics",
+    "is_dangerous": false,
     "prerequisite": "tech_arc_emitter_1"
   },
   {
+    "is_rare": false,
     "tier": 3,
     "cost": 3000,
     "key": "tech_disruptors_3",
@@ -3638,9 +3771,11 @@
     "category": "Particles",
     "name": "Phase Disruptors",
     "area": "physics",
+    "is_dangerous": false,
     "prerequisite": "tech_disruptors_2"
   },
   {
+    "is_rare": false,
     "tier": 3,
     "cost": 1400,
     "key": "tech_energy_torpedoes_1",
@@ -3724,9 +3859,11 @@
     "category": "Particles",
     "name": "Proton Torpedoes",
     "area": "physics",
+    "is_dangerous": false,
     "prerequisite": "tech_disruptors_1"
   },
   {
+    "is_rare": false,
     "tier": 3,
     "cost": 3000,
     "key": "tech_energy_torpedoes_2",
@@ -3796,9 +3933,11 @@
     "category": "Particles",
     "name": "Neutron Torpedoes",
     "area": "physics",
+    "is_dangerous": false,
     "prerequisite": "tech_energy_torpedoes_1"
   },
   {
+    "is_rare": false,
     "tier": 3,
     "cost": 5000,
     "key": "tech_pd_tracking_3",
@@ -3828,9 +3967,11 @@
     "category": "Computing",
     "name": "Predictive Algorithms",
     "area": "physics",
+    "is_dangerous": false,
     "prerequisite": "tech_pd_tracking_2"
   },
   {
+    "is_rare": false,
     "tier": 3,
     "cost": 3000,
     "key": "tech_physics_lab_3",
@@ -3908,9 +4049,11 @@
     "category": "Computing",
     "name": "Space-Time Theory",
     "area": "physics",
+    "is_dangerous": false,
     "prerequisite": "tech_physics_lab_2"
   },
   {
+    "is_rare": true,
     "tier": 3,
     "cost": 2200,
     "key": "tech_sentient_ai",
@@ -4030,9 +4173,11 @@
     "category": "Computing",
     "name": "Sentient AI",
     "area": "physics",
+    "is_dangerous": true,
     "prerequisite": "tech_self_aware_logic"
   },
   {
+    "is_rare": true,
     "tier": 3,
     "cost": 3000,
     "key": "tech_combat_computers_3",
@@ -4108,9 +4253,11 @@
     "category": "Computing",
     "name": "Sentient Combat Simulations",
     "area": "physics",
+    "is_dangerous": false,
     "prerequisite": "tech_combat_computers_2"
   },
   {
+    "is_rare": false,
     "tier": 3,
     "cost": 3000,
     "key": "tech_antimatter_power",
@@ -4160,9 +4307,11 @@
     "category": "Particles",
     "name": "Antimatter Power",
     "area": "physics",
+    "is_dangerous": false,
     "prerequisite": "tech_cold_fusion_power"
   },
   {
+    "is_rare": false,
     "tier": 3,
     "cost": 6000,
     "key": "tech_zero_point_power",
@@ -4202,9 +4351,11 @@
     "category": "Particles",
     "name": "Zero Point Power",
     "area": "physics",
+    "is_dangerous": false,
     "prerequisite": "tech_antimatter_power"
   },
   {
+    "is_rare": false,
     "tier": 3,
     "cost": 4000,
     "key": "tech_shields_5",
@@ -4234,9 +4385,11 @@
     "category": "Field Manipulation",
     "name": "Hyper Shields",
     "area": "physics",
+    "is_dangerous": false,
     "prerequisite": "tech_shields_4"
   },
   {
+    "is_rare": false,
     "tier": 3,
     "cost": 3000,
     "key": "tech_sensors_4",
@@ -4266,9 +4419,11 @@
     "category": "Voidcraft",
     "name": "Tachyon Sensors",
     "area": "physics",
+    "is_dangerous": false,
     "prerequisite": "tech_sensors_3"
   },
   {
+    "is_rare": false,
     "tier": 3,
     "cost": 3000,
     "key": "tech_wormhole_generation_3",
@@ -4298,9 +4453,11 @@
     "category": "Field Manipulation",
     "name": "Wormhole Containment Fields",
     "area": "physics",
+    "is_dangerous": false,
     "prerequisite": "tech_wormhole_generation_2"
   },
   {
+    "is_rare": false,
     "tier": 3,
     "cost": 3000,
     "key": "tech_hyper_drive_3",
@@ -4330,9 +4487,11 @@
     "category": "Particles",
     "name": "Hyperspace Slipstreams",
     "area": "physics",
+    "is_dangerous": false,
     "prerequisite": "tech_hyper_drive_2"
   },
   {
+    "is_rare": false,
     "tier": 3,
     "cost": 3000,
     "key": "tech_warp_drive_3",
@@ -4362,9 +4521,11 @@
     "category": "Field Manipulation",
     "name": "Warp Drive Ramscoops",
     "area": "physics",
+    "is_dangerous": false,
     "prerequisite": "tech_warp_drive_2"
   },
   {
+    "is_rare": true,
     "tier": 3,
     "cost": 3000,
     "key": "tech_jump_drive_1",
@@ -4442,9 +4603,11 @@
     "category": "Field Manipulation",
     "name": "Jump Drive",
     "area": "physics",
+    "is_dangerous": true,
     "prerequisite": "tech_zero_point_power"
   },
   {
+    "is_rare": false,
     "tier": 3,
     "cost": 3000,
     "key": "tech_repeatable_improved_tile_energy_output",
@@ -4456,9 +4619,11 @@
     "category": "Industry",
     "name": "Applied Superconductivity",
     "area": "physics",
+    "is_dangerous": false,
     "prerequisite": "tech_power_plant_3"
   },
   {
+    "is_rare": false,
     "tier": 3,
     "cost": 3000,
     "key": "tech_repeatable_improved_shield_output",
@@ -4470,9 +4635,11 @@
     "category": "Field Manipulation",
     "name": "Shield Harmonics",
     "area": "physics",
+    "is_dangerous": false,
     "prerequisite": "tech_shields_4"
   },
   {
+    "is_rare": false,
     "tier": 3,
     "cost": 3000,
     "key": "tech_repeatable_weapon_type_energy_damage",
@@ -4484,9 +4651,11 @@
     "category": "Particles",
     "name": "Focusing Arrays",
     "area": "physics",
+    "is_dangerous": false,
     "prerequisite": "tech_lasers_4"
   },
   {
+    "is_rare": false,
     "tier": 3,
     "cost": 3000,
     "key": "tech_repeatable_weapon_type_energy_fire_rate",
@@ -4498,9 +4667,11 @@
     "category": "Particles",
     "name": "Flash Coolant",
     "area": "physics",
+    "is_dangerous": false,
     "prerequisite": "tech_lasers_2"
   },
   {
+    "is_rare": false,
     "tier": 3,
     "cost": 3000,
     "key": "tech_repeatable_improved_planet_sensor_range",
@@ -4512,9 +4683,11 @@
     "category": "Voidcraft",
     "name": "Planetary Signal Boosters",
     "area": "physics",
+    "is_dangerous": false,
     "prerequisite": "tech_sensors_3"
   },
   {
+    "is_rare": false,
     "tier": 3,
     "cost": 3000,
     "key": "tech_repeatable_reduced_building_cost",
@@ -4526,9 +4699,11 @@
     "category": "Computing",
     "name": "Gravitational Analysis",
     "area": "physics",
+    "is_dangerous": false,
     "prerequisite": "tech_physics_lab_2"
   },
   {
+    "is_rare": false,
     "tier": 3,
     "cost": 3000,
     "key": "tech_repeatable_reduced_building_time",
@@ -4540,9 +4715,11 @@
     "category": "Computing",
     "name": "Assembly Algorithms",
     "area": "physics",
+    "is_dangerous": false,
     "prerequisite": "tech_physics_lab_2"
   },
   {
+    "is_rare": false,
     "tier": 3,
     "cost": 4000,
     "key": "tech_mine_neutronium",
@@ -4572,9 +4749,11 @@
     "category": "Materials",
     "name": "Neutronium Extraction",
     "area": "physics",
+    "is_dangerous": false,
     "prerequisite": "tech_sensors_4"
   },
   {
+    "is_rare": false,
     "tier": 3,
     "cost": 4000,
     "key": "tech_mine_dark_matter",
@@ -4604,9 +4783,11 @@
     "category": "Field Manipulation",
     "name": "Dark Matter Drawing",
     "area": "physics",
+    "is_dangerous": false,
     "prerequisite": "tech_sensors_4"
   },
   {
+    "is_rare": false,
     "tier": 3,
     "cost": 7000,
     "key": "tech_adv_zero_point_power",
@@ -4660,9 +4841,11 @@
     "category": "Particles",
     "name": "Advanced Zero Point Reactor",
     "area": "physics",
+    "is_dangerous": false,
     "prerequisite": "tech_zero_point_power"
   },
   {
+    "is_rare": false,
     "tier": 3,
     "cost": 8000,
     "key": "tech_energy_lance_NSC",
@@ -4746,9 +4929,11 @@
     "category": "Particles",
     "name": "Graviton Lance",
     "area": "physics",
+    "is_dangerous": false,
     "prerequisite": "tech_energy_lance_2"
   },
   {
+    "is_rare": false,
     "tier": 3,
     "cost": 8000,
     "key": "tech_arc_emitter_NSC",
@@ -4832,9 +5017,11 @@
     "category": "Particles",
     "name": "Pulsated Arc Emitter",
     "area": "physics",
+    "is_dangerous": false,
     "prerequisite": "tech_arc_emitter_2"
   },
   {
+    "is_rare": false,
     "tier": 3,
     "cost": 3000,
     "key": "tech_advanced_warship_components_2",
@@ -4942,9 +5129,11 @@
     "category": "Computing",
     "name": "Advanced Warship Components (Tier 2)",
     "area": "physics",
+    "is_dangerous": false,
     "prerequisite": "tech_spaceport_6"
   },
   {
+    "is_rare": false,
     "tier": 0,
     "cost": 0,
     "key": "tech_defense_army",
@@ -4956,9 +5145,11 @@
     "category": "Military Theory",
     "name": "Planetary Defenses",
     "area": "society",
+    "is_dangerous": false,
     "prerequisite": null
   },
   {
+    "is_rare": false,
     "tier": 0,
     "cost": 0,
     "key": "tech_eco_simulation",
@@ -4970,9 +5161,11 @@
     "category": "Biology",
     "name": "Hydroponics",
     "area": "society",
+    "is_dangerous": false,
     "prerequisite": null
   },
   {
+    "is_rare": false,
     "tier": 0,
     "cost": 0,
     "key": "tech_planetary_government",
@@ -4984,9 +5177,11 @@
     "category": "Statecraft",
     "name": "Planetary Government",
     "area": "society",
+    "is_dangerous": false,
     "prerequisite": null
   },
   {
+    "is_rare": false,
     "tier": 1,
     "cost": 360,
     "key": "tech_orbital_hydroponics",
@@ -5036,9 +5231,11 @@
     "category": "Biology",
     "name": "Orbital Hydroponics",
     "area": "society",
+    "is_dangerous": false,
     "prerequisite": "tech_eco_simulation"
   },
   {
+    "is_rare": false,
     "tier": 1,
     "cost": 360,
     "key": "tech_hydroponics",
@@ -5088,9 +5285,11 @@
     "category": "Biology",
     "name": "Eco Simulation",
     "area": "society",
+    "is_dangerous": false,
     "prerequisite": "tech_eco_simulation"
   },
   {
+    "is_rare": false,
     "tier": 1,
     "cost": 360,
     "key": "tech_biolab_1",
@@ -5178,9 +5377,11 @@
     "category": "Biology",
     "name": "Biodiversity Studies",
     "area": "society",
+    "is_dangerous": false,
     "prerequisite": "tech_basic_science_lab_1"
   },
   {
+    "is_rare": false,
     "tier": 1,
     "cost": 480,
     "key": "tech_alien_life_studies",
@@ -5244,9 +5445,11 @@
     "category": "Biology",
     "name": "Xenology",
     "area": "society",
+    "is_dangerous": false,
     "prerequisite": null
   },
   {
+    "is_rare": false,
     "tier": 1,
     "cost": 360,
     "key": "tech_colonization_1",
@@ -5258,9 +5461,11 @@
     "category": "New Worlds",
     "name": "New Worlds Protocol",
     "area": "society",
+    "is_dangerous": false,
     "prerequisite": "tech_spaceport_1"
   },
   {
+    "is_rare": false,
     "tier": 1,
     "cost": 480,
     "key": "tech_frontier_health",
@@ -5290,9 +5495,11 @@
     "category": "Biology",
     "name": "Frontier Health",
     "area": "society",
+    "is_dangerous": false,
     "prerequisite": "tech_genome_mapping"
   },
   {
+    "is_rare": true,
     "tier": 1,
     "cost": 600,
     "key": "tech_frontier_collectives",
@@ -5377,9 +5584,11 @@
     "category": "New Worlds",
     "name": "Frontier Collectives",
     "area": "society",
+    "is_dangerous": false,
     "prerequisite": "tech_colonization_1"
   },
   {
+    "is_rare": true,
     "tier": 1,
     "cost": 600,
     "key": "tech_frontier_initiatives",
@@ -5484,9 +5693,11 @@
     "category": "New Worlds",
     "name": "Frontier Initiatives",
     "area": "society",
+    "is_dangerous": false,
     "prerequisite": "tech_colonization_1"
   },
   {
+    "is_rare": false,
     "tier": 1,
     "cost": 480,
     "key": "tech_tb_mountain_range",
@@ -5557,9 +5768,11 @@
     "category": "New Worlds",
     "name": "Mountain Range Removal",
     "area": "society",
+    "is_dangerous": false,
     "prerequisite": "tech_colonization_1"
   },
   {
+    "is_rare": false,
     "tier": 1,
     "cost": 480,
     "key": "tech_tb_volcano",
@@ -5630,9 +5843,11 @@
     "category": "New Worlds",
     "name": "Volcano Removal",
     "area": "society",
+    "is_dangerous": false,
     "prerequisite": "tech_colonization_1"
   },
   {
+    "is_rare": false,
     "tier": 1,
     "cost": 480,
     "key": "tech_tb_dangerous_wildlife",
@@ -5703,9 +5918,11 @@
     "category": "New Worlds",
     "name": "Dangerous Wildlife Removal",
     "area": "society",
+    "is_dangerous": false,
     "prerequisite": "tech_colonization_1"
   },
   {
+    "is_rare": false,
     "tier": 1,
     "cost": 480,
     "key": "tech_tb_dense_jungle",
@@ -5776,9 +5993,11 @@
     "category": "New Worlds",
     "name": "Dense Jungle Removal",
     "area": "society",
+    "is_dangerous": false,
     "prerequisite": "tech_colonization_1"
   },
   {
+    "is_rare": false,
     "tier": 1,
     "cost": 480,
     "key": "tech_tb_quicksand_basin",
@@ -5849,9 +6068,11 @@
     "category": "New Worlds",
     "name": "Quicksand Basin Removal",
     "area": "society",
+    "is_dangerous": false,
     "prerequisite": "tech_colonization_1"
   },
   {
+    "is_rare": false,
     "tier": 1,
     "cost": 480,
     "key": "tech_tb_noxious_swamp",
@@ -5922,9 +6143,11 @@
     "category": "New Worlds",
     "name": "Noxious Swamp Removal",
     "area": "society",
+    "is_dangerous": false,
     "prerequisite": "tech_colonization_1"
   },
   {
+    "is_rare": false,
     "tier": 1,
     "cost": 480,
     "key": "tech_tb_massive_glacier",
@@ -5995,9 +6218,11 @@
     "category": "New Worlds",
     "name": "Massive Glacier Removal",
     "area": "society",
+    "is_dangerous": false,
     "prerequisite": "tech_colonization_1"
   },
   {
+    "is_rare": false,
     "tier": 1,
     "cost": 480,
     "key": "tech_tb_toxic_kelp",
@@ -6068,9 +6293,11 @@
     "category": "New Worlds",
     "name": "Toxic Kelp Removal",
     "area": "society",
+    "is_dangerous": false,
     "prerequisite": "tech_colonization_1"
   },
   {
+    "is_rare": false,
     "tier": 1,
     "cost": 480,
     "key": "tech_tb_deep_sinkhole",
@@ -6141,9 +6368,11 @@
     "category": "New Worlds",
     "name": "Deep Sinkhole Removal",
     "area": "society",
+    "is_dangerous": false,
     "prerequisite": "tech_colonization_1"
   },
   {
+    "is_rare": false,
     "tier": 1,
     "cost": 600,
     "key": "tech_terrestrial_sculpting",
@@ -6194,9 +6423,11 @@
     "category": "New Worlds",
     "name": "Terrestrial Sculpting",
     "area": "society",
+    "is_dangerous": false,
     "prerequisite": "tech_colonization_1"
   },
   {
+    "is_rare": false,
     "tier": 1,
     "cost": 360,
     "key": "tech_genome_mapping",
@@ -6226,9 +6457,11 @@
     "category": "Biology",
     "name": "Genome Mapping",
     "area": "society",
+    "is_dangerous": false,
     "prerequisite": null
   },
   {
+    "is_rare": false,
     "tier": 1,
     "cost": 360,
     "key": "tech_doctrine_fleet_size_1",
@@ -6298,9 +6531,11 @@
     "category": "Military Theory",
     "name": "Doctrine: Space Combat",
     "area": "society",
+    "is_dangerous": false,
     "prerequisite": null
   },
   {
+    "is_rare": false,
     "tier": 1,
     "cost": 600,
     "key": "tech_doctrine_fleet_size_2",
@@ -6370,9 +6605,11 @@
     "category": "Military Theory",
     "name": "Doctrine: Reactive Formations",
     "area": "society",
+    "is_dangerous": false,
     "prerequisite": "tech_doctrine_fleet_size_1"
   },
   {
+    "is_rare": false,
     "tier": 1,
     "cost": 720,
     "key": "tech_interstellar_fleet_traditions",
@@ -6442,9 +6679,11 @@
     "category": "Military Theory",
     "name": "Interstellar Fleet Traditions",
     "area": "society",
+    "is_dangerous": false,
     "prerequisite": "tech_doctrine_fleet_size_2"
   },
   {
+    "is_rare": false,
     "tier": 1,
     "cost": 480,
     "key": "tech_doctrine_fleet_support",
@@ -6514,9 +6753,11 @@
     "category": "Military Theory",
     "name": "Doctrine: Fleet Support",
     "area": "society",
+    "is_dangerous": false,
     "prerequisite": "tech_doctrine_fleet_size_1"
   },
   {
+    "is_rare": false,
     "tier": 1,
     "cost": 360,
     "key": "tech_centralized_command",
@@ -6586,9 +6827,11 @@
     "category": "Military Theory",
     "name": "Centralized Command",
     "area": "society",
+    "is_dangerous": false,
     "prerequisite": null
   },
   {
+    "is_rare": false,
     "tier": 1,
     "cost": 720,
     "key": "tech_combat_training",
@@ -6658,9 +6901,11 @@
     "category": "Military Theory",
     "name": "Combat Training",
     "area": "society",
+    "is_dangerous": false,
     "prerequisite": "tech_centralized_command"
   },
   {
+    "is_rare": true,
     "tier": 1,
     "cost": 480,
     "key": "tech_purity_campaigns",
@@ -6744,9 +6989,11 @@
     "category": "Statecraft",
     "name": "Purity Campaigns",
     "area": "society",
+    "is_dangerous": false,
     "prerequisite": "tech_planetary_government"
   },
   {
+    "is_rare": true,
     "tier": 1,
     "cost": 480,
     "key": "tech_symbol_unity",
@@ -6797,9 +7044,11 @@
     "category": "Statecraft",
     "name": "Symbols of Unity",
     "area": "society",
+    "is_dangerous": false,
     "prerequisite": "tech_planetary_government"
   },
   {
+    "is_rare": true,
     "tier": 1,
     "cost": 480,
     "key": "tech_visitor_center",
@@ -6874,9 +7123,11 @@
     "category": "Statecraft",
     "name": "Alien Visitor Centers",
     "area": "society",
+    "is_dangerous": false,
     "prerequisite": null
   },
   {
+    "is_rare": false,
     "tier": 1,
     "cost": 720,
     "key": "tech_galactic_ambitions",
@@ -6954,9 +7205,11 @@
     "category": "Statecraft",
     "name": "Galactic Ambitions",
     "area": "society",
+    "is_dangerous": false,
     "prerequisite": null
   },
   {
+    "is_rare": true,
     "tier": 1,
     "cost": 600,
     "key": "tech_paradise_dome",
@@ -6996,13 +7249,15 @@
       }
     ],
     "start_tech": false,
-    "desc": "An elysian dome housing examples of natural beauty carefully curated to induce a potent mixture of nostalgia and patriotism.",
+    "desc": "",
     "category": "Statecraft",
     "name": "Paradise Dome",
     "area": "society",
+    "is_dangerous": false,
     "prerequisite": "tech_planetary_unification"
   },
   {
+    "is_rare": true,
     "tier": 1,
     "cost": 600,
     "key": "tech_virtual_combat_arena",
@@ -7080,9 +7335,11 @@
     "category": "Military Theory",
     "name": "Virtual Combat Simulations",
     "area": "society",
+    "is_dangerous": false,
     "prerequisite": "tech_centralized_command"
   },
   {
+    "is_rare": false,
     "tier": 1,
     "cost": 360,
     "key": "tech_planetary_unification",
@@ -7116,9 +7373,11 @@
     "category": "Statecraft",
     "name": "Planetary Unification",
     "area": "society",
+    "is_dangerous": false,
     "prerequisite": "tech_planetary_government"
   },
   {
+    "is_rare": false,
     "tier": 1,
     "cost": 720,
     "key": "tech_colonial_centralization",
@@ -7148,9 +7407,11 @@
     "category": "New Worlds",
     "name": "Colonial Centralization",
     "area": "society",
+    "is_dangerous": false,
     "prerequisite": "tech_planetary_unification"
   },
   {
+    "is_rare": false,
     "tier": 1,
     "cost": 480,
     "key": "tech_adaptive_bureaucracy",
@@ -7228,9 +7489,11 @@
     "category": "Statecraft",
     "name": "Adaptive Bureaucracy",
     "area": "society",
+    "is_dangerous": false,
     "prerequisite": "tech_planetary_unification"
   },
   {
+    "is_rare": false,
     "tier": 1,
     "cost": 600,
     "key": "tech_neural_implants",
@@ -7331,9 +7594,11 @@
     "category": "Statecraft",
     "name": "Neural Implants",
     "area": "society",
+    "is_dangerous": false,
     "prerequisite": null
   },
   {
+    "is_rare": false,
     "tier": 1,
     "cost": 600,
     "key": "tech_engos_vapor",
@@ -7395,9 +7660,11 @@
     "category": "Biology",
     "name": "Engos Vapor Refining",
     "area": "society",
+    "is_dangerous": false,
     "prerequisite": "tech_genome_mapping"
   },
   {
+    "is_rare": false,
     "tier": 1,
     "cost": 600,
     "key": "tech_pitharan_dust",
@@ -7459,9 +7726,11 @@
     "category": "Biology",
     "name": "Pitharan Dust Refining",
     "area": "society",
+    "is_dangerous": false,
     "prerequisite": "tech_genome_mapping"
   },
   {
+    "is_rare": false,
     "tier": 1,
     "cost": 600,
     "key": "tech_advanced_construction_techniques_colony_ship",
@@ -7569,9 +7838,11 @@
     "category": "Voidcraft",
     "name": "Advanced Construction Techniques (Colony Ship)",
     "area": "society",
+    "is_dangerous": false,
     "prerequisite": "tech_colonization_1"
   },
   {
+    "is_rare": false,
     "tier": 2,
     "cost": 1000,
     "key": "tech_gene_crops",
@@ -7621,9 +7892,11 @@
     "category": "Biology",
     "name": "Gene Crops",
     "area": "society",
+    "is_dangerous": false,
     "prerequisite": "tech_hydroponics"
   },
   {
+    "is_rare": false,
     "tier": 2,
     "cost": 2200,
     "key": "tech_nano_vitality_crops",
@@ -7673,9 +7946,11 @@
     "category": "Biology",
     "name": "Nano-Vitality Crops",
     "area": "society",
+    "is_dangerous": false,
     "prerequisite": "tech_gene_crops"
   },
   {
+    "is_rare": false,
     "tier": 2,
     "cost": 1000,
     "key": "tech_biolab_2",
@@ -7753,9 +8028,11 @@
     "category": "Biology",
     "name": "Xenobiology",
     "area": "society",
+    "is_dangerous": false,
     "prerequisite": "tech_biolab_1"
   },
   {
+    "is_rare": false,
     "tier": 2,
     "cost": 1000,
     "key": "tech_colonization_2",
@@ -7785,9 +8062,11 @@
     "category": "New Worlds",
     "name": "Atmospheric Filtering",
     "area": "society",
+    "is_dangerous": false,
     "prerequisite": "tech_colonization_1"
   },
   {
+    "is_rare": false,
     "tier": 2,
     "cost": 2200,
     "key": "tech_colonization_3",
@@ -7817,9 +8096,11 @@
     "category": "New Worlds",
     "name": "Hostile Environment Adaption",
     "area": "society",
+    "is_dangerous": false,
     "prerequisite": "tech_colonization_2"
   },
   {
+    "is_rare": true,
     "tier": 2,
     "cost": 1800,
     "key": "tech_tomb_world_adaption",
@@ -7863,9 +8144,11 @@
     "category": "New Worlds",
     "name": "Tomb World Adaption",
     "area": "society",
+    "is_dangerous": false,
     "prerequisite": "tech_colonization_2"
   },
   {
+    "is_rare": false,
     "tier": 2,
     "cost": 1000,
     "key": "tech_frontier_hospital",
@@ -7895,9 +8178,11 @@
     "category": "Biology",
     "name": "Frontier Hospital",
     "area": "society",
+    "is_dangerous": false,
     "prerequisite": "tech_frontier_health"
   },
   {
+    "is_rare": true,
     "tier": 2,
     "cost": 2200,
     "key": "tech_frontier_commissars",
@@ -8002,9 +8287,11 @@
     "category": "New Worlds",
     "name": "Frontier Commissars",
     "area": "society",
+    "is_dangerous": false,
     "prerequisite": "tech_frontier_collectives"
   },
   {
+    "is_rare": true,
     "tier": 2,
     "cost": 2200,
     "key": "tech_frontier_traditions",
@@ -8099,9 +8386,11 @@
     "category": "New Worlds",
     "name": "Frontier Traditions",
     "area": "society",
+    "is_dangerous": false,
     "prerequisite": "tech_frontier_initiatives"
   },
   {
+    "is_rare": false,
     "tier": 2,
     "cost": 1400,
     "key": "tech_atmospheric_manipulation",
@@ -8135,9 +8424,11 @@
     "category": "New Worlds",
     "name": "Atmospheric Manipulation",
     "area": "society",
+    "is_dangerous": false,
     "prerequisite": "tech_terrestrial_sculpting"
   },
   {
+    "is_rare": false,
     "tier": 2,
     "cost": 1000,
     "key": "tech_vitality_boosters",
@@ -8167,9 +8458,11 @@
     "category": "Biology",
     "name": "Vitality Boosters",
     "area": "society",
+    "is_dangerous": false,
     "prerequisite": "tech_genome_mapping"
   },
   {
+    "is_rare": false,
     "tier": 2,
     "cost": 720,
     "key": "tech_epigenetic_triggers",
@@ -8253,9 +8546,11 @@
     "category": "Biology",
     "name": "Epigenetic Triggers",
     "area": "society",
+    "is_dangerous": false,
     "prerequisite": "tech_genome_mapping"
   },
   {
+    "is_rare": false,
     "tier": 2,
     "cost": 1000,
     "key": "tech_cloning",
@@ -8285,9 +8580,11 @@
     "category": "Biology",
     "name": "Cloning",
     "area": "society",
+    "is_dangerous": false,
     "prerequisite": "tech_vitality_boosters"
   },
   {
+    "is_rare": true,
     "tier": 2,
     "cost": 1400,
     "key": "tech_gene_banks",
@@ -8386,9 +8683,11 @@
     "category": "Biology",
     "name": "Gene Banks",
     "area": "society",
+    "is_dangerous": false,
     "prerequisite": "tech_cloning"
   },
   {
+    "is_rare": true,
     "tier": 2,
     "cost": 1800,
     "key": "tech_morphogenetic_field_mastery",
@@ -8548,9 +8847,11 @@
     "category": "Biology",
     "name": "Morphogenetic Field Mastery",
     "area": "society",
+    "is_dangerous": false,
     "prerequisite": "tech_epigenetic_triggers"
   },
   {
+    "is_rare": false,
     "tier": 2,
     "cost": 2200,
     "key": "tech_gene_tailoring",
@@ -8580,9 +8881,11 @@
     "category": "Biology",
     "name": "Gene Tailoring",
     "area": "society",
+    "is_dangerous": false,
     "prerequisite": "tech_cloning"
   },
   {
+    "is_rare": true,
     "tier": 2,
     "cost": 2200,
     "key": "tech_selected_lineages",
@@ -8677,9 +8980,11 @@
     "category": "Biology",
     "name": "Selected Lineages",
     "area": "society",
+    "is_dangerous": false,
     "prerequisite": "tech_vitality_boosters"
   },
   {
+    "is_rare": false,
     "tier": 2,
     "cost": 1000,
     "key": "tech_doctrine_fleet_size_3",
@@ -8749,9 +9054,11 @@
     "category": "Military Theory",
     "name": "Doctrine: Interstellar Warfare",
     "area": "society",
+    "is_dangerous": false,
     "prerequisite": "tech_doctrine_fleet_size_2"
   },
   {
+    "is_rare": false,
     "tier": 2,
     "cost": 2200,
     "key": "tech_doctrine_fleet_size_4",
@@ -8821,9 +9128,11 @@
     "category": "Military Theory",
     "name": "Doctrine: Fluid Fleet Templates",
     "area": "society",
+    "is_dangerous": false,
     "prerequisite": "tech_doctrine_fleet_size_3"
   },
   {
+    "is_rare": false,
     "tier": 2,
     "cost": 1400,
     "key": "tech_doctrine_command_matrix",
@@ -8914,9 +9223,11 @@
     "category": "Military Theory",
     "name": "Doctrine: Command Matrix",
     "area": "society",
+    "is_dangerous": false,
     "prerequisite": "tech_doctrine_fleet_size_3"
   },
   {
+    "is_rare": false,
     "tier": 2,
     "cost": 720,
     "key": "tech_doctrine_refit_standards",
@@ -8986,9 +9297,11 @@
     "category": "Military Theory",
     "name": "Doctrine: Refit Standards",
     "area": "society",
+    "is_dangerous": false,
     "prerequisite": "tech_doctrine_fleet_size_2"
   },
   {
+    "is_rare": true,
     "tier": 2,
     "cost": 2200,
     "key": "tech_psionic_theory",
@@ -9166,9 +9479,11 @@
     "category": "Psionics",
     "name": "Psionic Theory",
     "area": "society",
+    "is_dangerous": false,
     "prerequisite": null
   },
   {
+    "is_rare": false,
     "tier": 2,
     "cost": 1000,
     "key": "tech_xeno_diplomacy",
@@ -9266,9 +9581,11 @@
     "category": "Statecraft",
     "name": "Xeno Diplomacy",
     "area": "society",
+    "is_dangerous": false,
     "prerequisite": null
   },
   {
+    "is_rare": false,
     "tier": 2,
     "cost": 1000,
     "key": "tech_xeno_integration",
@@ -9387,9 +9704,11 @@
     "category": "Biology",
     "name": "Xeno Integration",
     "area": "society",
+    "is_dangerous": false,
     "prerequisite": null
   },
   {
+    "is_rare": true,
     "tier": 2,
     "cost": 1800,
     "key": "tech_manifest_destiny",
@@ -9467,9 +9786,11 @@
     "category": "Statecraft",
     "name": "Manifest Destiny",
     "area": "society",
+    "is_dangerous": false,
     "prerequisite": "tech_galactic_ambitions"
   },
   {
+    "is_rare": false,
     "tier": 2,
     "cost": 1400,
     "key": "tech_galactic_administration",
@@ -9499,9 +9820,11 @@
     "category": "Statecraft",
     "name": "Galactic Administration",
     "area": "society",
+    "is_dangerous": false,
     "prerequisite": "tech_colonial_centralization"
   },
   {
+    "is_rare": true,
     "tier": 2,
     "cost": 1800,
     "key": "tech_galactic_markets",
@@ -9601,13 +9924,15 @@
       }
     ],
     "start_tech": false,
-    "desc": "By engaging in free trade of goods and services we allow for a more specialized economy, where an individual can excel in a narrow field and trade for their needs.",
+    "desc": "",
     "category": "Statecraft",
     "name": "Galactic Markets",
     "area": "society",
+    "is_dangerous": false,
     "prerequisite": "tech_galactic_administration"
   },
   {
+    "is_rare": true,
     "tier": 2,
     "cost": 1000,
     "key": "tech_hyper_entertainment_forum",
@@ -9671,13 +9996,15 @@
       }
     ],
     "start_tech": false,
-    "desc": "This massive entertainment complex is where dreams come true. Shopping malls, restaurants, amusement parks, virtual arcades, and more. You dream it - we are it!",
+    "desc": "",
     "category": "Statecraft",
     "name": "Hyper-Entertainment Forum",
     "area": "society",
+    "is_dangerous": false,
     "prerequisite": "tech_colonial_centralization"
   },
   {
+    "is_rare": true,
     "tier": 2,
     "cost": 1400,
     "key": "tech_galactic_benevolence",
@@ -9776,9 +10103,11 @@
     "category": "Statecraft",
     "name": "Galactic Benevolence",
     "area": "society",
+    "is_dangerous": false,
     "prerequisite": "tech_galactic_administration"
   },
   {
+    "is_rare": false,
     "tier": 2,
     "cost": 1400,
     "key": "tech_living_state",
@@ -9873,9 +10202,11 @@
     "category": "Statecraft",
     "name": "The Living State",
     "area": "society",
+    "is_dangerous": false,
     "prerequisite": "tech_colonial_centralization"
   },
   {
+    "is_rare": false,
     "tier": 2,
     "cost": 1400,
     "key": "tech_artificial_moral_codes",
@@ -9905,9 +10236,11 @@
     "category": "Statecraft",
     "name": "Artificial Moral Codes",
     "area": "society",
+    "is_dangerous": false,
     "prerequisite": null
   },
   {
+    "is_rare": false,
     "tier": 2,
     "cost": 2200,
     "key": "tech_synthetic_thought_patterns",
@@ -9954,9 +10287,11 @@
     "category": "Statecraft",
     "name": "Synthetic Thought Patterns",
     "area": "society",
+    "is_dangerous": false,
     "prerequisite": "tech_artificial_moral_codes"
   },
   {
+    "is_rare": false,
     "tier": 2,
     "cost": 600,
     "key": "tech_advanced_construction_techniques_frigate",
@@ -10064,9 +10399,11 @@
     "category": "Voidcraft",
     "name": "Advanced Construction Techniques (Frigate)",
     "area": "society",
+    "is_dangerous": false,
     "prerequisite": "tech_spaceport_3"
   },
   {
+    "is_rare": false,
     "tier": 2,
     "cost": 480,
     "key": "tech_integrated_research_paradigm",
@@ -10133,9 +10470,11 @@
     "category": "Statecraft",
     "name": "Integrated Research Paradigm",
     "area": "society",
+    "is_dangerous": false,
     "prerequisite": null
   },
   {
+    "is_rare": false,
     "tier": 3,
     "cost": 3000,
     "key": "tech_repeatable_improved_tile_food_output",
@@ -10147,9 +10486,11 @@
     "category": "Biology",
     "name": "Transgenic Crops",
     "area": "society",
+    "is_dangerous": false,
     "prerequisite": "tech_gene_crops"
   },
   {
+    "is_rare": false,
     "tier": 3,
     "cost": 3000,
     "key": "tech_repeatable_improved_sector_cap",
@@ -10161,9 +10502,11 @@
     "category": "Statecraft",
     "name": "Communication Protocols",
     "area": "society",
+    "is_dangerous": false,
     "prerequisite": "tech_adaptive_bureaucracy"
   },
   {
+    "is_rare": false,
     "tier": 3,
     "cost": 3000,
     "key": "tech_repeatable_improved_core_system_cap",
@@ -10175,9 +10518,11 @@
     "category": "Statecraft",
     "name": "Administrative Efficiency",
     "area": "society",
+    "is_dangerous": false,
     "prerequisite": "tech_adaptive_bureaucracy"
   },
   {
+    "is_rare": false,
     "tier": 3,
     "cost": 3000,
     "key": "tech_repeatable_improved_leader_cap",
@@ -10189,9 +10534,11 @@
     "category": "Statecraft",
     "name": "Sentient Resource Management",
     "area": "society",
+    "is_dangerous": false,
     "prerequisite": "tech_adaptive_bureaucracy"
   },
   {
+    "is_rare": false,
     "tier": 3,
     "cost": 3000,
     "key": "tech_repeatable_reduced_leader_cost",
@@ -10203,9 +10550,11 @@
     "category": "Statecraft",
     "name": "Talent Acquisition",
     "area": "society",
+    "is_dangerous": false,
     "prerequisite": "tech_adaptive_bureaucracy"
   },
   {
+    "is_rare": false,
     "tier": 3,
     "cost": 3000,
     "key": "tech_repeatable_improved_edict_length",
@@ -10217,9 +10566,11 @@
     "category": "Statecraft",
     "name": "Proclamation Broadcasts",
     "area": "society",
+    "is_dangerous": false,
     "prerequisite": "tech_artificial_moral_codes"
   },
   {
+    "is_rare": false,
     "tier": 3,
     "cost": 3000,
     "key": "tech_repeatable_improved_army_damage",
@@ -10231,9 +10582,11 @@
     "category": "Military Theory",
     "name": "Aggressive Conditioning",
     "area": "society",
+    "is_dangerous": false,
     "prerequisite": "tech_combat_training"
   },
   {
+    "is_rare": false,
     "tier": 3,
     "cost": 3000,
     "key": "tech_repeatable_improved_army_health",
@@ -10245,9 +10598,11 @@
     "category": "Military Theory",
     "name": "Nerve Dampeners",
     "area": "society",
+    "is_dangerous": false,
     "prerequisite": "tech_combat_training"
   },
   {
+    "is_rare": false,
     "tier": 3,
     "cost": 3000,
     "key": "tech_repeatable_improved_leader_life_span",
@@ -10259,9 +10614,11 @@
     "category": "Biology",
     "name": "Cell Revitalization",
     "area": "society",
+    "is_dangerous": false,
     "prerequisite": "tech_vitality_boosters"
   },
   {
+    "is_rare": false,
     "tier": 3,
     "cost": 3000,
     "key": "tech_repeatable_improved_border_range",
@@ -10273,9 +10630,11 @@
     "category": "Statecraft",
     "name": "Propaganda Transmissions",
     "area": "society",
+    "is_dangerous": false,
     "prerequisite": "tech_galactic_ambitions"
   },
   {
+    "is_rare": false,
     "tier": 3,
     "cost": 3000,
     "key": "tech_repeatable_improved_slave_mineral_output",
@@ -10287,9 +10646,11 @@
     "category": "Biology",
     "name": "Stimulant Diet",
     "area": "society",
+    "is_dangerous": false,
     "prerequisite": "tech_neural_implants"
   },
   {
+    "is_rare": false,
     "tier": 3,
     "cost": 5000,
     "key": "tech_nutrient_replication",
@@ -10339,9 +10700,11 @@
     "category": "Biology",
     "name": "Nutrient Replication",
     "area": "society",
+    "is_dangerous": false,
     "prerequisite": "tech_nano_vitality_crops"
   },
   {
+    "is_rare": false,
     "tier": 3,
     "cost": 3000,
     "key": "tech_biolab_3",
@@ -10419,9 +10782,11 @@
     "category": "Biology",
     "name": "Secrets of Life",
     "area": "society",
+    "is_dangerous": false,
     "prerequisite": "tech_biolab_2"
   },
   {
+    "is_rare": false,
     "tier": 3,
     "cost": 4000,
     "key": "tech_colonization_4",
@@ -10451,9 +10816,11 @@
     "category": "New Worlds",
     "name": "Foreign Soil Enrichment",
     "area": "society",
+    "is_dangerous": false,
     "prerequisite": "tech_colonization_3"
   },
   {
+    "is_rare": false,
     "tier": 3,
     "cost": 6000,
     "key": "tech_colonization_5",
@@ -10483,9 +10850,11 @@
     "category": "New Worlds",
     "name": "Hostile Climate Adaption",
     "area": "society",
+    "is_dangerous": false,
     "prerequisite": "tech_colonization_4"
   },
   {
+    "is_rare": false,
     "tier": 3,
     "cost": 3000,
     "key": "tech_climate_restoration",
@@ -10519,9 +10888,11 @@
     "category": "New Worlds",
     "name": "Climate Restoration",
     "area": "society",
+    "is_dangerous": false,
     "prerequisite": "tech_atmospheric_manipulation"
   },
   {
+    "is_rare": true,
     "tier": 3,
     "cost": 6000,
     "key": "tech_gaia_creation",
@@ -10555,9 +10926,11 @@
     "category": "New Worlds",
     "name": "Gaia Creation",
     "area": "society",
+    "is_dangerous": false,
     "prerequisite": "tech_climate_restoration"
   },
   {
+    "is_rare": true,
     "tier": 3,
     "cost": 4000,
     "key": "tech_gene_seed_purification",
@@ -10700,9 +11073,11 @@
     "category": "Biology",
     "name": "Gene Seed Purification",
     "area": "society",
+    "is_dangerous": false,
     "prerequisite": "tech_gene_tailoring"
   },
   {
+    "is_rare": true,
     "tier": 3,
     "cost": 4000,
     "key": "tech_gene_expressions",
@@ -10797,9 +11172,11 @@
     "category": "Biology",
     "name": "Targeted Gene Expressions",
     "area": "society",
+    "is_dangerous": false,
     "prerequisite": "tech_gene_tailoring"
   },
   {
+    "is_rare": true,
     "tier": 3,
     "cost": 4000,
     "key": "tech_capacity_boosters",
@@ -10902,9 +11279,11 @@
     "category": "Biology",
     "name": "Capacity Boosters",
     "area": "society",
+    "is_dangerous": false,
     "prerequisite": "tech_selected_lineages"
   },
   {
+    "is_rare": false,
     "tier": 3,
     "cost": 3000,
     "key": "tech_doctrine_fleet_size_5",
@@ -10974,9 +11353,11 @@
     "category": "Military Theory",
     "name": "Doctrine: Armada Battle Formation",
     "area": "society",
+    "is_dangerous": false,
     "prerequisite": "tech_doctrine_fleet_size_4"
   },
   {
+    "is_rare": true,
     "tier": 3,
     "cost": 3000,
     "key": "tech_telepathy",
@@ -11113,9 +11494,11 @@
     "category": "Psionics",
     "name": "Telepathy",
     "area": "society",
+    "is_dangerous": false,
     "prerequisite": "tech_psionic_theory"
   },
   {
+    "is_rare": true,
     "tier": 3,
     "cost": 3000,
     "key": "tech_precognition_interface",
@@ -11252,9 +11635,11 @@
     "category": "Psionics",
     "name": "Precognition Interface",
     "area": "society",
+    "is_dangerous": false,
     "prerequisite": "tech_telepathy"
   },
   {
+    "is_rare": true,
     "tier": 3,
     "cost": 6000,
     "key": "tech_psi_jump_drive_1",
@@ -11318,9 +11703,11 @@
     "category": "Psionics",
     "name": "Psi Jump Drive",
     "area": "society",
+    "is_dangerous": true,
     "prerequisite": "tech_precognition_interface"
   },
   {
+    "is_rare": false,
     "tier": 3,
     "cost": 4000,
     "key": "tech_collective_self",
@@ -11432,9 +11819,11 @@
     "category": "Statecraft",
     "name": "The Collective Self",
     "area": "society",
+    "is_dangerous": false,
     "prerequisite": "tech_living_state"
   },
   {
+    "is_rare": true,
     "tier": 3,
     "cost": 5000,
     "key": "tech_will_to_power",
@@ -11529,9 +11918,11 @@
     "category": "Statecraft",
     "name": "Will to Power",
     "area": "society",
+    "is_dangerous": false,
     "prerequisite": "tech_synthetic_thought_patterns"
   },
   {
+    "is_rare": false,
     "tier": 3,
     "cost": 1000,
     "key": "tech_advanced_construction_techniques_strike_cruiser",
@@ -11639,9 +12030,11 @@
     "category": "Voidcraft",
     "name": "Advanced Construction Techniques (Strike Cruiser)",
     "area": "society",
+    "is_dangerous": false,
     "prerequisite": "tech_spaceport_5"
   },
   {
+    "is_rare": false,
     "tier": 3,
     "cost": 1400,
     "key": "tech_advanced_construction_techniques_battlecruiser",
@@ -11749,9 +12142,11 @@
     "category": "Voidcraft",
     "name": "Advanced Construction Techniques (Battlecruiser)",
     "area": "society",
+    "is_dangerous": false,
     "prerequisite": "tech_spaceport_6"
   },
   {
+    "is_rare": false,
     "tier": 3,
     "cost": 1800,
     "key": "tech_advanced_construction_techniques_light_carrier",
@@ -11859,9 +12254,11 @@
     "category": "Voidcraft",
     "name": "Advanced Construction Techniques (Light Carrier)",
     "area": "society",
+    "is_dangerous": false,
     "prerequisite": "tech_spaceport_6"
   },
   {
+    "is_rare": false,
     "tier": 3,
     "cost": 3000,
     "key": "tech_advanced_construction_techniques_carrier",
@@ -11969,9 +12366,11 @@
     "category": "Voidcraft",
     "name": "Advanced Construction Techniques (Carrier)",
     "area": "society",
+    "is_dangerous": false,
     "prerequisite": "tech_spaceport_6"
   },
   {
+    "is_rare": false,
     "tier": 3,
     "cost": 4000,
     "key": "tech_advanced_construction_techniques_dreadnought",
@@ -12079,9 +12478,11 @@
     "category": "Voidcraft",
     "name": "Advanced Construction Techniques (Dreadnought)",
     "area": "society",
+    "is_dangerous": false,
     "prerequisite": "tech_spaceport_6"
   },
   {
+    "is_rare": true,
     "tier": 3,
     "cost": 6000,
     "key": "tech_advanced_construction_techniques_superdreadnought",
@@ -12189,9 +12590,11 @@
     "category": "Voidcraft",
     "name": "Advanced Construction Techniques (Superdreadnought)",
     "area": "society",
+    "is_dangerous": false,
     "prerequisite": "tech_spaceport_6"
   },
   {
+    "is_rare": true,
     "tier": 3,
     "cost": 7000,
     "key": "tech_advanced_construction_techniques_flagship",
@@ -12327,9 +12730,11 @@
     "category": "Voidcraft",
     "name": "Advanced Construction Techniques (Flagship)",
     "area": "society",
+    "is_dangerous": false,
     "prerequisite": "tech_spaceport_6"
   },
   {
+    "is_rare": false,
     "tier": 3,
     "cost": 1000,
     "key": "tech_advanced_construction_techniques_military_stations",
@@ -12437,9 +12842,11 @@
     "category": "Voidcraft",
     "name": "Advanced Construction Techniques (Military Stations)",
     "area": "society",
+    "is_dangerous": false,
     "prerequisite": "tech_spaceport_6"
   },
   {
+    "is_rare": false,
     "tier": 3,
     "cost": 3000,
     "key": "tech_advanced_construction_techniques_battle_fortress",
@@ -12547,9 +12954,11 @@
     "category": "Voidcraft",
     "name": "Advanced Construction Techniques (Battle Fortress)",
     "area": "society",
+    "is_dangerous": false,
     "prerequisite": "tech_spaceport_6"
   },
   {
+    "is_rare": true,
     "tier": 3,
     "cost": 8000,
     "key": "tech_advanced_construction_techniques_hq_station",
@@ -12685,9 +13094,11 @@
     "category": "Voidcraft",
     "name": "Advanced Construction Techniques (HQ Station)",
     "area": "society",
+    "is_dangerous": false,
     "prerequisite": "tech_spaceport_6"
   },
   {
+    "is_rare": false,
     "tier": 0,
     "cost": 0,
     "key": "tech_spaceport_1",
@@ -12699,9 +13110,11 @@
     "category": "Voidcraft",
     "name": "Spaceport",
     "area": "engineering",
+    "is_dangerous": false,
     "prerequisite": null
   },
   {
+    "is_rare": false,
     "tier": 0,
     "cost": 360,
     "key": "tech_assault_armies",
@@ -12713,9 +13126,11 @@
     "category": "Voidcraft",
     "name": "Interplanetary Expeditionary Forces",
     "area": "engineering",
+    "is_dangerous": false,
     "prerequisite": "tech_defense_army"
   },
   {
+    "is_rare": false,
     "tier": 0,
     "cost": 0,
     "key": "tech_thrusters_1",
@@ -12727,9 +13142,11 @@
     "category": "Rocketry",
     "name": "Chemical Thrusters",
     "area": "engineering",
+    "is_dangerous": false,
     "prerequisite": null
   },
   {
+    "is_rare": false,
     "tier": 0,
     "cost": 0,
     "key": "tech_space_defense_station_1",
@@ -12741,9 +13158,11 @@
     "category": "Voidcraft",
     "name": "Deep Space Outposts",
     "area": "engineering",
+    "is_dangerous": false,
     "prerequisite": "tech_space_construction"
   },
   {
+    "is_rare": false,
     "tier": 0,
     "cost": 0,
     "key": "tech_basic_industry",
@@ -12755,9 +13174,11 @@
     "category": "Industry",
     "name": "Industrial Base",
     "area": "engineering",
+    "is_dangerous": false,
     "prerequisite": null
   },
   {
+    "is_rare": false,
     "tier": 0,
     "cost": 0,
     "key": "tech_space_construction",
@@ -12780,9 +13201,11 @@
     "category": "Industry",
     "name": "Offworld Construction",
     "area": "engineering",
+    "is_dangerous": false,
     "prerequisite": null
   },
   {
+    "is_rare": false,
     "tier": 1,
     "cost": 600,
     "key": "tech_spaceport_2",
@@ -12862,9 +13285,11 @@
     "category": "Voidcraft",
     "name": "Unlocks Spaceport Type: Level 2 (Frigates)",
     "area": "engineering",
+    "is_dangerous": false,
     "prerequisite": "tech_space_construction"
   },
   {
+    "is_rare": false,
     "tier": 1,
     "cost": 1000,
     "key": "tech_spaceport_3",
@@ -12960,9 +13385,11 @@
     "category": "Voidcraft",
     "name": "Unlocks Spaceport Type: Level 3 (Destroyers)",
     "area": "engineering",
+    "is_dangerous": false,
     "prerequisite": "tech_spaceport_2"
   },
   {
+    "is_rare": false,
     "tier": 1,
     "cost": 480,
     "key": "tech_ship_armor_1",
@@ -12992,9 +13419,11 @@
     "category": "Materials",
     "name": "Nanocomposite Materials",
     "area": "engineering",
+    "is_dangerous": false,
     "prerequisite": "tech_spaceport_1"
   },
   {
+    "is_rare": false,
     "tier": 1,
     "cost": 720,
     "key": "tech_ship_armor_2",
@@ -13024,9 +13453,11 @@
     "category": "Materials",
     "name": "Ceramo-Metal Materials",
     "area": "engineering",
+    "is_dangerous": false,
     "prerequisite": "tech_ship_armor_1"
   },
   {
+    "is_rare": false,
     "tier": 1,
     "cost": 1400,
     "key": "tech_crystal_armor_1",
@@ -13049,9 +13480,11 @@
     "category": "Materials",
     "name": "Crystal-Infused Plating",
     "area": "engineering",
+    "is_dangerous": false,
     "prerequisite": null
   },
   {
+    "is_rare": false,
     "tier": 1,
     "cost": 360,
     "key": "tech_thrusters_2",
@@ -13101,9 +13534,11 @@
     "category": "Rocketry",
     "name": "Ion Thrusters",
     "area": "engineering",
+    "is_dangerous": false,
     "prerequisite": "tech_thrusters_1"
   },
   {
+    "is_rare": false,
     "tier": 1,
     "cost": 360,
     "key": "tech_powered_exoskeletons",
@@ -13133,9 +13568,11 @@
     "category": "Industry",
     "name": "Powered Exoskeletons",
     "area": "engineering",
+    "is_dangerous": false,
     "prerequisite": "tech_basic_industry"
   },
   {
+    "is_rare": false,
     "tier": 1,
     "cost": 360,
     "key": "tech_mining_network_2",
@@ -13165,9 +13602,11 @@
     "category": "Industry",
     "name": "Geothermal Fracking",
     "area": "engineering",
+    "is_dangerous": false,
     "prerequisite": "tech_basic_industry"
   },
   {
+    "is_rare": false,
     "tier": 1,
     "cost": 360,
     "key": "tech_mineral_processing_1",
@@ -13197,9 +13636,11 @@
     "category": "Industry",
     "name": "Mineral Processing",
     "area": "engineering",
+    "is_dangerous": false,
     "prerequisite": "tech_mining_network_2"
   },
   {
+    "is_rare": false,
     "tier": 1,
     "cost": 360,
     "key": "tech_engineering_lab_1",
@@ -13287,9 +13728,11 @@
     "category": "Industry",
     "name": "Nanomechanics",
     "area": "engineering",
+    "is_dangerous": false,
     "prerequisite": "tech_basic_science_lab_1"
   },
   {
+    "is_rare": false,
     "tier": 1,
     "cost": 600,
     "key": "tech_robotic_workers",
@@ -13339,9 +13782,11 @@
     "category": "Industry",
     "name": "Robotic Workers",
     "area": "engineering",
+    "is_dangerous": false,
     "prerequisite": "tech_powered_exoskeletons"
   },
   {
+    "is_rare": false,
     "tier": 1,
     "cost": 600,
     "key": "tech_mass_drivers_2",
@@ -13411,9 +13856,11 @@
     "category": "Materials",
     "name": "Coilguns",
     "area": "engineering",
+    "is_dangerous": false,
     "prerequisite": "tech_mass_drivers_1"
   },
   {
+    "is_rare": false,
     "tier": 1,
     "cost": 360,
     "key": "tech_missiles_1",
@@ -13483,9 +13930,11 @@
     "category": "Rocketry",
     "name": "Nuclear Missiles",
     "area": "engineering",
+    "is_dangerous": false,
     "prerequisite": null
   },
   {
+    "is_rare": false,
     "tier": 1,
     "cost": 600,
     "key": "tech_missiles_2",
@@ -13555,9 +14004,11 @@
     "category": "Rocketry",
     "name": "Fusion Missiles",
     "area": "engineering",
+    "is_dangerous": false,
     "prerequisite": "tech_missiles_1"
   },
   {
+    "is_rare": false,
     "tier": 1,
     "cost": 480,
     "key": "tech_torpedoes_1",
@@ -13627,9 +14078,11 @@
     "category": "Rocketry",
     "name": "Space Torpedoes",
     "area": "engineering",
+    "is_dangerous": false,
     "prerequisite": "tech_missiles_2"
   },
   {
+    "is_rare": false,
     "tier": 1,
     "cost": 600,
     "key": "tech_mine_garanthium",
@@ -13691,9 +14144,11 @@
     "category": "Materials",
     "name": "Garanthium Mining",
     "area": "engineering",
+    "is_dangerous": false,
     "prerequisite": "tech_mineral_processing_1"
   },
   {
+    "is_rare": false,
     "tier": 1,
     "cost": 600,
     "key": "tech_mine_teldar",
@@ -13755,9 +14210,11 @@
     "category": "Materials",
     "name": "Teldar Crystal Mining",
     "area": "engineering",
+    "is_dangerous": false,
     "prerequisite": "tech_mineral_processing_1"
   },
   {
+    "is_rare": false,
     "tier": 1,
     "cost": 600,
     "key": "tech_mine_orillium",
@@ -13819,9 +14276,11 @@
     "category": "Materials",
     "name": "Orillium Mining",
     "area": "engineering",
+    "is_dangerous": false,
     "prerequisite": "tech_mineral_processing_1"
   },
   {
+    "is_rare": false,
     "tier": 1,
     "cost": 360,
     "key": "tech_mine_betharian",
@@ -13882,9 +14341,11 @@
     "category": "Industry",
     "name": "Betharian Refining",
     "area": "engineering",
+    "is_dangerous": false,
     "prerequisite": "tech_space_construction"
   },
   {
+    "is_rare": false,
     "tier": 1,
     "cost": 1500,
     "key": "tech_repeatable_improved_orbital_station_health",
@@ -13896,9 +14357,11 @@
     "category": "Voidcraft",
     "name": "Fortified Core Layers - Spaceports",
     "area": "engineering",
+    "is_dangerous": false,
     "prerequisite": "tech_spaceport_1"
   },
   {
+    "is_rare": false,
     "tier": 2,
     "cost": 1400,
     "key": "tech_spaceport_4",
@@ -13994,9 +14457,11 @@
     "category": "Voidcraft",
     "name": "Unlocks Spaceport Type: Level 4 (Cruisers)",
     "area": "engineering",
+    "is_dangerous": false,
     "prerequisite": "tech_spaceport_3"
   },
   {
+    "is_rare": false,
     "tier": 2,
     "cost": 2200,
     "key": "tech_spaceport_5",
@@ -14092,9 +14557,11 @@
     "category": "Voidcraft",
     "name": "Unlocks Spaceport Type: Level 5 (Strike Cruisers)",
     "area": "engineering",
+    "is_dangerous": false,
     "prerequisite": "tech_spaceport_4"
   },
   {
+    "is_rare": false,
     "tier": 2,
     "cost": 1000,
     "key": "tech_cruiser_yard",
@@ -14124,9 +14591,11 @@
     "category": "Voidcraft",
     "name": "Standardized Cruiser Patterns",
     "area": "engineering",
+    "is_dangerous": false,
     "prerequisite": "tech_spaceport_5"
   },
   {
+    "is_rare": false,
     "tier": 2,
     "cost": 2200,
     "key": "tech_battleship_yard",
@@ -14156,9 +14625,11 @@
     "category": "Voidcraft",
     "name": "Standardized Battleship Patterns",
     "area": "engineering",
+    "is_dangerous": false,
     "prerequisite": "tech_spaceport_6"
   },
   {
+    "is_rare": false,
     "tier": 2,
     "cost": 1000,
     "key": "tech_strike_craft_1",
@@ -14188,9 +14659,11 @@
     "category": "Voidcraft",
     "name": "Carrier Operations",
     "area": "engineering",
+    "is_dangerous": false,
     "prerequisite": "tech_spaceport_5"
   },
   {
+    "is_rare": false,
     "tier": 2,
     "cost": 1400,
     "key": "tech_strike_craft_2",
@@ -14220,9 +14693,11 @@
     "category": "Voidcraft",
     "name": "Improved Strike Craft",
     "area": "engineering",
+    "is_dangerous": false,
     "prerequisite": "tech_strike_craft_1"
   },
   {
+    "is_rare": false,
     "tier": 2,
     "cost": 2200,
     "key": "tech_strike_craft_3",
@@ -14252,9 +14727,11 @@
     "category": "Voidcraft",
     "name": "Advanced Strike Craft",
     "area": "engineering",
+    "is_dangerous": false,
     "prerequisite": "tech_strike_craft_2"
   },
   {
+    "is_rare": false,
     "tier": 2,
     "cost": 1400,
     "key": "tech_ship_armor_3",
@@ -14284,9 +14761,11 @@
     "category": "Materials",
     "name": "Plasteel Materials",
     "area": "engineering",
+    "is_dangerous": false,
     "prerequisite": "tech_ship_armor_2"
   },
   {
+    "is_rare": false,
     "tier": 2,
     "cost": 2200,
     "key": "tech_ship_armor_4",
@@ -14316,9 +14795,11 @@
     "category": "Materials",
     "name": "Durasteel Materials",
     "area": "engineering",
+    "is_dangerous": false,
     "prerequisite": "tech_ship_armor_3"
   },
   {
+    "is_rare": false,
     "tier": 2,
     "cost": 1000,
     "key": "tech_thrusters_3",
@@ -14368,9 +14849,11 @@
     "category": "Rocketry",
     "name": "Plasma Thrusters",
     "area": "engineering",
+    "is_dangerous": false,
     "prerequisite": "tech_thrusters_2"
   },
   {
+    "is_rare": false,
     "tier": 2,
     "cost": 1000,
     "key": "tech_space_defense_station_2",
@@ -14437,9 +14920,11 @@
     "category": "Voidcraft",
     "name": "Deep Space Stations",
     "area": "engineering",
+    "is_dangerous": false,
     "prerequisite": "tech_space_defense_station_1"
   },
   {
+    "is_rare": true,
     "tier": 2,
     "cost": 1800,
     "key": "tech_space_defense_station_improvement",
@@ -14500,9 +14985,11 @@
     "category": "Voidcraft",
     "name": "Corps of Engineers",
     "area": "engineering",
+    "is_dangerous": false,
     "prerequisite": "tech_space_defense_station_2"
   },
   {
+    "is_rare": false,
     "tier": 2,
     "cost": 1000,
     "key": "tech_mining_network_3",
@@ -14532,9 +15019,11 @@
     "category": "Industry",
     "name": "Deep Core Mining",
     "area": "engineering",
+    "is_dangerous": false,
     "prerequisite": "tech_mining_network_2"
   },
   {
+    "is_rare": false,
     "tier": 2,
     "cost": 2200,
     "key": "tech_mining_network_4",
@@ -14564,9 +15053,11 @@
     "category": "Industry",
     "name": "Mineral Isolation",
     "area": "engineering",
+    "is_dangerous": false,
     "prerequisite": "tech_mining_network_3"
   },
   {
+    "is_rare": false,
     "tier": 2,
     "cost": 1000,
     "key": "tech_mineral_processing_2",
@@ -14596,9 +15087,11 @@
     "category": "Industry",
     "name": "Advanced Mineral Processing",
     "area": "engineering",
+    "is_dangerous": false,
     "prerequisite": "tech_mineral_processing_1"
   },
   {
+    "is_rare": false,
     "tier": 2,
     "cost": 1000,
     "key": "tech_engineering_lab_2",
@@ -14676,9 +15169,11 @@
     "category": "Industry",
     "name": "Supersolid Materials",
     "area": "engineering",
+    "is_dangerous": false,
     "prerequisite": "tech_engineering_lab_1"
   },
   {
+    "is_rare": false,
     "tier": 2,
     "cost": 1000,
     "key": "tech_droid_workers",
@@ -14733,9 +15228,11 @@
     "category": "Industry",
     "name": "Droids",
     "area": "engineering",
+    "is_dangerous": false,
     "prerequisite": "tech_robotic_workers"
   },
   {
+    "is_rare": false,
     "tier": 2,
     "cost": 1000,
     "key": "tech_afterburners_1",
@@ -14785,9 +15282,11 @@
     "category": "Rocketry",
     "name": "Afterburners",
     "area": "engineering",
+    "is_dangerous": false,
     "prerequisite": "tech_thrusters_2"
   },
   {
+    "is_rare": false,
     "tier": 2,
     "cost": 360,
     "key": "tech_mass_drivers_1",
@@ -14857,9 +15356,11 @@
     "category": "Materials",
     "name": "Mass Drivers",
     "area": "engineering",
+    "is_dangerous": false,
     "prerequisite": null
   },
   {
+    "is_rare": false,
     "tier": 2,
     "cost": 1000,
     "key": "tech_mass_drivers_3",
@@ -14929,9 +15430,11 @@
     "category": "Materials",
     "name": "Railguns",
     "area": "engineering",
+    "is_dangerous": false,
     "prerequisite": "tech_mass_drivers_2"
   },
   {
+    "is_rare": false,
     "tier": 2,
     "cost": 1800,
     "key": "tech_mass_drivers_4",
@@ -15001,9 +15504,11 @@
     "category": "Materials",
     "name": "Advanced Railguns",
     "area": "engineering",
+    "is_dangerous": false,
     "prerequisite": "tech_mass_drivers_3"
   },
   {
+    "is_rare": false,
     "tier": 2,
     "cost": 1000,
     "key": "tech_autocannons_1",
@@ -15087,9 +15592,11 @@
     "category": "Materials",
     "name": "Autocannons",
     "area": "engineering",
+    "is_dangerous": false,
     "prerequisite": "tech_mass_drivers_2"
   },
   {
+    "is_rare": false,
     "tier": 2,
     "cost": 1800,
     "key": "tech_autocannons_2",
@@ -15159,9 +15666,11 @@
     "category": "Materials",
     "name": "Ripper Cannons",
     "area": "engineering",
+    "is_dangerous": false,
     "prerequisite": "tech_autocannons_1"
   },
   {
+    "is_rare": false,
     "tier": 2,
     "cost": 1800,
     "key": "tech_flak_batteries_1",
@@ -15231,9 +15740,11 @@
     "category": "Materials",
     "name": "Flak Battery",
     "area": "engineering",
+    "is_dangerous": false,
     "prerequisite": "tech_autocannons_2"
   },
   {
+    "is_rare": false,
     "tier": 2,
     "cost": 1000,
     "key": "tech_missiles_3",
@@ -15303,9 +15814,11 @@
     "category": "Rocketry",
     "name": "Antimatter Missiles",
     "area": "engineering",
+    "is_dangerous": false,
     "prerequisite": "tech_missiles_2"
   },
   {
+    "is_rare": false,
     "tier": 2,
     "cost": 1800,
     "key": "tech_missiles_4",
@@ -15375,9 +15888,11 @@
     "category": "Rocketry",
     "name": "Quantum Missiles",
     "area": "engineering",
+    "is_dangerous": false,
     "prerequisite": "tech_missiles_3"
   },
   {
+    "is_rare": false,
     "tier": 2,
     "cost": 1000,
     "key": "tech_swarmer_missiles_1",
@@ -15447,9 +15962,11 @@
     "category": "Rocketry",
     "name": "Swarmer Missiles",
     "area": "engineering",
+    "is_dangerous": false,
     "prerequisite": "tech_missiles_4"
   },
   {
+    "is_rare": false,
     "tier": 2,
     "cost": 1400,
     "key": "tech_torpedoes_2",
@@ -15519,9 +16036,11 @@
     "category": "Rocketry",
     "name": "Armored Torpedoes",
     "area": "engineering",
+    "is_dangerous": false,
     "prerequisite": "tech_torpedoes_1"
   },
   {
+    "is_rare": false,
     "tier": 2,
     "cost": 1400,
     "key": "tech_sensorstation_1",
@@ -15629,9 +16148,11 @@
     "category": "Voidcraft",
     "name": "Sensor Station",
     "area": "engineering",
+    "is_dangerous": false,
     "prerequisite": "tech_spaceport_3"
   },
   {
+    "is_rare": false,
     "tier": 2,
     "cost": 1000,
     "key": "tech_frontier_outpost_1",
@@ -15751,9 +16272,11 @@
     "category": "Voidcraft",
     "name": "Frontier Outpost (Tier 2)",
     "area": "engineering",
+    "is_dangerous": false,
     "prerequisite": "tech_space_defense_station_1"
   },
   {
+    "is_rare": false,
     "tier": 3,
     "cost": 4000,
     "key": "tech_spaceport_6",
@@ -15849,9 +16372,11 @@
     "category": "Voidcraft",
     "name": "Unlocks Spaceport Type: Level 6 (Battlecruisers)",
     "area": "engineering",
+    "is_dangerous": false,
     "prerequisite": "tech_spaceport_5"
   },
   {
+    "is_rare": false,
     "tier": 3,
     "cost": 5000,
     "key": "tech_ship_armor_5",
@@ -15881,9 +16406,11 @@
     "category": "Materials",
     "name": "Neutronium Materials",
     "area": "engineering",
+    "is_dangerous": false,
     "prerequisite": "tech_ship_armor_4"
   },
   {
+    "is_rare": false,
     "tier": 3,
     "cost": 3000,
     "key": "tech_thrusters_4",
@@ -15923,9 +16450,11 @@
     "category": "Rocketry",
     "name": "Impulse Thrusters",
     "area": "engineering",
+    "is_dangerous": false,
     "prerequisite": "tech_thrusters_3"
   },
   {
+    "is_rare": false,
     "tier": 3,
     "cost": 3000,
     "key": "tech_space_defense_station_3",
@@ -15982,9 +16511,11 @@
     "category": "Voidcraft",
     "name": "Deep Space Installations",
     "area": "engineering",
+    "is_dangerous": false,
     "prerequisite": "tech_space_defense_station_2"
   },
   {
+    "is_rare": false,
     "tier": 3,
     "cost": 4000,
     "key": "tech_engineering_lab_3",
@@ -16062,9 +16593,11 @@
     "category": "Industry",
     "name": "Superfluid Materials",
     "area": "engineering",
+    "is_dangerous": false,
     "prerequisite": "tech_engineering_lab_2"
   },
   {
+    "is_rare": true,
     "tier": 3,
     "cost": 4000,
     "key": "tech_synthetic_workers",
@@ -16148,9 +16681,11 @@
     "category": "Industry",
     "name": "Synthetics",
     "area": "engineering",
+    "is_dangerous": true,
     "prerequisite": "tech_droid_workers"
   },
   {
+    "is_rare": true,
     "tier": 3,
     "cost": 5000,
     "key": "tech_synthetic_leaders",
@@ -16256,9 +16791,11 @@
     "category": "Industry",
     "name": "Synthetic Personality Matrix",
     "area": "engineering",
+    "is_dangerous": false,
     "prerequisite": "tech_synthetic_workers"
   },
   {
+    "is_rare": false,
     "tier": 3,
     "cost": 3000,
     "key": "tech_afterburners_2",
@@ -16288,9 +16825,11 @@
     "category": "Rocketry",
     "name": "Advanced Afterburners",
     "area": "engineering",
+    "is_dangerous": false,
     "prerequisite": "tech_afterburners_1"
   },
   {
+    "is_rare": false,
     "tier": 3,
     "cost": 3000,
     "key": "tech_mass_drivers_5",
@@ -16360,9 +16899,11 @@
     "category": "Materials",
     "name": "Gauss Cannons",
     "area": "engineering",
+    "is_dangerous": false,
     "prerequisite": "tech_mass_drivers_4"
   },
   {
+    "is_rare": false,
     "tier": 3,
     "cost": 3000,
     "key": "tech_kinetic_artillery_1",
@@ -16432,9 +16973,11 @@
     "category": "Materials",
     "name": "Kinetic Battery",
     "area": "engineering",
+    "is_dangerous": false,
     "prerequisite": "tech_mass_drivers_4"
   },
   {
+    "is_rare": false,
     "tier": 3,
     "cost": 5000,
     "key": "tech_kinetic_artillery_2",
@@ -16504,9 +17047,11 @@
     "category": "Materials",
     "name": "Kinetic Artillery",
     "area": "engineering",
+    "is_dangerous": false,
     "prerequisite": "tech_kinetic_artillery_1"
   },
   {
+    "is_rare": false,
     "tier": 3,
     "cost": 4000,
     "key": "tech_mass_accelerator_1",
@@ -16576,9 +17121,11 @@
     "category": "Materials",
     "name": "Mega Cannon",
     "area": "engineering",
+    "is_dangerous": false,
     "prerequisite": "tech_mass_drivers_5"
   },
   {
+    "is_rare": false,
     "tier": 3,
     "cost": 6000,
     "key": "tech_mass_accelerator_2",
@@ -16648,9 +17195,11 @@
     "category": "Materials",
     "name": "Giga Cannon",
     "area": "engineering",
+    "is_dangerous": false,
     "prerequisite": "tech_mass_accelerator_1"
   },
   {
+    "is_rare": false,
     "tier": 3,
     "cost": 3000,
     "key": "tech_autocannons_3",
@@ -16720,9 +17269,11 @@
     "category": "Materials",
     "name": "Stormfire Cannons",
     "area": "engineering",
+    "is_dangerous": false,
     "prerequisite": "tech_autocannons_2"
   },
   {
+    "is_rare": false,
     "tier": 3,
     "cost": 3000,
     "key": "tech_flak_batteries_2",
@@ -16792,9 +17343,11 @@
     "category": "Materials",
     "name": "Flak Artillery",
     "area": "engineering",
+    "is_dangerous": false,
     "prerequisite": "tech_flak_batteries_1"
   },
   {
+    "is_rare": false,
     "tier": 3,
     "cost": 3000,
     "key": "tech_missiles_5",
@@ -16864,9 +17417,11 @@
     "category": "Rocketry",
     "name": "Marauder Missiles",
     "area": "engineering",
+    "is_dangerous": false,
     "prerequisite": "tech_missiles_4"
   },
   {
+    "is_rare": false,
     "tier": 3,
     "cost": 3000,
     "key": "tech_swarmer_missiles_2",
@@ -16936,9 +17491,11 @@
     "category": "Rocketry",
     "name": "Whirlwind Missiles",
     "area": "engineering",
+    "is_dangerous": false,
     "prerequisite": "tech_swarmer_missiles_1"
   },
   {
+    "is_rare": false,
     "tier": 3,
     "cost": 4000,
     "key": "tech_torpedoes_3",
@@ -17008,9 +17565,11 @@
     "category": "Rocketry",
     "name": "Devastator Torpedoes",
     "area": "engineering",
+    "is_dangerous": false,
     "prerequisite": "tech_torpedoes_2"
   },
   {
+    "is_rare": false,
     "tier": 3,
     "cost": 3000,
     "key": "tech_repeatable_improved_tile_mineral_output",
@@ -17022,9 +17581,11 @@
     "category": "Industry",
     "name": "Extraction Patterns",
     "area": "engineering",
+    "is_dangerous": false,
     "prerequisite": "tech_mineral_processing_2"
   },
   {
+    "is_rare": false,
     "tier": 3,
     "cost": 3000,
     "key": "tech_repeatable_improved_military_station_damage",
@@ -17036,9 +17597,11 @@
     "category": "Voidcraft",
     "name": "Synchronized Firing Patterns",
     "area": "engineering",
+    "is_dangerous": false,
     "prerequisite": "tech_space_defense_station_2"
   },
   {
+    "is_rare": false,
     "tier": 3,
     "cost": 3000,
     "key": "tech_repeatable_improved_military_station_health",
@@ -17050,9 +17613,11 @@
     "category": "Voidcraft",
     "name": "Fortified Core Layers",
     "area": "engineering",
+    "is_dangerous": false,
     "prerequisite": "tech_space_defense_station_2"
   },
   {
+    "is_rare": false,
     "tier": 3,
     "cost": 3000,
     "key": "tech_repeatable_improved_ship_health",
@@ -17064,9 +17629,11 @@
     "category": "Voidcraft",
     "name": "Hull Integrity",
     "area": "engineering",
+    "is_dangerous": false,
     "prerequisite": "tech_spaceport_4"
   },
   {
+    "is_rare": false,
     "tier": 3,
     "cost": 3000,
     "key": "tech_repeatable_improved_armor_output",
@@ -17078,9 +17645,11 @@
     "category": "Materials",
     "name": "Matter Compression",
     "area": "engineering",
+    "is_dangerous": false,
     "prerequisite": "tech_ship_armor_3"
   },
   {
+    "is_rare": false,
     "tier": 3,
     "cost": 3000,
     "key": "tech_repeatable_weapon_type_explosive_damage",
@@ -17092,9 +17661,11 @@
     "category": "Rocketry",
     "name": "Thermodynamic Yield Control",
     "area": "engineering",
+    "is_dangerous": false,
     "prerequisite": "tech_missiles_3"
   },
   {
+    "is_rare": false,
     "tier": 3,
     "cost": 3000,
     "key": "tech_repeatable_weapon_type_explosive_fire_rate",
@@ -17106,9 +17677,11 @@
     "category": "Rocketry",
     "name": "Miniaturized Pre-Igniters",
     "area": "engineering",
+    "is_dangerous": false,
     "prerequisite": "tech_missiles_3"
   },
   {
+    "is_rare": false,
     "tier": 3,
     "cost": 3000,
     "key": "tech_repeatable_weapon_type_kinetic_damage",
@@ -17120,9 +17693,11 @@
     "category": "Materials",
     "name": "High-Density Munitions",
     "area": "engineering",
+    "is_dangerous": false,
     "prerequisite": "tech_mass_drivers_3"
   },
   {
+    "is_rare": false,
     "tier": 3,
     "cost": 3000,
     "key": "tech_repeatable_weapon_type_kinetic_fire_rate",
@@ -17134,9 +17709,11 @@
     "category": "Materials",
     "name": "Loader Efficiency",
     "area": "engineering",
+    "is_dangerous": false,
     "prerequisite": "tech_mass_drivers_3"
   },
   {
+    "is_rare": false,
     "tier": 3,
     "cost": 3000,
     "key": "tech_repeatable_weapon_type_strike_craft_fire_damage",
@@ -17148,9 +17725,11 @@
     "category": "Voidcraft",
     "name": "Synapse Interceptors",
     "area": "engineering",
+    "is_dangerous": false,
     "prerequisite": "tech_spaceport_5"
   },
   {
+    "is_rare": false,
     "tier": 3,
     "cost": 3000,
     "key": "tech_repeatable_weapon_type_strike_craft_fire_rate",
@@ -17162,9 +17741,11 @@
     "category": "Voidcraft",
     "name": "Heat Recyclers",
     "area": "engineering",
+    "is_dangerous": false,
     "prerequisite": "tech_spaceport_5"
   },
   {
+    "is_rare": false,
     "tier": 3,
     "cost": 5000,
     "key": "tech_light_carrier_1",
@@ -17272,9 +17853,11 @@
     "category": "Voidcraft",
     "name": "Light Carrier",
     "area": "engineering",
+    "is_dangerous": false,
     "prerequisite": "tech_spaceport_6"
   },
   {
+    "is_rare": false,
     "tier": 3,
     "cost": 6000,
     "key": "tech_battleship_1",
@@ -17382,9 +17965,11 @@
     "category": "Voidcraft",
     "name": "Battleship",
     "area": "engineering",
+    "is_dangerous": false,
     "prerequisite": "tech_light_carrier_1"
   },
   {
+    "is_rare": false,
     "tier": 3,
     "cost": 7000,
     "key": "tech_carrier_1",
@@ -17492,9 +18077,11 @@
     "category": "Voidcraft",
     "name": "Carrier",
     "area": "engineering",
+    "is_dangerous": false,
     "prerequisite": "tech_battleship_1"
   },
   {
+    "is_rare": false,
     "tier": 3,
     "cost": 8000,
     "key": "tech_dreadnought_1",
@@ -17602,9 +18189,11 @@
     "category": "Voidcraft",
     "name": "Dreadnought",
     "area": "engineering",
+    "is_dangerous": false,
     "prerequisite": "tech_carrier_1"
   },
   {
+    "is_rare": true,
     "tier": 3,
     "cost": 9000,
     "key": "tech_superdreadnought_1",
@@ -17712,9 +18301,11 @@
     "category": "Voidcraft",
     "name": "Superdreadnought",
     "area": "engineering",
+    "is_dangerous": false,
     "prerequisite": "tech_dreadnought_1"
   },
   {
+    "is_rare": true,
     "tier": 3,
     "cost": 10000,
     "key": "tech_flagship_1",
@@ -17833,9 +18424,11 @@
     "category": "Voidcraft",
     "name": "The Flagship",
     "area": "engineering",
+    "is_dangerous": false,
     "prerequisite": "tech_superdreadnought_1"
   },
   {
+    "is_rare": false,
     "tier": 3,
     "cost": 5000,
     "key": "tech_flak_batteries_3_frigate",
@@ -17919,9 +18512,11 @@
     "category": "Materials",
     "name": "Flak Howitzer",
     "area": "engineering",
+    "is_dangerous": false,
     "prerequisite": "tech_flak_batteries_2"
   },
   {
+    "is_rare": false,
     "tier": 3,
     "cost": 8000,
     "key": "tech_mass_accelerator_NSC",
@@ -18005,9 +18600,11 @@
     "category": "Materials",
     "name": "Ultra Cannon",
     "area": "engineering",
+    "is_dangerous": false,
     "prerequisite": "tech_mass_accelerator_2"
   },
   {
+    "is_rare": false,
     "tier": 3,
     "cost": 5000,
     "key": "tech_miningbase_1",
@@ -18115,9 +18712,11 @@
     "category": "Voidcraft",
     "name": "Mining Base",
     "area": "engineering",
+    "is_dangerous": false,
     "prerequisite": "tech_space_defense_station_3"
   },
   {
+    "is_rare": false,
     "tier": 3,
     "cost": 5000,
     "key": "tech_powerstation_1",
@@ -18225,9 +18824,11 @@
     "category": "Voidcraft",
     "name": "Power Station",
     "area": "engineering",
+    "is_dangerous": false,
     "prerequisite": "tech_space_defense_station_3"
   },
   {
+    "is_rare": false,
     "tier": 3,
     "cost": 7000,
     "key": "tech_battle_fortress_1",
@@ -18298,9 +18899,11 @@
     "category": "Voidcraft",
     "name": "Battle Fortress",
     "area": "engineering",
+    "is_dangerous": false,
     "prerequisite": "tech_space_defense_station_3"
   },
   {
+    "is_rare": true,
     "tier": 3,
     "cost": 10000,
     "key": "tech_headquarters_1",
@@ -18436,9 +19039,11 @@
     "category": "Voidcraft",
     "name": "Headquarters Station",
     "area": "engineering",
+    "is_dangerous": false,
     "prerequisite": "tech_spaceport_6"
   },
   {
+    "is_rare": false,
     "tier": 3,
     "cost": 3000,
     "key": "tech_frontier_outpost_2",
@@ -18558,9 +19163,11 @@
     "category": "Voidcraft",
     "name": "Frontier Outpost (Tier 3)",
     "area": "engineering",
+    "is_dangerous": false,
     "prerequisite": "tech_frontier_outpost_1"
   },
   {
+    "is_rare": false,
     "tier": 3,
     "cost": 7000,
     "key": "tech_frontier_outpost_3",
@@ -18680,6 +19287,7 @@
     "category": "Voidcraft",
     "name": "Frontier Outpost (Tier 4)",
     "area": "engineering",
+    "is_dangerous": false,
     "prerequisite": "tech_frontier_outpost_2"
   }
 ]
