@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+from __future__ import print_function
 from lex import tokens
 from os import listdir, path
 from ply.yacc import yacc
@@ -37,6 +38,9 @@ arg_parser.add_argument('directories', nargs='+', type=valid_dirs)
 args = arg_parser.parse_args()
 tree_label = args.label
 directories = args.directories
+
+def eprint(string):
+    sys.stderr.write(string + '\n')
 
 
 def p_script(tokens):
@@ -148,9 +152,13 @@ def parse_weight_modifier(modifier):
 tech_file_paths = []
 loc_file_paths = []
 tech_filenames = set()
+skip_terms = ['events?', 'tutorials?', 'pop_factions?', 'name_lists?',
+              'messages?', 'mandates?', 'modifiers?', 'projects?', 'sections?',
+              'triggers?', 'effects?', 'edicts?', 'traits?']
+has_skip_term = re.compile(r'(?:{})_'.format('|'.join(skip_terms)))
 for directory in directories:
     tech_dir = path.join(directory, 'common/technology')
-    print 'Loading {} ...'.format(tech_dir)
+    eprint('Loading {} ...'.format(tech_dir))
     for filename in listdir(tech_dir):
         file_path = path.join(tech_dir, filename)
         if not path.isfile(file_path):
@@ -163,7 +171,7 @@ for directory in directories:
                 in tech_file_paths
                 if path.basename(file_path) == filename
             ))
-            print 'Removing {} ...'.format(path_to_delete)
+            eprint('Removing {} ...'.format(path_to_delete))
             tech_file_paths.remove(path_to_delete)
 
         tech_filenames.add(filename)
@@ -173,13 +181,12 @@ for directory in directories:
     loc_file_paths += [path.join(loc_dir, filename) for filename
                       in listdir(loc_dir)
                       if path.isfile(path.join(loc_dir, filename))
-                      and filename.endswith('l_english.yml')
-                      and 'event' not in filename
-                      and 'horizonsignal' not in filename]
+                      and filename.endswith('_l_english.yml')
+                      and not has_skip_term.search(filename)]
 
 tech_data = ''
 for file_path in tech_file_paths:
-    sys.stderr.write('Processing {} ...\n'.format(path.basename(file_path)))
+    eprint('Processing {} ...'.format(path.basename(file_path)))
     tech_data += open(file_path).read()
 
 script = yacc().parse(tech_data)
@@ -188,23 +195,33 @@ at_vars = {}
 def localized_strings():
     loc_data = { }
     for file_path in loc_file_paths:
-        sys.stderr.write('Processing {} ...\n'.format(path.basename(file_path)))
-        not_yaml = codecs.open(file_path, 'r', 'utf-8-sig').read()
-        still_not_yaml = re.sub(ur'§[A-Z!]', '', not_yaml)
-        hardly_yaml = re.sub(r'(?<=\w):\d (?=")', ': ', still_not_yaml)
-        resembles_yaml = re.sub(ur'''(?<=[a-z ]{2}|\\n| "|[.,] )"(.+?)"''',
-                          r'\"\1\"',
-                             hardly_yaml)
-        actual_yaml = re.sub(r'^ ', '  ', resembles_yaml, flags=re.M)
+        eprint('Processing {} ...'.format(path.basename(file_path)))
+        not_yaml_lines = codecs.open(file_path, 'r', 'utf-8-sig').readlines()
+        not_yaml = ''
+        for line in not_yaml_lines:
+            quote_instances = [i for i, char in enumerate(line)
+                               if char == u'"']
 
-        try:
-            file_data = yaml.load(actual_yaml, Loader=yaml.Loader)
-            loc_map = file_data['l_english']
-            loc_data.update(loc_map)
-        except (yaml.parser.ParserError) as error:
-            sys.stderr.write(str(error) + '\n')
-            sys.stderr.write("Could't process {}.\n".format(path.basename(file_path)))
-            continue
+            if len(quote_instances) >= 2:
+                # Some lines have invalid data after terminal quote:
+                last = quote_instances[-1]
+                line = line[:last + 1] + '\n'
+
+                if len(quote_instances) > 2:
+                    second = quote_instances[1]
+                    line = line[0:second] \
+                           + line[second:last].replace(u'"', ur'\"') \
+                           + line[last:]
+
+            not_yaml += line
+
+        still_not_yaml = re.sub(ur'§[A-Z!]', '', not_yaml)
+        resembles_yaml = re.sub(r'(?<=\w):\d (?=")', ': ', still_not_yaml)
+        actual_yaml = re.sub(r'^ +', '  ', resembles_yaml, flags=re.M)
+
+        file_data = yaml.load(actual_yaml, Loader=yaml.Loader)
+        loc_map = file_data['l_english']
+        loc_data.update(loc_map)
 
     return loc_data
 
@@ -229,7 +246,7 @@ def prerequisite(tech):
             subkey for subkey in tech[tech_key]
             if subkey.keys()[0] == 'prerequisites'
         ))['prerequisites'][0]
-    except StopIteration:
+    except (StopIteration, IndexError):
         value = None
 
     return value
@@ -268,7 +285,7 @@ def base_factor(tech):
         factor = at_vars[string] \
                       if str(string).startswith('@') \
                          else string
-    except (StopIteration, KeyError):
+    except (StopIteration, KeyError, IndexError):
         factor = 1.0
 
     return factor
@@ -301,7 +318,7 @@ for tech in script:
                            if modifier_list[0].keys() == ['factor'] \
                               else modifier_list
 
-    except(StopIteration, KeyError):
+    except(StopIteration, KeyError, IndexError):
         weight_modifiers = []
 
     if not is_start_tech(tech) \
@@ -323,12 +340,6 @@ for tech in script:
     except KeyError:
         description = ''
 
-    try:
-        prereq = prerequisite(tech)
-    except IndexError:
-        print key
-        prereq = None
-
     technologies.append({
         'key': key,
         'tier': tier(tech),
@@ -341,7 +352,7 @@ for tech in script:
         'area': area,
         'start_tech': is_start_tech(tech),
         'category': loc_data[category],
-        'prerequisite': prereq
+        'prerequisite': prerequisite(tech)
     })
 
 technologies.sort(key=operator.itemgetter('tier'))
