@@ -67,7 +67,6 @@ $(document).ready(function() {
           })[0];
       }
 
-      console.log(tech);
       let tierDifference = tech.data.tier - tech.parent.data.tier;
       let nestedTech = tech;
       while ( tierDifference > 1 && nestedTech.parent != rootNode ) {
