@@ -3,9 +3,10 @@
 
 from __future__ import print_function
 from lex import tokens
-from os import listdir, path
+from os import listdir, makedirs, path
 from ply.yacc import yacc
 from pprint import pprint
+from weight_modifiers import WeightModifierParser
 import argparse
 import codecs
 import json
@@ -14,11 +15,12 @@ import re
 import ruamel.yaml as yaml
 import sys
 
-
 # Process CLI arguments:
 def valid_label(label):
     if not re.match(r'^\w+$', label):
         raise argparse.ArgumentTypeError('Must match [a-z0-9_]')
+    elif not path.isdir(path.join('public', label)):
+        makedirs(path.join('public', label))
 
     return label.lower()
 
@@ -146,15 +148,12 @@ def p_error(p):
     raise Exception("Syntax error in input: {}".format(str(p)))
 
 
-def parse_weight_modifier(modifier):
-    pass
-
 tech_file_paths = []
 loc_file_paths = []
 tech_filenames = set()
 skip_terms = ['events?', 'tutorials?', 'pop_factions?', 'name_lists?',
-              'messages?', 'mandates?', 'modifiers?', 'projects?', 'sections?',
-              'triggers?', 'effects?', 'edicts?', 'traits?']
+              'messages?', 'mandates?', 'projects?', 'sections?',
+              'triggers?', 'edicts?', 'traits?']
 has_skip_term = re.compile(r'(?:{})_'.format('|'.join(skip_terms)))
 for directory in directories:
     tech_dir = path.join(directory, 'common/technology')
@@ -181,7 +180,7 @@ for directory in directories:
     loc_file_paths += [path.join(loc_dir, filename) for filename
                       in listdir(loc_dir)
                       if path.isfile(path.join(loc_dir, filename))
-                      and filename.endswith('_l_english.yml')
+                      and filename.endswith('l_english.yml')
                       and not has_skip_term.search(filename)]
 
 tech_data = ''
@@ -215,7 +214,7 @@ def localized_strings():
 
             not_yaml += line
 
-        still_not_yaml = re.sub(ur'§[A-Z!]', '', not_yaml)
+        still_not_yaml = re.sub(ur'£\w+  |§[A-Z!]', '', not_yaml)
         resembles_yaml = re.sub(r'(?<=\w):\d (?=")', ': ', still_not_yaml)
         actual_yaml = re.sub(r'^ +', '  ', resembles_yaml, flags=re.M)
 
@@ -331,16 +330,19 @@ for tech in script:
 
     tech_base_weight = base_weight(tech)
     tech_base_factor = base_factor(tech)
+    modifier_parser = WeightModifierParser(loc_data)
     try:
-        modifier_list = next(iter(key for key in tech[key]
+        unparsed_modifiers = next(iter(key for key in tech[key]
                                   if key.keys()[0] == 'weight_modifier')
         )['weight_modifier']
-        weight_modifiers = modifier_list[1:] \
-                           if modifier_list[0].keys() == ['factor'] \
-                              else modifier_list
+    except StopIteration:
+        unparsed_modifiers = []
 
-    except(StopIteration, KeyError, IndexError):
-        weight_modifiers = []
+
+    weight_modifiers = [modifier_parser.parse(modifier['modifier'])
+                        for modifier in unparsed_modifiers
+                        if modifier.keys() == ['modifier']]
+
 
     if not is_start_tech(tech) \
        and tech_base_weight * tech_base_factor == 0 \

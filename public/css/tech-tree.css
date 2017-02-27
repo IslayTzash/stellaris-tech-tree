@@ -22,21 +22,29 @@ body { background: #fff; }
     background-color: #262626;
     border: 1px solid #000;
     width: 250px;
-    font-family: Tahoma;
+    height: 60px;
+    font-family: Verdana;
     font-size: 12px;
     color: white;
 }
 
-.tech.dangerous {
-    box-shadow: inset 0 0 1em red
-}
-
 .tech div.icon {
     background-color: black;
+    border-radius: 4px;
+    border: 1px solid gray;
     width: 52px;
     height: 52px;
     float: left;
+    margin: 2px 10px 2px 2px;
     margin-right: 10px;
+}
+
+.tech div.icon.dangerous {
+    box-shadow: 0 0 1.25em red
+}
+
+.tech div.icon.rare {
+    box-shadow: 0 0 1.25em violet
 }
 
 .tech p.node-name {
@@ -46,13 +54,53 @@ body { background: #fff; }
     white-space: nowrap;
 }
 
-.tech p.node-name span.rare {
+.tech p.node-desc {
+    margin-bottom: 4px;
+}
+
+.tech p.description, .tech p.weight-modifiers {
+    border: 1px solid gray;
+    padding: 3px;
+    width: 12px;
+    height: 12px;
+    font-weight: bold;
+    background-color: black;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 2px;
     position: relative;
-    left: 3px;
-    color: violet;
+    left: 229px;
+    top: -37px;
+}
+
+.tech p.weight-modifiers.disabled {
+    border: 1px solid #444;
+    cursor: default;
+    color: #444;
+}
+
+.ui-tooltip {
+    font-size: 12px;
+    display: block;
+    max-width: 512px;
+}
+
+.ui-tooltip > div > span.weight-modifiers {
+    white-space: pre;
+}
+
+.tooltip-header {
+    padding: 3px;
+    margin: -5px 0 5px -3px;
+    width: 100%;
+    background-color: #262626;
+    color: white;
+    font-weight: bold;
+    content: "Weight Modifiers";
 }
 
 .tech.society { border: 4px solid #5ACA9C }
+
 span.society-research::before {
     background: url("../img/society_research.png") center center no-repeat;
     content:  url("../img/blank11px.png");

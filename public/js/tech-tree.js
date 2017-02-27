@@ -13,6 +13,30 @@ let config = {
   node: {
     HTMLclass: 'tech',
     collapsable: true
+  },
+  callback: {
+    onTreeLoaded: function() {
+      $(document).tooltip({
+        items: 'p.description, p.weight-modifiers[title]',
+        content: function() {
+          let $button = $(this);
+          if ($button.is('p.description')) {
+            var contentClass = 'description';
+            var header = 'Description';
+          }
+          if ($button.is('p.weight-modifiers')) {
+            var contentClass = 'weight-modifiers';
+            var header = 'Weight Modifiers';
+          }
+          let $contentSpan = $('<span>')
+            .addClass(contentClass)
+            .html($button.attr('title'));
+          return $('<div class="tooltip-header">')
+            .html(header)
+            .after($contentSpan);
+        },
+      });
+    }
   }
 };
 let rootNode = {HTMLid: 'root', data: {tier: 0}};
@@ -30,23 +54,54 @@ $(document).ready(function() {
       let costClass = tech.area + '-research';
       let cost = tech.tier > 0
           ? 'Cost: <span class="' + costClass + '">' + tech.cost + '</span>'
-          : '';
+          : null;
       let weight = tech.tier > 0
           ? 'Weight: ' + tech.base_weight
-          : '';
+          : null;
       let category = tech.category + tier;
-      let htmlClass = tech.area + (tech.is_dangerous ? ' dangerous' : '');
+      let iconClass = 'icon'
+          + (tech.is_dangerous ? ' dangerous' : '')
+          + (!tech.is_dangerous && tech.is_rare ? ' rare' : '');
+
+      let $extraDataDiv = function() {
+        let $descBtn = $('<p>');
+        $descBtn.addClass('description');
+        $descBtn.attr('title', tech.desc);
+        $descBtn.html('…');
+
+        let weightModifiers = tech.weight_modifiers.length > 0
+            ? tech.weight_modifiers.join('')
+            : null;
+
+        let $modifiersBtn = $('<p>');
+        if ( weightModifiers !== null ) {
+          $modifiersBtn.addClass('weight-modifiers');
+          $modifiersBtn.attr('title', weightModifiers);
+          $modifiersBtn.attr('data-header', 'Weight Modifiers');
+        }
+        else {
+          $modifiersBtn.addClass('weight-modifiers');
+          $modifiersBtn.addClass('disabled');
+        }
+        $modifiersBtn.html('⚄');
+
+        let $extraDataDiv = $('<div class="extraData">');
+        $extraDataDiv.append($descBtn);
+        $extraDataDiv.append($modifiersBtn);
+        return $extraDataDiv;
+      }();
 
       return {
         HTMLid: key,
-        HTMLclass: htmlClass,
+        HTMLclass: tech.area,
         data: tech,
-        innerHTML: '<div class="icon" style="background-image:url(img/' + key + '.png)"></div>'
+        innerHTML: '<div class="' + iconClass + '" style="background-image:url(img/' + key + '.png)"></div>'
           + '<p class="node-name">'
           + tech.name
           + '</p>'
           + '<p class="node-title">' + category + '</p>'
-          + ( tech.start_tech || tech.tier == 0 ? '' : [cost, weight].join(', '))
+          + '<p class="node-desc">' + ( tech.start_tech || tech.tier == 0 ? '<br />' : [cost, weight].join(', ')) + '</p>'
+          + $extraDataDiv[0].outerHTML
       };
     });
 
@@ -92,6 +147,6 @@ $(document).ready(function() {
       }
     }
 
-    new Treant( [config, rootNode].concat(techs) );
+    new Treant([config, rootNode].concat(techs));
   });
 });
