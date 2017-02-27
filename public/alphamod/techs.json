@@ -1283,7 +1283,7 @@
     "base_factor": 1.0,
     "base_weight": 65,
     "weight_modifiers": [
-      "(\u00d70.75)  Research Leader (Physics):\n    \u2022   Is Statecraft Expert\n",
+      "(\u00d70.75)  NOT Research Leader (Physics):\n    \u2022   Is Statecraft Expert\n",
       "(\u00d70.5)  None of the following:\n    \u2022   Has Materialist Ethic\n    \u2022   Has Fanatic Materialist Ethic\n",
       "(\u00d73)  Any of the following:\n    \u2022   Has Materialist Ethic\n    \u2022   Has Fanatic Materialist Ethic\n",
       "(\u00d70.5)  Has Fanatic Spiritualist Ethic\n",
@@ -2154,7 +2154,7 @@
     "weight_modifiers": [
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is New Worlds Expert\n",
       "(\u00d72)  Is ideal class\n",
-      "(\u00d70)  All of the following:\n    \u2022   Is ideal class\n    \u2022   Any Owned Pop:\n        \u2022   Has Ocean Preference Trait\n"
+      "(\u00d70)  All of the following:\n    \u2022   Is ideal class\n    \u2022   NOT any owned Pop:\n        \u2022   Has Ocean Preference Trait\n"
     ],
     "start_tech": false,
     "desc": "More advanced ways to make the most out of ocean environments.",
@@ -2174,8 +2174,8 @@
     "weight_modifiers": [
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is New Worlds Expert\n",
       "(\u00d72)  Is ideal class\n",
-      "(\u00d70)  All of the following:\n    \u2022   Is ideal class\n    \u2022   Any Owned Pop:\n        \u2022   Has Tropical Preference Trait\n",
-      "(\u00d70)  Any Owned Planet:\n    \u2022   Is Tropical World\n",
+      "(\u00d70)  All of the following:\n    \u2022   Is ideal class\n    \u2022   NOT any owned Pop:\n        \u2022   Has Tropical Preference Trait\n",
+      "(\u00d70)  NOT any owned Planet:\n    \u2022   Is Tropical World\n",
       "(\u00d70)  Number of owned planets is less than 2\n"
     ],
     "start_tech": false,
@@ -2196,8 +2196,8 @@
     "weight_modifiers": [
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is New Worlds Expert\n",
       "(\u00d72)  Is ideal class\n",
-      "(\u00d70)  All of the following:\n    \u2022   Is ideal class\n    \u2022   Any Owned Pop:\n        \u2022   Has Arctic Preference Trait\n",
-      "(\u00d70)  Any Owned Planet:\n    \u2022   Is Arctic World\n",
+      "(\u00d70)  All of the following:\n    \u2022   Is ideal class\n    \u2022   NOT any owned Pop:\n        \u2022   Has Arctic Preference Trait\n",
+      "(\u00d70)  NOT any owned Planet:\n    \u2022   Is Arctic World\n",
       "(\u00d70)  Number of owned planets is less than 2\n"
     ],
     "start_tech": false,
@@ -2218,8 +2218,8 @@
     "weight_modifiers": [
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is New Worlds Expert\n",
       "(\u00d72)  Is ideal class\n",
-      "(\u00d70)  All of the following:\n    \u2022   Is ideal class\n    \u2022   Any Owned Pop:\n        \u2022   Has Desert Preference Trait\n",
-      "(\u00d70)  Any Owned Planet:\n    \u2022   Is Desert World\n",
+      "(\u00d70)  All of the following:\n    \u2022   Is ideal class\n    \u2022   NOT any owned Pop:\n        \u2022   Has Desert Preference Trait\n",
+      "(\u00d70)  NOT any owned Planet:\n    \u2022   Is Desert World\n",
       "(\u00d70)  Number of owned planets is less than 2\n"
     ],
     "start_tech": false,
@@ -2243,7 +2243,7 @@
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Biology Expert\n",
       "(\u00d70.25)  Any of the following:\n    \u2022   Is ideal class\n    \u2022   Is ideal class\n",
       "(\u00d70.75)  Any of the following:\n    \u2022   Is ideal class\n    \u2022   Is ideal class\n",
-      "(\u00d71.5)  Any Owned Planet:\n    \u2022   Any of the following:\n        \u2022   Is Ocean World\n        \u2022   Is Tropical World\n        \u2022   Is Continental World\n",
+      "(\u00d71.5)  Any owned Planet:\n    \u2022   Any of the following:\n        \u2022   Is Ocean World\n        \u2022   Is Tropical World\n        \u2022   Is Continental World\n",
       "(\u00d70.5)  Any of the following:\n    \u2022   Has Materialist Ethic\n    \u2022   Has Militarist Ethic\n",
       "(\u00d70.25)  Any of the following:\n    \u2022   Has Fanatic Materialist Ethic\n    \u2022   Has Fanatic Militarist Ethic\n"
     ],
@@ -2268,7 +2268,7 @@
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Biology Expert\n",
       "(\u00d70.25)  Any of the following:\n    \u2022   Is ideal class\n    \u2022   Is ideal class\n",
       "(\u00d70.75)  Any of the following:\n    \u2022   Is ideal class\n    \u2022   Is ideal class\n",
-      "(\u00d71.5)  Any Owned Planet:\n    \u2022   Any of the following:\n        \u2022   Is Ocean World\n        \u2022   Is Tropical World\n        \u2022   Is Continental World\n",
+      "(\u00d71.5)  Any owned Planet:\n    \u2022   Any of the following:\n        \u2022   Is Ocean World\n        \u2022   Is Tropical World\n        \u2022   Is Continental World\n",
       "(\u00d70.5)  Any of the following:\n    \u2022   Has Xenophobe Ethic\n    \u2022   Has Militarist Ethic\n",
       "(\u00d70.25)  Any of the following:\n    \u2022   Has Fanatic Xenophobe Ethic\n    \u2022   Has Fanatic Militarist Ethic\n"
     ],
@@ -3069,8 +3069,8 @@
     "base_factor": 1.0,
     "base_weight": 95,
     "weight_modifiers": [
-      "\u00d72: []\n",
-      "(\u00d70)  Any Owned Planet:\n    \u2022   Any Tile:\n        \u2022   Has Mountain Range Tile Blocker\n",
+      "(\u00d72)  Always\n",
+      "(\u00d70)  NOT any owned Planet:\n    \u2022   Any Tile:\n        \u2022   Has Mountain Range Tile Blocker\n",
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is New Worlds Expert\n",
       "(\u00d70)  Number of owned planets is less than 2\n"
     ],
@@ -3090,8 +3090,8 @@
     "base_factor": 1.0,
     "base_weight": 95,
     "weight_modifiers": [
-      "\u00d72: []\n",
-      "(\u00d70)  Any Owned Planet:\n    \u2022   Any Tile:\n        \u2022   Has Active Volcano Tile Blocker\n",
+      "(\u00d72)  Always\n",
+      "(\u00d70)  NOT any owned Planet:\n    \u2022   Any Tile:\n        \u2022   Has Active Volcano Tile Blocker\n",
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is New Worlds Expert\n",
       "(\u00d70)  Number of owned planets is less than 2\n"
     ],
@@ -3111,8 +3111,8 @@
     "base_factor": 1.0,
     "base_weight": 95,
     "weight_modifiers": [
-      "\u00d72: []\n",
-      "(\u00d70)  Any Owned Planet:\n    \u2022   Any Tile:\n        \u2022   Has Dangerous Wildlife Tile Blocker\n",
+      "(\u00d72)  Always\n",
+      "(\u00d70)  NOT any owned Planet:\n    \u2022   Any Tile:\n        \u2022   Has Dangerous Wildlife Tile Blocker\n",
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is New Worlds Expert\n",
       "(\u00d70)  Number of owned planets is less than 2\n"
     ],
@@ -3132,8 +3132,8 @@
     "base_factor": 1.0,
     "base_weight": 95,
     "weight_modifiers": [
-      "\u00d72: []\n",
-      "(\u00d70)  Any Owned Planet:\n    \u2022   Any Tile:\n        \u2022   Has Dense Jungle Tile Blocker\n",
+      "(\u00d72)  Always\n",
+      "(\u00d70)  NOT any owned Planet:\n    \u2022   Any Tile:\n        \u2022   Has Dense Jungle Tile Blocker\n",
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is New Worlds Expert\n",
       "(\u00d70)  Number of owned planets is less than 2\n"
     ],
@@ -3153,8 +3153,8 @@
     "base_factor": 1.0,
     "base_weight": 95,
     "weight_modifiers": [
-      "\u00d72: []\n",
-      "(\u00d70)  Any Owned Planet:\n    \u2022   Any Tile:\n        \u2022   Has Quicksand Basin Tile Blocker\n",
+      "(\u00d72)  Always\n",
+      "(\u00d70)  NOT any owned Planet:\n    \u2022   Any Tile:\n        \u2022   Has Quicksand Basin Tile Blocker\n",
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is New Worlds Expert\n",
       "(\u00d70)  Number of owned planets is less than 2\n"
     ],
@@ -3174,8 +3174,8 @@
     "base_factor": 1.0,
     "base_weight": 95,
     "weight_modifiers": [
-      "\u00d72: []\n",
-      "(\u00d70)  Any Owned Planet:\n    \u2022   Any Tile:\n        \u2022   Has Noxious Swamp Tile Blocker\n",
+      "(\u00d72)  Always\n",
+      "(\u00d70)  NOT any owned Planet:\n    \u2022   Any Tile:\n        \u2022   Has Noxious Swamp Tile Blocker\n",
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is New Worlds Expert\n",
       "(\u00d70)  Number of owned planets is less than 2\n"
     ],
@@ -3195,8 +3195,8 @@
     "base_factor": 1.0,
     "base_weight": 95,
     "weight_modifiers": [
-      "\u00d72: []\n",
-      "(\u00d70)  Any Owned Planet:\n    \u2022   Any Tile:\n        \u2022   Has Massive Glacier Tile Blocker\n",
+      "(\u00d72)  Always\n",
+      "(\u00d70)  NOT any owned Planet:\n    \u2022   Any Tile:\n        \u2022   Has Massive Glacier Tile Blocker\n",
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is New Worlds Expert\n",
       "(\u00d70)  Number of owned planets is less than 2\n"
     ],
@@ -3216,8 +3216,8 @@
     "base_factor": 1.0,
     "base_weight": 95,
     "weight_modifiers": [
-      "\u00d72: []\n",
-      "(\u00d70)  Any Owned Planet:\n    \u2022   Any Tile:\n        \u2022   Has Toxic Kelp Tile Blocker\n",
+      "(\u00d72)  Always\n",
+      "(\u00d70)  NOT any owned Planet:\n    \u2022   Any Tile:\n        \u2022   Has Toxic Kelp Tile Blocker\n",
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is New Worlds Expert\n",
       "(\u00d70)  Number of owned planets is less than 2\n"
     ],
@@ -3237,8 +3237,8 @@
     "base_factor": 1.0,
     "base_weight": 95,
     "weight_modifiers": [
-      "\u00d72: []\n",
-      "(\u00d70)  Any Owned Planet:\n    \u2022   Any Tile:\n        \u2022   Has Deep Sinkhole Tile Blocker\n",
+      "(\u00d72)  Always\n",
+      "(\u00d70)  NOT any owned Planet:\n    \u2022   Any Tile:\n        \u2022   Has Deep Sinkhole Tile Blocker\n",
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is New Worlds Expert\n",
       "(\u00d70)  Number of owned planets is less than 2\n"
     ],
@@ -3258,7 +3258,7 @@
     "base_factor": 1.0,
     "base_weight": 90,
     "weight_modifiers": [
-      "(\u00d70.33)  Research Leader (Society):\n    \u2022   Is New Worlds Expert\n",
+      "(\u00d70.33)  NOT Research Leader (Society):\n    \u2022   Is New Worlds Expert\n",
       "(\u00d70)  Does NOT have homesystem_surveyed country flag\n\u2022   Is NOT AI controlled\n"
     ],
     "start_tech": false,
@@ -3427,7 +3427,7 @@
     "base_factor": 1.0,
     "base_weight": 95,
     "weight_modifiers": [
-      "(\u00d70.5)  Research Leader (Society):\n    \u2022   Is Statecraft Expert\n",
+      "(\u00d70.5)  NOT Research Leader (Society):\n    \u2022   Is Statecraft Expert\n",
       "(\u00d73)  Any of the following:\n    \u2022   Has Xenophobe Ethic\n    \u2022   Has Fanatic Xenophobe Ethic\n",
       "(\u00d70)  None of the following:\n    \u2022   Has Xenophobe Ethic\n    \u2022   Has Fanatic Xenophobe Ethic\n",
       "(\u00d70)  Number of owned planets is less than 1\n"
@@ -3608,7 +3608,7 @@
     "base_factor": 1.0,
     "base_weight": 90,
     "weight_modifiers": [
-      "(\u00d72)  Any Owned Pop:\n    \u2022   Pop is enslaved\n",
+      "(\u00d72)  Any owned Pop:\n    \u2022   Pop is enslaved\n",
       "(\u00d71.25)  Any of the following:\n    \u2022   Has Collectivist Ethic\n    \u2022   Has Fanatic Collectivist Ethic\n",
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Statecraft Expert\n",
       "(\u00d70.25)  Any of the following:\n    \u2022   Has Regulated Policy\n    \u2022   Has Regulated Xenos Policy\n",
@@ -3670,8 +3670,8 @@
     "weight_modifiers": [
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is New Worlds Expert\n",
       "(\u00d72)  Is ideal class\n",
-      "(\u00d70)  All of the following:\n    \u2022   Is ideal class\n    \u2022   Any Owned Pop:\n        \u2022   Has Ocean Preference Trait\n",
-      "(\u00d70)  Any Owned Planet:\n    \u2022   Is Ocean World\n",
+      "(\u00d70)  All of the following:\n    \u2022   Is ideal class\n    \u2022   NOT any owned Pop:\n        \u2022   Has Ocean Preference Trait\n",
+      "(\u00d70)  NOT any owned Planet:\n    \u2022   Is Ocean World\n",
       "(\u00d70)  Number of owned planets is less than 2\n"
     ],
     "start_tech": false,
@@ -3692,8 +3692,8 @@
     "weight_modifiers": [
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is New Worlds Expert\n",
       "(\u00d72)  Is ideal class\n",
-      "(\u00d70)  All of the following:\n    \u2022   Is ideal class\n    \u2022   Any Owned Pop:\n        \u2022   Has Tropical Preference Trait\n",
-      "(\u00d70)  Any Owned Planet:\n    \u2022   Is Tropical World\n",
+      "(\u00d70)  All of the following:\n    \u2022   Is ideal class\n    \u2022   NOT any owned Pop:\n        \u2022   Has Tropical Preference Trait\n",
+      "(\u00d70)  NOT any owned Planet:\n    \u2022   Is Tropical World\n",
       "(\u00d70)  Number of owned planets is less than 2\n"
     ],
     "start_tech": false,
@@ -3714,8 +3714,8 @@
     "weight_modifiers": [
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is New Worlds Expert\n",
       "(\u00d72)  Is ideal class\n",
-      "(\u00d70)  All of the following:\n    \u2022   Is ideal class\n    \u2022   Any Owned Pop:\n        \u2022   Has Arctic Preference Trait\n",
-      "(\u00d70)  Any Owned Planet:\n    \u2022   Is Arctic World\n",
+      "(\u00d70)  All of the following:\n    \u2022   Is ideal class\n    \u2022   NOT any owned Pop:\n        \u2022   Has Arctic Preference Trait\n",
+      "(\u00d70)  NOT any owned Planet:\n    \u2022   Is Arctic World\n",
       "(\u00d70)  Number of owned planets is less than 2\n"
     ],
     "start_tech": false,
@@ -3736,8 +3736,8 @@
     "weight_modifiers": [
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is New Worlds Expert\n",
       "(\u00d72)  Is ideal class\n",
-      "(\u00d70)  All of the following:\n    \u2022   Is ideal class\n    \u2022   Any Owned Pop:\n        \u2022   Has Desert Preference Trait\n",
-      "(\u00d70)  Any Owned Planet:\n    \u2022   Is Desert World\n",
+      "(\u00d70)  All of the following:\n    \u2022   Is ideal class\n    \u2022   NOT any owned Pop:\n        \u2022   Has Desert Preference Trait\n",
+      "(\u00d70)  NOT any owned Planet:\n    \u2022   Is Desert World\n",
       "(\u00d70)  Number of owned planets is less than 3\n"
     ],
     "start_tech": false,
@@ -3825,7 +3825,7 @@
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Biology Expert\n",
       "(\u00d70.25)  Any of the following:\n    \u2022   Is ideal class\n    \u2022   Is ideal class\n",
       "(\u00d70.75)  Any of the following:\n    \u2022   Is ideal class\n    \u2022   Is ideal class\n",
-      "(\u00d71.5)  Any Owned Planet:\n    \u2022   Any of the following:\n        \u2022   Is Ocean World\n        \u2022   Is Tropical World\n        \u2022   Is Continental World\n",
+      "(\u00d71.5)  Any owned Planet:\n    \u2022   Any of the following:\n        \u2022   Is Ocean World\n        \u2022   Is Tropical World\n        \u2022   Is Continental World\n",
       "(\u00d70.5)  Any of the following:\n    \u2022   Has Xenophobe Ethic\n    \u2022   Has Militarist Ethic\n",
       "(\u00d70.25)  Any of the following:\n    \u2022   Has Fanatic Xenophobe Ethic\n    \u2022   Has Fanatic Militarist Ethic\n"
     ],
@@ -4506,7 +4506,7 @@
     "base_factor": 1.0,
     "base_weight": 70,
     "weight_modifiers": [
-      "(\u00d70.33)  Research Leader (Society):\n    \u2022   Is New Worlds Expert\n"
+      "(\u00d70.33)  NOT Research Leader (Society):\n    \u2022   Is New Worlds Expert\n"
     ],
     "start_tech": false,
     "desc": "Humidity regulators and chemical dispersal units are the first step towards a fundamentally altered atmosphere.\n\n",
@@ -4612,7 +4612,7 @@
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Maniacal\n",
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Spark of Genius\n",
       "(\u00d71.5)  Research Leader (Society):\n    \u2022   Skill level is greater than 4\n",
-      "(\u00d70.75)  Research Leader (Society):\n    \u2022   Skill level is greater than 2\n"
+      "(\u00d70.75)  NOT Research Leader (Society):\n    \u2022   Skill level is greater than 2\n"
     ],
     "start_tech": false,
     "desc": "From its cradle as a purely pharmaceutical venture, advancements in our understanding of the morphogenetic field allow for direct, subconscious interfaces with organic units.\n\n",
@@ -4713,7 +4713,7 @@
     "base_factor": 1.0,
     "base_weight": 70,
     "weight_modifiers": [
-      "(\u00d70)  Research Leader (Society):\n    \u2022   Is Military Theory Expert\n",
+      "(\u00d70)  NOT Research Leader (Society):\n    \u2022   Is Military Theory Expert\n",
       "(\u00d70.65)  Has Fanatic Pacifist Ethic\n",
       "(\u00d70.8)  Has Pacifist Ethic\n",
       "(\u00d71.25)  Has Militarist Ethic\n",
@@ -4758,14 +4758,14 @@
     "base_factor": 1.0,
     "base_weight": 60,
     "weight_modifiers": [
-      "(\u00d70.05)  Research Leader (Society):\n    \u2022   Is Psionics Expert\n",
+      "(\u00d70.05)  NOT Research Leader (Society):\n    \u2022   Is Psionics Expert\n",
       "(\u00d71.1)  Research Leader (Society):\n    \u2022   Skill level is greater than 2\n    \u2022   Is Psionics Expert\n",
       "(\u00d71.5)  Research Leader (Society):\n    \u2022   Skill level is greater than 3\n    \u2022   Is Psionics Expert\n",
       "(\u00d72)  Research Leader (Society):\n    \u2022   Skill level is greater than 4\n    \u2022   Is Psionics Expert\n",
       "(\u00d72)  Has Spiritualist Ethic\n",
       "(\u00d73)  Has Fanatic Spiritualist Ethic\n",
       "(\u00d75)  Research Leader (Society):\n    \u2022   Is Maniacal\n",
-      "(\u00d70)  All of the following:\n    \u2022   Any of the following:\n        \u2022   Has Materialist Ethic\n        \u2022   Has Fanatic Materialist Ethic\n    \u2022   Research Leader (Society):\n        \u2022   Is Psionics Expert\n"
+      "(\u00d70)  All of the following:\n    \u2022   Any of the following:\n        \u2022   Has Materialist Ethic\n        \u2022   Has Fanatic Materialist Ethic\n    \u2022   NOT Research Leader (Society):\n        \u2022   Is Psionics Expert\n"
     ],
     "start_tech": false,
     "desc": "The mind is in many ways a reflection of the universe itself, a microcosmos. All species may not reach this insight, but their minds are tools greater than any other.\n\n",
@@ -4806,12 +4806,12 @@
     "base_factor": 1.0,
     "base_weight": 75,
     "weight_modifiers": [
-      "(\u00d70.5)  Research Leader (Society):\n    \u2022   Is Statecraft Expert\n",
+      "(\u00d70.5)  NOT Research Leader (Society):\n    \u2022   Is Statecraft Expert\n",
       "(\u00d73)  Has Xenophile Ethic\n",
       "(\u00d76)  Has Fanatic Xenophile Ethic\n",
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Statecraft Expert\n",
       "(\u00d70)  Any of the following:\n    \u2022   Has Xenophobe Ethic\n    \u2022   Has Fanatic Xenophobe Ethic\n",
-      "(\u00d70)  Any Owned Pop:\n    \u2022   None of the following:\n        \u2022   Is of the Dominant Species\n        \u2022   Is a Robot\n        \u2022   Is a Droid\n        \u2022   Is a Synthetic\n"
+      "(\u00d70)  NOT any owned Pop:\n    \u2022   None of the following:\n        \u2022   Is of the Dominant Species\n        \u2022   Is a Robot\n        \u2022   Is a Droid\n        \u2022   Is a Synthetic\n"
     ],
     "start_tech": false,
     "desc": "From disparate components do we build a whole greater than the sum of its parts.\n\n",
@@ -5171,7 +5171,7 @@
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Biology Expert\n",
       "(\u00d70.25)  Any of the following:\n    \u2022   Is ideal class\n    \u2022   Is ideal class\n",
       "(\u00d70.75)  Any of the following:\n    \u2022   Is ideal class\n    \u2022   Is ideal class\n",
-      "(\u00d71.5)  Any Owned Planet:\n    \u2022   Any of the following:\n        \u2022   Is Ocean World\n        \u2022   Is Tropical World\n        \u2022   Is Continental World\n",
+      "(\u00d71.5)  Any owned Planet:\n    \u2022   Any of the following:\n        \u2022   Is Ocean World\n        \u2022   Is Tropical World\n        \u2022   Is Continental World\n",
       "(\u00d70.5)  Any of the following:\n    \u2022   Has Xenophobe Ethic\n    \u2022   Has Militarist Ethic\n",
       "(\u00d70.25)  Any of the following:\n    \u2022   Has Fanatic Xenophobe Ethic\n    \u2022   Has Fanatic Militarist Ethic\n"
     ],
@@ -5332,7 +5332,7 @@
     "base_factor": 1.0,
     "base_weight": 50,
     "weight_modifiers": [
-      "(\u00d70.33)  Research Leader (Society):\n    \u2022   Is New Worlds Expert\n"
+      "(\u00d70.33)  NOT Research Leader (Society):\n    \u2022   Is New Worlds Expert\n"
     ],
     "start_tech": false,
     "desc": "By advancing our understanding of atmopsheric manipulation, we will be able to terraform even the most ecologically devastated worlds.\n\n",
@@ -5350,7 +5350,7 @@
     "base_factor": 0.1,
     "base_weight": 35,
     "weight_modifiers": [
-      "(\u00d70.33)  Research Leader (Society):\n    \u2022   Is New Worlds Expert\n"
+      "(\u00d70.33)  NOT Research Leader (Society):\n    \u2022   Is New Worlds Expert\n"
     ],
     "start_tech": false,
     "desc": "The creation of Gaia planets, worlds eminently suitable to almost all forms of life, is the ultimate proof of a species' mastery in the art of terraforming.\n\n",
@@ -5375,7 +5375,7 @@
       "(\u00d70.1)  None of the following:\n    \u2022   Research Leader (Society):\n        \u2022   Is Biology Expert\n    \u2022   Research Leader (Society):\n        \u2022   Is Curator\n",
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Spark of Genius\n",
       "(\u00d71.5)  Research Leader (Society):\n    \u2022   Skill level is greater than 4\n",
-      "(\u00d70.75)  Research Leader (Society):\n    \u2022   Skill level is greater than 3\n"
+      "(\u00d70.75)  NOT Research Leader (Society):\n    \u2022   Skill level is greater than 3\n"
     ],
     "start_tech": false,
     "desc": "Nucleotide purification techniques allow for the isolation and refinement of particularly desirable genetic traits.\n\n",
@@ -5417,7 +5417,7 @@
       "(\u00d70.1)  None of the following:\n    \u2022   Research Leader (Society):\n        \u2022   Is Biology Expert\n    \u2022   Research Leader (Society):\n        \u2022   Is Curator\n",
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Spark of Genius\n",
       "(\u00d71.5)  Research Leader (Society):\n    \u2022   Skill level is greater than 4\n",
-      "(\u00d70.75)  Research Leader (Society):\n    \u2022   Skill level is greater than 2\n"
+      "(\u00d70.75)  NOT Research Leader (Society):\n    \u2022   Skill level is greater than 2\n"
     ],
     "start_tech": false,
     "desc": "We leave nothing to chance, no matter the cost. Through exacting curation of DNA banks do we build the leaders of tomorrow.\n\n",
@@ -5457,7 +5457,7 @@
     "base_factor": 1.0,
     "base_weight": 50,
     "weight_modifiers": [
-      "(\u00d70.5)  Research Leader (Society):\n    \u2022   Is Psionics Expert\n",
+      "(\u00d70.5)  NOT Research Leader (Society):\n    \u2022   Is Psionics Expert\n",
       "(\u00d71.1)  Research Leader (Society):\n    \u2022   Skill level is greater than 2\n    \u2022   Is Psionics Expert\n",
       "(\u00d71.5)  Research Leader (Society):\n    \u2022   Skill level is greater than 3\n    \u2022   Is Psionics Expert\n",
       "(\u00d72)  Research Leader (Society):\n    \u2022   Skill level is greater than 4\n    \u2022   Is Psionics Expert\n",
@@ -5481,7 +5481,7 @@
     "base_factor": 1.0,
     "base_weight": 50,
     "weight_modifiers": [
-      "(\u00d70.5)  Research Leader (Society):\n    \u2022   Is Psionics Expert\n",
+      "(\u00d70.5)  NOT Research Leader (Society):\n    \u2022   Is Psionics Expert\n",
       "(\u00d71.1)  Research Leader (Society):\n    \u2022   Skill level is greater than 2\n    \u2022   Is Psionics Expert\n",
       "(\u00d71.5)  Research Leader (Society):\n    \u2022   Skill level is greater than 3\n    \u2022   Is Psionics Expert\n",
       "(\u00d72)  Research Leader (Society):\n    \u2022   Skill level is greater than 4\n    \u2022   Is Psionics Expert\n",
@@ -5682,7 +5682,7 @@
     "base_factor": 1.0,
     "base_weight": 0,
     "weight_modifiers": [
-      "\u00d70: []\n"
+      "(\u00d70)  Always\n"
     ],
     "start_tech": false,
     "desc": "",
@@ -5722,7 +5722,7 @@
     "base_factor": 1.0,
     "base_weight": 75,
     "weight_modifiers": [
-      "(\u00d70.1)  Number of years since game start is greater than 10\n",
+      "(\u00d70.1)  Number of years since game start is NOT greater than 10\n",
       "(\u00d710)  Any Neighbor Country:\n    \u2022   Has Destroyers Technology\n",
       "(\u00d72)  Number of years since game start is greater than 15\n",
       "(\u00d73)  Number of years since game start is greater than 20\n",
@@ -6023,7 +6023,7 @@
     "base_weight": 200,
     "weight_modifiers": [
       "(\u00d71.25)  Research Leader (Engineering):\n    \u2022   Is Biology Expert\n",
-      "(\u00d70)  Any Owned Planet:\n    \u2022   Any Tile:\n        \u2022   Has Sandworm Activity Tile Blocker\n",
+      "(\u00d70)  NOT any owned Planet:\n    \u2022   Any Tile:\n        \u2022   Has Sandworm Activity Tile Blocker\n",
       "(\u00d70)  Number of owned planets is less than 2\n"
     ],
     "start_tech": false,
@@ -6043,7 +6043,7 @@
     "base_weight": 150,
     "weight_modifiers": [
       "(\u00d71.25)  Research Leader (Engineering):\n    \u2022   Is Biology Expert\n",
-      "(\u00d70)  Any Owned Planet:\n    \u2022   Any Tile:\n        \u2022   Has Sandworm Activity Tile Blocker\n"
+      "(\u00d70)  NOT any owned Planet:\n    \u2022   Any Tile:\n        \u2022   Has Sandworm Activity Tile Blocker\n"
     ],
     "start_tech": false,
     "desc": "Worm spice has many other useful properties when processed.",
@@ -6081,7 +6081,7 @@
     "weight_modifiers": [
       "(\u00d72.5)  Research Leader (Engineering):\n    \u2022   Is New Worlds Expert\n",
       "(\u00d73.0)  Any of the following:\n    \u2022   Research Leader (Engineering):\n        \u2022   Is Curator\n    \u2022   Research Leader (Engineering):\n        \u2022   Is Maniacal\n    \u2022   Research Leader (Engineering):\n        \u2022   Is Spark of Genius\n",
-      "(\u00d70)  Any Owned Planet:\n    \u2022   Is Asteroid\n    \u2022   Is a Colony\n"
+      "(\u00d70)  NOT any owned Planet:\n    \u2022   Is Asteroid\n    \u2022   Is a Colony\n"
     ],
     "start_tech": false,
     "desc": "There's some techniques we could use to expand the size of operations on asteroids, including connecting asteroids together, hollowing them out or tethering artificial habitats to them.",
@@ -6249,7 +6249,7 @@
       "(\u00d71.25)  Research Leader (Engineering):\n    \u2022   Is Materials Expert\n",
       "(\u00d71.5)  Any of the following:\n    \u2022   Has Spiritualist Ethic\n    \u2022   Has Fanatic Spiritualist Ethic\n    \u2022   Has Fanatic Pacifist Ethic\n",
       "(\u00d71.2)  Any of the following:\n    \u2022   Has Tropical Preference Trait\n    \u2022   Has Ocean Preference Trait\n",
-      "(\u00d70)  Any Owned Planet:\n    \u2022   Any Tile:\n        \u2022   Any of the following:\n            \u2022   Has Dense Jungle Tile Blocker\n            \u2022   Has Ancient Forest Tile Blocker\n"
+      "(\u00d70)  NOT any owned Planet:\n    \u2022   Any Tile:\n        \u2022   Any of the following:\n            \u2022   Has Dense Jungle Tile Blocker\n            \u2022   Has Ancient Forest Tile Blocker\n"
     ],
     "start_tech": false,
     "desc": "With the availability of new materials and improved mechanics, renewable energy sources can be utilised more efficiently.",
@@ -6387,7 +6387,7 @@
     "base_factor": 1.0,
     "base_weight": 70,
     "weight_modifiers": [
-      "(\u00d70.1)  Number of years since game start is greater than 15\n",
+      "(\u00d70.1)  Number of years since game start is NOT greater than 15\n",
       "(\u00d710)  Any Neighbor Country:\n    \u2022   Has Advanced Spaceport Technology\n",
       "(\u00d72)  Number of years since game start is greater than 20\n",
       "(\u00d73)  Number of years since game start is greater than 25\n",
@@ -6410,7 +6410,7 @@
     "base_factor": 1.0,
     "base_weight": 60,
     "weight_modifiers": [
-      "(\u00d70.1)  Number of years since game start is greater than 20\n",
+      "(\u00d70.1)  Number of years since game start is NOT greater than 20\n",
       "(\u00d710)  Any Neighbor Country:\n    \u2022   Has Cruisers Technology\n",
       "(\u00d72)  Number of years since game start is greater than 30\n",
       "(\u00d73)  Number of years since game start is greater than 35\n",
@@ -7154,7 +7154,7 @@
     "base_factor": 1.0,
     "base_weight": 45,
     "weight_modifiers": [
-      "(\u00d70.1)  Number of years since game start is greater than 50\n",
+      "(\u00d70.1)  Number of years since game start is NOT greater than 50\n",
       "(\u00d710)  Any Neighbor Country:\n    \u2022   Has Battleships Technology\n",
       "(\u00d72)  Number of years since game start is greater than 60\n",
       "(\u00d73)  Number of years since game start is greater than 65\n",

@@ -10,6 +10,9 @@ class WeightModifierParser:
         self.loc_data = loc_data
 
     def parse(self, modifier):
+        if len(modifier) == 1:
+            modifier.append({'always': 'yes'})
+
         try:
             factor = next(iter(key for key in modifier
                                if key.keys()[0] == 'factor'))['factor']
@@ -147,14 +150,21 @@ class WeightModifierParser:
         operator, value = self._operator_and_value(value)
         return 'Number of years since game start is {} {}'.format(operator, value)
 
+    def _localize_not_years_passed(self, value):
+        operator, value = self._operator_and_value(value)
+        return 'Number of years since game start is NOT {} {}'.format(operator, value)
+
     def _localize_has_country_flag(self, value):
         return 'Has {} country flag'.format(value)
 
     def _localize_has_not_country_flag(self, value):
         return 'Does NOT have {} country flag'.format(value)
 
-    def _localize_research_leader(self, values):
+    def _localize_research_leader(self, values, negated=False):
         leader = 'Research Leader ({})'.format(values[0]['area'].title())
+        if negated:
+            leader = 'NOT ' + leader
+
         localized_conditions = []
         for condition in values[1:]:
             key = condition.keys()[0]
@@ -166,6 +176,9 @@ class WeightModifierParser:
             localized_conditions.append(localized_condition)
 
         return {leader: localized_conditions}
+
+    def _localize_not_research_leader(self, values):
+        return self._localize_research_leader(values, negated=True)
 
     def _localize_has_level(self, value):
         operator, level = self._operator_and_value(value)
@@ -194,11 +207,19 @@ class WeightModifierParser:
 
     def _localize_any_owned_pop(self, values):
         parsed_values = [self._parse_condition(value) for value in values]
-        return {'Any Owned Pop': parsed_values}
+        return {'Any owned Pop': parsed_values}
+
+    def _localize_not_any_owned_pop(self, values):
+        parsed_values = [self._parse_condition(value) for value in values]
+        return {'NOT any owned Pop': parsed_values}
 
     def _localize_any_owned_planet(self, values):
         parsed_values = [self._parse_condition(value) for value in values]
-        return {'Any Owned Planet': parsed_values}
+        return {'Any owned Planet': parsed_values}
+
+    def _localize_not_any_owned_planet(self, values):
+        parsed_values = [self._parse_condition(value) for value in values]
+        return {'NOT any owned Planet': parsed_values}
 
     def _localize_any_tile(self, values):
         parsed_values = [self._parse_condition(value) for value in values]
@@ -219,6 +240,8 @@ class WeightModifierParser:
 
         return 'Has {} {} {}'.format(operator, amount, localized_resource)
 
+    def _localize_always(self, value):
+        return 'Always' if value == 'yes' else 'Never'
 
     def _localize_and(self, values):
         parsed_values = [self._parse_condition(value) for value in values]
@@ -240,7 +263,8 @@ class WeightModifierParser:
             # Redirect to localization of NOR:
             return self._parse_condition({'NOR': nested_value})
         else:
-            negated_key = key.replace('has_', 'has_not_')
+            negated_key = key.replace('has_', 'has_not_') if 'has_' in key \
+                          else 'not_' + key
             negated_condition = {negated_key: value[0][key]}
             return self._parse_condition(negated_condition)
 

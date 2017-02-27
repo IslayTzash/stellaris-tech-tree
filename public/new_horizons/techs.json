@@ -331,7 +331,7 @@
     "base_factor": 1.0,
     "base_weight": 500,
     "weight_modifiers": [
-      "(\u00d70.1)  Number of years since game start is greater than 10\n",
+      "(\u00d70.1)  Number of years since game start is NOT greater than 10\n",
       "(\u00d72)  Number of years since game start is greater than 20\n",
       "(\u00d71.25)  Research Leader (Physics):\n    \u2022   Is Computing Expert\n",
       "(\u00d75)  Is AI controlled\n"
@@ -2083,7 +2083,7 @@
     "base_factor": 1.0,
     "base_weight": 500,
     "weight_modifiers": [
-      "(\u00d70.1)  Number of years since game start is greater than 50\n",
+      "(\u00d70.1)  Number of years since game start is NOT greater than 50\n",
       "(\u00d72)  Number of years since game start is greater than 100\n",
       "(\u00d71.25)  Research Leader (Physics):\n    \u2022   Is Computing Expert\n",
       "(\u00d75)  Is AI controlled\n"
@@ -4345,7 +4345,7 @@
     "base_factor": 1.0,
     "base_weight": 500,
     "weight_modifiers": [
-      "(\u00d70.1)  Number of years since game start is greater than 100\n",
+      "(\u00d70.1)  Number of years since game start is NOT greater than 100\n",
       "(\u00d72)  Number of years since game start is greater than 200\n",
       "(\u00d71.25)  Research Leader (Physics):\n    \u2022   Is Computing Expert\n",
       "(\u00d75)  Is AI controlled\n"
@@ -6354,7 +6354,7 @@
     "base_weight": 500,
     "weight_modifiers": [
       "(\u00d70.1)  Does NOT have Administrative Virtual Intelligence Technology\n",
-      "(\u00d70.1)  Number of years since game start is greater than 10\n",
+      "(\u00d70.1)  Number of years since game start is NOT greater than 10\n",
       "(\u00d72)  Number of years since game start is greater than 20\n",
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Statecraft Expert\n",
       "(\u00d75)  Is AI controlled\n"
@@ -6597,8 +6597,8 @@
     "base_factor": 1.0,
     "base_weight": 90,
     "weight_modifiers": [
-      "\u00d72: []\n",
-      "(\u00d70)  Any Owned Planet:\n    \u2022   Any Tile:\n        \u2022   Has Dangerous Wildlife Tile Blocker\n",
+      "(\u00d72)  Always\n",
+      "(\u00d70)  NOT any owned Planet:\n    \u2022   Any Tile:\n        \u2022   Has Dangerous Wildlife Tile Blocker\n",
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is New Worlds Expert\n"
     ],
     "start_tech": false,
@@ -6617,8 +6617,8 @@
     "base_factor": 1.0,
     "base_weight": 90,
     "weight_modifiers": [
-      "\u00d72: []\n",
-      "(\u00d70)  Any Owned Planet:\n    \u2022   Any Tile:\n        \u2022   Has Deep Sinkhole Tile Blocker\n",
+      "(\u00d72)  Always\n",
+      "(\u00d70)  NOT any owned Planet:\n    \u2022   Any Tile:\n        \u2022   Has Deep Sinkhole Tile Blocker\n",
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is New Worlds Expert\n"
     ],
     "start_tech": false,
@@ -6637,8 +6637,8 @@
     "base_factor": 1.0,
     "base_weight": 90,
     "weight_modifiers": [
-      "\u00d72: []\n",
-      "(\u00d70)  Any Owned Planet:\n    \u2022   Any Tile:\n        \u2022   Has Dense Jungle Tile Blocker\n",
+      "(\u00d72)  Always\n",
+      "(\u00d70)  NOT any owned Planet:\n    \u2022   Any Tile:\n        \u2022   Has Dense Jungle Tile Blocker\n",
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is New Worlds Expert\n"
     ],
     "start_tech": false,
@@ -6657,8 +6657,8 @@
     "base_factor": 1.0,
     "base_weight": 90,
     "weight_modifiers": [
-      "\u00d72: []\n",
-      "(\u00d70)  Any Owned Planet:\n    \u2022   Any Tile:\n        \u2022   Has Massive Glacier Tile Blocker\n",
+      "(\u00d72)  Always\n",
+      "(\u00d70)  NOT any owned Planet:\n    \u2022   Any Tile:\n        \u2022   Has Massive Glacier Tile Blocker\n",
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is New Worlds Expert\n"
     ],
     "start_tech": false,
@@ -6677,8 +6677,8 @@
     "base_factor": 1.0,
     "base_weight": 90,
     "weight_modifiers": [
-      "\u00d72: []\n",
-      "(\u00d70)  Any Owned Planet:\n    \u2022   Any Tile:\n        \u2022   Has Mountain Range Tile Blocker\n",
+      "(\u00d72)  Always\n",
+      "(\u00d70)  NOT any owned Planet:\n    \u2022   Any Tile:\n        \u2022   Has Mountain Range Tile Blocker\n",
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is New Worlds Expert\n"
     ],
     "start_tech": false,
@@ -6697,8 +6697,8 @@
     "base_factor": 1.0,
     "base_weight": 90,
     "weight_modifiers": [
-      "\u00d72: []\n",
-      "(\u00d70)  Any Owned Planet:\n    \u2022   Any Tile:\n        \u2022   Has Noxious Swamp Tile Blocker\n",
+      "(\u00d72)  Always\n",
+      "(\u00d70)  NOT any owned Planet:\n    \u2022   Any Tile:\n        \u2022   Has Noxious Swamp Tile Blocker\n",
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is New Worlds Expert\n"
     ],
     "start_tech": false,
@@ -6717,8 +6717,8 @@
     "base_factor": 1.0,
     "base_weight": 90,
     "weight_modifiers": [
-      "\u00d72: []\n",
-      "(\u00d70)  Any Owned Planet:\n    \u2022   Any Tile:\n        \u2022   Has Quicksand Basin Tile Blocker\n",
+      "(\u00d72)  Always\n",
+      "(\u00d70)  NOT any owned Planet:\n    \u2022   Any Tile:\n        \u2022   Has Quicksand Basin Tile Blocker\n",
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is New Worlds Expert\n"
     ],
     "start_tech": false,
@@ -6737,8 +6737,8 @@
     "base_factor": 1.0,
     "base_weight": 90,
     "weight_modifiers": [
-      "\u00d72: []\n",
-      "(\u00d70)  Any Owned Planet:\n    \u2022   Any Tile:\n        \u2022   Has Toxic Kelp Tile Blocker\n",
+      "(\u00d72)  Always\n",
+      "(\u00d70)  NOT any owned Planet:\n    \u2022   Any Tile:\n        \u2022   Has Toxic Kelp Tile Blocker\n",
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is New Worlds Expert\n"
     ],
     "start_tech": false,
@@ -6757,8 +6757,8 @@
     "base_factor": 1.0,
     "base_weight": 90,
     "weight_modifiers": [
-      "\u00d72: []\n",
-      "(\u00d70)  Any Owned Planet:\n    \u2022   Any Tile:\n        \u2022   Has Active Volcano Tile Blocker\n",
+      "(\u00d72)  Always\n",
+      "(\u00d70)  NOT any owned Planet:\n    \u2022   Any Tile:\n        \u2022   Has Active Volcano Tile Blocker\n",
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is New Worlds Expert\n"
     ],
     "start_tech": false,
@@ -7560,7 +7560,7 @@
     "base_weight": 500,
     "weight_modifiers": [
       "(\u00d70.1)  Does NOT have Basic AI Technology\n",
-      "(\u00d70.1)  Number of years since game start is greater than 50\n",
+      "(\u00d70.1)  Number of years since game start is NOT greater than 50\n",
       "(\u00d72)  Number of years since game start is greater than 100\n",
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Statecraft Expert\n",
       "(\u00d75)  Is AI controlled\n"
@@ -8535,7 +8535,7 @@
     "base_weight": 500,
     "weight_modifiers": [
       "(\u00d70.1)  Does NOT have Self Aware AI Technology\n",
-      "(\u00d70.1)  Number of years since game start is greater than 100\n",
+      "(\u00d70.1)  Number of years since game start is NOT greater than 100\n",
       "(\u00d72)  Number of years since game start is greater than 200\n",
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Statecraft Expert\n",
       "(\u00d75)  Is AI controlled\n"
@@ -9508,7 +9508,7 @@
     "base_weight": 500,
     "weight_modifiers": [
       "(\u00d70.1)  Does NOT have Planetary Administration Technology\n",
-      "(\u00d70.1)  Number of years since game start is greater than 10\n",
+      "(\u00d70.1)  Number of years since game start is NOT greater than 10\n",
       "(\u00d72)  Number of years since game start is greater than 20\n",
       "(\u00d71.25)  Research Leader (Engineering):\n    \u2022   Is Industry Expert\n",
       "(\u00d72)  Any Neighbor Country:\n    \u2022   Has Large Scale Space Construction Technology\n",
@@ -10566,7 +10566,7 @@
     "base_weight": 500,
     "weight_modifiers": [
       "(\u00d70.1)  Does NOT have Colonial Authority Technology\n",
-      "(\u00d70.1)  Number of years since game start is greater than 50\n",
+      "(\u00d70.1)  Number of years since game start is NOT greater than 50\n",
       "(\u00d72)  Number of years since game start is greater than 100\n",
       "(\u00d71.25)  Research Leader (Engineering):\n    \u2022   Is Industry Expert\n",
       "(\u00d72)  Any Neighbor Country:\n    \u2022   Has Deep Space Construction Technology\n",
@@ -11555,7 +11555,7 @@
     "base_weight": 500,
     "weight_modifiers": [
       "(\u00d70.1)  Does NOT have Foundations of an Empire Technology\n",
-      "(\u00d70.1)  Number of years since game start is greater than 100\n",
+      "(\u00d70.1)  Number of years since game start is NOT greater than 100\n",
       "(\u00d72)  Number of years since game start is greater than 200\n",
       "(\u00d71.25)  Research Leader (Engineering):\n    \u2022   Is Industry Expert\n",
       "(\u00d72)  Any Neighbor Country:\n    \u2022   Has Planetary Scale Construction Technology\n",
