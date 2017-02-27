@@ -44,9 +44,11 @@ let rootNode = {HTMLid: 'root', data: {tier: 0}};
 $(document).ready(function() {
   $.getJSON('techs.json', function(techData) {
     let techs = techData.filter(function(tech) {
-      return (tech.tier == 0 || tech.base_weight > 0)
-        && Object.keys(tech)[0].search(/^@\w+$/) == -1;
+      return Object.keys(tech)[0].search(/^@\w+$/) == -1;
     }).map(function(tech) {
+      if ( tech.key.match(/^tech_akx_worm/) ) {
+        console.log(tech.key);
+      }
       let key = tech.key;
       let tier = tech.tier > 0
           ? ' (Tier ' + tech.tier + ')'
@@ -123,6 +125,9 @@ $(document).ready(function() {
           })[0];
       }
 
+      if ( tech.data.key.match(/^tech_akx_worm/) ) {
+        console.log(tech);
+      }
       let tierDifference = tech.data.tier - tech.parent.data.tier;
       let nestedTech = tech;
       while ( tierDifference > 1 && nestedTech.parent != rootNode ) {

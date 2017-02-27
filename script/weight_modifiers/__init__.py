@@ -24,6 +24,9 @@ class WeightModifierParser:
 
         unparsed_conditions = [line for line in modifier \
                                if line.keys()[0] not in ['factor', 'add']]
+        if len(unparsed_conditions) > 1:
+            unparsed_conditions = [{'AND': unparsed_conditions}]
+
         conditions = []
 
         for condition in unparsed_conditions:
@@ -48,7 +51,7 @@ class WeightModifierParser:
 
     def _localize_add(self, add):
         sign = '' if add == 0 else '+' if add > 0 else '-';
-        return 'Add: {}{}'.format(sign, add)
+        return '{}{}'.format(sign, add)
 
     def _localize_has_ethic(self, value):
         ethic = self.loc_data[value]

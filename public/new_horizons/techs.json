@@ -690,6 +690,42 @@
     "prerequisite": null
   },
   {
+    "is_rare": true,
+    "tier": 3,
+    "cost": 4000,
+    "key": "tech_akx_worm_1",
+    "base_factor": 1.0,
+    "base_weight": 0,
+    "weight_modifiers": [
+      "(\u00d71.25)  Research Leader (Physics):\n    \u2022   Is Voidcraft Expert\n"
+    ],
+    "start_tech": false,
+    "desc": "The universe tends irresistibly onwards and downwards. That tendency cannot be reversed... but it can be subverted, for a price.",
+    "category": "Industry",
+    "name": "Entropic Recursion",
+    "area": "physics",
+    "is_dangerous": false,
+    "prerequisite": null
+  },
+  {
+    "is_rare": true,
+    "tier": 3,
+    "cost": 4000,
+    "key": "tech_akx_worm_3",
+    "base_factor": 1.0,
+    "base_weight": 60,
+    "weight_modifiers": [
+      "(\u00d71.25)  Research Leader (Physics):\n    \u2022   Is Voidcraft Expert\n"
+    ],
+    "start_tech": false,
+    "desc": "When a temporal paradox becomes tangled, a kind of consciousness arises, with its own needs, its own desires. This is what has occurred with the consciousness that some call the Worm-in-Waiting. If we can align ourselves with that consciousness, we might just achieve a kind of immortality.",
+    "category": "Voidcraft",
+    "name": "Omega Theory",
+    "area": "physics",
+    "is_dangerous": false,
+    "prerequisite": "tech_akx_worm_1"
+  },
+  {
     "is_rare": false,
     "tier": 3,
     "cost": 600,
@@ -6768,6 +6804,24 @@
     "area": "society",
     "is_dangerous": false,
     "prerequisite": "tech_colonization_1"
+  },
+  {
+    "is_rare": true,
+    "tier": 3,
+    "cost": 4000,
+    "key": "tech_akx_worm_2",
+    "base_factor": 1.0,
+    "base_weight": 0,
+    "weight_modifiers": [
+      "(\u00d71.25)  Research Leader (Physics):\n    \u2022   Is Voidcraft Expert\n"
+    ],
+    "start_tech": false,
+    "desc": "A set of social protocols based on paradoxical intuition, and on love. When we know the System of the Loop, we learn that we can influence by receiving instructions, as well as giving them.",
+    "category": "Statecraft",
+    "name": "Doctrine: Strange Loop",
+    "area": "society",
+    "is_dangerous": false,
+    "prerequisite": null
   },
   {
     "is_rare": false,

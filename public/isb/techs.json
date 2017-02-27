@@ -764,9 +764,9 @@
     "base_weight": 70,
     "weight_modifiers": [
       "(\u00d71.25)  Research Leader (Physics):\n    \u2022   Is Computing Expert\n",
-      "(\u00d72.0)  Is NOT AI controlled\n\u2022   Number of years since game start is greater than 40\n",
-      "(\u00d72.0)  Is NOT AI controlled\n\u2022   Number of years since game start is greater than 60\n",
-      "(\u00d72.0)  Is NOT AI controlled\n\u2022   Number of years since game start is greater than 80\n",
+      "(\u00d72.0)  All of the following:\n    \u2022   Is NOT AI controlled\n    \u2022   Number of years since game start is greater than 40\n",
+      "(\u00d72.0)  All of the following:\n    \u2022   Is NOT AI controlled\n    \u2022   Number of years since game start is greater than 60\n",
+      "(\u00d72.0)  All of the following:\n    \u2022   Is NOT AI controlled\n    \u2022   Number of years since game start is greater than 80\n",
       "(\u00d71.5)  Number of owned planets is greater than 5\n",
       "(\u00d71.5)  Number of owned planets is greater than 10\n",
       "(\u00d71.5)  Number of owned planets is greater than 15\n",
@@ -1305,6 +1305,42 @@
     "area": "physics",
     "is_dangerous": false,
     "prerequisite": "tech_pd_tracking_2"
+  },
+  {
+    "is_rare": true,
+    "tier": 3,
+    "cost": 4000,
+    "key": "tech_akx_worm_1",
+    "base_factor": 1.0,
+    "base_weight": 0,
+    "weight_modifiers": [
+      "(\u00d71.25)  Research Leader (Physics):\n    \u2022   Is Voidcraft Expert\n"
+    ],
+    "start_tech": false,
+    "desc": "The universe tends irresistibly onwards and downwards. That tendency cannot be reversed... but it can be subverted, for a price.",
+    "category": "Industry",
+    "name": "Entropic Recursion",
+    "area": "physics",
+    "is_dangerous": false,
+    "prerequisite": null
+  },
+  {
+    "is_rare": true,
+    "tier": 3,
+    "cost": 4000,
+    "key": "tech_akx_worm_3",
+    "base_factor": 1.0,
+    "base_weight": 60,
+    "weight_modifiers": [
+      "(\u00d71.25)  Research Leader (Physics):\n    \u2022   Is Voidcraft Expert\n"
+    ],
+    "start_tech": false,
+    "desc": "When a temporal paradox becomes tangled, a kind of consciousness arises, with its own needs, its own desires. This is what has occurred with the consciousness that some call the Worm-in-Waiting. If we can align ourselves with that consciousness, we might just achieve a kind of immortality.",
+    "category": "Voidcraft",
+    "name": "Omega Theory",
+    "area": "physics",
+    "is_dangerous": false,
+    "prerequisite": "tech_akx_worm_1"
   },
   {
     "is_rare": false,
@@ -2456,7 +2492,7 @@
     "base_weight": 90,
     "weight_modifiers": [
       "(\u00d70.33)  NOT Research Leader (Society):\n    \u2022   Is New Worlds Expert\n",
-      "(\u00d70)  Does NOT have homesystem_surveyed country flag\n\u2022   Is NOT AI controlled\n"
+      "(\u00d70)  All of the following:\n    \u2022   Does NOT have homesystem_surveyed country flag\n    \u2022   Is NOT AI controlled\n"
     ],
     "start_tech": false,
     "desc": "There is no simple solution to the problem of macro-scale reshaping of planetary crusts - only bigger trowels and orbitally-deployed drills.\n\n",
@@ -3520,6 +3556,24 @@
     "prerequisite": "tech_artificial_moral_codes"
   },
   {
+    "is_rare": true,
+    "tier": 3,
+    "cost": 4000,
+    "key": "tech_akx_worm_2",
+    "base_factor": 1.0,
+    "base_weight": 0,
+    "weight_modifiers": [
+      "(\u00d71.25)  Research Leader (Physics):\n    \u2022   Is Voidcraft Expert\n"
+    ],
+    "start_tech": false,
+    "desc": "A set of social protocols based on paradoxical intuition, and on love. When we know the System of the Loop, we learn that we can influence by receiving instructions, as well as giving them.",
+    "category": "Statecraft",
+    "name": "Doctrine: Strange Loop",
+    "area": "society",
+    "is_dangerous": false,
+    "prerequisite": null
+  },
+  {
     "is_rare": false,
     "tier": 3,
     "cost": 3000,
@@ -4506,7 +4560,7 @@
     "base_factor": 1.0,
     "base_weight": 0,
     "weight_modifiers": [
-      "'Add: +5':\n\u2022   Has crystal_armor_1_weight country flag\n"
+      "'+5':\n\u2022   Has crystal_armor_1_weight country flag\n"
     ],
     "start_tech": false,
     "desc": "By infusing armor plating with Crystalline matter we are able to further increase the durability of our ships' protective hulls.\n\n",

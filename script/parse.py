@@ -322,9 +322,6 @@ for tech in script:
 
     key = tech.keys()[0]
 
-    if 'akx_' in key:
-        continue
-
     area = next(iter(key for key in tech[key] if key.keys()[0] == 'area'))['area']
     category = next(iter(key for key in tech[key] if key.keys()[0] == 'category'))['category'][0]
 
