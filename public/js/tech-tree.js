@@ -109,7 +109,7 @@ $(document).ready(function() {
         HTMLclass: tech.area,
         data: tech,
         innerHTML: '<div class="' + iconClass + '" style="background-image:url(img/' + key + '.png)"></div>'
-          + '<p class="node-name">'
+          + '<p class="node-name" title="' + tech.name + '">'
           + tech.name
           + '</p>'
           + '<p class="node-title">' + category + '</p>'
