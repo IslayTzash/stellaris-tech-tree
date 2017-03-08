@@ -7,6 +7,7 @@ from os import listdir, makedirs, path
 from ply.yacc import yacc
 from pprint import pprint
 from weight_modifiers import WeightModifierParser
+from feature_unlocks import FeatureUnlockParser
 import argparse
 import codecs
 import json
@@ -216,7 +217,7 @@ def localized_strings():
 
         still_not_yaml = re.sub(ur'£\w+  |§[A-Z!]', '', not_yaml)
         resembles_yaml = re.sub(r'(?<=\w):\d (?=")', ': ', still_not_yaml)
-        actual_yaml = re.sub(r'^ +', '  ', resembles_yaml, flags=re.M)
+        actual_yaml = re.sub(r'^[ \t]+', '  ', resembles_yaml, flags=re.M)
 
         file_data = yaml.load(actual_yaml, Loader=yaml.Loader)
         loc_map = file_data['l_english']
@@ -255,19 +256,19 @@ def is_rare(tech):
 
     return value
 
-def prerequisite(tech):
+def prerequisites(tech):
     tech_key = tech.keys()[0]
     if key in ['tech_biolab_1', 'tech_physics_lab_1',
                'tech_engineering_lab_1']:
-        return 'tech_basic_science_lab_1'
+        return ['tech_basic_science_lab_1']
 
     try:
         value = next(iter(
             subkey for subkey in tech[tech_key]
             if subkey.keys()[0] == 'prerequisites'
-        ))['prerequisites'][0]
+        ))['prerequisites']
     except (StopIteration, IndexError):
-        value = None
+        value = []
 
     return value
 
@@ -340,6 +341,7 @@ for tech in script:
                         for modifier in unparsed_modifiers
                         if modifier.keys() == ['modifier']]
 
+    effects = FeatureUnlockParser(loc_data).parse(tech)
 
     if not is_start_tech(tech) \
        and tech_base_weight * tech_base_factor == 0 \
@@ -374,7 +376,8 @@ for tech in script:
         'is_rare': is_rare(tech),
         'is_dangerous': is_dangerous(tech),
         'category': loc_data[category],
-        'prerequisite': prerequisite(tech)
+        'prerequisites': prerequisites(tech),
+        'effects': effects
     })
 
 technologies.sort(key=operator.itemgetter('tier'))

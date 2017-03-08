@@ -22,7 +22,7 @@ body { background: #DDD; }
     background-color: white;
     border: 4px outset #000;
     width: 250px;
-    height: 60px;
+    height: 66px;
     font-family: Verdana;
     font-size: 12px;
     color: black;
@@ -37,6 +37,8 @@ body { background: #DDD; }
     float: left;
     margin: 2px 10px 2px 2px;
     margin-right: 10px;
+    position: relative;
+    top: 4px;
 }
 
 .tech div.icon.dangerous {
@@ -58,7 +60,7 @@ body { background: #DDD; }
     margin-bottom: 4px;
 }
 
-.tech p.description, .tech p.weight-modifiers {
+.tech p.description, .tech p.weight-modifiers, .tech p.effects {
     border: 1px solid gray;
     padding: 3px;
     width: 12px;
@@ -71,10 +73,10 @@ body { background: #DDD; }
     margin-bottom: 2px;
     position: relative;
     left: 229px;
-    top: -37px;
+    top: -53px;
 }
 
-.tech p.weight-modifiers.disabled {
+.tech p.weight-modifiers.disabled, .tech p.effects.disabled {
     border: 1px solid #444;
     cursor: default;
     color: #444;
@@ -87,7 +89,7 @@ body { background: #DDD; }
     max-width: 512px;
 }
 
-.ui-tooltip > div > span.weight-modifiers {
+.ui-tooltip > div > span.weight-modifiers, .ui-tooltip > div > span.effects {
     white-space: pre;
 }
 
@@ -127,15 +129,15 @@ span.physics-research::before {
 }
 
 .tech img {
-    margin-right:  10px;
+    margin-right: 10px;
 }
 
 .Treant > a:link {
-    color: #ffffff;
+    color: white;
 }
 
 .Treant > a:visited {
-    color: #ffffff;
+    color: white;
 }
 
 .Treant > a:link:hover {

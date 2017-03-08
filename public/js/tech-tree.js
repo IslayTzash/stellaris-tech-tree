@@ -12,27 +12,29 @@ let config = {
   connectors: { type: 'step' },
   node: {
     HTMLclass: 'tech',
-    collapsable: true
+    collapsable: false
   },
   callback: {
     onTreeLoaded: function() {
       $(document).tooltip({
-        items: 'p.description, p.weight-modifiers[title]',
+        items: 'p.description, p.weight-modifiers[title],  p.effects[title]',
         content: function() {
           let $button = $(this);
-          if ($button.is('p.description')) {
-            var contentClass = 'description';
-            var header = 'Description';
+          if ( $button.is('p.effects') ) {
+            let effects = $button.attr('title').split(', ');
+            var $contentSpan = effects.map(
+              function(effect) { return $('<li>').html(effect); }
+            ).reduce(
+              function($ul, effect) { return $ul.after(effect); }, $('ul')
+            );
           }
-          if ($button.is('p.weight-modifiers')) {
-            var contentClass = 'weight-modifiers';
-            var header = 'Weight Modifiers';
+          else {
+            var $contentSpan = $('<span>')
+                .addClass($button.attr('class'))
+                .html($button.attr('title'));
           }
-          let $contentSpan = $('<span>')
-            .addClass(contentClass)
-            .html($button.attr('title'));
           return $('<div class="tooltip-header">')
-            .html(header)
+            .html($button.data('header'))
             .after($contentSpan);
         },
       });
@@ -46,9 +48,6 @@ $(document).ready(function() {
     let techs = techData.filter(function(tech) {
       return Object.keys(tech)[0].search(/^@\w+$/) == -1;
     }).map(function(tech) {
-      if ( tech.key.match(/^tech_akx_worm/) ) {
-        console.log(tech.key);
-      }
       let key = tech.key;
       let tier = tech.tier > 0
           ? ' (Tier ' + tech.tier + ')'
@@ -69,27 +68,39 @@ $(document).ready(function() {
         let $descBtn = $('<p>');
         $descBtn.addClass('description');
         $descBtn.attr('title', tech.desc);
+        $descBtn.attr('data-header', 'Description');
         $descBtn.html('…');
-
         let weightModifiers = tech.weight_modifiers.length > 0
             ? tech.weight_modifiers.join('')
             : null;
+        let effects = tech.effects.length > 0 ? tech.effects.join(', ') : null;
 
         let $modifiersBtn = $('<p>');
+        $modifiersBtn.addClass('weight-modifiers');
         if ( weightModifiers !== null ) {
-          $modifiersBtn.addClass('weight-modifiers');
           $modifiersBtn.attr('title', weightModifiers);
           $modifiersBtn.attr('data-header', 'Weight Modifiers');
         }
         else {
-          $modifiersBtn.addClass('weight-modifiers');
           $modifiersBtn.addClass('disabled');
         }
         $modifiersBtn.html('⚄');
 
+        let $effectsBtn = $('<p>');
+        $effectsBtn.addClass('effects');
+        if ( effects !== null ) {
+          $effectsBtn.attr('title', effects);
+          $effectsBtn.attr('data-header', 'Effects');
+        }
+        else {
+          $effectsBtn.addClass('disabled');
+        }
+        $effectsBtn.html('🎁');
+
         let $extraDataDiv = $('<div class="extraData">');
         $extraDataDiv.append($descBtn);
         $extraDataDiv.append($modifiersBtn);
+        $extraDataDiv.append($effectsBtn);
         return $extraDataDiv;
       }();
 
@@ -109,12 +120,13 @@ $(document).ready(function() {
 
     techs = techs.map(function(tech) {
       let key = tech.data.key;
+      let prerequisite = tech.data.prerequisites[0] || null;
 
-      if ( tech.data.tier === 0 || tech.data.prerequisite === null) {
+      if ( tech.data.tier === 0 || prerequisite === null) {
         tech.parent = rootNode;
       }
       else {
-        let parentKey = tech.data.prerequisite;
+        let parentKey = prerequisite;
         tech.parent = parentKey.match('-pseudoParent')
           ? { HTMLid: tech.HTMLid + '-pseudoParent',
               parent: rootNode,
@@ -125,9 +137,6 @@ $(document).ready(function() {
           })[0];
       }
 
-      if ( tech.data.key.match(/^tech_akx_worm/) ) {
-        console.log(tech);
-      }
       let tierDifference = tech.data.tier - tech.parent.data.tier;
       let nestedTech = tech;
       while ( tierDifference > 1 && nestedTech.parent != rootNode ) {
