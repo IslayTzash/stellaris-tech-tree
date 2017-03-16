@@ -102,7 +102,7 @@ $(document).ready(function() {
         $unlocksBtn.addClass('feature-unlocks');
         if ( featureUnlocks !== null ) {
           $unlocksBtn.attr('title', featureUnlocks);
-          $unlocksBtn.attr('data-header', 'Feature Unlocks');
+          $unlocksBtn.attr('data-header', 'Research Effects');
         }
         else {
           $unlocksBtn.addClass('disabled');
