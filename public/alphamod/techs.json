@@ -3566,7 +3566,7 @@
       "(\u00d71.8)  Number of years since game start is greater than 10\n",
       "(\u00d73.0)  Any of the following:\n    \u2022   Has Xenophobe Ethic\n    \u2022   Has Fanatic Xenophobe Ethic\n    \u2022   Has Fanatic Militarist Ethic\n",
       "(\u00d70.25)  Any of the following:\n    \u2022   Has Xenophile Ethic\n    \u2022   Has Pacifist Ethic\n",
-      "(\u00d70)  Any of the following:\n    \u2022   Has Fanatic Xenophile Ethic\n    \u2022   Has Fanatic Pacifist Ethic\n"
+      "(\u00d70.1)  Any of the following:\n    \u2022   Has Fanatic Xenophile Ethic\n    \u2022   Has Fanatic Pacifist Ethic\n"
     ],
     "is_start_tech": false,
     "name": "Homeworld Security"
