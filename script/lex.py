@@ -2,8 +2,8 @@ from pprint import pprint
 from ply.lex import lex
 import sys
 
-tokens = ('BAREWORD', 'STRING', 'VARIABLE', 'NUMBER', 'EQUALS', 'GTHAN',
-          'LTHAN', 'LBRACE', 'RBRACE')
+tokens = ('BAREWORD', 'STRING', 'VARIABLE', 'NUMBER', 'EQUALS', 'GTHAN', 'LTHAN',
+          'LBRACE', 'RBRACE')
 
 t_EQUALS = '='
 t_GTHAN = r'>'
@@ -34,7 +34,7 @@ def t_newline(token):
 
 
 def t_BAREWORD(token):
-    '[a-zA-Z][-\w]*'
+    '[a-zA-Z][-\w.]*'
     return token
 
 

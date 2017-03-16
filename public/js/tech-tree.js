@@ -17,25 +17,35 @@ let config = {
   callback: {
     onTreeLoaded: function() {
       $(document).tooltip({
-        items: 'p.description, p.weight-modifiers[title],  p.effects[title]',
+        items: 'p.description, p.weight-modifiers[title], p.feature-unlocks[title]',
         content: function() {
           let $button = $(this);
-          if ( $button.is('p.effects') ) {
-            let effects = $button.attr('title').split(', ');
-            var $contentSpan = effects.map(
-              function(effect) { return $('<li>').html(effect); }
+          if ( $button.is('p.feature-unlocks') ) {
+            let unlocks = $button.attr('title').split(', ');
+            console.log(unlocks);
+            var $content = unlocks.map(
+              function(unlock) {
+                return $('<li>').html(
+                  unlock.replace(/\[\[(\w+)\]\]/,
+                                 '<img class="resource" src="img/resources/$1.png" />')
+                ); }
             ).reduce(
-              function($ul, effect) { return $ul.after(effect); }, $('ul')
+              function($ul, $unlock) {
+                return $ul.append($unlock);
+              },
+              $('<ul>')
             );
+            console.log($content[0]);
           }
           else {
-            var $contentSpan = $('<span>')
+            var $content = $('<span>')
                 .addClass($button.attr('class'))
                 .html($button.attr('title'));
           }
+
           return $('<div class="tooltip-header">')
             .html($button.data('header'))
-            .after($contentSpan);
+            .after($content);
         },
       });
     }
@@ -67,13 +77,15 @@ $(document).ready(function() {
       let $extraDataDiv = function() {
         let $descBtn = $('<p>');
         $descBtn.addClass('description');
-        $descBtn.attr('title', tech.desc);
+        $descBtn.attr('title', tech.description);
         $descBtn.attr('data-header', 'Description');
         $descBtn.html('…');
         let weightModifiers = tech.weight_modifiers.length > 0
             ? tech.weight_modifiers.join('')
             : null;
-        let effects = tech.effects.length > 0 ? tech.effects.join(', ') : null;
+        let featureUnlocks = tech.feature_unlocks.length > 0
+            ? tech.feature_unlocks.join(', ')
+            : null;
 
         let $modifiersBtn = $('<p>');
         $modifiersBtn.addClass('weight-modifiers');
@@ -86,21 +98,21 @@ $(document).ready(function() {
         }
         $modifiersBtn.html('⚄');
 
-        let $effectsBtn = $('<p>');
-        $effectsBtn.addClass('effects');
-        if ( effects !== null ) {
-          $effectsBtn.attr('title', effects);
-          $effectsBtn.attr('data-header', 'Effects');
+        let $unlocksBtn = $('<p>');
+        $unlocksBtn.addClass('feature-unlocks');
+        if ( featureUnlocks !== null ) {
+          $unlocksBtn.attr('title', featureUnlocks);
+          $unlocksBtn.attr('data-header', 'Feature Unlocks');
         }
         else {
-          $effectsBtn.addClass('disabled');
+          $unlocksBtn.addClass('disabled');
         }
-        $effectsBtn.html('🎁');
+        $unlocksBtn.html('🎁');
 
-        let $extraDataDiv = $('<div class="extraData">');
+        let $extraDataDiv = $('<div class="extra-data">');
         $extraDataDiv.append($descBtn);
         $extraDataDiv.append($modifiersBtn);
-        $extraDataDiv.append($effectsBtn);
+        $extraDataDiv.append($unlocksBtn);
         return $extraDataDiv;
       }();
 

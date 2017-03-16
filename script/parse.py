@@ -6,8 +6,6 @@ from lex import tokens
 from os import listdir, makedirs, path
 from ply.yacc import yacc
 from pprint import pprint
-from weight_modifiers import WeightModifierParser
-from feature_unlocks import FeatureUnlockParser
 import argparse
 import codecs
 import json
@@ -15,6 +13,9 @@ import operator
 import re
 import ruamel.yaml as yaml
 import sys
+from game_objects import Army, ArmyAttachment, BuildablePop, Building, \
+    Component, Edict, Policy, Resource, SpaceportModule, Technology, \
+    TechnologyJSONEncoder, TileBlocker
 
 # Process CLI arguments:
 def valid_label(label):
@@ -66,6 +67,23 @@ def p_empty(tokens):
     pass
 
 
+def p_key(tokens):
+    '''key : STRING
+           | BAREWORD'''
+    tokens[0] = tokens[1]
+
+
+def p_keys(tokens):
+    'keys : key keys'
+    tokens[0] = [tokens[1]] + tokens[2] if type(tokens[1]) is str else \
+                [tokens[1], tokens[2]]
+
+
+def p_keys_empty(tokens):
+    'keys : empty'
+    tokens[0] = []
+
+
 def p_statement_var_assign(tokens):
     'statement : VARIABLE EQUALS NUMBER'
     number = int(tokens[3]) if '.' not in tokens[3] else float(tokens[3])
@@ -82,12 +100,6 @@ def p_expression_variable(tokens):
     tokens[0] = tokens[1]
 
 
-def p_key(tokens):
-    '''key : STRING
-           | BAREWORD'''
-    tokens[0] = tokens[1]
-
-
 def p_expression_key(tokens):
     'expression : key'
     tokens[0] = tokens[1]
@@ -95,16 +107,6 @@ def p_expression_key(tokens):
 def p_expression_number(tokens):
     'expression : NUMBER'
     tokens[0] = tokens[1]
-
-def p_keys(tokens):
-    'keys : key keys'
-    tokens[0] = [tokens[1]] + tokens[2] if type(tokens[1]) is str else \
-                [tokens[1], tokens[2]]
-
-
-def p_keys_empty(tokens):
-    'keys : empty'
-    tokens[0] = []
 
 
 def p_binop(tokens):
@@ -149,53 +151,38 @@ def p_error(p):
     raise Exception("Syntax error in input: {}".format(str(p)))
 
 
-tech_file_paths = []
-loc_file_paths = []
-tech_filenames = set()
-skip_terms = ['events?', 'tutorials?', 'pop_factions?', 'name_lists?',
-              'messages?', 'mandates?', 'projects?', 'sections?',
-              'triggers?', 'edicts?', 'traits?']
-has_skip_term = re.compile(r'(?:{})_'.format('|'.join(skip_terms)))
-for directory in directories:
-    tech_dir = path.join(directory, 'common/technology')
-    eprint('Loading {} ...'.format(tech_dir))
-    for filename in listdir(tech_dir):
-        file_path = path.join(tech_dir, filename)
-        if not path.isfile(file_path):
+def get_file_paths(file_paths, directory):
+    if not path.isdir(directory):
+        return []
+
+    for filename in listdir(directory):
+        file_path = path.join(directory, filename)
+        if not path.isfile(file_path) \
+           or 'README' in file_path \
+           or not file_path.endswith('.txt'):
             continue
 
+        eprint('Loading {} ...'.format(filename))
+
         # If filename already loaded, replace old one with new:
-        if filename in tech_filenames:
-            path_to_delete = next(iter(
-                file_path for file_path
-                in tech_file_paths
-                if path.basename(file_path) == filename
-            ))
-            eprint('Removing {} ...'.format(path_to_delete))
-            tech_file_paths.remove(path_to_delete)
+        path_to_delete = next(iter(
+            file_path for file_path
+            in file_paths
+            if path.basename(file_path) == filename
+        ), None)
+        if path_to_delete is not None:
+            eprint('Replacing {} ...'.format(path.basename(path_to_delete)))
+            file_paths.remove(path_to_delete)
 
-        tech_filenames.add(filename)
-        tech_file_paths.append(path.join(tech_dir, filename))
+        file_paths.append(path.join(directory, filename))
 
-    loc_dir = path.join(directory, 'localisation')
-    loc_file_paths += [path.join(loc_dir, filename) for filename
-                      in listdir(loc_dir)
-                      if path.isfile(path.join(loc_dir, filename))
-                      and filename.endswith('l_english.yml')
-                      and not has_skip_term.search(filename)]
+    return file_paths
 
-tech_data = ''
-for file_path in tech_file_paths:
-    eprint('Processing {} ...'.format(path.basename(file_path)))
-    tech_data += open(file_path).read()
-
-script = yacc().parse(tech_data)
-at_vars = {}
 
 def localized_strings():
     loc_data = { }
     for file_path in loc_file_paths:
-        eprint('Processing {} ...'.format(path.basename(file_path)))
+        eprint('Loading {} ...'.format(path.basename(file_path)))
         not_yaml_lines = codecs.open(file_path, 'r', 'utf-8-sig').readlines()
         not_yaml = ''
         for line in not_yaml_lines:
@@ -225,164 +212,171 @@ def localized_strings():
 
     return loc_data
 
+tech_file_paths = []
+army_file_paths = []
+army_attachment_file_paths = []
+building_file_paths = []
+buildable_pop_file_paths = []
+component_file_paths = []
+edict_file_paths = []
+policy_file_paths = []
+resource_file_paths = []
+spaceport_module_file_paths = []
+tile_blocker_file_paths = []
+loc_file_paths = []
+skip_terms = ['events?', 'tutorials?', 'pop_factions?', 'name_lists?',
+              'messages?', 'mandates?', 'projects?', 'sections?',
+              'triggers?', 'traits?']
+has_skip_term = re.compile(r'(?:{})_'.format('|'.join(skip_terms)))
 
-def is_start_tech(tech):
-    try:
-        yes_no = next(iter(key for key in tech[key]
-                           if key.keys()[0] == 'start_tech'))['start_tech']
-        value = True if yes_no == 'yes' else False
-    except StopIteration:
-        value = True if tier(tech) == 0 else False
+for directory in directories:
+    tech_dir = path.join(directory, 'common/technology')
+    tech_file_paths = get_file_paths(tech_file_paths, tech_dir)
 
-    return value
+    army_dir = path.join(directory, 'common/armies')
+    army_file_paths = get_file_paths(army_file_paths, army_dir)
 
-def is_dangerous(tech):
-    try:
-        yes_no = next(iter(key for key in tech[key]
-                           if key.keys()[0] == 'is_dangerous'))['is_dangerous']
-        value = True if yes_no == 'yes' else False
-    except StopIteration:
-        value = False
+    army_attachment_dir = path.join(directory, 'common/army_attachments')
+    army_attachment_file_paths = get_file_paths(army_attachment_file_paths,
+                                                army_attachment_dir)
 
-    return value
+    buildable_pop_dir = path.join(directory, 'common/buildable_pops')
+    buildable_pop_file_paths = get_file_paths(buildable_pop_file_paths,
+                                              buildable_pop_dir)
 
-def is_rare(tech):
-    try:
-        yes_no = next(iter(key for key in tech[key]
-                           if key.keys()[0] == 'is_rare'))['is_rare']
-        value = True if yes_no == 'yes' else False
-    except StopIteration:
-        value = False
+    building_dir = path.join(directory, 'common/buildings')
+    building_file_paths = get_file_paths(building_file_paths, building_dir)
 
-    return value
+    component_dir = path.join(directory, 'common/component_templates')
+    component_file_paths = get_file_paths(component_file_paths, component_dir)
 
-def prerequisites(tech):
-    tech_key = tech.keys()[0]
-    if key in ['tech_biolab_1', 'tech_physics_lab_1',
-               'tech_engineering_lab_1']:
-        return ['tech_basic_science_lab_1']
+    edict_dir = path.join(directory, 'common/edicts')
+    edict_file_paths = get_file_paths(edict_file_paths, edict_dir)
 
-    try:
-        value = next(iter(
-            subkey for subkey in tech[tech_key]
-            if subkey.keys()[0] == 'prerequisites'
-        ))['prerequisites']
-    except (StopIteration, IndexError):
-        value = []
+    policy_dir = path.join(directory, 'common/policies')
+    policy_file_paths = get_file_paths(policy_file_paths, policy_dir)
 
-    return value
+    resource_dir = path.join(directory, 'common/strategic_resources')
+    resource_file_paths = get_file_paths(resource_file_paths, resource_dir)
 
-def tier(tech):
-    tier = next(
-        iter(key for key in tech[key] if key.keys()[0] == 'tier')
-    )['tier']
+    spaceport_module_dir = path.join(directory, 'common/spaceport_modules')
+    spaceport_module_file_paths = get_file_paths(spaceport_module_file_paths,
+                                                 spaceport_module_dir)
 
-    return tier
+    tile_blocker_dir = path.join(directory, 'common/tile_blockers')
+    tile_blocker_file_paths = get_file_paths(tile_blocker_file_paths,
+                                                 tile_blocker_dir)
 
-def cost(tech):
-    string = next(iter(key for key in tech[key] if key.keys()[0] == 'cost'))['cost']
-    return at_vars[string] if str(string).startswith('@') else string
-
-
-def base_weight(tech):
-    tech_key = tech.keys()[0]
-
-    try:
-        string = next(iter(key for key in tech[key] if key.keys()[0] == 'weight'))['weight']
-        weight = at_vars[string] \
-                      if str(string).startswith('@') \
-                      else string
-    except StopIteration:
-        weight = 0
-
-    return weight
-
-def base_factor(tech):
-    try:
-        string = next(
-            iter(key for key in tech[key]
-                 if key.keys()[0] == 'weight_modifier')
-        )['weight_modifier'][0]['factor']
-        factor = at_vars[string] \
-                      if str(string).startswith('@') \
-                         else string
-    except (StopIteration, KeyError, IndexError):
-        factor = 1.0
-
-    return float(factor)
-
+    loc_dir = path.join(directory, 'localisation')
+    loc_file_paths += [path.join(loc_dir, filename) for filename
+                       in listdir(loc_dir)
+                       if path.isfile(path.join(loc_dir, filename))
+                       and filename.endswith('l_english.yml')
+                       and not has_skip_term.search(filename)]
 
 loc_data = localized_strings()
+
+pdx_tech_scripts = '\r\n'.join([open(file_path).read() for file_path
+                                in tech_file_paths])
+pdx_army_scripts = '\r\n'.join([open(file_path).read() for file_path
+                                in army_file_paths])
+pdx_army_attachment_scripts = '\r\n'.join([open(file_path).read() for file_path
+                                           in army_attachment_file_paths])
+pdx_buildable_pop_scripts = '\r\n'.join([open(file_path).read() for file_path
+                                         in buildable_pop_file_paths])
+pdx_building_scripts = '\r\n'.join([open(file_path).read() for file_path
+                                    in building_file_paths])
+pdx_component_scripts = '\r\n'.join([open(file_path).read() for file_path
+                                     in component_file_paths])
+pdx_edict_scripts = '\r\n'.join([open(file_path).read() for file_path
+                                 in edict_file_paths])
+pdx_policy_scripts = '\r\n'.join([open(file_path).read() for file_path
+                                  in policy_file_paths])
+pdx_resource_scripts = '\r\n'.join([open(file_path).read() for file_path
+                                    in resource_file_paths])
+pdx_spaceport_module_scripts = '\r\n'.join([open(file_path).read()
+                                            for file_path
+                                            in spaceport_module_file_paths])
+pdx_tile_blocker_scripts = '\r\n'.join([open(file_path).read()
+                                        for file_path
+                                        in tile_blocker_file_paths])
+pdx_parser = yacc()
+parsed_scripts = {
+    'technology': pdx_parser.parse(pdx_tech_scripts),
+    'army': pdx_parser.parse(pdx_army_scripts),
+    'army_attachment': pdx_parser.parse(pdx_army_attachment_scripts),
+    'buildable_pop': pdx_parser.parse(pdx_buildable_pop_scripts),
+    'building': pdx_parser.parse(pdx_building_scripts),
+    'component': pdx_parser.parse(pdx_component_scripts),
+    'edict': pdx_parser.parse(pdx_edict_scripts),
+    'policy': pdx_parser.parse(pdx_policy_scripts),
+    'resource': pdx_parser.parse(pdx_resource_scripts),
+    'spaceport_module': pdx_parser.parse(pdx_spaceport_module_scripts),
+    'tile_blocker': pdx_parser.parse(pdx_tile_blocker_scripts)
+}
+
+armies = [Army(entry, loc_data) for entry in parsed_scripts['army']
+          if not entry.keys()[0].startswith('@')]
+army_attachments = [ArmyAttachment(entry, loc_data)
+                    for entry
+                    in parsed_scripts['army_attachment']
+                    if not entry.keys()[0].startswith('@')]
+buildable_pops = [BuildablePop(entry, loc_data)
+                  for entry
+                  in parsed_scripts['buildable_pop']
+                  if not entry.keys()[0].startswith('@')]
+buildings = [Building(entry, loc_data)
+             for entry
+             in parsed_scripts['building']
+             if not entry.keys()[0].startswith('@')]
+components = [Component(entry.values()[0], loc_data)
+              for entry
+              in parsed_scripts['component']
+              if not entry.keys()[0].startswith('@')]
+edicts = [Edict(entry.values()[0], loc_data)
+          for entry
+          in parsed_scripts['edict']
+          if not entry.keys()[0].startswith('@')]
+policies = [Policy(entry, loc_data)
+            for entry
+            in parsed_scripts['policy']
+            if not entry.keys()[0].startswith('@')]
+resources = [Resource(entry, loc_data)
+             for entry
+             in parsed_scripts['resource']
+             if not entry.keys()[0].startswith('@')]
+spaceport_modules = [SpaceportModule(entry, loc_data)
+                     for entry
+                     in parsed_scripts['spaceport_module']
+                     if not entry.keys()[0].startswith('@')]
+tile_blockers = [TileBlocker(entry, loc_data)
+                 for entry
+                 in parsed_scripts['tile_blocker']
+                 if not entry.keys()[0].startswith('@')]
+at_vars = {}
 technologies = []
 
-for tech in script:
-    if tech.keys()[0].startswith('@'):
-        at_var = tech.keys()[0]
-        at_vars[at_var] = tech[at_var]
+for entry in parsed_scripts['technology']:
+    if entry.keys()[0].startswith('@'):
+        at_var = entry.keys()[0]
+        at_vars[at_var] = entry[at_var]
         continue
 
-    key = tech.keys()[0]
-
-    area = next(iter(key for key in tech[key] if key.keys()[0] == 'area'))['area']
-    category = next(iter(key for key in tech[key] if key.keys()[0] == 'category'))['category'][0]
-
-    tech_base_weight = base_weight(tech)
-    tech_base_factor = base_factor(tech)
-    modifier_parser = WeightModifierParser(loc_data)
-    try:
-        unparsed_modifiers = next(iter(key for key in tech[key]
-                                  if key.keys()[0] == 'weight_modifier')
-        )['weight_modifier']
-    except StopIteration:
-        unparsed_modifiers = []
-
-
-    weight_modifiers = [modifier_parser.parse(modifier['modifier'])
-                        for modifier in unparsed_modifiers
-                        if modifier.keys() == ['modifier']]
-
-    effects = FeatureUnlockParser(loc_data).parse(tech)
-
-    if not is_start_tech(tech) \
-       and tech_base_weight * tech_base_factor == 0 \
-       and len(weight_modifiers) == 0:
+    tech = Technology(entry, armies, army_attachments, buildable_pops,
+                      buildings, components, edicts, policies, resources,
+                      spaceport_modules, tile_blockers, loc_data, at_vars)
+    if not tech.is_start_tech \
+       and tech.base_weight * tech.base_factor == 0 \
+       and len(tech.weight_modifiers) == 0:
         continue
 
+    technologies.append(tech)
 
-    try:
-        name = loc_data[key]
-    except KeyError:
-        name = key
 
-    try:
-        description = loc_data[key + '_desc']
-        description = loc_data[description.replace('$', '')] if \
-                      description.startswith('$') else \
-                      description
-    except KeyError:
-        description = ''
-
-    technologies.append({
-        'key': key,
-        'tier': tier(tech),
-        'name': name,
-        'desc': description,
-        'cost': cost(tech),
-        'base_factor': tech_base_factor,
-        'base_weight': tech_base_weight,
-        'weight_modifiers': weight_modifiers,
-        'area': area,
-        'start_tech': is_start_tech(tech),
-        'is_rare': is_rare(tech),
-        'is_dangerous': is_dangerous(tech),
-        'category': loc_data[category],
-        'prerequisites': prerequisites(tech),
-        'effects': effects
-    })
-
-technologies.sort(key=operator.itemgetter('tier'))
+technologies.sort(key=operator.attrgetter('tier'))
 technologies.sort(
-    key=lambda tech: {'physics': 1, 'society': 2, 'engineering': 3}[tech['area']])
-jsonified = json.dumps(technologies, indent=2, separators=(',', ': '))
-# print jsonified
+    key=lambda tech: {'physics': 1, 'society': 2, 'engineering': 3}[tech.area])
+jsonified = json.dumps(technologies, indent=2, separators=(',', ': '),
+                       cls=TechnologyJSONEncoder)
+
 open(path.join('public', tree_label, 'techs.json'), 'w').write(jsonified)

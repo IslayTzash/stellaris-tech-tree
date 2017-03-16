@@ -69,7 +69,9 @@ body { background: #DDD; }
     margin-bottom: 4px;
 }
 
-.tech p.description, .tech p.weight-modifiers, .tech p.effects {
+.tech p.description,
+.tech p.weight-modifiers,
+.tech p.feature-unlocks {
     border: 1px solid gray;
     padding: 3px;
     width: 12px;
@@ -87,11 +89,12 @@ body { background: #DDD; }
     z-index: 3;
 }
 
-div.extraData {
+div.extra-data {
     width: 0;
 }
 
-.tech p.weight-modifiers.disabled, .tech p.effects.disabled {
+.tech p.weight-modifiers.disabled,
+.tech p.feature-unlocks.disabled {
     border: 1px solid #444;
     cursor: default;
     color: #444;
@@ -104,7 +107,19 @@ div.extraData {
     max-width: 512px;
 }
 
-.ui-tooltip > div > span.weight-modifiers, .ui-tooltip > div > span.effects {
+.ui-tooltip img.resource {
+    position: relative;
+    top: 4px;
+}
+
+ui-tooltip ul li {
+    list-style-type: disc;
+    /* padding-left: 0; */
+    /* margin-left: 0; */
+}
+
+.ui-tooltip > div > span.weight-modifiers,
+.ui-tooltip > div > span.feature-unlocks {
     white-space: pre;
 }
 
