@@ -21,7 +21,7 @@
   {
     "category": "Industry",
     "tier": 0,
-    "description": "This energy source generates power through induced fission, but it also produces harmful nuclear waste.\n\n",
+    "description": "This energy source generates power through induced fission, but it also produces harmful nuclear waste.",
     "area": "physics",
     "prerequisites": [],
     "is_dangerous": false,
@@ -61,7 +61,7 @@
   {
     "category": "Field Manipulation",
     "tier": 0,
-    "description": "By tunneling directly through subspace, a temporary conduit can be established between two different points in normal space. Travel between these points would be near instantaneous.\n\n",
+    "description": "By tunneling directly through subspace, a temporary conduit can be established between two different points in normal space. Travel between these points would be near instantaneous.",
     "area": "physics",
     "prerequisites": [],
     "is_dangerous": false,
@@ -82,7 +82,7 @@
   {
     "category": "Particles",
     "tier": 0,
-    "description": "Like the strands of a spider web, the extra-dimensional realm of hyperspace runs between the gravity wells of most stars. Faster than light travel is theoretically possible along these hyperlanes.\n\n",
+    "description": "Like the strands of a spider web, the extra-dimensional realm of hyperspace runs between the gravity wells of most stars. Faster than light travel is theoretically possible along these hyperlanes.",
     "area": "physics",
     "prerequisites": [],
     "is_dangerous": false,
@@ -103,7 +103,7 @@
   {
     "category": "Field Manipulation",
     "tier": 0,
-    "description": "By enveloping a vessel in a warp field and forming a subspace bubble around it, velocities exceeding the speed of light are theoretically possible.\n\n",
+    "description": "By enveloping a vessel in a warp field and forming a subspace bubble around it, velocities exceeding the speed of light are theoretically possible.",
     "area": "physics",
     "prerequisites": [],
     "is_dangerous": false,
@@ -122,7 +122,7 @@
   {
     "category": "Particles",
     "tier": 1,
-    "description": "More powerful than red lasers, these blue variants emit electromagnetic radiation at a wavelength that appears blue or violet to most organics.\n\n",
+    "description": "More powerful than red lasers, these blue variants emit electromagnetic radiation at a wavelength that appears blue or violet to most organics.",
     "area": "physics",
     "prerequisites": [
       "tech_lasers_1"
@@ -139,8 +139,6 @@
     "base_factor": 1.0,
     "base_weight": 90,
     "weight_modifiers": [
-      "(\u00d70.65)  Has Fanatic Pacifist Ethic\n",
-      "(\u00d70.8)  Has Pacifist Ethic\n",
       "(\u00d71.25)  Has Militarist Ethic\n",
       "(\u00d71.5)  Has Fanatic Militarist Ethic\n",
       "(\u00d71.25)  Research Leader (Physics):\n    \u2022   Is Particles Expert\n"
@@ -323,7 +321,7 @@
   {
     "category": "Particles",
     "tier": 1,
-    "description": "Nuclear fusion processes generate a great amount of power, but without many of the risks associated with fission power.\n\n",
+    "description": "Nuclear fusion processes generate a great amount of power, but without many of the risks associated with fission power.",
     "area": "physics",
     "prerequisites": [
       "tech_fission_power"
@@ -333,7 +331,7 @@
     "cost": 480,
     "key": "tech_fusion_power",
     "feature_unlocks": [
-      "Energy Storage Capacity: +500",
+      "Energy Storage Capacity: +1000",
       "Unlocks Component: Small Fusion Reactor",
       "Unlocks Component: Medium Fusion Reactor",
       "Unlocks Component: Large Fusion Reactor"
@@ -351,7 +349,7 @@
   {
     "category": "Field Manipulation",
     "tier": 1,
-    "description": "Energy deflector screens can stop a limited amount of incoming enemy fire before overloading. Their main drawback is that they consume large amounts of power.\n\n",
+    "description": "Energy deflector screens can stop a limited amount of incoming enemy fire before overloading. Their main drawback is that they consume large amounts of power.",
     "area": "physics",
     "prerequisites": [],
     "is_dangerous": false,
@@ -375,7 +373,7 @@
   {
     "category": "Field Manipulation",
     "tier": 1,
-    "description": "These updated deflector screens are capable of soaking up even more punishment before they overload.\n\n",
+    "description": "These updated deflector screens are capable of soaking up even more punishment before they overload.",
     "area": "physics",
     "prerequisites": [
       "tech_shields_1"
@@ -401,7 +399,7 @@
   {
     "category": "Voidcraft",
     "tier": 1,
-    "description": "These sensors have been tuned to look for any gravitational changes in space, such as those produced by the presence of a starship.\n\n",
+    "description": "These sensors have been tuned to look for any gravitational changes in space, such as those produced by the presence of a starship.",
     "area": "physics",
     "prerequisites": [],
     "is_dangerous": false,
@@ -423,7 +421,7 @@
   {
     "category": "Voidcraft",
     "tier": 1,
-    "description": "Powerful sensor arrays that can be added to the structure of orbital spaceports. They provide excellent sensor coverage of the surrounding region of space.\n\n",
+    "description": "Powerful sensor arrays that can be added to the structure of orbital spaceports. They provide excellent sensor coverage of the surrounding region of space.",
     "area": "physics",
     "prerequisites": [
       "tech_sensors_2"
@@ -460,9 +458,8 @@
     "cost": 360,
     "key": "tech_power_plant_2",
     "feature_unlocks": [
-      "Energy Storage Capacity: +500",
-      "Unlocks Building: Power Plant II",
-      "Unlocks Building: Betharian Power Plant II"
+      "Energy Storage Capacity: +2000",
+      "Unlocks Building: Power Plant II"
     ],
     "base_factor": 1.0,
     "base_weight": 100,
@@ -486,9 +483,8 @@
     "cost": 720,
     "key": "tech_power_plant_3",
     "feature_unlocks": [
-      "Energy Storage Capacity: +500",
-      "Unlocks Building: Power Plant III",
-      "Unlocks Building: Betharian Power Plant III"
+      "Energy Storage Capacity: +2000",
+      "Unlocks Building: Power Plant III"
     ],
     "base_factor": 1.0,
     "base_weight": 85,
@@ -501,7 +497,7 @@
   {
     "category": "Industry",
     "tier": 1,
-    "description": "Advances in solar panel technology could potentially reduce the operating costs of our spaceports. The panels would require an entire spaceport module to generate enough energy, however.\n\n",
+    "description": "Advances in solar panel technology could potentially reduce the operating costs of our spaceports. The panels would require an entire spaceport module to generate enough energy, however.",
     "area": "physics",
     "prerequisites": [
       "tech_space_construction"
@@ -535,8 +531,8 @@
     "cost": 360,
     "key": "tech_power_hub_1",
     "feature_unlocks": [
-      "Energy Storage Capacity: +1000",
-      "Unlocks Building: Power Hub I",
+      "Energy Storage Capacity: +2500",
+      "Unlocks Building: Energy Grid",
       "Unlocks Edict: Capacity Overload"
     ],
     "base_factor": 1.0,
@@ -566,7 +562,7 @@
     "base_weight": 90,
     "weight_modifiers": [
       "(\u00d72)  Research Leader (Engineering):\n    \u2022   Is Materials Expert\n",
-      "(\u00d70)  None of the following:\n    \u2022   Any System within Borders:\n        \u2022   Is in a resource_cluster_1 Cluster\n    \u2022   Any Country:\n        \u2022   All of the following:\n            \u2022   Has communications with your Empire\n            \u2022   Has Lythuric Gas Refining Technology\n"
+      "(\u00d70)  None of the following:\n    \u2022   Any System within Borders:\n        \u2022   Is in a resource_cluster_1 Cluster\n    \u2022   Any Relation:\n        \u2022   All of the following:\n            \u2022   Has communications with your Empire\n            \u2022   Has Lythuric Gas Refining Technology\n"
     ],
     "is_start_tech": false,
     "name": "Lythuric Gas Refining"
@@ -574,7 +570,7 @@
   {
     "category": "Particles",
     "tier": 2,
-    "description": "Laser weapons fire focused beams of light at targets, causing damage through the generation of intense heat.\n\n",
+    "description": "Laser weapons fire focused beams of light at targets, causing damage through the generation of intense heat.",
     "area": "physics",
     "prerequisites": [],
     "is_dangerous": false,
@@ -590,8 +586,6 @@
     "base_factor": 0.5,
     "base_weight": 100,
     "weight_modifiers": [
-      "(\u00d70.65)  Has Fanatic Pacifist Ethic\n",
-      "(\u00d70.8)  Has Pacifist Ethic\n",
       "(\u00d71.25)  Has Militarist Ethic\n",
       "(\u00d71.5)  Has Fanatic Militarist Ethic\n",
       "(\u00d71.25)  Research Leader (Physics):\n    \u2022   Is Particles Expert\n"
@@ -602,7 +596,7 @@
   {
     "category": "Particles",
     "tier": 2,
-    "description": "Ultraviolet lasers are an updated and more powerful version of their blue predecessors. Accurate and destructive, these weapons are capable of inflicting great damage.\n\n",
+    "description": "Ultraviolet lasers are an updated and more powerful version of their blue predecessors. Accurate and destructive, these weapons are capable of inflicting great damage.",
     "area": "physics",
     "prerequisites": [
       "tech_lasers_2"
@@ -619,8 +613,6 @@
     "base_factor": 1.0,
     "base_weight": 75,
     "weight_modifiers": [
-      "(\u00d70.65)  Has Fanatic Pacifist Ethic\n",
-      "(\u00d70.8)  Has Pacifist Ethic\n",
       "(\u00d71.25)  Has Militarist Ethic\n",
       "(\u00d71.5)  Has Fanatic Militarist Ethic\n",
       "(\u00d71.25)  Research Leader (Physics):\n    \u2022   Is Particles Expert\n"
@@ -631,7 +623,7 @@
   {
     "category": "Particles",
     "tier": 2,
-    "description": "These lasers have a shorter wavelength than UV-based laser weaponry, but are even more destructive.\n\n",
+    "description": "These lasers have a shorter wavelength than UV-based laser weaponry, but are even more destructive.",
     "area": "physics",
     "prerequisites": [
       "tech_lasers_3"
@@ -648,8 +640,6 @@
     "base_factor": 1.0,
     "base_weight": 65,
     "weight_modifiers": [
-      "(\u00d70.65)  Has Fanatic Pacifist Ethic\n",
-      "(\u00d70.8)  Has Pacifist Ethic\n",
       "(\u00d71.25)  Has Militarist Ethic\n",
       "(\u00d71.5)  Has Fanatic Militarist Ethic\n",
       "(\u00d71.25)  Research Leader (Physics):\n    \u2022   Is Particles Expert\n"
@@ -660,7 +650,7 @@
   {
     "category": "Particles",
     "tier": 2,
-    "description": "Weapons that eject destructive balls of high-energy plasma at targets. These plasma projectiles are extremely effective at eating through ship armor.\n\n",
+    "description": "Weapons that eject destructive balls of high-energy plasma at targets. These plasma projectiles are extremely effective at eating through ship armor.",
     "area": "physics",
     "prerequisites": [],
     "is_dangerous": false,
@@ -675,8 +665,6 @@
     "base_factor": 1.0,
     "base_weight": 75,
     "weight_modifiers": [
-      "(\u00d70.65)  Has Fanatic Pacifist Ethic\n",
-      "(\u00d70.8)  Has Pacifist Ethic\n",
       "(\u00d71.25)  Has Militarist Ethic\n",
       "(\u00d71.5)  Has Fanatic Militarist Ethic\n",
       "(\u00d71.25)  Research Leader (Physics):\n    \u2022   Is Particles Expert\n",
@@ -688,7 +676,7 @@
   {
     "category": "Particles",
     "tier": 2,
-    "description": "These new accelerators launch projectiles of high-energy plasma with improved containment fields. This results in less energy leakage as the projectile travels in space towards its target.\n\n",
+    "description": "These new accelerators launch projectiles of high-energy plasma with improved containment fields. This results in less energy leakage as the projectile travels in space towards its target.",
     "area": "physics",
     "prerequisites": [
       "tech_plasma_1"
@@ -705,8 +693,6 @@
     "base_factor": 1.0,
     "base_weight": 65,
     "weight_modifiers": [
-      "(\u00d70.65)  Has Fanatic Pacifist Ethic\n",
-      "(\u00d70.8)  Has Pacifist Ethic\n",
       "(\u00d71.25)  Has Militarist Ethic\n",
       "(\u00d71.5)  Has Fanatic Militarist Ethic\n",
       "(\u00d71.25)  Research Leader (Physics):\n    \u2022   Is Particles Expert\n"
@@ -717,7 +703,7 @@
   {
     "category": "Particles",
     "tier": 2,
-    "description": "Disruptors fire high-energy bolts that weaken and destroy the molecular bonds that hold the target's constituent atoms together. They are particularly effective against shields.\n\n",
+    "description": "Disruptors fire high-energy bolts that weaken and destroy the molecular bonds that hold the target's constituent atoms together. They are particularly effective against shields.",
     "area": "physics",
     "prerequisites": [],
     "is_dangerous": false,
@@ -732,8 +718,6 @@
     "base_factor": 1.0,
     "base_weight": 75,
     "weight_modifiers": [
-      "(\u00d70.65)  Has Fanatic Pacifist Ethic\n",
-      "(\u00d70.8)  Has Pacifist Ethic\n",
       "(\u00d71.25)  Has Militarist Ethic\n",
       "(\u00d71.5)  Has Fanatic Militarist Ethic\n",
       "(\u00d71.25)  Research Leader (Physics):\n    \u2022   Is Particles Expert\n",
@@ -745,7 +729,7 @@
   {
     "category": "Particles",
     "tier": 2,
-    "description": "These upgraded disruptors fire bolts of more destructive ion particles at targets.\n\n",
+    "description": "These upgraded disruptors fire bolts of more destructive ion particles at targets.",
     "area": "physics",
     "prerequisites": [
       "tech_disruptors_1"
@@ -762,8 +746,6 @@
     "base_factor": 1.0,
     "base_weight": 65,
     "weight_modifiers": [
-      "(\u00d70.65)  Has Fanatic Pacifist Ethic\n",
-      "(\u00d70.8)  Has Pacifist Ethic\n",
       "(\u00d71.25)  Has Militarist Ethic\n",
       "(\u00d71.5)  Has Fanatic Militarist Ethic\n",
       "(\u00d71.25)  Research Leader (Physics):\n    \u2022   Is Particles Expert\n"
@@ -820,18 +802,18 @@
   {
     "category": "Computing",
     "tier": 2,
-    "description": "These shipboard lab facilities incorporates advanced technologies from the ancient Curator Order to further increase survey speeds.\n\n",
+    "description": "These shipboard lab facilities incorporates advanced technologies from the ancient Curator Order to further increase survey speeds.",
     "area": "physics",
     "prerequisites": [],
     "is_dangerous": false,
     "is_rare": true,
-    "cost": 1800,
+    "cost": 720,
     "key": "tech_curator_lab",
     "feature_unlocks": [
       "Unlocks Component: Curator Exploration Lab"
     ],
     "base_factor": 1.0,
-    "base_weight": 65,
+    "base_weight": 85,
     "weight_modifiers": [
       "(\u00d70.5)  Has the Curator Insight modifier\n",
       "(\u00d73)  Research Leader (Physics):\n    \u2022   Is Curator\n",
@@ -843,18 +825,18 @@
   {
     "category": "Computing",
     "tier": 2,
-    "description": "A shipboard lab with advanced archaeological equipment, including a vast database supplied by the Curator Order where new discoveries can easily be cross-referenced.\n\n",
+    "description": "A shipboard lab with advanced archaeological equipment, including a vast database supplied by the Curator Order where new discoveries can easily be cross-referenced.",
     "area": "physics",
     "prerequisites": [],
     "is_dangerous": false,
     "is_rare": true,
-    "cost": 1800,
+    "cost": 720,
     "key": "tech_archeology_lab",
     "feature_unlocks": [
       "Unlocks Component: Curator Archeology Lab"
     ],
     "base_factor": 1.0,
-    "base_weight": 65,
+    "base_weight": 85,
     "weight_modifiers": [
       "(\u00d70.5)  Has the Curator Insight modifier\n",
       "(\u00d73)  Research Leader (Physics):\n    \u2022   Is Curator\n",
@@ -898,7 +880,7 @@
     "area": "physics",
     "prerequisites": [
       "tech_physics_lab_1",
-      "tech_colonial_centralization"
+      "tech_galactic_administration"
     ],
     "is_dangerous": false,
     "is_rare": true,
@@ -908,12 +890,10 @@
       "Unlocks Building: Research Institute",
       "Unlocks Edict: Map the Stars"
     ],
-    "base_factor": 1.0,
+    "base_factor": 0.5,
     "base_weight": 75,
     "weight_modifiers": [
-      "(\u00d70.75)  None of the following:\n    \u2022   Research Leader (Physics):\n        \u2022   Is Statecraft Expert\n    \u2022   Research Leader (Physics):\n        \u2022   Is Curator\n",
-      "(\u00d70)  None of the following:\n    \u2022   Has Materialist Ethic\n    \u2022   Has Fanatic Materialist Ethic\n",
-      "(\u00d73)  Any of the following:\n    \u2022   Has Materialist Ethic\n    \u2022   Has Fanatic Materialist Ethic\n",
+      "(\u00d70.25)  None of the following:\n    \u2022   Research Leader (Physics):\n        \u2022   Is Statecraft Expert\n    \u2022   Research Leader (Physics):\n        \u2022   Is Curator\n",
       "(\u00d71.25)  Research Leader (Physics):\n    \u2022   Is Statecraft Expert\n"
     ],
     "is_start_tech": false,
@@ -971,27 +951,29 @@
     "description": "An advanced AI will aid science officers in their task to explore strange new worlds, to seek out new life and new civilizations, to boldly go where no Blorg has gone before. The Science Ship will be able to explore the galaxy with help from an AI.",
     "area": "physics",
     "prerequisites": [
-      "tech_self_aware_logic"
+      "tech_administrative_ai"
     ],
     "is_dangerous": false,
     "is_rare": false,
-    "cost": 1400,
+    "cost": 1000,
     "key": "tech_automated_exploration",
     "feature_unlocks": [
       "Survey Speed: +15%",
       "Unlocks Feature: Automatic Exploration"
     ],
     "base_factor": 1.0,
-    "base_weight": 70,
+    "base_weight": 75,
     "weight_modifiers": [
       "(\u00d71.25)  Research Leader (Physics):\n    \u2022   Is Computing Expert\n",
+      "(\u00d72.0)  All of the following:\n    \u2022   Is NOT AI controlled\n    \u2022   Number of years since game start is greater than 10\n",
+      "(\u00d72.0)  All of the following:\n    \u2022   Is NOT AI controlled\n    \u2022   Number of years since game start is greater than 20\n",
+      "(\u00d72.0)  All of the following:\n    \u2022   Is NOT AI controlled\n    \u2022   Number of years since game start is greater than 30\n",
       "(\u00d72.0)  All of the following:\n    \u2022   Is NOT AI controlled\n    \u2022   Number of years since game start is greater than 40\n",
-      "(\u00d72.0)  All of the following:\n    \u2022   Is NOT AI controlled\n    \u2022   Number of years since game start is greater than 60\n",
-      "(\u00d72.0)  All of the following:\n    \u2022   Is NOT AI controlled\n    \u2022   Number of years since game start is greater than 80\n",
-      "(\u00d71.5)  Number of owned planets is greater than 5\n",
-      "(\u00d71.5)  Number of owned planets is greater than 10\n",
-      "(\u00d71.5)  Number of owned planets is greater than 15\n",
-      "(\u00d71.5)  Number of owned planets is greater than 20\n"
+      "(\u00d72.0)  All of the following:\n    \u2022   Is NOT AI controlled\n    \u2022   Number of years since game start is greater than 50\n",
+      "(\u00d72.0)  Number of owned planets is greater than 5\n",
+      "(\u00d72.0)  Number of owned planets is greater than 10\n",
+      "(\u00d72.0)  Number of owned planets is greater than 15\n",
+      "(\u00d72.0)  Number of owned planets is greater than 20\n"
     ],
     "is_start_tech": false,
     "name": "Automated Exploration Protocols"
@@ -1023,7 +1005,7 @@
   {
     "category": "Particles",
     "tier": 2,
-    "description": "The ability to sustain a fusion reaction at relatively low temperatures will result in a new generation of fusion reactors.\n\n",
+    "description": "The ability to sustain a fusion reaction at relatively low temperatures will result in a new generation of fusion reactors.",
     "area": "physics",
     "prerequisites": [
       "tech_fusion_power"
@@ -1033,7 +1015,7 @@
     "cost": 1000,
     "key": "tech_cold_fusion_power",
     "feature_unlocks": [
-      "Energy Storage Capacity: +500",
+      "Energy Storage Capacity: +1000",
       "Unlocks Component: Small Cold Fusion Reactor",
       "Unlocks Component: Medium Cold Fusion Reactor",
       "Unlocks Component: Large Cold Fusion Reactor"
@@ -1051,7 +1033,7 @@
   {
     "category": "Field Manipulation",
     "tier": 2,
-    "description": "These new shield generators represent the next generation of energy screens, replacing the older deflector technology. They offer significantly better protection.\n\n",
+    "description": "These new shield generators represent the next generation of energy screens, replacing the older deflector technology. They offer significantly better protection.",
     "area": "physics",
     "prerequisites": [
       "tech_shields_2"
@@ -1077,7 +1059,7 @@
   {
     "category": "Field Manipulation",
     "tier": 2,
-    "description": "An updated shield generator that produces an even stronger energy field. Only sustained enemy fire can penetrate this barrier.\n\n",
+    "description": "An updated shield generator that produces an even stronger energy field. Only sustained enemy fire can penetrate this barrier.",
     "area": "physics",
     "prerequisites": [
       "tech_shields_3"
@@ -1103,7 +1085,7 @@
   {
     "category": "Field Manipulation",
     "tier": 2,
-    "description": "These capacitors store surplus energy which can quickly be transferred in the event of shield failure. This will greatly increase the rate at which shields recharge.\n\n",
+    "description": "These capacitors store surplus energy which can quickly be transferred in the event of shield failure. This will greatly increase the rate at which shields recharge.",
     "area": "physics",
     "prerequisites": [
       "tech_shields_3"
@@ -1126,7 +1108,7 @@
   {
     "category": "Field Manipulation",
     "tier": 2,
-    "description": "Localized fields of charged particles can energize depleted shield capacitors.\n\n",
+    "description": "Localized fields of charged particles can energize depleted shield capacitors.",
     "area": "physics",
     "prerequisites": [
       "tech_shields_4"
@@ -1170,7 +1152,7 @@
   {
     "category": "Voidcraft",
     "tier": 2,
-    "description": "Sensors that detect the subspace fluctuations left in the wake of traveling starships. Their sensitivity and range is greater than that of a gravitic sensor array.\n\n",
+    "description": "Sensors that detect the subspace fluctuations left in the wake of traveling starships. Their sensitivity and range is greater than that of a gravitic sensor array.",
     "area": "physics",
     "prerequisites": [
       "tech_sensors_2"
@@ -1205,9 +1187,9 @@
     "cost": 1800,
     "key": "tech_power_plant_4",
     "feature_unlocks": [
+      "Energy Storage Capacity: +2000",
       "Unlocks Building: Power Plant IV",
-      "Unlocks Building: Power Plant V",
-      "Unlocks Building: Betharian Power Plant IV"
+      "Unlocks Building: Power Plant V"
     ],
     "base_factor": 1.0,
     "base_weight": 65,
@@ -1231,8 +1213,8 @@
     "cost": 1000,
     "key": "tech_power_hub_2",
     "feature_unlocks": [
-      "Energy Storage Capacity: +1000",
-      "Unlocks Building: Power Hub II"
+      "Energy Storage Capacity: +2500",
+      "Unlocks Building: Energy Nexus"
     ],
     "base_factor": 1.0,
     "base_weight": 75,
@@ -1245,7 +1227,7 @@
   {
     "category": "Field Manipulation",
     "tier": 2,
-    "description": "The creation of a stable wormhole takes time and requires massive amounts of energy, but the process can be streamlined with the use of special calibrators.\n\n",
+    "description": "The creation of a stable wormhole takes time and requires massive amounts of energy, but the process can be streamlined with the use of special calibrators.",
     "area": "physics",
     "prerequisites": [
       "tech_wormhole_generation_1"
@@ -1269,7 +1251,7 @@
   {
     "category": "Particles",
     "tier": 2,
-    "description": "We have identified the existence of points in space where a ship expends less energy to \"breach\" their way into a hyperlane. This will lead to a new generation of hyper drives.\n\n",
+    "description": "We have identified the existence of points in space where a ship expends less energy to \"breach\" their way into a hyperlane. This will lead to a new generation of hyper drives.",
     "area": "physics",
     "prerequisites": [
       "tech_hyper_drive_1"
@@ -1292,7 +1274,7 @@
   {
     "category": "Particles",
     "tier": 2,
-    "description": "Although we do not travel through hyperspace, mapping the galaxy's extensive hyperlane network gives us a clear advantage against those who do.\n\n",
+    "description": "Although we do not travel through hyperspace, mapping the galaxy's extensive hyperlane network gives us a clear advantage against those who do.",
     "area": "physics",
     "prerequisites": [],
     "is_dangerous": false,
@@ -1314,7 +1296,7 @@
   {
     "category": "Field Manipulation",
     "tier": 2,
-    "description": "Improved stabilization techniques for warp fields will enable our ships to travel farther while expending less energy.\n\n",
+    "description": "Improved stabilization techniques for warp fields will enable our ships to travel farther while expending less energy.",
     "area": "physics",
     "prerequisites": [
       "tech_warp_drive_1"
@@ -1337,7 +1319,7 @@
   {
     "category": "Field Manipulation",
     "tier": 2,
-    "description": "Quantum Destabilizers agitate the local quantum field, disturbing sensitive targeting equipment aboard hostile ships.\n\n",
+    "description": "Quantum Destabilizers agitate the local quantum field, disturbing sensitive targeting equipment aboard hostile ships.",
     "area": "physics",
     "prerequisites": [
       "tech_shields_3"
@@ -1360,7 +1342,7 @@
   {
     "category": "Psionics",
     "tier": 2,
-    "description": "An extremely rare aerosol of exotic particles. It has been deposited on a number of worlds through meteor impacts, but its true origin is a mystery. If ingested by psionically-gifted individuals, Zro acts as a very potent (and addictive) drug that enhances Psi abilities.\n\n",
+    "description": "An extremely rare aerosol of exotic particles. It has been deposited on a number of worlds through meteor impacts, but its true origin is a mystery. If ingested by psionically-gifted individuals, Zro acts as a very potent (and addictive) drug that enhances Psi abilities.",
     "area": "physics",
     "prerequisites": [
       "tech_sensors_3"
@@ -1407,7 +1389,7 @@
   {
     "category": "Particles",
     "tier": 3,
-    "description": "The electromagnetic radiation emitted by gamma lasers is of an extremely high frequency. Their destructive potential is unmatched in the field of laser weapons.\n\n",
+    "description": "The electromagnetic radiation emitted by gamma lasers is of an extremely high frequency. Their destructive potential is unmatched in the field of laser weapons.",
     "area": "physics",
     "prerequisites": [
       "tech_lasers_4"
@@ -1424,8 +1406,6 @@
     "base_factor": 1.0,
     "base_weight": 50,
     "weight_modifiers": [
-      "(\u00d70.65)  Has Fanatic Pacifist Ethic\n",
-      "(\u00d70.8)  Has Pacifist Ethic\n",
       "(\u00d71.25)  Has Militarist Ethic\n",
       "(\u00d71.5)  Has Fanatic Militarist Ethic\n",
       "(\u00d71.25)  Research Leader (Physics):\n    \u2022   Is Particles Expert\n"
@@ -1436,7 +1416,7 @@
   {
     "category": "Particles",
     "tier": 3,
-    "description": "These heavy energy weapons fire focused particle beams that cause massive damage. The size of the emitter arrays limits their use to large turret mounts.\n\n",
+    "description": "These heavy energy weapons fire focused particle beams that cause massive damage. The size of the emitter arrays limits their use to large turret mounts.",
     "area": "physics",
     "prerequisites": [
       "tech_lasers_5",
@@ -1452,8 +1432,6 @@
     "base_factor": 1.0,
     "base_weight": 50,
     "weight_modifiers": [
-      "(\u00d70.65)  Has Fanatic Pacifist Ethic\n",
-      "(\u00d70.8)  Has Pacifist Ethic\n",
       "(\u00d71.25)  Has Militarist Ethic\n",
       "(\u00d71.5)  Has Fanatic Militarist Ethic\n",
       "(\u00d71.25)  Research Leader (Physics):\n    \u2022   Is Particles Expert\n"
@@ -1464,7 +1442,7 @@
   {
     "category": "Particles",
     "tier": 3,
-    "description": "A more powerful version of the particle lance, this weapon fires a tachyon beam of immense power. Like its predecessor, its use is limited to large turrets.\n\n",
+    "description": "A more powerful version of the particle lance, this weapon fires a tachyon beam of immense power. Like its predecessor, its use is limited to large turrets.",
     "area": "physics",
     "prerequisites": [
       "tech_energy_lance_1"
@@ -1479,8 +1457,6 @@
     "base_factor": 1.0,
     "base_weight": 35,
     "weight_modifiers": [
-      "(\u00d70.65)  Has Fanatic Pacifist Ethic\n",
-      "(\u00d70.8)  Has Pacifist Ethic\n",
       "(\u00d71.25)  Has Militarist Ethic\n",
       "(\u00d71.5)  Has Fanatic Militarist Ethic\n",
       "(\u00d71.25)  Research Leader (Physics):\n    \u2022   Is Particles Expert\n"
@@ -1491,7 +1467,7 @@
   {
     "category": "Particles",
     "tier": 3,
-    "description": "The latest in plasma weaponry, these cannons are fully militarized versions of the older, somewhat improvised plasma throwers. Their plasma projectiles are even deadlier.\n\n",
+    "description": "The latest in plasma weaponry, these cannons are fully militarized versions of the older, somewhat improvised plasma throwers. Their plasma projectiles are even deadlier.",
     "area": "physics",
     "prerequisites": [
       "tech_plasma_2"
@@ -1508,8 +1484,6 @@
     "base_factor": 1.0,
     "base_weight": 50,
     "weight_modifiers": [
-      "(\u00d70.65)  Has Fanatic Pacifist Ethic\n",
-      "(\u00d70.8)  Has Pacifist Ethic\n",
       "(\u00d71.25)  Has Militarist Ethic\n",
       "(\u00d71.5)  Has Fanatic Militarist Ethic\n",
       "(\u00d71.25)  Research Leader (Physics):\n    \u2022   Is Particles Expert\n"
@@ -1520,7 +1494,7 @@
   {
     "category": "Particles",
     "tier": 3,
-    "description": "Powerful weapons that launch a lightning arc of chaotic energy at targets, which in part can ignore armor and shields.\n\n",
+    "description": "Powerful weapons that launch a lightning arc of chaotic energy at targets, which in part can ignore armor and shields.",
     "area": "physics",
     "prerequisites": [
       "tech_plasma_3",
@@ -1536,8 +1510,6 @@
     "base_factor": 1.0,
     "base_weight": 45,
     "weight_modifiers": [
-      "(\u00d70.65)  Has Fanatic Pacifist Ethic\n",
-      "(\u00d70.8)  Has Pacifist Ethic\n",
       "(\u00d71.25)  Has Militarist Ethic\n",
       "(\u00d71.5)  Has Fanatic Militarist Ethic\n",
       "(\u00d71.25)  Research Leader (Physics):\n    \u2022   Is Particles Expert\n",
@@ -1549,7 +1521,7 @@
   {
     "category": "Particles",
     "tier": 3,
-    "description": "These upgraded emitters are equipped with better focusing lenses, resulting in a more powerful energy discharge.\n\n",
+    "description": "These upgraded emitters are equipped with better focusing lenses, resulting in a more powerful energy discharge.",
     "area": "physics",
     "prerequisites": [
       "tech_arc_emitter_1"
@@ -1564,8 +1536,6 @@
     "base_factor": 1.0,
     "base_weight": 35,
     "weight_modifiers": [
-      "(\u00d70.65)  Has Fanatic Pacifist Ethic\n",
-      "(\u00d70.8)  Has Pacifist Ethic\n",
       "(\u00d71.25)  Has Militarist Ethic\n",
       "(\u00d71.5)  Has Fanatic Militarist Ethic\n",
       "(\u00d71.25)  Research Leader (Physics):\n    \u2022   Is Particles Expert\n"
@@ -1576,7 +1546,7 @@
   {
     "category": "Particles",
     "tier": 3,
-    "description": "Extremely high-yield disruptors that fire quantum energy charges causing incredible damage to those unfortunate enough to get in their way.\n\n",
+    "description": "Extremely high-yield disruptors that fire quantum energy charges causing incredible damage to those unfortunate enough to get in their way.",
     "area": "physics",
     "prerequisites": [
       "tech_disruptors_2"
@@ -1593,8 +1563,6 @@
     "base_factor": 1.0,
     "base_weight": 50,
     "weight_modifiers": [
-      "(\u00d70.65)  Has Fanatic Pacifist Ethic\n",
-      "(\u00d70.8)  Has Pacifist Ethic\n",
       "(\u00d71.25)  Has Militarist Ethic\n",
       "(\u00d71.5)  Has Fanatic Militarist Ethic\n",
       "(\u00d71.25)  Research Leader (Physics):\n    \u2022   Is Particles Expert\n"
@@ -1605,7 +1573,7 @@
   {
     "category": "Particles",
     "tier": 3,
-    "description": "These energy torpedoes consist of tightly concentrated protons, and they are capable of completely penetrating deflector screens or shield systems.\n\n",
+    "description": "These energy torpedoes consist of tightly concentrated protons, and they are capable of completely penetrating deflector screens or shield systems.",
     "area": "physics",
     "prerequisites": [
       "tech_disruptors_1"
@@ -1620,8 +1588,6 @@
     "base_factor": 1.0,
     "base_weight": 70,
     "weight_modifiers": [
-      "(\u00d70.65)  Has Fanatic Pacifist Ethic\n",
-      "(\u00d70.8)  Has Pacifist Ethic\n",
       "(\u00d71.25)  Has Militarist Ethic\n",
       "(\u00d71.5)  Has Fanatic Militarist Ethic\n",
       "(\u00d70.5)  Does NOT have Red Lasers Technology\n",
@@ -1633,7 +1599,7 @@
   {
     "category": "Particles",
     "tier": 3,
-    "description": "Upgraded energy torpedoes that rely on neutrons instead of protons for their destructive power. Like their predecessors, they cannot be stopped by energy shields.\n\n",
+    "description": "Upgraded energy torpedoes that rely on neutrons instead of protons for their destructive power. Like their predecessors, they cannot be stopped by energy shields.",
     "area": "physics",
     "prerequisites": [
       "tech_energy_torpedoes_1"
@@ -1648,8 +1614,6 @@
     "base_factor": 1.0,
     "base_weight": 50,
     "weight_modifiers": [
-      "(\u00d70.65)  Has Fanatic Pacifist Ethic\n",
-      "(\u00d70.8)  Has Pacifist Ethic\n",
       "(\u00d71.25)  Has Militarist Ethic\n",
       "(\u00d71.5)  Has Fanatic Militarist Ethic\n",
       "(\u00d71.25)  Research Leader (Physics):\n    \u2022   Is Particles Expert\n"
@@ -1679,6 +1643,29 @@
     ],
     "is_start_tech": false,
     "name": "Predictive Algorithms"
+  },
+  {
+    "category": "Particles",
+    "tier": 3,
+    "description": "Applying 5th-dimensional energy manipulation principles on lower dimensional planes allows for the creation of powerful energy weapons.",
+    "area": "physics",
+    "prerequisites": [],
+    "is_dangerous": false,
+    "is_rare": true,
+    "cost": 6000,
+    "key": "tech_extradimensional_weapon_1",
+    "feature_unlocks": [
+      "Unlocks Component: Small Matter Disintegrator",
+      "Unlocks Component: Medium Matter Disintegrator",
+      "Unlocks Component: Large Matter Disintegrator"
+    ],
+    "base_factor": 10.0,
+    "base_weight": 0,
+    "weight_modifiers": [
+      "(\u00d70)  'Does NOT have the Covenant: End of the Cycle modifier'\n"
+    ],
+    "is_start_tech": false,
+    "name": "Extradimensional Weaponry"
   },
   {
     "category": "Industry",
@@ -1718,9 +1705,9 @@
       "Omega Theory"
     ],
     "base_factor": 1.0,
-    "base_weight": 60,
+    "base_weight": 0,
     "weight_modifiers": [
-      "(\u00d71.25)  Research Leader (Physics):\n    \u2022   Is Voidcraft Expert\n"
+      "'+60':\n\u2022   All of the following:\n    \u2022   Has Entropic Recursion Technology\n    \u2022   'Has Doctrine: Strange Loop Technology'\n"
     ],
     "is_start_tech": false,
     "name": "Omega Theory"
@@ -1732,7 +1719,7 @@
     "area": "physics",
     "prerequisites": [
       "tech_physics_lab_2",
-      "tech_galactic_ambitions"
+      "tech_galactic_administration"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -1808,7 +1795,7 @@
   {
     "category": "Particles",
     "tier": 3,
-    "description": "By harnessing the energy produced by matter/antimatter annihilations, our efficiency at generating power will be orders of magnitude better than fusion.\n\n",
+    "description": "By harnessing the energy produced by matter/antimatter annihilations, our efficiency at generating power will be orders of magnitude better than fusion.",
     "area": "physics",
     "prerequisites": [
       "tech_cold_fusion_power"
@@ -1818,7 +1805,7 @@
     "cost": 3000,
     "key": "tech_antimatter_power",
     "feature_unlocks": [
-      "Energy Storage Capacity: +500",
+      "Energy Storage Capacity: +1000",
       "Unlocks Component: Small Antimatter Reactor",
       "Unlocks Component: Medium Antimatter Reactor",
       "Unlocks Component: Large Antimatter Reactor"
@@ -1836,7 +1823,7 @@
   {
     "category": "Particles",
     "tier": 3,
-    "description": "These generators extract vacuum energy, providing an almost limitless supply of power. There is no more efficient way to generate energy.\n\n",
+    "description": "These generators extract vacuum energy, providing an almost limitless supply of power. There is no more efficient way to generate energy.",
     "area": "physics",
     "prerequisites": [
       "tech_antimatter_power"
@@ -1846,7 +1833,7 @@
     "cost": 6000,
     "key": "tech_zero_point_power",
     "feature_unlocks": [
-      "Energy Storage Capacity: +500",
+      "Energy Storage Capacity: +1000",
       "Unlocks Component: Small Zero Point Reactor",
       "Unlocks Component: Medium Zero Point Reactor",
       "Unlocks Component: Large Zero Point Reactor"
@@ -1863,7 +1850,7 @@
   {
     "category": "Field Manipulation",
     "tier": 3,
-    "description": "These reinforced and hardened energy shields are incredibly powerful. The protection they offer is second to none.\n\n",
+    "description": "These reinforced and hardened energy shields are incredibly powerful. The protection they offer is second to none.",
     "area": "physics",
     "prerequisites": [
       "tech_shields_4"
@@ -1889,7 +1876,7 @@
   {
     "category": "Voidcraft",
     "tier": 3,
-    "description": "Advanced sensors that rely on rotating tachyon beams to detect ship movements even at extreme distances.\n\n",
+    "description": "Advanced sensors that rely on rotating tachyon beams to detect ship movements even at extreme distances.",
     "area": "physics",
     "prerequisites": [
       "tech_sensors_3"
@@ -1913,7 +1900,7 @@
   {
     "category": "Field Manipulation",
     "tier": 3,
-    "description": "These containment fields allow for the creation of more powerful wormholes without the risk of triggering a sudden subspace energy cascade.\n\n",
+    "description": "These containment fields allow for the creation of more powerful wormholes without the risk of triggering a sudden subspace energy cascade.",
     "area": "physics",
     "prerequisites": [
       "tech_wormhole_generation_2"
@@ -1937,7 +1924,7 @@
   {
     "category": "Particles",
     "tier": 3,
-    "description": "A new generation of hyper drives capable of accessing the subspace slipstreams that are present within hyperspace. This leads to dramatically improved drive performance.\n\n",
+    "description": "A new generation of hyper drives capable of accessing the subspace slipstreams that are present within hyperspace. This leads to dramatically improved drive performance.",
     "area": "physics",
     "prerequisites": [
       "tech_hyper_drive_2"
@@ -1960,7 +1947,7 @@
   {
     "category": "Field Manipulation",
     "tier": 3,
-    "description": "These revolutionary ramscoops are attached to warp drives and function as particle collectors, replenishing a starship's fuel supply.\n\n",
+    "description": "These revolutionary ramscoops are attached to warp drives and function as particle collectors, replenishing a starship's fuel supply.",
     "area": "physics",
     "prerequisites": [
       "tech_warp_drive_2"
@@ -1983,7 +1970,7 @@
   {
     "category": "Field Manipulation",
     "tier": 3,
-    "description": "A groundbreaking technological marvel, the Jump Drive shreds the local space-time continuum and rearranges it on the quantum level to be identical to that of the target destination - and thus the ship appears to near-instantly \"jump\" from system to system.\n\n",
+    "description": "A groundbreaking technological marvel, the Jump Drive shreds the local space-time continuum and rearranges it on the quantum level to be identical to that of the target destination - and thus the ship appears to near-instantly \"jump\" from system to system.",
     "area": "physics",
     "prerequisites": [
       "tech_zero_point_power"
@@ -1993,7 +1980,7 @@
     "cost": 3000,
     "key": "tech_jump_drive_1",
     "feature_unlocks": [
-      "Unlocks Component: Jump Drive I"
+      "Unlocks Component: Jump Drive"
     ],
     "base_factor": 0.1,
     "base_weight": 50,
@@ -2007,7 +1994,7 @@
   {
     "category": "Industry",
     "tier": 3,
-    "description": "Minor improvements to transmission efficiency adds up to a sizeable reduction in overall energy loss.\n\n",
+    "description": "Minor improvements to transmission efficiency adds up to a sizeable reduction in overall energy loss.",
     "area": "physics",
     "prerequisites": [
       "tech_power_plant_3"
@@ -2028,7 +2015,7 @@
   {
     "category": "Field Manipulation",
     "tier": 3,
-    "description": "The basic mechanics of ship shields are complex, but they can be adjusted and improved in a multitude of ways.\n\n",
+    "description": "The basic mechanics of ship shields are complex, but they can be adjusted and improved in a multitude of ways.",
     "area": "physics",
     "prerequisites": [
       "tech_shields_4"
@@ -2049,7 +2036,7 @@
   {
     "category": "Particles",
     "tier": 3,
-    "description": "Perfecting the firing cadence of laser weaponry is a task that could keep the engineering elite of any given planet busy for centuries.\n\n",
+    "description": "Perfecting the firing cadence of laser weaponry is a task that could keep the engineering elite of any given planet busy for centuries.",
     "area": "physics",
     "prerequisites": [
       "tech_lasers_4"
@@ -2070,7 +2057,7 @@
   {
     "category": "Particles",
     "tier": 3,
-    "description": "New developments in tech cooling regularly surface, improving the stability and efficiency of our weapons systems, keeping them from blowing up the ships upon which they are mounted.\n\n",
+    "description": "New developments in tech cooling regularly surface, improving the stability and efficiency of our weapons systems, keeping them from blowing up the ships upon which they are mounted.",
     "area": "physics",
     "prerequisites": [
       "tech_lasers_2"
@@ -2091,7 +2078,7 @@
   {
     "category": "Voidcraft",
     "tier": 3,
-    "description": "As our fleets roam every further from our ancestral home, our sensor technology continuously pushes past the limits of old.\n\n",
+    "description": "As our fleets roam every further from our ancestral home, our sensor technology continuously pushes past the limits of old.",
     "area": "physics",
     "prerequisites": [
       "tech_sensors_3"
@@ -2112,7 +2099,7 @@
   {
     "category": "Computing",
     "tier": 3,
-    "description": "Increasingly powerful computation paradigms allow us to adapt individual construction projects to planetary and ultra-local gravitational conditions.\n\n",
+    "description": "Increasingly powerful computation paradigms allow us to adapt individual construction projects to planetary and ultra-local gravitational conditions.",
     "area": "physics",
     "prerequisites": [
       "tech_physics_lab_2"
@@ -2129,27 +2116,6 @@
     "weight_modifiers": [],
     "is_start_tech": false,
     "name": "Gravitational Analysis"
-  },
-  {
-    "category": "Computing",
-    "tier": 3,
-    "description": "The application of game and puzzle theory has the potential to greatly optimize modular assembly and construction.\n\n",
-    "area": "physics",
-    "prerequisites": [
-      "tech_physics_lab_2"
-    ],
-    "is_dangerous": false,
-    "is_rare": false,
-    "cost": 3000,
-    "key": "tech_repeatable_reduced_building_time",
-    "feature_unlocks": [
-      "Construction Time: -5%"
-    ],
-    "base_factor": 0.5,
-    "base_weight": 25,
-    "weight_modifiers": [],
-    "is_start_tech": false,
-    "name": "Assembly Algorithms"
   },
   {
     "category": "Materials",
@@ -2198,9 +2164,31 @@
     "name": "Dark Matter Drawing"
   },
   {
+    "category": "Computing",
+    "tier": 4,
+    "description": "Our history is a repeating cycle of dramatic technological, political, and cultural leaps; these leaps are often preceded by periods of upheaval and followed by times of relative stability. By identifying the core, recurring premises of these leaps, we may be able to effectively short-circuit the cycle for our own benefit.",
+    "area": "physics",
+    "prerequisites": [],
+    "is_dangerous": false,
+    "is_rare": true,
+    "cost": 8000,
+    "key": "tech_ascension_theory",
+    "feature_unlocks": [
+      "Ascension Perks: +1"
+    ],
+    "base_factor": 1.0,
+    "base_weight": 35,
+    "weight_modifiers": [
+      "(\u00d70)  Host does NOT have the Utopia DLC\n",
+      "(\u00d70.1)  None of the following:\n    \u2022   Has the Curator Insight modifier\n    \u2022   Research Leader (Physics):\n        \u2022   Is Curator\n    \u2022   Research Leader (Physics):\n        \u2022   Is Computing Expert\n"
+    ],
+    "is_start_tech": false,
+    "name": "Ascension Theory"
+  },
+  {
     "category": "Military Theory",
     "tier": 0,
-    "description": "There may come a time when intellects, vast and cool and unsympathetic, regard our worlds with envy and draw plans against us. We must be ready.\n\n",
+    "description": "There may come a time when intellects, vast and cool and unsympathetic, regard our worlds with envy and draw plans against us. We must be ready.",
     "area": "society",
     "prerequisites": [],
     "is_dangerous": false,
@@ -2219,7 +2207,7 @@
   {
     "category": "Biology",
     "tier": 0,
-    "description": "Large-scale hydroponics farms producing nutrient-rich produce helps sustain a growing population while minimizing negative environmental impact.\n\n",
+    "description": "Large-scale hydroponics farms producing nutrient-rich produce helps sustain a growing population while minimizing negative environmental impact.",
     "area": "society",
     "prerequisites": [],
     "is_dangerous": false,
@@ -2236,9 +2224,30 @@
     "name": "Hydroponics"
   },
   {
+    "category": "New Worlds",
+    "tier": 0,
+    "description": "Calculating required resources and gear required to establish a planetary colony allows us to herd brave pioneers into grand \"ark ships,\" confident that they will survive the long voyage across the stars to a new home.",
+    "area": "society",
+    "prerequisites": [
+      "tech_spaceport_1"
+    ],
+    "is_dangerous": false,
+    "is_rare": false,
+    "cost": 0,
+    "key": "tech_colonization_1",
+    "feature_unlocks": [
+      "Unlocks Ship Type: Colony Ship"
+    ],
+    "base_factor": 1000.0,
+    "base_weight": 0,
+    "weight_modifiers": [],
+    "is_start_tech": true,
+    "name": "New Worlds Protocol"
+  },
+  {
     "category": "Statecraft",
     "tier": 0,
-    "description": "Once a colony has been firmly established and pioneers turn into citizens, the need for a strong local government providing stability trumps the colonial need for flexibility.\n\n",
+    "description": "Once a colony has been firmly established and pioneers turn into citizens, the need for a strong local government providing stability trumps the colonial need for flexibility.",
     "area": "society",
     "prerequisites": [],
     "is_dangerous": false,
@@ -2255,9 +2264,30 @@
     "name": "Planetary Government"
   },
   {
+    "category": "Statecraft",
+    "tier": 0,
+    "description": "An understanding of a shared past is necessary in order to make any significant strides into the future.",
+    "area": "society",
+    "prerequisites": [],
+    "is_dangerous": false,
+    "is_rare": false,
+    "cost": 0,
+    "key": "tech_cultural_heritage",
+    "feature_unlocks": [
+      "Unlocks Building: Autochthon Monument"
+    ],
+    "base_factor": 1.0,
+    "base_weight": 0,
+    "weight_modifiers": [
+      "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Statecraft Expert\n"
+    ],
+    "is_start_tech": true,
+    "name": "Sociocultural History"
+  },
+  {
     "category": "Biology",
     "tier": 1,
-    "description": "The challenges inherent in cultivating crops in zero-G are fairly unique, but far from insurmountable.\n\n",
+    "description": "The challenges inherent in cultivating crops in zero-G are fairly unique, but far from insurmountable.",
     "area": "society",
     "prerequisites": [
       "tech_eco_simulation"
@@ -2282,7 +2312,7 @@
   {
     "category": "Biology",
     "tier": 1,
-    "description": "Hydroponics techniques can be further developed by creating farms with unique atmospheres, simulating different eco systems. This allows for the production of food with higher levels of nutrients.\n\n",
+    "description": "Hydroponics techniques can be further developed by creating farms with unique atmospheres, simulating different eco systems. This allows for the production of food with higher levels of nutrients.",
     "area": "society",
     "prerequisites": [
       "tech_eco_simulation"
@@ -2308,7 +2338,7 @@
   {
     "category": "Biology",
     "tier": 1,
-    "description": "Studying the different forms of life that appear on our world helps us better understand ourselves and the life that surrounds us.\n\n",
+    "description": "Studying the different forms of life that appear on our world helps us better understand ourselves and the life that surrounds us.",
     "area": "society",
     "prerequisites": [
       "tech_basic_science_lab_1"
@@ -2336,7 +2366,7 @@
   {
     "category": "Biology",
     "tier": 1,
-    "description": "Studying the fauna of other worlds gives insight into alien behaviors, allowing us to identify and domesticate docile entities.\n\n",
+    "description": "Studying the fauna of other worlds gives insight into alien behaviors, allowing us to identify and domesticate docile entities.",
     "area": "society",
     "prerequisites": [],
     "is_dangerous": false,
@@ -2352,36 +2382,15 @@
       "(\u00d72)  Has Xenophile Ethic\n",
       "(\u00d73)  Has Fanatic Xenophile Ethic\n",
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Biology Expert\n",
-      "(\u00d70)  Does NOT have first_alien_life country flag\n"
+      "(\u00d70)  NOT any owned Planet:\n    \u2022   Any Tile:\n        \u2022   Has greater than 0 Alien Pets\n"
     ],
     "is_start_tech": false,
     "name": "Xenology"
   },
   {
-    "category": "New Worlds",
-    "tier": 1,
-    "description": "Calculating required resources and gear required to establish a planetary colony allows us to herd brave pioneers into grand \"ark ships\", confident that they will survive the long voyage across the stars to a new home.\n\n",
-    "area": "society",
-    "prerequisites": [
-      "tech_spaceport_1"
-    ],
-    "is_dangerous": false,
-    "is_rare": false,
-    "cost": 360,
-    "key": "tech_colonization_1",
-    "feature_unlocks": [
-      "Unlocks Ship Type: Colony Ship"
-    ],
-    "base_factor": 1000.0,
-    "base_weight": 100,
-    "weight_modifiers": [],
-    "is_start_tech": false,
-    "name": "New Worlds Protocol"
-  },
-  {
     "category": "Biology",
     "tier": 1,
-    "description": "The colonization of alien worlds has opened up an entirely new field of biomedical research.\n\n",
+    "description": "The colonization of alien worlds has opened up an entirely new field of biomedical research.",
     "area": "society",
     "prerequisites": [
       "tech_genome_mapping",
@@ -2405,62 +2414,7 @@
   {
     "category": "New Worlds",
     "tier": 1,
-    "description": "History has proven collectives to be the most efficient social structure for settler enclaves.\n\n",
-    "area": "society",
-    "prerequisites": [
-      "tech_colonization_1"
-    ],
-    "is_dangerous": false,
-    "is_rare": true,
-    "cost": 600,
-    "key": "tech_frontier_collectives",
-    "feature_unlocks": [
-      "Resettlement Cost: -15%",
-      "Colony Development Speed: +25%"
-    ],
-    "base_factor": 1.0,
-    "base_weight": 90,
-    "weight_modifiers": [
-      "(\u00d70.1)  None of the following:\n    \u2022   Research Leader (Society):\n        \u2022   Is New Worlds Expert\n    \u2022   Research Leader (Society):\n        \u2022   Is Curator\n",
-      "(\u00d71.5)  Has Collectivist Ethic\n",
-      "(\u00d72)  Has Fanatic Collectivist Ethic\n",
-      "(\u00d70)  None of the following:\n    \u2022   Has Collectivist Ethic\n    \u2022   Has Fanatic Collectivist Ethic\n"
-    ],
-    "is_start_tech": false,
-    "name": "Frontier Collectives"
-  },
-  {
-    "category": "New Worlds",
-    "tier": 1,
-    "description": "Managing connections between the private sector and the government, giving subsidies to the right investors, allows for private initiatives into colonization.",
-    "area": "society",
-    "prerequisites": [
-      "tech_colonization_1"
-    ],
-    "is_dangerous": false,
-    "is_rare": true,
-    "cost": 600,
-    "key": "tech_frontier_initiatives",
-    "feature_unlocks": [
-      "Unlocks Feature: Private Colony Ship"
-    ],
-    "base_factor": 1.0,
-    "base_weight": 90,
-    "weight_modifiers": [
-      "(\u00d70.1)  None of the following:\n    \u2022   Research Leader (Society):\n        \u2022   Is New Worlds Expert\n    \u2022   Research Leader (Society):\n        \u2022   Is Curator\n",
-      "(\u00d71.1)  Has Nomadic Trait\n",
-      "(\u00d71.5)  Has Individualist Ethic\n",
-      "(\u00d72)  Has Fanatic Individualist Ethic\n",
-      "(\u00d70)  Has Frontier Collectives Technology\n",
-      "(\u00d70)  None of the following:\n    \u2022   Has Individualist Ethic\n    \u2022   Has Fanatic Individualist Ethic\n"
-    ],
-    "is_start_tech": false,
-    "name": "Frontier Initiatives"
-  },
-  {
-    "category": "New Worlds",
-    "tier": 1,
-    "description": "Sometimes there is very little difference between terraformation and demolition.\n\n",
+    "description": "With the advent of clean fusion, automation, and matter compression technologies, it was only a matter of time before mountain top removal became mountain range removal.",
     "area": "society",
     "prerequisites": [
       "tech_colonization_1"
@@ -2476,17 +2430,18 @@
     "base_weight": 95,
     "weight_modifiers": [
       "(\u00d72)  Always\n",
+      "(\u00d74)  Has Mastery of Nature Ascension Perk\n",
       "(\u00d70)  NOT any owned Planet:\n    \u2022   Any Tile:\n        \u2022   Has Mountain Range Tile Blocker\n",
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is New Worlds Expert\n",
       "(\u00d70)  Number of owned planets is less than 2\n"
     ],
     "is_start_tech": false,
-    "name": "Mountain Range Removal"
+    "name": "Planetary Resurfacing"
   },
   {
     "category": "New Worlds",
     "tier": 1,
-    "description": "Tectonic stabilization techniques allow for the pacification of active volcanoes.\n\n",
+    "description": "Advances in material technology and deep-shaft mining techniques allow geo-engineering at previously unthinkable depths and temperatures. Magma hotspots can now be exploited, suppressed, or even relocated.",
     "area": "society",
     "prerequisites": [
       "tech_colonization_1"
@@ -2502,17 +2457,18 @@
     "base_weight": 95,
     "weight_modifiers": [
       "(\u00d72)  Always\n",
+      "(\u00d74)  Has Mastery of Nature Ascension Perk\n",
       "(\u00d70)  NOT any owned Planet:\n    \u2022   Any Tile:\n        \u2022   Has Active Volcano Tile Blocker\n",
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is New Worlds Expert\n",
       "(\u00d70)  Number of owned planets is less than 2\n"
     ],
     "is_start_tech": false,
-    "name": "Volcano Removal"
+    "name": "Deep Crust Engineering"
   },
   {
     "category": "New Worlds",
     "tier": 1,
-    "description": "Tactical disruption of natural habitats combined with converging search-and-destroy patterns can effectively eliminate hostile wildlife in a very short span of time.\n\n",
+    "description": "Tactical disruption of natural habitats combined with converging search-and-destroy patterns can effectively eliminate hostile wildlife in a very short span of time.",
     "area": "society",
     "prerequisites": [
       "tech_colonization_1"
@@ -2528,6 +2484,7 @@
     "base_weight": 95,
     "weight_modifiers": [
       "(\u00d72)  Always\n",
+      "(\u00d74)  Has Mastery of Nature Ascension Perk\n",
       "(\u00d70)  NOT any owned Planet:\n    \u2022   Any Tile:\n        \u2022   Has Dangerous Wildlife Tile Blocker\n",
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is New Worlds Expert\n",
       "(\u00d70)  Number of owned planets is less than 2\n"
@@ -2538,7 +2495,7 @@
   {
     "category": "New Worlds",
     "tier": 1,
-    "description": "Flash deforestation is, in and of itself, nothing revolutionary. Accomplishing it in a tightly controlled area on a strict schedule, however, is.\n\n",
+    "description": "Thorough cataloging, gene sequencing, and computer modeling of exobotanical ecosystems, coupled with gene editing and dispersal mechanisms, will allow us to reshape alien plant communities to our liking.",
     "area": "society",
     "prerequisites": [
       "tech_colonization_1"
@@ -2554,17 +2511,18 @@
     "base_weight": 95,
     "weight_modifiers": [
       "(\u00d72)  Always\n",
+      "(\u00d74)  Has Mastery of Nature Ascension Perk\n",
       "(\u00d70)  NOT any owned Planet:\n    \u2022   Any Tile:\n        \u2022   Has Dense Jungle Tile Blocker\n",
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is New Worlds Expert\n",
       "(\u00d70)  Number of owned planets is less than 2\n"
     ],
     "is_start_tech": false,
-    "name": "Dense Jungle Removal"
+    "name": "Selective Defoliants"
   },
   {
     "category": "New Worlds",
     "tier": 1,
-    "description": "Introducing hydrogels engineered for stabilization allows for near-instantaneous solidification of quicksand basins.\n\n",
+    "description": "The process of soil deposition normally takes millions of years. With advanced fracking, chemical engineering, and hydraulic management technologies even the poorest substrate can be turned into fertile topsoil.",
     "area": "society",
     "prerequisites": [
       "tech_colonization_1"
@@ -2580,17 +2538,18 @@
     "base_weight": 95,
     "weight_modifiers": [
       "(\u00d72)  Always\n",
+      "(\u00d74)  Has Mastery of Nature Ascension Perk\n",
       "(\u00d70)  NOT any owned Planet:\n    \u2022   Any Tile:\n        \u2022   Has Quicksand Basin Tile Blocker\n",
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is New Worlds Expert\n",
       "(\u00d70)  Number of owned planets is less than 2\n"
     ],
     "is_start_tech": false,
-    "name": "Quicksand Basin Removal"
+    "name": "Soil Remediation"
   },
   {
     "category": "New Worlds",
     "tier": 1,
-    "description": "Focused drainage and detox efforts allow for the complete eradication of swampland.\n\n",
+    "description": "Sentient races have been reclaiming swampland for thousands of years. A coordinated system of modular aquaducts, pump stations, chemical remediation crawlers and automated soil compactors can reclaim land at unprecedented speeds.",
     "area": "society",
     "prerequisites": [
       "tech_colonization_1"
@@ -2606,17 +2565,18 @@
     "base_weight": 95,
     "weight_modifiers": [
       "(\u00d72)  Always\n",
+      "(\u00d74)  Has Mastery of Nature Ascension Perk\n",
       "(\u00d70)  NOT any owned Planet:\n    \u2022   Any Tile:\n        \u2022   Has Noxious Swamp Tile Blocker\n",
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is New Worlds Expert\n",
       "(\u00d70)  Number of owned planets is less than 2\n"
     ],
     "is_start_tech": false,
-    "name": "Noxious Swamp Removal"
+    "name": "Xeno-Hydraulic Mastery"
   },
   {
     "category": "New Worlds",
     "tier": 1,
-    "description": "Flash-vaporization engines quickly and efficiently erase glacial ice, at the expense of some increased heat and atmospheric humidity in the local area.\n\n",
+    "description": "Orbital systems of mirrors and shades can effect dramatic changes in planetary climates, when managed properly.",
     "area": "society",
     "prerequisites": [
       "tech_colonization_1"
@@ -2632,17 +2592,18 @@
     "base_weight": 95,
     "weight_modifiers": [
       "(\u00d72)  Always\n",
+      "(\u00d74)  Has Mastery of Nature Ascension Perk\n",
       "(\u00d70)  NOT any owned Planet:\n    \u2022   Any Tile:\n        \u2022   Has Massive Glacier Tile Blocker\n",
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is New Worlds Expert\n",
       "(\u00d70)  Number of owned planets is less than 2\n"
     ],
     "is_start_tech": false,
-    "name": "Massive Glacier Removal"
+    "name": "Climate Control Network"
   },
   {
     "category": "New Worlds",
     "tier": 1,
-    "description": "Specialized drones can mechanically clear vast swaths of toxic kelp with minimal use of biocides.\n\n",
+    "description": "Given enough processing power, networked sensors and distributed stations, even the ocean currents can be managed to a fine level of control.",
     "area": "society",
     "prerequisites": [
       "tech_colonization_1"
@@ -2658,17 +2619,18 @@
     "base_weight": 95,
     "weight_modifiers": [
       "(\u00d72)  Always\n",
+      "(\u00d74)  Has Mastery of Nature Ascension Perk\n",
       "(\u00d70)  NOT any owned Planet:\n    \u2022   Any Tile:\n        \u2022   Has Toxic Kelp Tile Blocker\n",
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is New Worlds Expert\n",
       "(\u00d70)  Number of owned planets is less than 2\n"
     ],
     "is_start_tech": false,
-    "name": "Toxic Kelp Removal"
+    "name": "Ocean Ecology Management"
   },
   {
     "category": "New Worlds",
     "tier": 1,
-    "description": "Specialized aerosol construction stabilizers can be used to quickly and cleanly seal existing sinkholes as well as stabilize any subterranean hollows that may give rise to them.\n\n",
+    "description": "Many planets exhibit extensive subsurface voids. Subterranean exploration, exploitation, and construction techniques can greatly increase the habitable area of some worlds.",
     "area": "society",
     "prerequisites": [
       "tech_colonization_1"
@@ -2684,17 +2646,18 @@
     "base_weight": 95,
     "weight_modifiers": [
       "(\u00d72)  Always\n",
+      "(\u00d74)  Has Mastery of Nature Ascension Perk\n",
       "(\u00d70)  NOT any owned Planet:\n    \u2022   Any Tile:\n        \u2022   Has Deep Sinkhole Tile Blocker\n",
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is New Worlds Expert\n",
       "(\u00d70)  Number of owned planets is less than 2\n"
     ],
     "is_start_tech": false,
-    "name": "Deep Sinkhole Removal"
+    "name": "Subterranean Colonization"
   },
   {
     "category": "New Worlds",
     "tier": 1,
-    "description": "There is no simple solution to the problem of macro-scale reshaping of planetary crusts - only bigger trowels and orbitally-deployed drills.\n\n",
+    "description": "There is no simple solution to the problem of macro-scale reshaping of planetary crusts - only bigger trowels and orbitally-deployed drills.",
     "area": "society",
     "prerequisites": [
       "tech_colonization_1"
@@ -2720,7 +2683,7 @@
   {
     "category": "Biology",
     "tier": 1,
-    "description": "Mapping the genome of an individual through the sequencing of their DNA opens up for tailored medical treatments and therapies.\n\n",
+    "description": "Mapping the genome of an individual through the sequencing of their DNA opens up for tailored medical treatments and therapies.",
     "area": "society",
     "prerequisites": [],
     "is_dangerous": false,
@@ -2730,7 +2693,7 @@
     "feature_unlocks": [
       "Growth Time: -10%"
     ],
-    "base_factor": 1.0,
+    "base_factor": 1.5,
     "base_weight": 100,
     "weight_modifiers": [
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Biology Expert\n"
@@ -2741,7 +2704,7 @@
   {
     "category": "Military Theory",
     "tier": 1,
-    "description": "Gradual adaptation to the realities of deep-space combat allows us to effectively coordinate larger maneuvers.\n\n",
+    "description": "Gradual adaptation to the realities of deep-space combat allows us to effectively coordinate larger maneuvers.",
     "area": "society",
     "prerequisites": [],
     "is_dangerous": false,
@@ -2766,7 +2729,7 @@
   {
     "category": "Military Theory",
     "tier": 1,
-    "description": "Gradual adaptation to the realities of deep-space combat allows us to effectively coordinate larger maneuvers.\n\n",
+    "description": "Gradual adaptation to the realities of deep-space combat allows us to effectively coordinate larger maneuvers.",
     "area": "society",
     "prerequisites": [
       "tech_doctrine_fleet_size_1"
@@ -2793,7 +2756,7 @@
   {
     "category": "Military Theory",
     "tier": 1,
-    "description": "A body of knowledge regarding combat behaviors is useless without a strong code governing its use.\n\n",
+    "description": "A body of knowledge regarding combat behaviors is useless without a strong code governing its use.",
     "area": "society",
     "prerequisites": [
       "tech_doctrine_fleet_size_2"
@@ -2821,7 +2784,7 @@
   {
     "category": "Military Theory",
     "tier": 1,
-    "description": "As extrasolar expeditions become more common, it is important to provide planetside relief for returning fleets.\n\n",
+    "description": "As extrasolar expeditions become more common, it is important to provide planetside relief for returning fleets.",
     "area": "society",
     "prerequisites": [
       "tech_doctrine_fleet_size_1"
@@ -2849,7 +2812,7 @@
   {
     "category": "Military Theory",
     "tier": 1,
-    "description": "Creating dedicated headquarters for all levels of military operations shapes an efficient fleet, and lays a better foundation for future military training.\n\n",
+    "description": "Creating dedicated headquarters for all levels of military operations shapes an efficient fleet, and lays a better foundation for future military training.",
     "area": "society",
     "prerequisites": [],
     "is_dangerous": false,
@@ -2875,7 +2838,7 @@
   {
     "category": "Military Theory",
     "tier": 1,
-    "description": "A more extensive training program for new recruits, including realistic combat scenarios, prepare them for the field.\n\n",
+    "description": "A more extensive training program for new recruits, including realistic combat scenarios, prepare them for the field.",
     "area": "society",
     "prerequisites": [
       "tech_centralized_command"
@@ -2902,81 +2865,7 @@
   {
     "category": "Statecraft",
     "tier": 1,
-    "description": "A celebration of purity, perhaps of spirit, or of the body, or purpose - dependent on whatever goal we have in mind.",
-    "area": "society",
-    "prerequisites": [
-      "tech_planetary_government"
-    ],
-    "is_dangerous": false,
-    "is_rare": true,
-    "cost": 480,
-    "key": "tech_purity_campaigns",
-    "feature_unlocks": [
-      "Unlocks Building: Monument to Purity"
-    ],
-    "base_factor": 1.0,
-    "base_weight": 95,
-    "weight_modifiers": [
-      "(\u00d70.5)  NOT Research Leader (Society):\n    \u2022   Is Statecraft Expert\n",
-      "(\u00d73)  Any of the following:\n    \u2022   Has Xenophobe Ethic\n    \u2022   Has Fanatic Xenophobe Ethic\n",
-      "(\u00d70)  None of the following:\n    \u2022   Has Xenophobe Ethic\n    \u2022   Has Fanatic Xenophobe Ethic\n",
-      "(\u00d70)  Number of owned planets is less than 1\n"
-    ],
-    "is_start_tech": false,
-    "name": "Purity Campaigns"
-  },
-  {
-    "category": "Statecraft",
-    "tier": 1,
-    "description": "As we explore more of the galaxy and its wonders, it becomes increasingly important for us to reaffirm our beliefs and to unify our people under one symbol.",
-    "area": "society",
-    "prerequisites": [
-      "tech_planetary_government"
-    ],
-    "is_dangerous": false,
-    "is_rare": true,
-    "cost": 480,
-    "key": "tech_symbol_unity",
-    "feature_unlocks": [
-      "Unlocks Building: Symbol of Unity"
-    ],
-    "base_factor": 1.0,
-    "base_weight": 95,
-    "weight_modifiers": [
-      "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Statecraft Expert\n",
-      "(\u00d70)  None of the following:\n    \u2022   Has Spiritualist Ethic\n    \u2022   Has Fanatic Spiritualist Ethic\n"
-    ],
-    "is_start_tech": false,
-    "name": "Symbols of Unity"
-  },
-  {
-    "category": "Statecraft",
-    "tier": 1,
-    "description": "As we learn that we are not alone in space, we should begin preparations to welcome our new-found friends.",
-    "area": "society",
-    "prerequisites": [],
-    "is_dangerous": false,
-    "is_rare": true,
-    "cost": 480,
-    "key": "tech_visitor_center",
-    "feature_unlocks": [
-      "Unlocks Building: Visitor Center"
-    ],
-    "base_factor": 1.0,
-    "base_weight": 95,
-    "weight_modifiers": [
-      "(\u00d73)  Number of owned planets is greater than 2\n",
-      "(\u00d70)  None of the following:\n    \u2022   Has Xenophile Ethic\n    \u2022   Has Fanatic Xenophile Ethic\n",
-      "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Statecraft Expert\n",
-      "(\u00d70)  Number of owned planets is less than 1\n"
-    ],
-    "is_start_tech": false,
-    "name": "Alien Visitor Centers"
-  },
-  {
-    "category": "Statecraft",
-    "tier": 1,
-    "description": "Reduces Cede Planet and Cede Frontier Outpost War Demand Cost.\n\n",
+    "description": "Reduces Cede Planet and Cede Frontier Outpost War Demand Cost.",
     "area": "society",
     "prerequisites": [],
     "is_dangerous": false,
@@ -3002,57 +2891,7 @@
   {
     "category": "Statecraft",
     "tier": 1,
-    "description": "$building_paradise_dome_desc$",
-    "area": "society",
-    "prerequisites": [
-      "tech_planetary_unification"
-    ],
-    "is_dangerous": false,
-    "is_rare": true,
-    "cost": 600,
-    "key": "tech_paradise_dome",
-    "feature_unlocks": [
-      "Unlocks Building: Paradise Dome"
-    ],
-    "base_factor": 1.0,
-    "base_weight": 90,
-    "weight_modifiers": [
-      "(\u00d70)  None of the following:\n    \u2022   Has Pacifist Ethic\n    \u2022   Has Fanatic Pacifist Ethic\n",
-      "(\u00d73)  Has Fanatic Spiritualist Ethic\n"
-    ],
-    "is_start_tech": false,
-    "name": "Paradise Dome"
-  },
-  {
-    "category": "Military Theory",
-    "tier": 1,
-    "description": "The advent of accurate pain emulators will at long last bridge the divide between the virtual and the real.",
-    "area": "society",
-    "prerequisites": [
-      "tech_centralized_command"
-    ],
-    "is_dangerous": false,
-    "is_rare": true,
-    "cost": 600,
-    "key": "tech_virtual_combat_arena",
-    "feature_unlocks": [
-      "Unlocks Building: Virtual Combat Arena"
-    ],
-    "base_factor": 1.0,
-    "base_weight": 90,
-    "weight_modifiers": [
-      "(\u00d70)  None of the following:\n    \u2022   Has Militarist Ethic\n    \u2022   Has Fanatic Militarist Ethic\n",
-      "(\u00d71.1)  Research Leader (Society):\n    \u2022   Is Substance Abuser\n",
-      "(\u00d74)  Has Fanatic Militarist Ethic\n",
-      "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Statecraft Expert\n"
-    ],
-    "is_start_tech": false,
-    "name": "Virtual Combat Simulations"
-  },
-  {
-    "category": "Statecraft",
-    "tier": 1,
-    "description": "Ancient warring tribes, historical nations in conflict, now unified in empire. We must not, will not, crumble.\n\n",
+    "description": "Ancient warring tribes, historical nations in conflict, now unified in empire. We must not, will not, crumble.",
     "area": "society",
     "prerequisites": [
       "tech_planetary_government"
@@ -3076,7 +2915,7 @@
   {
     "category": "New Worlds",
     "tier": 1,
-    "description": "Robust frameworks for local governance created on a per-case basis, to meet each colony's needs.\n\n",
+    "description": "Robust frameworks for local governance created on a per-case basis, to meet each colony's needs.",
     "area": "society",
     "prerequisites": [
       "tech_planetary_unification"
@@ -3086,7 +2925,6 @@
     "cost": 720,
     "key": "tech_colonial_centralization",
     "feature_unlocks": [
-      "Monthly Influence: +1",
       "Unlocks Building: Planetary Capital",
       "Unlocks Edict: Production Targets"
     ],
@@ -3101,7 +2939,7 @@
   {
     "category": "Statecraft",
     "tier": 1,
-    "description": "The progress we make calls for a new, nimbler form of administration that may aid rather than hinder us in our pursuits.\n\n",
+    "description": "The progress we make calls for a new, nimbler form of administration that may aid rather than hinder us in our pursuits.",
     "area": "society",
     "prerequisites": [
       "tech_planetary_unification"
@@ -3113,7 +2951,7 @@
     "feature_unlocks": [
       "Empire Leader Capacity: +2",
       "Leader Pool Size: +1",
-      "Leader Recruitment Cost: -10%"
+      "Max Influence from Factions: +1"
     ],
     "base_factor": 1.0,
     "base_weight": 95,
@@ -3126,6 +2964,33 @@
     ],
     "is_start_tech": false,
     "name": "Adaptive Bureaucracy"
+  },
+  {
+    "category": "Statecraft",
+    "tier": 1,
+    "description": "Local administrative developments allow for closer supervision of colonial affairs without excessively burdening central decision-making.",
+    "area": "society",
+    "prerequisites": [
+      "tech_adaptive_bureaucracy"
+    ],
+    "is_dangerous": false,
+    "is_rare": false,
+    "cost": 720,
+    "key": "tech_colonial_bureaucracy",
+    "feature_unlocks": [
+      "Core Sector Systems: +1"
+    ],
+    "base_factor": 1.0,
+    "base_weight": 85,
+    "weight_modifiers": [
+      "(\u00d70)  Number of owned planets is less than 2\n",
+      "(\u00d71.5)  Number of owned planets is greater than 2\n",
+      "(\u00d71.5)  Number of owned planets is greater than 3\n",
+      "(\u00d71.5)  Number of owned planets is greater than 4\n",
+      "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Statecraft Expert\n"
+    ],
+    "is_start_tech": false,
+    "name": "Colonial Bureaucracy"
   },
   {
     "category": "Statecraft",
@@ -3144,19 +3009,66 @@
     "base_factor": 1.0,
     "base_weight": 90,
     "weight_modifiers": [
-      "(\u00d72)  Any owned Pop:\n    \u2022   Pop is enslaved\n",
-      "(\u00d71.25)  Any of the following:\n    \u2022   Has Collectivist Ethic\n    \u2022   Has Fanatic Collectivist Ethic\n",
+      "(\u00d72)  Any empire Pop:\n    \u2022   Pop is enslaved\n",
+      "(\u00d71.5)  Number of enslaved planets greater than 9\n",
+      "(\u00d72)  Number of enslaved planets greater than 19\n",
+      "(\u00d72)  Number of enslaved planets greater than 29\n",
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Statecraft Expert\n",
-      "(\u00d70.25)  Any of the following:\n    \u2022   Has Regulated Policy\n    \u2022   Has Regulated Xenos Policy\n",
-      "(\u00d70)  None of the following:\n    \u2022   Has Regulated Policy\n    \u2022   Has Allowed Policy\n    \u2022   Has Regulated Xenos Policy\n    \u2022   Has Xenos Only Policy\n"
+      "(\u00d70.0)  Does NOT allow Slavery\n"
     ],
     "is_start_tech": false,
     "name": "Neural Implants"
   },
   {
+    "category": "Statecraft",
+    "tier": 1,
+    "description": "Physical reminders of how far we have come both instill a reverence for past achievements and bolster ambitions for the future.",
+    "area": "society",
+    "prerequisites": [
+      "tech_cultural_heritage"
+    ],
+    "is_dangerous": false,
+    "is_rare": false,
+    "cost": 360,
+    "key": "tech_heritage_site",
+    "feature_unlocks": [
+      "Unlocks Building: Heritage Site"
+    ],
+    "base_factor": 1.0,
+    "base_weight": 100,
+    "weight_modifiers": [
+      "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Statecraft Expert\n"
+    ],
+    "is_start_tech": false,
+    "name": "Heritage Sites"
+  },
+  {
+    "category": "Statecraft",
+    "tier": 1,
+    "description": "As we explore more of the galaxy and its wonders, it becomes increasingly important for us to reaffirm our beliefs and to unify our people under one symbol.",
+    "area": "society",
+    "prerequisites": [
+      "tech_planetary_government"
+    ],
+    "is_dangerous": false,
+    "is_rare": true,
+    "cost": 480,
+    "key": "tech_symbol_unity",
+    "feature_unlocks": [
+      "Unlocks Building: Symbol of Unity"
+    ],
+    "base_factor": 1.0,
+    "base_weight": 95,
+    "weight_modifiers": [
+      "(\u00d70.33)  NOT Research Leader (Society):\n    \u2022   Is Statecraft Expert\n"
+    ],
+    "is_start_tech": false,
+    "name": "Symbols of Unity"
+  },
+  {
     "category": "Biology",
     "tier": 1,
-    "description": "A naturally occurring stimulant that helps all forms of life adapt and evolve. It can also be used as a very potent conductor for energy weapons.\n\n",
+    "description": "A naturally occurring stimulant that helps all forms of life adapt and evolve. It can also be used as a very potent conductor for energy weapons.",
     "area": "society",
     "prerequisites": [
       "tech_genome_mapping"
@@ -3172,7 +3084,7 @@
     "base_weight": 90,
     "weight_modifiers": [
       "(\u00d72)  Research Leader (Engineering):\n    \u2022   Is Materials Expert\n",
-      "(\u00d70)  None of the following:\n    \u2022   Any System within Borders:\n        \u2022   Is in a resource_cluster_2 Cluster\n    \u2022   Any Country:\n        \u2022   All of the following:\n            \u2022   Has communications with your Empire\n            \u2022   Has Engos Vapor Refining Technology\n"
+      "(\u00d70)  None of the following:\n    \u2022   Any System within Borders:\n        \u2022   Is in a resource_cluster_2 Cluster\n    \u2022   Any Relation:\n        \u2022   All of the following:\n            \u2022   Has communications with your Empire\n            \u2022   Has Engos Vapor Refining Technology\n"
     ],
     "is_start_tech": false,
     "name": "Engos Vapor Refining"
@@ -3180,7 +3092,7 @@
   {
     "category": "Biology",
     "tier": 1,
-    "description": "This fine dust is a naturally occurring stimulant found on some worlds. It has a calming effect on most beings, and can be used as a non-violent way of pacifying hostile individuals.\n\n",
+    "description": "This fine dust is a naturally occurring stimulant found on some worlds. It has a calming effect on most beings, and can be used as a non-violent way of pacifying hostile individuals.",
     "area": "society",
     "prerequisites": [
       "tech_genome_mapping"
@@ -3195,8 +3107,7 @@
     "base_factor": 2.0,
     "base_weight": 90,
     "weight_modifiers": [
-      "(\u00d72)  Research Leader (Engineering):\n    \u2022   Is Materials Expert\n",
-      "(\u00d70)  None of the following:\n    \u2022   Any System within Borders:\n        \u2022   Is in a resource_cluster_4 Cluster\n    \u2022   Any Country:\n        \u2022   All of the following:\n            \u2022   Has communications with your Empire\n            \u2022   Has Pitharan Dust Refining Technology\n"
+      "(\u00d71.5)  Research Leader (Physics):\n    \u2022   Is Materials Expert\n"
     ],
     "is_start_tech": false,
     "name": "Pitharan Dust Refining"
@@ -3204,7 +3115,7 @@
   {
     "category": "Biology",
     "tier": 2,
-    "description": "Sophisticated genetic engineering of crops helps increase yield and further improves both taste and nutrient levels.\n\n",
+    "description": "Sophisticated genetic engineering of crops helps increase yield and further improves both taste and nutrient levels.",
     "area": "society",
     "prerequisites": [
       "tech_hydroponics",
@@ -3230,7 +3141,7 @@
   {
     "category": "Biology",
     "tier": 2,
-    "description": "Infusing crop strands with small amounts of nano-machines help create a type of produce that is ultra resilient, and the chemical composition of which can be tailored and altered during its entire lifetime.\n\n",
+    "description": "Infusing crop strands with small amounts of nano-machines help create a type of produce that is ultra resilient, and the chemical composition of which can be tailored and altered during its entire lifetime.",
     "area": "society",
     "prerequisites": [
       "tech_gene_crops",
@@ -3257,7 +3168,7 @@
   {
     "category": "Biology",
     "tier": 2,
-    "description": "Studying the life that arises on other worlds and beyond allows us to understand fundamental aspects of biology that were previously beyond our reach.\n\n",
+    "description": "Studying the life that arises on other worlds and beyond allows us to understand fundamental aspects of biology that were previously beyond our reach.",
     "area": "society",
     "prerequisites": [
       "tech_biolab_1",
@@ -3285,7 +3196,7 @@
   {
     "category": "New Worlds",
     "tier": 2,
-    "description": "By adjusting atmospheric filtering on a per-site basis to better filter out undesirable elements, colonial living conditions may be improved.\n\n",
+    "description": "By adjusting atmospheric filtering on a per-site basis to better filter out undesirable elements, colonial living conditions may be improved.",
     "area": "society",
     "prerequisites": [
       "tech_colonization_1"
@@ -3308,7 +3219,7 @@
   {
     "category": "New Worlds",
     "tier": 2,
-    "description": "Further study into the hazardous environments found on other planets help alleviate the difficulties that colonizers encounter in their day-to-day lives on foreign worlds.\n\n",
+    "description": "Further study into the hazardous environments found on other planets help alleviate the difficulties that colonizers encounter in their day-to-day lives on foreign worlds.",
     "area": "society",
     "prerequisites": [
       "tech_colonization_2"
@@ -3341,7 +3252,7 @@
     "cost": 1800,
     "key": "tech_tomb_world_adaption",
     "feature_unlocks": [
-      "Tomb World Habitability: +40%"
+      "Tomb World Habitability: +20%"
     ],
     "base_factor": 1.0,
     "base_weight": 65,
@@ -3354,7 +3265,7 @@
   {
     "category": "Biology",
     "tier": 2,
-    "description": "As a colony grows, so does its medical needs. Larger colonies are potentially exposed to more dangerous pathogens on alien worlds.\n\n",
+    "description": "As a colony grows, so does its medical needs. Larger colonies are potentially exposed to more dangerous pathogens on alien worlds.",
     "area": "society",
     "prerequisites": [
       "tech_frontier_health"
@@ -3377,62 +3288,7 @@
   {
     "category": "New Worlds",
     "tier": 2,
-    "description": "Studies indicate that strict social control may be integral to the continued resilience of young colonies.\n\n",
-    "area": "society",
-    "prerequisites": [
-      "tech_frontier_collectives"
-    ],
-    "is_dangerous": false,
-    "is_rare": true,
-    "cost": 2200,
-    "key": "tech_frontier_commissars",
-    "feature_unlocks": [
-      "Ethics Divergence: -20%",
-      "Colony Development Speed: +25%"
-    ],
-    "base_factor": 1.0,
-    "base_weight": 60,
-    "weight_modifiers": [
-      "(\u00d70.1)  None of the following:\n    \u2022   Research Leader (Society):\n        \u2022   Is New Worlds Expert\n    \u2022   Research Leader (Society):\n        \u2022   Is Curator\n",
-      "(\u00d71.1)  Research Leader (Society):\n    \u2022   Is Maniacal\n",
-      "(\u00d71.5)  Has Collectivist Ethic\n",
-      "(\u00d72)  Has Fanatic Collectivist Ethic\n",
-      "(\u00d70)  None of the following:\n    \u2022   Has Collectivist Ethic\n    \u2022   Has Fanatic Collectivist Ethic\n"
-    ],
-    "is_start_tech": false,
-    "name": "Frontier Commissars"
-  },
-  {
-    "category": "New Worlds",
-    "tier": 2,
-    "description": "A certain pioneering spirit manifests itself in the priorities of orbital construction.\n\n",
-    "area": "society",
-    "prerequisites": [
-      "tech_frontier_initiatives"
-    ],
-    "is_dangerous": false,
-    "is_rare": true,
-    "cost": 2200,
-    "key": "tech_frontier_traditions",
-    "feature_unlocks": [
-      "Unlocks Module: Pioneering Terminal"
-    ],
-    "base_factor": 1.0,
-    "base_weight": 60,
-    "weight_modifiers": [
-      "(\u00d70.1)  None of the following:\n    \u2022   Research Leader (Society):\n        \u2022   Is New Worlds Expert\n    \u2022   Research Leader (Society):\n        \u2022   Is Curator\n",
-      "(\u00d71.1)  Has Nomadic Trait\n",
-      "(\u00d71.5)  Has Individualist Ethic\n",
-      "(\u00d72)  Has Fanatic Individualist Ethic\n",
-      "(\u00d70)  None of the following:\n    \u2022   Has Individualist Ethic\n    \u2022   Has Fanatic Individualist Ethic\n"
-    ],
-    "is_start_tech": false,
-    "name": "Frontier Traditions"
-  },
-  {
-    "category": "New Worlds",
-    "tier": 2,
-    "description": "Humidity regulators and chemical dispersal units are the first step towards a fundamentally altered atmosphere.\n\n",
+    "description": "Humidity regulators and chemical dispersal units are the first step towards a fundamentally altered atmosphere.",
     "area": "society",
     "prerequisites": [
       "tech_terrestrial_sculpting"
@@ -3467,7 +3323,7 @@
     "feature_unlocks": [
       "Leader Lifespan: +10"
     ],
-    "base_factor": 1.0,
+    "base_factor": 1.5,
     "base_weight": 75,
     "weight_modifiers": [
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Biology Expert\n"
@@ -3478,11 +3334,10 @@
   {
     "category": "Biology",
     "tier": 2,
-    "description": "Advanced DNA methylation techniques allow for functionally significant alterations to be made to arbitrary genomes.\n\n",
+    "description": "Advanced DNA methylation techniques allow for functionally significant alterations to be made to arbitrary genomes.",
     "area": "society",
     "prerequisites": [
-      "tech_genome_mapping",
-      "tech_alien_life_studies"
+      "tech_genome_mapping"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -3499,7 +3354,8 @@
       "(\u00d71.25)  Has Xenophile Ethic\n",
       "(\u00d71.5)  Has Fanatic Xenophile Ethic\n",
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Biology Expert\n",
-      "(\u00d70)  Does NOT have first_alien_life country flag\n"
+      "(\u00d70)  Does NOT have first_alien_life country flag\n",
+      "(\u00d70)  Has Hive Mind Authority\n"
     ],
     "is_start_tech": false,
     "name": "Epigenetic Triggers"
@@ -3507,7 +3363,7 @@
   {
     "category": "Biology",
     "tier": 2,
-    "description": "Breakthroughs in enucleation and artificial womb technology allows for the mass-production of individuals based on a common genetic template.\n\n",
+    "description": "Breakthroughs in enucleation and artificial womb technology allows for the mass-production of individuals based on a common genetic template.",
     "area": "society",
     "prerequisites": [
       "tech_vitality_boosters"
@@ -3520,7 +3376,7 @@
       "Unlocks Army: Clone Army",
       "Unlocks Building: Clone Vats"
     ],
-    "base_factor": 1.0,
+    "base_factor": 1.5,
     "base_weight": 75,
     "weight_modifiers": [
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Biology Expert\n"
@@ -3531,7 +3387,7 @@
   {
     "category": "Biology",
     "tier": 2,
-    "description": "Gene Banks filter and curate available genomes for deployment in clones.\n\n",
+    "description": "Gene Banks filter and curate available genomes for deployment in clones.",
     "area": "society",
     "prerequisites": [
       "tech_cloning"
@@ -3557,7 +3413,7 @@
   {
     "category": "Biology",
     "tier": 2,
-    "description": "From its cradle as a purely pharmaceutical venture, advancements in our understanding of the morphogenetic field allow for direct, subconscious interfaces with organic units.\n\n",
+    "description": "From its cradle as a purely pharmaceutical venture, advancements in our understanding of the morphogenetic field allow for direct, subconscious interfaces with organic units.",
     "area": "society",
     "prerequisites": [
       "tech_epigenetic_triggers"
@@ -3589,7 +3445,7 @@
   {
     "category": "Biology",
     "tier": 2,
-    "description": "Making gene-editing tools widely available is sure to have a positive impact on our development as a species.\n\n",
+    "description": "Making gene-editing tools widely available is sure to have a positive impact on our development as a species.",
     "area": "society",
     "prerequisites": [
       "tech_cloning"
@@ -3603,7 +3459,7 @@
       "Unlocks Feature: Genetic Modification",
       "Unlocks Feature: Environmental Adaptation"
     ],
-    "base_factor": 1.0,
+    "base_factor": 1.5,
     "base_weight": 60,
     "weight_modifiers": [
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Biology Expert\n"
@@ -3614,7 +3470,7 @@
   {
     "category": "Biology",
     "tier": 2,
-    "description": "Careful reproductive planning should be incentivized, lest we waste valuable genetic legacies.\n\n",
+    "description": "Careful reproductive planning should be incentivized, lest we waste valuable genetic legacies.",
     "area": "society",
     "prerequisites": [
       "tech_vitality_boosters"
@@ -3630,9 +3486,12 @@
     "base_weight": 60,
     "weight_modifiers": [
       "(\u00d70.5)  None of the following:\n    \u2022   Research Leader (Society):\n        \u2022   Is Biology Expert\n    \u2022   Research Leader (Society):\n        \u2022   Is Curator\n",
+      "(\u00d70)  Any of the following:\n    \u2022   Has Egalitarian Ethic\n    \u2022   Has Fanatic Egalitarian Ethic\n",
+      "(\u00d71.1)  Has Authoritarian Ethic\n",
+      "(\u00d71.25)  Has Fanatic Authoritarian Ethic\n",
       "(\u00d71.5)  Research Leader (Society):\n    \u2022   Is Spark of Genius\n",
-      "(\u00d71.5)  Any of the following:\n    \u2022   Has Individualist Ethic\n    \u2022   Has Fanatic Individualist Ethic\n",
-      "(\u00d70.1)  Any of the following:\n    \u2022   Has Collectivist Ethic\n    \u2022   Has Fanatic Collectivist Ethic\n"
+      "(\u00d71.5)  Any of the following:\n    \u2022   Has Egalitarian Ethic\n    \u2022   Has Fanatic Egalitarian Ethic\n",
+      "(\u00d70.1)  Any of the following:\n    \u2022   Has Authoritarian Ethic\n    \u2022   Has Fanatic Authoritarian Ethic\n"
     ],
     "is_start_tech": false,
     "name": "Selected Lineages"
@@ -3640,7 +3499,7 @@
   {
     "category": "Military Theory",
     "tier": 2,
-    "description": "Gradual adaptation to the realities of deep-space combat allows us to effectively coordinate larger maneuvers.\n\n",
+    "description": "Gradual adaptation to the realities of deep-space combat allows us to effectively coordinate larger maneuvers.",
     "area": "society",
     "prerequisites": [
       "tech_doctrine_fleet_size_2"
@@ -3667,7 +3526,7 @@
   {
     "category": "Military Theory",
     "tier": 2,
-    "description": "Gradual adaptation to the realities of deep-space combat allows us to effectively coordinate larger maneuvers.\n\n",
+    "description": "Gradual adaptation to the realities of deep-space combat allows us to effectively coordinate larger maneuvers.",
     "area": "society",
     "prerequisites": [
       "tech_doctrine_fleet_size_3"
@@ -3694,7 +3553,7 @@
   {
     "category": "Military Theory",
     "tier": 2,
-    "description": "Restructuring the chain of command and deciding what interdependencies are set between officers, make fleets more responsive and thus cost-effective.\n\n",
+    "description": "Restructuring the chain of command and deciding what interdependencies are set between officers, make fleets more responsive and thus cost-effective.",
     "area": "society",
     "prerequisites": [
       "tech_doctrine_fleet_size_3"
@@ -3722,7 +3581,7 @@
   {
     "category": "Military Theory",
     "tier": 2,
-    "description": "Standardizing workflows for upgrading and retrofitting ship components can lead to massive efficiency gains.\n\n",
+    "description": "Standardizing workflows for upgrading and retrofitting ship components can lead to massive efficiency gains.",
     "area": "society",
     "prerequisites": [
       "tech_doctrine_fleet_size_2"
@@ -3749,7 +3608,7 @@
   {
     "category": "Psionics",
     "tier": 2,
-    "description": "The mind is in many ways a reflection of the universe itself, a microcosmos. All species may not reach this insight, but their minds are tools greater than any other.\n\n",
+    "description": "The mind is in many ways a reflection of the universe itself, a microcosmos. All species may not reach this insight, but their minds are tools greater than any other.",
     "area": "society",
     "prerequisites": [],
     "is_dangerous": false,
@@ -3762,12 +3621,11 @@
     "base_factor": 1.0,
     "base_weight": 60,
     "weight_modifiers": [
-      "(\u00d70.05)  NOT Research Leader (Society):\n    \u2022   Is Psionics Expert\n",
+      "(\u00d70)  None of the following:\n    \u2022   Has Spiritualist Ethic\n    \u2022   Has Fanatic Spiritualist Ethic\n",
       "(\u00d71.1)  Research Leader (Society):\n    \u2022   Skill level is greater than 2\n    \u2022   Is Psionics Expert\n",
       "(\u00d71.5)  Research Leader (Society):\n    \u2022   Skill level is greater than 3\n    \u2022   Is Psionics Expert\n",
       "(\u00d72)  Research Leader (Society):\n    \u2022   Skill level is greater than 4\n    \u2022   Is Psionics Expert\n",
-      "(\u00d72)  Has Spiritualist Ethic\n",
-      "(\u00d73)  Has Fanatic Spiritualist Ethic\n",
+      "(\u00d72)  Has Fanatic Spiritualist Ethic\n",
       "(\u00d75)  Research Leader (Society):\n    \u2022   Is Maniacal\n",
       "(\u00d70)  All of the following:\n    \u2022   Any of the following:\n        \u2022   Has Materialist Ethic\n        \u2022   Has Fanatic Materialist Ethic\n    \u2022   NOT Research Leader (Society):\n        \u2022   Is Psionics Expert\n"
     ],
@@ -3777,85 +3635,34 @@
   {
     "category": "Statecraft",
     "tier": 2,
-    "description": "Advancing our understanding of interactions with - and manipulations of - the xeno is a necessary step in forming more permanent interstellar alliances.\n\n",
-    "area": "society",
-    "prerequisites": [],
-    "is_dangerous": false,
-    "is_rare": false,
-    "cost": 1000,
-    "key": "tech_xeno_diplomacy",
-    "feature_unlocks": [
-      "Unlocks Diplomacy: Form Federation"
-    ],
-    "base_factor": 1.0,
-    "base_weight": 75,
-    "weight_modifiers": [
-      "(\u00d70)  Is in a Federation\n",
-      "(\u00d70.5)  Any of the following:\n    \u2022   Has Xenophobe Ethic\n    \u2022   Has Fanatic Xenophobe Ethic\n",
-      "(\u00d74)  Any of the following:\n    \u2022   Has Xenophile Ethic\n    \u2022   Has Fanatic Xenophile Ethic\n",
-      "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Statecraft Expert\n",
-      "(\u00d70)  Number of owned planets is less than 1\n",
-      "(\u00d73)  Number of owned planets is greater than 3\n"
-    ],
-    "is_start_tech": false,
-    "name": "Xeno Diplomacy"
-  },
-  {
-    "category": "Biology",
-    "tier": 2,
-    "description": "From disparate components do we build a whole greater than the sum of its parts.\n\n",
-    "area": "society",
-    "prerequisites": [],
-    "is_dangerous": false,
-    "is_rare": false,
-    "cost": 1000,
-    "key": "tech_xeno_integration",
-    "feature_unlocks": [
-      "Unlocks Policy: Leadership - Xenos Allowed"
-    ],
-    "base_factor": 1.0,
-    "base_weight": 75,
-    "weight_modifiers": [
-      "(\u00d70.5)  NOT Research Leader (Society):\n    \u2022   Is Statecraft Expert\n",
-      "(\u00d73)  Has Xenophile Ethic\n",
-      "(\u00d76)  Has Fanatic Xenophile Ethic\n",
-      "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Statecraft Expert\n",
-      "(\u00d70)  Any of the following:\n    \u2022   Has Xenophobe Ethic\n    \u2022   Has Fanatic Xenophobe Ethic\n",
-      "(\u00d70)  NOT any owned Pop:\n    \u2022   None of the following:\n        \u2022   Is of the Dominant Species\n        \u2022   Is a Robot\n        \u2022   Is a Droid\n        \u2022   Is a Synthetic\n"
-    ],
-    "is_start_tech": false,
-    "name": "Xeno Integration"
-  },
-  {
-    "category": "Statecraft",
-    "tier": 2,
-    "description": "We must have to courage to seize our fate and make true what was always meant to be.\n\n",
+    "description": "A well-oiled war machine is the key to exerting influence on a galactic scale. Backed by the might of our military, we can lay claim to almost anything we want.",
     "area": "society",
     "prerequisites": [
       "tech_galactic_ambitions"
     ],
     "is_dangerous": false,
-    "is_rare": true,
+    "is_rare": false,
     "cost": 1800,
-    "key": "tech_manifest_destiny",
+    "key": "tech_interstellar_campaigns",
     "feature_unlocks": [
-      "Border Range: +20%",
-      "Unlocks Component: Advanced Border Beacon"
+      "Unlocks Feature: Cheaper War Demands"
     ],
     "base_factor": 1.0,
     "base_weight": 65,
     "weight_modifiers": [
-      "(\u00d70.25)  None of the following:\n    \u2022   Research Leader (Society):\n        \u2022   Is Statecraft Expert\n    \u2022   Research Leader (Society):\n        \u2022   Is Curator\n",
-      "(\u00d71.05)  Research Leader (Society):\n    \u2022   Is Maniacal\n",
-      "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Spark of Genius\n"
+      "(\u00d72)  Number of owned planets is greater than 2\n",
+      "(\u00d72)  Number of owned planets is greater than 3\n",
+      "(\u00d72)  Number of owned planets is greater than 4\n",
+      "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Statecraft Expert\n",
+      "(\u00d70)  Number of owned planets is less than 1\n"
     ],
     "is_start_tech": false,
-    "name": "Manifest Destiny"
+    "name": "Interstellar Campaigns"
   },
   {
     "category": "Statecraft",
     "tier": 2,
-    "description": "The administrative needs of a star empire are as numerous as they are complex. We will rise to the occasion.\n\n",
+    "description": "The administrative needs of a star empire are as numerous as they are complex. We will rise to the occasion.",
     "area": "society",
     "prerequisites": [
       "tech_colonial_centralization"
@@ -3865,8 +3672,8 @@
     "cost": 1400,
     "key": "tech_galactic_administration",
     "feature_unlocks": [
-      "Monthly Influence: +1",
-      "Unlocks Government: Advanced Government Forms"
+      "Civic Slots: +1",
+      "Unlocks Building: Empire Capital-Complex"
     ],
     "base_factor": 4.0,
     "base_weight": 70,
@@ -3891,12 +3698,10 @@
     "feature_unlocks": [
       "Unlocks Building: Galactic Stock Exchange"
     ],
-    "base_factor": 1.0,
+    "base_factor": 0.5,
     "base_weight": 65,
     "weight_modifiers": [
       "(\u00d70.25)  None of the following:\n    \u2022   Research Leader (Society):\n        \u2022   Is Statecraft Expert\n    \u2022   Research Leader (Society):\n        \u2022   Is Curator\n",
-      "(\u00d70)  None of the following:\n    \u2022   Has Individualist Ethic\n    \u2022   Has Fanatic Individualist Ethic\n",
-      "(\u00d72)  Has Fanatic Individualist Ethic\n",
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Statecraft Expert\n",
       "(\u00d70)  Number of owned planets is less than 2\n"
     ],
@@ -3906,27 +3711,25 @@
   {
     "category": "Statecraft",
     "tier": 2,
-    "description": "$building_hyper_entertainment_forum_desc$",
+    "description": "Deep-tissue implants are the latest innovation in the revolutionary overlapping of sensory engineering and entertainment experiences. \"Where we're going, we won't need skin to feel!\"",
     "area": "society",
-    "prerequisites": [
-      "tech_colonial_centralization"
-    ],
+    "prerequisites": [],
     "is_dangerous": false,
     "is_rare": true,
     "cost": 1000,
-    "key": "tech_hyper_entertainment_forum",
+    "key": "tech_subdermal_stimulation",
     "feature_unlocks": [
-      "Unlocks Building: Hyper-Entertainment Forum"
+      "Unlocks Feature: Chemical Bliss"
     ],
-    "base_factor": 1.0,
+    "base_factor": 0.5,
     "base_weight": 75,
     "weight_modifiers": [
-      "(\u00d70)  None of the following:\n    \u2022   Has Individualist Ethic\n    \u2022   Has Fanatic Individualist Ethic\n",
-      "(\u00d73)  Any of the following:\n    \u2022   Has Individualist Ethic\n    \u2022   Has Fanatic Individualist Ethic\n",
+      "(\u00d70)  Has Hive-Minded Ethic\n",
+      "(\u00d71.25)  None of the following:\n    \u2022   Has Egalitarian Ethic\n    \u2022   Has Fanatic Egalitarian Ethic\n",
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Statecraft Expert\n"
     ],
     "is_start_tech": false,
-    "name": "Hyper-Entertainment Forum"
+    "name": "Subdermal Stimulation"
   },
   {
     "category": "Statecraft",
@@ -3943,12 +3746,10 @@
     "feature_unlocks": [
       "Unlocks Building: Ministry of Benevolence"
     ],
-    "base_factor": 1.0,
+    "base_factor": 0.5,
     "base_weight": 70,
     "weight_modifiers": [
-      "(\u00d70.5)  None of the following:\n    \u2022   Research Leader (Society):\n        \u2022   Is Statecraft Expert\n    \u2022   Research Leader (Society):\n        \u2022   Is Curator\n",
-      "(\u00d70)  None of the following:\n    \u2022   Has Collectivist Ethic\n    \u2022   Has Fanatic Collectivist Ethic\n",
-      "(\u00d73)  Any of the following:\n    \u2022   Has Collectivist Ethic\n    \u2022   Has Fanatic Collectivist Ethic\n",
+      "(\u00d70.25)  None of the following:\n    \u2022   Research Leader (Society):\n        \u2022   Is Statecraft Expert\n    \u2022   Research Leader (Society):\n        \u2022   Is Curator\n",
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Statecraft Expert\n"
     ],
     "is_start_tech": false,
@@ -3957,7 +3758,34 @@
   {
     "category": "Statecraft",
     "tier": 2,
-    "description": "The Empire lives, the Empire breathes. We may make up its body, but it is not for the left hand to know what the right hand is doing.\n\n",
+    "description": "Multiple administrative strata efficiently surface only the most vital information to the upper levels of government.",
+    "area": "society",
+    "prerequisites": [
+      "tech_colonial_bureaucracy"
+    ],
+    "is_dangerous": false,
+    "is_rare": false,
+    "cost": 1800,
+    "key": "tech_galactic_bureaucracy",
+    "feature_unlocks": [
+      "Core Sector Systems: +1"
+    ],
+    "base_factor": 1.0,
+    "base_weight": 65,
+    "weight_modifiers": [
+      "(\u00d70)  Number of owned planets is less than 2\n",
+      "(\u00d71.5)  Number of owned planets is greater than 2\n",
+      "(\u00d71.5)  Number of owned planets is greater than 3\n",
+      "(\u00d71.5)  Number of owned planets is greater than 4\n",
+      "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Statecraft Expert\n"
+    ],
+    "is_start_tech": false,
+    "name": "Galactic Bureaucracy"
+  },
+  {
+    "category": "Statecraft",
+    "tier": 2,
+    "description": "The Empire lives, the Empire breathes. We may make up its body, but it is not for the left hand to know what the right hand is doing.",
     "area": "society",
     "prerequisites": [
       "tech_colonial_centralization"
@@ -3969,7 +3797,7 @@
     "feature_unlocks": [
       "Empire Leader Capacity: +2",
       "Leader Recruitment Cost: -20%",
-      "Unlocks Edict: Social Welfare Programs"
+      "Max Influence from Factions: +1"
     ],
     "base_factor": 1.0,
     "base_weight": 70,
@@ -3978,7 +3806,7 @@
       "(\u00d71.5)  Number of owned planets is greater than 5\n",
       "(\u00d71.5)  Number of owned planets is greater than 6\n",
       "(\u00d71.5)  Number of owned planets is greater than 7\n",
-      "(\u00d71.25)  Any of the following:\n    \u2022   Has Collectivist Ethic\n    \u2022   Has Fanatic Collectivist Ethic\n",
+      "(\u00d71.25)  Any of the following:\n    \u2022   Has Authoritarian Ethic\n    \u2022   Has Fanatic Authoritarian Ethic\n",
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Statecraft Expert\n"
     ],
     "is_start_tech": false,
@@ -3987,7 +3815,7 @@
   {
     "category": "Statecraft",
     "tier": 2,
-    "description": "It is circumstance that dictate what is moral. Define the circumstances, and ethics is like clay in your hands.",
+    "description": "It is circumstance that dictates what is moral. Define the circumstances, and ethics is like clay in your hands.",
     "area": "society",
     "prerequisites": [],
     "is_dangerous": false,
@@ -4033,6 +3861,105 @@
   },
   {
     "category": "Statecraft",
+    "tier": 2,
+    "description": "Not all research into faster-than-light communication channels produces useful results, but some outcomes may find new purpose in bringing our people together.",
+    "area": "society",
+    "prerequisites": [
+      "tech_heritage_site",
+      "tech_colonial_centralization"
+    ],
+    "is_dangerous": false,
+    "is_rare": false,
+    "cost": 1000,
+    "key": "tech_hypercomms_forum",
+    "feature_unlocks": [
+      "Unlocks Building: Hypercomms Forum"
+    ],
+    "base_factor": 1.0,
+    "base_weight": 75,
+    "weight_modifiers": [
+      "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Statecraft Expert\n"
+    ],
+    "is_start_tech": false,
+    "name": "Local Hypercommunication"
+  },
+  {
+    "category": "Statecraft",
+    "tier": 2,
+    "description": "Continuous, asynchronous analysis of disparate data sets allows for the accurate modeling of hitherto-unpredictable fluctuations in social currents.",
+    "area": "society",
+    "prerequisites": [
+      "tech_hypercomms_forum",
+      "tech_administrative_ai",
+      "tech_galactic_administration"
+    ],
+    "is_dangerous": false,
+    "is_rare": false,
+    "cost": 2200,
+    "key": "tech_autocurating_vault",
+    "feature_unlocks": [
+      "Unlocks Building: Auto-Curating Vault"
+    ],
+    "base_factor": 1.0,
+    "base_weight": 60,
+    "weight_modifiers": [
+      "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Statecraft Expert\n"
+    ],
+    "is_start_tech": false,
+    "name": "Automated Curation Algorithms"
+  },
+  {
+    "category": "Statecraft",
+    "tier": 2,
+    "description": "Seeing is believing, and belief begets reality.",
+    "area": "society",
+    "prerequisites": [
+      "tech_cultural_heritage",
+      "tech_colonial_centralization"
+    ],
+    "is_dangerous": false,
+    "is_rare": false,
+    "cost": 1000,
+    "key": "tech_holographic_rituals",
+    "feature_unlocks": [
+      "Unlocks Building: Holotemple"
+    ],
+    "base_factor": 1.0,
+    "base_weight": 75,
+    "weight_modifiers": [
+      "(\u00d70)  None of the following:\n    \u2022   Has Spiritualist Ethic\n    \u2022   Has Fanatic Spiritualist Ethic\n",
+      "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Statecraft Expert\n"
+    ],
+    "is_start_tech": false,
+    "name": "Holographic Rituals"
+  },
+  {
+    "category": "Statecraft",
+    "tier": 2,
+    "description": "Leaving our planetary cradle has opened us up to a new understanding of faith, and its place in a wider context.",
+    "area": "society",
+    "prerequisites": [
+      "tech_holographic_rituals",
+      "tech_galactic_administration"
+    ],
+    "is_dangerous": false,
+    "is_rare": false,
+    "cost": 2200,
+    "key": "tech_transcendent_faith",
+    "feature_unlocks": [
+      "Unlocks Building: Citadel of Faith"
+    ],
+    "base_factor": 1.0,
+    "base_weight": 60,
+    "weight_modifiers": [
+      "(\u00d70)  None of the following:\n    \u2022   Has Spiritualist Ethic\n    \u2022   Has Fanatic Spiritualist Ethic\n",
+      "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Statecraft Expert\n"
+    ],
+    "is_start_tech": false,
+    "name": "Metacognitive Faith"
+  },
+  {
+    "category": "Statecraft",
     "tier": 3,
     "description": "A set of social protocols based on paradoxical intuition, and on love. When we know the System of the Loop, we learn that we can influence by receiving instructions, as well as giving them.",
     "area": "society",
@@ -4055,7 +3982,7 @@
   {
     "category": "Biology",
     "tier": 3,
-    "description": "Transgenic crops offer the nutritional elements of several standard food crops in one convenient package.\n\n",
+    "description": "Transgenic crops offer the nutritional elements of several standard food crops in one convenient package.",
     "area": "society",
     "prerequisites": [
       "tech_gene_crops"
@@ -4076,7 +4003,7 @@
   {
     "category": "Statecraft",
     "tier": 3,
-    "description": "Improved FTL communication channels allow for more coherent administrative direction.\n\n",
+    "description": "Improved FTL communication channels allow for more coherent administrative direction.",
     "area": "society",
     "prerequisites": [
       "tech_adaptive_bureaucracy"
@@ -4097,10 +4024,10 @@
   {
     "category": "Statecraft",
     "tier": 3,
-    "description": "Restructuring the managerial web linking core worlds to the capital can help alleviate the administrative stressors and information chokepoints that frequently arise within a budding empire.\n\n",
+    "description": "Restructuring the managerial web linking core worlds to the capital can help alleviate the administrative stressors and information chokepoints that frequently arise within a budding empire.",
     "area": "society",
     "prerequisites": [
-      "tech_adaptive_bureaucracy"
+      "tech_galactic_bureaucracy"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -4118,7 +4045,7 @@
   {
     "category": "Statecraft",
     "tier": 3,
-    "description": "The concept of managing individuals as resources within larger systems of production must, by necessity, become more flexible as the potential natures of the managed individuals grow ever more numerous.\n\n",
+    "description": "The concept of managing individuals as resources within larger systems of production must, by necessity, become more flexible as the potential natures of the managed individuals grow ever more numerous.",
     "area": "society",
     "prerequisites": [
       "tech_adaptive_bureaucracy"
@@ -4160,7 +4087,7 @@
   {
     "category": "Statecraft",
     "tier": 3,
-    "description": "More aggressive information campaigns improve the populace's receptiveness to Edicts.\n\n",
+    "description": "More aggressive information campaigns improve the populace's receptiveness to Edicts.",
     "area": "society",
     "prerequisites": [
       "tech_artificial_moral_codes"
@@ -4181,7 +4108,7 @@
   {
     "category": "Military Theory",
     "tier": 3,
-    "description": "Iterating on the standard conditioning regimen for ground troops has proven to make them more effective in direct combat.\n\n",
+    "description": "Iterating on the standard conditioning regimen for ground troops has proven to make them more effective in direct combat.",
     "area": "society",
     "prerequisites": [
       "tech_combat_training"
@@ -4202,7 +4129,7 @@
   {
     "category": "Military Theory",
     "tier": 3,
-    "description": "Careful tuning of pain receptors allow soldiers to fight through what would previously have been debilitating injuries.\n\n",
+    "description": "Careful tuning of pain receptors allow soldiers to fight through what would previously have been debilitating injuries.",
     "area": "society",
     "prerequisites": [
       "tech_combat_training"
@@ -4223,7 +4150,7 @@
   {
     "category": "Biology",
     "tier": 3,
-    "description": "Regimens of periodic cell revitalization treatments keep the leader class spry and active beyond traditionally expected lifespans.\n\n",
+    "description": "Regimens of periodic cell revitalization treatments keep the leader class spry and active beyond traditionally expected lifespans.",
     "area": "society",
     "prerequisites": [
       "tech_vitality_boosters"
@@ -4240,27 +4167,6 @@
     "weight_modifiers": [],
     "is_start_tech": false,
     "name": "Cell Revitalization"
-  },
-  {
-    "category": "Statecraft",
-    "tier": 3,
-    "description": "Unencoded broadcasts signaling our claims on nearby systems are a basic but effective foreign policy tool.\n\n",
-    "area": "society",
-    "prerequisites": [
-      "tech_galactic_ambitions"
-    ],
-    "is_dangerous": false,
-    "is_rare": false,
-    "cost": 3000,
-    "key": "tech_repeatable_improved_border_range",
-    "feature_unlocks": [
-      "Border Range: +10%"
-    ],
-    "base_factor": 0.5,
-    "base_weight": 25,
-    "weight_modifiers": [],
-    "is_start_tech": false,
-    "name": "Propaganda Transmissions"
   },
   {
     "category": "Biology",
@@ -4287,7 +4193,7 @@
   {
     "category": "Biology",
     "tier": 3,
-    "description": "The process of synthetically replicating crops requires a lot of collected waste to create a small amount of produce, but nevertheless provides a significant boost to agricultural output.\n\n",
+    "description": "The process of synthetically replicating crops requires a lot of collected waste to create a small amount of produce, but nevertheless provides a significant boost to agricultural output.",
     "area": "society",
     "prerequisites": [
       "tech_nano_vitality_crops"
@@ -4297,7 +4203,7 @@
     "cost": 5000,
     "key": "tech_nutrient_replication",
     "feature_unlocks": [
-      "Food: +25%"
+      "Food: +15%"
     ],
     "base_factor": 1.0,
     "base_weight": 40,
@@ -4312,7 +4218,7 @@
   {
     "category": "Biology",
     "tier": 3,
-    "description": "Having the opportunity to study the multitudes of life lets us find some common ground for all living beings. The foundational building blocks of life.\n\n",
+    "description": "Having the opportunity to study the multitudes of life lets us find some common ground for all living beings. The foundational building blocks of life.",
     "area": "society",
     "prerequisites": [
       "tech_biolab_2",
@@ -4341,7 +4247,7 @@
   {
     "category": "New Worlds",
     "tier": 3,
-    "description": "Extensive study into different soil types and their ability to support crops will help improve the living conditions of our settlers on foreign worlds.\n\n",
+    "description": "Extensive study into different soil types and their ability to support crops will help improve the living conditions of our settlers on foreign worlds.",
     "area": "society",
     "prerequisites": [
       "tech_colonization_3"
@@ -4364,7 +4270,7 @@
   {
     "category": "New Worlds",
     "tier": 3,
-    "description": "Additonal study into different planetary climates will allow us to settle our population on worlds previously thought too hostile to support them.\n\n",
+    "description": "Additonal study into different planetary climates will allow us to settle our population on worlds previously thought too hostile to support them.",
     "area": "society",
     "prerequisites": [
       "tech_colonization_4"
@@ -4387,7 +4293,7 @@
   {
     "category": "New Worlds",
     "tier": 3,
-    "description": "By advancing our understanding of atmopsheric manipulation, we will be able to terraform even the most ecologically devastated worlds.\n\n",
+    "description": "By advancing our understanding of atmopsheric manipulation, we will be able to terraform even the most ecologically devastated worlds.",
     "area": "society",
     "prerequisites": [
       "tech_atmospheric_manipulation"
@@ -4410,7 +4316,7 @@
   {
     "category": "New Worlds",
     "tier": 3,
-    "description": "The creation of Gaia planets, worlds eminently suitable to almost all forms of life, is the ultimate proof of a species' mastery in the art of terraforming.\n\n",
+    "description": "The creation of Gaia planets, worlds eminently suitable to almost all forms of life, is the ultimate proof of a species' mastery in the art of terraforming.",
     "area": "society",
     "prerequisites": [
       "tech_climate_restoration"
@@ -4433,7 +4339,7 @@
   {
     "category": "Biology",
     "tier": 3,
-    "description": "Nucleotide purification techniques allow for the isolation and refinement of particularly desirable genetic traits.\n\n",
+    "description": "Nucleotide purification techniques allow for the isolation and refinement of particularly desirable genetic traits.",
     "area": "society",
     "prerequisites": [
       "tech_gene_tailoring"
@@ -4448,6 +4354,7 @@
     "base_factor": 1.0,
     "base_weight": 45,
     "weight_modifiers": [
+      "(\u00d70)  Host does has the Utopia DLC\n",
       "(\u00d70.65)  Has Fanatic Pacifist Ethic\n",
       "(\u00d70.8)  Has Pacifist Ethic\n",
       "(\u00d71.25)  Has Militarist Ethic\n",
@@ -4463,7 +4370,7 @@
   {
     "category": "Biology",
     "tier": 3,
-    "description": "Stricter control of RNA and protein production on the cellular level.\n\n",
+    "description": "Stricter control of RNA and protein production on the cellular level.",
     "area": "society",
     "prerequisites": [
       "tech_gene_tailoring"
@@ -4480,8 +4387,8 @@
     "weight_modifiers": [
       "(\u00d70.5)  None of the following:\n    \u2022   Research Leader (Society):\n        \u2022   Is Biology Expert\n    \u2022   Research Leader (Society):\n        \u2022   Is Curator\n",
       "(\u00d71.5)  Research Leader (Society):\n    \u2022   Is Spark of Genius\n",
-      "(\u00d71.5)  Any of the following:\n    \u2022   Has Collectivist Ethic\n    \u2022   Has Fanatic Collectivist Ethic\n",
-      "(\u00d70.1)  Any of the following:\n    \u2022   Has Individualist Ethic\n    \u2022   Has Fanatic Individualist Ethic\n"
+      "(\u00d71.5)  Any of the following:\n    \u2022   Has Authoritarian Ethic\n    \u2022   Has Fanatic Authoritarian Ethic\n",
+      "(\u00d70.1)  Any of the following:\n    \u2022   Has Egalitarian Ethic\n    \u2022   Has Fanatic Egalitarian Ethic\n"
     ],
     "is_start_tech": false,
     "name": "Targeted Gene Expressions"
@@ -4489,7 +4396,7 @@
   {
     "category": "Biology",
     "tier": 3,
-    "description": "We leave nothing to chance, no matter the cost. Through exacting curation of DNA banks do we build the leaders of tomorrow.\n\n",
+    "description": "We leave nothing to chance, no matter the cost. Through exacting curation of DNA banks do we build the leaders of tomorrow.",
     "area": "society",
     "prerequisites": [
       "tech_selected_lineages"
@@ -4505,6 +4412,9 @@
     "base_weight": 45,
     "weight_modifiers": [
       "(\u00d70.1)  None of the following:\n    \u2022   Research Leader (Society):\n        \u2022   Is Biology Expert\n    \u2022   Research Leader (Society):\n        \u2022   Is Curator\n",
+      "(\u00d70)  Any of the following:\n    \u2022   Has Egalitarian Ethic\n    \u2022   Has Fanatic Egalitarian Ethic\n",
+      "(\u00d71.1)  Has Authoritarian Ethic\n",
+      "(\u00d71.25)  Has Fanatic Authoritarian Ethic\n",
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Spark of Genius\n",
       "(\u00d71.5)  Research Leader (Society):\n    \u2022   Skill level is greater than 4\n",
       "(\u00d70.75)  NOT Research Leader (Society):\n    \u2022   Skill level is greater than 2\n"
@@ -4515,7 +4425,7 @@
   {
     "category": "Military Theory",
     "tier": 3,
-    "description": "Gradual adaptation to the realities of deep-space combat allows us to effectively coordinate larger maneuvers.\n\n",
+    "description": "Gradual adaptation to the realities of deep-space combat allows us to effectively coordinate larger maneuvers.",
     "area": "society",
     "prerequisites": [
       "tech_doctrine_fleet_size_4"
@@ -4542,7 +4452,7 @@
   {
     "category": "Psionics",
     "tier": 3,
-    "description": "Once fully adapted to the basics of Psionics, the mind is capable of connecting to other individuals, becoming something greater.\n\n",
+    "description": "Once fully adapted to the basics of Psionics, the mind is capable of connecting to other individuals, becoming something greater.",
     "area": "society",
     "prerequisites": [
       "tech_psionic_theory"
@@ -4557,6 +4467,7 @@
     "base_factor": 1.0,
     "base_weight": 50,
     "weight_modifiers": [
+      "(\u00d70)  Host does has the Utopia DLC\n",
       "(\u00d70.5)  NOT Research Leader (Society):\n    \u2022   Is Psionics Expert\n",
       "(\u00d71.1)  Research Leader (Society):\n    \u2022   Skill level is greater than 2\n    \u2022   Is Psionics Expert\n",
       "(\u00d71.5)  Research Leader (Society):\n    \u2022   Skill level is greater than 3\n    \u2022   Is Psionics Expert\n",
@@ -4571,7 +4482,7 @@
   {
     "category": "Psionics",
     "tier": 3,
-    "description": "Advances in the field of Psionics suggest the possibility of creating combat computers capable of reading and analysing the impulses of telepathic operatives before they are cognitively processed.\n\n",
+    "description": "Advances in the field of Psionics suggest the possibility of creating combat computers capable of reading and analysing the impulses of telepathic operatives before they are cognitively processed.",
     "area": "society",
     "prerequisites": [
       "tech_telepathy"
@@ -4586,6 +4497,7 @@
     "base_factor": 1.0,
     "base_weight": 50,
     "weight_modifiers": [
+      "(\u00d70)  Host does has the Utopia DLC\n",
       "(\u00d70.5)  NOT Research Leader (Society):\n    \u2022   Is Psionics Expert\n",
       "(\u00d71.1)  Research Leader (Society):\n    \u2022   Skill level is greater than 2\n    \u2022   Is Psionics Expert\n",
       "(\u00d71.5)  Research Leader (Society):\n    \u2022   Skill level is greater than 3\n    \u2022   Is Psionics Expert\n",
@@ -4600,7 +4512,7 @@
   {
     "category": "Psionics",
     "tier": 3,
-    "description": "The Psi Jump Drive harnesses the psi energies emitted by the crew to force the vessel through the very fabric of reality, instantly \"jumping\" vast distances.\n\n",
+    "description": "The Psi Jump Drive harnesses the psi energies emitted by the crew to force the vessel through the very fabric of reality, instantly \"jumping\" vast distances.",
     "area": "society",
     "prerequisites": [
       "tech_precognition_interface"
@@ -4610,11 +4522,12 @@
     "cost": 6000,
     "key": "tech_psi_jump_drive_1",
     "feature_unlocks": [
-      "Unlocks Component: Psi Jump Drive I"
+      "Unlocks Component: Psi Jump Drive"
     ],
     "base_factor": 0.1,
     "base_weight": 35,
     "weight_modifiers": [
+      "(\u00d70)  Host does has the Utopia DLC\n",
       "(\u00d70.1)  None of the following:\n    \u2022   Research Leader (Society):\n        \u2022   Is Psionics Expert\n    \u2022   Research Leader (Physics):\n        \u2022   Is Curator\n    \u2022   Research Leader (Physics):\n        \u2022   Is Spark of Genius\n    \u2022   Research Leader (Physics):\n        \u2022   Is Maniacal\n"
     ],
     "is_start_tech": false,
@@ -4623,7 +4536,34 @@
   {
     "category": "Statecraft",
     "tier": 3,
-    "description": "Finding aspects of the self within the group is natural and inevitable; eventually those shared aspects must be valued higher than individual identities.\n\n",
+    "description": "Further improvements to administration grant an extended power projection across the stars, and the military clout needed to enforce our demands.",
+    "area": "society",
+    "prerequisites": [
+      "tech_interstellar_campaigns"
+    ],
+    "is_dangerous": false,
+    "is_rare": false,
+    "cost": 3000,
+    "key": "tech_galactic_campaigns",
+    "feature_unlocks": [
+      "Unlocks Feature: Cheaper War Demands"
+    ],
+    "base_factor": 1.0,
+    "base_weight": 50,
+    "weight_modifiers": [
+      "(\u00d72)  Number of owned planets is greater than 2\n",
+      "(\u00d72)  Number of owned planets is greater than 3\n",
+      "(\u00d72)  Number of owned planets is greater than 4\n",
+      "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Statecraft Expert\n",
+      "(\u00d70)  Number of owned planets is less than 1\n"
+    ],
+    "is_start_tech": false,
+    "name": "Galactic Campaigns"
+  },
+  {
+    "category": "Statecraft",
+    "tier": 3,
+    "description": "Finding aspects of the self within the group is natural and inevitable; eventually those shared aspects must be valued higher than individual identities.",
     "area": "society",
     "prerequisites": [
       "tech_living_state"
@@ -4634,7 +4574,8 @@
     "key": "tech_collective_self",
     "feature_unlocks": [
       "Empire Leader Capacity: +2",
-      "Leader Recruitment Cost: -10%"
+      "Leader Recruitment Cost: -20%",
+      "Max Influence from Factions: +1"
     ],
     "base_factor": 1.0,
     "base_weight": 45,
@@ -4643,9 +4584,9 @@
       "(\u00d71.5)  Number of owned planets is greater than 8\n",
       "(\u00d71.5)  Number of owned planets is greater than 9\n",
       "(\u00d71.5)  Number of owned planets is greater than 10\n",
-      "(\u00d71.5)  Any of the following:\n    \u2022   Has Collectivist Ethic\n    \u2022   Has Fanatic Collectivist Ethic\n",
+      "(\u00d71.5)  Any of the following:\n    \u2022   Has Authoritarian Ethic\n    \u2022   Has Fanatic Authoritarian Ethic\n",
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Statecraft Expert\n",
-      "(\u00d70)  Any of the following:\n    \u2022   Has Individualist Ethic\n    \u2022   Has Fanatic Individualist Ethic\n"
+      "(\u00d70)  Any of the following:\n    \u2022   Has Egalitarian Ethic\n    \u2022   Has Fanatic Egalitarian Ethic\n"
     ],
     "is_start_tech": false,
     "name": "The Collective Self"
@@ -4701,7 +4642,7 @@
   {
     "category": "Voidcraft",
     "tier": 0,
-    "description": "The invasion of another world is a staggering enterprise. There are immense logistical challenges that must be overcome before we can muster our first interplanetary armies.\n\n",
+    "description": "The invasion of another world is a staggering enterprise. There are immense logistical challenges that must be overcome before we can muster our first interplanetary armies.",
     "area": "engineering",
     "prerequisites": [
       "tech_defense_army"
@@ -4722,7 +4663,7 @@
   {
     "category": "Rocketry",
     "tier": 0,
-    "description": "Simple yet moderately effective chemical thrusters that rely on combustible propellant to function.\n\n",
+    "description": "Simple yet moderately effective chemical thrusters that rely on combustible propellant to function.",
     "area": "engineering",
     "prerequisites": [],
     "is_dangerous": false,
@@ -4741,7 +4682,7 @@
   {
     "category": "Voidcraft",
     "tier": 0,
-    "description": "This will enable the construction of defensive deep space platforms far from the gravity wells of a planetary body.\n\n",
+    "description": "This will enable the construction of defensive deep space platforms far from the gravity wells of a planetary body.",
     "area": "engineering",
     "prerequisites": [
       "tech_space_construction"
@@ -4760,7 +4701,7 @@
   {
     "category": "Industry",
     "tier": 0,
-    "description": "The basic industrial infrastructure that is required to become a spacefaring civilization.\n\n",
+    "description": "The basic industrial infrastructure that is required to become a spacefaring civilization.",
     "area": "engineering",
     "prerequisites": [],
     "is_dangerous": false,
@@ -4779,7 +4720,7 @@
   {
     "category": "Industry",
     "tier": 0,
-    "description": "Construction in space presents our engineers with new design challenges that must be solved before we can build orbital stations above other worlds.\n\n",
+    "description": "Construction in space presents our engineers with new design challenges that must be solved before we can build orbital stations above other worlds.",
     "area": "engineering",
     "prerequisites": [],
     "is_dangerous": false,
@@ -4860,7 +4801,7 @@
   {
     "category": "Materials",
     "tier": 1,
-    "description": "Reinforced nanocomposite hull plating can provide an extra layer of protection that could be the difference between life and death in a combat situation.\n\n",
+    "description": "Reinforced nanocomposite hull plating can provide an extra layer of protection that could be the difference between life and death in a combat situation.",
     "area": "engineering",
     "prerequisites": [
       "tech_spaceport_1"
@@ -4885,7 +4826,7 @@
   {
     "category": "Materials",
     "tier": 1,
-    "description": "A combination of different metals and ceramics that result in a strong armor without sacrificing flexibility.\n\n",
+    "description": "A combination of different metals and ceramics that result in a strong armor without sacrificing flexibility.",
     "area": "engineering",
     "prerequisites": [
       "tech_ship_armor_1"
@@ -4910,7 +4851,7 @@
   {
     "category": "Materials",
     "tier": 1,
-    "description": "By infusing armor plating with Crystalline matter we are able to further increase the durability of our ships' protective hulls.\n\n",
+    "description": "By infusing armor plating with Crystalline matter we are able to further increase the durability of our ships' protective hulls.",
     "area": "engineering",
     "prerequisites": [],
     "is_dangerous": false,
@@ -4931,7 +4872,7 @@
   {
     "category": "Rocketry",
     "tier": 1,
-    "description": "These electric thrusters use beams of ions to generate thrust without the need for propellant.\n\n",
+    "description": "These electric thrusters use beams of ions to generate thrust without the need for propellant.",
     "area": "engineering",
     "prerequisites": [
       "tech_thrusters_1"
@@ -4956,7 +4897,7 @@
   {
     "category": "Industry",
     "tier": 1,
-    "description": "Wearing a powered exoskeleton suit augments the user's strength and speed. The military applications are obvious, but it will also increase labor efficiency.\n\n",
+    "description": "Wearing a powered exoskeleton suit augments the user's strength and speed. The military applications are obvious, but it will also increase labor efficiency.",
     "area": "engineering",
     "prerequisites": [
       "tech_basic_industry"
@@ -4980,7 +4921,7 @@
   {
     "category": "Industry",
     "tier": 1,
-    "description": "New fracking techniques will allow us to tap into previously unattainable pockets of geothermal resources deep beneath the planet's crust.\n\n",
+    "description": "New fracking techniques will allow us to tap into previously unattainable pockets of geothermal resources deep beneath the planet's crust.",
     "area": "engineering",
     "prerequisites": [
       "tech_basic_industry"
@@ -5057,7 +4998,7 @@
   {
     "category": "Industry",
     "tier": 1,
-    "description": "These robotic work units are perfect for menial labor tasks. They are hard-working and capable of following simple vocal instructions, but should not be expected to climb stairs.\n\n",
+    "description": "These robotic work units are perfect for menial labor tasks. They are hard-working and capable of following simple vocal instructions, but should not be expected to climb stairs.",
     "area": "engineering",
     "prerequisites": [
       "tech_powered_exoskeletons"
@@ -5072,17 +5013,39 @@
     "base_factor": 1.5,
     "base_weight": 90,
     "weight_modifiers": [
-      "(\u00d70.2)  Has Spiritualist Ethic\n",
-      "(\u00d70.1)  Has Fanatic Spiritualist Ethic\n",
+      "(\u00d70)  Any of the following:\n    \u2022   Has Spiritualist Ethic\n    \u2022   Has Fanatic Spiritualist Ethic\n    \u2022   Has Hive-Minded Ethic\n",
       "(\u00d71.25)  Research Leader (Engineering):\n    \u2022   Is Industry Expert\n"
     ],
     "is_start_tech": false,
     "name": "Robotic Workers"
   },
   {
+    "category": "Industry",
+    "tier": 1,
+    "description": "",
+    "area": "engineering",
+    "prerequisites": [
+      "tech_engineering_lab_1"
+    ],
+    "is_dangerous": false,
+    "is_rare": false,
+    "cost": 600,
+    "key": "tech_assembly_pattern",
+    "feature_unlocks": [
+      "Building Build Speed: +25%"
+    ],
+    "base_factor": 1.0,
+    "base_weight": 90,
+    "weight_modifiers": [
+      "(\u00d71.25)  Any of the following:\n    \u2022   Has Militarist Ethic\n    \u2022   Has Fanatic Militarist Ethic\n"
+    ],
+    "is_start_tech": false,
+    "name": "Assembly Patterns"
+  },
+  {
     "category": "Materials",
     "tier": 1,
-    "description": "Coilguns are more powerful versions of the early mass drivers, using electromagnetic coils to rapidly accelerate projectiles towards targets.\n\n",
+    "description": "Coilguns are more powerful versions of the early mass drivers, using electromagnetic coils to rapidly accelerate projectiles towards targets.",
     "area": "engineering",
     "prerequisites": [
       "tech_mass_drivers_1"
@@ -5099,8 +5062,6 @@
     "base_factor": 1.0,
     "base_weight": 90,
     "weight_modifiers": [
-      "(\u00d70.65)  Has Fanatic Pacifist Ethic\n",
-      "(\u00d70.8)  Has Pacifist Ethic\n",
       "(\u00d71.25)  Has Militarist Ethic\n",
       "(\u00d71.5)  Has Fanatic Militarist Ethic\n",
       "(\u00d71.25)  Research Leader (Physics):\n    \u2022   Is Materials Expert\n"
@@ -5111,7 +5072,7 @@
   {
     "category": "Rocketry",
     "tier": 1,
-    "description": "Space-to-space missiles equipped with high-yield nuclear warheads. Although based on old pre-space technology, these crude fire-and-forget weapons can be surprisingly effective at range.\n\n",
+    "description": "Space-to-space missiles equipped with high-yield nuclear warheads. Although based on old pre-space technology, these crude fire-and-forget weapons can be surprisingly effective at range.",
     "area": "engineering",
     "prerequisites": [],
     "is_dangerous": false,
@@ -5127,8 +5088,6 @@
     "base_factor": 0.5,
     "base_weight": 100,
     "weight_modifiers": [
-      "(\u00d70.65)  Has Fanatic Pacifist Ethic\n",
-      "(\u00d70.8)  Has Pacifist Ethic\n",
       "(\u00d71.25)  Has Militarist Ethic\n",
       "(\u00d71.5)  Has Fanatic Militarist Ethic\n",
       "(\u00d71.25)  Research Leader (Physics):\n    \u2022   Is Rocketry Expert\n"
@@ -5139,7 +5098,7 @@
   {
     "category": "Rocketry",
     "tier": 1,
-    "description": "These updated space-to-space missiles have more powerful fusion warheads and improved flight performance.\n\n",
+    "description": "These updated space-to-space missiles have more powerful fusion warheads and improved flight performance.",
     "area": "engineering",
     "prerequisites": [
       "tech_missiles_1"
@@ -5156,8 +5115,6 @@
     "base_factor": 1.0,
     "base_weight": 90,
     "weight_modifiers": [
-      "(\u00d70.65)  Has Fanatic Pacifist Ethic\n",
-      "(\u00d70.8)  Has Pacifist Ethic\n",
       "(\u00d71.25)  Has Militarist Ethic\n",
       "(\u00d71.5)  Has Fanatic Militarist Ethic\n",
       "(\u00d71.25)  Research Leader (Physics):\n    \u2022   Is Rocketry Expert\n"
@@ -5168,7 +5125,7 @@
   {
     "category": "Rocketry",
     "tier": 1,
-    "description": "These torpedoes are essentially very large, slow-moving missiles. They are equipped with more powerful warheads and shield modulators that let them slip unmolested through energy screens.\n\n",
+    "description": "These torpedoes are essentially very large, slow-moving missiles. They are equipped with more powerful warheads and shield modulators that let them slip unmolested through energy screens.",
     "area": "engineering",
     "prerequisites": [
       "tech_missiles_2"
@@ -5183,8 +5140,6 @@
     "base_factor": 1.0,
     "base_weight": 95,
     "weight_modifiers": [
-      "(\u00d70.65)  Has Fanatic Pacifist Ethic\n",
-      "(\u00d70.8)  Has Pacifist Ethic\n",
       "(\u00d71.25)  Has Militarist Ethic\n",
       "(\u00d71.5)  Has Fanatic Militarist Ethic\n",
       "(\u00d71.25)  Research Leader (Physics):\n    \u2022   Is Rocketry Expert\n"
@@ -5211,7 +5166,7 @@
     "base_weight": 90,
     "weight_modifiers": [
       "(\u00d72)  Research Leader (Engineering):\n    \u2022   Is Materials Expert\n",
-      "(\u00d70)  None of the following:\n    \u2022   Any System within Borders:\n        \u2022   Is in a resource_cluster_0 Cluster\n    \u2022   Any Country:\n        \u2022   All of the following:\n            \u2022   Has communications with your Empire\n            \u2022   Has Garanthium Mining Technology\n"
+      "(\u00d70)  None of the following:\n    \u2022   Any System within Borders:\n        \u2022   Is in a resource_cluster_0 Cluster\n    \u2022   Any Relation:\n        \u2022   All of the following:\n            \u2022   Has communications with your Empire\n            \u2022   Has Garanthium Mining Technology\n"
     ],
     "is_start_tech": false,
     "name": "Garanthium Mining"
@@ -5235,7 +5190,7 @@
     "base_weight": 90,
     "weight_modifiers": [
       "(\u00d72)  Research Leader (Engineering):\n    \u2022   Is Materials Expert\n",
-      "(\u00d70)  None of the following:\n    \u2022   Any System within Borders:\n        \u2022   Is in a resource_cluster_3 Cluster\n    \u2022   Any Country:\n        \u2022   All of the following:\n            \u2022   Has communications with your Empire\n            \u2022   Has Teldar Crystal Mining Technology\n"
+      "(\u00d70)  None of the following:\n    \u2022   Any System within Borders:\n        \u2022   Is in a resource_cluster_3 Cluster\n    \u2022   Any Relation:\n        \u2022   All of the following:\n            \u2022   Has communications with your Empire\n            \u2022   Has Teldar Crystal Mining Technology\n"
     ],
     "is_start_tech": false,
     "name": "Teldar Crystal Mining"
@@ -5243,7 +5198,31 @@
   {
     "category": "Materials",
     "tier": 1,
-    "description": "Stabilization beams allow relatively safe extraction of volatile Orillium ores.\n\n",
+    "description": "Yurantic crystals have rare reflective properties that enhance the effectiveness of energy weapons.",
+    "area": "engineering",
+    "prerequisites": [
+      "tech_mineral_processing_1"
+    ],
+    "is_dangerous": false,
+    "is_rare": false,
+    "cost": 600,
+    "key": "tech_mine_yuranic",
+    "feature_unlocks": [
+      "Reveals Resource: Yurantic Crystals ([[sr_yuranic]])"
+    ],
+    "base_factor": 2.0,
+    "base_weight": 90,
+    "weight_modifiers": [
+      "(\u00d72)  Research Leader (Engineering):\n    \u2022   Is Materials Expert\n",
+      "(\u00d70)  None of the following:\n    \u2022   Any System within Borders:\n        \u2022   Is in a resource_cluster_4 Cluster\n    \u2022   Any Relation:\n        \u2022   All of the following:\n            \u2022   Has communications with your Empire\n            \u2022   Has Teldar Crystal Mining Technology\n"
+    ],
+    "is_start_tech": false,
+    "name": "Yurantic Crystal Mining"
+  },
+  {
+    "category": "Materials",
+    "tier": 1,
+    "description": "Stabilization beams allow relatively safe extraction of volatile Orillium ores.",
     "area": "engineering",
     "prerequisites": [
       "tech_mineral_processing_1"
@@ -5259,7 +5238,7 @@
     "base_weight": 90,
     "weight_modifiers": [
       "(\u00d72)  Research Leader (Engineering):\n    \u2022   Is Materials Expert\n",
-      "(\u00d70)  None of the following:\n    \u2022   Any System within Borders:\n        \u2022   Is in a resource_cluster_5 Cluster\n    \u2022   Any Country:\n        \u2022   All of the following:\n            \u2022   Has communications with your Empire\n            \u2022   Has Orillium Mining Technology\n"
+      "(\u00d70)  None of the following:\n    \u2022   Any System within Borders:\n        \u2022   Is in a resource_cluster_5 Cluster\n    \u2022   Any Relation:\n        \u2022   All of the following:\n            \u2022   Has communications with your Empire\n            \u2022   Has Orillium Mining Technology\n"
     ],
     "is_start_tech": false,
     "name": "Orillium Mining"
@@ -5277,7 +5256,7 @@
     "cost": 360,
     "key": "tech_mine_betharian",
     "feature_unlocks": [
-      "Unlocks Building: Betharian Power Plant I"
+      "Unlocks Building: Betharian Power Plant"
     ],
     "base_factor": 2.0,
     "base_weight": 100,
@@ -5350,7 +5329,7 @@
   {
     "category": "Voidcraft",
     "tier": 2,
-    "description": "Establishing new standards for the modeling and construction of cruisers greatly improves the efficiency of the production pipeline.\n\n",
+    "description": "Establishing new standards for the modeling and construction of cruisers greatly improves the efficiency of the production pipeline.",
     "area": "engineering",
     "prerequisites": [
       "tech_spaceport_5"
@@ -5373,7 +5352,7 @@
   {
     "category": "Voidcraft",
     "tier": 2,
-    "description": "Establishing new standards for how we design and construct massive battleships greatly improves the speed at which they can be assembled.\n\n",
+    "description": "Establishing new standards for how we design and construct massive battleships greatly improves the speed at which they can be assembled.",
     "area": "engineering",
     "prerequisites": [
       "tech_spaceport_6"
@@ -5396,7 +5375,7 @@
   {
     "category": "Voidcraft",
     "tier": 2,
-    "description": "These manned, short-range strike craft are launched from a mothership and rely on their speed and small size to survive long enough to punch through enemy defenses.\n\n",
+    "description": "These manned, short-range strike craft are launched from a mothership and rely on their speed and small size to survive long enough to punch through enemy defenses.",
     "area": "engineering",
     "prerequisites": [
       "tech_spaceport_5"
@@ -5420,7 +5399,7 @@
   {
     "category": "Voidcraft",
     "tier": 2,
-    "description": "The next generation of strike craft, featuring improved avionics, better handling characteristics and more powerful armament.\n\n",
+    "description": "The next generation of strike craft, featuring improved avionics, better handling characteristics and more powerful armaments.",
     "area": "engineering",
     "prerequisites": [
       "tech_strike_craft_1"
@@ -5444,7 +5423,7 @@
   {
     "category": "Voidcraft",
     "tier": 2,
-    "description": "A further refinement in strike craft design, these advanced fighters and bombers are a pilot's dream. Their performance far exceeds that of previous models.\n\n",
+    "description": "A further refinement in strike craft design, these advanced fighters and bombers are a pilot's dream. Their performance far exceeds that of previous models.",
     "area": "engineering",
     "prerequisites": [
       "tech_strike_craft_2"
@@ -5468,7 +5447,7 @@
   {
     "category": "Materials",
     "tier": 2,
-    "description": "Plasteel is an elastic material that combines many of the qualities of plastics and metal. It is relatively cheap to produce and can be used to augment ship armor.\n\n",
+    "description": "Plasteel is an elastic material that combines many of the qualities of plastics and metal. It is relatively cheap to produce and can be used to augment ship armor.",
     "area": "engineering",
     "prerequisites": [
       "tech_ship_armor_2"
@@ -5493,7 +5472,7 @@
   {
     "category": "Materials",
     "tier": 2,
-    "description": "This strong yet flexible material is capable of withstanding severe punishment. It serves well as ship armor.\n\n",
+    "description": "This strong yet flexible material is capable of withstanding severe punishment. It serves well as ship armor.",
     "area": "engineering",
     "prerequisites": [
       "tech_ship_armor_3"
@@ -5518,7 +5497,7 @@
   {
     "category": "Rocketry",
     "tier": 2,
-    "description": "An advanced form of electric propulsion, plasma thrusters afford ships greater sublight speeds and maneuverability.\n\n",
+    "description": "An advanced form of electric propulsion, plasma thrusters afford ships greater sublight speeds and maneuverability.",
     "area": "engineering",
     "prerequisites": [
       "tech_thrusters_2"
@@ -5543,7 +5522,7 @@
   {
     "category": "Voidcraft",
     "tier": 2,
-    "description": "New construction methods will allow for the construction of even larger military stations in the depths of space.\n\n",
+    "description": "New construction methods will allow for the construction of even larger military stations in the depths of space.",
     "area": "engineering",
     "prerequisites": [
       "tech_space_defense_station_1"
@@ -5569,7 +5548,7 @@
   {
     "category": "Voidcraft",
     "tier": 2,
-    "description": "The creation of a dedicated naval engineering corps will greatly benefit the construction of deep space defense platforms, decreasing building costs and increasing durability.\n\n",
+    "description": "The creation of a dedicated naval engineering corps will greatly benefit the construction of deep space defense platforms, decreasing building costs and increasing durability.",
     "area": "engineering",
     "prerequisites": [
       "tech_space_defense_station_2"
@@ -5594,7 +5573,7 @@
   {
     "category": "Industry",
     "tier": 2,
-    "description": "These massive drills are needed to access the rich mineral deposits that can often be found close to a planet's core.\n\n",
+    "description": "These massive drills are needed to access the rich mineral deposits that can often be found close to a planet's core.",
     "area": "engineering",
     "prerequisites": [
       "tech_mining_network_2",
@@ -5619,7 +5598,7 @@
   {
     "category": "Industry",
     "tier": 2,
-    "description": "Advanced spectrometry combines with fracking techniques and chemical flushing to rapidly exploit shallow and mid-depth deposits.\n\n",
+    "description": "Advanced spectrometry combines with fracking techniques and chemical flushing to rapidly exploit shallow and mid-depth deposits.",
     "area": "engineering",
     "prerequisites": [
       "tech_mining_network_3",
@@ -5699,7 +5678,7 @@
   {
     "category": "Industry",
     "tier": 2,
-    "description": "Upgraded robotic workers, these units have an expanded movement range equal to that of most organics. Their neural processors have also been greatly improved.\n\n",
+    "description": "Upgraded robotic workers, these units have an expanded movement range equal to that of most organics. Their neural processors have also been greatly improved.",
     "area": "engineering",
     "prerequisites": [
       "tech_robotic_workers",
@@ -5716,8 +5695,8 @@
     "base_factor": 1.0,
     "base_weight": 75,
     "weight_modifiers": [
-      "(\u00d70.2)  Has Spiritualist Ethic\n",
-      "(\u00d70.1)  Has Fanatic Spiritualist Ethic\n",
+      "(\u00d70)  Any of the following:\n    \u2022   Has Spiritualist Ethic\n    \u2022   Has Fanatic Spiritualist Ethic\n    \u2022   Has Hive-Minded Ethic\n",
+      "(\u00d72)  Has Mechanist Government Civic\n",
       "(\u00d71.25)  Research Leader (Engineering):\n    \u2022   Is Industry Expert\n    \u2022   Skill level is greater than 2\n"
     ],
     "is_start_tech": false,
@@ -5749,9 +5728,33 @@
     "name": "Afterburners"
   },
   {
+    "category": "Industry",
+    "tier": 2,
+    "description": "",
+    "area": "engineering",
+    "prerequisites": [
+      "tech_assembly_pattern"
+    ],
+    "is_dangerous": false,
+    "is_rare": true,
+    "cost": 2200,
+    "key": "tech_construction_templates",
+    "feature_unlocks": [
+      "Building Build Speed: +50%"
+    ],
+    "base_factor": 1.0,
+    "base_weight": 90,
+    "weight_modifiers": [
+      "(\u00d70.25)  None of the following:\n    \u2022   Research Leader (Engineering):\n        \u2022   Is Industry Expert\n    \u2022   Research Leader (Engineering):\n        \u2022   Is Curator\n",
+      "(\u00d71.25)  Any of the following:\n    \u2022   Has Militarist Ethic\n    \u2022   Has Fanatic Militarist Ethic\n"
+    ],
+    "is_start_tech": false,
+    "name": "Construction Templates"
+  },
+  {
     "category": "Materials",
     "tier": 2,
-    "description": "These electromagnetic projectile launchers use magnets to accelerate armor-piercing rounds towards targets at high speeds.\n\n",
+    "description": "These electromagnetic projectile launchers use magnets to accelerate armor-piercing rounds towards targets at high speeds.",
     "area": "engineering",
     "prerequisites": [],
     "is_dangerous": false,
@@ -5767,8 +5770,6 @@
     "base_factor": 0.5,
     "base_weight": 100,
     "weight_modifiers": [
-      "(\u00d70.65)  Has Fanatic Pacifist Ethic\n",
-      "(\u00d70.8)  Has Pacifist Ethic\n",
       "(\u00d71.25)  Has Militarist Ethic\n",
       "(\u00d71.5)  Has Fanatic Militarist Ethic\n",
       "(\u00d71.25)  Research Leader (Physics):\n    \u2022   Is Materials Expert\n"
@@ -5779,7 +5780,7 @@
   {
     "category": "Materials",
     "tier": 2,
-    "description": "The latest in electromagnetic accelerators, railguns use twin parallel rails to fire projectiles at incredible speeds.\n\n",
+    "description": "The latest in electromagnetic accelerators, railguns use twin parallel rails to fire projectiles at incredible speeds.",
     "area": "engineering",
     "prerequisites": [
       "tech_mass_drivers_2"
@@ -5796,8 +5797,6 @@
     "base_factor": 1.0,
     "base_weight": 75,
     "weight_modifiers": [
-      "(\u00d70.65)  Has Fanatic Pacifist Ethic\n",
-      "(\u00d70.8)  Has Pacifist Ethic\n",
       "(\u00d71.25)  Has Militarist Ethic\n",
       "(\u00d71.5)  Has Fanatic Militarist Ethic\n",
       "(\u00d71.25)  Research Leader (Physics):\n    \u2022   Is Materials Expert\n"
@@ -5808,7 +5807,7 @@
   {
     "category": "Materials",
     "tier": 2,
-    "description": "A new version of the venerable railgun, with sturdier rails and an enhanced power supply. These weapons are even more powerful and accurate than their predecessors.\n\n",
+    "description": "A new version of the venerable railgun, with sturdier rails and an enhanced power supply. These weapons are even more powerful and accurate than their predecessors.",
     "area": "engineering",
     "prerequisites": [
       "tech_mass_drivers_3"
@@ -5825,8 +5824,6 @@
     "base_factor": 1.0,
     "base_weight": 65,
     "weight_modifiers": [
-      "(\u00d70.65)  Has Fanatic Pacifist Ethic\n",
-      "(\u00d70.8)  Has Pacifist Ethic\n",
       "(\u00d71.25)  Has Militarist Ethic\n",
       "(\u00d71.5)  Has Fanatic Militarist Ethic\n",
       "(\u00d71.25)  Research Leader (Physics):\n    \u2022   Is Materials Expert\n"
@@ -5837,7 +5834,7 @@
   {
     "category": "Materials",
     "tier": 2,
-    "description": "Large-caliber ballistic weapons that fire cased explosive shells. The main advantage of these cannons is their high rate of fire.\n\n",
+    "description": "Large-caliber ballistic weapons that fire cased explosive shells. The main advantage of these cannons is their high rate of fire.",
     "area": "engineering",
     "prerequisites": [
       "tech_mass_drivers_2"
@@ -5854,8 +5851,6 @@
     "base_factor": 1.0,
     "base_weight": 75,
     "weight_modifiers": [
-      "(\u00d70.65)  Has Fanatic Pacifist Ethic\n",
-      "(\u00d70.8)  Has Pacifist Ethic\n",
       "(\u00d71.25)  Has Militarist Ethic\n",
       "(\u00d71.5)  Has Fanatic Militarist Ethic\n",
       "(\u00d70.5)  Does NOT have Mass Drivers Technology\n",
@@ -5867,7 +5862,7 @@
   {
     "category": "Materials",
     "tier": 2,
-    "description": "These upgraded rotary autocannons feature improved tracking and fire control systems. This allows them to maintain an even higher rate of fire.\n\n",
+    "description": "These upgraded rotary autocannons feature improved tracking and fire control systems. This allows them to maintain an even higher rate of fire.",
     "area": "engineering",
     "prerequisites": [
       "tech_autocannons_1"
@@ -5884,8 +5879,6 @@
     "base_factor": 1.0,
     "base_weight": 65,
     "weight_modifiers": [
-      "(\u00d70.65)  Has Fanatic Pacifist Ethic\n",
-      "(\u00d70.8)  Has Pacifist Ethic\n",
       "(\u00d71.25)  Has Militarist Ethic\n",
       "(\u00d71.5)  Has Fanatic Militarist Ethic\n",
       "(\u00d71.25)  Research Leader (Physics):\n    \u2022   Is Materials Expert\n"
@@ -5896,7 +5889,7 @@
   {
     "category": "Materials",
     "tier": 2,
-    "description": "Gun batteries that fire area effect shrapnel rounds at close range. They are particularly lethal to enemy strike craft, but can also inflict damage on larger ships.\n\n",
+    "description": "Gun batteries that fire area effect shrapnel rounds at close range. They are particularly lethal to enemy strike craft, but can also inflict damage on larger ships.",
     "area": "engineering",
     "prerequisites": [
       "tech_autocannons_2"
@@ -5911,8 +5904,6 @@
     "base_factor": 1.0,
     "base_weight": 65,
     "weight_modifiers": [
-      "(\u00d70.65)  Has Fanatic Pacifist Ethic\n",
-      "(\u00d70.8)  Has Pacifist Ethic\n",
       "(\u00d71.25)  Has Militarist Ethic\n",
       "(\u00d71.5)  Has Fanatic Militarist Ethic\n",
       "(\u00d71.25)  Research Leader (Physics):\n    \u2022   Is Materials Expert\n"
@@ -5923,7 +5914,7 @@
   {
     "category": "Rocketry",
     "tier": 2,
-    "description": "Advanced missiles equipped with very powerful antimatter warheads. A new and improved guidance system gives them a better chance of finding their targets.\n\n",
+    "description": "Advanced missiles equipped with very powerful antimatter warheads. A new and improved guidance system gives them a better chance of finding their targets.",
     "area": "engineering",
     "prerequisites": [
       "tech_missiles_2"
@@ -5940,8 +5931,6 @@
     "base_factor": 1.0,
     "base_weight": 75,
     "weight_modifiers": [
-      "(\u00d70.65)  Has Fanatic Pacifist Ethic\n",
-      "(\u00d70.8)  Has Pacifist Ethic\n",
       "(\u00d71.25)  Has Militarist Ethic\n",
       "(\u00d71.5)  Has Fanatic Militarist Ethic\n",
       "(\u00d71.25)  Research Leader (Physics):\n    \u2022   Is Rocketry Expert\n"
@@ -5952,7 +5941,7 @@
   {
     "category": "Rocketry",
     "tier": 2,
-    "description": "The latest version of space-to-space missile, this upgraded variant has an immensely powerful warhead that draws its energy from a zero point vacuum.\n\n",
+    "description": "The latest version of space-to-space missile, this upgraded variant has an immensely powerful warhead that draws its energy from a zero point vacuum.",
     "area": "engineering",
     "prerequisites": [
       "tech_missiles_3"
@@ -5969,8 +5958,6 @@
     "base_factor": 1.0,
     "base_weight": 65,
     "weight_modifiers": [
-      "(\u00d70.65)  Has Fanatic Pacifist Ethic\n",
-      "(\u00d70.8)  Has Pacifist Ethic\n",
       "(\u00d71.25)  Has Militarist Ethic\n",
       "(\u00d71.5)  Has Fanatic Militarist Ethic\n",
       "(\u00d71.25)  Research Leader (Physics):\n    \u2022   Is Rocketry Expert\n"
@@ -5981,7 +5968,7 @@
   {
     "category": "Rocketry",
     "tier": 2,
-    "description": "These smaller missiles are launched in volleys and have been specifically designed to overwhelm enemy point-defense systems.\n\n",
+    "description": "These smaller missiles are launched in volleys and have been specifically designed to overwhelm enemy point-defense systems.",
     "area": "engineering",
     "prerequisites": [
       "tech_missiles_4"
@@ -5996,8 +5983,6 @@
     "base_factor": 1.0,
     "base_weight": 75,
     "weight_modifiers": [
-      "(\u00d70.65)  Has Fanatic Pacifist Ethic\n",
-      "(\u00d70.8)  Has Pacifist Ethic\n",
       "(\u00d71.25)  Has Militarist Ethic\n",
       "(\u00d71.5)  Has Fanatic Militarist Ethic\n",
       "(\u00d71.25)  Research Leader (Physics):\n    \u2022   Is Rocketry Expert\n"
@@ -6008,7 +5993,7 @@
   {
     "category": "Rocketry",
     "tier": 2,
-    "description": "Upgraded space torpedoes encased in armor, to better withstand enemy point-defense fire. The armor fragments into shards that cause additional damage when the torpedo detonates.\n\n",
+    "description": "Upgraded space torpedoes encased in armor, to better withstand enemy point-defense fire. The armor fragments into shards that cause additional damage when the torpedo detonates.",
     "area": "engineering",
     "prerequisites": [
       "tech_torpedoes_1"
@@ -6023,8 +6008,6 @@
     "base_factor": 1.0,
     "base_weight": 70,
     "weight_modifiers": [
-      "(\u00d70.65)  Has Fanatic Pacifist Ethic\n",
-      "(\u00d70.8)  Has Pacifist Ethic\n",
       "(\u00d71.25)  Has Militarist Ethic\n",
       "(\u00d71.5)  Has Fanatic Militarist Ethic\n",
       "(\u00d71.25)  Research Leader (Physics):\n    \u2022   Is Rocketry Expert\n"
@@ -6064,7 +6047,7 @@
   {
     "category": "Materials",
     "tier": 3,
-    "description": "This incredibly dense and strong material can resist firepower that would turn armor made of any other alloys into slag.\n\n",
+    "description": "This incredibly dense and strong material can resist firepower that would turn armor made of any other alloys into slag.",
     "area": "engineering",
     "prerequisites": [
       "tech_ship_armor_4",
@@ -6090,7 +6073,7 @@
   {
     "category": "Rocketry",
     "tier": 3,
-    "description": "These highly advanced fusion-powered thrusters provide ships with unmatched maneuverability and speed under sublight conditions.\n\n",
+    "description": "These highly advanced fusion-powered thrusters provide ships with unmatched maneuverability and speed under sublight conditions.",
     "area": "engineering",
     "prerequisites": [
       "tech_thrusters_3"
@@ -6114,7 +6097,7 @@
   {
     "category": "Voidcraft",
     "tier": 3,
-    "description": "These massive installations are like cities floating in space. They can support a crew of thousands, and are often equipped with firepower rivaling that of a fleet.\n\n",
+    "description": "These massive installations are like cities floating in space. They can support a crew of thousands, and are often equipped with firepower rivaling that of a fleet.",
     "area": "engineering",
     "prerequisites": [
       "tech_space_defense_station_2"
@@ -6147,14 +6130,14 @@
     ],
     "is_dangerous": false,
     "is_rare": false,
-    "cost": 4000,
+    "cost": 3000,
     "key": "tech_engineering_lab_3",
     "feature_unlocks": [
       "Unlocks Building: Engineering Facility III",
       "Unlocks Building: Engineering Facility IV"
     ],
     "base_factor": 1.0,
-    "base_weight": 45,
+    "base_weight": 50,
     "weight_modifiers": [
       "(\u00d72)  Number of years since game start is greater than 25\n",
       "(\u00d72)  Number of years since game start is greater than 30\n",
@@ -6168,7 +6151,7 @@
   {
     "category": "Industry",
     "tier": 3,
-    "description": "Highly advanced robots that are stronger, faster and more durable than the vast majority of organics. With their upgraded neural processors they are fully capable of independent operations.\n\n",
+    "description": "Highly advanced robots that are stronger, faster and more durable than the vast majority of organics. With their upgraded neural processors they are fully capable of independent operations.",
     "area": "engineering",
     "prerequisites": [
       "tech_droid_workers",
@@ -6187,8 +6170,9 @@
     "base_factor": 1.0,
     "base_weight": 45,
     "weight_modifiers": [
-      "(\u00d70.2)  Has Spiritualist Ethic\n",
-      "(\u00d70.1)  Has Fanatic Spiritualist Ethic\n",
+      "(\u00d70)  Any of the following:\n    \u2022   Has Spiritualist Ethic\n    \u2022   Has Fanatic Spiritualist Ethic\n    \u2022   Has Hive-Minded Ethic\n",
+      "(\u00d72)  Has Mechanist Government Civic\n",
+      "(\u00d74)  Has The Flesh is Weak Ascension Perk\n",
       "(\u00d70.1)  None of the following:\n    \u2022   Research Leader (Engineering):\n        \u2022   Is Maniacal\n    \u2022   Research Leader (Engineering):\n        \u2022   Is Spark of Genius\n    \u2022   Research Leader (Engineering):\n        \u2022   Is Curator\n    \u2022   Research Leader (Engineering):\n        \u2022   Is Industry Expert\n"
     ],
     "is_start_tech": false,
@@ -6197,24 +6181,22 @@
   {
     "category": "Industry",
     "tier": 3,
-    "description": "Equipped with a personality, synthetics will finally be able to interact socially on equal terms with the rest of our citizens. Some units may even assume leadership roles.\n\n",
+    "description": "Equipped with a personality, synthetics will finally be able to interact socially on equal terms with the rest of our citizens. Some units may even assume leadership roles.",
     "area": "engineering",
     "prerequisites": [
       "tech_synthetic_workers"
     ],
     "is_dangerous": false,
-    "is_rare": true,
+    "is_rare": false,
     "cost": 5000,
     "key": "tech_synthetic_leaders",
     "feature_unlocks": [
-      "Unlocks Policy: Leadership - Androids Allowed"
+      "Unlocks Feature: Synth Leaders"
     ],
     "base_factor": 1.0,
     "base_weight": 40,
     "weight_modifiers": [
-      "(\u00d70.2)  Has Spiritualist Ethic\n",
-      "(\u00d70.1)  Has Fanatic Spiritualist Ethic\n",
-      "(\u00d70.1)  None of the following:\n    \u2022   Research Leader (Engineering):\n        \u2022   Is Maniacal\n    \u2022   Research Leader (Engineering):\n        \u2022   Is Spark of Genius\n    \u2022   Research Leader (Engineering):\n        \u2022   Is Curator\n    \u2022   Research Leader (Engineering):\n        \u2022   Is Industry Expert\n",
+      "(\u00d70)  Any of the following:\n    \u2022   Has Spiritualist Ethic\n    \u2022   Has Fanatic Spiritualist Ethic\n    \u2022   Has Hive-Minded Ethic\n",
       "(\u00d71.25)  Research Leader (Engineering):\n    \u2022   Is Industry Expert\n    \u2022   Skill level is greater than 3\n"
     ],
     "is_start_tech": false,
@@ -6247,7 +6229,7 @@
   {
     "category": "Materials",
     "tier": 3,
-    "description": "This updated version of the old coilgun design is even more destructive than the latest railgun designs. It is capable of launching projectiles with incredible accuracy and speed.\n\n",
+    "description": "This updated version of the old coilgun design is even more destructive than the latest railgun designs. It is capable of launching projectiles with incredible accuracy and speed.",
     "area": "engineering",
     "prerequisites": [
       "tech_mass_drivers_4"
@@ -6264,8 +6246,6 @@
     "base_factor": 1.0,
     "base_weight": 50,
     "weight_modifiers": [
-      "(\u00d70.65)  Has Fanatic Pacifist Ethic\n",
-      "(\u00d70.8)  Has Pacifist Ethic\n",
       "(\u00d71.25)  Has Militarist Ethic\n",
       "(\u00d71.5)  Has Fanatic Militarist Ethic\n",
       "(\u00d71.25)  Research Leader (Physics):\n    \u2022   Is Materials Expert\n"
@@ -6276,7 +6256,7 @@
   {
     "category": "Materials",
     "tier": 3,
-    "description": "Very long-range artillery capable of hurling powerful rounds over extreme distances with a large degree of accuracy.\n\n",
+    "description": "Very long-range artillery capable of hurling powerful rounds over extreme distances with a large degree of accuracy.",
     "area": "engineering",
     "prerequisites": [
       "tech_mass_drivers_4"
@@ -6291,8 +6271,6 @@
     "base_factor": 1.0,
     "base_weight": 50,
     "weight_modifiers": [
-      "(\u00d70.65)  Has Fanatic Pacifist Ethic\n",
-      "(\u00d70.8)  Has Pacifist Ethic\n",
       "(\u00d71.25)  Has Militarist Ethic\n",
       "(\u00d71.5)  Has Fanatic Militarist Ethic\n",
       "(\u00d71.25)  Research Leader (Physics):\n    \u2022   Is Materials Expert\n"
@@ -6303,7 +6281,7 @@
   {
     "category": "Materials",
     "tier": 3,
-    "description": "An even more powerful long-range, ship-based artillery cannon, equipped with a new barrel and an upgraded fire control computer.\n\n",
+    "description": "An even more powerful long-range, ship-based artillery cannon, equipped with a new barrel and an upgraded fire control computer.",
     "area": "engineering",
     "prerequisites": [
       "tech_kinetic_artillery_1"
@@ -6318,8 +6296,6 @@
     "base_factor": 1.0,
     "base_weight": 40,
     "weight_modifiers": [
-      "(\u00d70.65)  Has Fanatic Pacifist Ethic\n",
-      "(\u00d70.8)  Has Pacifist Ethic\n",
       "(\u00d71.25)  Has Militarist Ethic\n",
       "(\u00d71.5)  Has Fanatic Militarist Ethic\n",
       "(\u00d71.25)  Research Leader (Physics):\n    \u2022   Is Materials Expert\n"
@@ -6330,7 +6306,7 @@
   {
     "category": "Materials",
     "tier": 3,
-    "description": "An enormous mass accelerator cannon that can only be placed in a spinal mount and fires monstrously powerful rounds over vast distances.\n\n",
+    "description": "An enormous mass accelerator cannon that can only be placed in a spinal mount and fires monstrously powerful rounds over vast distances.",
     "area": "engineering",
     "prerequisites": [
       "tech_mass_drivers_5",
@@ -6346,8 +6322,6 @@
     "base_factor": 1.0,
     "base_weight": 45,
     "weight_modifiers": [
-      "(\u00d70.65)  Has Fanatic Pacifist Ethic\n",
-      "(\u00d70.8)  Has Pacifist Ethic\n",
       "(\u00d71.25)  Has Militarist Ethic\n",
       "(\u00d71.5)  Has Fanatic Militarist Ethic\n",
       "(\u00d71.25)  Research Leader (Physics):\n    \u2022   Is Materials Expert\n"
@@ -6358,7 +6332,7 @@
   {
     "category": "Materials",
     "tier": 3,
-    "description": "An even more powerful mass accelerator cannon that can rip through even the toughest shields.\n\n",
+    "description": "An even more powerful mass accelerator cannon that can rip through even the toughest shields.",
     "area": "engineering",
     "prerequisites": [
       "tech_mass_accelerator_1"
@@ -6373,8 +6347,6 @@
     "base_factor": 1.0,
     "base_weight": 35,
     "weight_modifiers": [
-      "(\u00d70.65)  Has Fanatic Pacifist Ethic\n",
-      "(\u00d70.8)  Has Pacifist Ethic\n",
       "(\u00d71.25)  Has Militarist Ethic\n",
       "(\u00d71.5)  Has Fanatic Militarist Ethic\n",
       "(\u00d71.25)  Research Leader (Physics):\n    \u2022   Is Materials Expert\n"
@@ -6385,7 +6357,7 @@
   {
     "category": "Materials",
     "tier": 3,
-    "description": "Advanced rotary autocannons capable of spewing a cloud of armor-piercing and high-explosive shells at a target.\n\n",
+    "description": "Advanced rotary autocannons capable of spewing a cloud of armor-piercing and high-explosive shells at a target.",
     "area": "engineering",
     "prerequisites": [
       "tech_autocannons_2"
@@ -6402,8 +6374,6 @@
     "base_factor": 1.0,
     "base_weight": 50,
     "weight_modifiers": [
-      "(\u00d70.65)  Has Fanatic Pacifist Ethic\n",
-      "(\u00d70.8)  Has Pacifist Ethic\n",
       "(\u00d71.25)  Has Militarist Ethic\n",
       "(\u00d71.5)  Has Fanatic Militarist Ethic\n",
       "(\u00d71.25)  Research Leader (Physics):\n    \u2022   Is Materials Expert\n"
@@ -6414,7 +6384,7 @@
   {
     "category": "Materials",
     "tier": 3,
-    "description": "Upgraded flak batteries with new, more powerful shrapnel rounds. They offer excellent defense against both strike craft and missiles.\n\n",
+    "description": "Upgraded flak batteries with new, more powerful shrapnel rounds. They offer excellent defense against both strike craft and missiles.",
     "area": "engineering",
     "prerequisites": [
       "tech_flak_batteries_1"
@@ -6429,8 +6399,6 @@
     "base_factor": 1.0,
     "base_weight": 50,
     "weight_modifiers": [
-      "(\u00d70.65)  Has Fanatic Pacifist Ethic\n",
-      "(\u00d70.8)  Has Pacifist Ethic\n",
       "(\u00d71.25)  Has Militarist Ethic\n",
       "(\u00d71.5)  Has Fanatic Militarist Ethic\n",
       "(\u00d71.25)  Research Leader (Physics):\n    \u2022   Is Materials Expert\n"
@@ -6441,7 +6409,7 @@
   {
     "category": "Rocketry",
     "tier": 3,
-    "description": "These highly advanced missiles are equipped with limited onboard AI pilots that substantially improve their performance and ability to track targets.\n\n",
+    "description": "These highly advanced missiles are equipped with limited onboard AI pilots that substantially improve their performance and ability to track targets.",
     "area": "engineering",
     "prerequisites": [
       "tech_missiles_4"
@@ -6458,8 +6426,6 @@
     "base_factor": 1.0,
     "base_weight": 50,
     "weight_modifiers": [
-      "(\u00d70.65)  Has Fanatic Pacifist Ethic\n",
-      "(\u00d70.8)  Has Pacifist Ethic\n",
       "(\u00d71.25)  Has Militarist Ethic\n",
       "(\u00d71.5)  Has Fanatic Militarist Ethic\n",
       "(\u00d71.25)  Research Leader (Physics):\n    \u2022   Is Rocketry Expert\n"
@@ -6470,7 +6436,7 @@
   {
     "category": "Rocketry",
     "tier": 3,
-    "description": "New miniaturization techniques will allow us to equip swarmer missiles with more powerful warheads and improved flight performance.\n\n",
+    "description": "New miniaturization techniques will allow us to equip swarmer missiles with more powerful warheads and improved flight performance.",
     "area": "engineering",
     "prerequisites": [
       "tech_swarmer_missiles_1"
@@ -6485,8 +6451,6 @@
     "base_factor": 1.0,
     "base_weight": 50,
     "weight_modifiers": [
-      "(\u00d70.65)  Has Fanatic Pacifist Ethic\n",
-      "(\u00d70.8)  Has Pacifist Ethic\n",
       "(\u00d71.25)  Has Militarist Ethic\n",
       "(\u00d71.5)  Has Fanatic Militarist Ethic\n",
       "(\u00d71.25)  Research Leader (Physics):\n    \u2022   Is Rocketry Expert\n"
@@ -6497,7 +6461,7 @@
   {
     "category": "Rocketry",
     "tier": 3,
-    "description": "Advanced torpedoes with very powerful warheads. They have a sleeker design, faster engines and upgraded shield modulators for slipping through energy screens.\n\n",
+    "description": "Advanced torpedoes with very powerful warheads. They have a sleeker design, faster engines and upgraded shield modulators for slipping through energy screens.",
     "area": "engineering",
     "prerequisites": [
       "tech_torpedoes_2"
@@ -6512,8 +6476,6 @@
     "base_factor": 1.0,
     "base_weight": 45,
     "weight_modifiers": [
-      "(\u00d70.65)  Has Fanatic Pacifist Ethic\n",
-      "(\u00d70.8)  Has Pacifist Ethic\n",
       "(\u00d71.25)  Has Militarist Ethic\n",
       "(\u00d71.5)  Has Fanatic Militarist Ethic\n",
       "(\u00d71.25)  Research Leader (Physics):\n    \u2022   Is Rocketry Expert\n"
@@ -6524,7 +6486,7 @@
   {
     "category": "Industry",
     "tier": 3,
-    "description": "Changes in how mineral deposits are evaluated relative to each other lead to more efficient boring patterns.\n\n",
+    "description": "Changes in how mineral deposits are evaluated relative to each other lead to more efficient boring patterns.",
     "area": "engineering",
     "prerequisites": [
       "tech_mineral_processing_2"
@@ -6545,7 +6507,7 @@
   {
     "category": "Voidcraft",
     "tier": 3,
-    "description": "Cross-linking weapon systems to fire in staggered volleys improves the actual damage output of Military Stations over time.\n\n",
+    "description": "Cross-linking weapon systems to fire in staggered volleys improves the actual damage output of Military Stations over time.",
     "area": "engineering",
     "prerequisites": [
       "tech_space_defense_station_2"
@@ -6566,7 +6528,7 @@
   {
     "category": "Voidcraft",
     "tier": 3,
-    "description": "Additional layers of armor plating within the structure itself improves the resilience of Military Stations.\n\n",
+    "description": "Additional layers of armor plating within the structure itself improves the resilience of Military Stations.",
     "area": "engineering",
     "prerequisites": [
       "tech_space_defense_station_2"
@@ -6587,7 +6549,7 @@
   {
     "category": "Voidcraft",
     "tier": 3,
-    "description": "Further increasing compartmentalization of shipboard spaces allows ships to sustain more damage before hull integrity reaches critically low levels.\n\n",
+    "description": "Further increasing compartmentalization of shipboard spaces allows ships to sustain more damage before hull integrity reaches critically low levels.",
     "area": "engineering",
     "prerequisites": [
       "tech_spaceport_4"
@@ -6608,7 +6570,7 @@
   {
     "category": "Materials",
     "tier": 3,
-    "description": "Compressing suitable materials into ultra-dense forms is a cheap and efficient way to improve their ability to absorb weapons-grade impacts.\n\n",
+    "description": "Compressing suitable materials into ultra-dense forms is a cheap and efficient way to improve their ability to absorb weapons-grade impacts.",
     "area": "engineering",
     "prerequisites": [
       "tech_ship_armor_3"
@@ -6629,7 +6591,7 @@
   {
     "category": "Rocketry",
     "tier": 3,
-    "description": "With the chemical reaction tightly controlled by missile-board microprocessors, warhead detonations can be tuned for maximum effect for local conditions at the time of impact.\n\n",
+    "description": "With the chemical reaction tightly controlled by missile-board microprocessors, warhead detonations can be tuned for maximum effect for local conditions at the time of impact.",
     "area": "engineering",
     "prerequisites": [
       "tech_missiles_3"
@@ -6650,7 +6612,7 @@
   {
     "category": "Rocketry",
     "tier": 3,
-    "description": "Advances in miniaturization allow for more rapid loading and discharging of rocket-propelled payloads.\n\n",
+    "description": "Advances in miniaturization allow for more rapid loading and discharging of rocket-propelled payloads.",
     "area": "engineering",
     "prerequisites": [
       "tech_missiles_3"
@@ -6671,7 +6633,7 @@
   {
     "category": "Materials",
     "tier": 3,
-    "description": "Ultra-dense slugs can punch through even the strongest of projected shields.\n\n",
+    "description": "Ultra-dense slugs can punch through even the strongest of projected shields.",
     "area": "engineering",
     "prerequisites": [
       "tech_mass_drivers_3"
@@ -6692,7 +6654,7 @@
   {
     "category": "Materials",
     "tier": 3,
-    "description": "Minor technical advances combine with improved shipboard routines for handling munitions to provide a noticeable boost in fire rate.\n\n",
+    "description": "Minor technical advances combine with improved shipboard routines for handling munitions to provide a noticeable boost in fire rate.",
     "area": "engineering",
     "prerequisites": [
       "tech_mass_drivers_3"
@@ -6713,7 +6675,7 @@
   {
     "category": "Voidcraft",
     "tier": 3,
-    "description": "Increasing the speed at which fighter pilots can process and act upon enemy positioning data elevates strike craft a few steps up the food chain.\n\n",
+    "description": "Increasing the speed at which fighter pilots can process and act upon enemy positioning data elevates strike craft a few steps up the food chain.",
     "area": "engineering",
     "prerequisites": [
       "tech_spaceport_5"
@@ -6734,7 +6696,7 @@
   {
     "category": "Voidcraft",
     "tier": 3,
-    "description": "Circulating excess heat from weapons discharge in order to prime munitions as they are loaded increases the rate of fire of strike craft weaponry.\n\n",
+    "description": "Circulating excess heat from weapons discharge in order to prime munitions as they are loaded increases the rate of fire of strike craft weaponry.",
     "area": "engineering",
     "prerequisites": [
       "tech_spaceport_5"
@@ -6751,5 +6713,55 @@
     "weight_modifiers": [],
     "is_start_tech": false,
     "name": "Heat Recyclers"
+  },
+  {
+    "category": "Industry",
+    "tier": 3,
+    "description": "The application of game and puzzle theory has the potential to greatly optimize modular assembly and construction.",
+    "area": "engineering",
+    "prerequisites": [
+      "tech_construction_templates"
+    ],
+    "is_dangerous": false,
+    "is_rare": false,
+    "cost": 3000,
+    "key": "tech_repeatable_reduced_building_time",
+    "feature_unlocks": [
+      "Building Build Speed: +10%"
+    ],
+    "base_factor": 0.5,
+    "base_weight": 25,
+    "weight_modifiers": [],
+    "is_start_tech": false,
+    "name": "Assembly Algorithms"
+  },
+  {
+    "category": "Voidcraft",
+    "tier": 4,
+    "description": "To complete constructing projects of truly staggering scales we must first achieve a fundamental understanding of both the engineering and resource storage requirements for such megastructures.",
+    "area": "engineering",
+    "prerequisites": [
+      "tech_space_defense_station_3",
+      "tech_spaceport_6",
+      "tech_zero_point_power"
+    ],
+    "is_dangerous": false,
+    "is_rare": true,
+    "cost": 10000,
+    "key": "tech_mega_engineering",
+    "feature_unlocks": [
+      "Mineral Storage Capacity: +20000",
+      "Building Build Speed: +50%"
+    ],
+    "base_factor": 0.1,
+    "base_weight": 30,
+    "weight_modifiers": [
+      "(\u00d70.25)  None of the following:\n    \u2022   Research Leader (Engineering):\n        \u2022   Is Voidcraft Expert\n    \u2022   Research Leader (Engineering):\n        \u2022   Is Curator\n",
+      "(\u00d72)  Has Master Builders Ascension Perk\n",
+      "(\u00d720)  Any System within Borders:\n    \u2022   Any of the following:\n        \u2022   Has Megatructure Sentry Hub\n        \u2022   Has Megatructure Sentry Spire\n        \u2022   Has Megatructure Sentry Aerials\n        \u2022   Has Megatructure Sentry Array\n        \u2022   Has Megatructure Science Nexus Hub\n        \u2022   Has Megatructure Science Nexus Research Wings\n        \u2022   Has Megatructure Science Nexus\n        \u2022   Has Megatructure The Groik Nexus\n        \u2022   Has Megatructure Dyson Sphere Frame\n        \u2022   Has Megatructure Partial Dyson Sphere\n        \u2022   Has Megatructure Partial Dyson Sphere\n        \u2022   Has Megatructure Partial Dyson Sphere\n        \u2022   Has Megatructure Dyson Sphere\n        \u2022   Has Megatructure Ring World Frame\n        \u2022   Any Planet:\n            \u2022   Any of the following:\n                \u2022   Is Ring World\n                \u2022   Is Ring World\n                \u2022   Is Ring World\n                \u2022   Is Ring World\n                \u2022   Is Ring World\n                \u2022   Is Ring World\n",
+      "(\u00d70)  Host does NOT have the Utopia DLC\n"
+    ],
+    "is_start_tech": false,
+    "name": "Mega-Engineering"
   }
 ]

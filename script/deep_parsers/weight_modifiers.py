@@ -59,11 +59,21 @@ def _localize_has_ethic(value):
     ethic = localization_map[value]
     return 'Has {} Ethic'.format(ethic)
 
-
 def _localize_has_not_ethic(value):
     ethic = localization_map[value]
     return 'Does NOT have {} Ethic'.format(ethic)
 
+def _localize_has_civic(value):
+    civic = localization_map[value]
+    return 'Has {} Government Civic'.format(civic)
+
+def _localize_has_ascension_perk(value):
+    perk = localization_map[value]
+    return 'Has {} Ascension Perk'.format(perk)
+
+def _localize_has_megastructure(value):
+    megastructure = localization_map[value]
+    return 'Has Megatructure {}'.format(megastructure)
 
 def _localize_has_policy_flag(value):
     policy_flag = localization_map[value]
@@ -74,6 +84,17 @@ def _localize_has_trait(value):
     trait = localization_map[value]
     return 'Has {} Trait'.format(trait)
 
+def _localize_has_authority(value):
+    authority = localization_map[value]
+    return 'Has {} Authority'.format(authority)
+
+def _localize_host_has_dlc(dlc):
+    # dlc = localization_map[value]
+    return 'Host does has the {} DLC'.format(dlc)
+
+def _localize_host_has_not_dlc(dlc):
+    # dlc = localization_map[value]
+    return 'Host does NOT have the {} DLC'.format(dlc)
 
 def _localize_has_technology(value):
     try:
@@ -98,6 +119,11 @@ def _localize_has_modifier(value):
     return 'Has the {} modifier'.format(modifier)
 
 
+def _localize_has_not_modifier(value):
+    modifier = localization_map[value]
+    return 'Does NOT have the {} modifier'.format(modifier)
+
+
 def _localize_is_country_type(value):
     return 'Is of the {} country type'.format(value)
 
@@ -105,17 +131,26 @@ def _localize_is_country_type(value):
 def _localize_ideal_planet_class(value):
     return 'Is ideal class'.format(value)
 
+
 def _localize_is_planet_class(value):
     planet_class = localization_map[value]
     return 'Is {}'.format(planet_class)
+
 
 def _localize_has_government(value):
     government = localization_map[value]
     return 'Has {}'.format(government)
 
+
 def _localize_is_colony(value):
     return 'Is a Colony' if value == 'yes' \
         else 'Is NOT a Colony'
+
+
+def _localize_allows_slavery(value):
+    return 'Allows Slavery' if value == 'yes' \
+        else 'Does NOT allow Slavery'
+
 
 def _localize_has_federation(value):
     return 'Is in a Federation' if value == 'yes' \
@@ -125,6 +160,9 @@ def _localize_num_owned_planets(value):
     operator, value = _operator_and_value(value)
     return 'Number of owned planets is {} {}'.format(operator, value)
 
+def _localize_count_owned_pops(value):
+    operator, value = _operator_and_value(value[1]['count'])
+    return 'Number of enslaved planets {} {}'.format(operator, value)
 
 def _localize_num_communications(value):
     operator, value = _operator_and_value(value)
@@ -235,11 +273,13 @@ def _localize_any_country(values):
     parsed_values = [_parse_condition(value) for value in values]
     return {'Any Country': parsed_values}
 
+def _localize_any_relation(values):
+    parsed_values = [_parse_condition(value) for value in values]
+    return {'Any Relation': parsed_values}
 
 def _localize_any_owned_pop(values):
     parsed_values = [_parse_condition(value) for value in values]
-    return {'Any owned Pop': parsed_values}
-
+    return {'Any empire Pop': parsed_values}
 
 def _localize_not_any_owned_pop(values):
     parsed_values = [_parse_condition(value) for value in values]
@@ -251,6 +291,11 @@ def _localize_any_owned_planet(values):
     return {'Any owned Planet': parsed_values}
 
 
+def _localize_any_planet(values):
+    parsed_values = [_parse_condition(value) for value in values]
+    return {'Any Planet': parsed_values}
+
+
 def _localize_not_any_owned_planet(values):
     parsed_values = [_parse_condition(value) for value in values]
     return {'NOT any owned Planet': parsed_values}
@@ -260,9 +305,11 @@ def _localize_any_tile(values):
     parsed_values = [_parse_condition(value) for value in values]
     return {'Any Tile': parsed_values}
 
+
 def _localize_has_blocker(value):
     blocker = localization_map[value]
     return 'Has {} Tile Blocker'.format(blocker)
+
 
 def _localize_any_neighbor_country(values):
     parsed_values = [_parse_condition(value) for value in values]
@@ -314,7 +361,8 @@ def _localize_not(value):
 
 def _operator_and_value(data):
     if type(data) is int:
-        operator, value = 'equal to', data
+        operator = 'equal to'
+        value = data
     elif type(data) is dict:
         operator = {
             '>': 'greater than',

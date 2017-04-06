@@ -267,7 +267,7 @@ for directory in directories:
     tile_blocker_file_paths = get_file_paths(tile_blocker_file_paths,
                                                  tile_blocker_dir)
 
-    loc_dir = path.join(directory, 'localisation')
+    loc_dir = path.join(directory, 'localisation/english')
     loc_file_paths += [path.join(loc_dir, filename) for filename
                        in listdir(loc_dir)
                        if path.isfile(path.join(loc_dir, filename))
