@@ -22,7 +22,7 @@
       "Unlocks Component: Basic Computers (Battleship)",
       "Unlocks Component: Basic Computers (Heavy Escort)",
       "Unlocks Component: Basic Computers (Assault Cruiser)",
-      "Unlocks Component: Basic Labs"
+      "Unlocks Component: Basic Science Lab"
     ],
     "base_factor": 1.0,
     "base_weight": 100,
@@ -147,8 +147,7 @@
     "cost": 100,
     "key": "tech_physics_transporters_23",
     "feature_unlocks": [
-      "Resettlement Cost: -10%",
-      "Unlocks Policy: Migration - Free Transporter Access"
+      "Resettlement Cost: -10%"
     ],
     "base_factor": 1.0,
     "base_weight": 200,
@@ -791,7 +790,7 @@
     "feature_unlocks": [
       "Unlocks Component: Light Phase Disruptor Cannon",
       "Unlocks Component: Starbase Disruptor Array",
-      "Unlocks Module: Plasma Disruptor Defence Module"
+      "Unlocks Module: Disruptor Defence Module"
     ],
     "base_factor": 0.0,
     "base_weight": 1,
@@ -954,9 +953,9 @@
       "Omega Theory"
     ],
     "base_factor": 1.0,
-    "base_weight": 60,
+    "base_weight": 0,
     "weight_modifiers": [
-      "(\u00d71.25)  Research Leader (Physics):\n    \u2022   Is Voidcraft Expert\n"
+      "'+60':\n\u2022   All of the following:\n    \u2022   Has Entropic Recursion Technology\n    \u2022   'Has Doctrine: Strange Loop Technology'\n"
     ],
     "is_start_tech": false,
     "name": "Omega Theory"
@@ -5687,8 +5686,7 @@
     "cost": 3500,
     "key": "tech_physics_self_7",
     "feature_unlocks": [
-      "Research Speed (Physics): +5%",
-      "Unlocks Policy: Leadership - Androids Allowed"
+      "Research Speed (Physics): +5%"
     ],
     "base_factor": 1.0,
     "base_weight": 500,
@@ -7707,7 +7705,8 @@
     "cost": 100,
     "key": "tech_society_ministry_354",
     "feature_unlocks": [
-      "Monthly Influence: +1"
+      "Monthly Influence: +1",
+      "Unlocks Building: Heroic Landmark"
     ],
     "base_factor": 1.0,
     "base_weight": 200,
@@ -7823,8 +7822,7 @@
     "cost": 100,
     "key": "tech_society_post-scarcity_374",
     "feature_unlocks": [
-      "Unlocks Attachment: M.A.C.O",
-      "Unlocks Policy: Economic - Economical Utopia"
+      "Unlocks Attachment: M.A.C.O"
     ],
     "base_factor": 0.0,
     "base_weight": 1,
@@ -7855,7 +7853,7 @@
       "(\u00d70)  None of the following:\n    \u2022   Is a Humanoid\n"
     ],
     "is_start_tech": false,
-    "name": "Teaching of Sarek"
+    "name": "Teaching of Surak"
   },
   {
     "category": "Statecraft",
@@ -7869,9 +7867,7 @@
     "is_rare": false,
     "cost": 100,
     "key": "tech_society_rules_376",
-    "feature_unlocks": [
-      "Unlocks Policy: Economic - Rules of Acquisition"
-    ],
+    "feature_unlocks": [],
     "base_factor": 0.0,
     "base_weight": 1,
     "weight_modifiers": [
@@ -8152,7 +8148,7 @@
     "base_factor": 1.0,
     "base_weight": 90,
     "weight_modifiers": [
-      "(\u00d70)  Any of the following:\n    \u2022   Has Individualist Ethic\n    \u2022   Has Anarchist Ethic\n",
+      "(\u00d70)  Any of the following:\n    \u2022   Has Egalitarian Ethic\n    \u2022   Has Fanatic Egalitarian Ethic\n",
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Biology Expert\n"
     ],
     "is_start_tech": false,
@@ -8195,11 +8191,7 @@
     "key": "tech_society_that_487",
     "feature_unlocks": [
       "Unlocks Army: Slave Army",
-      "Unlocks Building: Slave Processing Facility",
-      "Unlocks Policy: Slavery - Regulated Xenos",
-      "Unlocks Policy: Slavery - Xenos Only",
-      "Unlocks Policy: Slavery - Regulated",
-      "Unlocks Policy: Slavery - Allowed"
+      "Unlocks Building: Slave Processing Facility"
     ],
     "base_factor": 1.0,
     "base_weight": 90,
@@ -8248,10 +8240,11 @@
     "key": "tech_society_mars_503",
     "feature_unlocks": [
       "Unlocks Building: Verteron Array",
-      "Reveals Resource: Mars Terraforming Location ([[sr_mars_22]])"
+      "Reveals Resource: Mars Terraforming Site ([[sr_mars_22]])",
+      "Reveals Resource: Terraforming Progress ([[sr_terraforming_23]])"
     ],
     "base_factor": 1.5,
-    "base_weight": 95,
+    "base_weight": 0,
     "weight_modifiers": [
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is New Worlds Expert\n",
       "(\u00d70)  None of the following:\n    \u2022   Is a Humanoid\n"
@@ -8351,7 +8344,7 @@
     "base_weight": 90,
     "weight_modifiers": [
       "(\u00d70)  Has Ministry of Intelligence Technology\n",
-      "(\u00d70)  None of the following:\n    \u2022   Has Diplomatic Ethic\n    \u2022   Has Xenophile Ethic\n",
+      "(\u00d70)  None of the following:\n    \u2022   Has Xenophile Ethic\n    \u2022   Has Fanatic Xenophile Ethic\n",
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Biology Expert\n"
     ],
     "is_start_tech": false,
@@ -8376,7 +8369,7 @@
     "base_weight": 90,
     "weight_modifiers": [
       "(\u00d70)  Has Interstellar Trade Association Technology\n",
-      "(\u00d70)  None of the following:\n    \u2022   Has Isolationist Ethic\n    \u2022   Has Xenophobe Ethic\n",
+      "(\u00d70)  None of the following:\n    \u2022   Has Xenophobe Ethic\n    \u2022   Has Fanatic Xenophobe Ethic\n",
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Biology Expert\n"
     ],
     "is_start_tech": false,
@@ -8419,7 +8412,7 @@
     "cost": 300,
     "key": "tech_society_interstellar_446",
     "feature_unlocks": [
-      "Unlocks Building: School"
+      "Unlocks Building: Interstellar Academy"
     ],
     "base_factor": 1.0,
     "base_weight": 90,
@@ -8540,7 +8533,7 @@
     "cost": 300,
     "key": "tech_society_neural_488",
     "feature_unlocks": [
-      "Slave Mineral Output: +15%",
+      "Slave Resource Output: +15%",
       "Slave Food Output: +15%"
     ],
     "base_factor": 1.0,
@@ -8834,7 +8827,8 @@
     "cost": 600,
     "key": "tech_society_galactic_356",
     "feature_unlocks": [
-      "Monthly Influence: +1"
+      "Monthly Influence: +1",
+      "Unlocks Building: Planetary Museum"
     ],
     "base_factor": 1.0,
     "base_weight": 200,
@@ -9127,7 +9121,7 @@
     "base_factor": 1.5,
     "base_weight": 85,
     "weight_modifiers": [
-      "(\u00d70)  None of the following:\n    \u2022   Has Diplomatic Ethic\n    \u2022   Has Xenophile Ethic\n",
+      "(\u00d70)  None of the following:\n    \u2022   Has Xenophile Ethic\n    \u2022   Has Fanatic Xenophile Ethic\n",
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Biology Expert\n"
     ],
     "is_start_tech": false,
@@ -9152,7 +9146,7 @@
     "base_weight": 10,
     "weight_modifiers": [
       "(\u00d70)  Does NOT have Large Scale Space Construction Technology\n",
-      "(\u00d70)  None of the following:\n    \u2022   Has Diplomatic Ethic\n    \u2022   Has Xenophile Ethic\n",
+      "(\u00d70)  None of the following:\n    \u2022   Has Xenophile Ethic\n    \u2022   Has Fanatic Xenophile Ethic\n",
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Biology Expert\n",
       "(\u00d72)  Has Black Ops Initiative Technology\n"
     ],
@@ -9177,7 +9171,7 @@
     "base_factor": 1.5,
     "base_weight": 85,
     "weight_modifiers": [
-      "(\u00d70)  None of the following:\n    \u2022   Has Isolationist Ethic\n    \u2022   Has Xenophobe Ethic\n",
+      "(\u00d70)  None of the following:\n    \u2022   Has Xenophobe Ethic\n    \u2022   Has Fanatic Xenophobe Ethic\n",
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Biology Expert\n"
     ],
     "is_start_tech": false,
@@ -9366,7 +9360,7 @@
     "base_weight": 85,
     "weight_modifiers": [
       "(\u00d70)  Has Frontier Collectives Technology\n",
-      "(\u00d70)  None of the following:\n    \u2022   Has Individualist Ethic\n    \u2022   Has Anarchist Ethic\n",
+      "(\u00d70)  None of the following:\n    \u2022   Has Egalitarian Ethic\n    \u2022   Has Fanatic Egalitarian Ethic\n",
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is New Worlds Expert\n"
     ],
     "is_start_tech": false,
@@ -9391,7 +9385,7 @@
     "base_weight": 85,
     "weight_modifiers": [
       "(\u00d70)  Has Civilian entrepreneurs Technology\n",
-      "(\u00d70)  None of the following:\n    \u2022   Has Collectivist Ethic\n    \u2022   Has Institutionalist Ethic\n",
+      "(\u00d70)  None of the following:\n    \u2022   Has Authoritarian Ethic\n    \u2022   Has Fanatic Egalitarian Ethic\n",
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is New Worlds Expert\n"
     ],
     "is_start_tech": false,
@@ -9487,7 +9481,7 @@
     "base_factor": 1.5,
     "base_weight": 80,
     "weight_modifiers": [
-      "(\u00d70)  None of the following:\n    \u2022   Has Diplomatic Ethic\n    \u2022   Has Xenophile Ethic\n",
+      "(\u00d70)  None of the following:\n    \u2022   Has Xenophile Ethic\n    \u2022   Has Fanatic Xenophile Ethic\n",
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Biology Expert\n"
     ],
     "is_start_tech": false,
@@ -9511,7 +9505,7 @@
     "base_factor": 1.5,
     "base_weight": 80,
     "weight_modifiers": [
-      "(\u00d70)  None of the following:\n    \u2022   Has Isolationist Ethic\n    \u2022   Has Xenophobe Ethic\n",
+      "(\u00d70)  None of the following:\n    \u2022   Has Xenophobe Ethic\n    \u2022   Has Fanatic Xenophobe Ethic\n",
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Biology Expert\n"
     ],
     "is_start_tech": false,
@@ -9837,6 +9831,7 @@
     "key": "tech_society_colonial_357",
     "feature_unlocks": [
       "Research Speed (Society): +5%",
+      "Unlocks Building: Cultural Plaza",
       "Unlocks Building: Planetary Capital"
     ],
     "base_factor": 1.0,
@@ -9889,8 +9884,8 @@
     "cost": 1500,
     "key": "tech_society_the_385",
     "feature_unlocks": [
-      "Unlocks Edict: The Grand Fleet",
-      "Unlocks Edict: Arms Race"
+      "Unlocks Edict: Arms Race",
+      "Unlocks Edict: The Grand Fleet"
     ],
     "base_factor": 1.0,
     "base_weight": 75,
@@ -9913,8 +9908,8 @@
     "cost": 1500,
     "key": "tech_society_multiculturalism_386",
     "feature_unlocks": [
-      "Unlocks Edict: Legal Aliens",
-      "Unlocks Edict: Tourism Bureau"
+      "Unlocks Edict: Tourism Bureau",
+      "Unlocks Edict: Legal Aliens"
     ],
     "base_factor": 1.0,
     "base_weight": 75,
@@ -10083,7 +10078,7 @@
     "base_factor": 1.5,
     "base_weight": 75,
     "weight_modifiers": [
-      "(\u00d70)  None of the following:\n    \u2022   Has Diplomatic Ethic\n    \u2022   Has Xenophile Ethic\n",
+      "(\u00d70)  None of the following:\n    \u2022   Has Xenophile Ethic\n    \u2022   Has Fanatic Xenophile Ethic\n",
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Biology Expert\n"
     ],
     "is_start_tech": false,
@@ -10102,12 +10097,12 @@
     "cost": 1500,
     "key": "tech_society_indoctrination_437",
     "feature_unlocks": [
-      "faction_surpression_cost: -40%"
+      "Governing Ethics Attraction: +10%"
     ],
     "base_factor": 1.5,
     "base_weight": 75,
     "weight_modifiers": [
-      "(\u00d70)  None of the following:\n    \u2022   Has Isolationist Ethic\n    \u2022   Has Xenophobe Ethic\n",
+      "(\u00d70)  None of the following:\n    \u2022   Has Xenophobe Ethic\n    \u2022   Has Fanatic Xenophobe Ethic\n",
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Biology Expert\n"
     ],
     "is_start_tech": false,
@@ -10477,7 +10472,7 @@
     "cost": 2100,
     "key": "tech_society_distributed_390",
     "feature_unlocks": [
-      "Unlocks Building: Central Plaza"
+      "Unlocks Building: Cultural Center"
     ],
     "base_factor": 1.0,
     "base_weight": 70,
@@ -10555,7 +10550,7 @@
     "base_weight": 70,
     "weight_modifiers": [
       "(\u00d70)  Does NOT have Colonial Authority Technology\n",
-      "(\u00d70)  None of the following:\n    \u2022   Has Diplomatic Ethic\n    \u2022   Has Xenophile Ethic\n",
+      "(\u00d70)  None of the following:\n    \u2022   Has Xenophile Ethic\n    \u2022   Has Fanatic Xenophile Ethic\n",
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Biology Expert\n"
     ],
     "is_start_tech": false,
@@ -10580,7 +10575,7 @@
     "base_weight": 70,
     "weight_modifiers": [
       "(\u00d70)  Does NOT have Colonial Authority Technology\n",
-      "(\u00d70)  None of the following:\n    \u2022   Has Isolationist Ethic\n    \u2022   Has Xenophobe Ethic\n",
+      "(\u00d70)  None of the following:\n    \u2022   Has Xenophobe Ethic\n    \u2022   Has Fanatic Xenophobe Ethic\n",
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Biology Expert\n"
     ],
     "is_start_tech": false,
@@ -10729,7 +10724,7 @@
   {
     "category": "Statecraft",
     "tier": 7,
-    "description": "We must have to courage to seize our fate and make true what was always meant to be.",
+    "description": "We must have the courage to seize our fate and make true what was always meant to be.",
     "area": "society",
     "prerequisites": [
       "tech_society_galactic_364"
@@ -10819,7 +10814,7 @@
     "base_factor": 1.5,
     "base_weight": 65,
     "weight_modifiers": [
-      "(\u00d70)  None of the following:\n    \u2022   Has Diplomatic Ethic\n    \u2022   Has Xenophile Ethic\n",
+      "(\u00d70)  None of the following:\n    \u2022   Has Xenophile Ethic\n    \u2022   Has Fanatic Xenophile Ethic\n",
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Biology Expert\n"
     ],
     "is_start_tech": false,
@@ -10838,12 +10833,12 @@
     "cost": 2800,
     "key": "tech_society_imperial_439",
     "feature_unlocks": [
-      "Ethics Divergence: -10%"
+      "Governing Ethics Attraction: +10%"
     ],
     "base_factor": 1.5,
     "base_weight": 65,
     "weight_modifiers": [
-      "(\u00d70)  None of the following:\n    \u2022   Has Isolationist Ethic\n    \u2022   Has Xenophobe Ethic\n",
+      "(\u00d70)  None of the following:\n    \u2022   Has Xenophobe Ethic\n    \u2022   Has Fanatic Xenophobe Ethic\n",
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Biology Expert\n"
     ],
     "is_start_tech": false,
@@ -11002,7 +10997,7 @@
     "cost": 3500,
     "key": "tech_society_advanced_661",
     "feature_unlocks": [
-      "TECH_UNLOCK_TERRAFORM_2_TITLE"
+      "Unlocks Feature: Advanced Terraforming"
     ],
     "base_factor": 1.5,
     "base_weight": 60,
@@ -11050,7 +11045,7 @@
     "cost": 3500,
     "key": "tech_society_advanced_714",
     "feature_unlocks": [
-      "TECH_UNLOCK_TERRAFORM_2_TITLE"
+      "Unlocks Feature: Advanced Terraforming"
     ],
     "base_factor": 1.5,
     "base_weight": 60,
@@ -11178,7 +11173,7 @@
     "base_factor": 1.5,
     "base_weight": 60,
     "weight_modifiers": [
-      "(\u00d70)  None of the following:\n    \u2022   Has Isolationist Ethic\n    \u2022   Has Xenophobe Ethic\n",
+      "(\u00d70)  None of the following:\n    \u2022   Has Xenophobe Ethic\n    \u2022   Has Fanatic Xenophobe Ethic\n",
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Biology Expert\n"
     ],
     "is_start_tech": false,
@@ -11437,7 +11432,7 @@
     "cost": 4500,
     "key": "tech_society_cultural_391",
     "feature_unlocks": [
-      "Unlocks Building: Imperial Monument"
+      "Unlocks Building: Cultural Nexus"
     ],
     "base_factor": 1.0,
     "base_weight": 55,
@@ -11744,7 +11739,7 @@
     "cost": 4500,
     "key": "tech_society_stimulant_491",
     "feature_unlocks": [
-      "Slave Mineral Output: +15%",
+      "Slave Resource Output: +15%",
       "Slave Food Output: +15%"
     ],
     "base_factor": 1.0,
@@ -11827,7 +11822,7 @@
   {
     "category": "Industry",
     "tier": 0,
-    "description": "Like the strands of a spider web, the extra-dimensional realm of hyperspace runs between the gravity wells of most stars. Faster than light travel is theoretically possible along these hyperlanes.\n\n",
+    "description": "Like the strands of a spider web, the extra-dimensional realm of hyperspace runs between the gravity wells of most stars. Faster than light travel is theoretically possible along these hyperlanes.",
     "area": "engineering",
     "prerequisites": [],
     "is_dangerous": false,
@@ -11846,7 +11841,7 @@
   {
     "category": "Industry",
     "tier": 0,
-    "description": "By enveloping a vessel in a warp field and forming a subspace bubble around it, velocities exceeding the speed of light are theoretically possible.\n\n",
+    "description": "By enveloping a vessel in a warp field and forming a subspace bubble around it, velocities exceeding the speed of light are theoretically possible.",
     "area": "engineering",
     "prerequisites": [],
     "is_dangerous": false,
@@ -11865,7 +11860,7 @@
   {
     "category": "Industry",
     "tier": 0,
-    "description": "A groundbreaking technological marvel, the Jump Drive shreds the local space-time continuum and rearranges it on the quantum level to be identical to that of the target destination - and thus the ship appears to near-instantly \"jump\" from system to system.\n\n",
+    "description": "A groundbreaking technological marvel, the Jump Drive shreds the local space-time continuum and rearranges it on the quantum level to be identical to that of the target destination - and thus the ship appears to near-instantly \"jump\" from system to system.",
     "area": "engineering",
     "prerequisites": [],
     "is_dangerous": false,
@@ -11884,7 +11879,7 @@
   {
     "category": "Industry",
     "tier": 0,
-    "description": "By tunneling directly through subspace, a temporary conduit can be established between two different points in normal space. Travel between these points would be near instantaneous.\n\n",
+    "description": "By tunneling directly through subspace, a temporary conduit can be established between two different points in normal space. Travel between these points would be near instantaneous.",
     "area": "engineering",
     "prerequisites": [],
     "is_dangerous": false,
@@ -11922,7 +11917,7 @@
   {
     "category": "Industry",
     "tier": 0,
-    "description": "Reinforced nanocomposite hull plating can provide an extra layer of protection that could be the difference between life and death in a combat situation.\n\n",
+    "description": "Reinforced nanocomposite hull plating can provide an extra layer of protection that could be the difference between life and death in a combat situation.",
     "area": "engineering",
     "prerequisites": [],
     "is_dangerous": false,
@@ -11941,7 +11936,7 @@
   {
     "category": "Industry",
     "tier": 0,
-    "description": "Energy deflector screens can stop a limited amount of incoming enemy fire before overloading. Their main drawback is that they consume large amounts of power.\n\n",
+    "description": "Energy deflector screens can stop a limited amount of incoming enemy fire before overloading. Their main drawback is that they consume large amounts of power.",
     "area": "engineering",
     "prerequisites": [],
     "is_dangerous": false,
@@ -11960,7 +11955,7 @@
   {
     "category": "Industry",
     "tier": 0,
-    "description": "Advances in solar panel technology could potentially reduce the operating costs of our spaceports. The panels would require an entire spaceport module to generate enough energy, however.\n\n",
+    "description": "Advances in solar panel technology could potentially reduce the operating costs of our spaceports. The panels would require an entire spaceport module to generate enough energy, however.",
     "area": "engineering",
     "prerequisites": [],
     "is_dangerous": false,
@@ -11979,7 +11974,7 @@
   {
     "category": "Industry",
     "tier": 0,
-    "description": "The progress we make calls for a new, nimbler form of administration that may aid rather than hinder us in our pursuits.\n\n",
+    "description": "The progress we make calls for a new, nimbler form of administration that may aid rather than hinder us in our pursuits.",
     "area": "engineering",
     "prerequisites": [],
     "is_dangerous": false,
@@ -11998,7 +11993,7 @@
   {
     "category": "Industry",
     "tier": 0,
-    "description": "Studying the different forms of life that appear on our world helps us better understand ourselves and the life that surrounds us.\n\n",
+    "description": "Studying the different forms of life that appear on our world helps us better understand ourselves and the life that surrounds us.",
     "area": "engineering",
     "prerequisites": [
       "tech_basic_science_lab_1"
