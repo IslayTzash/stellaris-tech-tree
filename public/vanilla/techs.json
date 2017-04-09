@@ -90,7 +90,8 @@
     "cost": 0,
     "key": "tech_hyper_drive_1",
     "feature_unlocks": [
-      "Unlocks Component: Hyperdrive I"
+      "Unlocks Component: Hyperdrive I",
+      "Unlocks Feature: Hyperlane Mapping"
     ],
     "base_factor": 1.0,
     "base_weight": 0,
@@ -180,6 +181,7 @@
     "cost": 360,
     "key": "tech_databank_uplinks",
     "feature_unlocks": [
+      "Unlocks Feature: Assist Research",
       "Unlocks Feature: Assist Research"
     ],
     "base_factor": 1.0,
@@ -959,6 +961,7 @@
     "key": "tech_automated_exploration",
     "feature_unlocks": [
       "Survey Speed: +15%",
+      "Unlocks Feature: Automatic Exploration",
       "Unlocks Feature: Automatic Exploration"
     ],
     "base_factor": 1.0,
@@ -1282,6 +1285,7 @@
     "cost": 1000,
     "key": "tech_hyperlane_mapping",
     "feature_unlocks": [
+      "Unlocks Feature: Hyperlane Mapping",
       "Unlocks Feature: Hyperlane Mapping"
     ],
     "base_factor": 1.0,
@@ -2668,6 +2672,7 @@
     "key": "tech_terrestrial_sculpting",
     "feature_unlocks": [
       "Unlocks Feature: Terraforming",
+      "Unlocks Feature: Terraforming",
       "Reveals Resource: Terraforming Gases ([[sr_terraform_gases]])",
       "Reveals Resource: Terraforming Liquids ([[sr_terraform_liquids]])"
     ],
@@ -3344,6 +3349,7 @@
     "cost": 720,
     "key": "tech_epigenetic_triggers",
     "feature_unlocks": [
+      "Unlocks Feature: Uplift",
       "Unlocks Feature: Uplift"
     ],
     "base_factor": 1.0,
@@ -3456,6 +3462,8 @@
     "key": "tech_gene_tailoring",
     "feature_unlocks": [
       "Trait Points: +1",
+      "Unlocks Feature: Genetic Modification",
+      "Unlocks Feature: Environmental Adaptation",
       "Unlocks Feature: Genetic Modification",
       "Unlocks Feature: Environmental Adaptation"
     ],
@@ -3645,6 +3653,7 @@
     "cost": 1800,
     "key": "tech_interstellar_campaigns",
     "feature_unlocks": [
+      "Unlocks Feature: Cheaper War Demands",
       "Unlocks Feature: Cheaper War Demands"
     ],
     "base_factor": 1.0,
@@ -3719,6 +3728,7 @@
     "cost": 1000,
     "key": "tech_subdermal_stimulation",
     "feature_unlocks": [
+      "Unlocks Feature: Chemical Bliss",
       "Unlocks Feature: Chemical Bliss"
     ],
     "base_factor": 0.5,
@@ -4546,6 +4556,7 @@
     "cost": 3000,
     "key": "tech_galactic_campaigns",
     "feature_unlocks": [
+      "Unlocks Feature: Cheaper War Demands",
       "Unlocks Feature: Cheaper War Demands"
     ],
     "base_factor": 1.0,
@@ -4755,6 +4766,7 @@
     "feature_unlocks": [
       "Mineral Storage Capacity: +2000",
       "Unlocks Feature: Spaceport Level II",
+      "Unlocks Feature: Spaceport Level II",
       "Unlocks Module: Corvette Assembly Yards"
     ],
     "base_factor": 1.0,
@@ -4783,7 +4795,8 @@
     "key": "tech_spaceport_3",
     "feature_unlocks": [
       "Mineral Storage Capacity: +2000",
-      "Unlocks Ship Type: Destroyer"
+      "Unlocks Ship Type: Destroyer",
+      "Unlocks Feature: Spaceport Level III"
     ],
     "base_factor": 1.0,
     "base_weight": 75,
@@ -5282,6 +5295,7 @@
     "feature_unlocks": [
       "Mineral Storage Capacity: +2000",
       "Unlocks Feature: Spaceport Level IV",
+      "Unlocks Feature: Spaceport Level IV",
       "Unlocks Module: Destroyer Assembly Yards"
     ],
     "base_factor": 1.0,
@@ -5311,7 +5325,8 @@
     "key": "tech_spaceport_5",
     "feature_unlocks": [
       "Mineral Storage Capacity: +2000",
-      "Unlocks Ship Type: Cruiser"
+      "Unlocks Ship Type: Cruiser",
+      "Unlocks Feature: Spaceport Level V"
     ],
     "base_factor": 1.0,
     "base_weight": 60,
@@ -6029,7 +6044,8 @@
     "key": "tech_spaceport_6",
     "feature_unlocks": [
       "Mineral Storage Capacity: +2000",
-      "Unlocks Ship Type: Battleship"
+      "Unlocks Ship Type: Battleship",
+      "Unlocks Feature: Spaceport Level VI"
     ],
     "base_factor": 1.0,
     "base_weight": 45,
@@ -6191,6 +6207,7 @@
     "cost": 5000,
     "key": "tech_synthetic_leaders",
     "feature_unlocks": [
+      "Unlocks Feature: Synth Leaders",
       "Unlocks Feature: Synth Leaders"
     ],
     "base_factor": 1.0,

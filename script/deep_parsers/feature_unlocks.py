@@ -34,7 +34,7 @@ class FeatureUnlocks:
         feature_flags = self._feature_flags(tech_data)
         custom_unlock_tooltip = self._unlocks(tech_data)
         unlocks = self._modifiers(tech_data) \
-                  + custom_unlock_tooltip \
+                  + custom_unlock_tooltip + feature_flags \
                   + ([] if custom_unlock_tooltip != []
                      else self._army_unlocks(tech_key)
                      + self._army_attachment_unlocks(tech_key)
