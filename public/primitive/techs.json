@@ -293,28 +293,6 @@
   {
     "category": "Computing",
     "tier": 1,
-    "description": "High-capacity quantum bands dedicated to databank transfers make possible virtually completely synchronous research operations across vast distances.",
-    "area": "physics",
-    "prerequisites": [],
-    "is_dangerous": false,
-    "is_rare": false,
-    "cost": 360,
-    "key": "tech_databank_uplinks",
-    "feature_unlocks": [
-      "Unlocks Feature: Assist Research",
-      "Unlocks Feature: Assist Research"
-    ],
-    "base_factor": 1.0,
-    "base_weight": 100,
-    "weight_modifiers": [
-      "(\u00d71.25)  Research Leader (Physics):\n    \u2022   Is Computing Expert\n"
-    ],
-    "is_start_tech": false,
-    "name": "Databank Uplinks"
-  },
-  {
-    "category": "Computing",
-    "tier": 1,
     "description": "Organizational circuitry rerouting academic fervor.",
     "area": "physics",
     "prerequisites": [
@@ -359,55 +337,6 @@
     ],
     "is_start_tech": false,
     "name": "Orbital Sensor Arrays"
-  },
-  {
-    "category": "Industry",
-    "tier": 1,
-    "description": "Modulated fields allow for increased production and improved energy yield.",
-    "area": "physics",
-    "prerequisites": [
-      "tech_power_plant_1"
-    ],
-    "is_dangerous": false,
-    "is_rare": false,
-    "cost": 360,
-    "key": "tech_power_plant_2",
-    "feature_unlocks": [
-      "Energy Storage Capacity: +2000",
-      "Unlocks Building: Power Plant II"
-    ],
-    "base_factor": 1.0,
-    "base_weight": 100,
-    "weight_modifiers": [
-      "(\u00d71.25)  Research Leader (Physics):\n    \u2022   Is Industry Expert\n"
-    ],
-    "is_start_tech": false,
-    "name": "Field Modulation"
-  },
-  {
-    "category": "Industry",
-    "tier": 1,
-    "description": "Basic entanglement principles applied to energy generation provide a substantial increase in energy output.",
-    "area": "physics",
-    "prerequisites": [
-      "tech_power_plant_2",
-      "tech_colonial_centralization"
-    ],
-    "is_dangerous": false,
-    "is_rare": false,
-    "cost": 720,
-    "key": "tech_power_plant_3",
-    "feature_unlocks": [
-      "Energy Storage Capacity: +2000",
-      "Unlocks Building: Power Plant III"
-    ],
-    "base_factor": 1.0,
-    "base_weight": 85,
-    "weight_modifiers": [
-      "(\u00d71.25)  Research Leader (Physics):\n    \u2022   Is Industry Expert\n"
-    ],
-    "is_start_tech": false,
-    "name": "Quantum Energy States"
   },
   {
     "category": "Industry",
@@ -476,29 +405,6 @@
     ],
     "is_start_tech": false,
     "name": "Databank Uplinks"
-  },
-  {
-    "category": "Computing",
-    "tier": 1,
-    "description": "Organizational circuitry rerouting academic fervor.",
-    "area": "physics",
-    "prerequisites": [
-      "tech_basic_science_lab_1"
-    ],
-    "is_dangerous": false,
-    "is_rare": false,
-    "cost": 360,
-    "key": "tech_administrative_ai",
-    "feature_unlocks": [
-      "Research Speed: +5%"
-    ],
-    "base_factor": 1.0,
-    "base_weight": 100,
-    "weight_modifiers": [
-      "(\u00d71.25)  Research Leader (Physics):\n    \u2022   Is Computing Expert\n"
-    ],
-    "is_start_tech": false,
-    "name": "Administrative AI"
   },
   {
     "category": "Computing",
@@ -665,31 +571,6 @@
     "name": "Improved Deflectors"
   },
   {
-    "category": "Voidcraft",
-    "tier": 1,
-    "description": "Powerful sensor arrays that can be added to the structure of orbital spaceports. They provide excellent sensor coverage of the surrounding region of space.",
-    "area": "physics",
-    "prerequisites": [
-      "tech_sensors_2"
-    ],
-    "is_dangerous": false,
-    "is_rare": true,
-    "cost": 480,
-    "key": "tech_orbital_sensor_array",
-    "feature_unlocks": [],
-    "base_factor": 0.5,
-    "base_weight": 95,
-    "weight_modifiers": [
-      "(\u00d70.5)  None of the following:\n    \u2022   Research Leader (Physics):\n        \u2022   Is Voidcraft Expert\n    \u2022   Research Leader (Physics):\n        \u2022   Is Curator\n",
-      "(\u00d71.25)  Research Leader (Physics):\n    \u2022   Is Voidcraft Expert\n    \u2022   Skill level is greater than 2\n",
-      "(\u00d71.5)  Research Leader (Physics):\n    \u2022   Is Voidcraft Expert\n    \u2022   Skill level is greater than 3\n",
-      "(\u00d71.1)  Research Leader (Physics):\n    \u2022   Is Maniacal\n",
-      "(\u00d71.25)  Research Leader (Physics):\n    \u2022   Is Spark of Genius\n"
-    ],
-    "is_start_tech": false,
-    "name": "Orbital Sensor Arrays"
-  },
-  {
     "category": "Industry",
     "tier": 1,
     "description": "Modulated fields allow for increased production and improved energy yield.",
@@ -737,52 +618,6 @@
     ],
     "is_start_tech": false,
     "name": "Quantum Energy States"
-  },
-  {
-    "category": "Industry",
-    "tier": 1,
-    "description": "Advances in solar panel technology could potentially reduce the operating costs of our spaceports. The panels would require an entire spaceport module to generate enough energy, however.",
-    "area": "physics",
-    "prerequisites": [
-      "tech_space_construction"
-    ],
-    "is_dangerous": false,
-    "is_rare": false,
-    "cost": 360,
-    "key": "tech_solar_panel_network",
-    "feature_unlocks": [],
-    "base_factor": 1.0,
-    "base_weight": 100,
-    "weight_modifiers": [
-      "(\u00d710)  Is AI controlled\n",
-      "(\u00d72)  Research Leader (Physics):\n    \u2022   Is Industry Expert\n"
-    ],
-    "is_start_tech": false,
-    "name": "Orbital Energy Conversion"
-  },
-  {
-    "category": "Industry",
-    "tier": 1,
-    "description": "Load-balancing facilities can greatly improve the stability of local grids and feed excess power back into centralized capacitors.",
-    "area": "physics",
-    "prerequisites": [
-      "tech_power_plant_1"
-    ],
-    "is_dangerous": false,
-    "is_rare": false,
-    "cost": 360,
-    "key": "tech_power_hub_1",
-    "feature_unlocks": [
-      "Energy Storage Capacity: +2500",
-      "Unlocks Building: Energy Grid"
-    ],
-    "base_factor": 1.0,
-    "base_weight": 100,
-    "weight_modifiers": [
-      "(\u00d71.25)  Research Leader (Physics):\n    \u2022   Is Industry Expert\n"
-    ],
-    "is_start_tech": false,
-    "name": "Global Energy Management"
   },
   {
     "category": "Particles",
@@ -1199,29 +1034,6 @@
     "name": "Practical Warp Travel"
   },
   {
-    "category": "Computing",
-    "tier": 2,
-    "description": "Miniaturization of the endpoint transmitters allow for installing them in clusters, further increasing bandwidth.",
-    "area": "physics",
-    "prerequisites": [
-      "tech_databank_uplinks"
-    ],
-    "is_dangerous": false,
-    "is_rare": false,
-    "cost": 1000,
-    "key": "tech_improved_databank_uplinks",
-    "feature_unlocks": [
-      "Unlocks Feature: Improved Assist Research"
-    ],
-    "base_factor": 1.0,
-    "base_weight": 75,
-    "weight_modifiers": [
-      "(\u00d71.25)  Research Leader (Physics):\n    \u2022   Is Computing Expert\n"
-    ],
-    "is_start_tech": false,
-    "name": "Uplink Miniaturization"
-  },
-  {
     "category": "Statecraft",
     "tier": 2,
     "description": "A bid for interplanetary resource pools and more flexible research grants.",
@@ -1340,32 +1152,6 @@
     ],
     "is_start_tech": false,
     "name": "Curator Archeology Lab"
-  },
-  {
-    "category": "Statecraft",
-    "tier": 2,
-    "description": "A bid for interplanetary resource pools and more flexible research grants.",
-    "area": "physics",
-    "prerequisites": [
-      "tech_physics_lab_1",
-      "tech_galactic_administration"
-    ],
-    "is_dangerous": false,
-    "is_rare": true,
-    "cost": 4000,
-    "key": "tech_global_research_initiative",
-    "feature_unlocks": [
-      "Unlocks Building: Research Institute"
-    ],
-    "base_factor": 0.5,
-    "base_weight": 45,
-    "weight_modifiers": [
-      "(\u00d70)  Has Machine Intelligence Authority\n",
-      "(\u00d70.25)  None of the following:\n    \u2022   Research Leader (Physics):\n        \u2022   Is Statecraft Expert\n    \u2022   Research Leader (Physics):\n        \u2022   Is Curator\n",
-      "(\u00d71.25)  Research Leader (Physics):\n    \u2022   Is Statecraft Expert\n"
-    ],
-    "is_start_tech": false,
-    "name": "Interplanetary Research Initiative"
   },
   {
     "category": "Computing",
@@ -1609,31 +1395,6 @@
     ],
     "is_start_tech": false,
     "name": "Subspace Sensors"
-  },
-  {
-    "category": "Industry",
-    "tier": 2,
-    "description": "A re-engineered and unified grid further reduces energy losses over distance.",
-    "area": "physics",
-    "prerequisites": [
-      "tech_power_hub_1",
-      "tech_colonial_centralization"
-    ],
-    "is_dangerous": false,
-    "is_rare": false,
-    "cost": 1400,
-    "key": "tech_power_hub_2",
-    "feature_unlocks": [
-      "Energy Storage Capacity: +2500",
-      "Unlocks Building: Energy Nexus"
-    ],
-    "base_factor": 1.0,
-    "base_weight": 70,
-    "weight_modifiers": [
-      "(\u00d71.25)  Research Leader (Physics):\n    \u2022   Is Industry Expert\n"
-    ],
-    "is_start_tech": false,
-    "name": "Planetary Power Grid"
   },
   {
     "category": "Field Manipulation",
@@ -2145,55 +1906,6 @@
     "base_weight": 50,
     "weight_modifiers": [
       "(\u00d70)  Has Machine Intelligence Authority\n",
-      "(\u00d71.25)  Research Leader (Physics):\n    \u2022   Is Computing Expert\n"
-    ],
-    "is_start_tech": false,
-    "name": "Positronic AI"
-  },
-  {
-    "category": "Industry",
-    "tier": 3,
-    "description": "Quantum superposition of energy coils, simultaneously drained and charged.",
-    "area": "physics",
-    "prerequisites": [
-      "tech_power_plant_3",
-      "tech_galactic_administration"
-    ],
-    "is_dangerous": false,
-    "is_rare": false,
-    "cost": 4000,
-    "key": "tech_power_plant_4",
-    "feature_unlocks": [
-      "Energy Storage Capacity: +2000",
-      "Unlocks Building: Power Plant IV",
-      "Unlocks Building: Power Plant V"
-    ],
-    "base_factor": 1.0,
-    "base_weight": 45,
-    "weight_modifiers": [
-      "(\u00d71.25)  Research Leader (Physics):\n    \u2022   Is Industry Expert\n"
-    ],
-    "is_start_tech": false,
-    "name": "Quantum Field Manipulation"
-  },
-  {
-    "category": "Computing",
-    "tier": 3,
-    "description": "Evolving artificial intellects are opening the door to the possibility for true synthetic sapience.",
-    "area": "physics",
-    "prerequisites": [
-      "tech_self_aware_logic"
-    ],
-    "is_dangerous": false,
-    "is_rare": false,
-    "cost": 3000,
-    "key": "tech_sapient_ai",
-    "feature_unlocks": [
-      "Research Speed: +5%"
-    ],
-    "base_factor": 1.0,
-    "base_weight": 50,
-    "weight_modifiers": [
       "(\u00d71.25)  Research Leader (Physics):\n    \u2022   Is Computing Expert\n"
     ],
     "is_start_tech": false,
