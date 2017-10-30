@@ -190,7 +190,8 @@ def get_file_paths(file_paths, directory):
 def localized_strings():
     loc_data = { }
     for file_path in loc_file_paths:
-        print('loading {} ...'.format(path.basename(file_path)))
+        filename = path.basename(file_path)
+        print('loading {} ...'.format(filename))
 
         # Coerce Paradox's bastardized YAML into compliance
         not_yaml_lines = codecs.open(file_path, 'r', 'utf-8-sig').readlines()
@@ -221,8 +222,7 @@ def localized_strings():
         try:
             loc_data.update(loc_map)
         except TypeError:
-            print('Unable to find head YAML key for {}'.format(
-                file_data['l_english']))
+            print('Unable to find head YAML key for {}'.format(filename))
             sys.exit()
 
     return loc_data

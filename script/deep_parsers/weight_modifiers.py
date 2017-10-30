@@ -406,6 +406,11 @@ def _operator_and_value(data):
     return operator, value
 
 
+# NSC mod scripted triggers:
+def _localize_is_playable_country(value):
+    return 'Is playable Country' if value == 'yes' \
+        else 'Is NOT playable Country'
+
 # New Horizons mod scripted triggers:
 def _localize_original_series_ships_era(value):
     return 'Original Series ships era' if value == 'yes' \
