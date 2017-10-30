@@ -213,13 +213,17 @@ def localized_strings():
             not_yaml += line
 
         still_not_yaml = re.sub(ur'£\w+  |§[A-Z!]', '', not_yaml)
-
         resembles_yaml = re.sub(r'(?<=\w):\d ?(?=")', ': ', still_not_yaml)
         actual_yaml = re.sub(r'^[ \t]+', '  ', resembles_yaml, flags=re.M)
 
         file_data = yaml.load(actual_yaml, Loader=yaml.Loader)
         loc_map = file_data['l_english']
-        loc_data.update(loc_map)
+        try:
+            loc_data.update(loc_map)
+        except TypeError:
+            print('Unable to find head YAML key for {}'.format(
+                file_data['l_english']))
+            sys.exit()
 
     return loc_data
 
