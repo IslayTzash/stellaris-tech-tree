@@ -23,6 +23,8 @@ from game_objects import Army, ArmyAttachment, BuildablePop, Building, \
 def valid_label(label):
     if not re.match(r'^\w+$', label):
         raise argparse.ArgumentTypeError('Must match [a-z0-9_]')
+    elif label not in config.mods.keys():
+        raise argparse.ArgumentTypeError('Unsupported mod')
     elif not path.isdir(path.join('public', label)):
         makedirs(path.join('public', label))
 
@@ -38,18 +40,16 @@ def valid_dirs(directory):
 
 arg_parser = argparse.ArgumentParser(
     description='Parse Stellaris tech and localization files')
-arg_parser.add_argument('label', type=valid_label)
-arg_parser.add_argument('--mod-id', type=int)
+arg_parser.add_argument('mod', type=valid_label)
 
 args = arg_parser.parse_args()
-tree_label = args.label
+mod_id = config.mods[args.mod]
+tree_label = args.mod
 directories = [config.game_dir]
-if args.mod_id is not None:
-    mod_dir = path.join(config.workshop_dir, args.mod_id)
-    directories.append(mod_dir)
 
-def eprint(string):
-    sys.stderr.write(string + '\n')
+if type(mod_id) is int:
+    mod_dir = path.join(config.workshop_dir, str(mod_id), 'mod')
+    directories.append(mod_dir)
 
 
 def p_script(tokens):
@@ -167,7 +167,7 @@ def get_file_paths(file_paths, directory):
            or not file_path.endswith('.txt'):
             continue
 
-        eprint('Loading {} ...'.format(filename))
+        print('loading {} ...'.format(filename))
 
         # If filename already loaded, replace old one with new:
         path_to_delete = next(iter(
@@ -176,7 +176,7 @@ def get_file_paths(file_paths, directory):
             if path.basename(file_path) == filename
         ), None)
         if path_to_delete is not None:
-            eprint('Replacing {} ...'.format(path.basename(path_to_delete)))
+            print('replacing {} ...'.format(path.basename(path_to_delete)))
             file_paths.remove(path_to_delete)
 
         file_paths.append(path.join(directory, filename))
@@ -187,7 +187,7 @@ def get_file_paths(file_paths, directory):
 def localized_strings():
     loc_data = { }
     for file_path in loc_file_paths:
-        eprint('Loading {} ...'.format(path.basename(file_path)))
+        print('loading {} ...'.format(path.basename(file_path)))
 
         # Coerce Paradox's bastardized YAML into compliance
         not_yaml_lines = codecs.open(file_path, 'r', 'utf-8-sig').readlines()
@@ -210,6 +210,7 @@ def localized_strings():
             not_yaml += line
 
         still_not_yaml = re.sub(ur'£\w+  |§[A-Z!]', '', not_yaml)
+
         resembles_yaml = re.sub(r'(?<=\w):\d ?(?=")', ': ', still_not_yaml)
         actual_yaml = re.sub(r'^[ \t]+', '  ', resembles_yaml, flags=re.M)
 
@@ -308,19 +309,33 @@ pdx_tile_blocker_scripts = '\r\n'.join([open(file_path).read()
                                         for file_path
                                         in tile_blocker_file_paths])
 pdx_parser = yacc()
-parsed_scripts = {
-    'technology': pdx_parser.parse(pdx_tech_scripts),
-    'army': pdx_parser.parse(pdx_army_scripts),
-    'army_attachment': pdx_parser.parse(pdx_army_attachment_scripts),
-    'buildable_pop': pdx_parser.parse(pdx_buildable_pop_scripts),
-    'building': pdx_parser.parse(pdx_building_scripts),
-    'component': pdx_parser.parse(pdx_component_scripts),
-    'edict': pdx_parser.parse(pdx_edict_scripts),
-    'policy': pdx_parser.parse(pdx_policy_scripts),
-    'resource': pdx_parser.parse(pdx_resource_scripts),
-    'spaceport_module': pdx_parser.parse(pdx_spaceport_module_scripts),
-    'tile_blocker': pdx_parser.parse(pdx_tile_blocker_scripts)
-}
+
+def parse_scripts(file_paths):
+    parsed = []
+
+    for file_path in file_paths:
+        print('parsing {} ...'.format(path.basename(file_path)))
+        contents = open(file_path).read()
+        # New Horizons mod has their own YAML corruption
+        if mod_id == 688086068 and "jem'hadar" in contents:
+            print('fixing New Horizons YAML ...')
+            contents = contents.replace("_jem'hadar", "_jem_hadar")
+
+        parsed += pdx_parser.parse(contents)
+
+    return parsed
+
+parsed_scripts = {'technology': parse_scripts(tech_file_paths),
+                  'army': parse_scripts(army_file_paths),
+                  'army_attachment': parse_scripts(army_attachment_file_paths),
+                  'buildable_pop': parse_scripts(buildable_pop_file_paths),
+                  'building': parse_scripts(building_file_paths),
+                  'component': parse_scripts(component_file_paths),
+                  'edict': parse_scripts(edict_file_paths),
+                  'policy': parse_scripts(policy_file_paths),
+                  'resource': parse_scripts(resource_file_paths),
+                  'spaceport_module': parse_scripts(spaceport_module_file_paths),
+                  'tile_blocker': parse_scripts(tile_blocker_file_paths)}
 
 armies = [Army(entry, loc_data) for entry in parsed_scripts['army']
           if not entry.keys()[0].startswith('@')]

@@ -404,3 +404,101 @@ def _operator_and_value(data):
         value = data.values()[0]
 
     return operator, value
+
+
+# New Horizons mod scripted triggers:
+def _localize_original_series_ships_era(value):
+    return 'Original Series ships era' if value == 'yes' \
+        else 'NOT Original Series ships era'
+
+
+def _localize_motion_picture_ships_era(value):
+    return 'Motion Picture ships era' if value == 'yes' \
+        else 'NOT Motion Picture ships era'
+
+
+def _localize_is_borg_empire(value):
+    return 'Is the Borg Empire' if value == 'yes' \
+        else 'Is NOT the Borg Empire'
+
+
+def _localize_is_nomadic_empire(value):
+    return 'Is the Nomadic Empire' if value == 'yes' \
+        else 'Is NOT the Nomadic Empire'
+
+
+def _localize_is_machine_cybernetic_empire(value):
+    return 'Is the Machine Cybernetic Empire' if value == 'yes' \
+        else 'Is NOT the Machine Cybernetic Empire'
+
+
+def _localize_is_temporal_masters(value):
+    return 'Is the Temporal Masters' if value == 'yes' \
+        else 'Is NOT the Temporal Masters'
+
+
+def _localize_is_mirror_version_empire(value):
+    return 'Is a Mirror Universe Empire' if value == 'yes' \
+        else 'Is NOT a Mirror Universe Empire'
+
+
+def _localize_has_espionage_agency(value):
+    return 'Has an Espionage Agency' if value == 'yes' \
+        else 'Does NOT have an Espionage Agency'
+
+
+def _localize_is_master_geneticist(value):
+    return 'Has Master Geneticist Trait' if value == 'yes' \
+        else 'Does NOT have Master Geneticist Trait'
+
+
+def _localize_no_psionic_potential(value):
+    return 'Does NOT have Psionic Potential' if value == 'yes' \
+        else 'Has Psionic Potential'
+
+
+def _localize_is_telepathic_empire(value):
+    return 'Is a Telepathic Empire' if value == 'yes' \
+        else 'Is NOT a Telepathic Empire'
+
+
+def _localize_is_non_standard_colonization(value):
+    return 'Is a non-standard colonization' if value == 'yes' \
+        else 'Is a standard colonization'
+
+
+def _localize_uses_photonic_weapons_any_torp(value):
+    return 'Uses Photonic Torpedoes' if value == 'yes' \
+        else 'Does NOT use Photonic Torpedoes'
+
+
+def _localize_uses_plasma_weapons_any_torp(value):
+    return 'Uses Plasma Torpedoes' if value == 'yes' \
+        else 'Does NOT use Plasma Torpedoes'
+
+
+def _localize_uses_phaser_weapons_any(value):
+    return 'Uses Phasers' if value == 'yes' \
+        else 'Does NOT use Phasers'
+
+
+def _localize_uses_disruptor_weapons_any(value):
+    return 'Uses Disruptors' if value == 'yes' \
+        else 'Does NOT use Disruptors'
+
+
+def _localize_uses_disruptor_weapons(value):
+    return 'Uses Disruptors' if value == 'yes' \
+        else 'Does NOT use Disruptors'
+
+def _localize_uses_plasma_disruptor_weapons(value):
+    return 'Uses Plasma Disruptors' if value == 'yes' \
+        else 'Does NOT use Plasma Disruptors'
+
+def _localize_uses_antiproton_weapons_any(value):
+    return 'Uses Anti-Proton Weapons' if value == 'yes' \
+        else 'Does NOT use Anti-Proton Weapons'
+
+def _localize_uses_cloaks(value):
+    return 'Uses Cloaking' if value == 'yes' \
+        else 'Does NOT use Cloaking'
