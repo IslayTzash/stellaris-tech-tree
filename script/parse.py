@@ -3,7 +3,7 @@
 
 from __future__ import print_function
 
-import config
+import imp
 from lex import tokens
 from os import listdir, makedirs, path
 from ply.yacc import yacc
@@ -18,6 +18,9 @@ import sys
 from game_objects import Army, ArmyAttachment, BuildablePop, Building, \
     Component, Edict, Policy, Resource, SpaceportModule, Technology, \
     TechnologyJSONEncoder, TileBlocker
+
+config = imp.load_source('config', 'config.py')
+
 
 # Process CLI arguments:
 def valid_label(label):
