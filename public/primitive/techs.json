@@ -17,7 +17,7 @@
     "weight_modifiers": [
       "(\u00d71.25)  Research Leader (Physics):\n    \u2022   Is Industry Expert\n"
     ],
-    "is_start_tech": true,
+    "is_start_tech": false,
     "name": "High-Energy Capacitors"
   },
   {
@@ -2312,7 +2312,7 @@
       "(\u00d72)  Has Fanatic Militarist Ethic\n",
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Military Theory Expert\n"
     ],
-    "is_start_tech": true,
+    "is_start_tech": false,
     "name": "Planetary Defenses"
   },
   {
@@ -2337,7 +2337,7 @@
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Biology Expert\n",
       "(\u00d70)  Has Machine Intelligence Authority\n"
     ],
-    "is_start_tech": true,
+    "is_start_tech": false,
     "name": "Hydroponics"
   },
   {
@@ -2358,7 +2358,7 @@
     "base_factor": 1000.0,
     "base_weight": 125,
     "weight_modifiers": [],
-    "is_start_tech": true,
+    "is_start_tech": false,
     "name": "New Worlds Protocol"
   },
   {
@@ -2384,7 +2384,7 @@
     "weight_modifiers": [
       "(\u00d70.75)  None of the following:\n    \u2022   Has Pacifist Ethic\n    \u2022   Has Fanatic Pacifist Ethic\n"
     ],
-    "is_start_tech": true,
+    "is_start_tech": false,
     "name": "Planetary Government"
   },
   {
@@ -2409,7 +2409,7 @@
     "weight_modifiers": [
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Statecraft Expert\n"
     ],
-    "is_start_tech": true,
+    "is_start_tech": false,
     "name": "Sociocultural History"
   },
   {
@@ -4965,7 +4965,7 @@
       "(\u00d74)  Number of years since game start is greater than 10\n",
       "(\u00d71.25)  Research Leader (Engineering):\n    \u2022   Is Voidcraft Expert\n"
     ],
-    "is_start_tech": true,
+    "is_start_tech": false,
     "name": "Spaceport"
   },
   {
@@ -4989,7 +4989,7 @@
     "weight_modifiers": [
       "(\u00d71.25)  Research Leader (Engineering):\n    \u2022   Is Voidcraft Expert\n"
     ],
-    "is_start_tech": true,
+    "is_start_tech": false,
     "name": "Interplanetary Expeditionary Forces"
   },
   {
@@ -5013,7 +5013,7 @@
       "(\u00d71.25)  Research Leader (Engineering):\n    \u2022   Is Voidcraft Expert\n",
       "(\u00d71.25)  Any of the following:\n    \u2022   Has Militarist Ethic\n    \u2022   Has Fanatic Militarist Ethic\n"
     ],
-    "is_start_tech": true,
+    "is_start_tech": false,
     "name": "Deep Space Outposts"
   },
   {
@@ -5035,7 +5035,7 @@
     "weight_modifiers": [
       "(\u00d71.25)  Research Leader (Engineering):\n    \u2022   Is Industry Expert\n"
     ],
-    "is_start_tech": true,
+    "is_start_tech": false,
     "name": "Industrial Base"
   },
   {
@@ -5060,7 +5060,7 @@
     "weight_modifiers": [
       "(\u00d71.5)  Has Subspace Wormholes Theory Technology\n"
     ],
-    "is_start_tech": true,
+    "is_start_tech": false,
     "name": "Offworld Construction"
   },
   {

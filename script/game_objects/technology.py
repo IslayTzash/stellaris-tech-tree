@@ -6,7 +6,8 @@ from json import JSONEncoder
 class Technology:
     def __init__(self, tech, armies, army_attachments, buildable_pops,
                  buildings, components, edicts, policies, resources,
-                 spaceport_modules, tile_blockers, loc_data, at_vars):
+                 spaceport_modules, tile_blockers, loc_data, at_vars,
+                 start_with_tier_zero=True):
         self.key = tech.keys()[0]
         self._at_vars = at_vars
         self._loc_data = loc_data
@@ -31,7 +32,8 @@ class Technology:
         self.base_factor = self._base_factor(tech_data)
         self.weight_modifiers = self._weight_modifiers(tech_data)
         self.prerequisites = self._prerequisites(tech_data)
-        self.is_start_tech = self._is_start_tech(tech_data)
+        self.is_start_tech = self._is_start_tech(tech_data,
+                                                 start_with_tier_zero)
         self.is_dangerous = self._is_dangerous(tech_data)
         self.is_rare = self._is_rare(tech_data)
 
@@ -42,13 +44,14 @@ class Technology:
                                        loc_data)
         self.feature_unlocks = unlock_parser.parse(self.key, tech_data)
 
-    def _is_start_tech(self, tech_data):
+    def _is_start_tech(self, tech_data, start_with_tier_zero):
         try:
             yes_no = next(iter(key for key in tech_data
                                if key.keys()[0] == 'start_tech'))['start_tech']
             is_start_tech = True if yes_no == 'yes' else False
         except StopIteration:
-            is_start_tech = True if self.tier == 0 else False
+            is_start_tech = True if self.tier == 0 and start_with_tier_zero \
+                            else False
 
         return is_start_tech
 

@@ -324,7 +324,7 @@ def parse_scripts(file_paths):
         print('parsing {} ...'.format(path.basename(file_path)))
         contents = open(file_path).read()
         # New Horizons mod has their own YAML corruption
-        if mod_id == 688086068 and "jem'hadar" in contents:
+        if args.mod == 'new_horizon' and "jem'hadar" in contents:
             print('fixing New Horizons YAML ...')
             contents = contents.replace("_jem'hadar", "_jem_hadar")
 
@@ -391,9 +391,15 @@ for entry in parsed_scripts['technology']:
         at_vars[at_var] = entry[at_var]
         continue
 
+    if args.mod == 'primitive':
+        start_with_tier_zero = False
+    else:
+        start_with_tier_zero = True
+
     tech = Technology(entry, armies, army_attachments, buildable_pops,
                       buildings, components, edicts, policies, resources,
-                      spaceport_modules, tile_blockers, loc_data, at_vars)
+                      spaceport_modules, tile_blockers, loc_data, at_vars,
+                      start_with_tier_zero)
     if not tech.is_start_tech \
        and tech.base_weight * tech.base_factor == 0 \
        and len(tech.weight_modifiers) == 0:
