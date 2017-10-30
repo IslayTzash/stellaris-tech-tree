@@ -344,6 +344,25 @@ def _localize_has_blocker(value):
     return 'Has {} Tile Blocker'.format(blocker)
 
 
+def _localize_has_surveyed_class(value):
+    return 'Has surveyed {}'.format(value)
+
+
+def _localize_has_tradition(value):
+    tradition = localization_map[value]
+    return 'Has {} Tradition'.format(tradition)
+
+
+def _localize_has_not_tradition(value):
+    tradition = localization_map[value]
+    return 'Does NOT have {} Tradition'.format(tradition)
+
+
+def _localize_has_swapped_tradition(value):
+    tradition = localization_map[value]
+    return 'Has {} Swapped Tradition'.format(tradition)
+
+
 def _localize_any_neighbor_country(values):
     parsed_values = [_parse_condition(value) for value in values]
     return {'Any Neighbor Country': parsed_values}
@@ -390,6 +409,11 @@ def _localize_not(value):
         negation = _parse_condition(negated_condition)
 
     return negation
+
+
+def _localize_not_and(values):
+    parsed_values = [_parse_condition(value) for value in values]
+    return {'Not all of the following': parsed_values}
 
 
 def _operator_and_value(data):

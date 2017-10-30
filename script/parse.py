@@ -315,7 +315,7 @@ pdx_spaceport_module_scripts = '\r\n'.join([open(file_path).read()
 pdx_tile_blocker_scripts = '\r\n'.join([open(file_path).read()
                                         for file_path
                                         in tile_blocker_file_paths])
-pdx_parser = yacc()
+yacc_parser = yacc()
 
 def parse_scripts(file_paths):
     parsed = []
@@ -328,7 +328,7 @@ def parse_scripts(file_paths):
             print('fixing New Horizons YAML ...')
             contents = contents.replace("_jem'hadar", "_jem_hadar")
 
-        parsed += pdx_parser.parse(contents)
+        parsed += yacc_parser.parse(contents)
 
     return parsed
 
