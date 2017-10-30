@@ -54,8 +54,8 @@ class FeatureUnlocks:
 
         def localize(modifier):
             key = modifier.keys()[0]
-            pprint(key)
-            pprint(modifier)
+            # pprint(key)
+            # pprint(modifier)
             if key in ('description', 'description_parameters',
                        'BIOLOGICAL_species_trait_points_add'):
                 return None
