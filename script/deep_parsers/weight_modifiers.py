@@ -59,21 +59,36 @@ def _localize_has_ethic(value):
     ethic = localization_map[value]
     return 'Has {} Ethic'.format(ethic)
 
+
 def _localize_has_not_ethic(value):
     ethic = localization_map[value]
     return 'Does NOT have {} Ethic'.format(ethic)
+
 
 def _localize_has_civic(value):
     civic = localization_map[value]
     return 'Has {} Government Civic'.format(civic)
 
+
+def _localize_has_valid_civic(value):
+    civic = localization_map[value]
+    return 'Has {} Government Civic'.format(civic)
+
+
+def _localize_has_not_civic(value):
+    civic = localization_map[value]
+    return 'Does NOT have {} Government Civic'.format(civic)
+
+
 def _localize_has_ascension_perk(value):
     perk = localization_map[value]
     return 'Has {} Ascension Perk'.format(perk)
 
+
 def _localize_has_megastructure(value):
     megastructure = localization_map[value]
     return 'Has Megatructure {}'.format(megastructure)
+
 
 def _localize_has_policy_flag(value):
     policy_flag = localization_map[value]
@@ -87,6 +102,10 @@ def _localize_has_trait(value):
 def _localize_has_authority(value):
     authority = localization_map[value]
     return 'Has {} Authority'.format(authority)
+
+def _localize_has_not_authority(value):
+    authority = localization_map[value]
+    return 'Does NOT have {} Authority'.format(authority)
 
 def _localize_host_has_dlc(dlc):
     # dlc = localization_map[value]
@@ -142,9 +161,23 @@ def _localize_has_government(value):
     return 'Has {}'.format(government)
 
 
+def _localize_has_not_government(value):
+    government = localization_map[value]
+    return 'Does NOT have {}'.format(government)
+
+
 def _localize_is_colony(value):
     return 'Is a Colony' if value == 'yes' \
         else 'Is NOT a Colony'
+
+
+def _localize_is_ftl_restricted(value):
+    return 'FTL is restricted' if value == 'yes' \
+        else 'FTL is NOT restricted'
+
+def _localize_has_any_megastructure_in_empire(value):
+    return 'Has any Megastructure' if value == 'yes' \
+        else 'Has NO Megastructures'
 
 
 def _localize_allows_slavery(value):

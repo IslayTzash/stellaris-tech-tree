@@ -54,6 +54,12 @@ class FeatureUnlocks:
 
         def localize(modifier):
             key = modifier.keys()[0]
+            pprint(key)
+            pprint(modifier)
+            if key in ('description', 'description_parameters',
+                       'BIOLOGICAL_species_trait_points_add'):
+                return None
+
             value = ('{:+.0%}'.format(modifier[key])
                      if modifier[key] < 1
                      or int(modifier[key]) != modifier[key]
@@ -100,10 +106,11 @@ class FeatureUnlocks:
             return '{}: {}'.format(localized.keys()[0], localized.values()[0])
 
         try:
-            acquired_modifiers = [localize(modifier) for modifier in next(iter(
-                attribute for attribute in tech_data
-                if attribute.keys()[0] == 'modifier'
-            ))['modifier']]
+            acquired_modifiers = [localize(modifier)
+                                  for modifier
+                                  in next(iter(attribute for attribute
+                                               in tech_data
+                                               if attribute.keys()[0] == 'modifier'))['modifier']]
         except (StopIteration):
             acquired_modifiers = []
 

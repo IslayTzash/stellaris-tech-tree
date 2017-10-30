@@ -258,13 +258,45 @@
     "key": "tech_cryostasis_1",
     "feature_unlocks": [
       "Colony Development Speed: +50%",
-      "Colony Ship Build Cost: -25%"
+      "Colony Influence Cost: -25%"
     ],
     "base_factor": 1.0,
     "base_weight": 90,
     "weight_modifiers": [],
     "is_start_tech": false,
     "name": "AI-Controlled Colony Ships"
+  },
+  {
+    "category": "Computing",
+    "tier": 1,
+    "description": "An advanced AI will aid science officers in their task to explore strange new worlds, to seek out new life and new civilizations, to boldly go where no Blorg has gone before. The Science Ship will be able to explore the galaxy with help from an AI.",
+    "area": "physics",
+    "prerequisites": [],
+    "is_dangerous": false,
+    "is_rare": false,
+    "cost": 600,
+    "key": "tech_automated_exploration",
+    "feature_unlocks": [
+      "Unlocks Feature: Automatic Exploration",
+      "Unlocks Feature: Automatic Exploration",
+      "Unlocks Edict: Map the Stars"
+    ],
+    "base_factor": 1.0,
+    "base_weight": 90,
+    "weight_modifiers": [
+      "(\u00d71.25)  Research Leader (Physics):\n    \u2022   Is Computing Expert\n",
+      "(\u00d70)  Number of years since game start is less than 10\n",
+      "(\u00d72.0)  All of the following:\n    \u2022   Is NOT AI controlled\n    \u2022   Number of years since game start is greater than 20\n",
+      "(\u00d72.0)  All of the following:\n    \u2022   Is NOT AI controlled\n    \u2022   Number of years since game start is greater than 30\n",
+      "(\u00d72.0)  All of the following:\n    \u2022   Is NOT AI controlled\n    \u2022   Number of years since game start is greater than 40\n",
+      "(\u00d72.0)  All of the following:\n    \u2022   Is NOT AI controlled\n    \u2022   Number of years since game start is greater than 50\n",
+      "(\u00d72.0)  Number of owned planets is greater than 5\n",
+      "(\u00d72.0)  Number of owned planets is greater than 10\n",
+      "(\u00d72.0)  Number of owned planets is greater than 15\n",
+      "(\u00d72.0)  Number of owned planets is greater than 20\n"
+    ],
+    "is_start_tech": false,
+    "name": "Automated Exploration Protocols"
   },
   {
     "category": "Computing",
@@ -308,7 +340,7 @@
     "feature_unlocks": [
       "Unlocks Module: Synchronized Defenses"
     ],
-    "base_factor": 1.0,
+    "base_factor": 0.5,
     "base_weight": 95,
     "weight_modifiers": [
       "(\u00d70.5)  None of the following:\n    \u2022   Research Leader (Physics):\n        \u2022   Is Voidcraft Expert\n    \u2022   Research Leader (Physics):\n        \u2022   Is Curator\n",
@@ -409,7 +441,7 @@
     "cost": 360,
     "key": "tech_sensors_2",
     "feature_unlocks": [
-      "Survey Speed: +15%",
+      "Planet Sensor Range: +30",
       "Unlocks Component: Gravitic Sensors"
     ],
     "base_factor": 1.0,
@@ -435,10 +467,10 @@
     "feature_unlocks": [
       "Unlocks Module: Observatory"
     ],
-    "base_factor": 1.0,
+    "base_factor": 0.5,
     "base_weight": 95,
     "weight_modifiers": [
-      "(\u00d70.25)  None of the following:\n    \u2022   Research Leader (Physics):\n        \u2022   Is Voidcraft Expert\n    \u2022   Research Leader (Physics):\n        \u2022   Is Curator\n",
+      "(\u00d70.5)  None of the following:\n    \u2022   Research Leader (Physics):\n        \u2022   Is Voidcraft Expert\n    \u2022   Research Leader (Physics):\n        \u2022   Is Curator\n",
       "(\u00d71.25)  Research Leader (Physics):\n    \u2022   Is Voidcraft Expert\n    \u2022   Skill level is greater than 2\n",
       "(\u00d71.5)  Research Leader (Physics):\n    \u2022   Is Voidcraft Expert\n    \u2022   Skill level is greater than 3\n",
       "(\u00d71.1)  Research Leader (Physics):\n    \u2022   Is Maniacal\n",
@@ -564,7 +596,7 @@
     "base_weight": 90,
     "weight_modifiers": [
       "(\u00d72)  Research Leader (Engineering):\n    \u2022   Is Materials Expert\n",
-      "(\u00d70)  None of the following:\n    \u2022   Any System within Borders:\n        \u2022   Is in a resource_cluster_1 Cluster\n    \u2022   Any Relation:\n        \u2022   All of the following:\n            \u2022   Has communications with your Empire\n            \u2022   Has Lythuric Gas Refining Technology\n"
+      "(\u00d70)  None of the following:\n    \u2022   Any System within Borders:\n        \u2022   Is in a resource_cluster_1 Cluster\n    \u2022   Any Relation:\n        \u2022   Is of the default country type\n        \u2022   All of the following:\n            \u2022   Has communications with your Empire\n            \u2022   Has Lythuric Gas Refining Technology\n"
     ],
     "is_start_tech": false,
     "name": "Lythuric Gas Refining"
@@ -654,7 +686,9 @@
     "tier": 2,
     "description": "Weapons that eject destructive balls of high-energy plasma at targets. These plasma projectiles are extremely effective at eating through ship armor.",
     "area": "physics",
-    "prerequisites": [],
+    "prerequisites": [
+      "tech_lasers_2"
+    ],
     "is_dangerous": false,
     "is_rare": false,
     "cost": 1000,
@@ -707,7 +741,9 @@
     "tier": 2,
     "description": "Disruptors fire high-energy bolts that weaken and destroy the molecular bonds that hold the target's constituent atoms together. They are particularly effective against shields.",
     "area": "physics",
-    "prerequisites": [],
+    "prerequisites": [
+      "tech_lasers_2"
+    ],
     "is_dangerous": false,
     "is_rare": false,
     "cost": 1000,
@@ -777,6 +813,32 @@
     ],
     "is_start_tech": false,
     "name": "Interlinked Support Systems"
+  },
+  {
+    "category": "Statecraft",
+    "tier": 2,
+    "description": "A captive black hole that can be studied in a controlled environment would be an incredible research asset.\"",
+    "area": "physics",
+    "prerequisites": [
+      "tech_physics_lab_1",
+      "tech_galactic_administration"
+    ],
+    "is_dangerous": false,
+    "is_rare": true,
+    "cost": 4000,
+    "key": "tech_singularity_core",
+    "feature_unlocks": [
+      "Unlocks Building: Singularity Core"
+    ],
+    "base_factor": 0.5,
+    "base_weight": 45,
+    "weight_modifiers": [
+      "(\u00d70)  Does NOT have Machine Intelligence Authority\n",
+      "(\u00d70.25)  None of the following:\n    \u2022   Research Leader (Physics):\n        \u2022   Is Statecraft Expert\n    \u2022   Research Leader (Physics):\n        \u2022   Is Curator\n",
+      "(\u00d71.25)  Research Leader (Physics):\n    \u2022   Is Statecraft Expert\n"
+    ],
+    "is_start_tech": false,
+    "name": "Singularity Core"
   },
   {
     "category": "Computing",
@@ -858,13 +920,13 @@
     ],
     "is_dangerous": false,
     "is_rare": false,
-    "cost": 1000,
+    "cost": 1400,
     "key": "tech_physics_lab_2",
     "feature_unlocks": [
       "Unlocks Building: Physics Lab II"
     ],
     "base_factor": 1.0,
-    "base_weight": 75,
+    "base_weight": 70,
     "weight_modifiers": [
       "(\u00d72)  Number of years since game start is greater than 25\n",
       "(\u00d72)  Number of years since game start is greater than 30\n",
@@ -878,7 +940,7 @@
   {
     "category": "Statecraft",
     "tier": 2,
-    "description": "A bid for globalized resource pools and more flexible research grants.",
+    "description": "A bid for interplanetary resource pools and more flexible research grants.",
     "area": "physics",
     "prerequisites": [
       "tech_physics_lab_1",
@@ -886,20 +948,20 @@
     ],
     "is_dangerous": false,
     "is_rare": true,
-    "cost": 1000,
+    "cost": 4000,
     "key": "tech_global_research_initiative",
     "feature_unlocks": [
-      "Unlocks Building: Research Institute",
-      "Unlocks Edict: Map the Stars"
+      "Unlocks Building: Research Institute"
     ],
     "base_factor": 0.5,
-    "base_weight": 75,
+    "base_weight": 45,
     "weight_modifiers": [
+      "(\u00d70)  Has Machine Intelligence Authority\n",
       "(\u00d70.25)  None of the following:\n    \u2022   Research Leader (Physics):\n        \u2022   Is Statecraft Expert\n    \u2022   Research Leader (Physics):\n        \u2022   Is Curator\n",
       "(\u00d71.25)  Research Leader (Physics):\n    \u2022   Is Statecraft Expert\n"
     ],
     "is_start_tech": false,
-    "name": "Global Research Initiative"
+    "name": "Interplanetary Research Initiative"
   },
   {
     "category": "Computing",
@@ -916,7 +978,7 @@
     "key": "tech_cryostasis_2",
     "feature_unlocks": [
       "Colony Development Speed: +50%",
-      "Colony Ship Build Cost: -15%"
+      "Colony Influence Cost: -25%"
     ],
     "base_factor": 1.0,
     "base_weight": 75,
@@ -945,41 +1007,7 @@
       "(\u00d71.25)  Research Leader (Physics):\n    \u2022   Is Computing Expert\n"
     ],
     "is_start_tech": false,
-    "name": "Self-aware Logic"
-  },
-  {
-    "category": "Computing",
-    "tier": 2,
-    "description": "An advanced AI will aid science officers in their task to explore strange new worlds, to seek out new life and new civilizations, to boldly go where no Blorg has gone before. The Science Ship will be able to explore the galaxy with help from an AI.",
-    "area": "physics",
-    "prerequisites": [
-      "tech_administrative_ai"
-    ],
-    "is_dangerous": false,
-    "is_rare": false,
-    "cost": 1000,
-    "key": "tech_automated_exploration",
-    "feature_unlocks": [
-      "Survey Speed: +15%",
-      "Unlocks Feature: Automatic Exploration",
-      "Unlocks Feature: Automatic Exploration"
-    ],
-    "base_factor": 1.0,
-    "base_weight": 75,
-    "weight_modifiers": [
-      "(\u00d71.25)  Research Leader (Physics):\n    \u2022   Is Computing Expert\n",
-      "(\u00d72.0)  All of the following:\n    \u2022   Is NOT AI controlled\n    \u2022   Number of years since game start is greater than 10\n",
-      "(\u00d72.0)  All of the following:\n    \u2022   Is NOT AI controlled\n    \u2022   Number of years since game start is greater than 20\n",
-      "(\u00d72.0)  All of the following:\n    \u2022   Is NOT AI controlled\n    \u2022   Number of years since game start is greater than 30\n",
-      "(\u00d72.0)  All of the following:\n    \u2022   Is NOT AI controlled\n    \u2022   Number of years since game start is greater than 40\n",
-      "(\u00d72.0)  All of the following:\n    \u2022   Is NOT AI controlled\n    \u2022   Number of years since game start is greater than 50\n",
-      "(\u00d72.0)  Number of owned planets is greater than 5\n",
-      "(\u00d72.0)  Number of owned planets is greater than 10\n",
-      "(\u00d72.0)  Number of owned planets is greater than 15\n",
-      "(\u00d72.0)  Number of owned planets is greater than 20\n"
-    ],
-    "is_start_tech": false,
-    "name": "Automated Exploration Protocols"
+    "name": "Self-Evolving Logic"
   },
   {
     "category": "Computing",
@@ -1123,10 +1151,10 @@
     "feature_unlocks": [
       "Unlocks Component: Capacitor Fields"
     ],
-    "base_factor": 1.0,
+    "base_factor": 0.5,
     "base_weight": 60,
     "weight_modifiers": [
-      "(\u00d70.2)  None of the following:\n    \u2022   Research Leader (Physics):\n        \u2022   Is Field Manipulation Expert\n    \u2022   Research Leader (Physics):\n        \u2022   Is Curator\n    \u2022   Research Leader (Physics):\n        \u2022   Is Spark of Genius\n"
+      "(\u00d70.5)  None of the following:\n    \u2022   Research Leader (Physics):\n        \u2022   Is Field Manipulation Expert\n    \u2022   Research Leader (Physics):\n        \u2022   Is Curator\n    \u2022   Research Leader (Physics):\n        \u2022   Is Spark of Genius\n"
     ],
     "is_start_tech": false,
     "name": "Capacitor Fields"
@@ -1146,9 +1174,11 @@
     "feature_unlocks": [
       "Unlocks Building: Planetary Shield Generator"
     ],
-    "base_factor": 0.25,
+    "base_factor": 0.5,
     "base_weight": 85,
-    "weight_modifiers": [],
+    "weight_modifiers": [
+      "(\u00d70.5)  None of the following:\n    \u2022   Research Leader (Physics):\n        \u2022   Is Field Manipulation Expert\n    \u2022   Research Leader (Physics):\n        \u2022   Is Curator\n    \u2022   Research Leader (Physics):\n        \u2022   Is Spark of Genius\n"
+    ],
     "is_start_tech": false,
     "name": "Planetary Shields"
   },
@@ -1165,7 +1195,7 @@
     "cost": 1000,
     "key": "tech_sensors_3",
     "feature_unlocks": [
-      "Survey Speed: +5%",
+      "Planet Sensor Range: +30",
       "Unlocks Component: Subspace Sensors"
     ],
     "base_factor": 1.0,
@@ -1179,32 +1209,6 @@
   {
     "category": "Industry",
     "tier": 2,
-    "description": "Quantum superposition of energy coils, simultaneously drained and charged.",
-    "area": "physics",
-    "prerequisites": [
-      "tech_power_plant_3",
-      "tech_galactic_administration"
-    ],
-    "is_dangerous": false,
-    "is_rare": false,
-    "cost": 1800,
-    "key": "tech_power_plant_4",
-    "feature_unlocks": [
-      "Energy Storage Capacity: +2000",
-      "Unlocks Building: Power Plant IV",
-      "Unlocks Building: Power Plant V"
-    ],
-    "base_factor": 1.0,
-    "base_weight": 65,
-    "weight_modifiers": [
-      "(\u00d71.25)  Research Leader (Physics):\n    \u2022   Is Industry Expert\n"
-    ],
-    "is_start_tech": false,
-    "name": "Quantum Field Manipulation"
-  },
-  {
-    "category": "Industry",
-    "tier": 2,
     "description": "A re-engineered and unified grid further reduces energy losses over distance.",
     "area": "physics",
     "prerequisites": [
@@ -1213,14 +1217,14 @@
     ],
     "is_dangerous": false,
     "is_rare": false,
-    "cost": 1000,
+    "cost": 1400,
     "key": "tech_power_hub_2",
     "feature_unlocks": [
       "Energy Storage Capacity: +2500",
       "Unlocks Building: Energy Nexus"
     ],
     "base_factor": 1.0,
-    "base_weight": 75,
+    "base_weight": 70,
     "weight_modifiers": [
       "(\u00d71.25)  Research Leader (Physics):\n    \u2022   Is Industry Expert\n"
     ],
@@ -1288,11 +1292,12 @@
       "Unlocks Feature: Hyperlane Mapping",
       "Unlocks Feature: Hyperlane Mapping"
     ],
-    "base_factor": 1.0,
+    "base_factor": 0.5,
     "base_weight": 75,
     "weight_modifiers": [
-      "(\u00d70.1)  None of the following:\n    \u2022   Research Leader (Physics):\n        \u2022   Is Particles Expert\n    \u2022   Research Leader (Physics):\n        \u2022   Is Curator\n    \u2022   Research Leader (Physics):\n        \u2022   Is Maniacal\n    \u2022   Research Leader (Physics):\n        \u2022   Is Spark of Genius\n",
-      "(\u00d70)  Has Hyperspace Travel Technology\n"
+      "(\u00d70.2)  None of the following:\n    \u2022   Research Leader (Physics):\n        \u2022   Is Particles Expert\n    \u2022   Research Leader (Physics):\n        \u2022   Is Curator\n    \u2022   Research Leader (Physics):\n        \u2022   Is Maniacal\n    \u2022   Research Leader (Physics):\n        \u2022   Is Spark of Genius\n",
+      "(\u00d70)  Has Hyperspace Travel Technology\n",
+      "(\u00d70)  FTL is restricted\n"
     ],
     "is_start_tech": false,
     "name": "Hyperlane Mapping"
@@ -1335,10 +1340,10 @@
     "feature_unlocks": [
       "Unlocks Component: Quantum Destabilizer"
     ],
-    "base_factor": 1.0,
+    "base_factor": 0.5,
     "base_weight": 60,
     "weight_modifiers": [
-      "(\u00d70.1)  None of the following:\n    \u2022   Research Leader (Physics):\n        \u2022   Is Field Manipulation Expert\n    \u2022   Research Leader (Physics):\n        \u2022   Is Curator\n    \u2022   Research Leader (Physics):\n        \u2022   Is Spark of Genius\n    \u2022   Research Leader (Physics):\n        \u2022   Is Maniacal\n"
+      "(\u00d70.2)  None of the following:\n    \u2022   Research Leader (Physics):\n        \u2022   Is Field Manipulation Expert\n    \u2022   Research Leader (Physics):\n        \u2022   Is Curator\n    \u2022   Research Leader (Physics):\n        \u2022   Is Spark of Genius\n    \u2022   Research Leader (Physics):\n        \u2022   Is Maniacal\n"
     ],
     "is_start_tech": false,
     "name": "Quantum Destabilizer"
@@ -1349,7 +1354,8 @@
     "description": "An extremely rare aerosol of exotic particles. It has been deposited on a number of worlds through meteor impacts, but its true origin is a mystery. If ingested by psionically-gifted individuals, Zro acts as a very potent (and addictive) drug that enhances Psi abilities.",
     "area": "physics",
     "prerequisites": [
-      "tech_sensors_3"
+      "tech_sensors_3",
+      "tech_psionic_theory"
     ],
     "is_dangerous": false,
     "is_rare": true,
@@ -1635,13 +1641,13 @@
     ],
     "is_dangerous": false,
     "is_rare": false,
-    "cost": 5000,
+    "cost": 4000,
     "key": "tech_pd_tracking_3",
     "feature_unlocks": [
       "Unlocks Component: Guardian Point-Defense"
     ],
     "base_factor": 1.0,
-    "base_weight": 40,
+    "base_weight": 45,
     "weight_modifiers": [
       "(\u00d71.25)  Research Leader (Physics):\n    \u2022   Is Computing Expert\n"
     ],
@@ -1709,7 +1715,7 @@
       "Omega Theory"
     ],
     "base_factor": 1.0,
-    "base_weight": 0,
+    "base_weight": 1,
     "weight_modifiers": [
       "'+60':\n\u2022   All of the following:\n    \u2022   Has Entropic Recursion Technology\n    \u2022   'Has Doctrine: Strange Loop Technology'\n"
     ],
@@ -1727,14 +1733,14 @@
     ],
     "is_dangerous": false,
     "is_rare": false,
-    "cost": 3000,
+    "cost": 5000,
     "key": "tech_physics_lab_3",
     "feature_unlocks": [
       "Unlocks Building: Physics Lab III",
       "Unlocks Building: Physics Lab IV"
     ],
     "base_factor": 1.0,
-    "base_weight": 50,
+    "base_weight": 40,
     "weight_modifiers": [
       "(\u00d72)  Number of years since game start is greater than 25\n",
       "(\u00d72)  Number of years since game start is greater than 30\n",
@@ -1748,53 +1754,52 @@
   {
     "category": "Computing",
     "tier": 3,
-    "description": "Evolving intellects advance science not only as subjects of study, but as researchers themselves.",
+    "description": "Evolving artificial intellects are opening the door to the possibility for true synthetic sapience.",
     "area": "physics",
     "prerequisites": [
       "tech_self_aware_logic"
     ],
-    "is_dangerous": true,
-    "is_rare": true,
-    "cost": 2200,
-    "key": "tech_sentient_ai",
-    "feature_unlocks": [
-      "Research Speed: +10%"
-    ],
-    "base_factor": 1.0,
-    "base_weight": 60,
-    "weight_modifiers": [
-      "(\u00d70.1)  None of the following:\n    \u2022   Research Leader (Physics):\n        \u2022   Is Computing Expert\n    \u2022   Research Leader (Physics):\n        \u2022   Is Curator\n    \u2022   Research Leader (Physics):\n        \u2022   Is Spark of Genius\n    \u2022   Research Leader (Physics):\n        \u2022   Is Maniacal\n",
-      "(\u00d71.25)  Research Leader (Physics):\n    \u2022   Is Computing Expert\n    \u2022   Skill level is greater than 2\n",
-      "(\u00d71.1)  Research Leader (Physics):\n    \u2022   Is Maniacal\n",
-      "(\u00d71.2)  Research Leader (Physics):\n    \u2022   Is Spark of Genius\n"
-    ],
-    "is_start_tech": false,
-    "name": "Sentient AI"
-  },
-  {
-    "category": "Computing",
-    "tier": 3,
-    "description": "Running sentient AIs through high-intensity combat simulations yields valuable insight into potential optimizations for risk-evaluation techniques.",
-    "area": "physics",
-    "prerequisites": [
-      "tech_combat_computers_2",
-      "tech_sentient_ai"
-    ],
     "is_dangerous": false,
-    "is_rare": true,
+    "is_rare": false,
     "cost": 3000,
-    "key": "tech_combat_computers_3",
+    "key": "tech_sapient_ai",
     "feature_unlocks": [
-      "Unlocks Component: Sentient Combat AI"
+      "Research Speed: +5%"
     ],
     "base_factor": 1.0,
     "base_weight": 50,
     "weight_modifiers": [
-      "(\u00d70.1)  None of the following:\n    \u2022   Research Leader (Physics):\n        \u2022   Is Computing Expert\n    \u2022   Research Leader (Physics):\n        \u2022   Is Curator\n    \u2022   Research Leader (Physics):\n        \u2022   Is Maniacal\n",
+      "(\u00d70)  Has Machine Intelligence Authority\n",
+      "(\u00d71.25)  Research Leader (Physics):\n    \u2022   Is Computing Expert\n"
+    ],
+    "is_start_tech": false,
+    "name": "Positronic AI"
+  },
+  {
+    "category": "Computing",
+    "tier": 3,
+    "description": "Running sapient AIs through high-intensity combat simulations yields valuable insight into potential optimizations for risk-evaluation techniques.",
+    "area": "physics",
+    "prerequisites": [
+      "tech_combat_computers_2",
+      "tech_sapient_ai"
+    ],
+    "is_dangerous": true,
+    "is_rare": true,
+    "cost": 4000,
+    "key": "tech_combat_computers_3",
+    "feature_unlocks": [
+      "Unlocks Component: Sapient Combat AI"
+    ],
+    "base_factor": 0.5,
+    "base_weight": 45,
+    "weight_modifiers": [
+      "(\u00d70.2)  None of the following:\n    \u2022   Research Leader (Physics):\n        \u2022   Is Computing Expert\n    \u2022   Research Leader (Physics):\n        \u2022   Is Curator\n    \u2022   Research Leader (Physics):\n        \u2022   Is Maniacal\n",
+      "(\u00d70)  Has Outlawed Policy\n",
       "(\u00d71.25)  Research Leader (Physics):\n    \u2022   Is Computing Expert\n    \u2022   Skill level is greater than 2\n"
     ],
     "is_start_tech": false,
-    "name": "Sentient Combat Simulations"
+    "name": "Sapient Combat Simulations"
   },
   {
     "category": "Particles",
@@ -1890,7 +1895,7 @@
     "cost": 3000,
     "key": "tech_sensors_4",
     "feature_unlocks": [
-      "Survey Speed: +5%",
+      "Planet Sensor Range: +30",
       "Unlocks Component: Tachyon Sensors"
     ],
     "base_factor": 1.0,
@@ -1900,6 +1905,32 @@
     ],
     "is_start_tech": false,
     "name": "Tachyon Sensors"
+  },
+  {
+    "category": "Industry",
+    "tier": 3,
+    "description": "Quantum superposition of energy coils, simultaneously drained and charged.",
+    "area": "physics",
+    "prerequisites": [
+      "tech_power_plant_3",
+      "tech_galactic_administration"
+    ],
+    "is_dangerous": false,
+    "is_rare": false,
+    "cost": 4000,
+    "key": "tech_power_plant_4",
+    "feature_unlocks": [
+      "Energy Storage Capacity: +2000",
+      "Unlocks Building: Power Plant IV",
+      "Unlocks Building: Power Plant V"
+    ],
+    "base_factor": 1.0,
+    "base_weight": 45,
+    "weight_modifiers": [
+      "(\u00d71.25)  Research Leader (Physics):\n    \u2022   Is Industry Expert\n"
+    ],
+    "is_start_tech": false,
+    "name": "Quantum Field Manipulation"
   },
   {
     "category": "Field Manipulation",
@@ -1996,132 +2027,6 @@
     "name": "Jump Drive"
   },
   {
-    "category": "Industry",
-    "tier": 3,
-    "description": "Minor improvements to transmission efficiency adds up to a sizeable reduction in overall energy loss.",
-    "area": "physics",
-    "prerequisites": [
-      "tech_power_plant_3"
-    ],
-    "is_dangerous": false,
-    "is_rare": false,
-    "cost": 3000,
-    "key": "tech_repeatable_improved_tile_energy_output",
-    "feature_unlocks": [
-      "Energy Credits: +5%"
-    ],
-    "base_factor": 0.5,
-    "base_weight": 25,
-    "weight_modifiers": [],
-    "is_start_tech": false,
-    "name": "Applied Superconductivity"
-  },
-  {
-    "category": "Field Manipulation",
-    "tier": 3,
-    "description": "The basic mechanics of ship shields are complex, but they can be adjusted and improved in a multitude of ways.",
-    "area": "physics",
-    "prerequisites": [
-      "tech_shields_4"
-    ],
-    "is_dangerous": false,
-    "is_rare": false,
-    "cost": 3000,
-    "key": "tech_repeatable_improved_shield_output",
-    "feature_unlocks": [
-      "Shield Hit Points: +5%"
-    ],
-    "base_factor": 0.5,
-    "base_weight": 25,
-    "weight_modifiers": [],
-    "is_start_tech": false,
-    "name": "Shield Harmonics"
-  },
-  {
-    "category": "Particles",
-    "tier": 3,
-    "description": "Perfecting the firing cadence of laser weaponry is a task that could keep the engineering elite of any given planet busy for centuries.",
-    "area": "physics",
-    "prerequisites": [
-      "tech_lasers_4"
-    ],
-    "is_dangerous": false,
-    "is_rare": false,
-    "cost": 3000,
-    "key": "tech_repeatable_weapon_type_energy_damage",
-    "feature_unlocks": [
-      "Energy Weapon Damage: +5%"
-    ],
-    "base_factor": 0.5,
-    "base_weight": 25,
-    "weight_modifiers": [],
-    "is_start_tech": false,
-    "name": "Focusing Arrays"
-  },
-  {
-    "category": "Particles",
-    "tier": 3,
-    "description": "New developments in tech cooling regularly surface, improving the stability and efficiency of our weapons systems, keeping them from blowing up the ships upon which they are mounted.",
-    "area": "physics",
-    "prerequisites": [
-      "tech_lasers_2"
-    ],
-    "is_dangerous": false,
-    "is_rare": false,
-    "cost": 3000,
-    "key": "tech_repeatable_weapon_type_energy_fire_rate",
-    "feature_unlocks": [
-      "Energy Weapon Attack Speed: +5%"
-    ],
-    "base_factor": 0.5,
-    "base_weight": 25,
-    "weight_modifiers": [],
-    "is_start_tech": false,
-    "name": "Flash Coolant"
-  },
-  {
-    "category": "Voidcraft",
-    "tier": 3,
-    "description": "As our fleets roam every further from our ancestral home, our sensor technology continuously pushes past the limits of old.",
-    "area": "physics",
-    "prerequisites": [
-      "tech_sensors_3"
-    ],
-    "is_dangerous": false,
-    "is_rare": false,
-    "cost": 3000,
-    "key": "tech_repeatable_improved_planet_sensor_range",
-    "feature_unlocks": [
-      "Planet Sensor Range: +10%"
-    ],
-    "base_factor": 0.5,
-    "base_weight": 25,
-    "weight_modifiers": [],
-    "is_start_tech": false,
-    "name": "Planetary Signal Boosters"
-  },
-  {
-    "category": "Computing",
-    "tier": 3,
-    "description": "Increasingly powerful computation paradigms allow us to adapt individual construction projects to planetary and ultra-local gravitational conditions.",
-    "area": "physics",
-    "prerequisites": [
-      "tech_physics_lab_2"
-    ],
-    "is_dangerous": false,
-    "is_rare": false,
-    "cost": 3000,
-    "key": "tech_repeatable_reduced_building_cost",
-    "feature_unlocks": [
-      "Building Cost: -5%"
-    ],
-    "base_factor": 0.5,
-    "base_weight": 25,
-    "weight_modifiers": [],
-    "is_start_tech": false,
-    "name": "Gravitational Analysis"
-  },
-  {
     "category": "Materials",
     "tier": 3,
     "description": "Neutronium is a super-dense substance composed of neutrons that can be forged into extremely resistant and durable armor.",
@@ -2168,26 +2073,130 @@
     "name": "Dark Matter Drawing"
   },
   {
-    "category": "Computing",
-    "tier": 4,
-    "description": "Our history is a repeating cycle of dramatic technological, political, and cultural leaps; these leaps are often preceded by periods of upheaval and followed by times of relative stability. By identifying the core, recurring premises of these leaps, we may be able to effectively short-circuit the cycle for our own benefit.",
+    "category": "Industry",
+    "tier": "@repeatableTechTier",
+    "description": "Minor improvements to transmission efficiency adds up to a sizeable reduction in overall energy loss.",
     "area": "physics",
-    "prerequisites": [],
+    "prerequisites": [
+      "tech_power_plant_3"
+    ],
     "is_dangerous": false,
-    "is_rare": true,
-    "cost": 8000,
-    "key": "tech_ascension_theory",
+    "is_rare": false,
+    "cost": 5000,
+    "key": "tech_repeatable_improved_tile_energy_output",
     "feature_unlocks": [
-      "Ascension Perks: +1"
+      "Energy Credits: +5%"
     ],
-    "base_factor": 1.0,
-    "base_weight": 35,
-    "weight_modifiers": [
-      "(\u00d70)  Host does NOT have the Utopia DLC\n",
-      "(\u00d70.1)  None of the following:\n    \u2022   Has the Curator Insight modifier\n    \u2022   Research Leader (Physics):\n        \u2022   Is Curator\n    \u2022   Research Leader (Physics):\n        \u2022   Is Computing Expert\n"
-    ],
+    "base_factor": 0.5,
+    "base_weight": 25,
+    "weight_modifiers": [],
     "is_start_tech": false,
-    "name": "Ascension Theory"
+    "name": "Applied Superconductivity"
+  },
+  {
+    "category": "Field Manipulation",
+    "tier": "@repeatableTechTier",
+    "description": "The basic mechanics of ship shields are complex, but they can be adjusted and improved in a multitude of ways.",
+    "area": "physics",
+    "prerequisites": [
+      "tech_shields_4"
+    ],
+    "is_dangerous": false,
+    "is_rare": false,
+    "cost": 5000,
+    "key": "tech_repeatable_improved_shield_output",
+    "feature_unlocks": [
+      "Shield Hit Points: +5%"
+    ],
+    "base_factor": 0.5,
+    "base_weight": 25,
+    "weight_modifiers": [],
+    "is_start_tech": false,
+    "name": "Shield Harmonics"
+  },
+  {
+    "category": "Particles",
+    "tier": "@repeatableTechTier",
+    "description": "Perfecting the firing cadence of laser weaponry is a task that could keep the engineering elite of any given planet busy for centuries.",
+    "area": "physics",
+    "prerequisites": [
+      "tech_lasers_4"
+    ],
+    "is_dangerous": false,
+    "is_rare": false,
+    "cost": 5000,
+    "key": "tech_repeatable_weapon_type_energy_damage",
+    "feature_unlocks": [
+      "Energy Weapon Damage: +5%"
+    ],
+    "base_factor": 0.5,
+    "base_weight": 25,
+    "weight_modifiers": [],
+    "is_start_tech": false,
+    "name": "Focusing Arrays"
+  },
+  {
+    "category": "Particles",
+    "tier": "@repeatableTechTier",
+    "description": "New developments in tech cooling regularly surface, improving the stability and efficiency of our weapons systems, keeping them from blowing up the ships upon which they are mounted.",
+    "area": "physics",
+    "prerequisites": [
+      "tech_lasers_2"
+    ],
+    "is_dangerous": false,
+    "is_rare": false,
+    "cost": 5000,
+    "key": "tech_repeatable_weapon_type_energy_fire_rate",
+    "feature_unlocks": [
+      "Energy Weapon Attack Speed: +5%"
+    ],
+    "base_factor": 0.5,
+    "base_weight": 25,
+    "weight_modifiers": [],
+    "is_start_tech": false,
+    "name": "Flash Coolant"
+  },
+  {
+    "category": "Voidcraft",
+    "tier": "@repeatableTechTier",
+    "description": "As our fleets roam every further from our ancestral home, our sensor technology continuously pushes past the limits of old.",
+    "area": "physics",
+    "prerequisites": [
+      "tech_sensors_3"
+    ],
+    "is_dangerous": false,
+    "is_rare": false,
+    "cost": 5000,
+    "key": "tech_repeatable_improved_planet_sensor_range",
+    "feature_unlocks": [
+      "Planet Sensor Range: +10%"
+    ],
+    "base_factor": 0.5,
+    "base_weight": 25,
+    "weight_modifiers": [],
+    "is_start_tech": false,
+    "name": "Planetary Signal Boosters"
+  },
+  {
+    "category": "Computing",
+    "tier": "@repeatableTechTier",
+    "description": "Increasingly powerful computation paradigms allow us to adapt individual construction projects to planetary and ultra-local gravitational conditions.",
+    "area": "physics",
+    "prerequisites": [
+      "tech_physics_lab_2"
+    ],
+    "is_dangerous": false,
+    "is_rare": false,
+    "cost": 5000,
+    "key": "tech_repeatable_reduced_building_cost",
+    "feature_unlocks": [
+      "Building Cost: -5%"
+    ],
+    "base_factor": 0.5,
+    "base_weight": 25,
+    "weight_modifiers": [],
+    "is_start_tech": false,
+    "name": "Gravitational Analysis"
   },
   {
     "category": "Military Theory",
@@ -2200,7 +2209,8 @@
     "cost": 0,
     "key": "tech_defense_army",
     "feature_unlocks": [
-      "Unlocks Army: Defense Army"
+      "Unlocks Army: Defense Army",
+      "Unlocks Army: machine_defense_1"
     ],
     "base_factor": 1.0,
     "base_weight": 0,
@@ -2259,7 +2269,8 @@
     "cost": 0,
     "key": "tech_planetary_government",
     "feature_unlocks": [
-      "Unlocks Building: Planetary Administration"
+      "Unlocks Building: Planetary Administration",
+      "Unlocks Building: Administrative Array"
     ],
     "base_factor": 1.0,
     "base_weight": 0,
@@ -2278,7 +2289,9 @@
     "cost": 0,
     "key": "tech_cultural_heritage",
     "feature_unlocks": [
-      "Unlocks Building: Autochthon Monument"
+      "Unlocks Building: Autochthon Monument",
+      "Unlocks Building: Temple",
+      "Unlocks Building: Uplink Node"
     ],
     "base_factor": 1.0,
     "base_weight": 0,
@@ -2287,6 +2300,30 @@
     ],
     "is_start_tech": true,
     "name": "Sociocultural History"
+  },
+  {
+    "category": "Biology",
+    "tier": 1,
+    "description": "$tech_frontier_health_desc_machine_intelligence$",
+    "area": "society",
+    "prerequisites": [
+      "tech_colonization_1"
+    ],
+    "is_dangerous": false,
+    "is_rare": false,
+    "cost": 480,
+    "key": "tech_modular_components",
+    "feature_unlocks": [
+      "Unlocks Building: Spare Parts Depot"
+    ],
+    "base_factor": 2.0,
+    "base_weight": 85,
+    "weight_modifiers": [
+      "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Biology Expert\n",
+      "(\u00d70)  Does NOT have Machine Intelligence Authority\n"
+    ],
+    "is_start_tech": false,
+    "name": "$tech_frontier_health_machine_intelligence$"
   },
   {
     "category": "Biology",
@@ -2306,6 +2343,7 @@
     "base_factor": 1.0,
     "base_weight": 100,
     "weight_modifiers": [
+      "(\u00d70)  Has Machine Intelligence Authority\n",
       "(\u00d71.5)  Has Pacifist Ethic\n",
       "(\u00d72)  Has Fanatic Pacifist Ethic\n",
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Biology Expert\n"
@@ -2332,6 +2370,7 @@
     "base_factor": 1.0,
     "base_weight": 100,
     "weight_modifiers": [
+      "(\u00d70)  Has Machine Intelligence Authority\n",
       "(\u00d71.25)  Has Pacifist Ethic\n",
       "(\u00d71.5)  Has Fanatic Pacifist Ethic\n",
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Biology Expert\n"
@@ -2378,7 +2417,8 @@
     "cost": 480,
     "key": "tech_alien_life_studies",
     "feature_unlocks": [
-      "Unlocks Building: Xeno Zoo"
+      "Unlocks Building: Alien Zoo",
+      "Unlocks Building: Animal Evaluation Laboratory"
     ],
     "base_factor": 1.0,
     "base_weight": 95,
@@ -2405,15 +2445,16 @@
     "cost": 480,
     "key": "tech_frontier_health",
     "feature_unlocks": [
-      "Unlocks Building: Frontier Clinic"
+      "Unlocks Building: Gene Clinic"
     ],
     "base_factor": 2.0,
     "base_weight": 95,
     "weight_modifiers": [
-      "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Biology Expert\n"
+      "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Biology Expert\n",
+      "(\u00d70)  Has Machine Intelligence Authority\n"
     ],
     "is_start_tech": false,
-    "name": "Frontier Health"
+    "name": "Genetic Healthcare"
   },
   {
     "category": "New Worlds",
@@ -2553,7 +2594,7 @@
   {
     "category": "New Worlds",
     "tier": 1,
-    "description": "Sentient races have been reclaiming swampland for thousands of years. A coordinated system of modular aquaducts, pump stations, chemical remediation crawlers and automated soil compactors can reclaim land at unprecedented speeds.",
+    "description": "Sapient races have been reclaiming swampland for thousands of years. A coordinated system of modular aquaducts, pump stations, chemical remediation crawlers and automated soil compactors can reclaim land at unprecedented speeds.",
     "area": "society",
     "prerequisites": [
       "tech_colonization_1"
@@ -2671,6 +2712,7 @@
     "cost": 600,
     "key": "tech_terrestrial_sculpting",
     "feature_unlocks": [
+      "Energy Storage Capacity: +2000",
       "Unlocks Feature: Terraforming",
       "Unlocks Feature: Terraforming",
       "Reveals Resource: Terraforming Gases ([[sr_terraform_gases]])",
@@ -2679,8 +2721,8 @@
     "base_factor": 1.0,
     "base_weight": 90,
     "weight_modifiers": [
-      "(\u00d70.33)  NOT Research Leader (Society):\n    \u2022   Is New Worlds Expert\n",
-      "(\u00d70)  All of the following:\n    \u2022   Does NOT have homesystem_surveyed country flag\n    \u2022   Is NOT AI controlled\n"
+      "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is New Worlds Expert\n",
+      "(\u00d70)  None of the following:\n    \u2022   Number of years since game start is greater than 10\n    \u2022   Number of owned planets is greater than 2\n"
     ],
     "is_start_tech": false,
     "name": "Terrestrial Sculpting"
@@ -2696,11 +2738,13 @@
     "cost": 360,
     "key": "tech_genome_mapping",
     "feature_unlocks": [
-      "Growth Time: -10%"
+      "Growth Speed: +10%"
     ],
     "base_factor": 1.5,
     "base_weight": 100,
     "weight_modifiers": [
+      "(\u00d70)  All of the following:\n    \u2022   Has Machine Intelligence Authority\n    \u2022   Does NOT have Driven Assimilator Government Civic\n",
+      "(\u00d71.25)  Has Hive Mind Authority\n",
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Biology Expert\n"
     ],
     "is_start_tech": false,
@@ -2722,8 +2766,6 @@
     "base_factor": 3.0,
     "base_weight": 100,
     "weight_modifiers": [
-      "(\u00d70.65)  Has Fanatic Pacifist Ethic\n",
-      "(\u00d70.8)  Has Pacifist Ethic\n",
       "(\u00d71.25)  Has Militarist Ethic\n",
       "(\u00d71.5)  Has Fanatic Militarist Ethic\n",
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Military Theory Expert\n"
@@ -2749,8 +2791,6 @@
     "base_factor": 3.0,
     "base_weight": 90,
     "weight_modifiers": [
-      "(\u00d70.65)  Has Fanatic Pacifist Ethic\n",
-      "(\u00d70.8)  Has Pacifist Ethic\n",
       "(\u00d71.25)  Has Militarist Ethic\n",
       "(\u00d71.5)  Has Fanatic Militarist Ethic\n",
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Military Theory Expert\n"
@@ -2777,8 +2817,6 @@
     "base_factor": 1.0,
     "base_weight": 85,
     "weight_modifiers": [
-      "(\u00d70.65)  Has Fanatic Pacifist Ethic\n",
-      "(\u00d70.8)  Has Pacifist Ethic\n",
       "(\u00d71.25)  Has Militarist Ethic\n",
       "(\u00d71.5)  Has Fanatic Militarist Ethic\n",
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Military Theory Expert\n"
@@ -2805,8 +2843,6 @@
     "base_factor": 1.0,
     "base_weight": 95,
     "weight_modifiers": [
-      "(\u00d70.65)  Has Fanatic Pacifist Ethic\n",
-      "(\u00d70.8)  Has Pacifist Ethic\n",
       "(\u00d71.25)  Has Militarist Ethic\n",
       "(\u00d71.5)  Has Fanatic Militarist Ethic\n",
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Military Theory Expert\n"
@@ -2831,8 +2867,6 @@
     "base_factor": 1.0,
     "base_weight": 100,
     "weight_modifiers": [
-      "(\u00d70.65)  Has Fanatic Pacifist Ethic\n",
-      "(\u00d70.8)  Has Pacifist Ethic\n",
       "(\u00d71.25)  Has Militarist Ethic\n",
       "(\u00d71.5)  Has Fanatic Militarist Ethic\n",
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Military Theory Expert\n"
@@ -2858,8 +2892,6 @@
     "base_factor": 1.0,
     "base_weight": 85,
     "weight_modifiers": [
-      "(\u00d70.65)  Has Fanatic Pacifist Ethic\n",
-      "(\u00d70.8)  Has Pacifist Ethic\n",
       "(\u00d71.25)  Has Militarist Ethic\n",
       "(\u00d71.5)  Has Fanatic Militarist Ethic\n",
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Military Theory Expert\n"
@@ -2916,30 +2948,6 @@
     ],
     "is_start_tech": false,
     "name": "Planetary Unification"
-  },
-  {
-    "category": "New Worlds",
-    "tier": 1,
-    "description": "Robust frameworks for local governance created on a per-case basis, to meet each colony's needs.",
-    "area": "society",
-    "prerequisites": [
-      "tech_planetary_unification"
-    ],
-    "is_dangerous": false,
-    "is_rare": false,
-    "cost": 720,
-    "key": "tech_colonial_centralization",
-    "feature_unlocks": [
-      "Unlocks Building: Planetary Capital",
-      "Unlocks Edict: Production Targets"
-    ],
-    "base_factor": 4.0,
-    "base_weight": 85,
-    "weight_modifiers": [
-      "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is New Worlds Expert\n"
-    ],
-    "is_start_tech": false,
-    "name": "Colonial Centralization"
   },
   {
     "category": "Statecraft",
@@ -3019,7 +3027,7 @@
       "(\u00d72)  Number of enslaved planets greater than 19\n",
       "(\u00d72)  Number of enslaved planets greater than 29\n",
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Statecraft Expert\n",
-      "(\u00d70.0)  Does NOT allow Slavery\n"
+      "(\u00d70.0)  Any of the following:\n    \u2022   Does NOT allow Slavery\n    \u2022   Has Gestalt Consciousness Ethic\n"
     ],
     "is_start_tech": false,
     "name": "Neural Implants"
@@ -3034,14 +3042,16 @@
     ],
     "is_dangerous": false,
     "is_rare": false,
-    "cost": 360,
+    "cost": 480,
     "key": "tech_heritage_site",
     "feature_unlocks": [
-      "Unlocks Building: Heritage Site"
+      "Unlocks Building: Heritage Site",
+      "Unlocks Building: Network Junction"
     ],
     "base_factor": 1.0,
-    "base_weight": 100,
+    "base_weight": 95,
     "weight_modifiers": [
+      "(\u00d70)  Any of the following:\n    \u2022   Has Spiritualist Ethic\n    \u2022   Has Fanatic Spiritualist Ethic\n",
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Statecraft Expert\n"
     ],
     "is_start_tech": false,
@@ -3050,25 +3060,26 @@
   {
     "category": "Statecraft",
     "tier": 1,
-    "description": "As we explore more of the galaxy and its wonders, it becomes increasingly important for us to reaffirm our beliefs and to unify our people under one symbol.",
+    "description": "Seeing is believing, and belief begets reality.",
     "area": "society",
     "prerequisites": [
-      "tech_planetary_government"
+      "tech_cultural_heritage"
     ],
     "is_dangerous": false,
-    "is_rare": true,
+    "is_rare": false,
     "cost": 480,
-    "key": "tech_symbol_unity",
+    "key": "tech_holographic_rituals",
     "feature_unlocks": [
-      "Unlocks Building: Symbol of Unity"
+      "Unlocks Building: Holotemple"
     ],
     "base_factor": 1.0,
     "base_weight": 95,
     "weight_modifiers": [
-      "(\u00d70.33)  NOT Research Leader (Society):\n    \u2022   Is Statecraft Expert\n"
+      "(\u00d70)  None of the following:\n    \u2022   Has Spiritualist Ethic\n    \u2022   Has Fanatic Spiritualist Ethic\n",
+      "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Statecraft Expert\n"
     ],
     "is_start_tech": false,
-    "name": "Symbols of Unity"
+    "name": "Holographic Rituals"
   },
   {
     "category": "Biology",
@@ -3089,7 +3100,7 @@
     "base_weight": 90,
     "weight_modifiers": [
       "(\u00d72)  Research Leader (Engineering):\n    \u2022   Is Materials Expert\n",
-      "(\u00d70)  None of the following:\n    \u2022   Any System within Borders:\n        \u2022   Is in a resource_cluster_2 Cluster\n    \u2022   Any Relation:\n        \u2022   All of the following:\n            \u2022   Has communications with your Empire\n            \u2022   Has Engos Vapor Refining Technology\n"
+      "(\u00d70)  None of the following:\n    \u2022   Any System within Borders:\n        \u2022   Is in a resource_cluster_2 Cluster\n    \u2022   Any Relation:\n        \u2022   Is of the default country type\n        \u2022   All of the following:\n            \u2022   Has communications with your Empire\n            \u2022   Has Engos Vapor Refining Technology\n"
     ],
     "is_start_tech": false,
     "name": "Engos Vapor Refining"
@@ -3120,6 +3131,57 @@
   {
     "category": "Biology",
     "tier": 2,
+    "description": "Organics often fight using illogical and unpredictable tactics that can be difficult to effectively counter. Adaptive tactics and new, more maneuverable warforms should provide a decisive advantage.",
+    "area": "society",
+    "prerequisites": [
+      "tech_colonial_bureaucracy"
+    ],
+    "is_dangerous": false,
+    "is_rare": false,
+    "cost": 1000,
+    "key": "tech_adaptive_combat_algorithms",
+    "feature_unlocks": [
+      "Unlocks Army: machine_assault_2",
+      "Unlocks Army: machine_defense_2",
+      "Unlocks Attachment: combat_software_2_0"
+    ],
+    "base_factor": 1.5,
+    "base_weight": 75,
+    "weight_modifiers": [
+      "(\u00d70)  Does NOT have Machine Intelligence Authority\n",
+      "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Biology Expert\n"
+    ],
+    "is_start_tech": false,
+    "name": "Adaptive Combat Algorithms"
+  },
+  {
+    "category": "Biology",
+    "tier": 2,
+    "description": "$tech_frontier_hospital_desc_machine_intelligence$",
+    "area": "society",
+    "prerequisites": [
+      "tech_modular_components",
+      "tech_colonial_centralization"
+    ],
+    "is_dangerous": false,
+    "is_rare": false,
+    "cost": 1400,
+    "key": "tech_intelligent_factories",
+    "feature_unlocks": [
+      "Unlocks Building: Unit Assembly Plant"
+    ],
+    "base_factor": 2.0,
+    "base_weight": 70,
+    "weight_modifiers": [
+      "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Biology Expert\n",
+      "(\u00d70)  Does NOT have Machine Intelligence Authority\n"
+    ],
+    "is_start_tech": false,
+    "name": "$tech_frontier_hospital_machine_intelligence$"
+  },
+  {
+    "category": "Biology",
+    "tier": 2,
     "description": "Sophisticated genetic engineering of crops helps increase yield and further improves both taste and nutrient levels.",
     "area": "society",
     "prerequisites": [
@@ -3128,47 +3190,21 @@
     ],
     "is_dangerous": false,
     "is_rare": false,
-    "cost": 1000,
+    "cost": 1400,
     "key": "tech_gene_crops",
     "feature_unlocks": [
       "Unlocks Building: Hydroponics Farm III"
     ],
     "base_factor": 1.0,
-    "base_weight": 75,
+    "base_weight": 70,
     "weight_modifiers": [
+      "(\u00d70)  Has Machine Intelligence Authority\n",
       "(\u00d71.25)  Has Pacifist Ethic\n",
       "(\u00d71.5)  Has Fanatic Pacifist Ethic\n",
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Biology Expert\n"
     ],
     "is_start_tech": false,
     "name": "Gene Crops"
-  },
-  {
-    "category": "Biology",
-    "tier": 2,
-    "description": "Infusing crop strands with small amounts of nano-machines help create a type of produce that is ultra resilient, and the chemical composition of which can be tailored and altered during its entire lifetime.",
-    "area": "society",
-    "prerequisites": [
-      "tech_gene_crops",
-      "tech_galactic_administration"
-    ],
-    "is_dangerous": false,
-    "is_rare": false,
-    "cost": 2200,
-    "key": "tech_nano_vitality_crops",
-    "feature_unlocks": [
-      "Unlocks Building: Hydroponics Farm IV",
-      "Unlocks Building: Hydroponics Farm V"
-    ],
-    "base_factor": 1.0,
-    "base_weight": 60,
-    "weight_modifiers": [
-      "(\u00d71.25)  Has Pacifist Ethic\n",
-      "(\u00d71.5)  Has Fanatic Pacifist Ethic\n",
-      "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Biology Expert\n"
-    ],
-    "is_start_tech": false,
-    "name": "Nano-Vitality Crops"
   },
   {
     "category": "Biology",
@@ -3181,13 +3217,13 @@
     ],
     "is_dangerous": false,
     "is_rare": false,
-    "cost": 1000,
+    "cost": 1400,
     "key": "tech_biolab_2",
     "feature_unlocks": [
       "Unlocks Building: Biolab II"
     ],
     "base_factor": 1.0,
-    "base_weight": 75,
+    "base_weight": 70,
     "weight_modifiers": [
       "(\u00d72)  Number of years since game start is greater than 5\n",
       "(\u00d72)  Number of years since game start is greater than 10\n",
@@ -3216,7 +3252,9 @@
     "base_factor": 1.0,
     "base_weight": 75,
     "weight_modifiers": [
-      "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is New Worlds Expert\n"
+      "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is New Worlds Expert\n",
+      "(\u00d70.7)  Any of the following:\n    \u2022   Has Autonomous Service Grid\n    \u2022   Has Catalog Index\n",
+      "(\u00d70)  Any of the following:\n    \u2022   Has Artificial Intelligence Network\n    \u2022   Has Intelligent Research Link\n    \u2022   Has Industrial Production Core\n    \u2022   All of the following:\n        \u2022   Has Machine Intelligence Authority\n        \u2022   Does NOT have Autonomous Service Grid\n"
     ],
     "is_start_tech": false,
     "name": "Atmospheric Filtering"
@@ -3239,10 +3277,11 @@
     "base_factor": 1.0,
     "base_weight": 60,
     "weight_modifiers": [
-      "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is New Worlds Expert\n"
+      "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is New Worlds Expert\n",
+      "(\u00d70.7)  Any of the following:\n    \u2022   Has Autonomous Service Grid\n    \u2022   Has Catalog Index\n"
     ],
     "is_start_tech": false,
-    "name": "Hostile Environment Adaption"
+    "name": "Hostile Environment Adaptation"
   },
   {
     "category": "New Worlds",
@@ -3259,36 +3298,38 @@
     "feature_unlocks": [
       "Tomb World Habitability: +20%"
     ],
-    "base_factor": 1.0,
+    "base_factor": 0.5,
     "base_weight": 65,
     "weight_modifiers": [
-      "(\u00d70.1)  None of the following:\n    \u2022   Research Leader (Society):\n        \u2022   Is New Worlds Expert\n    \u2022   Research Leader (Society):\n        \u2022   Is Curator\n"
+      "(\u00d70.2)  None of the following:\n    \u2022   Research Leader (Society):\n        \u2022   Is New Worlds Expert\n    \u2022   Research Leader (Society):\n        \u2022   Is Curator\n"
     ],
     "is_start_tech": false,
-    "name": "Tomb World Adaption"
+    "name": "Tomb World Adaptation"
   },
   {
     "category": "Biology",
     "tier": 2,
-    "description": "As a colony grows, so does its medical needs. Larger colonies are potentially exposed to more dangerous pathogens on alien worlds.",
+    "description": "As our empire grows, so does our understanding of our own biology. Advanced medical treatments on a cellular level have allowed for significant advancements in population health.",
     "area": "society",
     "prerequisites": [
-      "tech_frontier_health"
+      "tech_frontier_health",
+      "tech_colonial_centralization"
     ],
     "is_dangerous": false,
     "is_rare": false,
-    "cost": 1000,
+    "cost": 1400,
     "key": "tech_frontier_hospital",
     "feature_unlocks": [
-      "Unlocks Building: Frontier Hospital"
+      "Unlocks Building: Cyto-Revitalization Center"
     ],
     "base_factor": 2.0,
-    "base_weight": 75,
+    "base_weight": 70,
     "weight_modifiers": [
-      "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Biology Expert\n"
+      "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Biology Expert\n",
+      "(\u00d70)  Has Machine Intelligence Authority\n"
     ],
     "is_start_tech": false,
-    "name": "Frontier Hospital"
+    "name": "Cyto-Revitalization"
   },
   {
     "category": "New Worlds",
@@ -3300,18 +3341,46 @@
     ],
     "is_dangerous": false,
     "is_rare": false,
-    "cost": 1400,
+    "cost": 1000,
     "key": "tech_atmospheric_manipulation",
     "feature_unlocks": [
+      "Energy Storage Capacity: +2000",
       "Unlocks Feature: Atmospheric Manipulation"
     ],
     "base_factor": 1.0,
-    "base_weight": 70,
+    "base_weight": 75,
     "weight_modifiers": [
-      "(\u00d70.33)  NOT Research Leader (Society):\n    \u2022   Is New Worlds Expert\n"
+      "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is New Worlds Expert\n",
+      "(\u00d73)  Has World Shaper Ascension Perk\n"
     ],
     "is_start_tech": false,
     "name": "Atmospheric Manipulation"
+  },
+  {
+    "category": "New Worlds",
+    "tier": 2,
+    "description": "By adapting planetary ecosystems to large-scale environmental changes we can turn terraformation into a less disruptive process.",
+    "area": "society",
+    "prerequisites": [
+      "tech_atmospheric_manipulation"
+    ],
+    "is_dangerous": false,
+    "is_rare": false,
+    "cost": 1800,
+    "key": "tech_ecological_adaptation",
+    "feature_unlocks": [
+      "Energy Storage Capacity: +2000",
+      "Unlocks Feature: Ecological Adaptation",
+      "Unlocks Feature: Ecological Adaptation"
+    ],
+    "base_factor": 1.0,
+    "base_weight": 65,
+    "weight_modifiers": [
+      "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is New Worlds Expert\n",
+      "(\u00d73)  Has World Shaper Ascension Perk\n"
+    ],
+    "is_start_tech": false,
+    "name": "Ecological Adaptation"
   },
   {
     "category": "Biology",
@@ -3331,6 +3400,8 @@
     "base_factor": 1.5,
     "base_weight": 75,
     "weight_modifiers": [
+      "(\u00d70)  All of the following:\n    \u2022   Has Machine Intelligence Authority\n    \u2022   Does NOT have Driven Assimilator Government Civic\n",
+      "(\u00d71.25)  Has Hive Mind Authority\n",
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Biology Expert\n"
     ],
     "is_start_tech": false,
@@ -3361,7 +3432,7 @@
       "(\u00d71.5)  Has Fanatic Xenophile Ethic\n",
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Biology Expert\n",
       "(\u00d70)  Does NOT have first_alien_life country flag\n",
-      "(\u00d70)  Has Hive Mind Authority\n"
+      "(\u00d70)  Has Machine Intelligence Authority\n"
     ],
     "is_start_tech": false,
     "name": "Epigenetic Triggers"
@@ -3379,12 +3450,15 @@
     "cost": 1000,
     "key": "tech_cloning",
     "feature_unlocks": [
+      "Growth Speed: +10%",
       "Unlocks Army: Clone Army",
       "Unlocks Building: Clone Vats"
     ],
     "base_factor": 1.5,
     "base_weight": 75,
     "weight_modifiers": [
+      "(\u00d70)  All of the following:\n    \u2022   Has Machine Intelligence Authority\n    \u2022   Does NOT have Driven Assimilator Government Civic\n",
+      "(\u00d71.25)  Has Hive Mind Authority\n",
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Biology Expert\n"
     ],
     "is_start_tech": false,
@@ -3405,10 +3479,12 @@
     "feature_unlocks": [
       "Unlocks Attachment: Clone Commandos"
     ],
-    "base_factor": 1.0,
+    "base_factor": 0.5,
     "base_weight": 70,
     "weight_modifiers": [
-      "(\u00d70.1)  None of the following:\n    \u2022   Research Leader (Society):\n        \u2022   Is Biology Expert\n    \u2022   Research Leader (Society):\n        \u2022   Is Curator\n",
+      "(\u00d70)  Has Machine Intelligence Authority\n",
+      "(\u00d71.25)  Has Hive Mind Authority\n",
+      "(\u00d70.2)  None of the following:\n    \u2022   Research Leader (Society):\n        \u2022   Is Biology Expert\n    \u2022   Research Leader (Society):\n        \u2022   Is Curator\n",
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Spark of Genius\n",
       "(\u00d71.5)  Research Leader (Society):\n    \u2022   Skill level is greater than 4\n",
       "(\u00d70.75)  Research Leader (Society):\n    \u2022   Skill level is less than 2\n"
@@ -3432,14 +3508,14 @@
       "Unlocks Army: Xenomorph Army",
       "Unlocks Attachment: Xeno Cavalry"
     ],
-    "base_factor": 1.0,
+    "base_factor": 0.5,
     "base_weight": 65,
     "weight_modifiers": [
-      "(\u00d70.65)  Has Fanatic Pacifist Ethic\n",
-      "(\u00d70.8)  Has Pacifist Ethic\n",
+      "(\u00d70)  Has Machine Intelligence Authority\n",
+      "(\u00d71.25)  Has Hive Mind Authority\n",
       "(\u00d71.25)  Has Militarist Ethic\n",
       "(\u00d71.5)  Has Fanatic Militarist Ethic\n",
-      "(\u00d70.1)  None of the following:\n    \u2022   Research Leader (Society):\n        \u2022   Is Biology Expert\n    \u2022   Research Leader (Society):\n        \u2022   Is Curator\n",
+      "(\u00d70.2)  None of the following:\n    \u2022   Research Leader (Society):\n        \u2022   Is Biology Expert\n    \u2022   Research Leader (Society):\n        \u2022   Is Curator\n",
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Maniacal\n",
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Spark of Genius\n",
       "(\u00d71.5)  Research Leader (Society):\n    \u2022   Skill level is greater than 4\n",
@@ -3461,15 +3537,19 @@
     "cost": 2200,
     "key": "tech_gene_tailoring",
     "feature_unlocks": [
-      "Trait Points: +1",
+      null,
+      null,
+      null,
       "Unlocks Feature: Genetic Modification",
-      "Unlocks Feature: Environmental Adaptation",
+      "Unlocks Feature: Self-Modification",
       "Unlocks Feature: Genetic Modification",
-      "Unlocks Feature: Environmental Adaptation"
+      "Unlocks Feature: Self-Modification"
     ],
     "base_factor": 1.5,
     "base_weight": 60,
     "weight_modifiers": [
+      "(\u00d70)  All of the following:\n    \u2022   Has Machine Intelligence Authority\n    \u2022   Does NOT have Driven Assimilator Government Civic\n",
+      "(\u00d71.25)  Has Hive Mind Authority\n",
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Biology Expert\n"
     ],
     "is_start_tech": false,
@@ -3490,16 +3570,15 @@
     "feature_unlocks": [
       "Unlocks Policy: Leader Enhancement - Selected Lineages"
     ],
-    "base_factor": 1.0,
+    "base_factor": 0.5,
     "base_weight": 60,
     "weight_modifiers": [
+      "(\u00d70)  Has Machine Intelligence Authority\n",
       "(\u00d70.5)  None of the following:\n    \u2022   Research Leader (Society):\n        \u2022   Is Biology Expert\n    \u2022   Research Leader (Society):\n        \u2022   Is Curator\n",
-      "(\u00d70)  Any of the following:\n    \u2022   Has Egalitarian Ethic\n    \u2022   Has Fanatic Egalitarian Ethic\n",
+      "(\u00d70.1)  Any of the following:\n    \u2022   Has Egalitarian Ethic\n    \u2022   Has Fanatic Egalitarian Ethic\n",
       "(\u00d71.1)  Has Authoritarian Ethic\n",
       "(\u00d71.25)  Has Fanatic Authoritarian Ethic\n",
-      "(\u00d71.5)  Research Leader (Society):\n    \u2022   Is Spark of Genius\n",
-      "(\u00d71.5)  Any of the following:\n    \u2022   Has Egalitarian Ethic\n    \u2022   Has Fanatic Egalitarian Ethic\n",
-      "(\u00d70.1)  Any of the following:\n    \u2022   Has Authoritarian Ethic\n    \u2022   Has Fanatic Authoritarian Ethic\n"
+      "(\u00d71.5)  Research Leader (Society):\n    \u2022   Is Spark of Genius\n"
     ],
     "is_start_tech": false,
     "name": "Selected Lineages"
@@ -3522,8 +3601,6 @@
     "base_factor": 3.0,
     "base_weight": 75,
     "weight_modifiers": [
-      "(\u00d70.65)  Has Fanatic Pacifist Ethic\n",
-      "(\u00d70.8)  Has Pacifist Ethic\n",
       "(\u00d71.25)  Has Militarist Ethic\n",
       "(\u00d71.5)  Has Fanatic Militarist Ethic\n",
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Military Theory Expert\n"
@@ -3549,8 +3626,6 @@
     "base_factor": 3.0,
     "base_weight": 60,
     "weight_modifiers": [
-      "(\u00d70.65)  Has Fanatic Pacifist Ethic\n",
-      "(\u00d70.8)  Has Pacifist Ethic\n",
       "(\u00d71.25)  Has Militarist Ethic\n",
       "(\u00d71.5)  Has Fanatic Militarist Ethic\n",
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Military Theory Expert\n"
@@ -3577,8 +3652,6 @@
     "base_weight": 70,
     "weight_modifiers": [
       "(\u00d70)  NOT Research Leader (Society):\n    \u2022   Is Military Theory Expert\n",
-      "(\u00d70.65)  Has Fanatic Pacifist Ethic\n",
-      "(\u00d70.8)  Has Pacifist Ethic\n",
       "(\u00d71.25)  Has Militarist Ethic\n",
       "(\u00d71.5)  Has Fanatic Militarist Ethic\n",
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Military Theory Expert\n"
@@ -3599,13 +3672,11 @@
     "cost": 720,
     "key": "tech_doctrine_refit_standards",
     "feature_unlocks": [
-      "Ship Upgrade Cost: -15%"
+      "Ship Upgrade Cost: -25%"
     ],
     "base_factor": 1.0,
     "base_weight": 85,
     "weight_modifiers": [
-      "(\u00d70.65)  Has Fanatic Pacifist Ethic\n",
-      "(\u00d70.8)  Has Pacifist Ethic\n",
       "(\u00d71.25)  Has Militarist Ethic\n",
       "(\u00d71.5)  Has Fanatic Militarist Ethic\n",
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Military Theory Expert\n"
@@ -3626,10 +3697,11 @@
     "feature_unlocks": [
       "Unlocks Attachment: PSI Warriors"
     ],
-    "base_factor": 1.0,
+    "base_factor": 0.5,
     "base_weight": 60,
     "weight_modifiers": [
-      "(\u00d70)  None of the following:\n    \u2022   Has Spiritualist Ethic\n    \u2022   Has Fanatic Spiritualist Ethic\n",
+      "(\u00d70.5)  None of the following:\n    \u2022   Has Spiritualist Ethic\n    \u2022   Has Fanatic Spiritualist Ethic\n",
+      "(\u00d70)  Has Gestalt Consciousness Ethic\n",
       "(\u00d71.1)  Research Leader (Society):\n    \u2022   Skill level is greater than 2\n    \u2022   Is Psionics Expert\n",
       "(\u00d71.5)  Research Leader (Society):\n    \u2022   Skill level is greater than 3\n    \u2022   Is Psionics Expert\n",
       "(\u00d72)  Research Leader (Society):\n    \u2022   Skill level is greater than 4\n    \u2022   Is Psionics Expert\n",
@@ -3669,53 +3741,29 @@
     "name": "Interstellar Campaigns"
   },
   {
-    "category": "Statecraft",
+    "category": "New Worlds",
     "tier": 2,
-    "description": "The administrative needs of a star empire are as numerous as they are complex. We will rise to the occasion.",
+    "description": "Robust frameworks for local governance created on a per-case basis, to meet each colony's needs.",
     "area": "society",
     "prerequisites": [
-      "tech_colonial_centralization"
+      "tech_planetary_unification"
     ],
     "is_dangerous": false,
     "is_rare": false,
-    "cost": 1400,
-    "key": "tech_galactic_administration",
+    "cost": 1000,
+    "key": "tech_colonial_centralization",
     "feature_unlocks": [
-      "Civic Slots: +1",
-      "Unlocks Building: Empire Capital-Complex"
+      "Unlocks Building: Planetary Capital",
+      "Unlocks Building: Planetary Processor",
+      "Unlocks Edict: Production Targets"
     ],
     "base_factor": 4.0,
-    "base_weight": 70,
+    "base_weight": 75,
     "weight_modifiers": [
-      "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Statecraft Expert\n"
+      "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is New Worlds Expert\n"
     ],
     "is_start_tech": false,
-    "name": "Galactic Administration"
-  },
-  {
-    "category": "Statecraft",
-    "tier": 2,
-    "description": "$building_galactic_stock_exchange_desc$",
-    "area": "society",
-    "prerequisites": [
-      "tech_galactic_administration"
-    ],
-    "is_dangerous": false,
-    "is_rare": true,
-    "cost": 1800,
-    "key": "tech_galactic_markets",
-    "feature_unlocks": [
-      "Unlocks Building: Galactic Stock Exchange"
-    ],
-    "base_factor": 0.5,
-    "base_weight": 65,
-    "weight_modifiers": [
-      "(\u00d70.25)  None of the following:\n    \u2022   Research Leader (Society):\n        \u2022   Is Statecraft Expert\n    \u2022   Research Leader (Society):\n        \u2022   Is Curator\n",
-      "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Statecraft Expert\n",
-      "(\u00d70)  Number of owned planets is less than 2\n"
-    ],
-    "is_start_tech": false,
-    "name": "Galactic Markets"
+    "name": "Colonial Centralization"
   },
   {
     "category": "Statecraft",
@@ -3734,36 +3782,12 @@
     "base_factor": 0.5,
     "base_weight": 75,
     "weight_modifiers": [
-      "(\u00d70)  Has Hive-Minded Ethic\n",
+      "(\u00d70)  Has Gestalt Consciousness Ethic\n",
       "(\u00d71.25)  None of the following:\n    \u2022   Has Egalitarian Ethic\n    \u2022   Has Fanatic Egalitarian Ethic\n",
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Statecraft Expert\n"
     ],
     "is_start_tech": false,
     "name": "Subdermal Stimulation"
-  },
-  {
-    "category": "Statecraft",
-    "tier": 2,
-    "description": "Our people are united and strong, and their rulers benevolent. Sometimes the populace needs to be reminded of this fact.",
-    "area": "society",
-    "prerequisites": [
-      "tech_galactic_administration"
-    ],
-    "is_dangerous": false,
-    "is_rare": true,
-    "cost": 1400,
-    "key": "tech_galactic_benevolence",
-    "feature_unlocks": [
-      "Unlocks Building: Ministry of Benevolence"
-    ],
-    "base_factor": 0.5,
-    "base_weight": 70,
-    "weight_modifiers": [
-      "(\u00d70.25)  None of the following:\n    \u2022   Research Leader (Society):\n        \u2022   Is Statecraft Expert\n    \u2022   Research Leader (Society):\n        \u2022   Is Curator\n",
-      "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Statecraft Expert\n"
-    ],
-    "is_start_tech": false,
-    "name": "Galactic Benevolence"
   },
   {
     "category": "Statecraft",
@@ -3833,8 +3857,8 @@
     "cost": 1400,
     "key": "tech_artificial_moral_codes",
     "feature_unlocks": [
-      "Resettlement Cost: -10%",
-      "Unlocks Edict: Share the Burden"
+      "Edict Cost: -15%",
+      "Slave Resource Production: +5%"
     ],
     "base_factor": 1.0,
     "base_weight": 65,
@@ -3857,8 +3881,8 @@
     "cost": 2200,
     "key": "tech_synthetic_thought_patterns",
     "feature_unlocks": [
-      "Edict Cost: -15%",
-      "Resettlement Cost: -10%"
+      "Resettlement Cost: -15%",
+      "Robot Resource Production: +5%"
     ],
     "base_factor": 1.0,
     "base_weight": 60,
@@ -3880,14 +3904,16 @@
     ],
     "is_dangerous": false,
     "is_rare": false,
-    "cost": 1000,
+    "cost": 1400,
     "key": "tech_hypercomms_forum",
     "feature_unlocks": [
-      "Unlocks Building: Hypercomms Forum"
+      "Unlocks Building: Hypercomms Forum",
+      "Unlocks Building: System Conflux"
     ],
     "base_factor": 1.0,
-    "base_weight": 75,
+    "base_weight": 70,
     "weight_modifiers": [
+      "(\u00d70)  Any of the following:\n    \u2022   Has Spiritualist Ethic\n    \u2022   Has Fanatic Spiritualist Ethic\n",
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Statecraft Expert\n"
     ],
     "is_start_tech": false,
@@ -3896,77 +3922,27 @@
   {
     "category": "Statecraft",
     "tier": 2,
-    "description": "Continuous, asynchronous analysis of disparate data sets allows for the accurate modeling of hitherto-unpredictable fluctuations in social currents.",
+    "description": "Through our understanding of physics and field manipulation, our holy places shall we seen and felt by all.",
     "area": "society",
     "prerequisites": [
-      "tech_hypercomms_forum",
-      "tech_administrative_ai",
-      "tech_galactic_administration"
-    ],
-    "is_dangerous": false,
-    "is_rare": false,
-    "cost": 2200,
-    "key": "tech_autocurating_vault",
-    "feature_unlocks": [
-      "Unlocks Building: Auto-Curating Vault"
-    ],
-    "base_factor": 1.0,
-    "base_weight": 60,
-    "weight_modifiers": [
-      "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Statecraft Expert\n"
-    ],
-    "is_start_tech": false,
-    "name": "Automated Curation Algorithms"
-  },
-  {
-    "category": "Statecraft",
-    "tier": 2,
-    "description": "Seeing is believing, and belief begets reality.",
-    "area": "society",
-    "prerequisites": [
-      "tech_cultural_heritage",
+      "tech_holographic_rituals",
       "tech_colonial_centralization"
     ],
     "is_dangerous": false,
     "is_rare": false,
-    "cost": 1000,
-    "key": "tech_holographic_rituals",
+    "cost": 4000,
+    "key": "tech_consecration_fields",
     "feature_unlocks": [
-      "Unlocks Building: Holotemple"
+      "Unlocks Building: Sacred Nexus"
     ],
     "base_factor": 1.0,
-    "base_weight": 75,
+    "base_weight": 70,
     "weight_modifiers": [
       "(\u00d70)  None of the following:\n    \u2022   Has Spiritualist Ethic\n    \u2022   Has Fanatic Spiritualist Ethic\n",
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Statecraft Expert\n"
     ],
     "is_start_tech": false,
-    "name": "Holographic Rituals"
-  },
-  {
-    "category": "Statecraft",
-    "tier": 2,
-    "description": "Leaving our planetary cradle has opened us up to a new understanding of faith, and its place in a wider context.",
-    "area": "society",
-    "prerequisites": [
-      "tech_holographic_rituals",
-      "tech_galactic_administration"
-    ],
-    "is_dangerous": false,
-    "is_rare": false,
-    "cost": 2200,
-    "key": "tech_transcendent_faith",
-    "feature_unlocks": [
-      "Unlocks Building: Citadel of Faith"
-    ],
-    "base_factor": 1.0,
-    "base_weight": 60,
-    "weight_modifiers": [
-      "(\u00d70)  None of the following:\n    \u2022   Has Spiritualist Ethic\n    \u2022   Has Fanatic Spiritualist Ethic\n",
-      "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Statecraft Expert\n"
-    ],
-    "is_start_tech": false,
-    "name": "Metacognitive Faith"
+    "name": "Consecration Fields"
   },
   {
     "category": "Statecraft",
@@ -3990,215 +3966,84 @@
     "name": "Doctrine: Strange Loop"
   },
   {
-    "category": "Biology",
-    "tier": 3,
-    "description": "Transgenic crops offer the nutritional elements of several standard food crops in one convenient package.",
-    "area": "society",
-    "prerequisites": [
-      "tech_gene_crops"
-    ],
-    "is_dangerous": false,
-    "is_rare": false,
-    "cost": 3000,
-    "key": "tech_repeatable_improved_tile_food_output",
-    "feature_unlocks": [
-      "Food: +5%"
-    ],
-    "base_factor": 0.5,
-    "base_weight": 25,
-    "weight_modifiers": [],
-    "is_start_tech": false,
-    "name": "Transgenic Crops"
-  },
-  {
     "category": "Statecraft",
     "tier": 3,
-    "description": "Improved FTL communication channels allow for more coherent administrative direction.",
+    "description": "Through sufficiently advanced mathematical simulations, it may be possible to predict the fluctuating economies of organic society in some limited fashion. This would let us manipulate their stock markets to our advantage.",
     "area": "society",
     "prerequisites": [
-      "tech_adaptive_bureaucracy"
+      "tech_galactic_administration"
     ],
     "is_dangerous": false,
-    "is_rare": false,
-    "cost": 3000,
-    "key": "tech_repeatable_improved_sector_cap",
+    "is_rare": true,
+    "cost": 4000,
+    "key": "tech_probability_theory",
     "feature_unlocks": [
-      "Sector Limit: +1"
+      "Unlocks Building: Probability Engine"
     ],
     "base_factor": 0.5,
-    "base_weight": 25,
-    "weight_modifiers": [],
+    "base_weight": 45,
+    "weight_modifiers": [
+      "(\u00d70)  Does NOT have Machine Intelligence Authority\n",
+      "(\u00d70.25)  None of the following:\n    \u2022   Research Leader (Society):\n        \u2022   Is Statecraft Expert\n    \u2022   Research Leader (Society):\n        \u2022   Is Curator\n",
+      "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Statecraft Expert\n"
+    ],
     "is_start_tech": false,
-    "name": "Communication Protocols"
-  },
-  {
-    "category": "Statecraft",
-    "tier": 3,
-    "description": "Restructuring the managerial web linking core worlds to the capital can help alleviate the administrative stressors and information chokepoints that frequently arise within a budding empire.",
-    "area": "society",
-    "prerequisites": [
-      "tech_galactic_bureaucracy"
-    ],
-    "is_dangerous": false,
-    "is_rare": false,
-    "cost": 3000,
-    "key": "tech_repeatable_improved_core_system_cap",
-    "feature_unlocks": [
-      "Core Sector Systems: +1"
-    ],
-    "base_factor": 0.5,
-    "base_weight": 25,
-    "weight_modifiers": [],
-    "is_start_tech": false,
-    "name": "Administrative Efficiency"
-  },
-  {
-    "category": "Statecraft",
-    "tier": 3,
-    "description": "The concept of managing individuals as resources within larger systems of production must, by necessity, become more flexible as the potential natures of the managed individuals grow ever more numerous.",
-    "area": "society",
-    "prerequisites": [
-      "tech_adaptive_bureaucracy"
-    ],
-    "is_dangerous": false,
-    "is_rare": false,
-    "cost": 3000,
-    "key": "tech_repeatable_improved_leader_cap",
-    "feature_unlocks": [
-      "Empire Leader Capacity: +1"
-    ],
-    "base_factor": 0.5,
-    "base_weight": 25,
-    "weight_modifiers": [],
-    "is_start_tech": false,
-    "name": "Sentient Resource Management"
-  },
-  {
-    "category": "Statecraft",
-    "tier": 3,
-    "description": "Propaganda programs and subtle manipulation of economic records drive down the cost of employing top-tier Leaders.",
-    "area": "society",
-    "prerequisites": [
-      "tech_adaptive_bureaucracy"
-    ],
-    "is_dangerous": false,
-    "is_rare": false,
-    "cost": 3000,
-    "key": "tech_repeatable_reduced_leader_cost",
-    "feature_unlocks": [
-      "Leader Recruitment Cost: -5%"
-    ],
-    "base_factor": 0.5,
-    "base_weight": 25,
-    "weight_modifiers": [],
-    "is_start_tech": false,
-    "name": "Talent Acquisition"
-  },
-  {
-    "category": "Statecraft",
-    "tier": 3,
-    "description": "More aggressive information campaigns improve the populace's receptiveness to Edicts.",
-    "area": "society",
-    "prerequisites": [
-      "tech_artificial_moral_codes"
-    ],
-    "is_dangerous": false,
-    "is_rare": false,
-    "cost": 3000,
-    "key": "tech_repeatable_improved_edict_length",
-    "feature_unlocks": [
-      "Edict Duration: +10%"
-    ],
-    "base_factor": 0.5,
-    "base_weight": 25,
-    "weight_modifiers": [],
-    "is_start_tech": false,
-    "name": "Proclamation Broadcasts"
-  },
-  {
-    "category": "Military Theory",
-    "tier": 3,
-    "description": "Iterating on the standard conditioning regimen for ground troops has proven to make them more effective in direct combat.",
-    "area": "society",
-    "prerequisites": [
-      "tech_combat_training"
-    ],
-    "is_dangerous": false,
-    "is_rare": false,
-    "cost": 3000,
-    "key": "tech_repeatable_improved_army_damage",
-    "feature_unlocks": [
-      "Army Damage: +10%"
-    ],
-    "base_factor": 0.5,
-    "base_weight": 25,
-    "weight_modifiers": [],
-    "is_start_tech": false,
-    "name": "Aggressive Conditioning"
-  },
-  {
-    "category": "Military Theory",
-    "tier": 3,
-    "description": "Careful tuning of pain receptors allow soldiers to fight through what would previously have been debilitating injuries.",
-    "area": "society",
-    "prerequisites": [
-      "tech_combat_training"
-    ],
-    "is_dangerous": false,
-    "is_rare": false,
-    "cost": 3000,
-    "key": "tech_repeatable_improved_army_health",
-    "feature_unlocks": [
-      "Army Health: +10%"
-    ],
-    "base_factor": 0.5,
-    "base_weight": 25,
-    "weight_modifiers": [],
-    "is_start_tech": false,
-    "name": "Nerve Dampeners"
+    "name": "Organic Probability Theory"
   },
   {
     "category": "Biology",
     "tier": 3,
-    "description": "Regimens of periodic cell revitalization treatments keep the leader class spry and active beyond traditionally expected lifespans.",
+    "description": "Millions of years of organic evolution will sometimes, through sheer persistence, produce elegant solutions that can also be applied to machine designs.",
     "area": "society",
     "prerequisites": [
-      "tech_vitality_boosters"
+      "tech_adaptive_combat_algorithms"
     ],
     "is_dangerous": false,
-    "is_rare": false,
-    "cost": 3000,
-    "key": "tech_repeatable_improved_leader_life_span",
+    "is_rare": true,
+    "cost": 4000,
+    "key": "tech_biomechanics",
     "feature_unlocks": [
-      "Leader Lifespan: +5"
+      "Unlocks Army: machine_assault_3"
     ],
-    "base_factor": 0.5,
-    "base_weight": 25,
-    "weight_modifiers": [],
+    "base_factor": 1.0,
+    "base_weight": 45,
+    "weight_modifiers": [
+      "(\u00d70)  Does NOT have Machine Intelligence Authority\n",
+      "(\u00d70.1)  None of the following:\n    \u2022   Research Leader (Society):\n        \u2022   Is Biology Expert\n    \u2022   Research Leader (Society):\n        \u2022   Is Curator\n",
+      "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Spark of Genius\n",
+      "(\u00d71.5)  Research Leader (Society):\n    \u2022   Skill level is greater than 4\n",
+      "(\u00d70.75)  NOT Research Leader (Society):\n    \u2022   Skill level is greater than 3\n"
+    ],
     "is_start_tech": false,
-    "name": "Cell Revitalization"
+    "name": "Biomechanics"
   },
   {
     "category": "Biology",
     "tier": 3,
-    "description": "Chemically optimizing diets for indentured workers allow them to perform above projected productivity curves.",
+    "description": "Infusing crop strands with small amounts of nano-machines help create a type of produce that is ultra resilient, and the chemical composition of which can be tailored and altered during its entire lifetime.",
     "area": "society",
     "prerequisites": [
-      "tech_neural_implants"
+      "tech_gene_crops",
+      "tech_galactic_administration"
     ],
     "is_dangerous": false,
     "is_rare": false,
-    "cost": 3000,
-    "key": "tech_repeatable_improved_slave_mineral_output",
+    "cost": 4000,
+    "key": "tech_nano_vitality_crops",
     "feature_unlocks": [
-      "Slave Mineral Output: +5%",
-      "Slave Food Output: +5%"
+      "Unlocks Building: Hydroponics Farm IV",
+      "Unlocks Building: Hydroponics Farm V"
     ],
-    "base_factor": 0.5,
-    "base_weight": 25,
-    "weight_modifiers": [],
+    "base_factor": 1.0,
+    "base_weight": 45,
+    "weight_modifiers": [
+      "(\u00d70)  Has Machine Intelligence Authority\n",
+      "(\u00d71.25)  Has Pacifist Ethic\n",
+      "(\u00d71.5)  Has Fanatic Pacifist Ethic\n",
+      "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Biology Expert\n"
+    ],
     "is_start_tech": false,
-    "name": "Stimulant Diet"
+    "name": "Nano-Vitality Crops"
   },
   {
     "category": "Biology",
@@ -4218,6 +4063,7 @@
     "base_factor": 1.0,
     "base_weight": 40,
     "weight_modifiers": [
+      "(\u00d70)  Has Machine Intelligence Authority\n",
       "(\u00d71.25)  Has Pacifist Ethic\n",
       "(\u00d71.5)  Has Fanatic Pacifist Ethic\n",
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Biology Expert\n"
@@ -4236,14 +4082,14 @@
     ],
     "is_dangerous": false,
     "is_rare": false,
-    "cost": 3000,
+    "cost": 5000,
     "key": "tech_biolab_3",
     "feature_unlocks": [
       "Unlocks Building: Biolab III",
       "Unlocks Building: Biolab IV"
     ],
     "base_factor": 1.0,
-    "base_weight": 50,
+    "base_weight": 40,
     "weight_modifiers": [
       "(\u00d72)  Number of years since game start is greater than 25\n",
       "(\u00d72)  Number of years since game start is greater than 30\n",
@@ -4272,7 +4118,8 @@
     "base_factor": 1.0,
     "base_weight": 45,
     "weight_modifiers": [
-      "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is New Worlds Expert\n"
+      "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is New Worlds Expert\n",
+      "(\u00d70.7)  Any of the following:\n    \u2022   Has Autonomous Service Grid\n    \u2022   Has Catalog Index\n"
     ],
     "is_start_tech": false,
     "name": "Foreign Soil Enrichment"
@@ -4280,7 +4127,7 @@
   {
     "category": "New Worlds",
     "tier": 3,
-    "description": "Additonal study into different planetary climates will allow us to settle our population on worlds previously thought too hostile to support them.",
+    "description": "Additional study into different planetary climates will allow us to settle our population on worlds previously thought too hostile to support them.",
     "area": "society",
     "prerequisites": [
       "tech_colonization_4"
@@ -4295,33 +4142,36 @@
     "base_factor": 1.0,
     "base_weight": 35,
     "weight_modifiers": [
-      "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is New Worlds Expert\n"
+      "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is New Worlds Expert\n",
+      "(\u00d70.7)  Any of the following:\n    \u2022   Has Autonomous Service Grid\n    \u2022   Has Catalog Index\n"
     ],
     "is_start_tech": false,
-    "name": "Hostile Climate Adaption"
+    "name": "Eco-Integration Studies"
   },
   {
     "category": "New Worlds",
     "tier": 3,
-    "description": "By advancing our understanding of atmopsheric manipulation, we will be able to terraform even the most ecologically devastated worlds.",
+    "description": "By advancing our understanding of atmospheric transformation, we will be able to terraform even the most ecologically devastated worlds.",
     "area": "society",
     "prerequisites": [
-      "tech_atmospheric_manipulation"
+      "tech_ecological_adaptation"
     ],
     "is_dangerous": false,
     "is_rare": false,
     "cost": 3000,
     "key": "tech_climate_restoration",
     "feature_unlocks": [
-      "Unlocks Feature: Climate Restoration"
+      "Energy Storage Capacity: +2000",
+      "Unlocks Feature: Climate Transformation"
     ],
     "base_factor": 1.0,
     "base_weight": 50,
     "weight_modifiers": [
-      "(\u00d70.33)  NOT Research Leader (Society):\n    \u2022   Is New Worlds Expert\n"
+      "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is New Worlds Expert\n",
+      "(\u00d73)  Has World Shaper Ascension Perk\n"
     ],
     "is_start_tech": false,
-    "name": "Climate Restoration"
+    "name": "Climate Transformation"
   },
   {
     "category": "New Worlds",
@@ -4336,12 +4186,16 @@
     "cost": 6000,
     "key": "tech_gaia_creation",
     "feature_unlocks": [
+      "Energy Storage Capacity: +2000",
       "Unlocks Feature: Gaia Creation"
     ],
     "base_factor": 0.1,
     "base_weight": 35,
     "weight_modifiers": [
-      "(\u00d70.33)  NOT Research Leader (Society):\n    \u2022   Is New Worlds Expert\n"
+      "(\u00d70.5)  Any of the following:\n    \u2022   Has Artificial Intelligence Network\n    \u2022   Has Rogue Defense System\n    \u2022   Has Intelligent Research Link\n    \u2022   Has Industrial Production Core\n",
+      "(\u00d70.33)  None of the following:\n    \u2022   Research Leader (Society):\n        \u2022   Is New Worlds Expert\n    \u2022   Has World Shaper Ascension Perk\n",
+      "(\u00d73)  Has World Shaper Ascension Perk\n",
+      "(\u00d72)  Any owned Planet:\n    \u2022   Is Gaia World\n"
     ],
     "is_start_tech": false,
     "name": "Gaia Creation"
@@ -4365,8 +4219,8 @@
     "base_weight": 45,
     "weight_modifiers": [
       "(\u00d70)  Host does has the Utopia DLC\n",
-      "(\u00d70.65)  Has Fanatic Pacifist Ethic\n",
-      "(\u00d70.8)  Has Pacifist Ethic\n",
+      "(\u00d70)  Has Machine Intelligence Authority\n",
+      "(\u00d71.25)  Has Hive Mind Authority\n",
       "(\u00d71.25)  Has Militarist Ethic\n",
       "(\u00d71.5)  Has Fanatic Militarist Ethic\n",
       "(\u00d70.1)  None of the following:\n    \u2022   Research Leader (Society):\n        \u2022   Is Biology Expert\n    \u2022   Research Leader (Society):\n        \u2022   Is Curator\n",
@@ -4380,25 +4234,54 @@
   {
     "category": "Biology",
     "tier": 3,
-    "description": "Stricter control of RNA and protein production on the cellular level.",
+    "description": "Through glandular biological tailoring we can change the environmental tolerance of a species to suit our needs.",
     "area": "society",
     "prerequisites": [
       "tech_gene_tailoring"
     ],
     "is_dangerous": false,
-    "is_rare": true,
+    "is_rare": false,
     "cost": 4000,
-    "key": "tech_gene_expressions",
+    "key": "tech_glandular_acclimation",
     "feature_unlocks": [
-      "Trait Points: +1"
+      "Unlocks Feature: Habitability Modification",
+      "Unlocks Feature: Habitability Modification"
     ],
-    "base_factor": 1.0,
+    "base_factor": 1.5,
     "base_weight": 45,
     "weight_modifiers": [
+      "(\u00d70)  All of the following:\n    \u2022   Has Machine Intelligence Authority\n    \u2022   Does NOT have Driven Assimilator Government Civic\n",
+      "(\u00d71.25)  Has Hive Mind Authority\n",
+      "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Biology Expert\n"
+    ],
+    "is_start_tech": false,
+    "name": "Glandular Acclimation"
+  },
+  {
+    "category": "Biology",
+    "tier": 3,
+    "description": "Stricter control of RNA and protein production on the cellular level.",
+    "area": "society",
+    "prerequisites": [
+      "tech_gene_tailoring",
+      "tech_glandular_acclimation"
+    ],
+    "is_dangerous": false,
+    "is_rare": true,
+    "cost": 5000,
+    "key": "tech_gene_expressions",
+    "feature_unlocks": [
+      null,
+      null,
+      null
+    ],
+    "base_factor": 0.5,
+    "base_weight": 40,
+    "weight_modifiers": [
+      "(\u00d70)  All of the following:\n    \u2022   Has Machine Intelligence Authority\n    \u2022   Does NOT have Driven Assimilator Government Civic\n",
+      "(\u00d71.25)  Has Hive Mind Authority\n",
       "(\u00d70.5)  None of the following:\n    \u2022   Research Leader (Society):\n        \u2022   Is Biology Expert\n    \u2022   Research Leader (Society):\n        \u2022   Is Curator\n",
-      "(\u00d71.5)  Research Leader (Society):\n    \u2022   Is Spark of Genius\n",
-      "(\u00d71.5)  Any of the following:\n    \u2022   Has Authoritarian Ethic\n    \u2022   Has Fanatic Authoritarian Ethic\n",
-      "(\u00d70.1)  Any of the following:\n    \u2022   Has Egalitarian Ethic\n    \u2022   Has Fanatic Egalitarian Ethic\n"
+      "(\u00d71.5)  Research Leader (Society):\n    \u2022   Is Spark of Genius\n"
     ],
     "is_start_tech": false,
     "name": "Targeted Gene Expressions"
@@ -4418,16 +4301,15 @@
     "feature_unlocks": [
       "Unlocks Policy: Leader Enhancement - Capacity Boosters"
     ],
-    "base_factor": 1.0,
+    "base_factor": 0.5,
     "base_weight": 45,
     "weight_modifiers": [
-      "(\u00d70.1)  None of the following:\n    \u2022   Research Leader (Society):\n        \u2022   Is Biology Expert\n    \u2022   Research Leader (Society):\n        \u2022   Is Curator\n",
-      "(\u00d70)  Any of the following:\n    \u2022   Has Egalitarian Ethic\n    \u2022   Has Fanatic Egalitarian Ethic\n",
+      "(\u00d70)  All of the following:\n    \u2022   Has Machine Intelligence Authority\n    \u2022   Does NOT have Driven Assimilator Government Civic\n",
+      "(\u00d70.2)  None of the following:\n    \u2022   Research Leader (Society):\n        \u2022   Is Biology Expert\n    \u2022   Research Leader (Society):\n        \u2022   Is Curator\n",
+      "(\u00d70.1)  Any of the following:\n    \u2022   Has Egalitarian Ethic\n    \u2022   Has Fanatic Egalitarian Ethic\n",
       "(\u00d71.1)  Has Authoritarian Ethic\n",
       "(\u00d71.25)  Has Fanatic Authoritarian Ethic\n",
-      "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Spark of Genius\n",
-      "(\u00d71.5)  Research Leader (Society):\n    \u2022   Skill level is greater than 4\n",
-      "(\u00d70.75)  NOT Research Leader (Society):\n    \u2022   Skill level is greater than 2\n"
+      "(\u00d71.5)  Research Leader (Society):\n    \u2022   Is Spark of Genius\n"
     ],
     "is_start_tech": false,
     "name": "Capacity Boosters"
@@ -4450,8 +4332,6 @@
     "base_factor": 3.0,
     "base_weight": 50,
     "weight_modifiers": [
-      "(\u00d70.65)  Has Fanatic Pacifist Ethic\n",
-      "(\u00d70.8)  Has Pacifist Ethic\n",
       "(\u00d71.25)  Has Militarist Ethic\n",
       "(\u00d71.5)  Has Fanatic Militarist Ethic\n",
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Military Theory Expert\n"
@@ -4474,10 +4354,11 @@
     "feature_unlocks": [
       "Unlocks Army: Psionic Army"
     ],
-    "base_factor": 1.0,
+    "base_factor": 0.5,
     "base_weight": 50,
     "weight_modifiers": [
       "(\u00d70)  Host does has the Utopia DLC\n",
+      "(\u00d70)  Has Machine Intelligence Authority\n",
       "(\u00d70.5)  NOT Research Leader (Society):\n    \u2022   Is Psionics Expert\n",
       "(\u00d71.1)  Research Leader (Society):\n    \u2022   Skill level is greater than 2\n    \u2022   Is Psionics Expert\n",
       "(\u00d71.5)  Research Leader (Society):\n    \u2022   Skill level is greater than 3\n    \u2022   Is Psionics Expert\n",
@@ -4504,10 +4385,11 @@
     "feature_unlocks": [
       "Unlocks Component: Precognitive Interface"
     ],
-    "base_factor": 1.0,
+    "base_factor": 0.5,
     "base_weight": 50,
     "weight_modifiers": [
       "(\u00d70)  Host does has the Utopia DLC\n",
+      "(\u00d70)  Has Machine Intelligence Authority\n",
       "(\u00d70.5)  NOT Research Leader (Society):\n    \u2022   Is Psionics Expert\n",
       "(\u00d71.1)  Research Leader (Society):\n    \u2022   Skill level is greater than 2\n    \u2022   Is Psionics Expert\n",
       "(\u00d71.5)  Research Leader (Society):\n    \u2022   Skill level is greater than 3\n    \u2022   Is Psionics Expert\n",
@@ -4538,6 +4420,7 @@
     "base_weight": 35,
     "weight_modifiers": [
       "(\u00d70)  Host does has the Utopia DLC\n",
+      "(\u00d70)  Has Machine Intelligence Authority\n",
       "(\u00d70.1)  None of the following:\n    \u2022   Research Leader (Society):\n        \u2022   Is Psionics Expert\n    \u2022   Research Leader (Physics):\n        \u2022   Is Curator\n    \u2022   Research Leader (Physics):\n        \u2022   Is Spark of Genius\n    \u2022   Research Leader (Physics):\n        \u2022   Is Maniacal\n"
     ],
     "is_start_tech": false,
@@ -4574,6 +4457,82 @@
   {
     "category": "Statecraft",
     "tier": 3,
+    "description": "The administrative needs of a star empire are as numerous as they are complex. We will rise to the occasion.",
+    "area": "society",
+    "prerequisites": [
+      "tech_colonial_centralization"
+    ],
+    "is_dangerous": false,
+    "is_rare": false,
+    "cost": 3000,
+    "key": "tech_galactic_administration",
+    "feature_unlocks": [
+      "Civic Slots: +1",
+      "Unlocks Building: Empire Capital-Complex",
+      "Unlocks Building: Primary Nexus"
+    ],
+    "base_factor": 4.0,
+    "base_weight": 50,
+    "weight_modifiers": [
+      "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Statecraft Expert\n"
+    ],
+    "is_start_tech": false,
+    "name": "Galactic Administration"
+  },
+  {
+    "category": "Statecraft",
+    "tier": 3,
+    "description": "$building_galactic_stock_exchange_desc$",
+    "area": "society",
+    "prerequisites": [
+      "tech_galactic_administration"
+    ],
+    "is_dangerous": false,
+    "is_rare": true,
+    "cost": 4000,
+    "key": "tech_galactic_markets",
+    "feature_unlocks": [
+      "Unlocks Building: Galactic Stock Exchange"
+    ],
+    "base_factor": 0.5,
+    "base_weight": 45,
+    "weight_modifiers": [
+      "(\u00d70.25)  None of the following:\n    \u2022   Research Leader (Society):\n        \u2022   Is Statecraft Expert\n    \u2022   Research Leader (Society):\n        \u2022   Is Curator\n",
+      "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Statecraft Expert\n",
+      "(\u00d70)  Number of owned planets is less than 2\n",
+      "(\u00d70)  Has Machine Intelligence Authority\n"
+    ],
+    "is_start_tech": false,
+    "name": "Galactic Markets"
+  },
+  {
+    "category": "Statecraft",
+    "tier": 3,
+    "description": "Our people are united and strong, and their rulers benevolent. Sometimes the populace needs to be reminded of this fact.",
+    "area": "society",
+    "prerequisites": [
+      "tech_galactic_administration"
+    ],
+    "is_dangerous": false,
+    "is_rare": true,
+    "cost": 4000,
+    "key": "tech_galactic_benevolence",
+    "feature_unlocks": [
+      "Unlocks Building: Ministry of Benevolence"
+    ],
+    "base_factor": 0.5,
+    "base_weight": 45,
+    "weight_modifiers": [
+      "(\u00d70.25)  None of the following:\n    \u2022   Research Leader (Society):\n        \u2022   Is Statecraft Expert\n    \u2022   Research Leader (Society):\n        \u2022   Is Curator\n",
+      "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Statecraft Expert\n",
+      "(\u00d70)  Has Machine Intelligence Authority\n"
+    ],
+    "is_start_tech": false,
+    "name": "Galactic Benevolence"
+  },
+  {
+    "category": "Statecraft",
+    "tier": 3,
     "description": "Finding aspects of the self within the group is natural and inevitable; eventually those shared aspects must be valued higher than individual identities.",
     "area": "society",
     "prerequisites": [
@@ -4596,8 +4555,7 @@
       "(\u00d71.5)  Number of owned planets is greater than 9\n",
       "(\u00d71.5)  Number of owned planets is greater than 10\n",
       "(\u00d71.5)  Any of the following:\n    \u2022   Has Authoritarian Ethic\n    \u2022   Has Fanatic Authoritarian Ethic\n",
-      "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Statecraft Expert\n",
-      "(\u00d70)  Any of the following:\n    \u2022   Has Egalitarian Ethic\n    \u2022   Has Fanatic Egalitarian Ethic\n"
+      "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Statecraft Expert\n"
     ],
     "is_start_tech": false,
     "name": "The Collective Self"
@@ -4618,9 +4576,10 @@
       "Unlocks Attachment: Commissar Squads",
       "Unlocks Module: Orbital Mind Control Laser"
     ],
-    "base_factor": 1.0,
+    "base_factor": 0.5,
     "base_weight": 40,
     "weight_modifiers": [
+      "(\u00d70)  Has Machine Intelligence Authority\n",
       "(\u00d70.2)  None of the following:\n    \u2022   Research Leader (Society):\n        \u2022   Is Maniacal\n    \u2022   Research Leader (Society):\n        \u2022   Is Curator\n",
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Statecraft Expert\n",
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Spark of Genius\n",
@@ -4628,6 +4587,269 @@
     ],
     "is_start_tech": false,
     "name": "Will to Power"
+  },
+  {
+    "category": "Statecraft",
+    "tier": 3,
+    "description": "Continuous, asynchronous analysis of disparate data sets allows for the accurate modeling of hitherto-unpredictable fluctuations in social currents.",
+    "area": "society",
+    "prerequisites": [
+      "tech_hypercomms_forum",
+      "tech_administrative_ai",
+      "tech_galactic_administration"
+    ],
+    "is_dangerous": false,
+    "is_rare": false,
+    "cost": 4000,
+    "key": "tech_autocurating_vault",
+    "feature_unlocks": [
+      "Unlocks Building: Auto-Curating Vault",
+      "Unlocks Building: Alpha Hub"
+    ],
+    "base_factor": 1.0,
+    "base_weight": 45,
+    "weight_modifiers": [
+      "(\u00d70)  Any of the following:\n    \u2022   Has Spiritualist Ethic\n    \u2022   Has Fanatic Spiritualist Ethic\n",
+      "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Statecraft Expert\n"
+    ],
+    "is_start_tech": false,
+    "name": "Automated Curation Algorithms"
+  },
+  {
+    "category": "Statecraft",
+    "tier": 3,
+    "description": "Leaving our planetary cradle has opened us up to a new understanding of faith, and its place in a wider context.",
+    "area": "society",
+    "prerequisites": [
+      "tech_consecration_fields",
+      "tech_galactic_administration"
+    ],
+    "is_dangerous": false,
+    "is_rare": false,
+    "cost": 4000,
+    "key": "tech_transcendent_faith",
+    "feature_unlocks": [
+      "Unlocks Building: Citadel of Faith"
+    ],
+    "base_factor": 1.0,
+    "base_weight": 45,
+    "weight_modifiers": [
+      "(\u00d70)  None of the following:\n    \u2022   Has Spiritualist Ethic\n    \u2022   Has Fanatic Spiritualist Ethic\n",
+      "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Statecraft Expert\n"
+    ],
+    "is_start_tech": false,
+    "name": "Metacognitive Faith"
+  },
+  {
+    "category": "Statecraft",
+    "tier": 4,
+    "description": "Our history is a repeating cycle of dramatic technological, political, and cultural leaps; these leaps are often preceded by periods of upheaval and followed by times of relative stability. By identifying the core, recurring premises of these leaps, we may be able to effectively short-circuit the cycle for our own benefit.",
+    "area": "society",
+    "prerequisites": [],
+    "is_dangerous": false,
+    "is_rare": true,
+    "cost": 8000,
+    "key": "tech_ascension_theory",
+    "feature_unlocks": [
+      "Ascension Perks: +1"
+    ],
+    "base_factor": 0.5,
+    "base_weight": 35,
+    "weight_modifiers": [
+      "(\u00d70)  Host does NOT have the Utopia DLC\n",
+      "(\u00d70.2)  None of the following:\n    \u2022   Has the Curator Insight modifier\n    \u2022   Research Leader (Physics):\n        \u2022   Is Curator\n    \u2022   Research Leader (Physics):\n        \u2022   Is Computing Expert\n"
+    ],
+    "is_start_tech": false,
+    "name": "Ascension Theory"
+  },
+  {
+    "category": "Biology",
+    "tier": "@repeatableTechTier",
+    "description": "Transgenic crops offer the nutritional elements of several standard food crops in one convenient package.",
+    "area": "society",
+    "prerequisites": [
+      "tech_gene_crops"
+    ],
+    "is_dangerous": false,
+    "is_rare": false,
+    "cost": 5000,
+    "key": "tech_repeatable_improved_tile_food_output",
+    "feature_unlocks": [
+      "Food: +5%"
+    ],
+    "base_factor": 0.5,
+    "base_weight": 25,
+    "weight_modifiers": [],
+    "is_start_tech": false,
+    "name": "Transgenic Crops"
+  },
+  {
+    "category": "Statecraft",
+    "tier": "@repeatableTechTier",
+    "description": "Improved FTL communication channels allow for more coherent administrative direction.",
+    "area": "society",
+    "prerequisites": [
+      "tech_adaptive_bureaucracy"
+    ],
+    "is_dangerous": false,
+    "is_rare": false,
+    "cost": 5000,
+    "key": "tech_repeatable_improved_sector_cap",
+    "feature_unlocks": [
+      "Sector Limit: +1"
+    ],
+    "base_factor": 0.5,
+    "base_weight": 25,
+    "weight_modifiers": [],
+    "is_start_tech": false,
+    "name": "Communication Protocols"
+  },
+  {
+    "category": "Statecraft",
+    "tier": "@repeatableTechTier",
+    "description": "Restructuring the managerial web linking core worlds to the capital can help alleviate the administrative stressors and information chokepoints that frequently arise within a budding empire.",
+    "area": "society",
+    "prerequisites": [
+      "tech_galactic_bureaucracy"
+    ],
+    "is_dangerous": false,
+    "is_rare": false,
+    "cost": 5000,
+    "key": "tech_repeatable_improved_core_system_cap",
+    "feature_unlocks": [
+      "Core Sector Systems: +1"
+    ],
+    "base_factor": 0.5,
+    "base_weight": 25,
+    "weight_modifiers": [],
+    "is_start_tech": false,
+    "name": "Administrative Efficiency"
+  },
+  {
+    "category": "Statecraft",
+    "tier": "@repeatableTechTier",
+    "description": "The concept of managing individuals as resources within larger systems of production must, by necessity, become more flexible as the potential natures of the managed individuals grow ever more numerous.",
+    "area": "society",
+    "prerequisites": [
+      "tech_adaptive_bureaucracy"
+    ],
+    "is_dangerous": false,
+    "is_rare": false,
+    "cost": 5000,
+    "key": "tech_repeatable_improved_leader_cap",
+    "feature_unlocks": [
+      "Empire Leader Capacity: +1"
+    ],
+    "base_factor": 0.5,
+    "base_weight": 25,
+    "weight_modifiers": [],
+    "is_start_tech": false,
+    "name": "Sapient Resource Management"
+  },
+  {
+    "category": "Statecraft",
+    "tier": "@repeatableTechTier",
+    "description": "Propaganda programs and subtle manipulation of economic records drive down the cost of employing top-tier Leaders.",
+    "area": "society",
+    "prerequisites": [
+      "tech_adaptive_bureaucracy"
+    ],
+    "is_dangerous": false,
+    "is_rare": false,
+    "cost": 5000,
+    "key": "tech_repeatable_reduced_leader_cost",
+    "feature_unlocks": [
+      "Leader Recruitment Cost: -5%"
+    ],
+    "base_factor": 0.5,
+    "base_weight": 25,
+    "weight_modifiers": [],
+    "is_start_tech": false,
+    "name": "Talent Acquisition"
+  },
+  {
+    "category": "Statecraft",
+    "tier": "@repeatableTechTier",
+    "description": "More aggressive information campaigns improve the populace's receptiveness to Edicts.",
+    "area": "society",
+    "prerequisites": [
+      "tech_artificial_moral_codes"
+    ],
+    "is_dangerous": false,
+    "is_rare": false,
+    "cost": 5000,
+    "key": "tech_repeatable_improved_edict_length",
+    "feature_unlocks": [
+      "Edict Duration: +10%"
+    ],
+    "base_factor": 0.5,
+    "base_weight": 25,
+    "weight_modifiers": [],
+    "is_start_tech": false,
+    "name": "Proclamation Broadcasts"
+  },
+  {
+    "category": "Military Theory",
+    "tier": "@repeatableTechTier",
+    "description": "Iterating on the standard conditioning regimen for ground troops has proven to make them more effective in direct combat.",
+    "area": "society",
+    "prerequisites": [
+      "tech_combat_training"
+    ],
+    "is_dangerous": false,
+    "is_rare": false,
+    "cost": 5000,
+    "key": "tech_repeatable_improved_army_damage",
+    "feature_unlocks": [
+      "Army Damage: +10%"
+    ],
+    "base_factor": 0.5,
+    "base_weight": 25,
+    "weight_modifiers": [],
+    "is_start_tech": false,
+    "name": "Aggressive Conditioning"
+  },
+  {
+    "category": "Military Theory",
+    "tier": "@repeatableTechTier",
+    "description": "Careful tuning of pain receptors allow soldiers to fight through what would previously have been debilitating injuries.",
+    "area": "society",
+    "prerequisites": [
+      "tech_combat_training"
+    ],
+    "is_dangerous": false,
+    "is_rare": false,
+    "cost": 5000,
+    "key": "tech_repeatable_improved_army_health",
+    "feature_unlocks": [
+      "Army Health: +10%"
+    ],
+    "base_factor": 0.5,
+    "base_weight": 25,
+    "weight_modifiers": [],
+    "is_start_tech": false,
+    "name": "Nerve Dampeners"
+  },
+  {
+    "category": "Biology",
+    "tier": "@repeatableTechTier",
+    "description": "Regimens of periodic cell revitalization treatments keep the leader class spry and active beyond traditionally expected lifespans.",
+    "area": "society",
+    "prerequisites": [
+      "tech_vitality_boosters"
+    ],
+    "is_dangerous": false,
+    "is_rare": false,
+    "cost": 5000,
+    "key": "tech_repeatable_improved_leader_life_span",
+    "feature_unlocks": [
+      "Leader Lifespan: +5"
+    ],
+    "base_factor": 0.5,
+    "base_weight": 25,
+    "weight_modifiers": [],
+    "is_start_tech": false,
+    "name": "Cell Revitalization"
   },
   {
     "category": "Voidcraft",
@@ -4663,7 +4885,8 @@
     "cost": 360,
     "key": "tech_assault_armies",
     "feature_unlocks": [
-      "Unlocks Army: Assault Army"
+      "Unlocks Army: Assault Army",
+      "Unlocks Army: machine_assault_1"
     ],
     "base_factor": 1.0,
     "base_weight": 0,
@@ -4752,6 +4975,59 @@
     "name": "Offworld Construction"
   },
   {
+    "category": "Industry",
+    "tier": 1,
+    "description": "Standardization of assembly templates allow for improved specialization of the drone population.",
+    "area": "engineering",
+    "prerequisites": [
+      "tech_powered_exoskeletons"
+    ],
+    "is_dangerous": false,
+    "is_rare": false,
+    "cost": 1400,
+    "key": "tech_robomodding_m",
+    "feature_unlocks": [
+      "Machine Modification Points: +1",
+      "Unlocks Feature: Robomodding",
+      "Unlocks Feature: Robomodding"
+    ],
+    "base_factor": 1.0,
+    "base_weight": 85,
+    "weight_modifiers": [
+      "(\u00d70)  Does NOT have Machine Intelligence Authority\n",
+      "(\u00d71.25)  Research Leader (Engineering):\n    \u2022   Is Industry Expert\n"
+    ],
+    "is_start_tech": false,
+    "name": "Machine Template System"
+  },
+  {
+    "category": "Industry",
+    "tier": 1,
+    "description": "Rewritable assembly templates allow for the creation of bespoke synthetic worker designs.",
+    "area": "engineering",
+    "prerequisites": [
+      "tech_robotic_workers"
+    ],
+    "is_dangerous": false,
+    "is_rare": false,
+    "cost": 720,
+    "key": "tech_robomodding",
+    "feature_unlocks": [
+      "Robot Modification Points: +1",
+      "Unlocks Feature: Robomodding",
+      "Unlocks Buildable Pop: Mechanical Pop Templates",
+      "Unlocks Feature: Robomodding"
+    ],
+    "base_factor": 1.0,
+    "base_weight": 85,
+    "weight_modifiers": [
+      "(\u00d70)  Has Gestalt Consciousness Ethic\n",
+      "(\u00d71.25)  Research Leader (Engineering):\n    \u2022   Is Industry Expert\n"
+    ],
+    "is_start_tech": false,
+    "name": "Machine Template System"
+  },
+  {
     "category": "Voidcraft",
     "tier": 1,
     "description": "Enhancements to artificial gravity and life support systems allow for further expansion of orbital facilities.",
@@ -4764,7 +5040,7 @@
     "cost": 600,
     "key": "tech_spaceport_2",
     "feature_unlocks": [
-      "Mineral Storage Capacity: +2000",
+      "Mineral Storage Capacity: +3000",
       "Unlocks Feature: Spaceport Level II",
       "Unlocks Feature: Spaceport Level II",
       "Unlocks Module: Corvette Assembly Yards"
@@ -4794,7 +5070,7 @@
     "cost": 1000,
     "key": "tech_spaceport_3",
     "feature_unlocks": [
-      "Mineral Storage Capacity: +2000",
+      "Mineral Storage Capacity: +3000",
       "Unlocks Ship Type: Destroyer",
       "Unlocks Feature: Spaceport Level III"
     ],
@@ -4944,7 +5220,7 @@
     "cost": 360,
     "key": "tech_mining_network_2",
     "feature_unlocks": [
-      "Mineral Storage Capacity: +1000",
+      "Mineral Storage Capacity: +2000",
       "Unlocks Building: Mining Network II"
     ],
     "base_factor": 1.0,
@@ -4968,7 +5244,7 @@
     "cost": 360,
     "key": "tech_mineral_processing_1",
     "feature_unlocks": [
-      "Mineral Storage Capacity: +1000",
+      "Mineral Storage Capacity: +2000",
       "Unlocks Building: Mineral Silo II",
       "Unlocks Building: Mineral Processing Plant I"
     ],
@@ -5026,7 +5302,9 @@
     "base_factor": 1.5,
     "base_weight": 90,
     "weight_modifiers": [
-      "(\u00d70)  Any of the following:\n    \u2022   Has Spiritualist Ethic\n    \u2022   Has Fanatic Spiritualist Ethic\n    \u2022   Has Hive-Minded Ethic\n",
+      "(\u00d70.5)  Any of the following:\n    \u2022   Has Spiritualist Ethic\n    \u2022   Has Fanatic Spiritualist Ethic\n",
+      "(\u00d72)  Any of the following:\n    \u2022   Has Materialist Ethic\n    \u2022   Has Fanatic Materialist Ethic\n",
+      "(\u00d70)  Has Gestalt Consciousness Ethic\n",
       "(\u00d71.25)  Research Leader (Engineering):\n    \u2022   Is Industry Expert\n"
     ],
     "is_start_tech": false,
@@ -5035,7 +5313,7 @@
   {
     "category": "Industry",
     "tier": 1,
-    "description": "",
+    "description": "Rapid iteration in construction simulations determines the optimal component assembly patterns for each building project ahead of time.",
     "area": "engineering",
     "prerequisites": [
       "tech_engineering_lab_1"
@@ -5179,7 +5457,7 @@
     "base_weight": 90,
     "weight_modifiers": [
       "(\u00d72)  Research Leader (Engineering):\n    \u2022   Is Materials Expert\n",
-      "(\u00d70)  None of the following:\n    \u2022   Any System within Borders:\n        \u2022   Is in a resource_cluster_0 Cluster\n    \u2022   Any Relation:\n        \u2022   All of the following:\n            \u2022   Has communications with your Empire\n            \u2022   Has Garanthium Mining Technology\n"
+      "(\u00d70)  None of the following:\n    \u2022   Any System within Borders:\n        \u2022   Is in a resource_cluster_0 Cluster\n    \u2022   Any Relation:\n        \u2022   Is of the default country type\n        \u2022   All of the following:\n            \u2022   Has communications with your Empire\n            \u2022   Has Garanthium Mining Technology\n"
     ],
     "is_start_tech": false,
     "name": "Garanthium Mining"
@@ -5203,7 +5481,7 @@
     "base_weight": 90,
     "weight_modifiers": [
       "(\u00d72)  Research Leader (Engineering):\n    \u2022   Is Materials Expert\n",
-      "(\u00d70)  None of the following:\n    \u2022   Any System within Borders:\n        \u2022   Is in a resource_cluster_3 Cluster\n    \u2022   Any Relation:\n        \u2022   All of the following:\n            \u2022   Has communications with your Empire\n            \u2022   Has Teldar Crystal Mining Technology\n"
+      "(\u00d70)  None of the following:\n    \u2022   Any System within Borders:\n        \u2022   Is in a resource_cluster_3 Cluster\n    \u2022   Any Relation:\n        \u2022   Is of the default country type\n        \u2022   All of the following:\n            \u2022   Has communications with your Empire\n            \u2022   Has Teldar Crystal Mining Technology\n"
     ],
     "is_start_tech": false,
     "name": "Teldar Crystal Mining"
@@ -5227,7 +5505,7 @@
     "base_weight": 90,
     "weight_modifiers": [
       "(\u00d72)  Research Leader (Engineering):\n    \u2022   Is Materials Expert\n",
-      "(\u00d70)  None of the following:\n    \u2022   Any System within Borders:\n        \u2022   Is in a resource_cluster_4 Cluster\n    \u2022   Any Relation:\n        \u2022   All of the following:\n            \u2022   Has communications with your Empire\n            \u2022   Has Teldar Crystal Mining Technology\n"
+      "(\u00d70)  None of the following:\n    \u2022   Any System within Borders:\n        \u2022   Is in a resource_cluster_4 Cluster\n    \u2022   Any Relation:\n        \u2022   Is of the default country type\n        \u2022   All of the following:\n            \u2022   Has communications with your Empire\n            \u2022   Has Teldar Crystal Mining Technology\n"
     ],
     "is_start_tech": false,
     "name": "Yurantic Crystal Mining"
@@ -5251,7 +5529,7 @@
     "base_weight": 90,
     "weight_modifiers": [
       "(\u00d72)  Research Leader (Engineering):\n    \u2022   Is Materials Expert\n",
-      "(\u00d70)  None of the following:\n    \u2022   Any System within Borders:\n        \u2022   Is in a resource_cluster_5 Cluster\n    \u2022   Any Relation:\n        \u2022   All of the following:\n            \u2022   Has communications with your Empire\n            \u2022   Has Orillium Mining Technology\n"
+      "(\u00d70)  None of the following:\n    \u2022   Any System within Borders:\n        \u2022   Is in a resource_cluster_5 Cluster\n    \u2022   Any Relation:\n        \u2022   Is of the default country type\n        \u2022   All of the following:\n            \u2022   Has communications with your Empire\n            \u2022   Has Orillium Mining Technology\n"
     ],
     "is_start_tech": false,
     "name": "Orillium Mining"
@@ -5281,6 +5559,57 @@
     "name": "Betharian Refining"
   },
   {
+    "category": "Industry",
+    "tier": 2,
+    "description": "Improved production practices allow for greater alterations to synthetic workers without compromising core functionality.",
+    "area": "engineering",
+    "prerequisites": [
+      "tech_robomodding",
+      "tech_droid_workers"
+    ],
+    "is_dangerous": false,
+    "is_rare": false,
+    "cost": 1800,
+    "key": "tech_robomodding_points_1",
+    "feature_unlocks": [
+      "Robot Modification Points: +1"
+    ],
+    "base_factor": 1.0,
+    "base_weight": 65,
+    "weight_modifiers": [
+      "(\u00d70)  Any of the following:\n    \u2022   Has Spiritualist Ethic\n    \u2022   Has Fanatic Spiritualist Ethic\n    \u2022   Has Gestalt Consciousness Ethic\n",
+      "(\u00d72)  Has Mechanist Government Civic\n",
+      "(\u00d71.25)  Research Leader (Engineering):\n    \u2022   Is Industry Expert\n    \u2022   Skill level is greater than 2\n"
+    ],
+    "is_start_tech": false,
+    "name": "Cross-Model Standardization"
+  },
+  {
+    "category": "Industry",
+    "tier": 2,
+    "description": "These advanced motivators are both smaller and lighter than previous versions, allowing robotic units to allocate additional space for subsystems.",
+    "area": "engineering",
+    "prerequisites": [
+      "tech_colonial_centralization",
+      "tech_robomodding_m"
+    ],
+    "is_dangerous": false,
+    "is_rare": false,
+    "cost": 1400,
+    "key": "tech_binary_motivators",
+    "feature_unlocks": [
+      "Machine Modification Points: +1"
+    ],
+    "base_factor": 1.0,
+    "base_weight": 70,
+    "weight_modifiers": [
+      "(\u00d70)  Does NOT have Machine Intelligence Authority\n",
+      "(\u00d71.25)  Research Leader (Engineering):\n    \u2022   Is Industry Expert\n    \u2022   Skill level is greater than 2\n"
+    ],
+    "is_start_tech": false,
+    "name": "Binary Motivators"
+  },
+  {
     "category": "Voidcraft",
     "tier": 2,
     "description": "State-of-the-art orbital construction techniques result in spaceports the size of major planet side cities.",
@@ -5293,7 +5622,7 @@
     "cost": 1400,
     "key": "tech_spaceport_4",
     "feature_unlocks": [
-      "Mineral Storage Capacity: +2000",
+      "Mineral Storage Capacity: +3000",
       "Unlocks Feature: Spaceport Level IV",
       "Unlocks Feature: Spaceport Level IV",
       "Unlocks Module: Destroyer Assembly Yards"
@@ -5324,7 +5653,7 @@
     "cost": 2200,
     "key": "tech_spaceport_5",
     "feature_unlocks": [
-      "Mineral Storage Capacity: +2000",
+      "Mineral Storage Capacity: +3000",
       "Unlocks Ship Type: Cruiser",
       "Unlocks Feature: Spaceport Level V"
     ],
@@ -5576,10 +5905,10 @@
       "Military Station Build Cost: -15%",
       "Military Station Health: +25%"
     ],
-    "base_factor": 1.0,
+    "base_factor": 0.5,
     "base_weight": 65,
     "weight_modifiers": [
-      "(\u00d70.25)  None of the following:\n    \u2022   Research Leader (Engineering):\n        \u2022   Is Voidcraft Expert\n    \u2022   Research Leader (Engineering):\n        \u2022   Is Curator\n",
+      "(\u00d70.5)  None of the following:\n    \u2022   Research Leader (Engineering):\n        \u2022   Is Voidcraft Expert\n    \u2022   Research Leader (Engineering):\n        \u2022   Is Curator\n",
       "(\u00d71.25)  Any of the following:\n    \u2022   Has Militarist Ethic\n    \u2022   Has Fanatic Militarist Ethic\n"
     ],
     "is_start_tech": false,
@@ -5596,45 +5925,19 @@
     ],
     "is_dangerous": false,
     "is_rare": false,
-    "cost": 1000,
+    "cost": 1400,
     "key": "tech_mining_network_3",
     "feature_unlocks": [
-      "Mineral Storage Capacity: +1000",
+      "Mineral Storage Capacity: +2000",
       "Unlocks Building: Mining Network III"
     ],
     "base_factor": 1.0,
-    "base_weight": 75,
+    "base_weight": 70,
     "weight_modifiers": [
       "(\u00d71.25)  Research Leader (Engineering):\n    \u2022   Is Industry Expert\n"
     ],
     "is_start_tech": false,
     "name": "Deep Core Mining"
-  },
-  {
-    "category": "Industry",
-    "tier": 2,
-    "description": "Advanced spectrometry combines with fracking techniques and chemical flushing to rapidly exploit shallow and mid-depth deposits.",
-    "area": "engineering",
-    "prerequisites": [
-      "tech_mining_network_3",
-      "tech_galactic_administration"
-    ],
-    "is_dangerous": false,
-    "is_rare": false,
-    "cost": 2200,
-    "key": "tech_mining_network_4",
-    "feature_unlocks": [
-      "Mineral Storage Capacity: +1000",
-      "Unlocks Building: Mining Network IV",
-      "Unlocks Building: Mining Network V"
-    ],
-    "base_factor": 1.0,
-    "base_weight": 60,
-    "weight_modifiers": [
-      "(\u00d71.25)  Research Leader (Engineering):\n    \u2022   Is Industry Expert\n"
-    ],
-    "is_start_tech": false,
-    "name": "Mineral Isolation"
   },
   {
     "category": "Industry",
@@ -5647,15 +5950,15 @@
     ],
     "is_dangerous": false,
     "is_rare": false,
-    "cost": 1000,
+    "cost": 1400,
     "key": "tech_mineral_processing_2",
     "feature_unlocks": [
-      "Mineral Storage Capacity: +1000",
+      "Mineral Storage Capacity: +2000",
       "Unlocks Building: Mineral Silo III",
       "Unlocks Building: Mineral Processing Plant II"
     ],
     "base_factor": 1.0,
-    "base_weight": 75,
+    "base_weight": 70,
     "weight_modifiers": [
       "(\u00d71.25)  Research Leader (Engineering):\n    \u2022   Is Industry Expert\n"
     ],
@@ -5673,13 +5976,13 @@
     ],
     "is_dangerous": false,
     "is_rare": false,
-    "cost": 1000,
+    "cost": 1400,
     "key": "tech_engineering_lab_2",
     "feature_unlocks": [
       "Unlocks Building: Engineering Facility II"
     ],
     "base_factor": 1.0,
-    "base_weight": 75,
+    "base_weight": 70,
     "weight_modifiers": [
       "(\u00d72)  Number of years since game start is greater than 25\n",
       "(\u00d72)  Number of years since game start is greater than 30\n",
@@ -5701,16 +6004,19 @@
     ],
     "is_dangerous": false,
     "is_rare": false,
-    "cost": 1000,
+    "cost": 1400,
     "key": "tech_droid_workers",
     "feature_unlocks": [
-      "Unlocks Army: Robotic Army",
+      "Unlocks Army: Robotic Assault Army",
+      "Unlocks Army: Robotic Defense Army",
       "Unlocks Buildable Pop: Droid"
     ],
     "base_factor": 1.0,
-    "base_weight": 75,
+    "base_weight": 70,
     "weight_modifiers": [
-      "(\u00d70)  Any of the following:\n    \u2022   Has Spiritualist Ethic\n    \u2022   Has Fanatic Spiritualist Ethic\n    \u2022   Has Hive-Minded Ethic\n",
+      "(\u00d70.5)  Any of the following:\n    \u2022   Has Spiritualist Ethic\n    \u2022   Has Fanatic Spiritualist Ethic\n",
+      "(\u00d72)  Any of the following:\n    \u2022   Has Materialist Ethic\n    \u2022   Has Fanatic Materialist Ethic\n",
+      "(\u00d70)  Has Gestalt Consciousness Ethic\n",
       "(\u00d72)  Has Mechanist Government Civic\n",
       "(\u00d71.25)  Research Leader (Engineering):\n    \u2022   Is Industry Expert\n    \u2022   Skill level is greater than 2\n"
     ],
@@ -5745,7 +6051,7 @@
   {
     "category": "Industry",
     "tier": 2,
-    "description": "",
+    "description": "Standardized pre-fab templates massively reduce on-site facility construction times.",
     "area": "engineering",
     "prerequisites": [
       "tech_assembly_pattern"
@@ -5757,10 +6063,10 @@
     "feature_unlocks": [
       "Building Build Speed: +50%"
     ],
-    "base_factor": 1.0,
-    "base_weight": 90,
+    "base_factor": 0.5,
+    "base_weight": 85,
     "weight_modifiers": [
-      "(\u00d70.25)  None of the following:\n    \u2022   Research Leader (Engineering):\n        \u2022   Is Industry Expert\n    \u2022   Research Leader (Engineering):\n        \u2022   Is Curator\n",
+      "(\u00d70.5)  None of the following:\n    \u2022   Research Leader (Engineering):\n        \u2022   Is Industry Expert\n    \u2022   Research Leader (Engineering):\n        \u2022   Is Curator\n",
       "(\u00d71.25)  Any of the following:\n    \u2022   Has Militarist Ethic\n    \u2022   Has Fanatic Militarist Ethic\n"
     ],
     "is_start_tech": false,
@@ -5907,11 +6213,11 @@
     "description": "Gun batteries that fire area effect shrapnel rounds at close range. They are particularly lethal to enemy strike craft, but can also inflict damage on larger ships.",
     "area": "engineering",
     "prerequisites": [
-      "tech_autocannons_2"
+      "tech_mass_drivers_3"
     ],
     "is_dangerous": false,
     "is_rare": false,
-    "cost": 1800,
+    "cost": 1400,
     "key": "tech_flak_batteries_1",
     "feature_unlocks": [
       "Unlocks Component: Flak Battery"
@@ -6031,6 +6337,58 @@
     "name": "Armored Torpedoes"
   },
   {
+    "category": "Industry",
+    "tier": 3,
+    "description": "Improved production practices allow for fundamental changes to synthetic workers without compromising core functionality.",
+    "area": "engineering",
+    "prerequisites": [
+      "tech_robomodding_points_1",
+      "tech_synthetic_workers"
+    ],
+    "is_dangerous": false,
+    "is_rare": true,
+    "cost": 4000,
+    "key": "tech_robomodding_points_2",
+    "feature_unlocks": [
+      "Robot Modification Points: +1"
+    ],
+    "base_factor": 0.5,
+    "base_weight": 40,
+    "weight_modifiers": [
+      "(\u00d70)  Any of the following:\n    \u2022   Has Spiritualist Ethic\n    \u2022   Has Fanatic Spiritualist Ethic\n    \u2022   Has Gestalt Consciousness Ethic\n",
+      "(\u00d72)  Has Mechanist Government Civic\n",
+      "(\u00d74)  Has The Flesh is Weak Ascension Perk\n",
+      "(\u00d70.2)  None of the following:\n    \u2022   Research Leader (Engineering):\n        \u2022   Is Maniacal\n    \u2022   Research Leader (Engineering):\n        \u2022   Is Spark of Genius\n    \u2022   Research Leader (Engineering):\n        \u2022   Is Curator\n    \u2022   Research Leader (Engineering):\n        \u2022   Is Industry Expert\n"
+    ],
+    "is_start_tech": false,
+    "name": "Fungible Circuitry"
+  },
+  {
+    "category": "Industry",
+    "tier": 3,
+    "description": "Using programmable nanites to assist in the construction of new robotic units will allow for more advanced models that are equipped with an even greater array of subsystems.",
+    "area": "engineering",
+    "prerequisites": [
+      "tech_binary_motivators",
+      "tech_galactic_administration"
+    ],
+    "is_dangerous": false,
+    "is_rare": true,
+    "cost": 4000,
+    "key": "tech_nanite_assemblers",
+    "feature_unlocks": [
+      "Machine Modification Points: +1"
+    ],
+    "base_factor": 0.5,
+    "base_weight": 45,
+    "weight_modifiers": [
+      "(\u00d70)  Does NOT have Machine Intelligence Authority\n",
+      "(\u00d70.2)  None of the following:\n    \u2022   Research Leader (Engineering):\n        \u2022   Is Maniacal\n    \u2022   Research Leader (Engineering):\n        \u2022   Is Spark of Genius\n    \u2022   Research Leader (Engineering):\n        \u2022   Is Curator\n    \u2022   Research Leader (Engineering):\n        \u2022   Is Industry Expert\n"
+    ],
+    "is_start_tech": false,
+    "name": "Nanite Assemblers"
+  },
+  {
     "category": "Voidcraft",
     "tier": 3,
     "description": "Expanded dry-docks allow for the construction of Battleship-class military vessels.",
@@ -6043,7 +6401,7 @@
     "cost": 4000,
     "key": "tech_spaceport_6",
     "feature_unlocks": [
-      "Mineral Storage Capacity: +2000",
+      "Mineral Storage Capacity: +3000",
       "Unlocks Ship Type: Battleship",
       "Unlocks Feature: Spaceport Level VI"
     ],
@@ -6138,6 +6496,32 @@
   {
     "category": "Industry",
     "tier": 3,
+    "description": "Advanced spectrometry combines with fracking techniques and chemical flushing to rapidly exploit shallow and mid-depth deposits.",
+    "area": "engineering",
+    "prerequisites": [
+      "tech_mining_network_3",
+      "tech_galactic_administration"
+    ],
+    "is_dangerous": false,
+    "is_rare": false,
+    "cost": 4000,
+    "key": "tech_mining_network_4",
+    "feature_unlocks": [
+      "Mineral Storage Capacity: +2000",
+      "Unlocks Building: Mining Network IV",
+      "Unlocks Building: Mining Network V"
+    ],
+    "base_factor": 1.0,
+    "base_weight": 45,
+    "weight_modifiers": [
+      "(\u00d71.25)  Research Leader (Engineering):\n    \u2022   Is Industry Expert\n"
+    ],
+    "is_start_tech": false,
+    "name": "Mineral Isolation"
+  },
+  {
+    "category": "Industry",
+    "tier": 3,
     "description": "The study of superfluidity promises to marry quantum mechanics with the fundamental interaction of gravity.",
     "area": "engineering",
     "prerequisites": [
@@ -6146,14 +6530,14 @@
     ],
     "is_dangerous": false,
     "is_rare": false,
-    "cost": 3000,
+    "cost": 5000,
     "key": "tech_engineering_lab_3",
     "feature_unlocks": [
       "Unlocks Building: Engineering Facility III",
       "Unlocks Building: Engineering Facility IV"
     ],
     "base_factor": 1.0,
-    "base_weight": 50,
+    "base_weight": 40,
     "weight_modifiers": [
       "(\u00d72)  Number of years since game start is greater than 25\n",
       "(\u00d72)  Number of years since game start is greater than 30\n",
@@ -6172,24 +6556,26 @@
     "prerequisites": [
       "tech_droid_workers",
       "tech_galactic_administration",
-      "tech_sentient_ai"
+      "tech_sapient_ai"
     ],
     "is_dangerous": true,
     "is_rare": true,
     "cost": 4000,
     "key": "tech_synthetic_workers",
     "feature_unlocks": [
-      "Unlocks Army: Android Army",
-      "Unlocks Buildable Pop: Synthetic",
-      "Unlocks Policy: Artificial Intelligence - Citizen Rights"
+      "Unlocks Army: Android Assault Army",
+      "Unlocks Army: Android Defense Army",
+      "Unlocks Buildable Pop: Synthetic"
     ],
-    "base_factor": 1.0,
+    "base_factor": 0.5,
     "base_weight": 45,
     "weight_modifiers": [
-      "(\u00d70)  Any of the following:\n    \u2022   Has Spiritualist Ethic\n    \u2022   Has Fanatic Spiritualist Ethic\n    \u2022   Has Hive-Minded Ethic\n",
+      "(\u00d70.5)  Any of the following:\n    \u2022   Has Spiritualist Ethic\n    \u2022   Has Fanatic Spiritualist Ethic\n",
+      "(\u00d72)  Any of the following:\n    \u2022   Has Materialist Ethic\n    \u2022   Has Fanatic Materialist Ethic\n",
+      "(\u00d70)  Has Gestalt Consciousness Ethic\n",
       "(\u00d72)  Has Mechanist Government Civic\n",
       "(\u00d74)  Has The Flesh is Weak Ascension Perk\n",
-      "(\u00d70.1)  None of the following:\n    \u2022   Research Leader (Engineering):\n        \u2022   Is Maniacal\n    \u2022   Research Leader (Engineering):\n        \u2022   Is Spark of Genius\n    \u2022   Research Leader (Engineering):\n        \u2022   Is Curator\n    \u2022   Research Leader (Engineering):\n        \u2022   Is Industry Expert\n"
+      "(\u00d70.2)  None of the following:\n    \u2022   Research Leader (Engineering):\n        \u2022   Is Maniacal\n    \u2022   Research Leader (Engineering):\n        \u2022   Is Spark of Genius\n    \u2022   Research Leader (Engineering):\n        \u2022   Is Curator\n    \u2022   Research Leader (Engineering):\n        \u2022   Is Industry Expert\n"
     ],
     "is_start_tech": false,
     "name": "Synthetics"
@@ -6213,7 +6599,7 @@
     "base_factor": 1.0,
     "base_weight": 40,
     "weight_modifiers": [
-      "(\u00d70)  Any of the following:\n    \u2022   Has Spiritualist Ethic\n    \u2022   Has Fanatic Spiritualist Ethic\n    \u2022   Has Hive-Minded Ethic\n",
+      "(\u00d70)  Has Outlawed Policy\n",
       "(\u00d71.25)  Research Leader (Engineering):\n    \u2022   Is Industry Expert\n    \u2022   Skill level is greater than 3\n"
     ],
     "is_start_tech": false,
@@ -6408,13 +6794,13 @@
     ],
     "is_dangerous": false,
     "is_rare": false,
-    "cost": 3000,
+    "cost": 5000,
     "key": "tech_flak_batteries_2",
     "feature_unlocks": [
       "Unlocks Component: Flak Artillery"
     ],
     "base_factor": 1.0,
-    "base_weight": 50,
+    "base_weight": 40,
     "weight_modifiers": [
       "(\u00d71.25)  Has Militarist Ethic\n",
       "(\u00d71.5)  Has Fanatic Militarist Ethic\n",
@@ -6501,258 +6887,6 @@
     "name": "Devastator Torpedoes"
   },
   {
-    "category": "Industry",
-    "tier": 3,
-    "description": "Changes in how mineral deposits are evaluated relative to each other lead to more efficient boring patterns.",
-    "area": "engineering",
-    "prerequisites": [
-      "tech_mineral_processing_2"
-    ],
-    "is_dangerous": false,
-    "is_rare": false,
-    "cost": 3000,
-    "key": "tech_repeatable_improved_tile_mineral_output",
-    "feature_unlocks": [
-      "Minerals: +5%"
-    ],
-    "base_factor": 0.5,
-    "base_weight": 25,
-    "weight_modifiers": [],
-    "is_start_tech": false,
-    "name": "Extraction Patterns"
-  },
-  {
-    "category": "Voidcraft",
-    "tier": 3,
-    "description": "Cross-linking weapon systems to fire in staggered volleys improves the actual damage output of Military Stations over time.",
-    "area": "engineering",
-    "prerequisites": [
-      "tech_space_defense_station_2"
-    ],
-    "is_dangerous": false,
-    "is_rare": false,
-    "cost": 3000,
-    "key": "tech_repeatable_improved_military_station_damage",
-    "feature_unlocks": [
-      "Military Station Damage: +10%"
-    ],
-    "base_factor": 0.5,
-    "base_weight": 25,
-    "weight_modifiers": [],
-    "is_start_tech": false,
-    "name": "Synchronized Firing Patterns"
-  },
-  {
-    "category": "Voidcraft",
-    "tier": 3,
-    "description": "Additional layers of armor plating within the structure itself improves the resilience of Military Stations.",
-    "area": "engineering",
-    "prerequisites": [
-      "tech_space_defense_station_2"
-    ],
-    "is_dangerous": false,
-    "is_rare": false,
-    "cost": 3000,
-    "key": "tech_repeatable_improved_military_station_health",
-    "feature_unlocks": [
-      "Military Station Health: +10%"
-    ],
-    "base_factor": 0.5,
-    "base_weight": 25,
-    "weight_modifiers": [],
-    "is_start_tech": false,
-    "name": "Fortified Core Layers"
-  },
-  {
-    "category": "Voidcraft",
-    "tier": 3,
-    "description": "Further increasing compartmentalization of shipboard spaces allows ships to sustain more damage before hull integrity reaches critically low levels.",
-    "area": "engineering",
-    "prerequisites": [
-      "tech_spaceport_4"
-    ],
-    "is_dangerous": false,
-    "is_rare": false,
-    "cost": 3000,
-    "key": "tech_repeatable_improved_ship_health",
-    "feature_unlocks": [
-      "Ship Hull Points: +5%"
-    ],
-    "base_factor": 0.5,
-    "base_weight": 25,
-    "weight_modifiers": [],
-    "is_start_tech": false,
-    "name": "Hull Integrity"
-  },
-  {
-    "category": "Materials",
-    "tier": 3,
-    "description": "Compressing suitable materials into ultra-dense forms is a cheap and efficient way to improve their ability to absorb weapons-grade impacts.",
-    "area": "engineering",
-    "prerequisites": [
-      "tech_ship_armor_3"
-    ],
-    "is_dangerous": false,
-    "is_rare": false,
-    "cost": 3000,
-    "key": "tech_repeatable_improved_armor_output",
-    "feature_unlocks": [
-      "Armor: +5%"
-    ],
-    "base_factor": 0.5,
-    "base_weight": 25,
-    "weight_modifiers": [],
-    "is_start_tech": false,
-    "name": "Matter Compression"
-  },
-  {
-    "category": "Rocketry",
-    "tier": 3,
-    "description": "With the chemical reaction tightly controlled by missile-board microprocessors, warhead detonations can be tuned for maximum effect for local conditions at the time of impact.",
-    "area": "engineering",
-    "prerequisites": [
-      "tech_missiles_3"
-    ],
-    "is_dangerous": false,
-    "is_rare": false,
-    "cost": 3000,
-    "key": "tech_repeatable_weapon_type_explosive_damage",
-    "feature_unlocks": [
-      "Explosive Weapon Damage: +5%"
-    ],
-    "base_factor": 0.5,
-    "base_weight": 25,
-    "weight_modifiers": [],
-    "is_start_tech": false,
-    "name": "Thermodynamic Yield Control"
-  },
-  {
-    "category": "Rocketry",
-    "tier": 3,
-    "description": "Advances in miniaturization allow for more rapid loading and discharging of rocket-propelled payloads.",
-    "area": "engineering",
-    "prerequisites": [
-      "tech_missiles_3"
-    ],
-    "is_dangerous": false,
-    "is_rare": false,
-    "cost": 3000,
-    "key": "tech_repeatable_weapon_type_explosive_fire_rate",
-    "feature_unlocks": [
-      "Explosive Weapon Attack Speed: +5%"
-    ],
-    "base_factor": 0.5,
-    "base_weight": 25,
-    "weight_modifiers": [],
-    "is_start_tech": false,
-    "name": "Miniaturized Pre-Igniters"
-  },
-  {
-    "category": "Materials",
-    "tier": 3,
-    "description": "Ultra-dense slugs can punch through even the strongest of projected shields.",
-    "area": "engineering",
-    "prerequisites": [
-      "tech_mass_drivers_3"
-    ],
-    "is_dangerous": false,
-    "is_rare": false,
-    "cost": 3000,
-    "key": "tech_repeatable_weapon_type_kinetic_damage",
-    "feature_unlocks": [
-      "Kinetic Weapon Damage: +5%"
-    ],
-    "base_factor": 0.5,
-    "base_weight": 25,
-    "weight_modifiers": [],
-    "is_start_tech": false,
-    "name": "High-Density Munitions"
-  },
-  {
-    "category": "Materials",
-    "tier": 3,
-    "description": "Minor technical advances combine with improved shipboard routines for handling munitions to provide a noticeable boost in fire rate.",
-    "area": "engineering",
-    "prerequisites": [
-      "tech_mass_drivers_3"
-    ],
-    "is_dangerous": false,
-    "is_rare": false,
-    "cost": 3000,
-    "key": "tech_repeatable_weapon_type_kinetic_fire_rate",
-    "feature_unlocks": [
-      "Kinetic Weapon Attack Speed: +5%"
-    ],
-    "base_factor": 0.5,
-    "base_weight": 25,
-    "weight_modifiers": [],
-    "is_start_tech": false,
-    "name": "Loader Efficiency"
-  },
-  {
-    "category": "Voidcraft",
-    "tier": 3,
-    "description": "Increasing the speed at which fighter pilots can process and act upon enemy positioning data elevates strike craft a few steps up the food chain.",
-    "area": "engineering",
-    "prerequisites": [
-      "tech_spaceport_5"
-    ],
-    "is_dangerous": false,
-    "is_rare": false,
-    "cost": 3000,
-    "key": "tech_repeatable_weapon_type_strike_craft_fire_damage",
-    "feature_unlocks": [
-      "Strike Craft Damage: +10%"
-    ],
-    "base_factor": 0.5,
-    "base_weight": 25,
-    "weight_modifiers": [],
-    "is_start_tech": false,
-    "name": "Synapse Interceptors"
-  },
-  {
-    "category": "Voidcraft",
-    "tier": 3,
-    "description": "Circulating excess heat from weapons discharge in order to prime munitions as they are loaded increases the rate of fire of strike craft weaponry.",
-    "area": "engineering",
-    "prerequisites": [
-      "tech_spaceport_5"
-    ],
-    "is_dangerous": false,
-    "is_rare": false,
-    "cost": 3000,
-    "key": "tech_repeatable_weapon_type_strike_craft_fire_rate",
-    "feature_unlocks": [
-      "Strike Craft Attack Speed: +10%"
-    ],
-    "base_factor": 0.5,
-    "base_weight": 25,
-    "weight_modifiers": [],
-    "is_start_tech": false,
-    "name": "Heat Recyclers"
-  },
-  {
-    "category": "Industry",
-    "tier": 3,
-    "description": "The application of game and puzzle theory has the potential to greatly optimize modular assembly and construction.",
-    "area": "engineering",
-    "prerequisites": [
-      "tech_construction_templates"
-    ],
-    "is_dangerous": false,
-    "is_rare": false,
-    "cost": 3000,
-    "key": "tech_repeatable_reduced_building_time",
-    "feature_unlocks": [
-      "Building Build Speed: +10%"
-    ],
-    "base_factor": 0.5,
-    "base_weight": 25,
-    "weight_modifiers": [],
-    "is_start_tech": false,
-    "name": "Assembly Algorithms"
-  },
-  {
     "category": "Voidcraft",
     "tier": 4,
     "description": "To complete constructing projects of truly staggering scales we must first achieve a fundamental understanding of both the engineering and resource storage requirements for such megastructures.",
@@ -6768,17 +6902,270 @@
     "key": "tech_mega_engineering",
     "feature_unlocks": [
       "Mineral Storage Capacity: +20000",
-      "Building Build Speed: +50%"
+      "Unlocks Feature: Megastructure Restoration",
+      "Unlocks Feature: Megastructure Restoration"
     ],
-    "base_factor": 0.1,
+    "base_factor": 0.25,
     "base_weight": 30,
     "weight_modifiers": [
-      "(\u00d70.25)  None of the following:\n    \u2022   Research Leader (Engineering):\n        \u2022   Is Voidcraft Expert\n    \u2022   Research Leader (Engineering):\n        \u2022   Is Curator\n",
+      "(\u00d70.5)  None of the following:\n    \u2022   Research Leader (Engineering):\n        \u2022   Is Voidcraft Expert\n    \u2022   Research Leader (Engineering):\n        \u2022   Is Curator\n    \u2022   Research Leader (Engineering):\n        \u2022   Is Maniacal\n",
+      "(\u00d72)  Has Voidborne Ascension Perk\n",
       "(\u00d72)  Has Master Builders Ascension Perk\n",
-      "(\u00d720)  Any System within Borders:\n    \u2022   Any of the following:\n        \u2022   Has Megatructure Sentry Hub\n        \u2022   Has Megatructure Sentry Spire\n        \u2022   Has Megatructure Sentry Aerials\n        \u2022   Has Megatructure Sentry Array\n        \u2022   Has Megatructure Science Nexus Hub\n        \u2022   Has Megatructure Science Nexus Research Wings\n        \u2022   Has Megatructure Science Nexus\n        \u2022   Has Megatructure The Groik Nexus\n        \u2022   Has Megatructure Dyson Sphere Frame\n        \u2022   Has Megatructure Partial Dyson Sphere\n        \u2022   Has Megatructure Partial Dyson Sphere\n        \u2022   Has Megatructure Partial Dyson Sphere\n        \u2022   Has Megatructure Dyson Sphere\n        \u2022   Has Megatructure Ring World Frame\n        \u2022   Any Planet:\n            \u2022   Any of the following:\n                \u2022   Is Ring World\n                \u2022   Is Ring World\n                \u2022   Is Ring World\n                \u2022   Is Ring World\n                \u2022   Is Ring World\n                \u2022   Is Ring World\n",
-      "(\u00d70)  Host does NOT have the Utopia DLC\n"
+      "(\u00d720)  Has any Megastructure\n"
     ],
     "is_start_tech": false,
     "name": "Mega-Engineering"
+  },
+  {
+    "category": "Industry",
+    "tier": "@repeatableTechTier",
+    "description": "Changes in how mineral deposits are evaluated relative to each other lead to more efficient boring patterns.",
+    "area": "engineering",
+    "prerequisites": [
+      "tech_mineral_processing_2"
+    ],
+    "is_dangerous": false,
+    "is_rare": false,
+    "cost": 5000,
+    "key": "tech_repeatable_improved_tile_mineral_output",
+    "feature_unlocks": [
+      "Minerals: +5%"
+    ],
+    "base_factor": 0.5,
+    "base_weight": 25,
+    "weight_modifiers": [],
+    "is_start_tech": false,
+    "name": "Extraction Patterns"
+  },
+  {
+    "category": "Voidcraft",
+    "tier": "@repeatableTechTier",
+    "description": "Cross-linking weapon systems to fire in staggered volleys improves the actual damage output of Military Stations over time.",
+    "area": "engineering",
+    "prerequisites": [
+      "tech_space_defense_station_2"
+    ],
+    "is_dangerous": false,
+    "is_rare": false,
+    "cost": 5000,
+    "key": "tech_repeatable_improved_military_station_damage",
+    "feature_unlocks": [
+      "Military Station Damage: +10%"
+    ],
+    "base_factor": 0.5,
+    "base_weight": 25,
+    "weight_modifiers": [],
+    "is_start_tech": false,
+    "name": "Synchronized Firing Patterns"
+  },
+  {
+    "category": "Voidcraft",
+    "tier": "@repeatableTechTier",
+    "description": "Additional layers of armor plating within the structure itself improves the resilience of Military Stations.",
+    "area": "engineering",
+    "prerequisites": [
+      "tech_space_defense_station_2"
+    ],
+    "is_dangerous": false,
+    "is_rare": false,
+    "cost": 5000,
+    "key": "tech_repeatable_improved_military_station_health",
+    "feature_unlocks": [
+      "Military Station Health: +10%"
+    ],
+    "base_factor": 0.5,
+    "base_weight": 25,
+    "weight_modifiers": [],
+    "is_start_tech": false,
+    "name": "Fortified Core Layers"
+  },
+  {
+    "category": "Voidcraft",
+    "tier": "@repeatableTechTier",
+    "description": "Further increasing compartmentalization of shipboard spaces allows ships to sustain more damage before hull integrity reaches critically low levels.",
+    "area": "engineering",
+    "prerequisites": [
+      "tech_spaceport_4"
+    ],
+    "is_dangerous": false,
+    "is_rare": false,
+    "cost": 5000,
+    "key": "tech_repeatable_improved_ship_health",
+    "feature_unlocks": [
+      "Ship Hull Points: +5%"
+    ],
+    "base_factor": 0.5,
+    "base_weight": 25,
+    "weight_modifiers": [],
+    "is_start_tech": false,
+    "name": "Hull Integrity"
+  },
+  {
+    "category": "Materials",
+    "tier": "@repeatableTechTier",
+    "description": "Compressing suitable materials into ultra-dense forms is a cheap and efficient way to improve their ability to absorb weapons-grade impacts.",
+    "area": "engineering",
+    "prerequisites": [
+      "tech_ship_armor_3"
+    ],
+    "is_dangerous": false,
+    "is_rare": false,
+    "cost": 5000,
+    "key": "tech_repeatable_improved_armor_output",
+    "feature_unlocks": [
+      "Armor: +5%"
+    ],
+    "base_factor": 0.5,
+    "base_weight": 25,
+    "weight_modifiers": [],
+    "is_start_tech": false,
+    "name": "Matter Compression"
+  },
+  {
+    "category": "Rocketry",
+    "tier": "@repeatableTechTier",
+    "description": "With the chemical reaction tightly controlled by missile-board microprocessors, warhead detonations can be tuned for maximum effect for local conditions at the time of impact.",
+    "area": "engineering",
+    "prerequisites": [
+      "tech_missiles_3"
+    ],
+    "is_dangerous": false,
+    "is_rare": false,
+    "cost": 5000,
+    "key": "tech_repeatable_weapon_type_explosive_damage",
+    "feature_unlocks": [
+      "Explosive Weapon Damage: +5%"
+    ],
+    "base_factor": 0.5,
+    "base_weight": 25,
+    "weight_modifiers": [],
+    "is_start_tech": false,
+    "name": "Thermodynamic Yield Control"
+  },
+  {
+    "category": "Rocketry",
+    "tier": "@repeatableTechTier",
+    "description": "Advances in miniaturization allow for more rapid loading and discharging of rocket-propelled payloads.",
+    "area": "engineering",
+    "prerequisites": [
+      "tech_missiles_3"
+    ],
+    "is_dangerous": false,
+    "is_rare": false,
+    "cost": 5000,
+    "key": "tech_repeatable_weapon_type_explosive_fire_rate",
+    "feature_unlocks": [
+      "Explosive Weapon Attack Speed: +5%"
+    ],
+    "base_factor": 0.5,
+    "base_weight": 25,
+    "weight_modifiers": [],
+    "is_start_tech": false,
+    "name": "Miniaturized Pre-Igniters"
+  },
+  {
+    "category": "Materials",
+    "tier": "@repeatableTechTier",
+    "description": "Ultra-dense slugs can punch through even the strongest of projected shields.",
+    "area": "engineering",
+    "prerequisites": [
+      "tech_mass_drivers_3"
+    ],
+    "is_dangerous": false,
+    "is_rare": false,
+    "cost": 5000,
+    "key": "tech_repeatable_weapon_type_kinetic_damage",
+    "feature_unlocks": [
+      "Kinetic Weapon Damage: +5%"
+    ],
+    "base_factor": 0.5,
+    "base_weight": 25,
+    "weight_modifiers": [],
+    "is_start_tech": false,
+    "name": "High-Density Munitions"
+  },
+  {
+    "category": "Materials",
+    "tier": "@repeatableTechTier",
+    "description": "Minor technical advances combine with improved shipboard routines for handling munitions to provide a noticeable boost in fire rate.",
+    "area": "engineering",
+    "prerequisites": [
+      "tech_mass_drivers_3"
+    ],
+    "is_dangerous": false,
+    "is_rare": false,
+    "cost": 5000,
+    "key": "tech_repeatable_weapon_type_kinetic_fire_rate",
+    "feature_unlocks": [
+      "Kinetic Weapon Attack Speed: +5%"
+    ],
+    "base_factor": 0.5,
+    "base_weight": 25,
+    "weight_modifiers": [],
+    "is_start_tech": false,
+    "name": "Loader Efficiency"
+  },
+  {
+    "category": "Voidcraft",
+    "tier": "@repeatableTechTier",
+    "description": "Increasing the speed at which fighter pilots can process and act upon enemy positioning data elevates strike craft a few steps up the food chain.",
+    "area": "engineering",
+    "prerequisites": [
+      "tech_spaceport_5"
+    ],
+    "is_dangerous": false,
+    "is_rare": false,
+    "cost": 5000,
+    "key": "tech_repeatable_weapon_type_strike_craft_fire_damage",
+    "feature_unlocks": [
+      "Strike Craft Damage: +10%"
+    ],
+    "base_factor": 0.5,
+    "base_weight": 25,
+    "weight_modifiers": [],
+    "is_start_tech": false,
+    "name": "Synapse Interceptors"
+  },
+  {
+    "category": "Voidcraft",
+    "tier": "@repeatableTechTier",
+    "description": "Circulating excess heat from weapons discharge in order to prime munitions as they are loaded increases the rate of fire of strike craft weaponry.",
+    "area": "engineering",
+    "prerequisites": [
+      "tech_spaceport_5"
+    ],
+    "is_dangerous": false,
+    "is_rare": false,
+    "cost": 5000,
+    "key": "tech_repeatable_weapon_type_strike_craft_fire_rate",
+    "feature_unlocks": [
+      "Strike Craft Attack Speed: +10%"
+    ],
+    "base_factor": 0.5,
+    "base_weight": 25,
+    "weight_modifiers": [],
+    "is_start_tech": false,
+    "name": "Heat Recyclers"
+  },
+  {
+    "category": "Industry",
+    "tier": "@repeatableTechTier",
+    "description": "The application of game and puzzle theory has the potential to greatly optimize modular assembly and construction.",
+    "area": "engineering",
+    "prerequisites": [
+      "tech_construction_templates"
+    ],
+    "is_dangerous": false,
+    "is_rare": false,
+    "cost": 5000,
+    "key": "tech_repeatable_reduced_building_time",
+    "feature_unlocks": [
+      "Building Build Speed: +10%"
+    ],
+    "base_factor": 0.5,
+    "base_weight": 25,
+    "weight_modifiers": [],
+    "is_start_tech": false,
+    "name": "Assembly Algorithms"
   }
 ]

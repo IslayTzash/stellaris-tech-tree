@@ -2,6 +2,8 @@
 # -*- coding: utf-8 -*-
 
 from __future__ import print_function
+
+import config
 from lex import tokens
 from os import listdir, makedirs, path
 from ply.yacc import yacc
@@ -37,11 +39,14 @@ def valid_dirs(directory):
 arg_parser = argparse.ArgumentParser(
     description='Parse Stellaris tech and localization files')
 arg_parser.add_argument('label', type=valid_label)
-arg_parser.add_argument('directories', nargs='+', type=valid_dirs)
+arg_parser.add_argument('--mod-id', type=int)
 
 args = arg_parser.parse_args()
 tree_label = args.label
-directories = args.directories
+directories = [config.game_dir]
+if args.mod_id is not None:
+    mod_dir = path.join(config.workshop_dir, args.mod_id)
+    directories.append(mod_dir)
 
 def eprint(string):
     sys.stderr.write(string + '\n')
@@ -183,6 +188,8 @@ def localized_strings():
     loc_data = { }
     for file_path in loc_file_paths:
         eprint('Loading {} ...'.format(path.basename(file_path)))
+
+        # Coerce Paradox's bastardized YAML into compliance
         not_yaml_lines = codecs.open(file_path, 'r', 'utf-8-sig').readlines()
         not_yaml = ''
         for line in not_yaml_lines:
@@ -203,7 +210,7 @@ def localized_strings():
             not_yaml += line
 
         still_not_yaml = re.sub(ur'£\w+  |§[A-Z!]', '', not_yaml)
-        resembles_yaml = re.sub(r'(?<=\w):\d (?=")', ': ', still_not_yaml)
+        resembles_yaml = re.sub(r'(?<=\w):\d ?(?=")', ': ', still_not_yaml)
         actual_yaml = re.sub(r'^[ \t]+', '  ', resembles_yaml, flags=re.M)
 
         file_data = yaml.load(actual_yaml, Loader=yaml.Loader)
@@ -371,7 +378,6 @@ for entry in parsed_scripts['technology']:
         continue
 
     technologies.append(tech)
-
 
 technologies.sort(key=operator.attrgetter('tier'))
 technologies.sort(
