@@ -2069,6 +2069,132 @@
     "name": "Quantum Field Manipulation"
   },
   {
+    "category": "Industry",
+    "tier": 4,
+    "description": "Minor improvements to transmission efficiency adds up to a sizeable reduction in overall energy loss.",
+    "area": "physics",
+    "prerequisites": [
+      "tech_power_plant_3"
+    ],
+    "is_dangerous": false,
+    "is_rare": false,
+    "cost": 5000,
+    "key": "tech_repeatable_improved_tile_energy_output",
+    "feature_unlocks": [
+      "Energy Credits: +5%"
+    ],
+    "base_factor": 0.5,
+    "base_weight": 25,
+    "weight_modifiers": [],
+    "is_start_tech": false,
+    "name": "Applied Superconductivity"
+  },
+  {
+    "category": "Field Manipulation",
+    "tier": 4,
+    "description": "The basic mechanics of ship shields are complex, but they can be adjusted and improved in a multitude of ways.",
+    "area": "physics",
+    "prerequisites": [
+      "tech_shields_4"
+    ],
+    "is_dangerous": false,
+    "is_rare": false,
+    "cost": 5000,
+    "key": "tech_repeatable_improved_shield_output",
+    "feature_unlocks": [
+      "Shield Hit Points: +5%"
+    ],
+    "base_factor": 0.5,
+    "base_weight": 25,
+    "weight_modifiers": [],
+    "is_start_tech": false,
+    "name": "Shield Harmonics"
+  },
+  {
+    "category": "Particles",
+    "tier": 4,
+    "description": "Perfecting the firing cadence of laser weaponry is a task that could keep the engineering elite of any given planet busy for centuries.",
+    "area": "physics",
+    "prerequisites": [
+      "tech_lasers_4"
+    ],
+    "is_dangerous": false,
+    "is_rare": false,
+    "cost": 5000,
+    "key": "tech_repeatable_weapon_type_energy_damage",
+    "feature_unlocks": [
+      "Energy Weapon Damage: +5%"
+    ],
+    "base_factor": 0.5,
+    "base_weight": 25,
+    "weight_modifiers": [],
+    "is_start_tech": false,
+    "name": "Focusing Arrays"
+  },
+  {
+    "category": "Particles",
+    "tier": 4,
+    "description": "New developments in tech cooling regularly surface, improving the stability and efficiency of our weapons systems, keeping them from blowing up the ships upon which they are mounted.",
+    "area": "physics",
+    "prerequisites": [
+      "tech_lasers_2"
+    ],
+    "is_dangerous": false,
+    "is_rare": false,
+    "cost": 5000,
+    "key": "tech_repeatable_weapon_type_energy_fire_rate",
+    "feature_unlocks": [
+      "Energy Weapon Attack Speed: +5%"
+    ],
+    "base_factor": 0.5,
+    "base_weight": 25,
+    "weight_modifiers": [],
+    "is_start_tech": false,
+    "name": "Flash Coolant"
+  },
+  {
+    "category": "Voidcraft",
+    "tier": 4,
+    "description": "As our fleets roam every further from our ancestral home, our sensor technology continuously pushes past the limits of old.",
+    "area": "physics",
+    "prerequisites": [
+      "tech_sensors_3"
+    ],
+    "is_dangerous": false,
+    "is_rare": false,
+    "cost": 5000,
+    "key": "tech_repeatable_improved_planet_sensor_range",
+    "feature_unlocks": [
+      "Planet Sensor Range: +10%"
+    ],
+    "base_factor": 0.5,
+    "base_weight": 25,
+    "weight_modifiers": [],
+    "is_start_tech": false,
+    "name": "Planetary Signal Boosters"
+  },
+  {
+    "category": "Computing",
+    "tier": 4,
+    "description": "Increasingly powerful computation paradigms allow us to adapt individual construction projects to planetary and ultra-local gravitational conditions.",
+    "area": "physics",
+    "prerequisites": [
+      "tech_physics_lab_2"
+    ],
+    "is_dangerous": false,
+    "is_rare": false,
+    "cost": 5000,
+    "key": "tech_repeatable_reduced_building_cost",
+    "feature_unlocks": [
+      "Building Cost: -5%"
+    ],
+    "base_factor": 0.5,
+    "base_weight": 25,
+    "weight_modifiers": [],
+    "is_start_tech": false,
+    "name": "Gravitational Analysis"
+  },
+  {
     "category": "Field Manipulation",
     "tier": 4,
     "description": "These containment fields allow for the creation of more powerful wormholes without the risk of triggering a sudden subspace energy cascade.",
@@ -2161,132 +2287,6 @@
     ],
     "is_start_tech": false,
     "name": "Jump Drive"
-  },
-  {
-    "category": "Industry",
-    "tier": "@repeatableTechTier",
-    "description": "Minor improvements to transmission efficiency adds up to a sizeable reduction in overall energy loss.",
-    "area": "physics",
-    "prerequisites": [
-      "tech_power_plant_3"
-    ],
-    "is_dangerous": false,
-    "is_rare": false,
-    "cost": 5000,
-    "key": "tech_repeatable_improved_tile_energy_output",
-    "feature_unlocks": [
-      "Energy Credits: +5%"
-    ],
-    "base_factor": 0.5,
-    "base_weight": 25,
-    "weight_modifiers": [],
-    "is_start_tech": false,
-    "name": "Applied Superconductivity"
-  },
-  {
-    "category": "Field Manipulation",
-    "tier": "@repeatableTechTier",
-    "description": "The basic mechanics of ship shields are complex, but they can be adjusted and improved in a multitude of ways.",
-    "area": "physics",
-    "prerequisites": [
-      "tech_shields_4"
-    ],
-    "is_dangerous": false,
-    "is_rare": false,
-    "cost": 5000,
-    "key": "tech_repeatable_improved_shield_output",
-    "feature_unlocks": [
-      "Shield Hit Points: +5%"
-    ],
-    "base_factor": 0.5,
-    "base_weight": 25,
-    "weight_modifiers": [],
-    "is_start_tech": false,
-    "name": "Shield Harmonics"
-  },
-  {
-    "category": "Particles",
-    "tier": "@repeatableTechTier",
-    "description": "Perfecting the firing cadence of laser weaponry is a task that could keep the engineering elite of any given planet busy for centuries.",
-    "area": "physics",
-    "prerequisites": [
-      "tech_lasers_4"
-    ],
-    "is_dangerous": false,
-    "is_rare": false,
-    "cost": 5000,
-    "key": "tech_repeatable_weapon_type_energy_damage",
-    "feature_unlocks": [
-      "Energy Weapon Damage: +5%"
-    ],
-    "base_factor": 0.5,
-    "base_weight": 25,
-    "weight_modifiers": [],
-    "is_start_tech": false,
-    "name": "Focusing Arrays"
-  },
-  {
-    "category": "Particles",
-    "tier": "@repeatableTechTier",
-    "description": "New developments in tech cooling regularly surface, improving the stability and efficiency of our weapons systems, keeping them from blowing up the ships upon which they are mounted.",
-    "area": "physics",
-    "prerequisites": [
-      "tech_lasers_2"
-    ],
-    "is_dangerous": false,
-    "is_rare": false,
-    "cost": 5000,
-    "key": "tech_repeatable_weapon_type_energy_fire_rate",
-    "feature_unlocks": [
-      "Energy Weapon Attack Speed: +5%"
-    ],
-    "base_factor": 0.5,
-    "base_weight": 25,
-    "weight_modifiers": [],
-    "is_start_tech": false,
-    "name": "Flash Coolant"
-  },
-  {
-    "category": "Voidcraft",
-    "tier": "@repeatableTechTier",
-    "description": "As our fleets roam every further from our ancestral home, our sensor technology continuously pushes past the limits of old.",
-    "area": "physics",
-    "prerequisites": [
-      "tech_sensors_3"
-    ],
-    "is_dangerous": false,
-    "is_rare": false,
-    "cost": 5000,
-    "key": "tech_repeatable_improved_planet_sensor_range",
-    "feature_unlocks": [
-      "Planet Sensor Range: +10%"
-    ],
-    "base_factor": 0.5,
-    "base_weight": 25,
-    "weight_modifiers": [],
-    "is_start_tech": false,
-    "name": "Planetary Signal Boosters"
-  },
-  {
-    "category": "Computing",
-    "tier": "@repeatableTechTier",
-    "description": "Increasingly powerful computation paradigms allow us to adapt individual construction projects to planetary and ultra-local gravitational conditions.",
-    "area": "physics",
-    "prerequisites": [
-      "tech_physics_lab_2"
-    ],
-    "is_dangerous": false,
-    "is_rare": false,
-    "cost": 5000,
-    "key": "tech_repeatable_reduced_building_cost",
-    "feature_unlocks": [
-      "Building Cost: -5%"
-    ],
-    "base_factor": 0.5,
-    "base_weight": 25,
-    "weight_modifiers": [],
-    "is_start_tech": false,
-    "name": "Gravitational Analysis"
   },
   {
     "category": "Military Theory",
@@ -4729,30 +4729,8 @@
     "name": "Metacognitive Faith"
   },
   {
-    "category": "Statecraft",
-    "tier": 4,
-    "description": "Our history is a repeating cycle of dramatic technological, political, and cultural leaps; these leaps are often preceded by periods of upheaval and followed by times of relative stability. By identifying the core, recurring premises of these leaps, we may be able to effectively short-circuit the cycle for our own benefit.",
-    "area": "society",
-    "prerequisites": [],
-    "is_dangerous": false,
-    "is_rare": true,
-    "cost": 8000,
-    "key": "tech_ascension_theory",
-    "feature_unlocks": [
-      "Ascension Perks: +1"
-    ],
-    "base_factor": 0.5,
-    "base_weight": 35,
-    "weight_modifiers": [
-      "(\u00d70)  Host does NOT have the Utopia DLC\n",
-      "(\u00d70.2)  None of the following:\n    \u2022   Has the Curator Insight modifier\n    \u2022   Research Leader (Society):\n        \u2022   Is Curator\n    \u2022   Research Leader (Society):\n        \u2022   Is Statecraft Expert\n"
-    ],
-    "is_start_tech": false,
-    "name": "Ascension Theory"
-  },
-  {
     "category": "Biology",
-    "tier": "@repeatableTechTier",
+    "tier": 4,
     "description": "Transgenic crops offer the nutritional elements of several standard food crops in one convenient package.",
     "area": "society",
     "prerequisites": [
@@ -4773,7 +4751,7 @@
   },
   {
     "category": "Statecraft",
-    "tier": "@repeatableTechTier",
+    "tier": 4,
     "description": "Improved FTL communication channels allow for more coherent administrative direction.",
     "area": "society",
     "prerequisites": [
@@ -4794,7 +4772,7 @@
   },
   {
     "category": "Statecraft",
-    "tier": "@repeatableTechTier",
+    "tier": 4,
     "description": "Restructuring the managerial web linking core worlds to the capital can help alleviate the administrative stressors and information chokepoints that frequently arise within a budding empire.",
     "area": "society",
     "prerequisites": [
@@ -4815,7 +4793,7 @@
   },
   {
     "category": "Statecraft",
-    "tier": "@repeatableTechTier",
+    "tier": 4,
     "description": "The concept of managing individuals as resources within larger systems of production must, by necessity, become more flexible as the potential natures of the managed individuals grow ever more numerous.",
     "area": "society",
     "prerequisites": [
@@ -4836,7 +4814,7 @@
   },
   {
     "category": "Statecraft",
-    "tier": "@repeatableTechTier",
+    "tier": 4,
     "description": "Propaganda programs and subtle manipulation of economic records drive down the cost of employing top-tier Leaders.",
     "area": "society",
     "prerequisites": [
@@ -4857,7 +4835,7 @@
   },
   {
     "category": "Statecraft",
-    "tier": "@repeatableTechTier",
+    "tier": 4,
     "description": "More aggressive information campaigns improve the populace's receptiveness to Edicts.",
     "area": "society",
     "prerequisites": [
@@ -4878,7 +4856,7 @@
   },
   {
     "category": "Military Theory",
-    "tier": "@repeatableTechTier",
+    "tier": 4,
     "description": "Iterating on the standard conditioning regimen for ground troops has proven to make them more effective in direct combat.",
     "area": "society",
     "prerequisites": [
@@ -4899,7 +4877,7 @@
   },
   {
     "category": "Military Theory",
-    "tier": "@repeatableTechTier",
+    "tier": 4,
     "description": "Careful tuning of pain receptors allow soldiers to fight through what would previously have been debilitating injuries.",
     "area": "society",
     "prerequisites": [
@@ -4920,7 +4898,7 @@
   },
   {
     "category": "Biology",
-    "tier": "@repeatableTechTier",
+    "tier": 4,
     "description": "Regimens of periodic cell revitalization treatments keep the leader class spry and active beyond traditionally expected lifespans.",
     "area": "society",
     "prerequisites": [
@@ -4938,6 +4916,28 @@
     "weight_modifiers": [],
     "is_start_tech": false,
     "name": "Cell Revitalization"
+  },
+  {
+    "category": "Statecraft",
+    "tier": 4,
+    "description": "Our history is a repeating cycle of dramatic technological, political, and cultural leaps; these leaps are often preceded by periods of upheaval and followed by times of relative stability. By identifying the core, recurring premises of these leaps, we may be able to effectively short-circuit the cycle for our own benefit.",
+    "area": "society",
+    "prerequisites": [],
+    "is_dangerous": false,
+    "is_rare": true,
+    "cost": 8000,
+    "key": "tech_ascension_theory",
+    "feature_unlocks": [
+      "Ascension Perks: +1"
+    ],
+    "base_factor": 0.5,
+    "base_weight": 35,
+    "weight_modifiers": [
+      "(\u00d70)  Host does NOT have the Utopia DLC\n",
+      "(\u00d70.2)  None of the following:\n    \u2022   Has the Curator Insight modifier\n    \u2022   Research Leader (Society):\n        \u2022   Is Curator\n    \u2022   Research Leader (Society):\n        \u2022   Is Statecraft Expert\n"
+    ],
+    "is_start_tech": false,
+    "name": "Ascension Theory"
   },
   {
     "category": "Voidcraft",
@@ -6977,6 +6977,258 @@
     "name": "Advanced Afterburners"
   },
   {
+    "category": "Industry",
+    "tier": 4,
+    "description": "Changes in how mineral deposits are evaluated relative to each other lead to more efficient boring patterns.",
+    "area": "engineering",
+    "prerequisites": [
+      "tech_mineral_processing_2"
+    ],
+    "is_dangerous": false,
+    "is_rare": false,
+    "cost": 5000,
+    "key": "tech_repeatable_improved_tile_mineral_output",
+    "feature_unlocks": [
+      "Minerals: +5%"
+    ],
+    "base_factor": 0.5,
+    "base_weight": 25,
+    "weight_modifiers": [],
+    "is_start_tech": false,
+    "name": "Extraction Patterns"
+  },
+  {
+    "category": "Voidcraft",
+    "tier": 4,
+    "description": "Cross-linking weapon systems to fire in staggered volleys improves the actual damage output of Military Stations over time.",
+    "area": "engineering",
+    "prerequisites": [
+      "tech_space_defense_station_2"
+    ],
+    "is_dangerous": false,
+    "is_rare": false,
+    "cost": 5000,
+    "key": "tech_repeatable_improved_military_station_damage",
+    "feature_unlocks": [
+      "Military Station Damage: +10%"
+    ],
+    "base_factor": 0.5,
+    "base_weight": 25,
+    "weight_modifiers": [],
+    "is_start_tech": false,
+    "name": "Synchronized Firing Patterns"
+  },
+  {
+    "category": "Voidcraft",
+    "tier": 4,
+    "description": "Additional layers of armor plating within the structure itself improves the resilience of Military Stations.",
+    "area": "engineering",
+    "prerequisites": [
+      "tech_space_defense_station_2"
+    ],
+    "is_dangerous": false,
+    "is_rare": false,
+    "cost": 5000,
+    "key": "tech_repeatable_improved_military_station_health",
+    "feature_unlocks": [
+      "Military Station Health: +10%"
+    ],
+    "base_factor": 0.5,
+    "base_weight": 25,
+    "weight_modifiers": [],
+    "is_start_tech": false,
+    "name": "Fortified Core Layers"
+  },
+  {
+    "category": "Voidcraft",
+    "tier": 4,
+    "description": "Further increasing compartmentalization of shipboard spaces allows ships to sustain more damage before hull integrity reaches critically low levels.",
+    "area": "engineering",
+    "prerequisites": [
+      "tech_spaceport_4"
+    ],
+    "is_dangerous": false,
+    "is_rare": false,
+    "cost": 5000,
+    "key": "tech_repeatable_improved_ship_health",
+    "feature_unlocks": [
+      "Ship Hull Points: +5%"
+    ],
+    "base_factor": 0.5,
+    "base_weight": 25,
+    "weight_modifiers": [],
+    "is_start_tech": false,
+    "name": "Hull Integrity"
+  },
+  {
+    "category": "Materials",
+    "tier": 4,
+    "description": "Compressing suitable materials into ultra-dense forms is a cheap and efficient way to improve their ability to absorb weapons-grade impacts.",
+    "area": "engineering",
+    "prerequisites": [
+      "tech_ship_armor_3"
+    ],
+    "is_dangerous": false,
+    "is_rare": false,
+    "cost": 5000,
+    "key": "tech_repeatable_improved_armor_output",
+    "feature_unlocks": [
+      "Armor: +5%"
+    ],
+    "base_factor": 0.5,
+    "base_weight": 25,
+    "weight_modifiers": [],
+    "is_start_tech": false,
+    "name": "Matter Compression"
+  },
+  {
+    "category": "Rocketry",
+    "tier": 4,
+    "description": "With the chemical reaction tightly controlled by missile-board microprocessors, warhead detonations can be tuned for maximum effect for local conditions at the time of impact.",
+    "area": "engineering",
+    "prerequisites": [
+      "tech_missiles_3"
+    ],
+    "is_dangerous": false,
+    "is_rare": false,
+    "cost": 5000,
+    "key": "tech_repeatable_weapon_type_explosive_damage",
+    "feature_unlocks": [
+      "Explosive Weapon Damage: +5%"
+    ],
+    "base_factor": 0.5,
+    "base_weight": 25,
+    "weight_modifiers": [],
+    "is_start_tech": false,
+    "name": "Thermodynamic Yield Control"
+  },
+  {
+    "category": "Rocketry",
+    "tier": 4,
+    "description": "Advances in miniaturization allow for more rapid loading and discharging of rocket-propelled payloads.",
+    "area": "engineering",
+    "prerequisites": [
+      "tech_missiles_3"
+    ],
+    "is_dangerous": false,
+    "is_rare": false,
+    "cost": 5000,
+    "key": "tech_repeatable_weapon_type_explosive_fire_rate",
+    "feature_unlocks": [
+      "Explosive Weapon Attack Speed: +5%"
+    ],
+    "base_factor": 0.5,
+    "base_weight": 25,
+    "weight_modifiers": [],
+    "is_start_tech": false,
+    "name": "Miniaturized Pre-Igniters"
+  },
+  {
+    "category": "Materials",
+    "tier": 4,
+    "description": "Ultra-dense slugs can punch through even the strongest of projected shields.",
+    "area": "engineering",
+    "prerequisites": [
+      "tech_mass_drivers_3"
+    ],
+    "is_dangerous": false,
+    "is_rare": false,
+    "cost": 5000,
+    "key": "tech_repeatable_weapon_type_kinetic_damage",
+    "feature_unlocks": [
+      "Kinetic Weapon Damage: +5%"
+    ],
+    "base_factor": 0.5,
+    "base_weight": 25,
+    "weight_modifiers": [],
+    "is_start_tech": false,
+    "name": "High-Density Munitions"
+  },
+  {
+    "category": "Materials",
+    "tier": 4,
+    "description": "Minor technical advances combine with improved shipboard routines for handling munitions to provide a noticeable boost in fire rate.",
+    "area": "engineering",
+    "prerequisites": [
+      "tech_mass_drivers_3"
+    ],
+    "is_dangerous": false,
+    "is_rare": false,
+    "cost": 5000,
+    "key": "tech_repeatable_weapon_type_kinetic_fire_rate",
+    "feature_unlocks": [
+      "Kinetic Weapon Attack Speed: +5%"
+    ],
+    "base_factor": 0.5,
+    "base_weight": 25,
+    "weight_modifiers": [],
+    "is_start_tech": false,
+    "name": "Loader Efficiency"
+  },
+  {
+    "category": "Voidcraft",
+    "tier": 4,
+    "description": "Increasing the speed at which fighter pilots can process and act upon enemy positioning data elevates strike craft a few steps up the food chain.",
+    "area": "engineering",
+    "prerequisites": [
+      "tech_spaceport_5"
+    ],
+    "is_dangerous": false,
+    "is_rare": false,
+    "cost": 5000,
+    "key": "tech_repeatable_weapon_type_strike_craft_fire_damage",
+    "feature_unlocks": [
+      "Strike Craft Damage: +10%"
+    ],
+    "base_factor": 0.5,
+    "base_weight": 25,
+    "weight_modifiers": [],
+    "is_start_tech": false,
+    "name": "Synapse Interceptors"
+  },
+  {
+    "category": "Voidcraft",
+    "tier": 4,
+    "description": "Circulating excess heat from weapons discharge in order to prime munitions as they are loaded increases the rate of fire of strike craft weaponry.",
+    "area": "engineering",
+    "prerequisites": [
+      "tech_spaceport_5"
+    ],
+    "is_dangerous": false,
+    "is_rare": false,
+    "cost": 5000,
+    "key": "tech_repeatable_weapon_type_strike_craft_fire_rate",
+    "feature_unlocks": [
+      "Strike Craft Attack Speed: +10%"
+    ],
+    "base_factor": 0.5,
+    "base_weight": 25,
+    "weight_modifiers": [],
+    "is_start_tech": false,
+    "name": "Heat Recyclers"
+  },
+  {
+    "category": "Industry",
+    "tier": 4,
+    "description": "The application of game and puzzle theory has the potential to greatly optimize modular assembly and construction.",
+    "area": "engineering",
+    "prerequisites": [
+      "tech_construction_templates"
+    ],
+    "is_dangerous": false,
+    "is_rare": false,
+    "cost": 5000,
+    "key": "tech_repeatable_reduced_building_time",
+    "feature_unlocks": [
+      "Building Build Speed: +10%"
+    ],
+    "base_factor": 0.5,
+    "base_weight": 25,
+    "weight_modifiers": [],
+    "is_start_tech": false,
+    "name": "Assembly Algorithms"
+  },
+  {
     "category": "Voidcraft",
     "tier": 4,
     "description": "To complete constructing projects of truly staggering scales we must first achieve a fundamental understanding of both the engineering and resource storage requirements for such megastructures.",
@@ -7005,257 +7257,5 @@
     ],
     "is_start_tech": false,
     "name": "Mega-Engineering"
-  },
-  {
-    "category": "Industry",
-    "tier": "@repeatableTechTier",
-    "description": "Changes in how mineral deposits are evaluated relative to each other lead to more efficient boring patterns.",
-    "area": "engineering",
-    "prerequisites": [
-      "tech_mineral_processing_2"
-    ],
-    "is_dangerous": false,
-    "is_rare": false,
-    "cost": 5000,
-    "key": "tech_repeatable_improved_tile_mineral_output",
-    "feature_unlocks": [
-      "Minerals: +5%"
-    ],
-    "base_factor": 0.5,
-    "base_weight": 25,
-    "weight_modifiers": [],
-    "is_start_tech": false,
-    "name": "Extraction Patterns"
-  },
-  {
-    "category": "Voidcraft",
-    "tier": "@repeatableTechTier",
-    "description": "Cross-linking weapon systems to fire in staggered volleys improves the actual damage output of Military Stations over time.",
-    "area": "engineering",
-    "prerequisites": [
-      "tech_space_defense_station_2"
-    ],
-    "is_dangerous": false,
-    "is_rare": false,
-    "cost": 5000,
-    "key": "tech_repeatable_improved_military_station_damage",
-    "feature_unlocks": [
-      "Military Station Damage: +10%"
-    ],
-    "base_factor": 0.5,
-    "base_weight": 25,
-    "weight_modifiers": [],
-    "is_start_tech": false,
-    "name": "Synchronized Firing Patterns"
-  },
-  {
-    "category": "Voidcraft",
-    "tier": "@repeatableTechTier",
-    "description": "Additional layers of armor plating within the structure itself improves the resilience of Military Stations.",
-    "area": "engineering",
-    "prerequisites": [
-      "tech_space_defense_station_2"
-    ],
-    "is_dangerous": false,
-    "is_rare": false,
-    "cost": 5000,
-    "key": "tech_repeatable_improved_military_station_health",
-    "feature_unlocks": [
-      "Military Station Health: +10%"
-    ],
-    "base_factor": 0.5,
-    "base_weight": 25,
-    "weight_modifiers": [],
-    "is_start_tech": false,
-    "name": "Fortified Core Layers"
-  },
-  {
-    "category": "Voidcraft",
-    "tier": "@repeatableTechTier",
-    "description": "Further increasing compartmentalization of shipboard spaces allows ships to sustain more damage before hull integrity reaches critically low levels.",
-    "area": "engineering",
-    "prerequisites": [
-      "tech_spaceport_4"
-    ],
-    "is_dangerous": false,
-    "is_rare": false,
-    "cost": 5000,
-    "key": "tech_repeatable_improved_ship_health",
-    "feature_unlocks": [
-      "Ship Hull Points: +5%"
-    ],
-    "base_factor": 0.5,
-    "base_weight": 25,
-    "weight_modifiers": [],
-    "is_start_tech": false,
-    "name": "Hull Integrity"
-  },
-  {
-    "category": "Materials",
-    "tier": "@repeatableTechTier",
-    "description": "Compressing suitable materials into ultra-dense forms is a cheap and efficient way to improve their ability to absorb weapons-grade impacts.",
-    "area": "engineering",
-    "prerequisites": [
-      "tech_ship_armor_3"
-    ],
-    "is_dangerous": false,
-    "is_rare": false,
-    "cost": 5000,
-    "key": "tech_repeatable_improved_armor_output",
-    "feature_unlocks": [
-      "Armor: +5%"
-    ],
-    "base_factor": 0.5,
-    "base_weight": 25,
-    "weight_modifiers": [],
-    "is_start_tech": false,
-    "name": "Matter Compression"
-  },
-  {
-    "category": "Rocketry",
-    "tier": "@repeatableTechTier",
-    "description": "With the chemical reaction tightly controlled by missile-board microprocessors, warhead detonations can be tuned for maximum effect for local conditions at the time of impact.",
-    "area": "engineering",
-    "prerequisites": [
-      "tech_missiles_3"
-    ],
-    "is_dangerous": false,
-    "is_rare": false,
-    "cost": 5000,
-    "key": "tech_repeatable_weapon_type_explosive_damage",
-    "feature_unlocks": [
-      "Explosive Weapon Damage: +5%"
-    ],
-    "base_factor": 0.5,
-    "base_weight": 25,
-    "weight_modifiers": [],
-    "is_start_tech": false,
-    "name": "Thermodynamic Yield Control"
-  },
-  {
-    "category": "Rocketry",
-    "tier": "@repeatableTechTier",
-    "description": "Advances in miniaturization allow for more rapid loading and discharging of rocket-propelled payloads.",
-    "area": "engineering",
-    "prerequisites": [
-      "tech_missiles_3"
-    ],
-    "is_dangerous": false,
-    "is_rare": false,
-    "cost": 5000,
-    "key": "tech_repeatable_weapon_type_explosive_fire_rate",
-    "feature_unlocks": [
-      "Explosive Weapon Attack Speed: +5%"
-    ],
-    "base_factor": 0.5,
-    "base_weight": 25,
-    "weight_modifiers": [],
-    "is_start_tech": false,
-    "name": "Miniaturized Pre-Igniters"
-  },
-  {
-    "category": "Materials",
-    "tier": "@repeatableTechTier",
-    "description": "Ultra-dense slugs can punch through even the strongest of projected shields.",
-    "area": "engineering",
-    "prerequisites": [
-      "tech_mass_drivers_3"
-    ],
-    "is_dangerous": false,
-    "is_rare": false,
-    "cost": 5000,
-    "key": "tech_repeatable_weapon_type_kinetic_damage",
-    "feature_unlocks": [
-      "Kinetic Weapon Damage: +5%"
-    ],
-    "base_factor": 0.5,
-    "base_weight": 25,
-    "weight_modifiers": [],
-    "is_start_tech": false,
-    "name": "High-Density Munitions"
-  },
-  {
-    "category": "Materials",
-    "tier": "@repeatableTechTier",
-    "description": "Minor technical advances combine with improved shipboard routines for handling munitions to provide a noticeable boost in fire rate.",
-    "area": "engineering",
-    "prerequisites": [
-      "tech_mass_drivers_3"
-    ],
-    "is_dangerous": false,
-    "is_rare": false,
-    "cost": 5000,
-    "key": "tech_repeatable_weapon_type_kinetic_fire_rate",
-    "feature_unlocks": [
-      "Kinetic Weapon Attack Speed: +5%"
-    ],
-    "base_factor": 0.5,
-    "base_weight": 25,
-    "weight_modifiers": [],
-    "is_start_tech": false,
-    "name": "Loader Efficiency"
-  },
-  {
-    "category": "Voidcraft",
-    "tier": "@repeatableTechTier",
-    "description": "Increasing the speed at which fighter pilots can process and act upon enemy positioning data elevates strike craft a few steps up the food chain.",
-    "area": "engineering",
-    "prerequisites": [
-      "tech_spaceport_5"
-    ],
-    "is_dangerous": false,
-    "is_rare": false,
-    "cost": 5000,
-    "key": "tech_repeatable_weapon_type_strike_craft_fire_damage",
-    "feature_unlocks": [
-      "Strike Craft Damage: +10%"
-    ],
-    "base_factor": 0.5,
-    "base_weight": 25,
-    "weight_modifiers": [],
-    "is_start_tech": false,
-    "name": "Synapse Interceptors"
-  },
-  {
-    "category": "Voidcraft",
-    "tier": "@repeatableTechTier",
-    "description": "Circulating excess heat from weapons discharge in order to prime munitions as they are loaded increases the rate of fire of strike craft weaponry.",
-    "area": "engineering",
-    "prerequisites": [
-      "tech_spaceport_5"
-    ],
-    "is_dangerous": false,
-    "is_rare": false,
-    "cost": 5000,
-    "key": "tech_repeatable_weapon_type_strike_craft_fire_rate",
-    "feature_unlocks": [
-      "Strike Craft Attack Speed: +10%"
-    ],
-    "base_factor": 0.5,
-    "base_weight": 25,
-    "weight_modifiers": [],
-    "is_start_tech": false,
-    "name": "Heat Recyclers"
-  },
-  {
-    "category": "Industry",
-    "tier": "@repeatableTechTier",
-    "description": "The application of game and puzzle theory has the potential to greatly optimize modular assembly and construction.",
-    "area": "engineering",
-    "prerequisites": [
-      "tech_construction_templates"
-    ],
-    "is_dangerous": false,
-    "is_rare": false,
-    "cost": 5000,
-    "key": "tech_repeatable_reduced_building_time",
-    "feature_unlocks": [
-      "Building Build Speed: +10%"
-    ],
-    "base_factor": 0.5,
-    "base_weight": 25,
-    "weight_modifiers": [],
-    "is_start_tech": false,
-    "name": "Assembly Algorithms"
   }
 ]

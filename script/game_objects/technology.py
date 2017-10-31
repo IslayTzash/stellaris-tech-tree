@@ -26,6 +26,8 @@ class Technology:
         self.tier = next(
             iter(key for key in tech_data if key.keys()[0] == 'tier')
         )['tier']
+        if type(self.tier) is not int and self.tier.startswith('@'):
+            self.tier = self._at_vars[self.tier]
 
         self.cost = self._cost(tech_data)
         self.base_weight = self._base_weight(tech_data)
