@@ -2303,7 +2303,7 @@
     "key": "tech_defense_army",
     "feature_unlocks": [
       "Unlocks Army: Defense Army",
-      "Unlocks Army: machine_defense_1"
+      "Unlocks Army: Drone Grid"
     ],
     "base_factor": 1.0,
     "base_weight": 175,
@@ -3239,8 +3239,8 @@
     "cost": 1000,
     "key": "tech_adaptive_combat_algorithms",
     "feature_unlocks": [
-      "Unlocks Army: machine_assault_2",
-      "Unlocks Army: machine_defense_2"
+      "Unlocks Army: Battle Frame Army",
+      "Unlocks Army: Seeker Grid"
     ],
     "base_factor": 1.5,
     "base_weight": 75,
@@ -4095,7 +4095,7 @@
     "cost": 4000,
     "key": "tech_biomechanics",
     "feature_unlocks": [
-      "Unlocks Army: machine_assault_3"
+      "Unlocks Army: Mega-Warform"
     ],
     "base_factor": 1.0,
     "base_weight": 45,
@@ -4982,7 +4982,7 @@
     "key": "tech_assault_armies",
     "feature_unlocks": [
       "Unlocks Army: Assault Army",
-      "Unlocks Army: machine_assault_1"
+      "Unlocks Army: Hunter-Killer Army"
     ],
     "base_factor": 1.0,
     "base_weight": 100,

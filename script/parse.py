@@ -239,7 +239,7 @@ resource_file_paths = []
 spaceport_module_file_paths = []
 tile_blocker_file_paths = []
 loc_file_paths = []
-skip_terms = ['events?', 'tutorials?', 'pop_factions?', 'name_lists?',
+skip_terms = ['^events?', 'tutorials?', 'pop_factions?', 'name_lists?',
               'messages?', 'mandates?', 'projects?', 'sections?',
               'triggers?', 'traits?']
 has_skip_term = re.compile(r'(?:{})_'.format('|'.join(skip_terms)))
@@ -344,11 +344,11 @@ parsed_scripts = {'technology': parse_scripts(tech_file_paths),
                   'spaceport_module': parse_scripts(spaceport_module_file_paths),
                   'tile_blocker': parse_scripts(tile_blocker_file_paths)}
 
-armies = [Army(entry, loc_data) for entry in parsed_scripts['army']
+armies = [Army(entry, loc_data)
+          for entry in parsed_scripts['army']
           if not entry.keys()[0].startswith('@')]
 army_attachments = [ArmyAttachment(entry, loc_data)
-                    for entry
-                    in parsed_scripts['army_attachment']
+                    for entry in parsed_scripts['army_attachment']
                     if not entry.keys()[0].startswith('@')]
 buildable_pops = [BuildablePop(entry, loc_data)
                   for entry
