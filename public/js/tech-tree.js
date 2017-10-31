@@ -59,9 +59,10 @@ $(document).ready(function() {
       return Object.keys(tech)[0].search(/^@\w+$/) == -1;
     }).map(function(tech) {
       let key = tech.key;
-      let tier = tech.tier > 0
-          ? ' (Tier ' + tech.tier + ')'
-          : ' (Starting)';
+      let tier = tech.is_start_tech
+          ? ' (Starting)'
+          : ' (Tier ' + tech.tier + ')';
+
       let costClass = tech.area + '-research';
       let cost = tech.tier > 0
           ? 'Cost: <span class="' + costClass + '">' + tech.cost + '</span>'
