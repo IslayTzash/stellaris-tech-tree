@@ -1,3 +1,5 @@
+# Copy to config.py and edit as needed.
+
 game_dir = '/opt/steam/steamapps/common/Stellaris'
 workshop_dir = '/opt/steam/steamapps/workshop/content/281990'
 mods = {'vanilla': None,
