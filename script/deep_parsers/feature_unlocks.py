@@ -1,6 +1,3 @@
-# -*- coding: utf-8 -*-
-
-from pprint import pprint
 import re
 
 class FeatureUnlocks:
@@ -53,9 +50,7 @@ class FeatureUnlocks:
     def _modifiers(self, tech_data):
 
         def localize(modifier):
-            key = modifier.keys()[0]
-            # pprint(key)
-            # pprint(modifier)
+            key = list(modifier.keys())[0]
             if key in ('description', 'description_parameters',
                        'BIOLOGICAL_species_trait_points_add'):
                 return None
@@ -103,14 +98,14 @@ class FeatureUnlocks:
                                 # Give up.
                                 localized = {key: value}
 
-            return '{}: {}'.format(localized.keys()[0], localized.values()[0])
+            return '{}: {}'.format(list(localized.keys())[0], list(localized.values())[0])
 
         try:
             acquired_modifiers = [localize(modifier)
                                   for modifier
                                   in next(iter(attribute for attribute
                                                in tech_data
-                                               if attribute.keys()[0] == 'modifier'))['modifier']]
+                                               if list(attribute.keys())[0] == 'modifier'))['modifier']]
         except (StopIteration):
             acquired_modifiers = []
 
@@ -131,10 +126,11 @@ class FeatureUnlocks:
         try:
             unlock_types = [unlock_type for unlock_type in next(iter(
                 attribute for attribute in tech_data
-                if attribute.keys()[0] == 'prereqfor_desc'
+                if list(attribute.keys())[0] == 'prereqfor_desc'
             ))['prereqfor_desc']]
-            feature_unlocks = [localize(unlock.values()[0][0]['title'])
-                               for unlock in unlock_types]
+            feature_unlocks = [localize(list(unlock.values())[0][0]['title'])
+                               for unlock in unlock_types
+                               if list(unlock)[0] != 'hide_prereq_for_desc']
         except (StopIteration):
             feature_unlocks = []
 
@@ -147,7 +143,7 @@ class FeatureUnlocks:
                 for feature_flag
                 in next(iter(
                     attribute for attribute in tech_data
-                    if attribute.keys()[0] == 'feature_flags'
+                    if list(attribute.keys())[0] == 'feature_flags'
                 ))['feature_flags']
             ]
         except (StopIteration):

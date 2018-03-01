@@ -8,7 +8,7 @@ class Technology:
                  buildings, components, edicts, policies, resources,
                  spaceport_modules, tile_blockers, loc_data, at_vars,
                  start_with_tier_zero=True):
-        self.key = tech.keys()[0]
+        self.key = list(tech.keys())[0]
         self._at_vars = at_vars
         self._loc_data = loc_data
         self.name = loc_data.get(self.key, self.key)
@@ -17,14 +17,14 @@ class Technology:
 
         self.description = self._description()
         self.area = next(iter(key for key in tech_data
-                              if key.keys()[0] == 'area'))['area']
+                              if list(key.keys())[0] == 'area'))['area']
         self.category = loc_data[
             next(iter(key for key in tech_data
-                      if key.keys()[0] == 'category'))['category'][0]
+                      if list(key.keys())[0] == 'category'))['category'][0]
         ]
 
         self.tier = next(
-            iter(key for key in tech_data if key.keys()[0] == 'tier')
+            iter(key for key in tech_data if list(key.keys())[0] == 'tier')
         )['tier']
         if type(self.tier) is not int and self.tier.startswith('@'):
             self.tier = self._at_vars[self.tier]
@@ -49,7 +49,7 @@ class Technology:
     def _is_start_tech(self, tech_data, start_with_tier_zero):
         try:
             yes_no = next(iter(key for key in tech_data
-                               if key.keys()[0] == 'start_tech'))['start_tech']
+                               if list(key.keys())[0] == 'start_tech'))['start_tech']
             is_start_tech = True if yes_no == 'yes' else False
         except StopIteration:
             is_start_tech = True if self.tier == 0 and start_with_tier_zero \
@@ -61,7 +61,7 @@ class Technology:
         try:
             yes_no = next(iter(
                 key for key in tech_data
-                if key.keys()[0] == 'is_dangerous'
+                if list(key.keys())[0] == 'is_dangerous'
             ))['is_dangerous']
             is_dangerous = True if yes_no == 'yes' else False
         except StopIteration:
@@ -72,7 +72,7 @@ class Technology:
     def _is_rare(self, tech_data):
         try:
             yes_no = next(iter(key for key in tech_data
-                               if key.keys()[0] == 'is_rare'))['is_rare']
+                               if list(key.keys())[0] == 'is_rare'))['is_rare']
             is_rare = True if yes_no == 'yes' else False
         except StopIteration:
             is_rare = False
@@ -98,7 +98,7 @@ class Technology:
             try:
                 prerequisites = next(iter(
                     subkey for subkey in tech_data
-                    if subkey.keys()[0] == 'prerequisites'
+                    if list(subkey.keys())[0] == 'prerequisites'
                 ))['prerequisites']
             except (StopIteration):
                 prerequisites = []
@@ -106,16 +106,19 @@ class Technology:
         return prerequisites
 
     def _cost(self, tech_data):
-        string = next(iter(key for key
-                           in tech_data
-                           if key.keys()[0] == 'cost'))['cost']
+        try:
+            string = next(iter(key for key
+                               in tech_data
+                               if list(key.keys())[0] == 'cost'))['cost']
+        except StopIteration:
+            string = '0'
         return self._at_vars[string] if str(string).startswith('@') else string
 
     def _base_weight(self, tech_data):
         try:
             string = next(iter(key for key
                                in tech_data
-                               if key.keys()[0] == 'weight'))['weight']
+                               if list(key.keys())[0] == 'weight'))['weight']
             weight = (self._at_vars[string]
                       if str(string).startswith('@')
                       else string)
@@ -128,7 +131,7 @@ class Technology:
         try:
             string = next(
                 iter(key for key in tech_data
-                     if key.keys()[0] == 'weight_modifier')
+                     if list(key.keys())[0] == 'weight_modifier')
             )['weight_modifier'][0]['factor']
             factor = (self._at_vars[string]
                       if str(string).startswith('@')
@@ -141,21 +144,21 @@ class Technology:
     def _weight_modifiers(self, tech_data):
         try:
             unparsed_modifiers = next(iter(
-                key for key in tech_data if key.keys()[0] == 'weight_modifier'
+                key for key in tech_data if list(key.keys())[0] == 'weight_modifier'
             ))['weight_modifier']
         except StopIteration:
             unparsed_modifiers = []
 
         return [parse_weight_modifiers(modifier['modifier'], self._loc_data)
                 for modifier in unparsed_modifiers
-                if modifier.keys() == ['modifier']]
+                if list(modifier.keys()) == ['modifier']]
 
 
 class TechnologyJSONEncoder(JSONEncoder):
     def default(self, object):
         if isinstance(object, Technology):
             encoder = {key: getattr(object, key) for key
-                       in object.__dict__.keys()
+                       in list(object.__dict__.keys())
                        if not key.startswith('_')}
         else:
             encoder = JSONEncoder.default(self, object)

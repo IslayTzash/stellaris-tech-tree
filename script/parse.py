@@ -1,13 +1,10 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-from __future__ import print_function
-
-import imp
+import importlib.util
 from lex import tokens
 from os import listdir, makedirs, path
 from ply.yacc import yacc
-from pprint import pprint
 import argparse
 import codecs
 import json
@@ -19,8 +16,9 @@ from game_objects import Army, ArmyAttachment, BuildablePop, Building, \
     Component, Edict, Policy, Resource, SpaceportModule, Technology, \
     TechnologyJSONEncoder, TileBlocker
 
-config = imp.load_source('config', 'config.py')
-
+spec = importlib.util.spec_from_file_location('config', './config.py')
+config = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(config)
 
 # Process CLI arguments:
 def valid_label(label):
@@ -120,7 +118,9 @@ def p_expression_number(tokens):
 def p_binop(tokens):
     '''binop : key EQUALS expression
              | key GTHAN expression
-             | key LTHAN expression'''
+             | key LTHAN expression
+             | key GTEQ expression
+             | key LTEQ expression'''
     operator = tokens[2]
 
     if re.match(r'^-?\d+$', str(tokens[3])):
@@ -198,7 +198,7 @@ def localized_strings():
         not_yaml = ''
         for line in not_yaml_lines:
             quote_instances = [i for i, char in enumerate(line)
-                               if char == u'"']
+                               if char == '"']
 
             if len(quote_instances) >= 2:
                 # Some lines have invalid data after terminal quote:
@@ -208,13 +208,13 @@ def localized_strings():
                 if len(quote_instances) > 2:
                     second = quote_instances[1]
                     line = line[0:second] \
-                           + line[second:last].replace(u'"', ur'\"') \
+                           + line[second:last].replace('"', r'\"') \
                            + line[last:]
 
             not_yaml += line
 
-        still_not_yaml = re.sub(ur'£\w+  |§[A-Z!]', '', not_yaml)
-        resembles_yaml = re.sub(r'(?<=\w):\d ?(?=")', ': ', still_not_yaml)
+        still_not_yaml = re.sub(r'£\w+  |§[A-Z!]', '', not_yaml)
+        resembles_yaml = re.sub(r'(?<=\w):\d+ ?(?=")', ': ', still_not_yaml)
         actual_yaml = re.sub(r'^[ \t]+', '  ', resembles_yaml, flags=re.M)
 
         file_data = yaml.load(actual_yaml, Loader=yaml.Loader)
@@ -346,48 +346,48 @@ parsed_scripts = {'technology': parse_scripts(tech_file_paths),
 
 armies = [Army(entry, loc_data)
           for entry in parsed_scripts['army']
-          if not entry.keys()[0].startswith('@')]
+          if not list(entry)[0].startswith('@')]
 army_attachments = [ArmyAttachment(entry, loc_data)
                     for entry in parsed_scripts['army_attachment']
-                    if not entry.keys()[0].startswith('@')]
+                    if not list(entry)[0].startswith('@')]
 buildable_pops = [BuildablePop(entry, loc_data)
                   for entry
                   in parsed_scripts['buildable_pop']
-                  if not entry.keys()[0].startswith('@')]
+                  if not list(entry)[0].startswith('@')]
 buildings = [Building(entry, loc_data)
              for entry
              in parsed_scripts['building']
-             if not entry.keys()[0].startswith('@')]
-components = [Component(entry.values()[0], loc_data)
+             if not list(entry)[0].startswith('@')]
+components = [Component(list(entry.values())[0], loc_data)
               for entry
               in parsed_scripts['component']
-              if not entry.keys()[0].startswith('@')]
-edicts = [Edict(entry.values()[0], loc_data)
+              if not list(entry)[0].startswith('@')]
+edicts = [Edict(list(entry.values())[0], loc_data)
           for entry
           in parsed_scripts['edict']
-          if not entry.keys()[0].startswith('@')]
+          if not list(entry)[0].startswith('@')]
 policies = [Policy(entry, loc_data)
             for entry
             in parsed_scripts['policy']
-            if not entry.keys()[0].startswith('@')]
+            if not list(entry)[0].startswith('@')]
 resources = [Resource(entry, loc_data)
              for entry
              in parsed_scripts['resource']
-             if not entry.keys()[0].startswith('@')]
+             if not list(entry)[0].startswith('@')]
 spaceport_modules = [SpaceportModule(entry, loc_data)
                      for entry
                      in parsed_scripts['spaceport_module']
-                     if not entry.keys()[0].startswith('@')]
+                     if not list(entry)[0].startswith('@')]
 tile_blockers = [TileBlocker(entry, loc_data)
                  for entry
                  in parsed_scripts['tile_blocker']
-                 if not entry.keys()[0].startswith('@')]
+                 if not list(entry)[0].startswith('@')]
 at_vars = {}
 technologies = []
 
 for entry in parsed_scripts['technology']:
-    if entry.keys()[0].startswith('@'):
-        at_var = entry.keys()[0]
+    if list(entry)[0].startswith('@'):
+        at_var = list(entry)[0]
         at_vars[at_var] = entry[at_var]
         continue
 
@@ -403,7 +403,8 @@ for entry in parsed_scripts['technology']:
     if not tech.is_start_tech \
        and tech.base_weight * tech.base_factor == 0 \
        and len(tech.weight_modifiers) == 0:
-        continue
+        # continue
+        pass
 
     technologies.append(tech)
 

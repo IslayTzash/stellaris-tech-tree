@@ -1,13 +1,14 @@
-from pprint import pprint
 from ply.lex import lex
 import sys
 
-tokens = ('BAREWORD', 'STRING', 'VARIABLE', 'NUMBER', 'EQUALS', 'GTHAN', 'LTHAN',
-          'LBRACE', 'RBRACE')
+tokens = ('BAREWORD', 'STRING', 'VARIABLE', 'NUMBER', 'EQUALS', 'GTHAN', 'LTHAN', 'GTEQ',
+          'LTEQ', 'LBRACE', 'RBRACE')
 
 t_EQUALS = '='
 t_GTHAN = r'>'
 t_LTHAN = r'<'
+t_GTEQ = r'>='
+t_LTEQ = r'<='
 t_LBRACE = '{'
 t_RBRACE = '}'
 t_ignore = ' \t'
@@ -39,7 +40,7 @@ def t_BAREWORD(token):
 
 
 def t_VARIABLE(token):
-    '@[a-z]\w*'
+    '@[a-zA-Z]\w*'
     return token
 
 
@@ -72,7 +73,7 @@ def t_NUMBER(token):
 
 
 def t_error(token):
-    pprint("Illegal character '{}' on line {}".format(token.value[0], token.lineno))
+    print("Illegal character '{}' on line {}".format(token.value[0], token.lineno))
     token.lexer.skip(1)
 
 
@@ -87,4 +88,3 @@ if __name__ == '__main__':
     data = open(filename).read()
     lexer.input(data)
     lexed = lexed_tokens(lexer)
-    pprint(lexed)

@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 
-from pprint import pprint
 import re
 import ruamel.yaml as yaml
 import sys
@@ -16,15 +15,15 @@ def parse(modifier, loc_data):
 
     try:
         factor = next(iter(key for key in modifier
-                           if key.keys()[0] == 'factor'))['factor']
+                           if list(key.keys())[0] == 'factor'))['factor']
         adjustment = _localize_factor(factor)
     except StopIteration:
         add = next(iter(line for line in modifier
-                        if line.keys()[0] == 'add'))['add']
+                        if list(line.keys())[0] == 'add'))['add']
         adjustment = _localize_add(add)
 
     unparsed_conditions = [line for line in modifier \
-                           if line.keys()[0] not in ['factor', 'add']]
+                           if list(line.keys())[0] not in ['factor', 'add']]
     if len(unparsed_conditions) > 1:
         unparsed_conditions = [{'AND': unparsed_conditions}]
 
@@ -34,20 +33,20 @@ def parse(modifier, loc_data):
 
     yaml_output = yaml.dump({adjustment: conditions}, indent=4,
                             default_flow_style=False,
-                            allow_unicode=True).decode('utf-8')
-    pseudo_yaml = re.sub(ur'(\xd7[\d.]+):\n\s*- ', r'(\1)',
-                         yaml_output).replace('- ', u'• ')
+                            allow_unicode=True)
+    pseudo_yaml = re.sub(r'(\xd7[\d.]+):\n\s*- ', r'(\1)',
+                         yaml_output).replace('- ', '• ')
     return pseudo_yaml
 
 
 def _parse_condition(condition):
-    key = condition.keys()[0]
+    key = list(condition.keys())[0]
     value = condition[key]
     return globals()['_localize_' + key.lower()](value)
 
 
 def _localize_factor(factor):
-    return u'\xD7{}'.format(factor)
+    return '\xD7{}'.format(factor)
 
 
 def _localize_add(add):
@@ -63,6 +62,26 @@ def _localize_has_ethic(value):
 def _localize_has_not_ethic(value):
     ethic = localization_map[value]
     return 'Does NOT have {} Ethic'.format(ethic)
+
+
+def _localize_is_pacifist(value):
+    return 'Is some degree of Pacifist' if value == 'yes' \
+        else 'Is NOT some degree of Pacifist'
+
+
+def _localize_is_militarist(value):
+    return 'Is some degree of Militarist' if value == 'yes' \
+        else 'Is NOT some degree of Militarist'
+
+
+def _localize_is_materialist(value):
+    return 'Is some degree of Materialist' if value == 'yes' \
+        else 'Is NOT some degree of Materialist'
+
+
+def _localize_is_spiritualist(value):
+    return 'Is some degree of Spiritualist' if value == 'yes' \
+        else 'Is NOT some degree of Spiritualist'
 
 
 def _localize_has_civic(value):
@@ -197,6 +216,13 @@ def _localize_count_owned_pops(value):
     operator, value = _operator_and_value(value[1]['count'])
     return 'Number of enslaved planets {} {}'.format(operator, value)
 
+
+def _localize_count_starbase_sizes(value):
+    starbase_size = localization_map[value[0]['starbase_size']]
+    operator, value = _operator_and_value(value[1]['count'])
+    return 'Number of Starbase {} is {} {}'.format(starbase_size, operator, value)
+    
+
 def _localize_num_communications(value):
     operator, value = _operator_and_value(value)
     return 'Number of owned planets is {} {}'.format(operator, value)
@@ -211,31 +237,63 @@ def _localize_is_ai(value):
 
 
 def _localize_is_same_species(value):
-    localized_value = 'Dominant' \
-                      if value.lower() == 'root' \
-                         else localization_map[value]
-    return 'Is of the {} Species'.format(localized_value)
+    species = 'Dominant' \
+              if value.lower() == 'root' \
+                 else localization_map[value]
+    return 'Is of the {} Species'.format(species)
 
 
 def _localize_is_species(value):
-    localized_value = 'Dominant' \
-                      if value.lower() == 'root' \
-                         else localization_map[value]
+    species = 'Dominant' \
+              if value.lower() == 'root' \
+                 else localization_map[value]
     article = 'an' if localized_value[0].lower() in 'aeiou' else 'a'
 
-    return 'Is {} {}'.format(article, localized_value)
+    return 'Is {} {}'.format(article, species)
 
 
 def _localize_is_species_class(value):
-    localized_value = localization_map[value]
+    species_class = localization_map[value]
     article = 'an' if localized_value[0].lower() in 'aeiou' else 'a'
 
-    return 'Is {} {}'.format(article, localized_value)
+    return 'Is {} {}'.format(article, species_class)
 
 
 def _localize_is_enslaved(value):
         return 'Pop is enslaved' if value == 'yes' else 'Pop is NOT enslaved'
 
+
+def _localize_has_seen_any_bypass(value):
+    loc_key = 'bypass_{}'.format(value).upper()
+    bypass = localization_map[loc_key]
+    if bypass.startswith('$'):
+        bypass = localization_map[bypass.replace('$', '')]
+    return 'Has encountered a {}'.format(bypass)
+    
+
+def _localize_has_not_seen_any_bypass(value):
+    loc_key = 'bypass_{}'.format(value).upper()
+    bypass = localization_map[loc_key]
+    if bypass.startswith('$'):
+        bypass = localization_map[bypass.replace('$', '')]
+    return 'Has NOT encountered a {}'.format(bypass)
+    
+
+def _localize_owns_any_bypass(value):
+    loc_key = 'bypass_{}'.format(value).upper()
+    bypass = localization_map[loc_key]
+    if bypass.startswith('$'):
+        bypass = localization_map[bypass.replace('$', '')]
+    return 'Controls a system with a {}'.format(bypass)
+    
+
+def _localize_not_owns_any_bypass(value):
+    loc_key = 'bypass_{}'.format(value).upper()
+    bypass = localization_map[loc_key]
+    if bypass.startswith('$'):
+        bypass = localization_map[bypass.replace('$', '')]
+    return 'Does NOT control a system with a {}'.format(bypass)
+    
 
 def _localize_years_passed(value):
     operator, value = _operator_and_value(value)
@@ -262,7 +320,7 @@ def _localize_research_leader(values, negated=False):
 
     localized_conditions = []
     for condition in values[1:]:
-        key = condition.keys()[0]
+        key = list(condition.keys())[0]
         value = condition[key]
         localized_condition = {
             'has_trait': lambda: _localize_has_expertise(value),
@@ -310,9 +368,16 @@ def _localize_any_relation(values):
     parsed_values = [_parse_condition(value) for value in values]
     return {'Any Relation': parsed_values}
 
+
 def _localize_any_owned_pop(values):
     parsed_values = [_parse_condition(value) for value in values]
     return {'Any empire Pop': parsed_values}
+
+
+def _localize_any_pop(values):
+    parsed_values = [_parse_condition(value) for value in values]
+    return {'Any Pop': parsed_values}
+
 
 def _localize_not_any_owned_pop(values):
     parsed_values = [_parse_condition(value) for value in values]
@@ -328,6 +393,9 @@ def _localize_any_planet(values):
     parsed_values = [_parse_condition(value) for value in values]
     return {'Any Planet': parsed_values}
 
+def _localize_any_planet_within_border(values):
+    parsed_values = [_parse_condition(value) for value in values]
+    return {'Any Planet within Borders': parsed_values}
 
 def _localize_not_any_owned_planet(values):
     parsed_values = [_parse_condition(value) for value in values]
@@ -396,7 +464,7 @@ def _localize_nor(values):
 
 
 def _localize_not(value):
-    key = value[0].keys()[0]
+    key = list(value[0].keys())[0]
     nested_value = value[0][key]
 
     if key == 'OR':
@@ -421,11 +489,12 @@ def _operator_and_value(data):
         operator = 'equal to'
         value = data
     elif type(data) is dict:
-        operator = {
-            '>': 'greater than',
-            '<': 'less than'
-        }[data.keys()[0]]
-        value = data.values()[0]
+        symbol = list(data.keys())[0]
+        operator = {'>': 'greater than',
+                    '<': 'less than',
+                    '>=': 'greater than or equal to',
+                    '<=': 'less than or equal to'}[symbol]
+        value = list(data.values())[0]
 
     return operator, value
 
@@ -527,6 +596,10 @@ def _localize_uses_plasma_disruptor_weapons(value):
 def _localize_uses_antiproton_weapons_any(value):
     return 'Uses Anti-Proton Weapons' if value == 'yes' \
         else 'Does NOT use Anti-Proton Weapons'
+
+def _localize_is_sapient(value):
+    return 'This Species is pre-sapient' if value == 'yes' \
+        else 'This Species is NOT pre-sapient'
 
 def _localize_uses_cloaks(value):
     return 'Uses Cloaking' if value == 'yes' \
