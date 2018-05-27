@@ -227,6 +227,7 @@ def localized_strings():
 
     return loc_data
 
+scripted_vars_file_paths = []
 tech_file_paths = []
 army_file_paths = []
 army_attachment_file_paths = []
@@ -245,6 +246,9 @@ skip_terms = ['^events?', 'tutorials?', 'pop_factions?', 'name_lists?',
 has_skip_term = re.compile(r'(?:{})_'.format('|'.join(skip_terms)))
 
 for directory in directories:
+    scripted_vars_dir = path.join(directory, 'common/scripted_variables')
+    scripted_vars_file_paths = get_file_paths(scripted_vars_file_paths, scripted_vars_dir)
+
     tech_dir = path.join(directory, 'common/technology')
     tech_file_paths = get_file_paths(tech_file_paths, tech_dir)
 
@@ -291,6 +295,9 @@ for directory in directories:
 
 loc_data = localized_strings()
 
+pdx_scripted_vars_scripts = '\r\n'.join([open(file_path).read()
+                                        for file_path
+                                        in scripted_vars_file_paths])
 pdx_tech_scripts = '\r\n'.join([open(file_path).read() for file_path
                                 in tech_file_paths])
 pdx_army_scripts = '\r\n'.join([open(file_path).read() for file_path
@@ -332,7 +339,8 @@ def parse_scripts(file_paths):
 
     return parsed
 
-parsed_scripts = {'technology': parse_scripts(tech_file_paths),
+parsed_scripts = {'scripted_vars': parse_scripts(scripted_vars_file_paths),
+                  'technology': parse_scripts(tech_file_paths),
                   'army': parse_scripts(army_file_paths),
                   'army_attachment': parse_scripts(army_attachment_file_paths),
                   'buildable_pop': parse_scripts(buildable_pop_file_paths),
@@ -385,7 +393,7 @@ tile_blockers = [TileBlocker(entry, loc_data)
 at_vars = {}
 technologies = []
 
-for entry in parsed_scripts['technology']:
+for entry in parsed_scripts['scripted_vars'] + parsed_scripts['technology']:
     if list(entry)[0].startswith('@'):
         at_var = list(entry)[0]
         at_vars[at_var] = entry[at_var]
