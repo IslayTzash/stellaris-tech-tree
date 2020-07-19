@@ -40,41 +40,45 @@ and [viewer](https://github.com/turanar/stellaris-tech-tree) into two separate r
 
 Many of the Stellaris game rules are captured in YAML files.  Looking in /steamapps/common/Stellaris/common there are folders for many of the games basic concepts.
 
-achievements                  | country_types              | leader_classes                | sector_focuses
-achievements.txt              | decisions                  | mandates                      | sector_types
-agendas                       | defines                    | map_modes                     | ship_behaviors
-ai_budget                     | deposit_categories         | megastructures                | ship_sizes
-alerts.txt                    | deposits                   | message_types.txt             | solar_system_initializers
-ambient_objects               | diplo_phrases              | name_lists                    | special_projects
-anomalies                     | diplomacy_economy          | notification_modifiers        | species_archetypes
-archaeological_site_types     | diplomatic_actions         | observation_station_missions  | species_classes
-armies                        | districts                  | on_actions                    | species_names
-artifact_actions              | dynamic_text               | opinion_modifiers             | species_rights
-ascension_perks               | economic_categories        | personalities                 | star_classes
-asteroid_belts                | economic_plans             | planet_classes                | starbase_buildings
-attitudes                     | edicts                     | planet_modifiers              | starbase_levels
-bombardment_stances           | ethics                     | policies                      | starbase_modules
-buildings                     | event_chains               | pop_categories                | starbase_types
-button_effects                | fallen_empires             | pop_faction_types             | start_screen_messages
-bypass                        | federation_law_categories  | pop_jobs                      | static_modifiers
-casus_belli                   | federation_laws            | precursor_civilizations       | strategic_resources
-colony_automation             | federation_perks           | random_names                  | subjects
-colony_automation_exceptions  | federation_types           | relics                        | system_types
-colony_types                  | galactic_focuses           | resolution_categories         | technology
-colors                        | game_rules                 | resolutions                   | terraform
-component_sets                | global_ship_designs        | scripted_effects              | trade_conversions
-component_slot_templates      | governments                | scripted_loc                  | tradition_categories
-component_tags                | graphical_culture          | scripted_triggers             | traditions
-component_templates           | HOW_TO_MAKE_NEW_SHIPS.txt  | scripted_variables            | traits
-country_customization         | lawsuits                   | section_templates             | war_goals
+| |  | |  |
+|--- | --- | --- | --- |
+|achievements                  | country_types              | leader_classes                | sector_focuses
+|achievements.txt              | decisions                  | mandates                      | sector_types
+|agendas                       | defines                    | map_modes                     | ship_behaviors
+|ai_budget                     | deposit_categories         | megastructures                | ship_sizes
+|alerts.txt                    | deposits                   | message_types.txt             | solar_system_initializers
+|ambient_objects               | diplo_phrases              | name_lists                    | special_projects
+|anomalies                     | diplomacy_economy          | notification_modifiers        | species_archetypes
+|archaeological_site_types     | diplomatic_actions         | observation_station_missions  | species_classes
+|armies                        | districts                  | on_actions                    | species_names
+|artifact_actions              | dynamic_text               | opinion_modifiers             | species_rights
+|ascension_perks               | economic_categories        | personalities                 | star_classes
+|asteroid_belts                | economic_plans             | planet_classes                | starbase_buildings
+|attitudes                     | edicts                     | planet_modifiers              | starbase_levels
+|bombardment_stances           | ethics                     | policies                      | starbase_modules
+|buildings                     | event_chains               | pop_categories                | starbase_types
+|button_effects                | fallen_empires             | pop_faction_types             | start_screen_messages
+|bypass                        | federation_law_categories  | pop_jobs                      | static_modifiers
+|casus_belli                   | federation_laws            | precursor_civilizations       | strategic_resources
+|colony_automation             | federation_perks           | random_names                  | subjects
+|colony_automation_exceptions  | federation_types           | relics                        | system_types
+|colony_types                  | galactic_focuses           | resolution_categories         | technology
+|colors                        | game_rules                 | resolutions                   | terraform
+|component_sets                | global_ship_designs        | scripted_effects              | trade_conversions
+|component_slot_templates      | governments                | scripted_loc                  | tradition_categories
+|component_tags                | graphical_culture          | scripted_triggers             | traditions
+|component_templates           | HOW_TO_MAKE_NEW_SHIPS.txt  | scripted_variables            | traits
+|country_customization         | lawsuits                   | section_templates             | war_goals
 
 If you look inside /technology/ you can see files for the main tech areas [physics, social, engineering] and the DLC.
 
-00_apocalypse_tech.txt      | 00_fallen_empire_tech.txt  | 00_phys_tech.txt             | 00_soc_tech_repeatable.txt       | tier/
-00_distant_stars_tech.txt   | 00_horizonsignal_tech.txt  | 00_phys_tech_repeatable.txt  | 00_soc_weapon_tech.txt
-00_eng_tech.txt             | 00_leviathans_tech.txt     | 00_phys_weapon_tech.txt      | 00_strategic_resources_tech.txt
-00_eng_tech_repeatable.txt  | 00_megacorp_tech.txt       | 00_repeatable.txt            | 00_synthetic_dawn_tech.txt
-00_eng_weapon_tech.txt      | 00_megastructures.txt      | 00_soc_tech.txt              | category/
+| | | | | |
+| --- | --- | --- | --- | --- |
+|00_apocalypse_tech.txt      | 00_fallen_empire_tech.txt  | 00_phys_tech.txt             | 00_soc_tech_repeatable.txt       | tier/
+|00_distant_stars_tech.txt   | 00_horizonsignal_tech.txt  | 00_phys_tech_repeatable.txt  | 00_soc_weapon_tech.txt
+|00_eng_tech.txt             | 00_leviathans_tech.txt     | 00_phys_weapon_tech.txt      | 00_strategic_resources_tech.txt
+|00_eng_tech_repeatable.txt  | 00_megacorp_tech.txt       | 00_repeatable.txt            | 00_synthetic_dawn_tech.txt
+|00_eng_weapon_tech.txt      | 00_megastructures.txt      | 00_soc_tech.txt              | category/
 
 The entries are mostly human readable.
 
