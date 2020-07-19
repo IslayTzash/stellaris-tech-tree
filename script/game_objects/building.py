@@ -1,7 +1,7 @@
 class Building:
-    def __init__(self, building, loc_data):
+    def __init__(self, building, localizer):
         self.key = list(building.keys())[0]
-        self.name = loc_data.get(self.key, self.key)
+        self.name = localizer.get(self.key)
 
         building_data = building[self.key]
         self.prerequisites = self._prerequisites(building_data)

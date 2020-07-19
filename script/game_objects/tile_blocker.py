@@ -1,7 +1,7 @@
 class TileBlocker:
-    def __init__(self, tile_blocker, loc_data):
+    def __init__(self, tile_blocker, localizer):
         self.key = list(tile_blocker.keys())[0]
-        self.name = loc_data.get(self.key, self.key)
+        self.name = localizer.get(self.key)
         blocker_data = tile_blocker[self.key]
         self.prerequisites = self._prerequisites(blocker_data)
 

@@ -1,7 +1,7 @@
 class Component:
-    def __init__(self, component_data, loc_data):
+    def __init__(self, component_data, localizer):
         self.key = self._key(component_data)
-        self.name = loc_data.get(self.key, self.key)
+        self.name = localizer.get(self.key)
         self.prerequisites = self._prerequisites(component_data)
 
     def _key(self, component_data):

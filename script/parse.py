@@ -13,7 +13,7 @@ import re
 import ruamel.yaml as yaml
 import sys
 from game_objects import Army, ArmyAttachment, BuildablePop, Building, \
-    Component, Edict, Policy, Resource, SpaceportModule, Technology, \
+    Component, Edict, Localizer, Policy, Resource, SpaceportModule, Technology, \
     TechnologyJSONEncoder, TileBlocker
 
 spec = importlib.util.spec_from_file_location('config', './config.py')
@@ -212,6 +212,7 @@ def localized_strings():
         not_yaml = ''
         for line in not_yaml_lines:
 
+            # YAML parser really doesn't like stray colons.  Just dump this prefix, there are no matches in localization for the string that follows.
             line = re.sub( r"event_target:", '', line)
 
             quote_instances = [i for i, char in enumerate(line)
@@ -240,8 +241,7 @@ def localized_strings():
             loc_data.update(loc_map)
         except TypeError:
             print('Unable to find head YAML key for {}'.format(filename))
-            sys.exit()
-
+            sys.exit()    
     return loc_data
 
 scripted_vars_file_paths = []
@@ -310,7 +310,10 @@ for directory in directories:
                        and filename.endswith('l_english.yml')
                        and not has_skip_term.search(filename)]
 
-loc_data = localized_strings()
+localizer = Localizer(localized_strings())
+
+# TODO: Entry is missing from localization
+localizer.put_if_not_exist('BYPASS_LGATE', 'L-Gate')
 
 pdx_scripted_vars_scripts = '\r\n'.join([open(file_path).read()
                                         for file_path
@@ -374,41 +377,41 @@ parsed_scripts = {'scripted_vars': parse_scripts(scripted_vars_file_paths),
 #print('## EDICTS {}',format(repr(parsed_scripts['edict'])))
 #exit(0)
 
-armies = [Army(entry, loc_data)
+armies = [Army(entry, localizer)
           for entry in parsed_scripts['army']
           if not list(entry)[0].startswith('@')]
-army_attachments = [ArmyAttachment(entry, loc_data)
+army_attachments = [ArmyAttachment(entry, localizer)
                     for entry in parsed_scripts['army_attachment']
                     if not list(entry)[0].startswith('@')]
-buildable_pops = [BuildablePop(entry, loc_data)
+buildable_pops = [BuildablePop(entry, localizer)
                   for entry
                   in parsed_scripts['buildable_pop']
                   if not list(entry)[0].startswith('@')]
-buildings = [Building(entry, loc_data)
+buildings = [Building(entry, localizer)
              for entry
              in parsed_scripts['building']
              if not list(entry)[0].startswith('@')]
-components = [Component(list(entry.values())[0], loc_data)
+components = [Component(list(entry.values())[0], localizer)
               for entry
               in parsed_scripts['component']
               if not list(entry)[0].startswith('@')]
-edicts = [Edict(entry, loc_data)
+edicts = [Edict(entry, localizer)
           for entry
           in parsed_scripts['edict']
           if not str(list(entry)[0]).startswith('@')]
-policies = [Policy(entry, loc_data)
+policies = [Policy(entry, localizer)
             for entry
             in parsed_scripts['policy']
             if not list(entry)[0].startswith('@')]
-resources = [Resource(entry, loc_data)
+resources = [Resource(entry, localizer)
              for entry
              in parsed_scripts['resource']
              if not list(entry)[0].startswith('@')]
-spaceport_modules = [SpaceportModule(entry, loc_data)
+spaceport_modules = [SpaceportModule(entry, localizer)
                      for entry
                      in parsed_scripts['spaceport_module']
                      if not list(entry)[0].startswith('@')]
-tile_blockers = [TileBlocker(entry, loc_data)
+tile_blockers = [TileBlocker(entry, localizer)
                  for entry
                  in parsed_scripts['tile_blocker']
                  if not list(entry)[0].startswith('@')]
@@ -429,7 +432,7 @@ for entry in parsed_scripts['scripted_vars'] + parsed_scripts['technology']:
 
     tech = Technology(entry, armies, army_attachments, buildable_pops,
                       buildings, components, edicts, policies, resources,
-                      spaceport_modules, tile_blockers, loc_data, at_vars,
+                      spaceport_modules, tile_blockers, localizer, at_vars,
                       start_with_tier_zero)
     if not tech.is_start_tech \
        and tech.base_weight * tech.base_factor == 0 \

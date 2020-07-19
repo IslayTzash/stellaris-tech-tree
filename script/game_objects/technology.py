@@ -6,22 +6,22 @@ from json import JSONEncoder
 class Technology:
     def __init__(self, tech, armies, army_attachments, buildable_pops,
                  buildings, components, edicts, policies, resources,
-                 spaceport_modules, tile_blockers, loc_data, at_vars,
+                 spaceport_modules, tile_blockers, localizer, at_vars,
                  start_with_tier_zero=True):
         self.key = list(tech.keys())[0]
         self._at_vars = at_vars
-        self._loc_data = loc_data
-        self.name = loc_data.get(self.key, self.key)
+        self._localizer = localizer
+        self.name = localizer.get(self.key)
 
         tech_data = tech[self.key]
 
         self.description = self._description()
         self.area = next(iter(key for key in tech_data
                               if list(key.keys())[0] == 'area'))['area']
-        self.category = loc_data[
+        self.category = localizer.get(
             next(iter(key for key in tech_data
                       if list(key.keys())[0] == 'category'))['category'][0]
-        ]
+        )
 
         self.tier = next(
             iter(key for key in tech_data if list(key.keys())[0] == 'tier')
@@ -43,7 +43,7 @@ class Technology:
                                        buildable_pops, buildings, components,
                                        edicts, policies, resources,
                                        spaceport_modules, tile_blockers,
-                                       loc_data)
+                                       localizer)
         self.feature_unlocks = unlock_parser.parse(self.key, tech_data)
 
     def _is_start_tech(self, tech_data, start_with_tier_zero):
@@ -81,8 +81,8 @@ class Technology:
 
     def _description(self):
         try:
-            description = self._loc_data[self.key + '_desc']
-            self.description = (self._loc_data[description.replace('$', '')]
+            description = self._localizer.get(self.key + '_desc')
+            self.description = (self._localizer.get(description.replace('$', ''))
                                 if description.startswith('$')
                                 else description)
         except KeyError:
@@ -149,7 +149,7 @@ class Technology:
         except StopIteration:
             unparsed_modifiers = []
 
-        return [parse_weight_modifiers(modifier['modifier'], self._loc_data, self._at_vars)
+        return [parse_weight_modifiers(modifier['modifier'], self._localizer, self._at_vars)
                 for modifier in unparsed_modifiers
                 if list(modifier.keys()) == ['modifier']]
 

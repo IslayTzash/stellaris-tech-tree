@@ -12,7 +12,7 @@ let config = {
     connectors: { type: 'step' },
     node: {
 	HTMLclass: 'tech',
-	collapsable: false
+	collapsable: true
     },
     callback: {
 	onTreeLoaded: function() {
@@ -50,6 +50,34 @@ let config = {
     }
 };
 let rootNode = {HTMLid: 'root', data: {tier: 0}};
+// society, engineering, physics 1 2 3 4 5
+let tierNodes = {}
+const AREAS = ['society', 'engineering', 'physics']
+const TIERS = [1, 2, 3, 4, 5]
+AREAS.forEach(area => {
+	tierNodes[area] = {}
+	TIERS.forEach(tier => {
+		let o = { 
+			HTMLid: area+'-tier-'+tier,
+			HTMLclass: area,
+			data: {tier: tier},
+			parent: rootNode, // tier == 1 ? rootNode : tierNodes[area][tier-1],
+			pseudo: true,
+			childrenDropLevel: tier,
+			connectors: {
+				style: {
+					'stroke-opacity': 0,
+					'stroke': 'white'
+				}
+			},
+			text: { 
+				name: 'T' + tier + ' No Prereq',
+				title: area
+			}
+		}
+		tierNodes[area][tier] = o
+	})
+})
 
 $(document).ready(function() {
     $.getJSON('techs.json', function(techData) {
@@ -134,21 +162,26 @@ $(document).ready(function() {
 	    let prerequisite = tech.data.prerequisites[0] || null;
 
 	    if ( tech.data.tier === 0 || prerequisite === null) {
-		tech.parent = rootNode;
+			if (tech.data.tier === 1 || tech.data.tier === 2 || tech.data.tier === 3 ||tech.data.tier === 4 ||tech.data.tier === 5) {
+				tech.parent = tierNodes[tech.data.area][tech.data.tier]
+			} else {
+				tech.parent = rootNode
+			}
 	    }
 	    else {
-		let parentKey = prerequisite;
-		tech.parent = parentKey.match('-pseudoParent')
-		    ? { HTMLid: tech.HTMLid + '-pseudoParent',
-			parent: rootNode,
-			pseudo: true,
-			data: {tier: 0} }
-		: techs.filter(function(candidate) {
-		    return candidate.HTMLid === parentKey;
-		})[0];
+			let parentKey = prerequisite;
+			tech.parent = parentKey.match('-pseudoParent')
+				? { HTMLid: tech.HTMLid + '-pseudoParent',
+					parent: rootNode,
+					pseudo: true,
+					data: {tier: 0},
+					childrenDropLevel: tech.data.tier
+					}
+				: techs.filter(function(candidate) {
+					return candidate.HTMLid === parentKey;
+					})[0];
 	    }
 
-	    console.log(key);
 	    let tierDifference = tech.data.tier - tech.parent.data.tier;
 	    let nestedTech = tech;
 	    while ( tierDifference > 1 && nestedTech.parent != rootNode ) {
@@ -170,9 +203,28 @@ $(document).ready(function() {
 	    while ( tech.parent.pseudo ) {
 		techs.push(tech.parent);
 		tech = tech.parent;
-	    }
+		}
 	}
 
-	new Treant([config, rootNode].concat(techs));
+	// Some rearranging to get the unparented + parented techs to group better by area
+	// assuming techs are ordered: physics, society, engineering
+	let techlist = [config, rootNode, tierNodes['physics'][1], tierNodes['physics'][2], tierNodes['physics'][3], tierNodes['physics'][4], tierNodes['physics'][5]]
+	let last_area = 'physics'
+	let remaining_areas = [ 'society', 'engineering']
+	for ( let i = 0; i < techs.length; i++ ) {
+		techlist = techlist.concat(techs[i])
+		if (techs[i].data.area !== last_area && remaining_areas.length > 0) {
+			let area = remaining_areas.shift()
+			techlist = techlist.concat(tierNodes[area][1], tierNodes[area][2], tierNodes[area][3], tierNodes[area][4], tierNodes[area][5])
+			last_area = techs[i].data.area
+		}
+	}
+	// Just in case we were totally out of order and missed one
+	remaining_areas.forEach( area => {
+		techlist = techlist.concat(tierNodes[area][1], tierNodes[area][2], tierNodes[area][3], tierNodes[area][4], tierNodes[area][5])
+	})
+
+	new Treant(techlist);
+
     });
 });

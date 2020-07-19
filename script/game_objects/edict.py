@@ -1,7 +1,7 @@
 class Edict:
-    def __init__(self, edict_data, loc_data):
+    def __init__(self, edict_data, localizer):
         name = self._name(edict_data)
-        self.name = loc_data.get('edict_' + name, name)
+        self.name = localizer.get_or_default('edict_' + name, name)
         self.prerequisites = self._prerequisites(edict_data[name])
 
     def _name(self, edict_data):

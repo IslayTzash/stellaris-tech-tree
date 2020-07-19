@@ -1,32 +1,31 @@
 import sys
 
 class Policy:
-    def __init__(self, policy, loc_data):
+    def __init__(self, policy, localizer):
         self.key = list(policy.keys())[0]
-        self.name = loc_data.get('policy_' + self.key, self.key)
-        self._loc_data = loc_data
+        self.name = localizer.get_or_default('policy_' + self.key, self.key)
 
         policy_data = policy[self.key]
-        self.options = self._options(policy_data, loc_data)
+        self.options = self._options(policy_data, localizer)
 
-    def _options(self, policy_data, loc_data):
-        return [Option(entry['option'], loc_data)
+    def _options(self, policy_data, localizer):
+        return [Option(entry['option'], localizer)
                 for entry in policy_data
                 if list(entry.keys())[0] == 'option']
 
 
 class Option:
-    def __init__(self, option_data, loc_data):
-        self.name = self._name(option_data, loc_data)
+    def __init__(self, option_data, localizer):
+        self.name = self._name(option_data, localizer)
         self.prerequisites = self._prerequisites(option_data)
 
 
-    def _name(self, option_data, loc_data):
+    def _name(self, option_data, localizer):
         unlocalized = next(iter(
             subkey for subkey in option_data if list(subkey.keys())[0] == 'name'
         ))['name']
 
-        return loc_data[unlocalized]
+        return localizer.get(unlocalized)
 
     def _prerequisites(self, option_data):
         try:

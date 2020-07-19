@@ -1,7 +1,7 @@
 class Resource:
-    def __init__(self, resource, loc_data):
+    def __init__(self, resource, localizer):
         self.key = list(resource.keys())[0]
-        self.name = loc_data.get(self.key, self.key)
+        self.name = localizer.get(self.key)
         resource_data = resource[self.key]
         self.prerequisites = self._prerequisites(resource_data)
 

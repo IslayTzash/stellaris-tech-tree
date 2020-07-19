@@ -1,7 +1,7 @@
 class ArmyAttachment:
-    def __init__(self, attachment, loc_data):
+    def __init__(self, attachment, localizer):
         self.key = list(attachment.keys())[0]
-        self.name = loc_data.get('army_attachment_' + self.key, self.key)
+        self.name = localizer.get_or_default('army_attachment_' + self.key, self.key)
         attachment_data = attachment[self.key]
         self.prerequisites = self._prerequisites(attachment_data)
 

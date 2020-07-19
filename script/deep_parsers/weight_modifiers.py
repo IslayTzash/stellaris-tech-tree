@@ -4,18 +4,14 @@ import re
 import ruamel.yaml as yaml
 import sys
 
-localization_map = {}
-wm_at_vars = {}
+_localizer = None
+_wm_at_vars = {}
 
-def parse(modifier, loc_data, at_vars):
-    global localization_map
-    global wm_at_vars
-    localization_map = loc_data
-    wm_at_vars = at_vars
-
-    # TODO: Entry is missing from localization
-    if not 'BYPASS_LGATE' in localization_map:
-        localization_map['BYPASS_LGATE'] = 'L-Gate'
+def parse(modifier, localizer, at_vars):
+    global _localizer
+    global _wm_at_vars
+    _localizer = localizer
+    _wm_at_vars = at_vars
 
     if len(modifier) == 1:
         modifier.append({'always': 'yes'})
@@ -64,7 +60,7 @@ def _localize_federation(value):
     # TODO EXTEND?
     if type(value) is list and 2 == len(value):
         if 'has_federation_perk' in value[0]:
-            perk = localization_map[value[0]['has_federation_perk']]
+            perk = _localizer.get(value[0]['has_federation_perk'])
             if 'any_member' in value[1]:
                 return 'Has Federation Perk: {} and any member {}'.format(perk, _localize_has_technology(value[1]['any_member'][0]['has_technology']))
     print(' ++ No _localize_federation for: {}'.format(repr(value)))
@@ -72,14 +68,14 @@ def _localize_federation(value):
 
 
 def _localize_has_origin(value):
-    ethic = localization_map[value]
+    ethic = _localizer.get(value)
     return 'Has {} Origin'.format(ethic)
 
 
 def _localize_factor(factor):
-    global wm_at_vars
-    if str(factor).startswith('@') and factor in wm_at_vars:
-        factor = wm_at_vars[factor]
+    global _wm_at_vars
+    if str(factor).startswith('@') and factor in _wm_at_vars:
+        factor = _wm_at_vars[factor]
     return '\xD7{}'.format(factor)
 
 
@@ -89,17 +85,17 @@ def _localize_add(add):
 
 
 def _localize_has_deposit(value):
-    ethic = localization_map[value]
+    ethic = _localizer.get(value)
     return 'Has {} Deposit'.format(ethic)
 
 
 def _localize_has_ethic(value):
-    ethic = localization_map[value]
+    ethic = _localizer.get(value)
     return 'Has {} Ethic'.format(ethic)
 
 
 def _localize_has_not_ethic(value):
-    ethic = localization_map[value]
+    ethic = _localizer.get(value)
     return 'Does NOT have {} Ethic'.format(ethic)
 
 
@@ -138,65 +134,62 @@ def _localize_is_xenophobe(value):
         else 'Is NOT some degree of Xenophobe'
 
 def _localize_has_civic(value):
-    civic = localization_map[value]
+    civic = _localizer.get(value)
     return 'Has {} Government Civic'.format(civic)
 
 
 def _localize_has_valid_civic(value):
-    civic = localization_map[value]
+    civic = _localizer.get(value)
     return 'Has {} Government Civic'.format(civic)
 
 
 def _localize_has_not_civic(value):
-    civic = localization_map[value]
+    civic = _localizer.get(value)
     return 'Does NOT have {} Government Civic'.format(civic)
 
 
 def _localize_has_ascension_perk(value):
-    perk = localization_map[value]
+    perk = _localizer.get(value)
     return 'Has {} Ascension Perk'.format(perk)
 
 
 def _localize_has_megastructure(value):
-    megastructure = localization_map[value]
+    megastructure = _localizer.get(value)
     return 'Has Megatructure {}'.format(megastructure)
 
 
 def _localize_has_policy_flag(value):
-    if value in localization_map:
-        policy_flag = localization_map[value]
-    else:
-        policy_flag = value
+    policy_flag = _localizer.get(value)
     return 'Has {} Policy'.format(policy_flag)
 
 
 def _localize_has_trait(value):
-    trait = localization_map[value]
+    trait = _localizer.get(value)
     return 'Has {} Trait'.format(trait)
 
 def _localize_pop_has_trait(value):
-    trait = localization_map[value]
+    trait = _localizer.get(value)
     return 'Population has {} Trait'.format(trait)
 
 def _localize_has_authority(value):
-    authority = localization_map[value]
+    authority = _localizer.get(value)
     return 'Has {} Authority'.format(authority)
 
 def _localize_has_not_authority(value):
-    authority = localization_map[value]
+    authority = _localizer.get(value)
     return 'Does NOT have {} Authority'.format(authority)
 
 def _localize_host_has_dlc(dlc):
-    # dlc = localization_map[value]
+    # dlc = _localizer.get(value)
     return 'Host does has the {} DLC'.format(dlc)
 
 def _localize_host_has_not_dlc(dlc):
-    # dlc = localization_map[value]
+    # dlc = _localizer.get(value)
     return 'Host does NOT have the {} DLC'.format(dlc)
 
 def _localize_has_technology(value):
     try:
-        technology = localization_map[value]
+        technology = _localizer.get(value)
     except KeyError:
         technology = value
 
@@ -205,7 +198,7 @@ def _localize_has_technology(value):
 
 def _localize_has_not_technology(value):
     try:
-        technology = localization_map[value]
+        technology = _localizer.get(value)
     except KeyError:
         technology = value
 
@@ -213,12 +206,12 @@ def _localize_has_not_technology(value):
 
 
 def _localize_has_modifier(value):
-    modifier = localization_map[value]
+    modifier = _localizer.get(value)
     return 'Has the {} modifier'.format(modifier)
 
 
 def _localize_has_not_modifier(value):
-    modifier = localization_map[value]
+    modifier = _localizer.get(value)
     return 'Does NOT have the {} modifier'.format(modifier)
 
 
@@ -231,17 +224,17 @@ def _localize_ideal_planet_class(value):
 
 
 def _localize_is_planet_class(value):
-    planet_class = localization_map[value]
+    planet_class = _localizer.get(value)
     return 'Is {}'.format(planet_class)
 
 
 def _localize_has_government(value):
-    government = localization_map[value]
+    government = _localizer.get(value)
     return 'Has {}'.format(government)
 
 
 def _localize_has_not_government(value):
-    government = localization_map[value]
+    government = _localizer.get(value)
     return 'Does NOT have {}'.format(government)
 
 
@@ -278,7 +271,7 @@ def _localize_count_owned_pops(value):
 
 
 def _localize_count_starbase_sizes(value):
-    starbase_size = localization_map[value[0]['starbase_size']]
+    starbase_size = _localizer.get(value[0]['starbase_size'])
     operator, value = _operator_and_value(value[1]['count'])
     return 'Number of Starbase {} is {} {}'.format(starbase_size, operator, value)
     
@@ -292,7 +285,7 @@ def _localize_num_districts(value):
     if type(value) is list:
         for d in value:
             if 'type' in d:
-                key = localization_map[d['type']]                
+                key = _localizer.get(d['type'])
             elif 'value' in d:
                 operator, value = _operator_and_value(d['value'])
                 value = 'Number of {} is {} {}'.format(key, operator, value)
@@ -316,20 +309,20 @@ def _localize_is_ai(value):
 def _localize_is_same_species(value):
     species = 'Dominant' \
               if value.lower() == 'root' \
-                 else localization_map[value]
+                 else _localizer.get(value)
     return 'Is of the {} Species'.format(species)
 
 
 def _localize_is_species(value):
     species = 'Dominant' \
               if value.lower() == 'root' \
-                 else localization_map[value]
+                 else _localizer.get(value)
     article = 'an' if species[0].lower() in 'aeiou' else 'a'
     return 'Is {} {}'.format(article, species)
 
 
 def _localize_is_species_class(value):
-    species_class = localization_map[value]
+    species_class = _localizer.get(value)
     article = 'an' if species_class[0].lower() in 'aeiou' else 'a'
     return 'Is {} {}'.format(article, species_class)
 
@@ -339,37 +332,22 @@ def _localize_is_enslaved(value):
 
 
 def _localize_has_seen_any_bypass(value):
-    loc_key = 'bypass_{}'.format(value).upper()
-    if loc_key in localization_map:   # bypass_lgate ?
-        bypass = localization_map[loc_key]
-        if bypass.startswith('$'):
-            bypass = localization_map[bypass.replace('$', '')]
-    else:
-        bypass = value
+    bypass = _localizer.get_or_default('bypass_{}'.format(value), value)
     return 'Has encountered a {}'.format(bypass)
     
 
 def _localize_has_not_seen_any_bypass(value):
-    loc_key = 'bypass_{}'.format(value).upper()
-    bypass = localization_map[loc_key]
-    if bypass.startswith('$'):
-        bypass = localization_map[bypass.replace('$', '')]
+    bypass = _localizer.get_or_default('bypass_{}'.format(value), value)
     return 'Has NOT encountered a {}'.format(bypass)
     
 
 def _localize_owns_any_bypass(value):
-    loc_key = 'bypass_{}'.format(value).upper()
-    bypass = localization_map[loc_key]
-    if bypass.startswith('$'):
-        bypass = localization_map[bypass.replace('$', '')]
+    bypass = _localizer.get_or_default('bypass_{}'.format(value), value)
     return 'Controls a system with a {}'.format(bypass)
     
 
 def _localize_not_owns_any_bypass(value):
-    loc_key = 'bypass_{}'.format(value).upper()
-    bypass = localization_map[loc_key]
-    if bypass.startswith('$'):
-        bypass = localization_map[bypass.replace('$', '')]
+    bypass = _localizer.get_or_default('bypass_{}'.format(value), value)
     return 'Does NOT control a system with a {}'.format(bypass)
     
 
@@ -419,7 +397,7 @@ def _localize_has_level(value):
 
 
 def _localize_has_expertise(value):
-    expertise = localization_map[value]
+    expertise = _localizer.get(value)
     if expertise.startswith('Expertise'):
         truncated = expertise.replace('Expertise: ', '')
         condition = 'Is {} Expert'.format(truncated)
@@ -486,7 +464,7 @@ def _localize_any_tile(values):
 
 
 def _localize_has_blocker(value):
-    blocker = localization_map[value]
+    blocker = _localizer.get(value)
     return 'Has {} Tile Blocker'.format(blocker)
 
 
@@ -495,17 +473,17 @@ def _localize_has_surveyed_class(value):
 
 
 def _localize_has_tradition(value):
-    tradition = localization_map[value]
+    tradition = _localizer.get(value)
     return 'Has {} Tradition'.format(tradition)
 
 
 def _localize_has_not_tradition(value):
-    tradition = localization_map[value]
+    tradition = _localizer.get(value)
     return 'Does NOT have {} Tradition'.format(tradition)
 
 
 def _localize_has_swapped_tradition(value):
-    tradition = localization_map[value]
+    tradition = _localizer.get(value)
     return 'Has {} Swapped Tradition'.format(tradition)
 
 
@@ -517,8 +495,7 @@ def _localize_any_neighbor_country(values):
 def _localize_has_resource(value):
     resource, amount = value[0]['type'], value[1]['amount']
     operator, amount = _operator_and_value(amount)
-    localized_resource = localization_map[resource]
-
+    localized_resource = _localizer.get(resource)
     return 'Has {} {} {}'.format(operator, amount, localized_resource)
 
 

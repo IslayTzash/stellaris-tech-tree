@@ -3,7 +3,7 @@ import re
 class FeatureUnlocks:
     def __init__(self, armies, army_attachments, buildable_pops, buildings,
                  components, edicts, policies, resources, spaceport_modules,
-                 tile_blockers, loc_data):
+                 tile_blockers, localizer):
         self._armies = armies
         self._army_attachments = army_attachments
         self._buildable_pops = buildable_pops
@@ -14,25 +14,7 @@ class FeatureUnlocks:
         self._resources = resources
         self._spaceport_modules = spaceport_modules
         self._tile_blockers = tile_blockers
-        self._loc_data = loc_data
-
-    def _localize(self, string):
-        key = string if type(string) is str else string.group(1)
-        localized = next((value for dict_key, value in self._loc_data.items() if dict_key.lower() == key.lower()), None)
-        # print(' ++ loc {} -> {}'.format(repr(key), repr(localized)))
-        if localized is None:
-            # No log message here, we are going to call a lot of trial lookups
-            return localized
-        if localized == '$' + key + '$':
-            print(' ** LOC INFINITE RECURSION STOPPED in feature_unlocks.py: {} -> {}'.format(repr(key), repr(localized)))
-            return localized
-        while '$' in localized:
-            replaced = re.sub(r'\$(\w+)\$', self._localize, localized)
-            if replaced == localized:
-                localized = re.sub('r\$', '', localized)
-                break
-            localized = replaced
-        return localized
+        self._localizer = localizer
 
     # Modifiers gained as a result of completing research
     def parse(self, tech_key, tech_data):
@@ -92,7 +74,7 @@ class FeatureUnlocks:
             for prefix in [ '', 'MOD_', 'MOD_COUNTRY_', 'MOD_POP_', 'MOD_PLANET_']:
                 alt_key = (prefix + key).upper()
                 try:
-                    localized_key = self._localize(alt_key)
+                    localized_key = self._localizer.get_or_default(alt_key, None)
                     if localized_key is None:
                         continue
                     localized = {localized_key: value}
@@ -120,22 +102,12 @@ class FeatureUnlocks:
 
 
     def _unlocks(self, tech_data):
-        def localize(string):
-            try:
-                relocalize = lambda match: self._localize(match.group(1))
-                localized = re.sub(r'\$(\w+)\$', relocalize,
-                                   self._localize(string))
-            except KeyError:
-                localized = string
-
-            return localized
-
         try:
             unlock_types = [unlock_type for unlock_type in next(iter(
                 attribute for attribute in tech_data
                 if list(attribute.keys())[0] == 'prereqfor_desc'
             ))['prereqfor_desc']]
-            feature_unlocks = [localize(list(unlock.values())[0][0]['title'])
+            feature_unlocks = [self._localizer.get(list(unlock.values())[0][0]['title'])
                                for unlock in unlock_types
                                if list(unlock)[0] != 'hide_prereq_for_desc']
         except (StopIteration):
@@ -146,7 +118,7 @@ class FeatureUnlocks:
     def _feature_flags(self, tech_data):
         try:
             feature_flags = [
-                'Unlocks Feature: ' + self._localize('feature_' + feature_flag)
+                'Unlocks Feature: ' + self._localizer.get('feature_' + feature_flag)
                 for feature_flag
                 in next(iter(
                     attribute for attribute in tech_data

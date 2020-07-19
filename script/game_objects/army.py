@@ -1,7 +1,7 @@
 class Army:
-    def __init__(self, army, loc_data):
+    def __init__(self, army, localizer):
         self.key = list(army.keys())[0]
-        self.name = loc_data.get(self.key, self.key)
+        self.name = localizer.get(self.key)
         army_data = army[self.key]
         self.prerequisites = self._prerequisites(army_data)
 
