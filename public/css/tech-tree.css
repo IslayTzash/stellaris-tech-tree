@@ -57,12 +57,12 @@ body { background: #DDD; }
     z-index: 2;
 }
 
-.tech p.dangerous {
-    background-color: #FF000099;
-}
-
 .tech p.rare {
     background-color: #6b008077;
+}
+
+.tech p.dangerous {
+    background-color: #FF000099;
 }
 
 .tech p.node-desc {
