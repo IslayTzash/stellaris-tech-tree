@@ -38,6 +38,7 @@ class Technology:
                                                  start_with_tier_zero)
         self.is_dangerous = self._is_dangerous(tech_data)
         self.is_rare = self._is_rare(tech_data)
+        self.dlc = self._dlc(tech_data)
 
         unlock_parser = FeatureUnlocks(armies, army_attachments,
                                        buildable_pops, buildings, components,
@@ -153,6 +154,18 @@ class Technology:
                 for modifier in unparsed_modifiers
                 if list(modifier.keys()) == ['modifier']]
 
+    def _dlc(self, tech_data):
+        # TODO: pull it from weight_modifiers too?  Sometimes it appears as 0.0 factor
+        try:
+            dlc = next(iter(
+                key for key in tech_data if list(key.keys())[0] == 'potential'
+            ))['potential']
+            for d in dlc:
+                if 'host_has_dlc' in d:
+                    return [ d['host_has_dlc'] ]
+        except StopIteration:
+            pass    
+        return []
 
 class TechnologyJSONEncoder(JSONEncoder):
     def default(self, object):

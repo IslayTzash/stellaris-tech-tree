@@ -181,7 +181,7 @@ def _localize_has_not_authority(value):
 
 def _localize_host_has_dlc(dlc):
     # dlc = _localizer.get(value)
-    return 'Host does has the {} DLC'.format(dlc)
+    return 'Host has the {} DLC'.format(dlc)
 
 def _localize_host_has_not_dlc(dlc):
     # dlc = _localizer.get(value)

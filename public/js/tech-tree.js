@@ -63,7 +63,7 @@ AREAS.forEach(area => {
 			data: {tier: tier},
 			parent: rootNode, // tier == 1 ? rootNode : tierNodes[area][tier-1],
 			pseudo: true,
-			childrenDropLevel: tier,
+			childrenDropLevel: tier - 1,
 			connectors: {
 				style: {
 					'stroke-opacity': 0,
@@ -104,7 +104,11 @@ $(document).ready(function() {
 	    let $extraDataDiv = function() {
 		let $descBtn = $('<p>');
 		$descBtn.addClass('description');
-		$descBtn.attr('title', tech.description);
+		$descBtn.attr('title', tech.description + '<br />'
+			+ (tech.dlc.length > 0 ? '<br />Requires DLC: ' + tech.dlc.join(', ') + '<br />' : "")
+			+ (tech.is_dangerous ? '<br />Tech is dangerous' : "")
+			+ (tech.is_rare ? '<br />Tech is rare' : "")
+		);
 		$descBtn.attr('data-header', 'Description');
 		$descBtn.html('…');
 		let weightModifiers = tech.weight_modifiers.length > 0
@@ -145,7 +149,7 @@ $(document).ready(function() {
 
 	    return {
 		HTMLid: key,
-		HTMLclass: tech.area,
+		HTMLclass: tech.area + (tech.dlc.length > 0 ? " dlc" : ""),
 		data: tech,
 		innerHTML: '<div class="' + iconClass + '" style="background-image:url(img/' + key + '.png)"></div>'
 		    + '<p class="node-name" title="' + tech.name + '">'
@@ -174,8 +178,7 @@ $(document).ready(function() {
 				? { HTMLid: tech.HTMLid + '-pseudoParent',
 					parent: rootNode,
 					pseudo: true,
-					data: {tier: 0},
-					childrenDropLevel: tech.data.tier
+					data: {tier: 0}
 					}
 				: techs.filter(function(candidate) {
 					return candidate.HTMLid === parentKey;
