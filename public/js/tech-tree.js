@@ -97,9 +97,7 @@ $(document).ready(function() {
 		    ? 'Weight: ' + tech.base_weight
 		    : null;
 	    let category = tech.category + tier;
-	    let iconClass = 'icon'
-		    + (tech.is_dangerous ? ' dangerous' : '')
-		    + (!tech.is_dangerous && tech.is_rare ? ' rare' : '');
+	    let iconClass = 'icon';
 
 	    let $extraDataDiv = function() {
 		let $descBtn = $('<p>');
@@ -152,7 +150,8 @@ $(document).ready(function() {
 		HTMLclass: tech.area + (tech.dlc.length > 0 ? " dlc" : ""),
 		data: tech,
 		innerHTML: '<div class="' + iconClass + '" style="background-image:url(img/' + key + '.png)"></div>'
-		    + '<p class="node-name" title="' + tech.name + '">'
+		    + '<p class="node-name' + (tech.is_dangerous ? ' dangerous' : '')
+		    	+ (!tech.is_dangerous && tech.is_rare ? ' rare' : '') + '" title="' + tech.name + '">'
 		    + tech.name
 		    + '</p>'
 		    + '<p class="node-title">' + category + '</p>'

@@ -47,14 +47,6 @@ body { background: #DDD; }
     top: 4px;
 }
 
-.tech div.icon.dangerous {
-    box-shadow: 0 0 2em 10px red;
-}
-
-.tech div.icon.rare {
-    box-shadow: 0 0 2em 10px #806900;
-}
-
 .tech p.node-name {
     height: 20px;
     font-weight: bold;
@@ -63,6 +55,14 @@ body { background: #DDD; }
     overflow: hidden;
     white-space: nowrap;
     z-index: 2;
+}
+
+.tech p.dangerous {
+    background-color: #FF000099;
+}
+
+.tech p.rare {
+    background-color: #6b008077;
 }
 
 .tech p.node-desc {
