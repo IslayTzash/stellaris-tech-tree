@@ -5,10 +5,17 @@ import ruamel.yaml as yaml
 import sys
 
 localization_map = {}
+wm_at_vars = {}
 
-def parse(modifier, loc_data):
+def parse(modifier, loc_data, at_vars):
     global localization_map
+    global wm_at_vars
     localization_map = loc_data
+    wm_at_vars = at_vars
+
+    # TODO: Entry is missing from localization
+    if not 'BYPASS_LGATE' in localization_map:
+        localization_map['BYPASS_LGATE'] = 'L-Gate'
 
     if len(modifier) == 1:
         modifier.append({'always': 'yes'})
@@ -36,22 +43,54 @@ def parse(modifier, loc_data):
                             allow_unicode=True)
     pseudo_yaml = re.sub(r'(\xd7[\d.]+):\n\s*- ', r'(\1)',
                          yaml_output).replace('- ', '• ')
+    # print(repr(modifier).encode('utf-8'))
+    # print(repr(pseudo_yaml).encode('utf-8'))
+    # exit()
     return pseudo_yaml
 
 
 def _parse_condition(condition):
     key = list(condition.keys())[0]
     value = condition[key]
-    return globals()['_localize_' + key.lower()](value)
+    gkey = '_localize_' + key.lower()
+    if gkey in globals():
+        return globals()[gkey](value)
+    else:
+        print(" ** Please add localize function to weight_modifiers.py: " + gkey)
+        return value
+
+
+def _localize_federation(value):
+    # TODO EXTEND?
+    if type(value) is list and 2 == len(value):
+        if 'has_federation_perk' in value[0]:
+            perk = localization_map[value[0]['has_federation_perk']]
+            if 'any_member' in value[1]:
+                return 'Has Federation Perk: {} and any member {}'.format(perk, _localize_has_technology(value[1]['any_member'][0]['has_technology']))
+    print(' ++ No _localize_federation for: {}'.format(repr(value)))
+    return value
+
+
+def _localize_has_origin(value):
+    ethic = localization_map[value]
+    return 'Has {} Origin'.format(ethic)
 
 
 def _localize_factor(factor):
+    global wm_at_vars
+    if str(factor).startswith('@') and factor in wm_at_vars:
+        factor = wm_at_vars[factor]
     return '\xD7{}'.format(factor)
 
 
 def _localize_add(add):
     sign = '' if add == 0 else '+' if add > 0 else '-';
     return '{}{}'.format(sign, add)
+
+
+def _localize_has_deposit(value):
+    ethic = localization_map[value]
+    return 'Has {} Deposit'.format(ethic)
 
 
 def _localize_has_ethic(value):
@@ -73,6 +112,13 @@ def _localize_is_militarist(value):
     return 'Is some degree of Militarist' if value == 'yes' \
         else 'Is NOT some degree of Militarist'
 
+def _localize_is_egalitarian(value):
+    return 'Is some degree of Egalitarian' if value == 'yes' \
+        else 'Is NOT some degree of Egalitarian'
+
+def _localize_is_authoritarian(value):
+    return 'Is some degree of Authoritarian' if value == 'yes' \
+        else 'Is NOT some degree of Authoritarian'
 
 def _localize_is_materialist(value):
     return 'Is some degree of Materialist' if value == 'yes' \
@@ -83,6 +129,13 @@ def _localize_is_spiritualist(value):
     return 'Is some degree of Spiritualist' if value == 'yes' \
         else 'Is NOT some degree of Spiritualist'
 
+def _localize_is_xenophile(value):
+    return 'Is some degree of Xenophile' if value == 'yes' \
+        else 'Is NOT some degree of Xenophile'
+
+def _localize_is_xenophobe(value):
+    return 'Is some degree of Xenophobe' if value == 'yes' \
+        else 'Is NOT some degree of Xenophobe'
 
 def _localize_has_civic(value):
     civic = localization_map[value]
@@ -110,13 +163,20 @@ def _localize_has_megastructure(value):
 
 
 def _localize_has_policy_flag(value):
-    policy_flag = localization_map[value]
+    if value in localization_map:
+        policy_flag = localization_map[value]
+    else:
+        policy_flag = value
     return 'Has {} Policy'.format(policy_flag)
 
 
 def _localize_has_trait(value):
     trait = localization_map[value]
     return 'Has {} Trait'.format(trait)
+
+def _localize_pop_has_trait(value):
+    trait = localization_map[value]
+    return 'Population has {} Trait'.format(trait)
 
 def _localize_has_authority(value):
     authority = localization_map[value]
@@ -227,6 +287,23 @@ def _localize_num_communications(value):
     operator, value = _operator_and_value(value)
     return 'Number of owned planets is {} {}'.format(operator, value)
 
+def _localize_num_districts(value):
+    found = False
+    if type(value) is list:
+        for d in value:
+            if 'type' in d:
+                key = localization_map[d['type']]                
+            elif 'value' in d:
+                operator, value = _operator_and_value(d['value'])
+                value = 'Number of {} is {} {}'.format(key, operator, value)
+                found = True
+                break
+    else:
+        print(' ** Could not parse num districts {}'.format(repr(value)))
+        return repr(value)
+    if not found:
+        print(' ** Could not format _localize_num_districts: {}'.format(value))
+    return value
 
 def _localize_has_communications(value):
     return 'Has communications with your Empire'
@@ -247,27 +324,28 @@ def _localize_is_species(value):
     species = 'Dominant' \
               if value.lower() == 'root' \
                  else localization_map[value]
-    article = 'an' if localized_value[0].lower() in 'aeiou' else 'a'
-
+    article = 'an' if species[0].lower() in 'aeiou' else 'a'
     return 'Is {} {}'.format(article, species)
 
 
 def _localize_is_species_class(value):
     species_class = localization_map[value]
-    article = 'an' if localized_value[0].lower() in 'aeiou' else 'a'
-
+    article = 'an' if species_class[0].lower() in 'aeiou' else 'a'
     return 'Is {} {}'.format(article, species_class)
 
 
 def _localize_is_enslaved(value):
-        return 'Pop is enslaved' if value == 'yes' else 'Pop is NOT enslaved'
+    return 'Pop is enslaved' if value == 'yes' else 'Pop is NOT enslaved'
 
 
 def _localize_has_seen_any_bypass(value):
     loc_key = 'bypass_{}'.format(value).upper()
-    bypass = localization_map[loc_key]
-    if bypass.startswith('$'):
-        bypass = localization_map[bypass.replace('$', '')]
+    if loc_key in localization_map:   # bypass_lgate ?
+        bypass = localization_map[loc_key]
+        if bypass.startswith('$'):
+            bypass = localization_map[bypass.replace('$', '')]
+    else:
+        bypass = value
     return 'Has encountered a {}'.format(bypass)
     
 
@@ -484,17 +562,33 @@ def _localize_not_and(values):
     return {'Not all of the following': parsed_values}
 
 
+# TODO: Does this help or just make tooltips longer?
+def _lookup_comparison_operator(value):
+    if value == '>':
+        return 'greater than'
+    elif value == '<':
+        return 'less than'
+    elif value == '>=':
+        return 'greater than or equal to'
+    elif value == '<=':
+        return 'less than or equal to'
+    else:
+        print(" ** cannot transform operator {}".format(repr(value)))
+        return value
+
+
 def _operator_and_value(data):
     if type(data) is int:
         operator = 'equal to'
         value = data
     elif type(data) is dict:
         symbol = list(data.keys())[0]
-        operator = {'>': 'greater than',
-                    '<': 'less than',
-                    '>=': 'greater than or equal to',
-                    '<=': 'less than or equal to'}[symbol]
+        operator = _lookup_comparison_operator(symbol)
         value = list(data.values())[0]
+    else:
+        print(" ** Unsupported data type {} {}".format(type(data), repr(data)))
+        operator = ""
+        value = data
 
     return operator, value
 
@@ -529,6 +623,13 @@ def _localize_is_machine_cybernetic_empire(value):
     return 'Is the Machine Cybernetic Empire' if value == 'yes' \
         else 'Is NOT the Machine Cybernetic Empire'
 
+def _localize_is_machine_empire(value):
+    return 'Is the Machine Empire' if value == 'yes' \
+        else 'Is NOT the Machine Empire'
+
+def _localize_is_lithoid_empire(value):
+    return 'Is the Lithoid Empire' if value == 'yes' \
+        else 'Is NOT the Lithoid Empire'        
 
 def _localize_is_temporal_masters(value):
     return 'Is the Temporal Masters' if value == 'yes' \

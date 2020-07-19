@@ -14,17 +14,25 @@ class FeatureUnlocks:
         self._resources = resources
         self._spaceport_modules = spaceport_modules
         self._tile_blockers = tile_blockers
+        self._loc_data = loc_data
 
-        def _localize(string):
-            localized = loc_data[string] if type(string) is str \
-                        else loc_data[string.group(1)]
-
-            while '$' in localized:
-                localized = re.sub(r'\$(\w+)\$', _localize, localized)
-
+    def _localize(self, string):
+        key = string if type(string) is str else string.group(1)
+        localized = next((value for dict_key, value in self._loc_data.items() if dict_key.lower() == key.lower()), None)
+        # print(' ++ loc {} -> {}'.format(repr(key), repr(localized)))
+        if localized is None:
+            # No log message here, we are going to call a lot of trial lookups
             return localized
-
-        self._localize = _localize
+        if localized == '$' + key + '$':
+            print(' ** LOC INFINITE RECURSION STOPPED in feature_unlocks.py: {} -> {}'.format(repr(key), repr(localized)))
+            return localized
+        while '$' in localized:
+            replaced = re.sub(r'\$(\w+)\$', self._localize, localized)
+            if replaced == localized:
+                localized = re.sub('r\$', '', localized)
+                break
+            localized = replaced
+        return localized
 
     # Modifiers gained as a result of completing research
     def parse(self, tech_key, tech_data):
@@ -55,48 +63,47 @@ class FeatureUnlocks:
                        'BIOLOGICAL_species_trait_points_add'):
                 return None
 
-            value = ('{:+.0%}'.format(modifier[key])
-                     if modifier[key] < 1
-                     or int(modifier[key]) != modifier[key]
-                     else '{:+d}'.format(int(modifier[key])))
+            if modifier[key] in ['yes', 'no', 'YES', 'NO', 'Yes', 'No']:
+                value = modifier[key]
+            else:
+                try:
+                    value = ('{:+.0%}'.format(modifier[key])
+                            if int(modifier[key]) < 1
+                            or int(modifier[key]) != modifier[key]
+                            else '{:+d}'.format(int(modifier[key])))
+                except:
+                    print(' ** Unexpected modifier in feature_unlocks.py: ' + modifier[key])
+                    value = modifier[key]
 
+            # Dyslexic remapping
             if key == 'all_technology_research_speed':
                 key = 'MOD_COUNTRY_ALL_TECH_RESEARCH_SPEED'
             elif key == 'science_ship_survey_speed':
                 key = 'MOD_SHIP_SCIENCE_SURVEY_SPEED'
+            elif key == 'species_leader_exp_gain':
+                key = 'MOD_LEADER_SPECIES_EXP_GAIN'
+            elif key == 'ship_archeaological_site_clues_add':
+                key = 'MOD_SHIP_ARCHAEOLOGICAL_SITE_CLUES_ADD'
+            elif key == 'ship_anomaly_research_speed_mult':
+                key =  'MOD_SHIP_ANOMALY_RESEARCH_SPEED'
+            # elif key = 'show_only_custom_tooltip' or key = 'custom_tooltip'  # TODO: What to do with these?
 
-            try:
-                localized = {self._localize(key): value}
-            except KeyError:
-                prefix = 'MOD_'
+            found_prefix_match = False
+            for prefix in [ '', 'MOD_', 'MOD_COUNTRY_', 'MOD_POP_', 'MOD_PLANET_']:
                 alt_key = (prefix + key).upper()
                 try:
                     localized_key = self._localize(alt_key)
+                    if localized_key is None:
+                        continue
                     localized = {localized_key: value}
-                    while '$' in localized_key:
-                        localized_key = re.sub(r'\$(\w+)\$',
-                                               self._localize,
-                                               localized_key)
-                        localized = {localized_key: value}
-
+                    found_prefix_match = True
+                    break
                 except KeyError:
-                    prefix = 'MOD_COUNTRY_'
-                    alt_key = (prefix + key).upper()
-                    try:
-                        localized = {self._localize(alt_key): value}
-                    except KeyError:
-                        prefix = 'MOD_POP_'
-                        alt_key = (prefix + key).upper()
-                        try:
-                            localized = {self._localize(alt_key): value}
-                        except KeyError:
-                            prefix = 'MOD_PLANET_'
-                            alt_key = (prefix + key).upper()
-                            try:
-                                localized = {self._localize(alt_key): value}
-                            except KeyError:
-                                # Give up.
-                                localized = {key: value}
+                    pass
+            if not found_prefix_match:
+                # Most often is a dyslexic entry in the localization/english files.  See remapping entries above.
+                print(' ** No match for modifier: ' + repr(key))
+                localized = {key: value}
 
             return '{}: {}'.format(list(localized.keys())[0], list(localized.values())[0])
 

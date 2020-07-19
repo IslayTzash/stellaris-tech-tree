@@ -139,6 +139,13 @@ def p_list(tokens):
     '''list : LBRACE keys RBRACE'''
     tokens[0] = tokens[2]
 
+def p_list_empty(tokens):
+    '''list : LBRACE RBRACE'''
+    tokens[0] = []
+
+def p_list_double_wrapped(tokens):
+    '''list : LBRACE LBRACE keys RBRACE RBRACE'''
+    tokens[0] = tokens[3]
 
 def p_expression_list(tokens):
     'expression : list'
@@ -149,6 +156,13 @@ def p_block(tokens):
     'block : LBRACE statements RBRACE'
     tokens[0] = tokens[2]
 
+def p_block_empty(tokens):
+    'block : LBRACE RBRACE'
+    tokens[0] = []
+
+def p_block_double_wrapped(tokens):
+    'block : LBRACE LBRACE statements RBRACE RBRACE'
+    tokens[0] = tokens[3]
 
 def p_expression_block(tokens):
     'expression : block'
@@ -197,6 +211,9 @@ def localized_strings():
         not_yaml_lines = codecs.open(file_path, 'r', 'utf-8-sig').readlines()
         not_yaml = ''
         for line in not_yaml_lines:
+
+            line = re.sub( r"event_target:", '', line)
+
             quote_instances = [i for i, char in enumerate(line)
                                if char == '"']
 
@@ -334,6 +351,8 @@ def parse_scripts(file_paths):
         if args.mod == 'new_horizon' and "jem'hadar" in contents:
             print('fixing New Horizons YAML ...')
             contents = contents.replace("_jem'hadar", "_jem_hadar")
+        if "event_target:" in contents:
+            contents = contents.replace("event_target:", "")
 
         parsed += yacc_parser.parse(contents)
 
@@ -351,6 +370,9 @@ parsed_scripts = {'scripted_vars': parse_scripts(scripted_vars_file_paths),
                   'resource': parse_scripts(resource_file_paths),
                   'spaceport_module': parse_scripts(spaceport_module_file_paths),
                   'tile_blocker': parse_scripts(tile_blocker_file_paths)}
+
+#print('## EDICTS {}',format(repr(parsed_scripts['edict'])))
+#exit(0)
 
 armies = [Army(entry, loc_data)
           for entry in parsed_scripts['army']
@@ -370,10 +392,10 @@ components = [Component(list(entry.values())[0], loc_data)
               for entry
               in parsed_scripts['component']
               if not list(entry)[0].startswith('@')]
-edicts = [Edict(list(entry.values())[0], loc_data)
+edicts = [Edict(entry, loc_data)
           for entry
           in parsed_scripts['edict']
-          if not list(entry)[0].startswith('@')]
+          if not str(list(entry)[0]).startswith('@')]
 policies = [Policy(entry, loc_data)
             for entry
             in parsed_scripts['policy']
@@ -397,6 +419,7 @@ for entry in parsed_scripts['scripted_vars'] + parsed_scripts['technology']:
     if list(entry)[0].startswith('@'):
         at_var = list(entry)[0]
         at_vars[at_var] = entry[at_var]
+        # print(' -- ATVAR[{}] = {}'.format(at_var, entry[at_var]))
         continue
 
     if args.mod == 'primitive':

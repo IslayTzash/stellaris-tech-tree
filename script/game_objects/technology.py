@@ -149,7 +149,7 @@ class Technology:
         except StopIteration:
             unparsed_modifiers = []
 
-        return [parse_weight_modifiers(modifier['modifier'], self._loc_data)
+        return [parse_weight_modifiers(modifier['modifier'], self._loc_data, self._at_vars)
                 for modifier in unparsed_modifiers
                 if list(modifier.keys()) == ['modifier']]
 
