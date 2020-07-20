@@ -184,11 +184,11 @@ $(document).ready(function() {
 			techlist = techlist.concat(tech)
 			if (tech.data.area !== last_area && remaining_areas.length > 0) {
 				last_area = remaining_areas.shift();
-				techlist = techlist.concat(tierNodes[last_area]);
+				Object.entries(tierNodes[last_area]).forEach(([k, v]) => techlist.push(v));
 			}
 		});
 		remaining_areas.forEach( area => {
-			techlist = techlist.concat(tierNodes[area]);
+			Object.entries(tierNodes[area]).forEach(([k, v]) => techlist.push(v));
 		});
 
 		new Treant(techlist);
