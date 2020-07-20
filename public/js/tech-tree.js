@@ -65,6 +65,8 @@ AREAS.forEach(area => {
 		tierNodes[area][tier] = o
 	})
 })
+let SPECIAL_NODES = [rootNode];
+Object.values(tierNodes).forEach( x => Object.values(x).forEach( y => SPECIAL_NODES.push(y) ));
 
 function replace_icons(str, extra_css_class = "")
 {
@@ -176,12 +178,44 @@ $(document).ready(function() {
 			}
 		});
 
+		function compute_age(tech) {
+			let parent = tech.parent;
+			let age = 0;
+			while (!SPECIAL_NODES.includes(parent))
+			{
+				parent = parent.parent;
+				age += 1;
+				if (parent.childrenDropLevel) {
+					age += parent.childrenDropLevel;
+				}
+			}
+			if (parent != rootNode) {
+				age += parent.data.tier;
+			}
+			return age;
+		}
+
 		// Some rearranging to get the unparented + parented techs to group better by area
 		let techlist = [config, rootNode]
 		let remaining_areas = Array.from(AREAS)
 		let last_area = null
 		techs.forEach( tech => {
-			techlist = techlist.concat(tech)
+			// Build up dummy pseudonodes so high leveled techs are never rendered in a column lower than their tier
+			let age = compute_age(tech);
+			if (age < tech.data.tier && !SPECIAL_NODES.includes(tech.parent))
+			{
+				// console.log("Bumping " + tech.data.name + ' from ' + age + ' to ' + tech.data.tier);
+				let o = { 
+					parent: tech.parent,
+					pseudo: true,
+					childrenDropLevel: tech.data.tier - age - 1
+				}
+				tech.parent = o;
+				techlist.push(o)
+			}
+
+			// push in pseudonodes for items with no prerequisistes
+			techlist.push(tech)
 			if (tech.data.area !== last_area && remaining_areas.length > 0) {
 				last_area = remaining_areas.shift();
 				Object.entries(tierNodes[last_area]).forEach(([k, v]) => techlist.push(v));
