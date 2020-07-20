@@ -2,9 +2,28 @@
 
 This provides a set of files to view the technology tree for the 4x strategy game Stellaris.
 
+You can view the latest live snaphsot at [https://islaytzash.github.io/stellaris-tech-tree/public/vanilla/](https://islaytzash.github.io/stellaris-tech-tree/public/vanilla/)
+
 Predominantly this repository contains a python3 tool to generate a HTML/CSS rendering of the tech tree information from the game files.
 * /script/ contains the python code to parse the game files
 * /public/ contains the output from the python tool and some HTML/CSS/JS and other assets to provide a view you can load in a web browser
+
+# Viewing the output
+
+As best as possible, the display matches columns to tech tiers.  Tier 0 (starter techs) will only appear in the rightmost column.  The Treant.js tool
+used within the viewer is not as good at keeping techs from drifting into higher tier columns, i.e. the fourth column is where tier 4 techs should be displayed,
+occasionally a tier2 or tier 3 tech with prerequisites may be pushed into the fourth column.
+
+The purple background behind a tech name indicates it is a rare tech.   The red background indicates it is a deadly tech.
+
+Clicking on a tech will collapse all its children and color the tile grey.
+
+Hover over the three icons on the right of each tech tile to see more information:
+* top ... icon - The tech description, including its rare/dangerous indication and any required DLC
+* middle icon - The weight modifiers, this can often be a complex set of rules.  When the weight goes to 0 the card will never be chosen.
+* bottom giftbox icon - Any game items that are activated by the tech, i.e. access to ships, weapons, edicts, ...
+
+Techs requiring a specific DLC are highlighted in yellow.  There really arean't a lot.  There is currently no way to change the display based on owned DLCs.
 
 # File Generation
 
@@ -17,18 +36,15 @@ Predominantly this repository contains a python3 tool to generate a HTML/CSS ren
 ```
     python script\parse.py vanilla
 ```
-
-# Viewing the output
-
-You could upload the whole /public/ directory to a web server or run a local server.   Unfortunately it won't work if
-you try to open it from your local disk.   You can easily run a webserver by switching into the public directory and running
-```python -m http.server 8000``` and connect to http://localhost:8000 in your browser.
+3. After parsing, you need to serve the /public/ directory from a web server.   Unfortunately it won't work if
+you try to open the files directly from your local disk.   You can easily run a webserver by switching into the public directory and running
+```python -m http.server 8000``` and connect to [http://localhost:8000](http://localhost:8000) in your browser.
 
 # Credits
 
-This was pulled from a gitlab repo started by bipedalshark, but has not been updated since 2017, v2.0.1.   See https://gitlab.com/bipedalshark/stellaris-tech-tree/-/tree/master
+This was pulled from a gitlab repo started by bipedalshark, but has not been updated since 2017, v2.0.1.   See [https://gitlab.com/bipedalshark/stellaris-tech-tree/-/tree/master](https://gitlab.com/bipedalshark/stellaris-tech-tree/-/tree/master)
 
-Latest images have been merged from https://github.com/turanar/stellaris-tech-tree (see Alternatives below).
+Latest images have been merged from [https://github.com/turanar/stellaris-tech-tree](https://github.com/turanar/stellaris-tech-tree) (see Alternatives below).
 
 # Alternatives
 
@@ -36,45 +52,49 @@ There is another fork of bipedalshark's code on github managed by tunrar and oth
 has changed the parser from python to java and split the game file [parser](https://github.com/turanar/stellaris-technology)
 and [viewer](https://github.com/turanar/stellaris-tech-tree) into two separate repositories.
 
-# Overview of Parsing
+# Overview of Game File Parsing
 
 Many of the Stellaris game rules are captured in YAML files.  Looking in /steamapps/common/Stellaris/common there are folders for many of the games basic concepts.
 
-achievements                  | country_types              | leader_classes                | sector_focuses
-achievements.txt              | decisions                  | mandates                      | sector_types
-agendas                       | defines                    | map_modes                     | ship_behaviors
-ai_budget                     | deposit_categories         | megastructures                | ship_sizes
-alerts.txt                    | deposits                   | message_types.txt             | solar_system_initializers
-ambient_objects               | diplo_phrases              | name_lists                    | special_projects
-anomalies                     | diplomacy_economy          | notification_modifiers        | species_archetypes
-archaeological_site_types     | diplomatic_actions         | observation_station_missions  | species_classes
-armies                        | districts                  | on_actions                    | species_names
-artifact_actions              | dynamic_text               | opinion_modifiers             | species_rights
-ascension_perks               | economic_categories        | personalities                 | star_classes
-asteroid_belts                | economic_plans             | planet_classes                | starbase_buildings
-attitudes                     | edicts                     | planet_modifiers              | starbase_levels
-bombardment_stances           | ethics                     | policies                      | starbase_modules
-buildings                     | event_chains               | pop_categories                | starbase_types
-button_effects                | fallen_empires             | pop_faction_types             | start_screen_messages
-bypass                        | federation_law_categories  | pop_jobs                      | static_modifiers
-casus_belli                   | federation_laws            | precursor_civilizations       | strategic_resources
-colony_automation             | federation_perks           | random_names                  | subjects
-colony_automation_exceptions  | federation_types           | relics                        | system_types
-colony_types                  | galactic_focuses           | resolution_categories         | technology
-colors                        | game_rules                 | resolutions                   | terraform
-component_sets                | global_ship_designs        | scripted_effects              | trade_conversions
-component_slot_templates      | governments                | scripted_loc                  | tradition_categories
-component_tags                | graphical_culture          | scripted_triggers             | traditions
-component_templates           | HOW_TO_MAKE_NEW_SHIPS.txt  | scripted_variables            | traits
-country_customization         | lawsuits                   | section_templates             | war_goals
+| |  | |  |
+|--- | --- | --- | --- |
+|achievements                  | country_types              | leader_classes                | sector_focuses
+|achievements.txt              | decisions                  | mandates                      | sector_types
+|agendas                       | defines                    | map_modes                     | ship_behaviors
+|ai_budget                     | deposit_categories         | megastructures                | ship_sizes
+|alerts.txt                    | deposits                   | message_types.txt             | solar_system_initializers
+|ambient_objects               | diplo_phrases              | name_lists                    | special_projects
+|anomalies                     | diplomacy_economy          | notification_modifiers        | species_archetypes
+|archaeological_site_types     | diplomatic_actions         | observation_station_missions  | species_classes
+|armies                        | districts                  | on_actions                    | species_names
+|artifact_actions              | dynamic_text               | opinion_modifiers             | species_rights
+|ascension_perks               | economic_categories        | personalities                 | star_classes
+|asteroid_belts                | economic_plans             | planet_classes                | starbase_buildings
+|attitudes                     | edicts                     | planet_modifiers              | starbase_levels
+|bombardment_stances           | ethics                     | policies                      | starbase_modules
+|buildings                     | event_chains               | pop_categories                | starbase_types
+|button_effects                | fallen_empires             | pop_faction_types             | start_screen_messages
+|bypass                        | federation_law_categories  | pop_jobs                      | static_modifiers
+|casus_belli                   | federation_laws            | precursor_civilizations       | strategic_resources
+|colony_automation             | federation_perks           | random_names                  | subjects
+|colony_automation_exceptions  | federation_types           | relics                        | system_types
+|colony_types                  | galactic_focuses           | resolution_categories         | technology
+|colors                        | game_rules                 | resolutions                   | terraform
+|component_sets                | global_ship_designs        | scripted_effects              | trade_conversions
+|component_slot_templates      | governments                | scripted_loc                  | tradition_categories
+|component_tags                | graphical_culture          | scripted_triggers             | traditions
+|component_templates           | HOW_TO_MAKE_NEW_SHIPS.txt  | scripted_variables            | traits
+|country_customization         | lawsuits                   | section_templates             | war_goals
 
-If you look inside /technology/ you can see files for the main tech areas [physics, social, engineering] and the DLC.
+If you look inside /technology/ you can see files for the main tech areas (physics, social, engineering) and the DLC.
 
-00_apocalypse_tech.txt      | 00_fallen_empire_tech.txt  | 00_phys_tech.txt             | 00_soc_tech_repeatable.txt       | tier/
-00_distant_stars_tech.txt   | 00_horizonsignal_tech.txt  | 00_phys_tech_repeatable.txt  | 00_soc_weapon_tech.txt
-00_eng_tech.txt             | 00_leviathans_tech.txt     | 00_phys_weapon_tech.txt      | 00_strategic_resources_tech.txt
-00_eng_tech_repeatable.txt  | 00_megacorp_tech.txt       | 00_repeatable.txt            | 00_synthetic_dawn_tech.txt
-00_eng_weapon_tech.txt      | 00_megastructures.txt      | 00_soc_tech.txt              | category/
+| | | | | |
+| --- | --- | --- | --- | --- |
+|00_apocalypse_tech.txt      | 00_fallen_empire_tech.txt  | 00_phys_tech.txt             | 00_soc_tech_repeatable.txt       | tier/
+|00_distant_stars_tech.txt   | 00_horizonsignal_tech.txt  | 00_phys_tech_repeatable.txt  | 00_soc_weapon_tech.txt
+|00_eng_tech.txt             | 00_leviathans_tech.txt     | 00_phys_weapon_tech.txt      | 00_strategic_resources_tech.txt
+|00_eng_tech_repeatable.txt  | 00_megacorp_tech.txt       | 00_repeatable.txt            | 00_synthetic_dawn_tech.txt
+|00_eng_weapon_tech.txt      | 00_megastructures.txt      | 00_soc_tech.txt              | category/
 
 The entries are mostly human readable.
 
@@ -126,7 +146,7 @@ leader_trait_expertise_voidcraft:0 "Expertise: Voidcraft"
 
 Items that show up with a @, $, or Brittish pound sign are replaceable parameters within a field and get hit with another level of substitution.
 
-# Overview of Web Display
+# Overview of Web Display Project
 
 The tech tree viewer uses a Treant.js for displaying the tree.  It appears to have been designed for displaying corporate org charts.
 
