@@ -11,48 +11,36 @@ let config = {
     scrollbar: 'fancy',
     connectors: { type: 'step' },
     node: {
-	HTMLclass: 'tech',
-	collapsable: true
+		HTMLclass: 'tech',
+		collapsable: true
     },
     callback: {
-	onTreeLoaded: function() {
-	    $(document).tooltip({
-		items: 'p.description, p.weight-modifiers[title], p.feature-unlocks[title]',
-		content: function() {
-		    let $button = $(this);
-		    if ( $button.is('p.feature-unlocks') ) {
-			let unlocks = $button.attr('title').split(', ');
-			var $content = unlocks.map(
-			    function(unlock) {
-				return $('<li>').html(
-				    unlock.replace(/\[\[(\w+)\]\]/,
-						   '<img class="resource" src="img/resources/$1.png" />')
-				); }
-			).reduce(
-			    function($ul, $unlock) {
-				return $ul.append($unlock);
-			    },
-			    $('<ul>')
-			);
-		    }
-		    else {
-			var $content = $('<span>')
-				.addClass($button.attr('class'))
-				.html($button.attr('title'));
-		    }
+		onTreeLoaded: function() {
+			$(document).tooltip({
+				items: 'p.description, p.weight-modifiers[title], p.feature-unlocks[title]',
+				content: function() {
+					let $button = $(this);
 
-		    return $('<div class="tooltip-header">')
-			.html($button.data('header'))
-			.after($content);
+					// copies class and raw html from the item being moused over into the tooltip window for display
+					var $content = $('<span>')
+						.removeClass(['weight-modifiers','feature-unlocks', 'description'])
+						.addClass($button.attr('class'))
+						.html($button.attr('title'));
+
+					return $('<div class="tooltip-header">')
+						.html($button.data('header'))
+						.after($content);
+				}
+			});
 		}
-	    });
-	}
     }
 };
+
 let rootNode = {HTMLid: 'root', data: {tier: 0}};
-// society, engineering, physics 1 2 3 4 5
+
+// dummy root nodes for techs which start with no lower tier dependencies
 let tierNodes = {}
-const AREAS = ['society', 'engineering', 'physics']
+const AREAS = ['physics', 'society', 'engineering']
 const TIERS = [1, 2, 3, 4, 5]
 AREAS.forEach(area => {
 	tierNodes[area] = {}
@@ -61,17 +49,16 @@ AREAS.forEach(area => {
 			HTMLid: area+'-tier-'+tier,
 			HTMLclass: area,
 			data: {tier: tier},
-			parent: rootNode, // tier == 1 ? rootNode : tierNodes[area][tier-1],
+			parent: rootNode,
 			pseudo: true,
 			childrenDropLevel: tier - 1,
 			connectors: {
 				style: {
-					'stroke-opacity': 0,
-					'stroke': 'white'
+					'stroke-opacity': 0
 				}
 			},
 			text: { 
-				name: 'T' + tier + ' No Prereq',
+				name: 'Tier ' + tier + ', No Prereq',
 				title: area
 			}
 		}
@@ -79,154 +66,131 @@ AREAS.forEach(area => {
 	})
 })
 
+function replace_icons(str, extra_css_class = "")
+{
+	return str
+		.replace(new RegExp(/£(\w+)£/,'g'), '<img class="resource ' + extra_css_class + '" src="../icons/$1.png" />')
+		// TODO: We don't need both forms in the json?
+		.replace(/\(\[\[(\w+)\]\]\)/, '<img class="resource ' + extra_css_class + '" src="../icons/$1.png" />');
+}
+
+function prerequisite_name_lookup(techData, key, area)
+{
+	return techData.filter( t => t.key == key).map(t => t.name + (t.area == area ? '' : ' (' + t.area + ', tier ' + t.tier + ')'));
+}
+
 $(document).ready(function() {
     $.getJSON('techs.json', function(techData) {
-	let techs = techData.filter(function(tech) {
-	    return Object.keys(tech)[0].search(/^@\w+$/) == -1;
-	}).map(function(tech) {
-	    let key = tech.key;
-	    let tier = tech.is_start_tech
-		    ? ' (Starting)'
-		    : ' (Tier ' + tech.tier + ')';
+		let techs = techData.filter(function(tech) {
+			return Object.keys(tech)[0].search(/^@\w+$/) == -1;
+		}).map(function(tech) {
+			let tier = tech.is_start_tech ? ' (Starting)' : ' (Tier ' + tech.tier + ')';
+			let cost = tech.tier > 0 ? 'Cost: <span class="' + tech.area + '-research">' + tech.cost + '</span>' : null;
+			let weight = tech.tier > 0 ? 'Weight: ' + tech.base_weight : null;
+			let category = tech.category + tier;
 
-	    let costClass = tech.area + '-research';
-	    let cost = tech.tier > 0
-		    ? 'Cost: <span class="' + costClass + '">' + tech.cost + '</span>'
-		    : null;
-	    let weight = tech.tier > 0
-		    ? 'Weight: ' + tech.base_weight
-		    : null;
-	    let category = tech.category + tier;
-	    let iconClass = 'icon';
+			function extraDataDiv() {
+				let $descBtn = $('<p>').addClass('description').append('<span class="dots">…</span>');
+				let prerequisites = tech.prerequisites.reduce( (out, x) => out += '<br />&nbsp;&nbsp;&nbsp;' + prerequisite_name_lookup(techData, x, tech.area), "");
+				$descBtn.attr('title', tech.description + '<br />'
+					+ (tech.dlc.length > 0 ? '<br />Requires DLC: ' + tech.dlc.join(', ') + '<br />' : "")
+					+ (prerequisites.length > 0 ? '<br />Prerequisites:' + prerequisites + '<br />' : '')
+					+ (tech.is_dangerous ? '<br />Tech is dangerous' : "")
+					+ (tech.is_rare ? '<br />Tech is rare' : "")
+				);
+				$descBtn.attr('data-header', 'Description');		
+				if (tech.prerequisites.some( p => techData.some( t => t.key == p && t.tier > 0 )))
+				{
+					$descBtn.addClass('multiple-prerequisistes');
+				}
 
-	    let $extraDataDiv = function() {
-		let $descBtn = $('<p>');
-		$descBtn.addClass('description');
-		$descBtn.attr('title', tech.description + '<br />'
-			+ (tech.dlc.length > 0 ? '<br />Requires DLC: ' + tech.dlc.join(', ') + '<br />' : "")
-			+ (tech.is_dangerous ? '<br />Tech is dangerous' : "")
-			+ (tech.is_rare ? '<br />Tech is rare' : "")
-		);
-		$descBtn.attr('data-header', 'Description');
-		$descBtn.html('…');
-		let weightModifiers = tech.weight_modifiers.length > 0
-			? tech.weight_modifiers.join('')
-			: null;
-		let featureUnlocks = tech.feature_unlocks.length > 0
-			? tech.feature_unlocks.join(', ')
-			: null;
+				let $modifiersBtn = $('<p>').addClass('weight-modifiers').html('⚄');
+				if ( tech.weight_modifiers.length > 0 ) {
+					let weightModifiers = tech.weight_modifiers.join('')
+					weightModifiers = weightModifiers.replace(/(?:\(.?)([0-9.+-]+)(?:\))/g,  m => '<span class="' + (parseFloat(m.replace(/[^0-9.+-]/g,'')) >= 1.0 ? 'mod-good' : 'mod-bad') + '">' + m + '</span>');
+					$modifiersBtn.attr('title', weightModifiers);
+					$modifiersBtn.attr('data-header', 'Weight Modifiers');
+				}
+				else {
+					$modifiersBtn.addClass('disabled');
+				}
 
-		let $modifiersBtn = $('<p>');
-		$modifiersBtn.addClass('weight-modifiers');
-		if ( weightModifiers !== null ) {
-		    $modifiersBtn.attr('title', weightModifiers);
-		    $modifiersBtn.attr('data-header', 'Weight Modifiers');
-		}
-		else {
-		    $modifiersBtn.addClass('disabled');
-		}
-		$modifiersBtn.html('⚄');
+				let $unlocksBtn = $('<p>').addClass('feature-unlocks').html('🎁');
+				if ( tech.feature_unlocks.length > 0 ) {
+					let $unlockList = $('<ul>');
+					tech.feature_unlocks.forEach( unlock => {
+						if (null === unlock) {
+							console.log('Ignored null feature_unlock for ' + tech.key);
+						} else {
+							$unlockList.append($('<li>').append(replace_icons(unlock)));
+						}
+					});				
+					$unlocksBtn.attr('title', $unlockList[0].outerHTML);
+					$unlocksBtn.attr('data-header', 'Research Effects');
+				}
+				else {
+					$unlocksBtn.addClass('disabled');
+				}
 
-		let $unlocksBtn = $('<p>');
-		$unlocksBtn.addClass('feature-unlocks');
-		if ( featureUnlocks !== null ) {
-		    $unlocksBtn.attr('title', featureUnlocks);
-		    $unlocksBtn.attr('data-header', 'Research Effects');
-		}
-		else {
-		    $unlocksBtn.addClass('disabled');
-		}
-		$unlocksBtn.html('🎁');
-
-		let $extraDataDiv = $('<div class="extra-data">');
-		$extraDataDiv.append($descBtn);
-		$extraDataDiv.append($modifiersBtn);
-		$extraDataDiv.append($unlocksBtn);
-		return $extraDataDiv;
-	    }();
-
-	    return {
-		HTMLid: key,
-		HTMLclass: tech.area + (tech.dlc.length > 0 ? " dlc" : ""),
-		data: tech,
-		innerHTML: '<div class="' + iconClass + '" style="background-image:url(img/' + key + '.png)"></div>'
-		    + '<p class="node-name' + (tech.is_rare ? ' rare' : '') + (tech.is_dangerous ? ' dangerous' : '')
-		    	 + '" title="' + tech.name + '">'
-		    + tech.name
-		    + '</p>'
-		    + '<p class="node-title">' + category + '</p>'
-		    + '<p class="node-desc">' + ( tech.start_tech || tech.tier == 0 ? '<br />' : [cost, weight].join(', ')) + '</p>'
-		    + $extraDataDiv[0].outerHTML
-	    };
-	});
-
-	techs = techs.map(function(tech) {
-	    let key = tech.data.key;
-	    let prerequisite = tech.data.prerequisites[0] || null;
-
-	    if ( tech.data.tier === 0 || prerequisite === null) {
-			if (tech.data.tier === 1 || tech.data.tier === 2 || tech.data.tier === 3 ||tech.data.tier === 4 ||tech.data.tier === 5) {
-				tech.parent = tierNodes[tech.data.area][tech.data.tier]
-			} else {
-				tech.parent = rootNode
+				return $('<div class="extra-data">').append($descBtn).append($modifiersBtn).append($unlocksBtn)[0].outerHTML;
 			}
-	    }
-	    else {
-			let parentKey = prerequisite;
-			tech.parent = parentKey.match('-pseudoParent')
-				? { HTMLid: tech.HTMLid + '-pseudoParent',
-					parent: rootNode,
-					pseudo: true,
-					data: {tier: 0}
-					}
-				: techs.filter(function(candidate) {
-					return candidate.HTMLid === parentKey;
-					})[0];
-	    }
 
-	    let tierDifference = tech.data.tier - tech.parent.data.tier;
-	    let nestedTech = tech;
-	    while ( tierDifference > 1 && nestedTech.parent != rootNode ) {
-		var pseudo = {
-		    HTMLid: nestedTech.HTMLid + '-pseudoParent',
-		    parent: nestedTech.parent, pseudo: true,
-		    data: { tier: nestedTech.data.tier - 1 }
-		};
-		tierDifference--;
-		nestedTech.parent = pseudo;
-		nestedTech = pseudo;
-	    }
+			return {
+				HTMLid: tech.key,
+				HTMLclass: tech.area + (tech.dlc.length > 0 ? " dlc" : "") + (tech.is_rare ? ' rare' : '') + (tech.is_dangerous ? ' dangerous' : ''),
+				data: tech,
+				innerHTML: '<div class="icon" style="background-image:url(img/' + tech.key + '.png)"></div>'
+					+ '<p class="node-name" title="' + tech.name + '">' + tech.name + '</p>'
+					+ '<p class="node-title">' + category + '</p>'
+					+ '<p class="node-desc">' + ( tech.start_tech || tech.tier == 0 ? '' : cost + ',' + weight) + '</p>'
+					+ extraDataDiv()
+			};
+		});
 
-	    return tech;
-	});
+		techs.map(tech => {
+			if ( tech.data.tier === 0 || tech.data.prerequisites < 1)
+			{
+				if (TIERS.includes(tech.data.tier)) {
+					tech.parent = tierNodes[tech.data.area][tech.data.tier]
+				} else {
+					tech.parent = rootNode
+				}
+			}
+			else
+			{
+				tech.parent = techs.filter( candidate => tech.data.prerequisites.includes(candidate.data.key) )
+					.reduce( (parent, candidate) => {
+						if ( ! parent ) {
+							parent = candidate
+						} else if (parent.data.area == tech.data.area) {
+							if (tech.data.area == candidate.data.area && parent.data.tier > candidate.data.tier) {
+								parent = candidate;
+							}
+						} else if (tech.data.area == candidate.data.area) {
+							parent = candidate;
+						} else if (parent.data.tier > candidate.data.tier) {
+							parent = candidate;
+						}
+						return parent;
+					}, tech.parent);
+			}
+		});
 
-	for ( let i = 0; i < techs.length; i++ ) {
-	    let tech = techs[i]
-	    while ( tech.parent.pseudo ) {
-		techs.push(tech.parent);
-		tech = tech.parent;
-		}
-	}
+		// Some rearranging to get the unparented + parented techs to group better by area
+		let techlist = [config, rootNode]
+		let remaining_areas = Array.from(AREAS)
+		let last_area = null
+		techs.forEach( tech => {
+			techlist = techlist.concat(tech)
+			if (tech.data.area !== last_area && remaining_areas.length > 0) {
+				last_area = remaining_areas.shift();
+				techlist = techlist.concat(tierNodes[last_area]);
+			}
+		});
+		remaining_areas.forEach( area => {
+			techlist = techlist.concat(tierNodes[area]);
+		});
 
-	// Some rearranging to get the unparented + parented techs to group better by area
-	// assuming techs are ordered: physics, society, engineering
-	let techlist = [config, rootNode, tierNodes['physics'][1], tierNodes['physics'][2], tierNodes['physics'][3], tierNodes['physics'][4], tierNodes['physics'][5]]
-	let last_area = 'physics'
-	let remaining_areas = [ 'society', 'engineering']
-	for ( let i = 0; i < techs.length; i++ ) {
-		techlist = techlist.concat(techs[i])
-		if (techs[i].data.area !== last_area && remaining_areas.length > 0) {
-			let area = remaining_areas.shift()
-			techlist = techlist.concat(tierNodes[area][1], tierNodes[area][2], tierNodes[area][3], tierNodes[area][4], tierNodes[area][5])
-			last_area = techs[i].data.area
-		}
-	}
-	// Just in case we were totally out of order and missed one
-	remaining_areas.forEach( area => {
-		techlist = techlist.concat(tierNodes[area][1], tierNodes[area][2], tierNodes[area][3], tierNodes[area][4], tierNodes[area][5])
-	})
-
-	new Treant(techlist);
-
+		new Treant(techlist);
     });
 });

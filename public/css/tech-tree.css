@@ -7,7 +7,7 @@ h1,h2,h3,h4,h5,h6 { font-size:100%; font-weight:normal; }
 q:before,q:after { content:''; }
 abbr,acronym { border:0; }
 
-body { background: #DDD; }
+body { background: #474747; }
 /* optional Container STYLES */
 .chart { border: none; overflow: scroll}
 .Treant > .node {  }
@@ -26,10 +26,10 @@ body { background: #DDD; }
     -moz-border-radius: 3px;
     border-radius: 3px;
     background-color: white;
-    border: 4px outset #000;
+    border: 3px solid #000;
     width: 275px;
     height: 66px;
-    font-family: Verdana;
+    font-family: 'Arimo', Verdana;
     font-size: 12px;
     color: black;
 }
@@ -37,11 +37,10 @@ body { background: #DDD; }
 .tech div.icon {
     background-color: black;
     border-radius: 4px;
-    border: 1px solid gray;
     width: 52px;
     height: 52px;
     float: left;
-    margin: 2px 10px 2px 2px;
+    margin: 8px 10px 2px 2px;
     margin-right: 10px;
     position: relative;
     top: 4px;
@@ -55,14 +54,7 @@ body { background: #DDD; }
     overflow: hidden;
     white-space: nowrap;
     z-index: 2;
-}
-
-.tech p.rare {
-    background-color: #6b008077;
-}
-
-.tech p.dangerous {
-    background-color: #FF000099;
+    color: white;
 }
 
 .tech p.node-desc {
@@ -87,6 +79,15 @@ body { background: #DDD; }
     left: 255px;
     top: -53px;
     z-index: 3;
+}
+
+.tech p.description {
+    height: 7px;
+    margin-bottom: 7px;
+}
+
+.tech p.multiple-prerequisistes {
+    background-color: red;
 }
 
 div.extra-data {
@@ -133,7 +134,10 @@ ui-tooltip ul li {
     content: "Weight Modifiers";
 }
 
-.tech.society { border-color: #5ACA9C }
+.tech.society {
+    border-color: #5ACA9C;
+    background-image: url("../img/tech_bg_society.png");
+}
 
 span.society-research::before {
     background: url("../img/society_research.png") center center no-repeat;
@@ -142,7 +146,10 @@ span.society-research::before {
     height: 11px;
 }
 
-.tech.engineering { border-color: #E29C43 }
+.tech.engineering {
+    border-color: #E29C43;
+    background-image: url("../img/tech_bg_engineering.png");
+}
 span.engineering-research::before {
     background: url("../img/engineering_research.png") center center no-repeat;
     content:  url("../img/blank11px.png");
@@ -150,12 +157,23 @@ span.engineering-research::before {
     height: 11px;
 }
 
-.tech.physics { border-color: #4396E2 }
+.tech.physics {
+    border-color: #4396E2;
+    background-image: url("../img/tech_bg_physics.png");
+}
 span.physics-research::before {
     background: url("../img/physics_research.png") center center no-repeat;
     content:  url("../img/blank11px.png");
     width: 11px;
     height: 11px;
+}
+
+.tech.rare {
+    background-image: url("../img/tech_bg_rare.png") !important;
+}
+
+.tech.dangerous {
+    background-image: url("../img/tech_bg_dangerous.png") !important;
 }
 
 .tech img {
@@ -187,3 +205,28 @@ span.physics-research::before {
 .Treant .node.collapsed { background-color: #888888; }
 
 .Treant .dlc { background-color: #FFFF00; }
+
+.tech span.dots {
+    top: -11px;
+    position: relative;
+    display: block;
+}
+
+.ui-tooltip .feature-unlocks img {
+    max-height: 20px;
+    max-width: 20px;
+}
+
+.ui-tooltip .feature-unlocks ul li {
+    list-style-type: none;
+}
+
+span.mod-good {
+    color: #5CDB95;
+    font-weight: bold;
+}
+
+span.mod-bad {
+    color: #c7493a;
+    font-weight: bold;
+}
