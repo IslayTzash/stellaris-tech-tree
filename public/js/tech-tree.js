@@ -101,7 +101,7 @@ $(document).ready(function() {
 					+ (tech.is_rare ? '<br />Tech is rare' : "")
 				);
 				$descBtn.attr('data-header', 'Description');		
-				if (tech.prerequisites.some( p => techData.some( t => t.key == p && t.tier > 0 )))
+				if (tech.prerequisites.filter( p => techData.some( t => t.key == p && t.tier > 0 )).reduce(c => ++c, 0) > 1)
 				{
 					$descBtn.addClass('multiple-prerequisistes');
 				}
