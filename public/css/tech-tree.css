@@ -31,11 +31,11 @@ body { background: #474747; }
     height: 66px;
     font-family: 'Arimo', Verdana;
     font-size: 12px;
-    color: black;
+    background-color: black;
+    color: white;
 }
 
 .tech div.icon {
-    background-color: black;
     border-radius: 4px;
     width: 52px;
     height: 52px;
@@ -54,7 +54,6 @@ body { background: #474747; }
     overflow: hidden;
     white-space: nowrap;
     z-index: 2;
-    color: white;
 }
 
 .tech p.node-desc {
@@ -62,8 +61,7 @@ body { background: #474747; }
 }
 
 .tech p.description,
-.tech p.weight-modifiers,
-.tech p.feature-unlocks {
+.tech p.weight-modifiers {
     border: 1px solid gray;
     padding: 3px;
     width: 12px;
@@ -77,17 +75,17 @@ body { background: #474747; }
     margin-bottom: 2px;
     position: relative;
     left: 255px;
-    top: -53px;
+    top: -32px;
     z-index: 3;
 }
 
-.tech p.description {
-    height: 7px;
-    margin-bottom: 7px;
+.tier0 p.description,
+.tier0 p.weight-modifiers {
+    top: -16px;  /* TODO: WTF! leftmost column is off for some reason, brute-force it back */
 }
 
 .tech p.multiple-prerequisistes {
-    background-color: red;
+    background-color: rgb(211, 93, 46);
 }
 
 div.extra-data {
@@ -95,7 +93,7 @@ div.extra-data {
 }
 
 .tech p.weight-modifiers.disabled,
-.tech p.feature-unlocks.disabled {
+.tech p.description.disabled {
     border: 1px solid #444;
     cursor: default;
     color: #444;
@@ -106,6 +104,8 @@ div.extra-data {
     display: block;
     min-width: 256px;
     max-width: 512px;
+    color: white;
+    background-color: black;
 }
 
 .ui-tooltip img.resource {
@@ -119,8 +119,7 @@ ui-tooltip ul li {
     /* margin-left: 0; */
 }
 
-.ui-tooltip > div > span.weight-modifiers,
-.ui-tooltip > div > span.feature-unlocks {
+.ui-tooltip > div > span.weight-modifiers {
     white-space: pre;
 }
 
@@ -128,14 +127,26 @@ ui-tooltip ul li {
     padding: 3px;
     margin: -5px 0 5px -3px;
     width: 100%;
-    background-color: #262626;
+    background-color: #1a1818;
     color: white;
     font-weight: bold;
     content: "Weight Modifiers";
 }
 
+.tooltip-second-header {
+    margin-top: 5px;
+}
+
+.tooltip-header.society {
+    background-color: #5ACA9C;
+}
+
+.ui-tooltip.society,
 .tech.society {
     border-color: #5ACA9C;
+}
+
+.node.tech.society {
     background-image: url("../img/tech_bg_society.png");
 }
 
@@ -146,10 +157,19 @@ span.society-research::before {
     height: 11px;
 }
 
+.tooltip-header.engineering {
+    background-color: #E29C43;
+}
+
+.ui-tooltip.engineering,
 .tech.engineering {
     border-color: #E29C43;
+}
+
+.node.tech.engineering {
     background-image: url("../img/tech_bg_engineering.png");
 }
+
 span.engineering-research::before {
     background: url("../img/engineering_research.png") center center no-repeat;
     content:  url("../img/blank11px.png");
@@ -157,10 +177,19 @@ span.engineering-research::before {
     height: 11px;
 }
 
+.tooltip-header.physics {
+    background-color: #4396E2;
+}
+
+.ui-tooltip.physics,
 .tech.physics {
     border-color: #4396E2;
+}
+
+.node.tech.physics {
     background-image: url("../img/tech_bg_physics.png");
 }
+
 span.physics-research::before {
     background: url("../img/physics_research.png") center center no-repeat;
     content:  url("../img/blank11px.png");
@@ -204,29 +233,33 @@ span.physics-research::before {
 
 .Treant .node.collapsed { background-color: #888888; }
 
-.Treant .dlc { background-color: #FFFF00; }
+.Treant .dlc { background-color: #646418; }
 
 .tech span.dots {
-    top: -11px;
+    top: -8px;
     position: relative;
     display: block;
 }
 
-.ui-tooltip .feature-unlocks img {
+.tech .tier0 span.dots {
+    top: -23px;
+}
+
+.ui-tooltip .description img {
     max-height: 20px;
     max-width: 20px;
 }
 
-.ui-tooltip .feature-unlocks ul li {
+.ui-tooltip .description ul li {
     list-style-type: none;
 }
 
 span.mod-good {
-    color: #5CDB95;
+    color: lime;
     font-weight: bold;
 }
 
 span.mod-bad {
-    color: #c7493a;
+    color: red;
     font-weight: bold;
 }

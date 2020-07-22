@@ -1,5 +1,8 @@
 'use strict';
 
+const AREAS = ['physics', 'society', 'engineering']
+const TIERS = [1, 2, 3, 4, 5]
+
 let config = {
     container: '#tech-tree',
     rootOrientation: 'WEST',
@@ -16,17 +19,26 @@ let config = {
     callback: {
 		onTreeLoaded: function() {
 			$(document).tooltip({
-				items: 'p.description, p.weight-modifiers[title], p.feature-unlocks[title]',
+				items: 'p.description, p.weight-modifiers[title]',
 				content: function() {
 					let $button = $(this);
+					
+					setTimeout(function() {
+						// TODO: Quite Hacky, Maybe swapout tooltip engine?
+						// After the tooltip div is created, whack the tech.are class on it to change the border color
+						var $c = $button.attr('class');
+						AREAS.forEach(area => {
+							if ($c.includes(area)) { $('.ui-tooltip').addClass(area) } else { $('.ui-tooltip').removeClass(area) }
+						})
+					}, 50);
 
 					// copies class and raw html from the item being moused over into the tooltip window for display
 					var $content = $('<span>')
-						.removeClass(['weight-modifiers','feature-unlocks', 'description'])
 						.addClass($button.attr('class'))
 						.html($button.attr('title'));
 
 					return $('<div class="tooltip-header">')
+						.addClass($button.attr('class'))
 						.html($button.data('header'))
 						.after($content);
 				}
@@ -39,8 +51,6 @@ let rootNode = {HTMLid: 'root', data: {tier: 0}};
 
 // dummy root nodes for techs which start with no lower tier dependencies
 let tierNodes = {}
-const AREAS = ['physics', 'society', 'engineering']
-const TIERS = [1, 2, 3, 4, 5]
 AREAS.forEach(area => {
 	tierNodes[area] = {}
 	TIERS.forEach(tier => {
@@ -106,6 +116,17 @@ function area_compare(a, b)
 }
 
 $(document).ready(function() {
+	
+	(function ($) {
+		$.each(['show', 'hide'], function (i, ev) {
+			var el = $.fn[ev];
+			$.fn[ev] = function () {
+			this.trigger(ev);
+			return el.apply(this, arguments);
+			};
+		});
+		})(jQuery);
+
     $.getJSON('techs.json', function(techData) {
 
 		techData.sort( (a, b) => area_compare(a.area, b.area) * -100 + a.category.localeCompare(b.category) * 10 + a.name.localeCompare(b.name) );
@@ -119,13 +140,28 @@ $(document).ready(function() {
 			let category = tech.category + tier;
 
 			function extraDataDiv() {
-				let $descBtn = $('<p>').addClass('description').append('<span class="dots">…</span>');
+
+				let $descBtn = $('<p>').addClass('description').addClass(tech.area).append('<span class="dots">…</span>');
 				let prerequisites = tech.prerequisites.reduce( (out, x) => out += '<br />&nbsp;&nbsp;&nbsp;' + prerequisite_name_lookup(techData, x, tech.area), "");
+				let unlocks = '';
+				if ( tech.feature_unlocks.length > 0 ) {
+					let $unlockList = $('<ul>');
+					tech.feature_unlocks.forEach( unlock => {
+						if (null === unlock) {
+							console.log('Ignored null feature_unlock for ' + tech.key);
+						} else {
+							$unlockList.append($('<li>').append(subst_icons_and_colors(unlock)));
+						}
+					});				
+					unlocks = '<br /><div class="tooltip-header second-tooltip ' + tech.area + '">Research Effects</div>';
+					unlocks += $unlockList[0].outerHTML;
+				}
 				$descBtn.attr('title', tech.description + '<br />'
 					+ (tech.dlc.length > 0 ? '<br />Requires DLC: ' + tech.dlc.join(', ') + '<br />' : "")
 					+ (prerequisites.length > 0 ? '<br />Prerequisites:' + prerequisites + '<br />' : '')
 					+ (tech.is_dangerous ? '<br />Tech is dangerous' : "")
-					+ (tech.is_rare ? '<br />Tech is rare' : "")
+					+ (tech.is_rare ? '<br />Tech is rare<br />' : "")
+					+ unlocks
 				);
 				$descBtn.attr('data-header', 'Description');		
 				if (tech.prerequisites.filter( p => techData.some( t => t.key == p && t.tier > 0 )).reduce(c => ++c, 0) > 1)
@@ -133,7 +169,7 @@ $(document).ready(function() {
 					$descBtn.addClass('multiple-prerequisistes');
 				}
 
-				let $modifiersBtn = $('<p>').addClass('weight-modifiers').html('⚄');
+				let $modifiersBtn = $('<p>').addClass('weight-modifiers').addClass(tech.area).html('⚄');
 				if ( tech.weight_modifiers.length > 0 ) {
 					let weightModifiers = tech.weight_modifiers.join('')
 					weightModifiers = weightModifiers.replace(/(?:\(.?)([0-9.+-]+)(?:\))/g,  m => '<span class="' + (parseFloat(m.replace(/[^0-9.+-]/g,'')) >= 1.0 ? 'mod-good' : 'mod-bad') + '">' + m + '</span>');
@@ -144,24 +180,7 @@ $(document).ready(function() {
 					$modifiersBtn.addClass('disabled');
 				}
 
-				let $unlocksBtn = $('<p>').addClass('feature-unlocks').html('🎁');
-				if ( tech.feature_unlocks.length > 0 ) {
-					let $unlockList = $('<ul>');
-					tech.feature_unlocks.forEach( unlock => {
-						if (null === unlock) {
-							console.log('Ignored null feature_unlock for ' + tech.key);
-						} else {
-							$unlockList.append($('<li>').append(subst_icons_and_colors(unlock)));
-						}
-					});				
-					$unlocksBtn.attr('title', $unlockList[0].outerHTML);
-					$unlocksBtn.attr('data-header', 'Research Effects');
-				}
-				else {
-					$unlocksBtn.addClass('disabled');
-				}
-
-				return $('<div class="extra-data">').append($descBtn).append($modifiersBtn).append($unlocksBtn)[0].outerHTML;
+				return $('<div class="extra-data">').addClass('tier'+tech.tier).addClass(tech.area).append($descBtn).append($modifiersBtn)[0].outerHTML;
 			}
 
 			return {
