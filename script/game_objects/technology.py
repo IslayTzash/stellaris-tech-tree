@@ -1,5 +1,5 @@
 from deep_parsers.feature_unlocks import FeatureUnlocks
-from deep_parsers.weight_modifiers import parse as parse_weight_modifiers
+from deep_parsers.weight_modifiers import WeightModifiers
 from json import JSONEncoder
 
 
@@ -44,7 +44,7 @@ class Technology:
                                        buildable_pops, buildings, components,
                                        edicts, policies, resources,
                                        spaceport_modules, tile_blockers,
-                                       localizer)
+                                       localizer, at_vars)
         self.feature_unlocks = unlock_parser.parse(self.key, tech_data)
 
     def _is_start_tech(self, tech_data, start_with_tier_zero):
@@ -143,6 +143,7 @@ class Technology:
         return float(factor)
 
     def _weight_modifiers(self, tech_data):
+        wm = WeightModifiers(self._localizer, self._at_vars)
         try:
             unparsed_modifiers = next(iter(
                 key for key in tech_data if list(key.keys())[0] == 'weight_modifier'
@@ -150,12 +151,11 @@ class Technology:
         except StopIteration:
             unparsed_modifiers = []
 
-        return [parse_weight_modifiers(modifier['modifier'], self._localizer, self._at_vars)
+        return [wm.parse(modifier['modifier'])
                 for modifier in unparsed_modifiers
                 if list(modifier.keys()) == ['modifier']]
 
     def _dlc(self, tech_data):
-        # TODO: pull it from weight_modifiers too?  Sometimes it appears as 0.0 factor
         try:
             dlc = next(iter(
                 key for key in tech_data if list(key.keys())[0] == 'potential'

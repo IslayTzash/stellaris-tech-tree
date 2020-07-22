@@ -4,681 +4,571 @@ import re
 import ruamel.yaml as yaml
 import sys
 
-_localizer = None
-_wm_at_vars = {}
-
-def parse(modifier, localizer, at_vars):
-    global _localizer
-    global _wm_at_vars
-    _localizer = localizer
-    _wm_at_vars = at_vars
-
-    if len(modifier) == 1:
-        modifier.append({'always': 'yes'})
-
-    try:
-        factor = next(iter(key for key in modifier
-                           if list(key.keys())[0] == 'factor'))['factor']
-        adjustment = _localize_factor(factor)
-    except StopIteration:
-        add = next(iter(line for line in modifier
-                        if list(line.keys())[0] == 'add'))['add']
-        adjustment = _localize_add(add)
-
-    unparsed_conditions = [line for line in modifier \
-                           if list(line.keys())[0] not in ['factor', 'add']]
-    if len(unparsed_conditions) > 1:
-        unparsed_conditions = [{'AND': unparsed_conditions}]
-
-    conditions = [_parse_condition(condition)
-                  for condition
-                  in unparsed_conditions]
-
-    yaml_output = yaml.dump({adjustment: conditions}, indent=4,
-                            default_flow_style=False,
-                            allow_unicode=True)
-    pseudo_yaml = re.sub(r'(\xd7[\d.]+):\n\s*- ', r'(\1)',
-                         yaml_output).replace('- ', '• ')
-    # print(repr(modifier).encode('utf-8'))
-    # print(repr(pseudo_yaml).encode('utf-8'))
-    # exit()
-    return pseudo_yaml
-
-
-def _parse_condition(condition):
-    key = list(condition.keys())[0]
-    value = condition[key]
-    gkey = '_localize_' + key.lower()
-    if gkey in globals():
-        return globals()[gkey](value)
-    else:
-        print(" ** Please add localize function to weight_modifiers.py: " + gkey)
-        return value
-
-
-def _localize_federation(value):
-    # TODO EXTEND?
-    if type(value) is list and 2 == len(value):
-        if 'has_federation_perk' in value[0]:
-            perk = _localizer.get(value[0]['has_federation_perk'])
-            if 'any_member' in value[1]:
-                return 'Has Federation Perk: {} and any member {}'.format(perk, _localize_has_technology(value[1]['any_member'][0]['has_technology']))
-    print(' ++ No _localize_federation for: {}'.format(repr(value)))
-    return value
-
-
-def _localize_has_origin(value):
-    ethic = _localizer.get(value)
-    return 'Has {} Origin'.format(ethic)
-
-
-def _localize_factor(factor):
-    global _wm_at_vars
-    if str(factor).startswith('@') and factor in _wm_at_vars:
-        factor = _wm_at_vars[factor]
-    return '\xD7{}'.format(factor)
-
-
-def _localize_add(add):
-    sign = '' if add == 0 else '+' if add > 0 else '-';
-    return '{}{}'.format(sign, add)
-
-
-def _localize_has_deposit(value):
-    ethic = _localizer.get(value)
-    return 'Has {} Deposit'.format(ethic)
-
-
-def _localize_has_ethic(value):
-    ethic = _localizer.get(value)
-    return 'Has {} Ethic'.format(ethic)
-
-
-def _localize_has_not_ethic(value):
-    ethic = _localizer.get(value)
-    return 'Does NOT have {} Ethic'.format(ethic)
-
-
-def _localize_is_pacifist(value):
-    return 'Is some degree of Pacifist' if value == 'yes' \
-        else 'Is NOT some degree of Pacifist'
-
-
-def _localize_is_militarist(value):
-    return 'Is some degree of Militarist' if value == 'yes' \
-        else 'Is NOT some degree of Militarist'
-
-def _localize_is_egalitarian(value):
-    return 'Is some degree of Egalitarian' if value == 'yes' \
-        else 'Is NOT some degree of Egalitarian'
-
-def _localize_is_authoritarian(value):
-    return 'Is some degree of Authoritarian' if value == 'yes' \
-        else 'Is NOT some degree of Authoritarian'
-
-def _localize_is_materialist(value):
-    return 'Is some degree of Materialist' if value == 'yes' \
-        else 'Is NOT some degree of Materialist'
-
-
-def _localize_is_spiritualist(value):
-    return 'Is some degree of Spiritualist' if value == 'yes' \
-        else 'Is NOT some degree of Spiritualist'
-
-def _localize_is_xenophile(value):
-    return 'Is some degree of Xenophile' if value == 'yes' \
-        else 'Is NOT some degree of Xenophile'
-
-def _localize_is_xenophobe(value):
-    return 'Is some degree of Xenophobe' if value == 'yes' \
-        else 'Is NOT some degree of Xenophobe'
-
-def _localize_has_civic(value):
-    civic = _localizer.get(value)
-    return 'Has {} Government Civic'.format(civic)
-
-
-def _localize_has_valid_civic(value):
-    civic = _localizer.get(value)
-    return 'Has {} Government Civic'.format(civic)
-
-
-def _localize_has_not_civic(value):
-    civic = _localizer.get(value)
-    return 'Does NOT have {} Government Civic'.format(civic)
-
-
-def _localize_has_ascension_perk(value):
-    perk = _localizer.get(value)
-    return 'Has {} Ascension Perk'.format(perk)
-
-
-def _localize_has_megastructure(value):
-    megastructure = _localizer.get(value)
-    return 'Has Megatructure {}'.format(megastructure)
-
-
-def _localize_has_policy_flag(value):
-    policy_flag = _localizer.get(value)
-    return 'Has {} Policy'.format(policy_flag)
-
-
-def _localize_has_trait(value):
-    trait = _localizer.get(value)
-    return 'Has {} Trait'.format(trait)
-
-def _localize_pop_has_trait(value):
-    trait = _localizer.get(value)
-    return 'Population has {} Trait'.format(trait)
-
-def _localize_has_authority(value):
-    authority = _localizer.get(value)
-    return 'Has {} Authority'.format(authority)
-
-def _localize_has_not_authority(value):
-    authority = _localizer.get(value)
-    return 'Does NOT have {} Authority'.format(authority)
-
-def _localize_host_has_dlc(dlc):
-    # dlc = _localizer.get(value)
-    return 'Host has the {} DLC'.format(dlc)
-
-def _localize_host_has_not_dlc(dlc):
-    # dlc = _localizer.get(value)
-    return 'Host does NOT have the {} DLC'.format(dlc)
-
-def _localize_has_technology(value):
-    try:
-        technology = _localizer.get(value)
-    except KeyError:
-        technology = value
-
-    return 'Has {} Technology'.format(technology)
-
-
-def _localize_has_not_technology(value):
-    try:
-        technology = _localizer.get(value)
-    except KeyError:
-        technology = value
-
-    return 'Does NOT have {} Technology'.format(technology)
-
-
-def _localize_has_modifier(value):
-    modifier = _localizer.get(value)
-    return 'Has the {} modifier'.format(modifier)
-
-
-def _localize_has_not_modifier(value):
-    modifier = _localizer.get(value)
-    return 'Does NOT have the {} modifier'.format(modifier)
-
-
-def _localize_is_country_type(value):
-    return 'Is of the {} country type'.format(value)
-
-
-def _localize_ideal_planet_class(value):
-    return 'Is ideal class'.format(value)
-
-
-def _localize_is_planet_class(value):
-    planet_class = _localizer.get(value)
-    return 'Is {}'.format(planet_class)
-
-
-def _localize_has_government(value):
-    government = _localizer.get(value)
-    return 'Has {}'.format(government)
-
-
-def _localize_has_not_government(value):
-    government = _localizer.get(value)
-    return 'Does NOT have {}'.format(government)
-
-
-def _localize_is_colony(value):
-    return 'Is a Colony' if value == 'yes' \
-        else 'Is NOT a Colony'
-
-
-def _localize_is_ftl_restricted(value):
-    return 'FTL is restricted' if value == 'yes' \
-        else 'FTL is NOT restricted'
-
-def _localize_has_any_megastructure_in_empire(value):
-    return 'Has any Megastructure' if value == 'yes' \
-        else 'Has NO Megastructures'
-
-
-def _localize_allows_slavery(value):
-    return 'Allows Slavery' if value == 'yes' \
-        else 'Does NOT allow Slavery'
-
-
-def _localize_has_federation(value):
-    return 'Is in a Federation' if value == 'yes' \
-        else 'Is NOT in a Federation'
-
-def _localize_num_owned_planets(value):
-    operator, value = _operator_and_value(value)
-    return 'Number of owned planets is {} {}'.format(operator, value)
-
-def _localize_count_owned_pops(value):
-    operator, value = _operator_and_value(value[1]['count'])
-    return 'Number of enslaved planets {} {}'.format(operator, value)
-
-
-def _localize_count_starbase_sizes(value):
-    starbase_size = _localizer.get(value[0]['starbase_size'])
-    operator, value = _operator_and_value(value[1]['count'])
-    return 'Number of Starbase {} is {} {}'.format(starbase_size, operator, value)
-    
-
-def _localize_num_communications(value):
-    operator, value = _operator_and_value(value)
-    return 'Number of owned planets is {} {}'.format(operator, value)
-
-def _localize_num_districts(value):
-    found = False
-    if type(value) is list:
-        for d in value:
-            if 'type' in d:
-                key = _localizer.get(d['type'])
-            elif 'value' in d:
-                operator, value = _operator_and_value(d['value'])
-                value = 'Number of {} is {} {}'.format(key, operator, value)
-                found = True
-                break
-    else:
-        print(' ** Could not parse num districts {}'.format(repr(value)))
-        return repr(value)
-    if not found:
-        print(' ** Could not format _localize_num_districts: {}'.format(value))
-    return value
-
-def _localize_has_communications(value):
-    return 'Has communications with your Empire'
-
-
-def _localize_is_ai(value):
-    return 'Is AI controlled' if value == 'yes' else 'Is NOT AI controlled'
-
-
-def _localize_is_same_species(value):
-    species = 'Dominant' \
-              if value.lower() == 'root' \
-                 else _localizer.get(value)
-    return 'Is of the {} Species'.format(species)
-
-
-def _localize_is_species(value):
-    species = 'Dominant' \
-              if value.lower() == 'root' \
-                 else _localizer.get(value)
-    article = 'an' if species[0].lower() in 'aeiou' else 'a'
-    return 'Is {} {}'.format(article, species)
-
-
-def _localize_is_species_class(value):
-    species_class = _localizer.get(value)
-    article = 'an' if species_class[0].lower() in 'aeiou' else 'a'
-    return 'Is {} {}'.format(article, species_class)
-
-
-def _localize_is_enslaved(value):
-    return 'Pop is enslaved' if value == 'yes' else 'Pop is NOT enslaved'
-
-
-def _localize_has_seen_any_bypass(value):
-    bypass = _localizer.get_or_default('bypass_{}'.format(value), value)
-    return 'Has encountered a {}'.format(bypass)
-    
-
-def _localize_has_not_seen_any_bypass(value):
-    bypass = _localizer.get_or_default('bypass_{}'.format(value), value)
-    return 'Has NOT encountered a {}'.format(bypass)
-    
-
-def _localize_owns_any_bypass(value):
-    bypass = _localizer.get_or_default('bypass_{}'.format(value), value)
-    return 'Controls a system with a {}'.format(bypass)
-    
-
-def _localize_not_owns_any_bypass(value):
-    bypass = _localizer.get_or_default('bypass_{}'.format(value), value)
-    return 'Does NOT control a system with a {}'.format(bypass)
-    
-
-def _localize_years_passed(value):
-    operator, value = _operator_and_value(value)
-    return 'Number of years since game start is {} {}'.format(operator, value)
-
-
-def _localize_not_years_passed(value):
-    operator, value = _operator_and_value(value)
-    return 'Number of years since game start is NOT {} {}'.format(operator, value)
-
-
-def _localize_has_country_flag(value):
-    return 'Has {} country flag'.format(value)
-
-
-def _localize_has_not_country_flag(value):
-    return 'Does NOT have {} country flag'.format(value)
-
-
-def _localize_research_leader(values, negated=False):
-    leader = 'Research Leader ({})'.format(values[0]['area'].title())
-    if negated:
-        leader = 'NOT ' + leader
-
-    localized_conditions = []
-    for condition in values[1:]:
+class WeightModifiers:
+    def __init__(self, localizer, at_vars):
+        self._localizer = localizer
+        self._at_vars = at_vars
+
+    def parse(self, modifier):
+        if len(modifier) == 1:
+            modifier.append({'always': 'yes'})
+
+        try:
+            factor = next(iter(key for key in modifier
+                            if list(key.keys())[0] == 'factor'))['factor']
+            adjustment = self._localize_factor(factor)
+        except StopIteration:
+            add = next(iter(line for line in modifier
+                            if list(line.keys())[0] == 'add'))['add']
+            adjustment = self._localize_add(add)
+
+        unparsed_conditions = [line for line in modifier \
+                            if list(line.keys())[0] not in ['factor', 'add']]
+        if len(unparsed_conditions) > 1:
+            unparsed_conditions = [{'AND': unparsed_conditions}]
+
+        conditions = [self._parse_condition(condition)
+                    for condition
+                    in unparsed_conditions]
+
+        yaml_output = yaml.dump({adjustment: conditions}, indent=4,
+                                default_flow_style=False,
+                                allow_unicode=True)
+        pseudo_yaml = re.sub(r'(\xd7[\d.]+):\n\s*- ', r'(\1)',
+                            yaml_output).replace('- ', '• ')
+        # print(repr(modifier).encode('utf-8'))
+        # print(repr(pseudo_yaml).encode('utf-8'))
+        # exit()
+        return pseudo_yaml
+
+
+    def _parse_condition(self, condition):
         key = list(condition.keys())[0]
         value = condition[key]
-        localized_condition = {
-            'has_trait': lambda: _localize_has_expertise(value),
-            'has_level': lambda: _localize_has_level(value)
-        }[key]()
-        localized_conditions.append(localized_condition)
+        gkey = '_localize_' + key.lower()
+        f = getattr(self, gkey, None)
+        if f:
+            return f(value)
+        else:
+            print(" ** Please add localize function to weight_modifiers.py: " + gkey)
+            return value
 
-    return {leader: localized_conditions}
+    ########################################################################################
+
+    def _localize_basic_has_or_has_not(self, value, label, isPositive=True):
+        """
+        Has/Has Not display:
+            Has <VALUE> <LABEL> -> Has Dark Matter Deposit
+            Does NOT have <VALUE> <LABEL>
+
+        Parameters
+        ----------
+        :param value: the value to localize
+        :param label: a trailing category for the message
+        :param isPositive: if false, render negated message
+        """
+        return "{} {} {}".format( "Has" if isPositive else "Does NOT have", self._localizer.get(value), label)
+
+    def _localize_has_origin(self, value):
+        return self._localize_basic_has_or_has_not(value, "Origin")
+
+    def _localize_has_deposit(self, value):
+        return self._localize_basic_has_or_has_not(value, "Deposit")
+
+    def _localize_has_ethic(self, value):
+        return self._localize_basic_has_or_has_not(value, "Ethic")
+
+    def _localize_not_has_ethic(self, value):
+        return self._localize_basic_has_or_has_not(value, "Ethic", False)
+
+    def _localize_has_civic(self, value):
+        return self._localize_basic_has_or_has_not(value, "Government Civic")
+
+    def _localize_has_valid_civic(self, value):
+        return self._localize_has_civic(value)
+
+    def _localize_not_has_civic(self, value):
+        return self._localize_basic_has_or_has_not(value, "Government Civic", False)
+
+    def _localize_not_has_valid_civic(self, value):
+        return self._localize_not_has_civic(value)
+
+    def _localize_has_ascension_perk(self, value):
+        return self._localize_basic_has_or_has_not(value, "Ascension Perk")
+
+    def _localize_has_megastructure(self, value):
+        return self._localize_basic_has_or_has_not(value, "Megatructure")
+
+    def _localize_has_policy_flag(self, value):
+        return self._localize_basic_has_or_has_not(value, "Policy")
+
+    def _localize_has_trait(self, value):
+        return self._localize_basic_has_or_has_not(value, "Trait")
+
+    def _localize_has_authority(self, value):
+        return self._localize_basic_has_or_has_not(value, "Authority")
+
+    def _localize_not_has_authority(self, value):
+        return self._localize_basic_has_or_has_not(value, "Authority", False)
+
+    def _localize_has_technology(self, value):
+        return self._localize_basic_has_or_has_not(value, "Technology")
+
+    def _localize_not_has_technology(self, value):
+        return self._localize_basic_has_or_has_not(value, "Authority", False)
+
+    def _localize_has_modifier(self, value):
+        return self._localize_basic_has_or_has_not(value, "Modifier")
+
+    def _localize_not_has_modifier(self, value):
+        return self._localize_basic_has_or_has_not(value, "Modifier", False)
+
+    def _localize_has_country_flag(self, value):
+        return self._localize_basic_has_or_has_not(value, "country flag")
+
+    def _localize_not_has_country_flag(self, value):
+        return self._localize_basic_has_or_has_not(value, "country flag", False)
+
+    def _localize_has_blocker(self, value):
+        return self._localize_basic_has_or_has_not(value, "Tile Blocker")
+
+    def _localize_has_tradition(self, value):
+        return self._localize_basic_has_or_has_not(value, "Tradition")
+
+    def _localize_not_has_tradition(self, value):
+        return self._localize_basic_has_or_has_not(value, "Tradition", False)
+
+    def _localize_has_swapped_tradition(self, value):
+        return self._localize_basic_has_or_has_not(value, "Swapped Tradition")
+
+    def _localize_not_has_ancrel(self, value):
+        return self._localize_basic_has_or_has_not(value, "Ancient Relic", False)
+
+    ########################################################################################
+
+    def _localize_basic_negatable_statement(self, value, statement):
+        """
+        Display a statement, remove the string "NOT " from the statement if value is "yes" 
+
+        Parameters
+        ----------
+        :param value: value which should be "yes" when true
+        :param statment: Basic statement to display, "NOT " may be removed from the statement
+        """
+        if value.lower() == 'yes':
+            # Remove the NOT, also clean up some common oddness like "Does have " => "Has" / "Does use" => "Uses"
+            return re.sub(r'^Does use', 'Uses', re.sub(r'^Does have', 'Has', re.sub(r'NOT ', '', statement)))
+        else:
+            return statement
+
+    def _localize_is_pacifist(self, value):
+        return self._localize_basic_negatable_statement(value, 'Is NOT some degree of Pacifist')
+
+    def _localize_is_militarist(self, value):
+        return self._localize_basic_negatable_statement(value, 'Is NOT some degree of Militarist')
+
+    def _localize_is_egalitarian(self, value):
+        return self._localize_basic_negatable_statement(value, 'Is NOT some degree of Egalitarian')
+
+    def _localize_is_authoritarian(self, value):
+        return self._localize_basic_negatable_statement(value, 'Is NOT some degree of Authoritarian')
+
+    def _localize_is_materialist(self, value):
+        return self._localize_basic_negatable_statement(value, 'Is NOT some degree of Materialist')
+
+    def _localize_is_spiritualist(self, value):
+        return self._localize_basic_negatable_statement(value, 'Is NOT some degree of Spiritualist')
+
+    def _localize_is_xenophile(self, value):
+        return self._localize_basic_negatable_statement(value, 'Is NOT some degree of Xenophile')
+
+    def _localize_is_xenophobe(self, value):
+        return self._localize_basic_negatable_statement(value, 'Is NOT some degree of Xenophobe')
+
+    def _localize_is_playable_country(self, value):
+        return self._localize_basic_negatable_statement(value, 'Is NOT playable Country')
+
+    def _localize_original_series_ships_era(self, value):
+        return self._localize_basic_negatable_statement(value, 'Is NOT Original Series ships era')
+
+    def _localize_original_series_ships_era(self, value):
+        return self._localize_basic_negatable_statement(value, 'Is NOT Motion Picture ships era')
+
+    def _localize_is_borg_empire(self, value):
+        return self._localize_basic_negatable_statement(value, 'Is NOT the Borg Empire')
+
+    def _localize_is_nomadic_empire(self, value):
+        return self._localize_basic_negatable_statement(value, 'Is NOT the Nomadic Empire')
+
+    def _localize_is_machine_cybernetic_empire(self, value):
+        return self._localize_basic_negatable_statement(value, 'Is NOT the Machine Cybernetic Empire')
+
+    def _localize_is_machine_empire(self, value):
+        return self._localize_basic_negatable_statement(value, 'Is NOT the Machine Empire')
+
+    def _localize_is_lithoid_empire(self, value):
+        return self._localize_basic_negatable_statement(value, 'Is NOT the Lithoid Empire')
+
+    def _localize_is_temporal_masters(self, value):
+        return self._localize_basic_negatable_statement(value, 'Is NOT the Temporal Masters')
+
+    def _localize_is_mirror_version_empire(self, value):
+        return self._localize_basic_negatable_statement(value, 'Is NOT a Mirror Universe Empire')
+
+    def _localize_has_espionage_agency(self, value):
+        return self._localize_basic_negatable_statement(value, 'Does NOT have an Espionage Agency')
+
+    def _localize_is_master_geneticist(self, value):
+        return self._localize_basic_negatable_statement(value, 'Does NOT have Master Geneticist Trait')
+
+    def _localize_is_telepathic_empire(self, value):
+        return self._localize_basic_negatable_statement(value, 'Is NOT a Telepathic Empire')
+
+    def _localize_uses_photonic_weapons_any_torp(self, value):
+        return self._localize_basic_negatable_statement(value, 'Does NOT use Photonic Torpedoes')
+
+    def _localize_uses_plasma_weapons_any_torp(self, value):
+        return self._localize_basic_negatable_statement(value, 'Does NOT use Plasma Torpedoes')
+
+    def _localize_uses_phaser_weapons_any(self, value):
+        return self._localize_basic_negatable_statement(value, 'Does NOT use Phasers')
+
+    def _localize_uses_disruptor_weapons_any(self, value):
+        return self._localize_basic_negatable_statement(value, 'Does NOT use Disruptors')
+
+    def _localize_uses_disruptor_weapons(self, value):
+        return self._localize_basic_negatable_statement(value, 'Does NOT use Disruptors')
+
+    def _localize_uses_plasma_disruptor_weapons(self, value):
+        return self._localize_basic_negatable_statement(value, 'Does NOT use Plasma Disruptors')
+
+    def _localize_uses_antiproton_weapons_any(self, value):
+        return self._localize_basic_negatable_statement(value, 'Does NOT use Anti-Proton Weapons')
+
+    def _localize_is_sapient(self, value):
+        return self._localize_basic_negatable_statement(value, 'This Species is NOT pre-sapient')
+
+    def _localize_uses_cloaks(self, value):
+        return self._localize_basic_negatable_statement(value, 'Does NOT use Cloaking')
+
+    def _localize_is_colony(self, value):
+        return self._localize_basic_negatable_statement(value, 'Is NOT a Colony')
+
+    def _localize_is_ftl_restricted(self, value):
+        return self._localize_basic_negatable_statement(value, 'FTL is NOT restricted')
+
+    def _localize_has_any_megastructure_in_empire(self, value):
+        return self._localize_basic_negatable_statement(value, 'Does NOT have any Megastructures')
+
+    def _localize_allows_slavery(self, value):
+        return self._localize_basic_negatable_statement(value, 'Does NOT allow Slavery')
+
+    def _localize_has_federation(self, value):
+        return self._localize_basic_negatable_statement(value, 'Is NOT in a Federation')
+
+    def _localize_is_enslaved(self, value):
+        return self._localize_basic_negatable_statement(value, 'Pop is NOT enslaved')
+
+    def _localize_has_communications(self, value):
+        return self._localize_basic_negatable_statement(value, 'Does NOT have communications with your Empire')
+
+    def _localize_ideal_planet_class(self, value):
+        return self._localize_basic_negatable_statement(value, 'Is NOT an ideal class')
+
+    def _localize_is_ai(self, value):
+        return self._localize_basic_negatable_statement(value, 'Is NOT AI controlled')
+
+    def _localize_is_galactic_community_member(self, value):
+        return self._localize_basic_negatable_statement(value, 'Is NOT a galactic community member')
+
+    ## These guys are backwards, leave them alone
+
+    def _localize_no_psionic_potential(self, value):
+        return 'Does NOT have Psionic Potential' if value == 'yes' \
+            else 'Has Psionic Potential'
+
+    def _localize_is_non_standard_colonization(self, value):
+        return 'Is a non-standard colonization' if value == 'yes' \
+            else 'Is a standard colonization'
+
+    ########################################################################################
+
+    def _localize_basic_container_rule(self, values, label):
+        """
+        This is just a container for more rules, parse them and bundle up child results
+
+        Parameters
+        ----------
+        :param values: child rules
+        :param label:  label to display before child rule tree
+        """
+        return {label: [self._parse_condition(value) for value in values]}
+
+    def _localize_and(self, values):
+        return self._localize_basic_container_rule(values, 'All of the following')
+
+    def _localize_or(self, values):
+        return self._localize_basic_container_rule(values, 'Any of the following')
+
+    def _localize_nor(self, values):
+        return self._localize_basic_container_rule(values, 'None of the following')
+
+    def _localize_not_or(self, values):
+        return self._localize_nor(values)
+
+    def _localize_not_and(self, values):
+        return self._localize_basic_container_rule(values, 'Not all of the following')
+
+    def _localize_any_system_within_border(self, values):
+        return self._localize_basic_container_rule(values, 'Any System within Borders')
+
+    def _localize_not_any_system_within_border(self, values):
+        return self._localize_basic_container_rule(values, 'No System within Borders')
+
+    def _localize_any_system_planet(self, values):
+        return self._localize_basic_container_rule(values, 'Any Planet in System')
+
+    def _localize_any_country(self, values):
+        return self._localize_basic_container_rule(values, 'Any Country')
+
+    def _localize_any_relation(self, values):
+        return self._localize_basic_container_rule(values, 'Any Relation')
+
+    def _localize_any_owned_pop(self, values):
+        return self._localize_basic_container_rule(values, 'Any empire Pop')
+
+    def _localize_any_pop(self, values):
+        return self._localize_basic_container_rule(values, 'Any Pop')
+
+    def _localize_not_any_owned_pop(self, values):
+        return self._localize_basic_container_rule(values, 'NOT any owned Pop')
+
+    def _localize_any_owned_planet(self, values):
+        return self._localize_basic_container_rule(values, 'Any owned Planet')
+
+    def _localize_any_planet(self, values):
+        return self._localize_basic_container_rule(values, 'Any Planet')
+
+    def _localize_any_planet_within_border(self, values):
+        return self._localize_basic_container_rule(values, 'Any Planet within Borders')
+
+    def _localize_not_any_owned_planet(self, values):
+        return self._localize_basic_container_rule(values, 'NOT any owned Planet')
+
+    def _localize_any_tile(self, values):
+        return self._localize_basic_container_rule(values, 'Any Tile')
+
+    def _localize_any_neighbor_country(self, values):
+        return self._localize_basic_container_rule(values, 'Any Neighbor Country')
+
+    def _localize_federation(self, values):
+        return self._localize_basic_container_rule(values, 'Federation')
+
+    def _localize_any_member(self, values):
+        return self._localize_basic_container_rule(values, 'Any Federation Member')
+
+    ########################################################################################
+
+    def _lookup_comparison_operator(self, value):
+        if value == '>':
+            return 'greater than'
+        elif value == '<':
+            return 'less than'
+        elif value == '>=':
+            return 'greater than or equal to'
+        elif value == '<=':
+            return 'less than or equal to'
+        else:
+            print(" ** cannot transform operator {}".format(repr(value)))
+            return value
+
+    def _operator_and_value(self, data):
+        if type(data) is int:
+            operator = 'equal to'
+            value = data
+        elif type(data) is dict:
+            symbol = list(data.keys())[0]
+            operator = self._lookup_comparison_operator(symbol)
+            value = list(data.values())[0]
+        else:
+            print(" ** Unsupported data type {} {}".format(type(data), repr(data)))
+            operator = ""
+            value = data
+        return (operator, value)
+
+    def _localize_basic_operator_rule(self, values, label):
+        """
+        Call _operator_and_value() and print the operator description and values that are returned after the label string
+
+        Parameters
+        ----------
+        :param values: rule with operator and value contents
+        :param label:  label to display before parsed operator rule tree
+        """
+        (operator, value) = self._operator_and_value(values)
+        return '{} {} {}'.format(label, operator, value)
+
+    def _localize_num_owned_planets(self, value):
+        return self._localize_basic_operator_rule(value, 'Number of owned planets is')
+
+    def _localize_num_communications(self, value):
+        return self._localize_basic_operator_rule(value, 'Number of owned planets is')  # TODO: RIGHT STRING?
+
+    def _localize_years_passed(self, value):
+        return self._localize_basic_operator_rule(value, 'Number of years since game start is')
+
+    def _localize_not_years_passed(self, value):
+        return self._localize_basic_operator_rule(value, 'Number of years since game start is NOT')
+
+    def _localize_has_level(self, value):
+        return self._localize_basic_operator_rule(value, 'Skill level is')
+
+    def _localize_count_owned_pops(self, value):
+        return self._localize_basic_operator_rule(value[1]['count'], 'Number of enslaved planets')
+
+    def _localize_has_resource(self, value):
+        return self._localize_basic_operator_rule(value[1]['amount'], self._localizer.get(value[0]['type']))
+
+    def _localize_not_has_resource(self, value):
+        return self._localize_basic_operator_rule(value[1]['amount'], 'No ' + self._localizer.get(value[0]['type']))  # ????
+
+    def _localize_count_starbase_sizes(self, value):
+        return self._localize_basic_operator_rule(value[1]['count'],
+            'Number of {}'.format(self._localizer.get(value[0]['starbase_size'])))
+            
+    ########################################################################################
+
+    def _singular_article(self, value):
+        return 'a' if not value[0].lower() in 'aeiou' else 'an'
+
+    # Simple rules with a string that gets looked up
+
+    def _localize_pop_has_trait(self, value):
+        return 'Population has {} Trait'.format(self._localizer.get(value))
+
+    def _localize_host_has_dlc(self, dlc):
+        return 'Host has the {} DLC'.format(dlc)
+
+    def _localize_not_host_has_dlc(self, dlc):
+        return 'Host does NOT have the {} DLC'.format(dlc)
+
+    def _localize_is_country_type(self, value):
+        return 'Is of the {} country type'.format(value)
+
+    def _localize_is_planet_class(self, value):
+        return 'Is {}'.format(self._localizer.get(value))
+
+    def _localize_has_federation_perk(self, value):
+        return 'Has {} Federation Perk'.format(self._localizer.get(value))
+
+    def _localize_has_government(self, value):
+        return 'Has {} Government'.format(self._localizer.get(value))
+
+    def _localize_not_has_government(self, value):
+        return 'Does NOT have {}'.format(self._localizer.get(value))
+
+    def _localize_has_seen_any_bypass(self, value):
+        return 'Has encountered a {}'.format(self._localizer.get_or_default('bypass_{}'.format(value), value))
+        
+    def _localize_not_has_seen_any_bypass(self, value):
+        return 'Has NOT encountered a {}'.format(self._localizer.get_or_default('bypass_{}'.format(value), value))
+        
+    def _localize_owns_any_bypass(self, value):
+        return 'Controls a system with a {}'.format(self._localizer.get_or_default('bypass_{}'.format(value), value))
+        
+    def _localize_not_owns_any_bypass(self, value):
+        return 'Does NOT control a system with a {}'.format(self._localizer.get_or_default('bypass_{}'.format(value), value))
+
+    def _localize_is_in_cluster(self, value):
+        return 'Is in a {} Cluster'.format(value)
+
+    def _localize_has_surveyed_class(self, value):
+        return 'Has surveyed {}'.format(value)
+
+    def _localize_is_species_class(self, value):
+        species_class = self._localizer.get(value)
+        return 'Is {} {}'.format(self._singular_article(species_class), species_class)
+
+    ########################################################################################
+
+    def _localize_factor(self, factor):
+        """Numeric factor for each tech"""
+        if str(factor).startswith('@') and factor in self._at_vars:
+            factor = self._at_vars[factor]
+        val = '\xD7{}'.format(factor)        
+        if not '.' in val:  # Add .0 to integers to keep sizes similar
+            val += '.0'
+        return val
 
 
-def _localize_not_research_leader(values):
-    return _localize_research_leader(values, negated=True)
+    def _localize_always(self, value):
+        return 'Always' if value == 'yes' else 'Never'
 
 
-def _localize_has_level(value):
-    operator, level = _operator_and_value(value)
-    return 'Skill level is {} {}'.format(operator, level)
+    def _localize_not(self, value):
+        key = list(value[0].keys())[0]
+        return self._parse_condition({'not_' + key: value[0][key]})
 
 
-def _localize_has_expertise(value):
-    expertise = _localizer.get(value)
-    if expertise.startswith('Expertise'):
-        truncated = expertise.replace('Expertise: ', '')
-        condition = 'Is {} Expert'.format(truncated)
-    else:
-        condition = 'Is {}'.format(expertise)
-
-    return condition
+    def _localize_add(self, add):
+        sign = '' if add == 0 else '+' if add > 0 else '-'
+        return '{}{}'.format(sign, add)
 
 
-def _localize_any_system_within_border(values):
-    parsed_values = [_parse_condition(value) for value in values]
-    return {'Any System within Borders': parsed_values}
-
-
-def _localize_is_in_cluster(value):
-    return 'Is in a {} Cluster'.format(value)
-
-
-def _localize_any_country(values):
-    parsed_values = [_parse_condition(value) for value in values]
-    return {'Any Country': parsed_values}
-
-def _localize_any_relation(values):
-    parsed_values = [_parse_condition(value) for value in values]
-    return {'Any Relation': parsed_values}
-
-
-def _localize_any_owned_pop(values):
-    parsed_values = [_parse_condition(value) for value in values]
-    return {'Any empire Pop': parsed_values}
-
-
-def _localize_any_pop(values):
-    parsed_values = [_parse_condition(value) for value in values]
-    return {'Any Pop': parsed_values}
-
-
-def _localize_not_any_owned_pop(values):
-    parsed_values = [_parse_condition(value) for value in values]
-    return {'NOT any owned Pop': parsed_values}
-
-
-def _localize_any_owned_planet(values):
-    parsed_values = [_parse_condition(value) for value in values]
-    return {'Any owned Planet': parsed_values}
-
-
-def _localize_any_planet(values):
-    parsed_values = [_parse_condition(value) for value in values]
-    return {'Any Planet': parsed_values}
-
-def _localize_any_planet_within_border(values):
-    parsed_values = [_parse_condition(value) for value in values]
-    return {'Any Planet within Borders': parsed_values}
-
-def _localize_not_any_owned_planet(values):
-    parsed_values = [_parse_condition(value) for value in values]
-    return {'NOT any owned Planet': parsed_values}
-
-
-def _localize_any_tile(values):
-    parsed_values = [_parse_condition(value) for value in values]
-    return {'Any Tile': parsed_values}
-
-
-def _localize_has_blocker(value):
-    blocker = _localizer.get(value)
-    return 'Has {} Tile Blocker'.format(blocker)
-
-
-def _localize_has_surveyed_class(value):
-    return 'Has surveyed {}'.format(value)
-
-
-def _localize_has_tradition(value):
-    tradition = _localizer.get(value)
-    return 'Has {} Tradition'.format(tradition)
-
-
-def _localize_has_not_tradition(value):
-    tradition = _localizer.get(value)
-    return 'Does NOT have {} Tradition'.format(tradition)
-
-
-def _localize_has_swapped_tradition(value):
-    tradition = _localizer.get(value)
-    return 'Has {} Swapped Tradition'.format(tradition)
-
-
-def _localize_any_neighbor_country(values):
-    parsed_values = [_parse_condition(value) for value in values]
-    return {'Any Neighbor Country': parsed_values}
-
-
-def _localize_has_resource(value):
-    resource, amount = value[0]['type'], value[1]['amount']
-    operator, amount = _operator_and_value(amount)
-    localized_resource = _localizer.get(resource)
-    return 'Has {} {} {}'.format(operator, amount, localized_resource)
-
-
-def _localize_always(value):
-    return 'Always' if value == 'yes' else 'Never'
-
-
-def _localize_and(values):
-    parsed_values = [_parse_condition(value) for value in values]
-    return {'All of the following': parsed_values}
-
-
-def _localize_or(values):
-    parsed_values = [_parse_condition(value) for value in values]
-    return {'Any of the following': parsed_values}
-
-
-def _localize_nor(values):
-    parsed_values = [_parse_condition(value) for value in values]
-    return {'None of the following': parsed_values}
-
-
-def _localize_not(value):
-    key = list(value[0].keys())[0]
-    nested_value = value[0][key]
-
-    if key == 'OR':
-        # Redirect to localization of NOR:
-        negation = _parse_condition({'NOR': nested_value})
-    else:
-        negated_key = key.replace('has_', 'has_not_') if 'has_' in key \
-                      else 'not_' + key
-        negated_condition = {negated_key: value[0][key]}
-        negation = _parse_condition(negated_condition)
-
-    return negation
-
-
-def _localize_not_and(values):
-    parsed_values = [_parse_condition(value) for value in values]
-    return {'Not all of the following': parsed_values}
-
-
-# TODO: Does this help or just make tooltips longer?
-def _lookup_comparison_operator(value):
-    if value == '>':
-        return 'greater than'
-    elif value == '<':
-        return 'less than'
-    elif value == '>=':
-        return 'greater than or equal to'
-    elif value == '<=':
-        return 'less than or equal to'
-    else:
-        print(" ** cannot transform operator {}".format(repr(value)))
+    def _localize_num_districts(self, value):
+        found = False
+        if type(value) is list:
+            for d in value:
+                if 'type' in d:
+                    key = self._localizer.get(d['type'])
+                elif 'value' in d:
+                    (operator, value) = self._operator_and_value(d['value'])
+                    value = 'Number of {} is {} {}'.format(key, operator, value)
+                    found = True
+                    break
+        else:
+            print(' ** Could not parse num districts {}'.format(repr(value)))
+            return repr(value)
+        if not found:
+            print(' ** Could not format _localize_num_districts: {}'.format(value))
         return value
 
 
-def _operator_and_value(data):
-    if type(data) is int:
-        operator = 'equal to'
-        value = data
-    elif type(data) is dict:
-        symbol = list(data.keys())[0]
-        operator = _lookup_comparison_operator(symbol)
-        value = list(data.values())[0]
-    else:
-        print(" ** Unsupported data type {} {}".format(type(data), repr(data)))
-        operator = ""
-        value = data
-
-    return operator, value
+    def _localize_is_same_species(self, value):
+        species = 'Dominant' \
+                if value.lower().startswith('root') \
+                    else self._localizer.get(value)
+        return 'Is of the {} Species'.format(species)
 
 
-# NSC mod scripted triggers:
-def _localize_is_playable_country(value):
-    return 'Is playable Country' if value == 'yes' \
-        else 'Is NOT playable Country'
+    def _localize_research_leader(self, values, negated=False):
+        leader = 'Research Leader ({})'.format(values[0]['area'].title())
+        if negated:
+            leader = 'NOT ' + leader
 
-# New Horizons mod scripted triggers:
-def _localize_original_series_ships_era(value):
-    return 'Original Series ships era' if value == 'yes' \
-        else 'NOT Original Series ships era'
+        localized_conditions = []
+        for condition in values[1:]:
+            key = list(condition.keys())[0]
+            value = condition[key]
+            localized_condition = {
+                'has_trait': lambda: self._localize_has_expertise(value),
+                'has_level': lambda: self._localize_has_level(value)
+            }[key]()
+            localized_conditions.append(localized_condition)
 
-
-def _localize_motion_picture_ships_era(value):
-    return 'Motion Picture ships era' if value == 'yes' \
-        else 'NOT Motion Picture ships era'
-
-
-def _localize_is_borg_empire(value):
-    return 'Is the Borg Empire' if value == 'yes' \
-        else 'Is NOT the Borg Empire'
+        return {leader: localized_conditions}
 
 
-def _localize_is_nomadic_empire(value):
-    return 'Is the Nomadic Empire' if value == 'yes' \
-        else 'Is NOT the Nomadic Empire'
+    def _localize_not_research_leader(self, values):
+        return self._localize_research_leader(values, negated=True)
 
 
-def _localize_is_machine_cybernetic_empire(value):
-    return 'Is the Machine Cybernetic Empire' if value == 'yes' \
-        else 'Is NOT the Machine Cybernetic Empire'
+    def _localize_has_expertise(self, value):
+        expertise = self._localizer.get(value)
+        if expertise.startswith('Expertise'):
+            truncated = expertise.replace('Expertise: ', '')
+            condition = 'Is {} Expert'.format(truncated)
+        else:
+            condition = 'Is {}'.format(expertise)
+        return condition
 
-def _localize_is_machine_empire(value):
-    return 'Is the Machine Empire' if value == 'yes' \
-        else 'Is NOT the Machine Empire'
-
-def _localize_is_lithoid_empire(value):
-    return 'Is the Lithoid Empire' if value == 'yes' \
-        else 'Is NOT the Lithoid Empire'        
-
-def _localize_is_temporal_masters(value):
-    return 'Is the Temporal Masters' if value == 'yes' \
-        else 'Is NOT the Temporal Masters'
-
-
-def _localize_is_mirror_version_empire(value):
-    return 'Is a Mirror Universe Empire' if value == 'yes' \
-        else 'Is NOT a Mirror Universe Empire'
-
-
-def _localize_has_espionage_agency(value):
-    return 'Has an Espionage Agency' if value == 'yes' \
-        else 'Does NOT have an Espionage Agency'
-
-
-def _localize_is_master_geneticist(value):
-    return 'Has Master Geneticist Trait' if value == 'yes' \
-        else 'Does NOT have Master Geneticist Trait'
-
-
-def _localize_no_psionic_potential(value):
-    return 'Does NOT have Psionic Potential' if value == 'yes' \
-        else 'Has Psionic Potential'
-
-
-def _localize_is_telepathic_empire(value):
-    return 'Is a Telepathic Empire' if value == 'yes' \
-        else 'Is NOT a Telepathic Empire'
-
-
-def _localize_is_non_standard_colonization(value):
-    return 'Is a non-standard colonization' if value == 'yes' \
-        else 'Is a standard colonization'
-
-
-def _localize_uses_photonic_weapons_any_torp(value):
-    return 'Uses Photonic Torpedoes' if value == 'yes' \
-        else 'Does NOT use Photonic Torpedoes'
-
-
-def _localize_uses_plasma_weapons_any_torp(value):
-    return 'Uses Plasma Torpedoes' if value == 'yes' \
-        else 'Does NOT use Plasma Torpedoes'
-
-
-def _localize_uses_phaser_weapons_any(value):
-    return 'Uses Phasers' if value == 'yes' \
-        else 'Does NOT use Phasers'
-
-
-def _localize_uses_disruptor_weapons_any(value):
-    return 'Uses Disruptors' if value == 'yes' \
-        else 'Does NOT use Disruptors'
-
-
-def _localize_uses_disruptor_weapons(value):
-    return 'Uses Disruptors' if value == 'yes' \
-        else 'Does NOT use Disruptors'
-
-def _localize_uses_plasma_disruptor_weapons(value):
-    return 'Uses Plasma Disruptors' if value == 'yes' \
-        else 'Does NOT use Plasma Disruptors'
-
-def _localize_uses_antiproton_weapons_any(value):
-    return 'Uses Anti-Proton Weapons' if value == 'yes' \
-        else 'Does NOT use Anti-Proton Weapons'
-
-def _localize_is_sapient(value):
-    return 'This Species is pre-sapient' if value == 'yes' \
-        else 'This Species is NOT pre-sapient'
-
-def _localize_uses_cloaks(value):
-    return 'Uses Cloaking' if value == 'yes' \
-        else 'Does NOT use Cloaking'

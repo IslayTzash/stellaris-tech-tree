@@ -184,7 +184,7 @@ def get_file_paths(file_paths, directory):
            or not file_path.endswith('.txt'):
             continue
 
-        print('loading {} ...'.format(filename))
+        print('considering {} ...'.format(file_path))
 
         # If filename already loaded, replace old one with new:
         path_to_delete = next(iter(
@@ -205,14 +205,14 @@ def localized_strings():
     loc_data = { }
     for file_path in loc_file_paths:
         filename = path.basename(file_path)
-        print('loading {} ...'.format(filename))
+        print('loading {}'.format(filename))
 
         # Coerce Paradox's bastardized YAML into compliance
         not_yaml_lines = codecs.open(file_path, 'r', 'utf-8-sig').readlines()
         not_yaml = ''
         for line in not_yaml_lines:
 
-            # YAML parser really doesn't like stray colons.  Just dump this prefix, there are no matches in localization for the string that follows.
+            # YAML parser really doesn't like stray colons.  Just dump this prefix, there are no matches in localization for the string that
             line = re.sub( r"event_target:", '', line)
 
             quote_instances = [i for i, char in enumerate(line)
@@ -231,7 +231,8 @@ def localized_strings():
 
             not_yaml += line
 
-        still_not_yaml = re.sub(r'£\w+  |§[A-Z!]', '', not_yaml)
+        # still_not_yaml = re.sub(r'£\w+  |§[A-Z!]', '', not_yaml)
+        still_not_yaml = not_yaml
         resembles_yaml = re.sub(r'(?<=\w):\d+ ?(?=")', ': ', still_not_yaml)
         actual_yaml = re.sub(r'^[ \t]+', '  ', resembles_yaml, flags=re.M)
 
@@ -276,7 +277,7 @@ for directory in directories:
     army_attachment_file_paths = get_file_paths(army_attachment_file_paths,
                                                 army_attachment_dir)
 
-    buildable_pop_dir = path.join(directory, 'common/buildable_pops')
+    buildable_pop_dir = path.join(directory, 'common/buildable_pops')    # GONE . . .
     buildable_pop_file_paths = get_file_paths(buildable_pop_file_paths,
                                               buildable_pop_dir)
 
@@ -299,7 +300,7 @@ for directory in directories:
     spaceport_module_file_paths = get_file_paths(spaceport_module_file_paths,
                                                  spaceport_module_dir)
 
-    tile_blocker_dir = path.join(directory, 'common/tile_blockers')
+    tile_blocker_dir = path.join(directory, 'common/deposits')
     tile_blocker_file_paths = get_file_paths(tile_blocker_file_paths,
                                                  tile_blocker_dir)
 
@@ -315,33 +316,8 @@ localizer = Localizer(localized_strings())
 # TODO: Entry is missing from localization
 localizer.put_if_not_exist('BYPASS_LGATE', 'L-Gate')
 
-pdx_scripted_vars_scripts = '\r\n'.join([open(file_path).read()
-                                        for file_path
-                                        in scripted_vars_file_paths])
-pdx_tech_scripts = '\r\n'.join([open(file_path).read() for file_path
-                                in tech_file_paths])
-pdx_army_scripts = '\r\n'.join([open(file_path).read() for file_path
-                                in army_file_paths])
-pdx_army_attachment_scripts = '\r\n'.join([open(file_path).read() for file_path
-                                           in army_attachment_file_paths])
-pdx_buildable_pop_scripts = '\r\n'.join([open(file_path).read() for file_path
-                                         in buildable_pop_file_paths])
-pdx_building_scripts = '\r\n'.join([open(file_path).read() for file_path
-                                    in building_file_paths])
-pdx_component_scripts = '\r\n'.join([open(file_path).read() for file_path
-                                     in component_file_paths])
-pdx_edict_scripts = '\r\n'.join([open(file_path).read() for file_path
-                                 in edict_file_paths])
-pdx_policy_scripts = '\r\n'.join([open(file_path).read() for file_path
-                                  in policy_file_paths])
-pdx_resource_scripts = '\r\n'.join([open(file_path).read() for file_path
-                                    in resource_file_paths])
-pdx_spaceport_module_scripts = '\r\n'.join([open(file_path).read()
-                                            for file_path
-                                            in spaceport_module_file_paths])
-pdx_tile_blocker_scripts = '\r\n'.join([open(file_path).read()
-                                        for file_path
-                                        in tile_blocker_file_paths])
+print('Finished loading strings')
+
 yacc_parser = yacc()
 
 def parse_scripts(file_paths):
@@ -356,6 +332,8 @@ def parse_scripts(file_paths):
             contents = contents.replace("_jem'hadar", "_jem_hadar")
         if "event_target:" in contents:
             contents = contents.replace("event_target:", "")
+        if "33 = {" in contents:
+            contents = contents.replace("33 = {", "ThirtyThree = {")
 
         parsed += yacc_parser.parse(contents)
 
@@ -376,6 +354,8 @@ parsed_scripts = {'scripted_vars': parse_scripts(scripted_vars_file_paths),
 
 #print('## EDICTS {}',format(repr(parsed_scripts['edict'])))
 #exit(0)
+print('Finished loading game files')
+print('Processing files . . .')
 
 armies = [Army(entry, localizer)
           for entry in parsed_scripts['army']
@@ -418,11 +398,17 @@ tile_blockers = [TileBlocker(entry, localizer)
 at_vars = {}
 technologies = []
 
-for entry in parsed_scripts['scripted_vars'] + parsed_scripts['technology']:
+
+for collection in parsed_scripts.values():
+    for entry in collection:
+        if list(entry)[0].startswith('@'):
+            at_var = list(entry)[0]
+            at_vars[at_var] = entry[at_var]
+            # print(' -- ATVAR[{}] = {}'.format(at_var, entry[at_var]))
+
+
+for entry in parsed_scripts['technology']:
     if list(entry)[0].startswith('@'):
-        at_var = list(entry)[0]
-        at_vars[at_var] = entry[at_var]
-        # print(' -- ATVAR[{}] = {}'.format(at_var, entry[at_var]))
         continue
 
     if args.mod == 'primitive':
@@ -442,10 +428,11 @@ for entry in parsed_scripts['scripted_vars'] + parsed_scripts['technology']:
 
     technologies.append(tech)
 
-technologies.sort(key=operator.attrgetter('tier'))
-technologies.sort(
-    key=lambda tech: {'physics': 1, 'society': 2, 'engineering': 3}[tech.area])
+technologies.sort(key=lambda tech: {'physics': 1, 'society': 2, 'engineering': 3}[tech.area] * 100 + tech.tier)
 jsonified = json.dumps(technologies, indent=2, separators=(',', ': '),
                        cls=TechnologyJSONEncoder)
 
-open(path.join('public', tree_label, 'techs.json'), 'w').write(jsonified)
+filename = path.join('public', tree_label, 'techs.json')
+open(filename, 'w').write(jsonified)
+
+print('Wrote {} techs to {}'.format(len(technologies), filename))

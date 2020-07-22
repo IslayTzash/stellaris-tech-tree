@@ -2,9 +2,8 @@
 
 let config = {
     container: '#tech-tree',
-    rootOrientation: 'WEST', // NORTH || EAST || WEST || SOUTH
+    rootOrientation: 'WEST',
     nodeAlign: 'TOP',
-    // levelSeparation: 30,
     hideRootNode: true,
     siblingSeparation: 20,
     subTeeSeparation:  20,
@@ -68,21 +67,49 @@ AREAS.forEach(area => {
 let SPECIAL_NODES = [rootNode];
 Object.values(tierNodes).forEach( x => Object.values(x).forEach( y => SPECIAL_NODES.push(y) ));
 
-function replace_icons(str, extra_css_class = "")
+function colorize(s, extra_css_class)
+{
+	var start = '';
+	var end = '';
+	switch(s.charAt(1))
+	{
+		case 'R': start = '<span style="color: red;" class="' + extra_css_class + '">'; end = '</span>'; break;
+		case 'G': start = '<span style="color: green;" class="' + extra_css_class + '">'; end = '</span>'; break;
+		case 'Y': start = '<span style="color: yellow;" class="' + extra_css_class + '">'; end = '</span>'; break;
+		// [H]ighlight maybe?
+		case 'H': start = '<span style="color: orange;" class="' + extra_css_class + '">'; end = '</span>'; break;
+		default: console.log('unexpected § color ' + s.charAt(1))
+	}
+	return start + s.slice(2, s.length-2) + end;
+}
+
+function subst_icons_and_colors(str, extra_css_class = "")
 {
 	return str
+		// £ is \u00a3 for embedding icons
 		.replace(new RegExp(/£(\w+)£/,'g'), '<img class="resource ' + extra_css_class + '" src="../icons/$1.png" />')
-		// TODO: We don't need both forms in the json?
-		.replace(/\(\[\[(\w+)\]\]\)/, '<img class="resource ' + extra_css_class + '" src="../icons/$1.png" />');
+		// TODO: We don't need both forms in the json?   This is used for feature unlocks
+		.replace(/\(\[\[(\w+)\]\]\)/g, '<img class="resource ' + extra_css_class + '" src="../icons/$1.png" />')
+		// § is \u00a7 for changing text colors
+		.replace(/[\u00a7][A-Z][^\u00a7]*[\u00a7][!]/g, colorize)
+		;
 }
 
 function prerequisite_name_lookup(techData, key, area)
 {
-	return techData.filter( t => t.key == key).map(t => t.name + (t.area == area ? '' : ' (' + t.area + ', tier ' + t.tier + ')'));
+	return techData.filter( t => t.key == key).map(t => t.name + (t.area == area ? ' (tier ' + t.tier + ')' : ' (' + t.area + ', tier ' + t.tier + ')'));
+}
+
+function area_compare(a, b)
+{
+	return AREAS.indexOf(b) - AREAS.indexOf(a);
 }
 
 $(document).ready(function() {
     $.getJSON('techs.json', function(techData) {
+
+		techData.sort( (a, b) => area_compare(a.area, b.area) * -100 + a.category.localeCompare(b.category) * 10 + a.name.localeCompare(b.name) );
+
 		let techs = techData.filter(function(tech) {
 			return Object.keys(tech)[0].search(/^@\w+$/) == -1;
 		}).map(function(tech) {
@@ -110,7 +137,7 @@ $(document).ready(function() {
 				if ( tech.weight_modifiers.length > 0 ) {
 					let weightModifiers = tech.weight_modifiers.join('')
 					weightModifiers = weightModifiers.replace(/(?:\(.?)([0-9.+-]+)(?:\))/g,  m => '<span class="' + (parseFloat(m.replace(/[^0-9.+-]/g,'')) >= 1.0 ? 'mod-good' : 'mod-bad') + '">' + m + '</span>');
-					$modifiersBtn.attr('title', weightModifiers);
+					$modifiersBtn.attr('title', subst_icons_and_colors(weightModifiers));
 					$modifiersBtn.attr('data-header', 'Weight Modifiers');
 				}
 				else {
@@ -124,7 +151,7 @@ $(document).ready(function() {
 						if (null === unlock) {
 							console.log('Ignored null feature_unlock for ' + tech.key);
 						} else {
-							$unlockList.append($('<li>').append(replace_icons(unlock)));
+							$unlockList.append($('<li>').append(subst_icons_and_colors(unlock)));
 						}
 					});				
 					$unlocksBtn.attr('title', $unlockList[0].outerHTML);
@@ -216,7 +243,9 @@ $(document).ready(function() {
 
 			// push in pseudonodes for items with no prerequisistes
 			techlist.push(tech)
-			if (tech.data.area !== last_area && remaining_areas.length > 0) {
+			if (last_area == null) {
+				last_area = tech.data.area;
+			} else if (tech.data.area !== last_area && remaining_areas.length > 0) {
 				last_area = remaining_areas.shift();
 				Object.entries(tierNodes[last_area]).forEach(([k, v]) => techlist.push(v));
 			}

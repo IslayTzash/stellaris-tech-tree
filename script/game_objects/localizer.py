@@ -43,7 +43,7 @@ class Localizer:
             # No log message here, we are going to call a lot of trial lookups
             return localized
         if localized == '$' + key + '$':
-            print(' ** LOC INFINITE RECURSION STOPPED in Localizer::_localize: {} -> {}'.format(repr(key), repr(localized)))
+            print(' ++ WARNING: INFINITE RECURSION STOPPED in Localizer::_localize: {} -> {}'.format(repr(key), repr(localized)))
             return localized
         while '$' in localized:
             replaced = re.sub(r'\$(\w+)\$', self._localize, localized)
