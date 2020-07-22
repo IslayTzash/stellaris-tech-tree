@@ -12,19 +12,19 @@ Predominantly this repository contains a python3 tool to generate a HTML/CSS ren
 
 As best as possible, the display matches columns to tech tiers.  Tier 0 (starter techs) will only appear in the leftmost column.  The Treant.js tool
 used within the viewer is not as good at keeping techs from drifting into higher tier columns, i.e. the fourth column is where tier 4 techs should be displayed,
-occasionally a tier2 or tier 3 tech with prerequisites may be pushed into the fourth column.
+Occasionally a tier2 or tier 3 tech with prerequisites may be pushed into the fourth column.
 
 The purple background behind a tech name indicates it is a rare tech.   The red background indicates it is a deadly tech.
 
 Clicking on a tech will collapse all its children and color the tile grey.
 
-Hover over the three icons on the right of each tech tile to see more information:
+Hover over the two icons on the right of each tech tile to see more information:
 
 | Icon |  Details |
 | ---  | ---      |
-| top … ellipsis icon | The tech description, including its rare/dangerous indication and any required DLC.  It will also list out the tech prerequistes as a tech may have multiple prerequisistes but only one is indicated in the graph lines.   If a tech requires more than one non-starting tier tech, the ... button will be colored red.
-| middle ⚄ box icon | The weight modifiers, this can often be a complex set of rules.  When the weight goes to 0 the card will never be chosen.
-| bottom 🎁 giftbox icon |  Any game items that are activated by the tech, i.e. access to ships, weapons, edicts, ...
+| upper … ellipsis icon | The tech description, including its rare/dangerous indication and any required DLC.  It will also list out the tech prerequistes as a tech may have multiple prerequisistes but only one is indicated in the graph lines.   If a tech requires more than one non-starting tier tech, the ... button will be colored orange.
+It will also display any game items that are activated by the tech, i.e. access to ships, weapons, edicts, ...
+| middle ⚄ box icon | The weight modifiers. This can often be a complex set of rules.  When the weight goes to 0 the card will never be chosen.
 
 Techs requiring a specific DLC are highlighted in yellow.  There really arean't a lot.  There is currently no way to change the display based on owned DLCs.
 
