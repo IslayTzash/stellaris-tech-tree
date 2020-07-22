@@ -106,6 +106,12 @@ div.extra-data {
     max-width: 512px;
     color: white;
     background-color: black;
+
+    padding: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    border: 3px solid;    
 }
 
 .ui-tooltip img.resource {
@@ -143,7 +149,7 @@ ui-tooltip ul li {
 
 .ui-tooltip.society,
 .tech.society {
-    border-color: #5ACA9C;
+    border: 3px solid #5ACA9C;
 }
 
 .node.tech.society {
@@ -163,7 +169,7 @@ span.society-research::before {
 
 .ui-tooltip.engineering,
 .tech.engineering {
-    border-color: #E29C43;
+    border: 3px solid #E29C43;
 }
 
 .node.tech.engineering {
@@ -183,7 +189,7 @@ span.engineering-research::before {
 
 .ui-tooltip.physics,
 .tech.physics {
-    border-color: #4396E2;
+    border: 3px solid #4396E2;
 }
 
 .node.tech.physics {
