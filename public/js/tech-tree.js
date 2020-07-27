@@ -264,7 +264,7 @@ $(document).ready(function() {
 			techlist.push(tech)
 			if (last_area == null) {
 				last_area = tech.data.area;
-			} else if (tech.data.area !== last_area && remaining_areas.length > 0) {
+			} else if (tech.data.area !== last_area && remaining_areas.length > 0 && tech.data.tier > 0) {
 				last_area = remaining_areas.shift();
 				Object.entries(tierNodes[last_area]).forEach(([k, v]) => techlist.push(v));
 			}
