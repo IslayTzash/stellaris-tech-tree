@@ -4983,7 +4983,7 @@
     "description": "The mind is in many ways a reflection of the universe itself, a microcosmos. All species may not reach this insight, but their minds are tools greater than any other.",
     "dlc": [],
     "feature_unlocks": [
-      "EMPIRE_SIZE from Pops: -10%"
+      "Empire Sprawl from Pops: -10%"
     ],
     "is_dangerous": false,
     "is_rare": true,
@@ -8612,7 +8612,7 @@
     "dlc": [],
     "feature_unlocks": [
       "Planetary Build Speed: +50%",
-      "EMPIRE_SIZE from Districts: -10%"
+      "Empire Sprawl from Districts: -10%"
     ],
     "is_dangerous": false,
     "is_rare": true,

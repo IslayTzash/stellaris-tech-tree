@@ -76,7 +76,8 @@ class Parser:
                 loc_data.update(loc_map)
             except TypeError:
                 print('Unable to find head YAML key for {}'.format(filename))
-                sys.exit()    
+                sys.exit()
+
         return loc_data
 
 
@@ -89,11 +90,9 @@ class Parser:
         return avlist
 
     def replace_local_at_var(self, s):
-        # s = s.strip()
         if s in self.local_at_vars:
-            print('replacint "{}" with {}'.format(s, str(self.local_at_vars[s])))
             return str(self.local_at_vars[s])
-        print('No match for "{}" in {}'.format(s, '')) # repr(self.local_at_vars)))
+        print('No match for ATVAR "{}" in {}'.format(s, repr(self.local_at_vars)))
         return s
 
     def parse_data_dir(self, dir, doAtSubst = True):
