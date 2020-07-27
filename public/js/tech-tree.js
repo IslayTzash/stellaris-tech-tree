@@ -157,7 +157,7 @@ $(document).ready(function() {
 					unlocks += $unlockList[0].outerHTML;
 				}
 				$descBtn.attr('title', tech.description + '<br />'
-					+ (tech.dlc.length > 0 ? '<br />Requires DLC: ' + tech.dlc.join(', ') + '<br />' : "")
+					+ (tech.dlc && tech.dlc.length > 0 ? '<br />Requires DLC: ' + tech.dlc.join(', ') + '<br />' : "")
 					+ (prerequisites.length > 0 ? '<br />Prerequisites:' + prerequisites + '<br />' : '')
 					+ (tech.is_dangerous ? '<br />Tech is dangerous' : "")
 					+ (tech.is_rare ? '<br />Tech is rare<br />' : "")
@@ -185,7 +185,7 @@ $(document).ready(function() {
 
 			return {
 				HTMLid: tech.key,
-				HTMLclass: tech.area + (tech.dlc.length > 0 ? " dlc" : "") + (tech.is_rare ? ' rare' : '') + (tech.is_dangerous ? ' dangerous' : ''),
+				HTMLclass: tech.area + (tech.dlc && tech.dlc.length > 0 ? " dlc" : "") + (tech.is_rare ? ' rare' : '') + (tech.is_dangerous ? ' dangerous' : ''),
 				data: tech,
 				innerHTML: '<div class="icon" style="background-image:url(img/' + tech.key + '.png)"></div>'
 					+ '<p class="node-name" title="' + tech.name + '">' + tech.name + '</p>'
