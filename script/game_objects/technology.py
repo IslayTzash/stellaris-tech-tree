@@ -6,10 +6,9 @@ from .game_object import GameObject
 class Technology(GameObject):
     def __init__(self, tech, armies, army_attachments, buildable_pops,
                  buildings, components, edicts, policies, resources,
-                 spaceport_modules, tile_blockers, localizer, at_vars,
+                 spaceport_modules, tile_blockers, localizer,
                  start_with_tier_zero=True):
         self.key = list(tech.keys())[0]
-        self._at_vars = at_vars
         self._localizer = localizer
         self.name = localizer.get(self.key)
 
@@ -26,8 +25,6 @@ class Technology(GameObject):
         self.tier = next(
             iter(key for key in tech_data if list(key.keys())[0] == 'tier')
         )['tier']
-        if type(self.tier) is not int and self.tier.startswith('@'):
-            self.tier = self._at_vars[self.tier]
 
         self.cost = self._cost(tech_data)
         self.base_weight = self._base_weight(tech_data)
@@ -44,7 +41,7 @@ class Technology(GameObject):
                                        buildable_pops, buildings, components,
                                        edicts, policies, resources,
                                        spaceport_modules, tile_blockers,
-                                       localizer, at_vars)
+                                       localizer)
         self.feature_unlocks = unlock_parser.parse(self.key, tech_data)
 
     def _is_start_tech(self, tech_data, start_with_tier_zero):
@@ -112,16 +109,13 @@ class Technology(GameObject):
                                if list(key.keys())[0] == 'cost'))['cost']
         except StopIteration:
             string = '0'
-        return self._at_vars[string] if str(string).startswith('@') else string
+        return string
 
     def _base_weight(self, tech_data):
         try:
-            string = next(iter(key for key
+            weight = next(iter(key for key
                                in tech_data
                                if list(key.keys())[0] == 'weight'))['weight']
-            weight = (self._at_vars[string]
-                      if str(string).startswith('@')
-                      else string)
         except StopIteration:
             weight = 0
 
@@ -129,20 +123,17 @@ class Technology(GameObject):
 
     def _base_factor(self, tech_data):
         try:
-            string = next(
+            factor = next(
                 iter(key for key in tech_data
                      if list(key.keys())[0] == 'weight_modifier')
             )['weight_modifier'][0]['factor']
-            factor = (self._at_vars[string]
-                      if str(string).startswith('@')
-                      else string)
         except (StopIteration, KeyError, IndexError):
             factor = 1.0
 
         return float(factor)
 
     def _weight_modifiers(self, tech_data):
-        wm = WeightModifiers(self._localizer, self._at_vars)
+        wm = WeightModifiers(self._localizer)
         try:
             unparsed_modifiers = next(iter(
                 key for key in tech_data if list(key.keys())[0] == 'weight_modifier'

@@ -3,7 +3,7 @@ import re
 class FeatureUnlocks:
     def __init__(self, armies, army_attachments, buildable_pops, buildings,
                  components, edicts, policies, resources, spaceport_modules,
-                 tile_blockers, localizer, at_vars):
+                 tile_blockers, localizer):
         self._armies = armies
         self._army_attachments = army_attachments
         self._buildable_pops = buildable_pops
@@ -15,7 +15,6 @@ class FeatureUnlocks:
         self._spaceport_modules = spaceport_modules
         self._tile_blockers = tile_blockers
         self._localizer = localizer
-        self._at_vars = at_vars
 
 
     # Modifiers gained as a result of completing research
@@ -63,9 +62,7 @@ class FeatureUnlocks:
                 print(' ** No match for modifier tooltip: ' + m)
                 return { 'tooltip': m }
 
-        if type(m) is str and m.startswith('@') and m in self._at_vars:
-            value = self._at_vars[m]
-        elif m in ['yes', 'no', 'YES', 'NO', 'Yes', 'No']:
+        if m in ['yes', 'no', 'YES', 'NO', 'Yes', 'No']:
             value = m
         else:
             try:

@@ -5,9 +5,8 @@ import ruamel.yaml as yaml
 import sys
 
 class WeightModifiers:
-    def __init__(self, localizer, at_vars):
+    def __init__(self, localizer):
         self._localizer = localizer
-        self._at_vars = at_vars
 
     def parse(self, modifier):
         if len(modifier) == 1:
@@ -493,8 +492,6 @@ class WeightModifiers:
 
     def _localize_factor(self, factor):
         """Numeric factor for each tech"""
-        if str(factor).startswith('@') and factor in self._at_vars:
-            factor = self._at_vars[factor]
         val = '\xD7{}'.format(factor)        
         if not '.' in val:  # Add .0 to integers to keep sizes similar
             val += '.0'

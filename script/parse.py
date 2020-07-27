@@ -80,7 +80,23 @@ class Parser:
         return loc_data
 
 
-    def parse_data_dir(self, dir):
+    def extract_at_vars(self, entries, avlist = []):
+        for e in entries:
+            if list(e)[0].startswith('@'):
+                at_var = list(e)[0]
+                avlist[at_var] = e[at_var]
+                # print(' -- ATVAR[{}] = {}'.format(at_var, e[at_var]))
+        return avlist
+
+    def replace_local_at_var(self, s):
+        # s = s.strip()
+        if s in self.local_at_vars:
+            print('replacint "{}" with {}'.format(s, str(self.local_at_vars[s])))
+            return str(self.local_at_vars[s])
+        print('No match for "{}" in {}'.format(s, '')) # repr(self.local_at_vars)))
+        return s
+
+    def parse_data_dir(self, dir, doAtSubst = True):
         parsed = []
         for file_path in self.get_file_paths(dir):
             print('parse {}'.format(file_path))
@@ -93,7 +109,16 @@ class Parser:
                 contents = contents.replace("event_target:", "")
             if "33 = {" in contents:
                 contents = contents.replace("33 = {", "ThirtyThree = {")
-            parsed += self.yacc_parser.parse(contents)
+            p = self.yacc_parser.parse(contents)
+            if doAtSubst:
+                self.local_at_vars = self.extract_at_vars(p, self.at_vars.copy())
+                contents = re.sub(r'(?:[^\n\t])(@[^ \n\t]+)', lambda x: self.replace_local_at_var(x.group(1)), contents)
+                try:
+                    p = self.yacc_parser.parse(contents)
+                except Exception as e:
+                    print(contents)
+                    raise
+            parsed += p
         return parsed
 
 
@@ -113,8 +138,7 @@ class Parser:
             'Resource' :  { 'class': 'Resource', 'dir': 'common/strategic_resources', 'data': []},
             'SpaceportModule' :  { 'class': 'SpaceportModule', 'dir': 'common/spaceport_modules', 'data': []},
             'TileBlocker' :  { 'class': 'TileBlocker', 'dir': 'common/deposits', 'data': []},
-            'Technology': { 'class': 'Technology', 'dir': 'common/technology', 'data': [], 'skipParse': True},
-            'ScriptedVariables' : { 'class': None, 'dir': 'common/scripted_variables', 'data': [], 'skipParse': True}
+            'Technology': { 'class': 'Technology', 'dir': 'common/technology', 'data': [], 'skipParse': True}
         }
 
         skip_terms = ['^events?', 'tutorials?', 'pop_factions?', 'name_lists?',
@@ -139,6 +163,11 @@ class Parser:
         localizer.put_if_not_exist('BYPASS_LGATE', 'L-Gate')   # TODO: Entry is missing from localization
         print('Finished loading localization strings')
 
+        print('Loading scripted variables . . .')
+        for directory in self.config.directories:
+            self.extract_at_vars(self.parse_data_dir(path.join(directory, 'common/scripted_variables'), False), self.at_vars)
+        print('Finished scripted variables ')
+
         print('Loading game files . . .')
         for directory in self.config.directories:
             for go in self.game_objects.values():
@@ -146,13 +175,6 @@ class Parser:
         print('Finished loading game files')
 
         print('Processing files . . .')
-
-        for go in self.game_objects.values():
-            for entry in go['data']:
-                if list(entry)[0].startswith('@'):
-                    at_var = list(entry)[0]
-                    self.at_vars[at_var] = entry[at_var]
-                    # print(' -- ATVAR[{}] = {}'.format(at_var, entry[at_var]))
 
         for go in self.game_objects.values():
             if 'skipParse' not in go or not go['skipParse']:
@@ -172,7 +194,7 @@ class Parser:
                 self.game_objects['Component']['parsed_data'], self.game_objects['Edict']['parsed_data'],
                 self.game_objects['Policy']['parsed_data'], self.game_objects['Resource']['parsed_data'],
                 self.game_objects['SpaceportModule']['parsed_data'], self.game_objects['TileBlocker']['parsed_data'],
-                localizer, self.at_vars, 'primitive' != self.config.mod))
+                localizer, 'primitive' != self.config.mod))
         technologies.sort(key=lambda tech: {'physics': 1, 'society': 2, 'engineering': 3}[tech.area] * 100 + tech.tier)
 
         filename = path.join('public', self.config.mod, 'techs.json')

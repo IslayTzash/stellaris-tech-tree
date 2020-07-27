@@ -2338,7 +2338,7 @@
     "base_factor": 0.5,
     "base_weight": 20,
     "category": "Field Manipulation",
-    "cost": 48000,
+    "cost": 20000,
     "description": "A shielding field is deployed around a planet, creating a barrier that is permanent and impenetrable (save for some wavelengths of light).",
     "dlc": [
       "Apocalypse"
@@ -2367,7 +2367,7 @@
     "base_factor": 0.5,
     "base_weight": 20,
     "category": "Particles",
-    "cost": 48000,
+    "cost": 20000,
     "description": "An accelerated plume of neutron radiation \"paints\" the planet surface, severely degrading most materials and directly destroying biological tissue.",
     "dlc": [
       "Apocalypse"
@@ -4725,7 +4725,7 @@
     "description": "Making gene-editing tools widely available is sure to have a positive impact on our development as a species.",
     "dlc": [],
     "feature_unlocks": [
-      "Gene Modification Points: 1",
+      "Gene Modification Points: +1",
       "Unlocks Feature: Genetic Modification",
       "Unlocks Feature: Self-Modification"
     ],
@@ -4778,7 +4778,7 @@
     "description": "Stricter control of RNA and protein production on the cellular level.",
     "dlc": [],
     "feature_unlocks": [
-      "Gene Modification Points: 1"
+      "Gene Modification Points: +1"
     ],
     "is_dangerous": false,
     "is_rare": true,
@@ -6041,7 +6041,7 @@
     "base_factor": 0.5,
     "base_weight": 20,
     "category": "Psionics",
-    "cost": 48000,
+    "cost": 20000,
     "description": "An arcane catalyst amplifying certain psionic wavelengths, capable of inducing hallucinations (religious experiences) in biological brains, and severe disruption (brain death) in electronic ones.",
     "dlc": [
       "Apocalypse"
@@ -9575,7 +9575,7 @@
     "base_factor": 1.0,
     "base_weight": 0,
     "category": "Voidcraft",
-    "cost": 48000,
+    "cost": 20000,
     "description": "Advances in mega-engineering make blur the lines between reality and the fantastical, enabling the construction of Colossus-class military vessels that carry weapons capable of obliterating - or fundamentally altering - entire worlds, with the push of a button.",
     "dlc": [
       "Apocalypse"
@@ -9599,7 +9599,7 @@
     "base_factor": 0.5,
     "base_weight": 20,
     "category": "Voidcraft",
-    "cost": 48000,
+    "cost": 20000,
     "description": "A directed feed of thermic energy superheats the atmosphere and agitates the planet's core, setting up disastrous tectonic events. A final and comparatively minute concussive blast is then delivered, cracking the planet open.",
     "dlc": [
       "Apocalypse"
@@ -9627,7 +9627,7 @@
     "base_factor": 0.5,
     "base_weight": 20,
     "category": "Voidcraft",
-    "cost": 48000,
+    "cost": 20000,
     "description": "Nanobot Diffuser",
     "dlc": [
       "Apocalypse"
