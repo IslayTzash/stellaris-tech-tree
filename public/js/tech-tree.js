@@ -246,6 +246,15 @@ $(document).ready(function() {
 		let remaining_areas = Array.from(AREAS)
 		let last_area = null
 		techs.forEach( tech => {
+			// Push in pseudonodes for items with no prerequisistes. They should get inserted after any well formed trees tracing from a starter tech.
+			if (last_area == null) {
+				last_area = tech.data.area;
+			} else if (tech.data.area !== last_area && remaining_areas.length > 0 && tech.data.tier == 0) {
+				last_area = remaining_areas.shift();
+				Object.entries(tierNodes[last_area]).forEach(([k, v]) => techlist.push(v));
+				last_area = tech.data.area
+			}
+
 			// Build up dummy pseudonodes so high leveled techs are never rendered in a column lower than their tier
 			let age = compute_age(tech);
 			if (age < tech.data.tier && !SPECIAL_NODES.includes(tech.parent))
@@ -260,14 +269,7 @@ $(document).ready(function() {
 				techlist.push(o)
 			}
 
-			// push in pseudonodes for items with no prerequisistes
 			techlist.push(tech)
-			if (last_area == null) {
-				last_area = tech.data.area;
-			} else if (tech.data.area !== last_area && remaining_areas.length > 0) {
-				last_area = remaining_areas.shift();
-				Object.entries(tierNodes[last_area]).forEach(([k, v]) => techlist.push(v));
-			}
 		});
 		remaining_areas.forEach( area => {
 			Object.entries(tierNodes[area]).forEach(([k, v]) => techlist.push(v));
