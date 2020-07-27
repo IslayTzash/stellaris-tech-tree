@@ -22,8 +22,8 @@ class WeightModifiers:
                             if list(line.keys())[0] == 'add'))['add']
             adjustment = self._localize_add(add)
 
-        unparsed_conditions = [line for line in modifier \
-                            if list(line.keys())[0] not in ['factor', 'add']]
+        unparsed_conditions = ([line for line in modifier
+                            if list(line.keys())[0] not in ['factor', 'add']])
         if len(unparsed_conditions) > 1:
             unparsed_conditions = [{'AND': unparsed_conditions}]
 
@@ -284,12 +284,12 @@ class WeightModifiers:
     ## These guys are backwards, leave them alone
 
     def _localize_no_psionic_potential(self, value):
-        return 'Does NOT have Psionic Potential' if value == 'yes' \
-            else 'Has Psionic Potential'
+        return ('Does NOT have Psionic Potential' if value == 'yes'
+            else 'Has Psionic Potential')
 
     def _localize_is_non_standard_colonization(self, value):
-        return 'Is a non-standard colonization' if value == 'yes' \
-            else 'Is a standard colonization'
+        return ('Is a non-standard colonization' if value == 'yes'
+            else 'Is a standard colonization')
 
     ########################################################################################
 
@@ -535,9 +535,9 @@ class WeightModifiers:
 
 
     def _localize_is_same_species(self, value):
-        species = 'Dominant' \
-                if value.lower().startswith('root') \
-                    else self._localizer.get(value)
+        species = ('Dominant'
+                if value.lower().startswith('root')
+                    else self._localizer.get(value))
         return 'Is of the {} Species'.format(species)
 
 

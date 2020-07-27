@@ -1,9 +1,9 @@
 from deep_parsers.feature_unlocks import FeatureUnlocks
 from deep_parsers.weight_modifiers import WeightModifiers
 from json import JSONEncoder
+from .game_object import GameObject
 
-
-class Technology:
+class Technology(GameObject):
     def __init__(self, tech, armies, army_attachments, buildable_pops,
                  buildings, components, edicts, policies, resources,
                  spaceport_modules, tile_blockers, localizer, at_vars,
@@ -53,8 +53,7 @@ class Technology:
                                if list(key.keys())[0] == 'start_tech'))['start_tech']
             is_start_tech = True if yes_no == 'yes' else False
         except StopIteration:
-            is_start_tech = True if self.tier == 0 and start_with_tier_zero \
-                            else False
+            is_start_tech = True if self.tier == 0 and start_with_tier_zero else False
 
         return is_start_tech
 

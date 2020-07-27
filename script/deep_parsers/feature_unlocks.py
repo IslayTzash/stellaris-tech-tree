@@ -20,18 +20,18 @@ class FeatureUnlocks:
 
     # Modifiers gained as a result of completing research
     def parse(self, tech_key, tech_data):
-        return self._modifiers(tech_data) \
-            + self._unlocks(tech_data) \
-            + self._feature_flags(tech_data) \
-            + self._army_attachment_unlocks(tech_key) \
-            + self._buildable_pop_unlocks(tech_key) \
-            + self._building_unlocks(tech_key) \
-            + self._component_unlocks(tech_key) \
-            + self._edict_unlocks(tech_key) \
-            + self._policy_unlocks(tech_key) \
-            + self._resource_unlocks(tech_key) \
-            + self._spaceport_module_unlocks(tech_key) \
-            + self._tile_blocker_unlocks(tech_key)
+        return (self._modifiers(tech_data)
+            + self._unlocks(tech_data)
+            + self._feature_flags(tech_data)
+            + self._army_attachment_unlocks(tech_key)
+            + self._buildable_pop_unlocks(tech_key)
+            + self._building_unlocks(tech_key)
+            + self._component_unlocks(tech_key)
+            + self._edict_unlocks(tech_key)
+            + self._policy_unlocks(tech_key)
+            + self._resource_unlocks(tech_key)
+            + self._spaceport_module_unlocks(tech_key)
+            + self._tile_blocker_unlocks(tech_key))
 
 
     def _dedupe_list(self, original):
@@ -105,7 +105,7 @@ class FeatureUnlocks:
                 break
             except KeyError:
                 pass
-        if not found_prefix_match:
+        if not found_prefix_match and key != 'description':
             # Most often is a dyslexic entry in the localization/english files.  See remapping entries above.
             print(' ** No match for modifier: ' + repr(key))
 

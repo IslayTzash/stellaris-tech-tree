@@ -10,7 +10,7 @@ let config = {
     hideRootNode: true,
     siblingSeparation: 20,
     subTeeSeparation:  20,
-    scrollbar: 'fancy',
+    scrollbar: 'native',
     connectors: { type: 'step' },
     node: {
 		HTMLclass: 'tech',

@@ -1,438 +1,187 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-import importlib.util
-from lex import tokens
-from os import listdir, makedirs, path
-from ply.yacc import yacc
-import argparse
 import codecs
 import json
-import operator
 import re
 import ruamel.yaml as yaml
 import sys
+
+from configuration import Configuration
 from game_objects import Army, ArmyAttachment, BuildablePop, Building, \
     Component, Edict, Localizer, Policy, Resource, SpaceportModule, Technology, \
     TechnologyJSONEncoder, TileBlocker
-
-spec = importlib.util.spec_from_file_location('config', './config.py')
-config = importlib.util.module_from_spec(spec)
-spec.loader.exec_module(config)
-
-# Process CLI arguments:
-def valid_label(label):
-    if not re.match(r'^\w+$', label):
-        raise argparse.ArgumentTypeError('Must match [a-z0-9_]')
-    elif label not in config.mods.keys():
-        raise argparse.ArgumentTypeError('Unsupported mod')
-    elif not path.isdir(path.join('public', label)):
-        makedirs(path.join('public', label))
-
-    return label.lower()
-
-
-def valid_dirs(directory):
-    if not path.isdir(directory):
-        message = "'{}' not found or not a directory".format(directory)
-        raise argparse.ArgumentTypeError(message)
-
-    return directory
-
-arg_parser = argparse.ArgumentParser(
-    description='Parse Stellaris tech and localization files')
-arg_parser.add_argument('mod', type=valid_label)
-
-args = arg_parser.parse_args()
-mod_id = config.mods[args.mod]
-tree_label = args.mod
-directories = [config.game_dir]
-
-if type(mod_id) is int:
-    mod_dir = path.join(config.workshop_dir, str(mod_id), 'mod')
-    directories.append(mod_dir)
-
-
-def p_script(tokens):
-    'script : statements'
-    tokens[0] = tokens[1]
-
-
-def p_statement_statements(tokens):
-    'statements : statement statements'
-    tokens[0] = tokens[1] + tokens[2]
-
-
-def p_statements_empty(tokens):
-    'statements : empty'
-    tokens[0] = []
-
-
-def p_empty(tokens):
-    'empty :'
-    pass
-
-
-def p_key(tokens):
-    '''key : STRING
-           | BAREWORD'''
-    tokens[0] = tokens[1]
-
-
-def p_keys(tokens):
-    'keys : key keys'
-    tokens[0] = [tokens[1]] + tokens[2] if type(tokens[1]) is str else \
-                [tokens[1], tokens[2]]
-
-
-def p_keys_empty(tokens):
-    'keys : empty'
-    tokens[0] = []
-
-
-def p_statement_var_assign(tokens):
-    'statement : VARIABLE EQUALS NUMBER'
-    number = int(tokens[3]) if '.' not in tokens[3] else float(tokens[3])
-    tokens[0] = [{tokens[1]: number}]
-
-
-def p_statement_binop(tokens):
-    'statement : binop'
-    tokens[0] = tokens[1]
-
-
-def p_expression_variable(tokens):
-    'expression : VARIABLE'
-    tokens[0] = tokens[1]
-
-
-def p_expression_key(tokens):
-    'expression : key'
-    tokens[0] = tokens[1]
-
-def p_expression_number(tokens):
-    'expression : NUMBER'
-    tokens[0] = tokens[1]
-
-
-def p_binop(tokens):
-    '''binop : key EQUALS expression
-             | key GTHAN expression
-             | key LTHAN expression
-             | key GTEQ expression
-             | key LTEQ expression'''
-    operator = tokens[2]
-
-    if re.match(r'^-?\d+$', str(tokens[3])):
-        roperand = int(tokens[3])
-    elif re.match(r'^-?\d+\.\d+$', str(tokens[3])):
-        roperand = float(tokens[3])
-    else:
-        roperand = tokens[3]
-
-
-    tokens[0] = [{tokens[1]: roperand}] if operator == '=' else \
-                [{tokens[1]: {operator: roperand}}]
-
-
-def p_list(tokens):
-    '''list : LBRACE keys RBRACE'''
-    tokens[0] = tokens[2]
-
-def p_list_empty(tokens):
-    '''list : LBRACE RBRACE'''
-    tokens[0] = []
-
-def p_list_double_wrapped(tokens):
-    '''list : LBRACE LBRACE keys RBRACE RBRACE'''
-    tokens[0] = tokens[3]
-
-def p_expression_list(tokens):
-    'expression : list'
-    tokens[0] = tokens[1]
-
-
-def p_block(tokens):
-    'block : LBRACE statements RBRACE'
-    tokens[0] = tokens[2]
-
-def p_block_empty(tokens):
-    'block : LBRACE RBRACE'
-    tokens[0] = []
-
-def p_block_double_wrapped(tokens):
-    'block : LBRACE LBRACE statements RBRACE RBRACE'
-    tokens[0] = tokens[3]
-
-def p_expression_block(tokens):
-    'expression : block'
-    tokens[0] = tokens[1]
-
-
-def p_error(p):
-    raise Exception("Syntax error in input: {}".format(str(p)))
-
-
-def get_file_paths(file_paths, directory):
-    if not path.isdir(directory):
-        return []
-
-    for filename in listdir(directory):
-        file_path = path.join(directory, filename)
-        if not path.isfile(file_path) \
-           or 'README' in file_path \
-           or not file_path.endswith('.txt'):
-            continue
-
-        print('considering {} ...'.format(file_path))
-
-        # If filename already loaded, replace old one with new:
-        path_to_delete = next(iter(
-            file_path for file_path
-            in file_paths
-            if path.basename(file_path) == filename
-        ), None)
-        if path_to_delete is not None:
-            print('replacing {} ...'.format(path.basename(path_to_delete)))
-            file_paths.remove(path_to_delete)
-
-        file_paths.append(path.join(directory, filename))
-
-    return file_paths
-
-
-def localized_strings():
-    loc_data = { }
-    for file_path in loc_file_paths:
-        filename = path.basename(file_path)
-        print('loading {}'.format(filename))
-
-        # Coerce Paradox's bastardized YAML into compliance
-        not_yaml_lines = codecs.open(file_path, 'r', 'utf-8-sig').readlines()
-        not_yaml = ''
-        for line in not_yaml_lines:
-
-            # YAML parser really doesn't like stray colons.  Just dump this prefix, there are no matches in localization for the string that
-            line = re.sub( r"event_target:", '', line)
-
-            quote_instances = [i for i, char in enumerate(line)
-                               if char == '"']
-
-            if len(quote_instances) >= 2:
-                # Some lines have invalid data after terminal quote:
-                last = quote_instances[-1]
-                line = line[:last + 1] + '\n'
-
-                if len(quote_instances) > 2:
-                    second = quote_instances[1]
-                    line = line[0:second] \
-                           + line[second:last].replace('"', r'\"') \
-                           + line[last:]
-
-            not_yaml += line
-
-        # still_not_yaml = re.sub(r'£\w+  |§[A-Z!]', '', not_yaml)
-        still_not_yaml = not_yaml
-        resembles_yaml = re.sub(r'(?<=\w):\d+ ?(?=")', ': ', still_not_yaml)
-        actual_yaml = re.sub(r'^[ \t]+', '  ', resembles_yaml, flags=re.M)
-
-        file_data = yaml.load(actual_yaml, Loader=yaml.Loader)
-        loc_map = file_data['l_english']
-        try:
-            loc_data.update(loc_map)
-        except TypeError:
-            print('Unable to find head YAML key for {}'.format(filename))
-            sys.exit()    
-    return loc_data
-
-scripted_vars_file_paths = []
-tech_file_paths = []
-army_file_paths = []
-army_attachment_file_paths = []
-building_file_paths = []
-buildable_pop_file_paths = []
-component_file_paths = []
-edict_file_paths = []
-policy_file_paths = []
-resource_file_paths = []
-spaceport_module_file_paths = []
-tile_blocker_file_paths = []
-loc_file_paths = []
-skip_terms = ['^events?', 'tutorials?', 'pop_factions?', 'name_lists?',
-              'messages?', 'mandates?', 'projects?', 'sections?',
-              'triggers?', 'traits?']
-has_skip_term = re.compile(r'(?:{})_'.format('|'.join(skip_terms)))
-
-for directory in directories:
-    scripted_vars_dir = path.join(directory, 'common/scripted_variables')
-    scripted_vars_file_paths = get_file_paths(scripted_vars_file_paths, scripted_vars_dir)
-
-    tech_dir = path.join(directory, 'common/technology')
-    tech_file_paths = get_file_paths(tech_file_paths, tech_dir)
-
-    army_dir = path.join(directory, 'common/armies')
-    army_file_paths = get_file_paths(army_file_paths, army_dir)
-
-    army_attachment_dir = path.join(directory, 'common/army_attachments')
-    army_attachment_file_paths = get_file_paths(army_attachment_file_paths,
-                                                army_attachment_dir)
-
-    buildable_pop_dir = path.join(directory, 'common/buildable_pops')    # GONE . . .
-    buildable_pop_file_paths = get_file_paths(buildable_pop_file_paths,
-                                              buildable_pop_dir)
-
-    building_dir = path.join(directory, 'common/buildings')
-    building_file_paths = get_file_paths(building_file_paths, building_dir)
-
-    component_dir = path.join(directory, 'common/component_templates')
-    component_file_paths = get_file_paths(component_file_paths, component_dir)
-
-    edict_dir = path.join(directory, 'common/edicts')
-    edict_file_paths = get_file_paths(edict_file_paths, edict_dir)
-
-    policy_dir = path.join(directory, 'common/policies')
-    policy_file_paths = get_file_paths(policy_file_paths, policy_dir)
-
-    resource_dir = path.join(directory, 'common/strategic_resources')
-    resource_file_paths = get_file_paths(resource_file_paths, resource_dir)
-
-    spaceport_module_dir = path.join(directory, 'common/spaceport_modules')
-    spaceport_module_file_paths = get_file_paths(spaceport_module_file_paths,
-                                                 spaceport_module_dir)
-
-    tile_blocker_dir = path.join(directory, 'common/deposits')
-    tile_blocker_file_paths = get_file_paths(tile_blocker_file_paths,
-                                                 tile_blocker_dir)
-
-    loc_dir = path.join(directory, 'localisation/english')
-    loc_file_paths += [path.join(loc_dir, filename) for filename
-                       in listdir(loc_dir)
-                       if path.isfile(path.join(loc_dir, filename))
-                       and filename.endswith('l_english.yml')
-                       and not has_skip_term.search(filename)]
-
-localizer = Localizer(localized_strings())
-
-# TODO: Entry is missing from localization
-localizer.put_if_not_exist('BYPASS_LGATE', 'L-Gate')
-
-print('Finished loading strings')
-
-yacc_parser = yacc()
-
-def parse_scripts(file_paths):
-    parsed = []
-
-    for file_path in file_paths:
-        print('parsing {} ...'.format(path.basename(file_path)))
-        contents = open(file_path).read()
-        # New Horizons mod has their own YAML corruption
-        if args.mod == 'new_horizon' and "jem'hadar" in contents:
-            print('fixing New Horizons YAML ...')
-            contents = contents.replace("_jem'hadar", "_jem_hadar")
-        if "event_target:" in contents:
-            contents = contents.replace("event_target:", "")
-        if "33 = {" in contents:
-            contents = contents.replace("33 = {", "ThirtyThree = {")
-
-        parsed += yacc_parser.parse(contents)
-
-    return parsed
-
-parsed_scripts = {'scripted_vars': parse_scripts(scripted_vars_file_paths),
-                  'technology': parse_scripts(tech_file_paths),
-                  'army': parse_scripts(army_file_paths),
-                  'army_attachment': parse_scripts(army_attachment_file_paths),
-                  'buildable_pop': parse_scripts(buildable_pop_file_paths),
-                  'building': parse_scripts(building_file_paths),
-                  'component': parse_scripts(component_file_paths),
-                  'edict': parse_scripts(edict_file_paths),
-                  'policy': parse_scripts(policy_file_paths),
-                  'resource': parse_scripts(resource_file_paths),
-                  'spaceport_module': parse_scripts(spaceport_module_file_paths),
-                  'tile_blocker': parse_scripts(tile_blocker_file_paths)}
-
-#print('## EDICTS {}',format(repr(parsed_scripts['edict'])))
-#exit(0)
-print('Finished loading game files')
-print('Processing files . . .')
-
-armies = [Army(entry, localizer)
-          for entry in parsed_scripts['army']
-          if not list(entry)[0].startswith('@')]
-army_attachments = [ArmyAttachment(entry, localizer)
-                    for entry in parsed_scripts['army_attachment']
-                    if not list(entry)[0].startswith('@')]
-buildable_pops = [BuildablePop(entry, localizer)
-                  for entry
-                  in parsed_scripts['buildable_pop']
-                  if not list(entry)[0].startswith('@')]
-buildings = [Building(entry, localizer)
-             for entry
-             in parsed_scripts['building']
-             if not list(entry)[0].startswith('@')]
-components = [Component(list(entry.values())[0], localizer)
-              for entry
-              in parsed_scripts['component']
-              if not list(entry)[0].startswith('@')]
-edicts = [Edict(entry, localizer)
-          for entry
-          in parsed_scripts['edict']
-          if not str(list(entry)[0]).startswith('@')]
-policies = [Policy(entry, localizer)
-            for entry
-            in parsed_scripts['policy']
-            if not list(entry)[0].startswith('@')]
-resources = [Resource(entry, localizer)
-             for entry
-             in parsed_scripts['resource']
-             if not list(entry)[0].startswith('@')]
-spaceport_modules = [SpaceportModule(entry, localizer)
-                     for entry
-                     in parsed_scripts['spaceport_module']
-                     if not list(entry)[0].startswith('@')]
-tile_blockers = [TileBlocker(entry, localizer)
-                 for entry
-                 in parsed_scripts['tile_blocker']
-                 if not list(entry)[0].startswith('@')]
-at_vars = {}
-technologies = []
-
-
-for collection in parsed_scripts.values():
-    for entry in collection:
-        if list(entry)[0].startswith('@'):
-            at_var = list(entry)[0]
-            at_vars[at_var] = entry[at_var]
-            # print(' -- ATVAR[{}] = {}'.format(at_var, entry[at_var]))
-
-
-for entry in parsed_scripts['technology']:
-    if list(entry)[0].startswith('@'):
-        continue
-
-    if args.mod == 'primitive':
-        start_with_tier_zero = False
-    else:
-        start_with_tier_zero = True
-
-    tech = Technology(entry, armies, army_attachments, buildable_pops,
-                      buildings, components, edicts, policies, resources,
-                      spaceport_modules, tile_blockers, localizer, at_vars,
-                      start_with_tier_zero)
-    if not tech.is_start_tech \
-       and tech.base_weight * tech.base_factor == 0 \
-       and len(tech.weight_modifiers) == 0:
-        # continue
-        pass
-
-    technologies.append(tech)
-
-technologies.sort(key=lambda tech: {'physics': 1, 'society': 2, 'engineering': 3}[tech.area] * 100 + tech.tier)
-jsonified = json.dumps(technologies, indent=2, separators=(',', ': '),
-                       cls=TechnologyJSONEncoder)
-
-filename = path.join('public', tree_label, 'techs.json')
-open(filename, 'w').write(jsonified)
-
-print('Wrote {} techs to {}'.format(len(technologies), filename))
+from os import listdir, path
+from yacc import STTYacc
+
+class Parser:
+
+    def get_file_paths(self, directory):
+        if not path.isdir(directory):
+            return []
+
+        file_paths = []
+        for filename in listdir(directory):
+            file_path = path.join(directory, filename)
+            if (not path.isfile(file_path)
+                or 'README' in file_path
+                or not file_path.endswith('.txt')):
+                    continue
+
+            # If filename already loaded, replace old one with new:
+            path_to_delete = next(iter(
+                file_path for file_path
+                in file_paths
+                if path.basename(file_path) == filename
+            ), None)
+            if path_to_delete is not None:
+                print('replacing {} ...'.format(path.basename(path_to_delete)))
+                file_paths.remove(path_to_delete)
+
+            file_paths.append(path.join(directory, filename))
+
+        return file_paths
+
+
+    def localized_strings(self, paths):
+        loc_data = { }
+        for file_path in paths:
+            filename = path.basename(file_path)
+            print('loading {}'.format(filename))
+
+            # Coerce Paradox's bastardized YAML into compliance
+            not_yaml_lines = codecs.open(file_path, 'r', 'utf-8-sig').readlines()
+            not_yaml = ''
+            for line in not_yaml_lines:
+                quote_instances = [i for i, char in enumerate(line) if char == '"']
+                if len(quote_instances) >= 2:
+                    # Some lines have invalid data after terminal quote:
+                    last = quote_instances[-1]
+                    line = line[:last + 1] + '\n'
+                    if len(quote_instances) > 2:
+                        second = quote_instances[1]
+                        line = (line[0:second]
+                            + line[second:last].replace('"', r'\"')
+                            + line[last:])
+                not_yaml += line
+
+            # still_not_yaml = re.sub(r'£\w+  |§[A-Z!]', '', not_yaml)
+            still_not_yaml = not_yaml
+            resembles_yaml = re.sub(r'(?<=\w):\d+ ?(?=")', ': ', still_not_yaml)
+            actual_yaml = re.sub(r'^[ \t]+', '  ', resembles_yaml, flags=re.M)
+
+            file_data = yaml.load(actual_yaml, Loader=yaml.Loader)
+            loc_map = file_data['l_english']
+            try:
+                loc_data.update(loc_map)
+            except TypeError:
+                print('Unable to find head YAML key for {}'.format(filename))
+                sys.exit()    
+        return loc_data
+
+
+    def parse_data_dir(self, dir):
+        parsed = []
+        for file_path in self.get_file_paths(dir):
+            print('parse {}'.format(file_path))
+            contents = open(file_path).read()
+            # New Horizons mod has their own YAML corruption
+            if self.config.mod == 'new_horizon' and "jem'hadar" in contents:
+                print('fixing New Horizons YAML ...')
+                contents = contents.replace("_jem'hadar", "_jem_hadar")
+            if "event_target:" in contents:
+                contents = contents.replace("event_target:", "")
+            if "33 = {" in contents:
+                contents = contents.replace("33 = {", "ThirtyThree = {")
+            parsed += self.yacc_parser.parse(contents)
+        return parsed
+
+
+    def __init__(self):
+        self.config = Configuration()
+
+        self.yacc_parser = STTYacc()
+
+        self.game_objects = {
+            'Army': { 'class': 'Army', 'dir': 'common/armies', 'data': []},
+            'ArmyAttachment' : { 'class': 'ArmyAttachment', 'dir': 'common/army_attachments', 'data': []},
+            'BuildablePop' :  { 'class': 'BuildablePop', 'dir': 'common/buildable_pops', 'data': []},
+            'Building' :  { 'class': 'Building', 'dir': 'common/buildings', 'data': []},
+            'Component' :  { 'class': 'Component', 'dir': 'common/component_templates', 'data': []},
+            'Edict' :  { 'class': 'Edict', 'dir': 'common/edicts', 'data': []},
+            'Policy' :  { 'class': 'Policy', 'dir': 'common/policies', 'data': []},
+            'Resource' :  { 'class': 'Resource', 'dir': 'common/strategic_resources', 'data': []},
+            'SpaceportModule' :  { 'class': 'SpaceportModule', 'dir': 'common/spaceport_modules', 'data': []},
+            'TileBlocker' :  { 'class': 'TileBlocker', 'dir': 'common/deposits', 'data': []},
+            'Technology': { 'class': 'Technology', 'dir': 'common/technology', 'data': [], 'skipParse': True},
+            'ScriptedVariables' : { 'class': None, 'dir': 'common/scripted_variables', 'data': [], 'skipParse': True}
+        }
+
+        skip_terms = ['^events?', 'tutorials?', 'pop_factions?', 'name_lists?',
+                    'messages?', 'mandates?', 'projects?', 'sections?',
+                    'triggers?', 'traits?']
+        self.has_skip_term = re.compile(r'(?:{})_'.format('|'.join(skip_terms)))
+
+        self.at_vars = {}
+
+
+    def run(self):
+        print('Loading localization strings . . .')
+        loc_file_paths = []
+        for directory in self.config.directories:
+            loc_dir = path.join(directory, 'localisation/english')
+            loc_file_paths += [path.join(loc_dir, filename) for filename
+                            in listdir(loc_dir)
+                            if path.isfile(path.join(loc_dir, filename))
+                            and filename.endswith('l_english.yml')
+                            and not self.has_skip_term.search(filename)]
+        localizer = Localizer(self.localized_strings(loc_file_paths))
+        localizer.put_if_not_exist('BYPASS_LGATE', 'L-Gate')   # TODO: Entry is missing from localization
+        print('Finished loading localization strings')
+
+        print('Loading game files . . .')
+        for directory in self.config.directories:
+            for go in self.game_objects.values():
+                go['data'] += self.parse_data_dir(path.join(directory, go['dir']))
+        print('Finished loading game files')
+
+        print('Processing files . . .')
+
+        for go in self.game_objects.values():
+            for entry in go['data']:
+                if list(entry)[0].startswith('@'):
+                    at_var = list(entry)[0]
+                    self.at_vars[at_var] = entry[at_var]
+                    # print(' -- ATVAR[{}] = {}'.format(at_var, entry[at_var]))
+
+        for go in self.game_objects.values():
+            if 'skipParse' not in go or not go['skipParse']:
+                go['parsed_data'] = [
+                    globals()[go['class']](entry, localizer)
+                    for entry in go['data']
+                    if not list(entry)[0].startswith('@')
+                ]
+
+        technologies = []
+        for entry in self.game_objects['Technology']['data']:
+            if list(entry)[0].startswith('@'):
+                continue
+            technologies.append(Technology(entry,
+                self.game_objects['Army']['parsed_data'], self.game_objects['ArmyAttachment']['parsed_data'],
+                self.game_objects['BuildablePop']['parsed_data'], self.game_objects['Building']['parsed_data'],
+                self.game_objects['Component']['parsed_data'], self.game_objects['Edict']['parsed_data'],
+                self.game_objects['Policy']['parsed_data'], self.game_objects['Resource']['parsed_data'],
+                self.game_objects['SpaceportModule']['parsed_data'], self.game_objects['TileBlocker']['parsed_data'],
+                localizer, self.at_vars, 'primitive' != self.config.mod))
+        technologies.sort(key=lambda tech: {'physics': 1, 'society': 2, 'engineering': 3}[tech.area] * 100 + tech.tier)
+
+        filename = path.join('public', self.config.mod, 'techs.json')
+        with open(filename, 'w') as outfile:
+            json.dump(technologies, outfile, indent=2, separators=(',', ': '),
+                cls=TechnologyJSONEncoder, sort_keys=True)
+
+        print('Wrote {} techs to {}'.format(len(technologies), filename))
+
+
+if __name__ == '__main__':
+    Parser().run()

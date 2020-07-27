@@ -10,3 +10,4 @@ from .spaceport_module import SpaceportModule
 from .tile_blocker import TileBlocker
 from .technology import Technology, TechnologyJSONEncoder
 from .localizer import Localizer
+from .game_object import GameObject
