@@ -22,6 +22,7 @@ class Configuration:
 
         arg_parser = argparse.ArgumentParser(description='Parse Stellaris tech and localization files')
         arg_parser.add_argument('mod', type=self.valid_label, default='vanilla', nargs='?', help='Use configuration for loadable game mod <mod>')
+        arg_parser.add_argument('--no-vanilla', action="store_true", help='Skip parsing of vanilla game files')
 
         args = arg_parser.parse_args()
         mod_id = self.config.mods[args.mod]
@@ -29,5 +30,8 @@ class Configuration:
 
         self.directories = [self.config.game_dir]
         if type(mod_id) is int:
-            mod_dir = path.join(self.config.workshop_dir, str(mod_id), 'mod')
+            if args.no_vanilla:
+                print('Ignoring vanilla directories')
+                self.directories = []
+            mod_dir = path.join(self.config.workshop_dir, str(mod_id))
             self.directories.append(mod_dir)

@@ -4,7 +4,7 @@
 import codecs
 import json
 import re
-import ruamel.yaml as yaml
+import ruamel
 import sys
 
 from configuration import Configuration
@@ -50,9 +50,8 @@ class Parser:
             print('loading {}'.format(filename))
 
             # Coerce Paradox's bastardized YAML into compliance
-            not_yaml_lines = codecs.open(file_path, 'r', 'utf-8-sig').readlines()
-            not_yaml = ''
-            for line in not_yaml_lines:
+            input = ''
+            for line in codecs.open(file_path, 'r', 'utf-8-sig').readlines():
                 quote_instances = [i for i, char in enumerate(line) if char == '"']
                 if len(quote_instances) >= 2:
                     # Some lines have invalid data after terminal quote:
@@ -63,17 +62,20 @@ class Parser:
                         line = (line[0:second]
                             + line[second:last].replace('"', r'\"')
                             + line[last:])
-                not_yaml += line
+                input += line
 
-            # still_not_yaml = re.sub(r'£\w+  |§[A-Z!]', '', not_yaml)
-            still_not_yaml = not_yaml
-            resembles_yaml = re.sub(r'(?<=\w):\d+ ?(?=")', ': ', still_not_yaml)
-            actual_yaml = re.sub(r'^[ \t]+', '  ', resembles_yaml, flags=re.M)
+            # input = re.sub(r'£\w+  |§[A-Z!]', '', input)
+            if self.config.mod == 'new_horizons':
+                input = re.sub(r'\\T', 'T', input)
+                input = re.sub(r'^trait', ' trait', input, flags=re.M)  # STH_main_l_english.yml
+            input = re.sub(r'(?<=\w):\d+ ?(?=")', ': ', input)
+            input = re.sub(r'^[ \t]+', '  ', input, flags=re.M)
 
-            file_data = yaml.load(actual_yaml, Loader=yaml.Loader)
+            file_data = self.yaml.load(input)
             loc_map = file_data['l_english']
             try:
-                loc_data.update(loc_map)
+                for k,v in file_data['l_english'].items():
+                    loc_data[str(k)] = v
             except TypeError:
                 print('Unable to find head YAML key for {}'.format(filename))
                 sys.exit()
@@ -101,9 +103,19 @@ class Parser:
             print('parse {}'.format(file_path))
             contents = open(file_path).read()
             # New Horizons mod has their own YAML corruption
-            if self.config.mod == 'new_horizon' and "jem'hadar" in contents:
-                print('fixing New Horizons YAML ...')
-                contents = contents.replace("_jem'hadar", "_jem_hadar")
+            if self.config.mod == 'new_horizons':
+                if "_jem'hadar" in contents:
+                    print(" ++ Fixing New Horizons YAML [_jem'hadar] . . .")
+                    contents = contents.replace("_jem'hadar", "_jem_hadar")
+                if '\T' in contents:
+                    print(' ++ Fixing New Horizons YAML [\\T] . . .')
+                    contents = contents.replace('\T', "T")
+                if "fed_heavy_escort_modi'in" in contents:
+                    print(" ++ Fixing New Horizons YAML [fed_heavy_escort_modi'in] . . .")
+                    contents = contents.replace("fed_heavy_escort_modi'in", "fed_heavy_escort_modi_in")
+                if "class_restriction = { 0.5 }" in contents:
+                    print(" ++ Fixing New Horizons YAML [class_restriction = { 0.5 }] . . .")
+                    contents = contents.replace("class_restriction = { 0.5 }", "")
             if "event_target:" in contents:
                 contents = contents.replace("event_target:", "")
             if "33 = {" in contents:
@@ -125,6 +137,9 @@ class Parser:
         self.config = Configuration()
 
         self.yacc_parser = STTYacc()
+
+        self.yaml = ruamel.yaml.YAML()
+        self.yaml.allow_duplicate_keys = True
 
         self.game_objects = {
             'Army': { 'class': 'Army', 'dir': 'common/armies', 'data': []},

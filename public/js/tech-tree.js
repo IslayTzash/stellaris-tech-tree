@@ -49,34 +49,6 @@ let config = {
 
 let rootNode = {HTMLid: 'root', data: {tier: 0}};
 
-// dummy root nodes for techs which start with no lower tier dependencies
-let tierNodes = {}
-AREAS.forEach(area => {
-	tierNodes[area] = {}
-	TIERS.forEach(tier => {
-		let o = { 
-			HTMLid: area+'-tier-'+tier,
-			HTMLclass: area,
-			data: {tier: tier},
-			parent: rootNode,
-			pseudo: true,
-			childrenDropLevel: tier - 1,
-			connectors: {
-				style: {
-					'stroke-opacity': 0
-				}
-			},
-			text: { 
-				name: 'Tier ' + tier + ', No Prereq',
-				title: area
-			}
-		}
-		tierNodes[area][tier] = o
-	})
-})
-let SPECIAL_NODES = [rootNode];
-Object.values(tierNodes).forEach( x => Object.values(x).forEach( y => SPECIAL_NODES.push(y) ));
-
 function colorize(s, extra_css_class)
 {
 	var start = '';
@@ -129,72 +101,110 @@ $(document).ready(function() {
 
     $.getJSON('techs.json', function(techData) {
 
+		console.time('sort')
 		techData.sort( (a, b) => area_compare(a.area, b.area) * -100 + a.category.localeCompare(b.category) * 10 + a.name.localeCompare(b.name) );
+		console.timeEnd('sort')
 
+		function extraDataDiv(tech) {
+
+			let $descBtn = $('<p>').addClass('description').addClass(tech.area).append('<span class="dots">…</span>');
+			let prerequisites = tech.prerequisites.reduce( (out, x) => out += '<br />&nbsp;&nbsp;&nbsp;' + prerequisite_name_lookup(techData, x, tech.area), "");
+			let unlocks = '';
+			if ( tech.feature_unlocks.length > 0 ) {
+				let $unlockList = $('<ul>');
+				tech.feature_unlocks.forEach( unlock => {
+					if (null === unlock) {
+						console.log('Ignored null feature_unlock for ' + tech.key);
+					} else {
+						$unlockList.append($('<li>').append(subst_icons_and_colors(unlock)));
+					}
+				});				
+				unlocks = '<br /><div class="tooltip-header second-tooltip ' + tech.area + '">Research Effects</div>';
+				unlocks += $unlockList[0].outerHTML;
+			}
+			$descBtn.attr('title', tech.description + '<br />'
+				+ (tech.dlc && tech.dlc.length > 0 ? '<br />Requires DLC: ' + tech.dlc.join(', ') + '<br />' : "")
+				+ (prerequisites.length > 0 ? '<br />Prerequisites:' + prerequisites + '<br />' : '')
+				+ (tech.is_dangerous ? '<br />Tech is dangerous' : "")
+				+ (tech.is_rare ? '<br />Tech is rare<br />' : "")
+				+ unlocks
+			);
+			$descBtn.attr('data-header', 'Description');		
+			if (tech.prerequisites.filter( p => techData.some( t => t.key == p && t.tier > 0 )).reduce(c => ++c, 0) > 1)
+			{
+				$descBtn.addClass('multiple-prerequisistes');
+			}
+
+			let $modifiersBtn = $('<p>').addClass('weight-modifiers').addClass(tech.area).html('⚄');
+			if ( tech.weight_modifiers.length > 0 ) {
+				let weightModifiers = tech.weight_modifiers.join('')
+				weightModifiers = weightModifiers.replace(/(?:\(.?)([0-9.+-]+)(?:\))/g,  m => '<span class="' + (parseFloat(m.replace(/[^0-9.+-]/g,'')) >= 1.0 ? 'mod-good' : 'mod-bad') + '">' + m + '</span>');
+				$modifiersBtn.attr('title', subst_icons_and_colors(weightModifiers));
+				$modifiersBtn.attr('data-header', 'Weight Modifiers');
+			}
+			else {
+				$modifiersBtn.addClass('disabled');
+			}
+
+			return $('<div class="extra-data">').addClass('tier'+tech.tier).addClass(tech.area).append($descBtn).append($modifiersBtn)[0].outerHTML;
+		}
+
+		console.time('add keys')
+		let maxTier = 0
 		let techs = techData.filter(function(tech) {
 			return Object.keys(tech)[0].search(/^@\w+$/) == -1;
 		}).map(function(tech) {
 			let tier = tech.is_start_tech ? ' (Starting)' : ' (Tier ' + tech.tier + ')';
 			let cost = tech.tier > 0 ? 'Cost: <span class="' + tech.area + '-research">' + tech.cost + '</span>' : null;
 			let weight = tech.tier > 0 ? 'Weight: ' + tech.base_weight : null;
-			let category = tech.category + tier;
-
-			function extraDataDiv() {
-
-				let $descBtn = $('<p>').addClass('description').addClass(tech.area).append('<span class="dots">…</span>');
-				let prerequisites = tech.prerequisites.reduce( (out, x) => out += '<br />&nbsp;&nbsp;&nbsp;' + prerequisite_name_lookup(techData, x, tech.area), "");
-				let unlocks = '';
-				if ( tech.feature_unlocks.length > 0 ) {
-					let $unlockList = $('<ul>');
-					tech.feature_unlocks.forEach( unlock => {
-						if (null === unlock) {
-							console.log('Ignored null feature_unlock for ' + tech.key);
-						} else {
-							$unlockList.append($('<li>').append(subst_icons_and_colors(unlock)));
-						}
-					});				
-					unlocks = '<br /><div class="tooltip-header second-tooltip ' + tech.area + '">Research Effects</div>';
-					unlocks += $unlockList[0].outerHTML;
-				}
-				$descBtn.attr('title', tech.description + '<br />'
-					+ (tech.dlc && tech.dlc.length > 0 ? '<br />Requires DLC: ' + tech.dlc.join(', ') + '<br />' : "")
-					+ (prerequisites.length > 0 ? '<br />Prerequisites:' + prerequisites + '<br />' : '')
-					+ (tech.is_dangerous ? '<br />Tech is dangerous' : "")
-					+ (tech.is_rare ? '<br />Tech is rare<br />' : "")
-					+ unlocks
-				);
-				$descBtn.attr('data-header', 'Description');		
-				if (tech.prerequisites.filter( p => techData.some( t => t.key == p && t.tier > 0 )).reduce(c => ++c, 0) > 1)
-				{
-					$descBtn.addClass('multiple-prerequisistes');
-				}
-
-				let $modifiersBtn = $('<p>').addClass('weight-modifiers').addClass(tech.area).html('⚄');
-				if ( tech.weight_modifiers.length > 0 ) {
-					let weightModifiers = tech.weight_modifiers.join('')
-					weightModifiers = weightModifiers.replace(/(?:\(.?)([0-9.+-]+)(?:\))/g,  m => '<span class="' + (parseFloat(m.replace(/[^0-9.+-]/g,'')) >= 1.0 ? 'mod-good' : 'mod-bad') + '">' + m + '</span>');
-					$modifiersBtn.attr('title', subst_icons_and_colors(weightModifiers));
-					$modifiersBtn.attr('data-header', 'Weight Modifiers');
-				}
-				else {
-					$modifiersBtn.addClass('disabled');
-				}
-
-				return $('<div class="extra-data">').addClass('tier'+tech.tier).addClass(tech.area).append($descBtn).append($modifiersBtn)[0].outerHTML;
+			if (tech.tier > maxTier) {
+				maxTier = tech.tier;
 			}
-
 			return {
 				HTMLid: tech.key,
 				HTMLclass: tech.area + (tech.dlc && tech.dlc.length > 0 ? " dlc" : "") + (tech.is_rare ? ' rare' : '') + (tech.is_dangerous ? ' dangerous' : ''),
 				data: tech,
 				innerHTML: '<div class="icon" style="background-image:url(img/' + tech.key + '.png)"></div>'
 					+ '<p class="node-name" title="' + tech.name + '">' + tech.name + '</p>'
-					+ '<p class="node-title">' + category + '</p>'
+					+ '<p class="node-title">' + (tech.category + tier) + '</p>'
 					+ '<p class="node-desc">' + ( tech.start_tech || tech.tier == 0 ? '' : cost + ',' + weight) + '</p>'
-					+ extraDataDiv()
+					+ extraDataDiv(tech)
 			};
 		});
+		console.timeEnd('add keys')
 
+
+		const TIERS = Array.from({length: maxTier}, (v, k) => k+1); 
+
+		// dummy root nodes for techs which start with no lower tier dependencies
+		let tierNodes = {}
+		AREAS.forEach(area => {
+			tierNodes[area] = {}
+			TIERS.forEach(tier => {
+				let o = { 
+					HTMLid: area+'-tier-'+tier,
+					HTMLclass: area,
+					data: {tier: tier},
+					parent: rootNode,
+					pseudo: true,
+					childrenDropLevel: tier - 1,
+					connectors: {
+						style: {
+							'stroke-opacity': 0
+						}
+					},
+					text: { 
+						name: 'Tier ' + tier + ', No Prereq',
+						title: area
+					}
+				}
+				tierNodes[area][tier] = o
+			})
+		})
+		let SPECIAL_NODES = [rootNode];
+		Object.values(tierNodes).forEach( x => Object.values(x).forEach( y => SPECIAL_NODES.push(y) ));
+
+		console.time('find parents')
 		techs.map(tech => {
 			if ( tech.data.tier === 0 || tech.data.prerequisites < 1)
 			{
@@ -221,8 +231,17 @@ $(document).ready(function() {
 						}
 						return parent;
 					}, tech.parent);
+				if (tech.parent == null) {
+					console.log('No match for any prerequisistes of ' + tech.data.key + ' ' + JSON.stringify(tech.data.prerequisites))
+					if (TIERS.includes(tech.data.tier)) {
+						tech.parent = tierNodes[tech.data.area][tech.data.tier]
+					} else {
+						tech.parent = rootNode
+					}
+				}
 			}
 		});
+		console.timeEnd('find parents')
 
 		function compute_age(tech) {
 			let parent = tech.parent;
@@ -241,6 +260,7 @@ $(document).ready(function() {
 			return age;
 		}
 
+		console.time('rearrange')
 		// Some rearranging to get the unparented + parented techs to group better by area
 		let techlist = [config, rootNode]
 		let remaining_areas = Array.from(AREAS)
@@ -274,7 +294,10 @@ $(document).ready(function() {
 		remaining_areas.forEach( area => {
 			Object.entries(tierNodes[area]).forEach(([k, v]) => techlist.push(v));
 		});
+		console.timeEnd('rearrange')
 
+		console.time('new Treant')
 		new Treant(techlist);
+		console.timeEnd('new Treant')
     });
 });
