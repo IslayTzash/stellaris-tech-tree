@@ -92,7 +92,7 @@ class Parser:
         input = re.sub(r'(?<=\w):\d+ ?(?=")', ': ', input)
         input = re.sub(r'^[ \t]+', '  ', input, flags=re.M)
 
-        return self.yaml.load(input)
+        return input
 
     def localized_strings(self, paths):
         """Localized strings are parsed with a standard YAML parser"""
