@@ -12,25 +12,11 @@ class Policy(GameObject):
                 if list(entry.keys())[0] == 'option']
 
 
-class Option:
+class Option(GameObject):
     def __init__(self, option_data, localizer):
         self.name = self._name(option_data, localizer)
         self.prerequisites = self._prerequisites(option_data)
 
-    def _name(self, option_data, localizer):
-        unlocalized = next(iter(
-            subkey for subkey in option_data if list(subkey.keys())[0] == 'name'
-        ))['name']
-
+    def _name(self, option_data, localizer):        
+        unlocalized = self._valueOrDefault(option_data, 'name', None)
         return localizer.get(unlocalized)
-
-    def _prerequisites(self, option_data):
-        try:
-            prerequisites = next(iter(
-                subkey for subkey in option_data
-                if list(subkey.keys())[0] == 'prerequisites'
-            ))['prerequisites']
-        except (StopIteration):
-            prerequisites = []
-
-        return prerequisites

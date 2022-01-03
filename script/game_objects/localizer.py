@@ -3,8 +3,9 @@ import re
 class Localizer:
     """Lookup and manage the English localization strings"""
 
-    def __init__(self, loc_data):
+    def __init__(self, loc_data, loc_script):
         self.loc_data = loc_data
+        self.loc_script = loc_script
 
     def get(self, key):
         """Default is to return original string if we cannot translate it"""
@@ -22,6 +23,17 @@ class Localizer:
         l = self._localize(key)
         if l is None:
             self.loc_data[key] = value
+
+    def _replace_loc_script(self, s):
+        try:
+            if s in self.loc_script:
+                guess = self.get(self.loc_script[s])
+                # print(' -- LOC_SCRIPT{} => {} => {}'.format(s, self.loc_script[s], guess))
+                return guess
+        except Exception as e:
+            pass
+        print(' -- LOC_SCRIPT - no match for {}'.format(s))
+        return s
 
     def _localize(self, key):
         """Private helper to do case insensitive lookups and $TERM$ substitution"""
@@ -44,4 +56,5 @@ class Localizer:
                 localized = re.sub(r'\$', '', localized)
                 break
             localized = replaced
+        localized = re.sub(r"""(\[[^\] \n\t]+\])""", lambda x: self._replace_loc_script(x.group(1)), localized)            
         return localized

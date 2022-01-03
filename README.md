@@ -65,7 +65,7 @@ and [viewer](https://github.com/turanar/stellaris-tech-tree) into two separate r
 
 # Overview of Game File Parsing
 
-Many of the Stellaris game rules are captured in YAML files.  Looking in /steamapps/common/Stellaris/common there are folders for many of the games basic concepts.
+The Stellaris game rules are captured in text data files.  Looking in /steamapps/common/Stellaris/common there are folders for many of the games basic concepts.
 
 | |  | |  |
 |--- | --- | --- | --- |
@@ -157,8 +157,8 @@ leader_trait_expertise_voidcraft:0 "Expertise: Voidcraft"
 
 Items that show up with a @, $, or Brittish pound sign are replaceable parameters within a field and get hit with another level of substitution.
 
-The program uses two parsers to read the YAML.
-* ruamel.yaml - is used to read the English localization files and some weight information
+The program uses two parsers to read the Stellaris game data files.
+* ruamel.yaml - is used to read the English localization files and dump some weight information
 * a custom yacc based parser is used to read the game rule files
 
 # Overview of Web Display Project

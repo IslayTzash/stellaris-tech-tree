@@ -4,6 +4,7 @@ from .army_attachment import ArmyAttachment
 from .buildable_pop import BuildablePop
 from .building import Building
 from .edict import Edict
+from .loc_script import LocScript
 from .policy import Policy
 from .resource import Resource
 from .spaceport_module import SpaceportModule

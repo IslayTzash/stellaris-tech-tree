@@ -270,7 +270,7 @@
     "description": "Exploring the mediation of fundamental forces through subatomic particles.",
     "dlc": [],
     "feature_unlocks": [
-      "\u00a3physics\u00a3 Physics Research from \u00a3job_researcher\u00a3 [GetResearcherPlural]: +20%"
+      "\u00a3physics\u00a3 Physics Research from \u00a3job_researcher\u00a3 Researchers: +20%"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -592,7 +592,7 @@
     "description": "Modulated fields allow for increased production and improved energy yield.",
     "dlc": [],
     "feature_unlocks": [
-      "\u00a3energy\u00a3 Energy Credits from \u00a3job_technician\u00a3 [GetTechnicianPlural]: +20%",
+      "\u00a3energy\u00a3 Energy Credits from \u00a3job_technician\u00a3 Technicians: +20%",
       "\u00a3energy\u00a3 Energy from Starbase Constructions: +10%"
     ],
     "is_dangerous": false,
@@ -827,7 +827,7 @@
     "description": "The seemingly erratic behavior of tiny things can dramatically alter the way we think about bigger things.",
     "dlc": [],
     "feature_unlocks": [
-      "\u00a3physics\u00a3 Physics Research from \u00a3job_researcher\u00a3 [GetResearcherPlural]: +20%"
+      "\u00a3physics\u00a3 Physics Research from \u00a3job_researcher\u00a3 Researchers: +20%"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -879,7 +879,7 @@
     "description": "Basic administrative AIs can be used to streamline supply and demand lines, reducing waste.",
     "dlc": [],
     "feature_unlocks": [
-      "\u00a3job_artisan\u00a3 [GetArtisan] Output: +10%"
+      "\u00a3job_artisan\u00a3 Artisan Output: +10%"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -1054,7 +1054,7 @@
     "description": "Basic entanglement principles applied to energy generation provide a substantial increase in energy output.",
     "dlc": [],
     "feature_unlocks": [
-      "\u00a3energy\u00a3 Energy Credits from \u00a3job_technician\u00a3 [GetTechnicianPlural]: +20%",
+      "\u00a3energy\u00a3 Energy Credits from \u00a3job_technician\u00a3 Technicians: +20%",
       "\u00a3energy\u00a3 Energy from Starbase Constructions: +10%"
     ],
     "is_dangerous": false,
@@ -1684,7 +1684,7 @@
     "description": "Quantum superposition of energy coils, simultaneously drained and charged.",
     "dlc": [],
     "feature_unlocks": [
-      "\u00a3energy\u00a3 Energy Credits from \u00a3job_technician\u00a3 [GetTechnicianPlural]: +20%",
+      "\u00a3energy\u00a3 Energy Credits from \u00a3job_technician\u00a3 Technicians: +20%",
       "\u00a3energy\u00a3 Energy from Starbase Constructions: +10%"
     ],
     "is_dangerous": false,
@@ -1932,7 +1932,7 @@
     "description": "Three dimensions, inextricable from the fourth.",
     "dlc": [],
     "feature_unlocks": [
-      "\u00a3physics\u00a3 Physics Research from \u00a3job_researcher\u00a3 [GetResearcherPlural]: +20%"
+      "\u00a3physics\u00a3 Physics Research from \u00a3job_researcher\u00a3 Researchers: +20%"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -2108,7 +2108,7 @@
     "description": "Using advanced AIs, we can reliably predict consumer demand before it exists.",
     "dlc": [],
     "feature_unlocks": [
-      "\u00a3job_artisan\u00a3 [GetArtisan] Output: +10%"
+      "\u00a3job_artisan\u00a3 Artisan Output: +10%"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -3168,7 +3168,7 @@
     "description": "Farming techniques can be further refined through sophisticated computer simulations of different environments and weather patterns. This allows for more predictable crop yields.",
     "dlc": [],
     "feature_unlocks": [
-      "\u00a3food\u00a3 Food from \u00a3job_farmer\u00a3 [GetFarmerPlural]: +20%",
+      "\u00a3food\u00a3 Food from \u00a3job_farmer\u00a3 Farmers: +20%",
       "\u00a3food\u00a3 Food from Starbase Constructions: +10%"
     ],
     "is_dangerous": false,
@@ -3250,7 +3250,7 @@
     "description": "Studying the different forms of life that appear on our world helps us better understand ourselves and the life that surrounds us.",
     "dlc": [],
     "feature_unlocks": [
-      "\u00a3society\u00a3 Society Research from \u00a3job_researcher\u00a3 [GetResearcherPlural]: +20%"
+      "\u00a3society\u00a3 Society Research from \u00a3job_researcher\u00a3 Researchers: +20%"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -3703,7 +3703,7 @@
     "description": "Sophisticated genetic engineering of crops helps increase yield and further improves both taste and nutrient levels.",
     "dlc": [],
     "feature_unlocks": [
-      "\u00a3food\u00a3 Food from \u00a3job_farmer\u00a3 [GetFarmerPlural]: +20%",
+      "\u00a3food\u00a3 Food from \u00a3job_farmer\u00a3 Farmers: +20%",
       "\u00a3food\u00a3 Food from Starbase Constructions: +10%",
       "Unlocks Edict: Nutritional Plenitude",
       "Unlocks Edict: Expanded Breeding Program"
@@ -3734,7 +3734,7 @@
     "description": "Studying the life that arises on other worlds and beyond allows us to understand fundamental aspects of biology that were previously beyond our reach.",
     "dlc": [],
     "feature_unlocks": [
-      "\u00a3society\u00a3 Society Research from \u00a3job_researcher\u00a3 [GetResearcherPlural]: +20%"
+      "\u00a3society\u00a3 Society Research from \u00a3job_researcher\u00a3 Researchers: +20%"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -4816,7 +4816,7 @@
     "description": "Infusing crop strands with small amounts of nano-machines help create a type of produce that is ultra resilient, and the chemical composition of which can be tailored and altered during its entire lifetime.",
     "dlc": [],
     "feature_unlocks": [
-      "\u00a3food\u00a3 Food from \u00a3job_farmer\u00a3 [GetFarmerPlural]: +20%",
+      "\u00a3food\u00a3 Food from \u00a3job_farmer\u00a3 Farmers: +20%",
       "\u00a3food\u00a3 Food from Starbase Constructions: +10%"
     ],
     "is_dangerous": false,
@@ -5891,7 +5891,7 @@
     "description": "Having the opportunity to study the multitudes of life lets us find some common ground for all living beings. The foundational building blocks of life.",
     "dlc": [],
     "feature_unlocks": [
-      "\u00a3society\u00a3 Society Research from \u00a3job_researcher\u00a3 [GetResearcherPlural]: +20%"
+      "\u00a3society\u00a3 Society Research from \u00a3job_researcher\u00a3 Researchers: +20%"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -7402,7 +7402,7 @@
     "description": "New fracking techniques will allow us to tap into previously unattainable pockets of geothermal resources deep beneath the planet's crust.",
     "dlc": [],
     "feature_unlocks": [
-      "\u00a3minerals\u00a3 Minerals from \u00a3job_miner\u00a3 [GetMinerPlural]: +20%",
+      "\u00a3minerals\u00a3 Minerals from \u00a3job_miner\u00a3 Miners: +20%",
       "\u00a3minerals\u00a3 Minerals from Starbase Constructions: +10%"
     ],
     "is_dangerous": false,
@@ -7502,7 +7502,7 @@
     "description": "Advanced instrumentation allows for the study and practical application of physical systems at nanometric scales.",
     "dlc": [],
     "feature_unlocks": [
-      "\u00a3engineering\u00a3 Engineering Research from \u00a3job_researcher\u00a3 [GetResearcherPlural]: +20%"
+      "\u00a3engineering\u00a3 Engineering Research from \u00a3job_researcher\u00a3 Researchers: +20%"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -8096,7 +8096,7 @@
     "description": "These massive drills are needed to access the rich mineral deposits that can often be found close to a planet's core.",
     "dlc": [],
     "feature_unlocks": [
-      "\u00a3minerals\u00a3 Minerals from \u00a3job_miner\u00a3 [GetMinerPlural]: +20%",
+      "\u00a3minerals\u00a3 Minerals from \u00a3job_miner\u00a3 Miners: +20%",
       "\u00a3minerals\u00a3 Minerals from Starbase Constructions: +10%"
     ],
     "is_dangerous": false,
@@ -8147,7 +8147,7 @@
     "description": "The widespread use of advanced ceramics in industry can improve metallurgical yields.",
     "dlc": [],
     "feature_unlocks": [
-      "\u00a3job_foundry\u00a3 [GetAlloyProducer] Output: +10%"
+      "\u00a3job_foundry\u00a3 Metallurgist Output: +10%"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -8172,7 +8172,7 @@
     "description": "The production and understanding of supersolids are of immeasurable value to any and every space-age civilization.",
     "dlc": [],
     "feature_unlocks": [
-      "\u00a3engineering\u00a3 Engineering Research from \u00a3job_researcher\u00a3 [GetResearcherPlural]: +20%"
+      "\u00a3engineering\u00a3 Engineering Research from \u00a3job_researcher\u00a3 Researchers: +20%"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -8891,7 +8891,7 @@
     "description": "Advanced spectrometry combines with fracking techniques and chemical flushing to rapidly exploit shallow and mid-depth deposits.",
     "dlc": [],
     "feature_unlocks": [
-      "\u00a3minerals\u00a3 Minerals from \u00a3job_miner\u00a3 [GetMinerPlural]: +20%",
+      "\u00a3minerals\u00a3 Minerals from \u00a3job_miner\u00a3 Miners: +20%",
       "\u00a3minerals\u00a3 Minerals from Starbase Constructions: +10%"
     ],
     "is_dangerous": false,
@@ -9519,7 +9519,7 @@
     "description": "By replacing antiquated ceramo-metal equipment with cutting edge technology, we can run our forges hotter and longer, increasing production.",
     "dlc": [],
     "feature_unlocks": [
-      "\u00a3job_foundry\u00a3 [GetAlloyProducer] Output: +10%"
+      "\u00a3job_foundry\u00a3 Metallurgist Output: +10%"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -9545,7 +9545,7 @@
     "description": "The study of superfluidity promises to marry quantum mechanics with the fundamental interaction of gravity.",
     "dlc": [],
     "feature_unlocks": [
-      "\u00a3engineering\u00a3 Engineering Research from \u00a3job_researcher\u00a3 [GetResearcherPlural]: +20%"
+      "\u00a3engineering\u00a3 Engineering Research from \u00a3job_researcher\u00a3 Researchers: +20%"
     ],
     "is_dangerous": false,
     "is_rare": false,

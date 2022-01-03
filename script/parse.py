@@ -13,7 +13,7 @@ from configuration import Configuration
 from game_objects import Localizer, Technology, TechnologyJSONEncoder
 # These are accessed indirectly but must be imported
 from game_objects import Army, ArmyAttachment, BuildablePop, Building, \
-    Component, Edict, Policy, Resource, SpaceportModule, TileBlocker
+    Component, Edict, LocScript, Policy, Resource, SpaceportModule, TileBlocker
 from yacc import STTYacc
 
 class Parser:
@@ -25,6 +25,7 @@ class Parser:
     BUILDING = 'Building'
     COMPONENT = 'Component'
     EDICT = 'Edict'
+    LOC_SCRIPT = 'LocScript'
     POLICY = 'Policy'
     RESOURCE = 'Resource'
     SPACEPORT_MODULE = 'SpaceportModule'
@@ -36,6 +37,7 @@ class Parser:
     DATA = 'data'
     PARSED_DATA = 'parsed_data'
     SKIP_PARSE = 'skip_parse'
+    SKIP_MATCH = 'skip_match'
 
     # Special handling for known modules
     NEW_HORIZONS = 'new_horizons'
@@ -66,7 +68,7 @@ class Parser:
 
         return file_paths
 
-    def read_yaml_file(self, file_path):
+    def read_and_sanitize_raw_yaml_file(self, file_path):
         # Coerce Paradox's bastardized YAML into compliance
         input = ''
         for line in codecs.open(file_path, 'r', 'utf-8-sig').readlines():
@@ -98,28 +100,11 @@ class Parser:
         for file_path in paths:
             filename = path.basename(file_path)
             print('loading {0} [{1}]'.format(filename, file_path))
-            file_data = self.read_yaml_file(file_path)
+            raw_data = self.read_and_sanitize_raw_yaml_file(file_path)
+            file_data = self.yaml.load(raw_data)
             try:
                 for k,v in file_data['l_english'].items():
-                    loc_data[str(k)] = v
-            except TypeError:
-                print('Unable to find head YAML key for {}'.format(filename))
-                sys.exit()
-        return loc_data
-
-    def localized_scripts(self, paths):
-        """Localized scripts are parsed with a standard YAML parser"""
-        loc_data = { }
-        for file_path in paths:
-            filename = path.basename(file_path)
-            print('loading {0} [{1}]'.format(filename, file_path))
-            file_data = self.read_yaml_file(file_path)
-            for doc in file_data:
-                print(doc)
-            return file_data
-            try:
-                for k,v in file_data['l_english'].items():
-                    loc_data[str(k)] = v
+                    loc_data[str(k)] = str(v)
             except TypeError:
                 print('Unable to find head YAML key for {}'.format(filename))
                 sys.exit()
@@ -139,41 +124,52 @@ class Parser:
         print('No match for ATVAR "{}" in {}'.format(s, repr(self.local_at_vars)))
         return s
 
-    def normalize_data_yaml(self, contents):
+    def normalize_game_data(self, contents):
         """Normalize game data files that will be loaded with the yacc based parser"""
-        # New Horizons mod has their own YAML corruption
+        contents = re.sub('#.*$', '', contents)
+        # New Horizons mod has their own data corruption
         if self.config.mod == Parser.NEW_HORIZONS:
             if "_jem'hadar" in contents:
-                print(" ++ Fixing New Horizons YAML [_jem'hadar] . . .")
+                print(" ++ Fixing New Horizons DATA [_jem'hadar] . . .")
                 contents = contents.replace("_jem'hadar", "_jem_hadar")
             if '\T' in contents:
-                print(' ++ Fixing New Horizons YAML [\\T] . . .')
+                print(' ++ Fixing New Horizons DATA [\\T] . . .')
                 contents = contents.replace('\T', "T")
             if "fed_heavy_escort_modi'in" in contents:
-                print(" ++ Fixing New Horizons YAML [fed_heavy_escort_modi'in] . . .")
+                print(" ++ Fixing New Horizons DATA [fed_heavy_escort_modi'in] . . .")
                 contents = contents.replace("fed_heavy_escort_modi'in", "fed_heavy_escort_modi_in")
             if "class_restriction = { 0.5 }" in contents:
-                print(" ++ Fixing New Horizons YAML [class_restriction = { 0.5 }] . . .")
+                print(" ++ Fixing New Horizons DATA [class_restriction = { 0.5 }] . . .")
                 contents = contents.replace("class_restriction = { 0.5 }", "")
         if "event_target:" in contents:
-            print(" ++ Fixing YAML [event_target:] . . .")
+            print(" ++ Fixing DATA [event_target:] . . .")
             contents = contents.replace("event_target:", "")
         if "33 = {" in contents:
-            print(" ++ Fixing YAML [33 =] . . .")
+            print(" ++ Fixing DATA [33 =] . . .")
             contents = re.sub(r'\s33 = [{]', r'ThirtyThree = {', contents)
         if '\\"' in contents:
-            print(" ++ Fixing YAML [\\\"] . . .")
+            print(' ++ Fixing DATA [\\"] . . .')
             contents = contents.replace('\\"', '')
         return contents
 
-    def parse_data_dir(self, dir, doAtSubst = True):
-        """Use yacc parser to read YAML data files"""
+    def parse_data_dir(self, dir, doAtSubst = True, skip_file_list = None):
+        """Use yacc parser to read game data files"""
         parsed = []
+        if skip_file_list:
+            skip_re = re.compile(r'({})'.format(')|('.join(skip_file_list)))
+        else:
+            skip_re = None        
         for file_path in self.get_file_paths(dir):
+            if skip_re and skip_re.search(file_path):
+                continue
             print('parse {}'.format(file_path))
             contents = open(file_path).read()
-            contents = self.normalize_data_yaml(contents)
-            p = self.yacc_parser.parse(contents)
+            contents = self.normalize_game_data(contents)
+            try:
+                p = self.yacc_parser.parse(contents)
+            except Exception as e:
+                # print(contents)
+                raise
             if doAtSubst:
                 self.local_at_vars = self.extract_at_vars(p, self.at_vars.copy())
                 contents = re.sub(r'(?:[^\n\t])(@[^ \n\t]+)', lambda x: self.replace_local_at_var(x.group(1)), contents)
@@ -195,28 +191,53 @@ class Parser:
         self.yaml.allow_duplicate_keys = True
 
         self.game_objects = {
-            Parser.ARMY: { Parser.CLASS: Parser.ARMY, Parser.DIR: 'common/armies', Parser.DATA: []},
-            Parser.ARMY_ATTACHMENT : { Parser.CLASS:  Parser.ARMY_ATTACHMENT, Parser.DIR: 'common/army_attachments', Parser.DATA: []},
-            Parser.BUILDABLE_POP :  { Parser.CLASS: Parser.BUILDABLE_POP, Parser.DIR: 'common/buildable_pops', Parser.DATA: []},
-            Parser.BUILDING :  { Parser.CLASS: Parser.BUILDING, Parser.DIR: 'common/buildings', Parser.DATA: []},
-            Parser.COMPONENT :  { Parser.CLASS: Parser.COMPONENT, Parser.DIR: 'common/component_templates', Parser.DATA: []},
-            Parser.EDICT :  { Parser.CLASS: Parser.EDICT, Parser.DIR: 'common/edicts', Parser.DATA: []},
-            Parser.POLICY :  { Parser.CLASS: Parser.POLICY, Parser.DIR: 'common/policies', Parser.DATA: []},
-            Parser.RESOURCE :  { Parser.CLASS: Parser.RESOURCE, Parser.DIR: 'common/strategic_resources', Parser.DATA: []},
-            Parser.SPACEPORT_MODULE :  { Parser.CLASS: Parser.TILE_BLOCKER, Parser.DIR: 'common/spaceport_modules', Parser.DATA: []},
-            Parser.TILE_BLOCKER :  { Parser.CLASS: Parser.TILE_BLOCKER, Parser.DIR: 'common/deposits', Parser.DATA: []},
-            Parser.TECHNOLOGY: { Parser.CLASS: Parser.TECHNOLOGY, Parser.DIR: 'common/technology', Parser.DATA: [], Parser.SKIP_PARSE: True}
+            Parser.ARMY: { Parser.CLASS: Parser.ARMY, Parser.DIR: path.join('common', 'armies'), Parser.DATA: []},
+            Parser.ARMY_ATTACHMENT : { Parser.CLASS:  Parser.ARMY_ATTACHMENT, Parser.DIR: path.join('common', 'army_attachments'), Parser.DATA: []},
+            Parser.BUILDABLE_POP :  { Parser.CLASS: Parser.BUILDABLE_POP, Parser.DIR: path.join('common', 'buildable_pops'), Parser.DATA: []},
+            Parser.BUILDING :  { Parser.CLASS: Parser.BUILDING, Parser.DIR: path.join('common', 'buildings'), Parser.DATA: []},
+            Parser.COMPONENT :  { Parser.CLASS: Parser.COMPONENT, Parser.DIR: path.join('common', 'component_templates'), Parser.DATA: []},
+            Parser.EDICT :  { Parser.CLASS: Parser.EDICT, Parser.DIR: path.join('common', 'edicts'), Parser.DATA: []},
+            Parser.POLICY :  { Parser.CLASS: Parser.POLICY, Parser.DIR: path.join('common', 'policies'), Parser.DATA: []},
+            Parser.RESOURCE :  { Parser.CLASS: Parser.RESOURCE, Parser.DIR: path.join('common', 'strategic_resources'), Parser.DATA: []},
+            Parser.SPACEPORT_MODULE :  { Parser.CLASS: Parser.TILE_BLOCKER, Parser.DIR: path.join('common', 'spaceport_modules'), Parser.DATA: []},
+            Parser.TILE_BLOCKER :  { Parser.CLASS: Parser.TILE_BLOCKER, Parser.DIR: path.join('common', 'deposits'), Parser.DATA: []},
+            Parser.TECHNOLOGY: { Parser.CLASS: Parser.TECHNOLOGY, Parser.DIR: path.join('common', 'technology'), Parser.DATA: [], Parser.SKIP_PARSE: True}
+        }
+
+        self.early_game_objects = {
+            Parser.LOC_SCRIPT :  { Parser.CLASS: Parser.LOC_SCRIPT, Parser.DIR: path.join('common', 'scripted_loc'), Parser.DATA: [], 
+                Parser.SKIP_MATCH: [ '_fr.txt$', '_deloc.txt$', '_frloc.txt$', '_porloc.txt$', '_ruloc_txt.txt$', '05_scripted_loc_nem.txt' ] },
         }
 
         self.skip_files_that_match = ['^events?', 'tutorials?', 'pop_factions?', 'name_lists?',
                                       'messages?', 'mandates?', 'projects?', 'sections?',
                                       'triggers?', 'traits?']
-        self.skip_loc_scripts_that_match = [ '_fr.txt$', '_deloc.txt$', '_frloc.txt$', '_porloc.txt$', '_ruloc_txt.txt$' ]
 
         self.at_vars = {}
+        self.loc_script = {}
+
 
 
     def run(self):
+        print('Loading early game files . . .')
+        for directory in self.config.directories:
+            print('+ Loading game files from %s' % directory)
+            for go in self.early_game_objects.values():
+                go['data'] += self.parse_data_dir(path.join(directory, go[Parser.DIR]), False, go[Parser.SKIP_MATCH] if Parser.SKIP_MATCH in go else None)
+        for go in self.early_game_objects.values():
+            if Parser.SKIP_PARSE not in go or not go[Parser.SKIP_PARSE]:
+                go[Parser.PARSED_DATA] = [
+                    globals()[go[Parser.CLASS]](entry, None)
+                    for entry in go[Parser.DATA]
+                    if not list(entry)[0].startswith('@')
+                ]
+        for s in self.early_game_objects[Parser.LOC_SCRIPT][Parser.PARSED_DATA]:
+            if s.name and s.value:
+                with_brackets = '[' + s.name + ']'
+                self.loc_script[with_brackets] = s.value
+                # print("LOC ADD {0} -> {1}".format(with_brackets, s.value))
+        print('Finished early game files ')
+
         print('Loading English localization strings . . .')
         loc_file_paths = []
         skip_re = re.compile(r'(?:{})_'.format('|'.join(self.skip_files_that_match)))
@@ -230,39 +251,21 @@ class Parser:
                             if path.isfile(path.join(loc_dir, filename))
                             and filename.endswith('l_english.yml')
                             and not skip_re.search(filename)]
-        localizer = Localizer(self.localized_strings(loc_file_paths))
+        localizer = Localizer(self.localized_strings(loc_file_paths), self.loc_script)
         localizer.put_if_not_exist('BYPASS_LGATE', 'L-Gate')   # TODO: Entry is missing from localization
         print('Finished loading English localization strings')
-
-        print('Loading localization scripts . . .')
-        loc_file_paths = []
-        for directory in []: # TODO DISABLED self.config.directories:
-            print('+ Loading localization scripts from %s' % directory)
-            loc_dir = path.join(directory, 'common/scripted_loc')
-            if not path.isdir(loc_dir):
-                continue
-            skip_re = re.compile(r'(?:{})_'.format('|'.join(self.skip_loc_scripts_that_match)))
-            loc_file_paths += [path.join(loc_dir, filename) for filename
-                            in listdir(loc_dir)
-                            if path.isfile(path.join(loc_dir, filename))
-                            and filename.endswith('.txt')
-                            and not skip_re.search(filename)]
-        print(repr(self.localized_scripts(loc_file_paths)))
-        # localizer = Localizer(self.localized_scripts(loc_file_paths))
-        #sys.exit()
-        print('Finished loading localization scripts')
 
         print('Loading scripted variables . . .')
         for directory in self.config.directories:
             print('+ Loading scripted variables from %s' % directory)
-            self.extract_at_vars(self.parse_data_dir(path.join(directory, 'common/scripted_variables'), False), self.at_vars)
+            self.extract_at_vars(self.parse_data_dir(path.join(directory, 'common', 'scripted_variables'), False), self.at_vars)
         print('Finished scripted variables ')
 
         print('Loading game files . . .')
         for directory in self.config.directories:
             print('+ Loading game files from %s' % directory)
             for go in self.game_objects.values():
-                go['data'] += self.parse_data_dir(path.join(directory, go[Parser.DIR]))
+                go['data'] += self.parse_data_dir(path.join(directory, go[Parser.DIR]), True, go[Parser.SKIP_MATCH] if Parser.SKIP_MATCH in go else None)
         print('Finished loading game files')
 
         icon_remaps = {}
