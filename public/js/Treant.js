@@ -692,6 +692,17 @@
 
 				node.X = xTmp;
 
+				if (node.minLevel)
+				{
+					let LH = levelHeight; // 285; // levelHeight
+					let testY = (LH + this.CONFIG.levelSeparation) * node.minLevel;
+					if (yTmp < testY)
+					{
+						console.log(levelHeight + " | " + yTmp + " | " + Y);
+						yTmp = testY;
+					}
+				}
+
 				if (node.pseudo) { // pseudo nodes need to be properly aligned, otherwise position is not correct in some examples
 					if (orinet == 'NORTH' || orinet == 'WEST') {
 						node.Y = yTmp; // align "BOTTOM"
@@ -705,6 +716,9 @@
 						( align == 'TOP' )	? (yTmp + (levelHeight - nodesizeTmp)) :
 							yTmp;
 				}
+
+				yTmp = node.Y;
+
 
 				if ( orinet == 'WEST' || orinet == 'EAST' ) {
 					var swapTmp = node.X;
@@ -722,16 +736,17 @@
 				if ( node.childrenCount() !== 0 ) {
 					if ( node.id === 0 && this.CONFIG.hideRootNode ) {
 						// ako je root node Hiden onda nemoj njegovu dijecu pomaknut po Y osi za Level separation, neka ona budu na vrhu
-						this.secondWalk(node.firstChild(), level + 1, X + node.modifier, Y);
+						this.secondWalk(node.firstChild(), level + 1, X + node.modifier, yTmp);
 					}
 					else {
-						this.secondWalk(node.firstChild(), level + 1, X + node.modifier, Y + levelHeight + this.CONFIG.levelSeparation);
+						this.secondWalk(node.firstChild(), level + 1, X + node.modifier, yTmp + levelHeight + this.CONFIG.levelSeparation);
 					}
 				}
 
 				if ( node.rightSibling() ) {
 					this.secondWalk( node.rightSibling(), level, X, Y );
 				}
+				
 			}
 		},
 
@@ -1345,6 +1360,7 @@
 				(nodeStructure.HTMLclass ? (' ' + nodeStructure.HTMLclass) : '');		// + specific node class
 
 			this.nodeHTMLid = nodeStructure.HTMLid;
+			this.minLevel = nodeStructure.minLevel;
 
 			this.children = [];
 
@@ -1841,6 +1857,10 @@
 			node.target = this.link.target;
 		}
 
+		if (this.minLevel) {
+			node.minLevel = this.minLevel;
+		}
+
 		if ( $ ) {
 			$( node ).data( 'treenode', this );
 		}
@@ -2115,17 +2135,24 @@
 	 * Chart constructor.
 	 */
 	var Treant = function( jsonConfig, callback, jQuery ) {
+		console.time('Treant: jsonConfig')
 		if ( jsonConfig instanceof Array ) {
 			jsonConfig = JSONconfig.make( jsonConfig );
 		}
+		console.timeEnd('Treant: jsonConfig')
 
 		// optional
 		if ( jQuery ) {
 			$ = jQuery;
 		}
 
+		console.time('Treant: createTree')
 		this.tree = TreeStore.createTree( jsonConfig );
+		console.timeEnd('Treant: createTree')
+
+		console.time('Treant: positionTree')
 		this.tree.positionTree( callback );
+		console.timeEnd('Treant: positionTree')
 	};
 
 	Treant.prototype.destroy = function() {

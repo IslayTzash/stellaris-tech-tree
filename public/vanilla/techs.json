@@ -12,7 +12,7 @@
     ],
     "is_dangerous": false,
     "is_rare": false,
-    "is_start_tech": true,
+    "is_start_tech": "yes",
     "key": "tech_basic_science_lab_1",
     "name": "Scientific Method",
     "prerequisites": [],
@@ -28,12 +28,11 @@
     "description": "This energy source generates power for ships through induced fission, but it also produces harmful nuclear waste.",
     "dlc": [],
     "feature_unlocks": [
-      "\u00a7HUnlocks Component:\u00a7! Fission Reactor",
-      "Unlocks Component: Fission Reactor"
+      "\u00a7HUnlocks Component:\u00a7! Fission Reactor"
     ],
     "is_dangerous": false,
     "is_rare": false,
-    "is_start_tech": true,
+    "is_start_tech": "yes",
     "key": "tech_fission_power",
     "name": "Fission Power",
     "prerequisites": [],
@@ -53,7 +52,7 @@
     ],
     "is_dangerous": false,
     "is_rare": false,
-    "is_start_tech": true,
+    "is_start_tech": "yes",
     "key": "tech_reactor_boosters_1",
     "name": "Reactor Boosters",
     "prerequisites": [
@@ -77,7 +76,7 @@
     ],
     "is_dangerous": false,
     "is_rare": false,
-    "is_start_tech": true,
+    "is_start_tech": "yes",
     "key": "tech_shields_1",
     "name": "Deflectors",
     "prerequisites": [
@@ -97,7 +96,7 @@
     "feature_unlocks": [],
     "is_dangerous": false,
     "is_rare": false,
-    "is_start_tech": true,
+    "is_start_tech": "yes",
     "key": "tech_power_plant_1",
     "name": "High-Energy Capacitors",
     "prerequisites": [],
@@ -118,7 +117,7 @@
     ],
     "is_dangerous": false,
     "is_rare": false,
-    "is_start_tech": true,
+    "is_start_tech": "yes",
     "key": "tech_hyper_drive_1",
     "name": "Hyperspace Travel",
     "prerequisites": [
@@ -140,7 +139,7 @@
     ],
     "is_dangerous": false,
     "is_rare": false,
-    "is_start_tech": true,
+    "is_start_tech": "yes",
     "key": "tech_bio_reactor",
     "name": "Bio-Reactor",
     "prerequisites": [],
@@ -162,7 +161,7 @@
     ],
     "is_dangerous": false,
     "is_rare": false,
-    "is_start_tech": true,
+    "is_start_tech": "yes",
     "key": "tech_lasers_1",
     "name": "Red Lasers",
     "prerequisites": [],
@@ -182,7 +181,7 @@
     ],
     "is_dangerous": false,
     "is_rare": false,
-    "is_start_tech": true,
+    "is_start_tech": "yes",
     "key": "tech_pd_tracking_1",
     "name": "Active Countermeasures",
     "prerequisites": [],
@@ -271,7 +270,7 @@
     "description": "Exploring the mediation of fundamental forces through subatomic particles.",
     "dlc": [],
     "feature_unlocks": [
-      "\u00a3physics\u00a3 Physics Research from \u00a3job_researcher\u00a3 Researchers: +20%"
+      "\u00a3physics\u00a3 Physics Research from \u00a3job_researcher\u00a3 [GetResearcherPlural]: +20%"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -348,7 +347,7 @@
     "dlc": [],
     "feature_unlocks": [
       "Survey Speed: +25%",
-      "Unlocks Feature: Automatic Exploration"
+      "Unlocks Feature: Automatic Surveying"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -413,8 +412,7 @@
     "description": "By installing an auxiliary fire-control system our ships can afford to make more advanced calculations, increasing accuracy.",
     "dlc": [],
     "feature_unlocks": [
-      "\u00a7HUnlocks Component:\u00a7! Auxiliary Fire-control",
-      "Unlocks Component: Auxiliary Fire-control"
+      "\u00a7HUnlocks Component:\u00a7! Auxiliary Fire-control"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -431,6 +429,61 @@
   },
   {
     "area": "physics",
+    "base_factor": 1.0,
+    "base_weight": 90,
+    "category": "Computing",
+    "cost": 2500,
+    "description": "Advances in computing technology have given us new ways to protect our data from prying eyes.",
+    "dlc": [],
+    "feature_unlocks": [
+      "Encryption: +2"
+    ],
+    "is_dangerous": false,
+    "is_rare": false,
+    "is_start_tech": false,
+    "key": "tech_encryption_1",
+    "name": "Quantum Firewalls",
+    "prerequisites": [
+      "tech_physics_1",
+      "tech_colonial_bureaucracy"
+    ],
+    "tier": 1,
+    "weight_modifiers": [
+      "(\u00d71.25)  Research Leader (Physics):\n    \u2022   Is Computing Expert\n",
+      "(\u00d70.1)  None of the following:\n    \u2022   Is AI controlled\n    \u2022   Has first_spynetwork country flag\n"
+    ]
+  },
+  {
+    "area": "physics",
+    "base_factor": 1.0,
+    "base_weight": 90,
+    "category": "Computing",
+    "cost": 2500,
+    "description": "Primitive encryption systems stand no chance against modern decryption tools.",
+    "dlc": [],
+    "feature_unlocks": [
+      "Codebreaking: +2",
+      "Unlocks Edict: Bureau of Espionage",
+      "Unlocks Edict: Observation Instinct",
+      "Unlocks Edict: Covert Analysis Algorithm"
+    ],
+    "is_dangerous": false,
+    "is_rare": false,
+    "is_start_tech": false,
+    "key": "tech_decryption_1",
+    "name": "Quantum Hacking",
+    "prerequisites": [
+      "tech_physics_1",
+      "tech_colonial_bureaucracy"
+    ],
+    "tier": 1,
+    "weight_modifiers": [
+      "(\u00d71.25)  Research Leader (Physics):\n    \u2022   Is Computing Expert\n",
+      "(\u00d70.1)  None of the following:\n    \u2022   Is AI controlled\n    \u2022   Has first_spynetwork country flag\n"
+    ]
+  },
+  {
+    "area": "physics",
     "base_factor": 2.0,
     "base_weight": 95,
     "category": "Particles",
@@ -438,8 +491,7 @@
     "description": "Nuclear fusion processes generate a great amount of power for ships, but without many of the risks associated with fission power.",
     "dlc": [],
     "feature_unlocks": [
-      "\u00a7HUnlocks Component:\u00a7! Fusion Reactor",
-      "Unlocks Component: Fusion Reactor"
+      "\u00a7HUnlocks Component:\u00a7! Fusion Reactor"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -540,7 +592,8 @@
     "description": "Modulated fields allow for increased production and improved energy yield.",
     "dlc": [],
     "feature_unlocks": [
-      "\u00a3energy\u00a3 Energy Credits from \u00a3job_technician\u00a3 Technicians: +20%"
+      "\u00a3energy\u00a3 Energy Credits from \u00a3job_technician\u00a3 [GetTechnicianPlural]: +20%",
+      "\u00a3energy\u00a3 Energy from Starbase Constructions: +10%"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -675,6 +728,7 @@
       "Archaeology Skill: +2",
       "\u00a7HUnlocks Component:\u00a7! Curator Archaeology Lab"
     ],
+    "icon": "tech_archeology_lab",
     "is_dangerous": false,
     "is_rare": true,
     "is_start_tech": false,
@@ -773,7 +827,7 @@
     "description": "The seemingly erratic behavior of tiny things can dramatically alter the way we think about bigger things.",
     "dlc": [],
     "feature_unlocks": [
-      "\u00a3physics\u00a3 Physics Research from \u00a3job_researcher\u00a3 Researchers: +20%"
+      "\u00a3physics\u00a3 Physics Research from \u00a3job_researcher\u00a3 [GetResearcherPlural]: +20%"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -821,11 +875,11 @@
     "base_factor": 2.0,
     "base_weight": 85,
     "category": "Computing",
-    "cost": 8000,
+    "cost": 4000,
     "description": "Basic administrative AIs can be used to streamline supply and demand lines, reducing waste.",
     "dlc": [],
     "feature_unlocks": [
-      "\u00a3job_artisan\u00a3 Artisans Output: +10%"
+      "\u00a3job_artisan\u00a3 [GetArtisan] Output: +10%"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -843,6 +897,58 @@
   },
   {
     "area": "physics",
+    "base_factor": 1.0,
+    "base_weight": 70,
+    "category": "Computing",
+    "cost": 5000,
+    "description": "Further advances in unstable entanglement have given us new ways to prevent unauthorized intrusions into our databases.",
+    "dlc": [],
+    "feature_unlocks": [
+      "Encryption: +2"
+    ],
+    "is_dangerous": false,
+    "is_rare": false,
+    "is_start_tech": false,
+    "key": "tech_encryption_2",
+    "name": "Simultaneous-Collapse Storage",
+    "prerequisites": [
+      "tech_encryption_1",
+      "tech_physics_2"
+    ],
+    "tier": 2,
+    "weight_modifiers": [
+      "(\u00d71.25)  Research Leader (Physics):\n    \u2022   Is Computing Expert\n",
+      "(\u00d70.1)  None of the following:\n    \u2022   Is AI controlled\n    \u2022   Has first_spynetwork country flag\n"
+    ]
+  },
+  {
+    "area": "physics",
+    "base_factor": 1.0,
+    "base_weight": 70,
+    "category": "Computing",
+    "cost": 5000,
+    "description": "The weakest link in any security system are the individuals within it. By modeling their weaknesses in computer simulations we can find novel ways to bypass their security - or trick them into bypassing it for us.",
+    "dlc": [],
+    "feature_unlocks": [
+      "Codebreaking: +2"
+    ],
+    "is_dangerous": false,
+    "is_rare": false,
+    "is_start_tech": false,
+    "key": "tech_decryption_2",
+    "name": "Simulated Social Engineering",
+    "prerequisites": [
+      "tech_decryption_1",
+      "tech_physics_2"
+    ],
+    "tier": 2,
+    "weight_modifiers": [
+      "(\u00d71.25)  Research Leader (Physics):\n    \u2022   Is Computing Expert\n",
+      "(\u00d70.1)  None of the following:\n    \u2022   Is AI controlled\n    \u2022   Has first_spynetwork country flag\n"
+    ]
+  },
+  {
+    "area": "physics",
     "base_factor": 2.0,
     "base_weight": 75,
     "category": "Particles",
@@ -850,8 +956,7 @@
     "description": "The ability to sustain a fusion reaction at relatively low temperatures will result in a new generation of fusion reactors for our ships.",
     "dlc": [],
     "feature_unlocks": [
-      "\u00a7HUnlocks Component:\u00a7! Cold Fusion Reactor",
-      "Unlocks Component: Cold Fusion Reactor"
+      "\u00a7HUnlocks Component:\u00a7! Cold Fusion Reactor"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -926,8 +1031,7 @@
     "description": "These sensors have been tuned to look for any gravitational changes in space, such as those produced by the presence of a starship.",
     "dlc": [],
     "feature_unlocks": [
-      "\u00a7HUnlocks Component:\u00a7! Gravitic Sensors",
-      "Unlocks Component: Gravitic Sensors"
+      "\u00a7HUnlocks Component:\u00a7! Gravitic Sensors"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -950,7 +1054,8 @@
     "description": "Basic entanglement principles applied to energy generation provide a substantial increase in energy output.",
     "dlc": [],
     "feature_unlocks": [
-      "\u00a3energy\u00a3 Energy Credits from \u00a3job_technician\u00a3 Technicians: +20%"
+      "\u00a3energy\u00a3 Energy Credits from \u00a3job_technician\u00a3 [GetTechnicianPlural]: +20%",
+      "\u00a3energy\u00a3 Energy from Starbase Constructions: +10%"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -1041,7 +1146,7 @@
     ],
     "tier": 2,
     "weight_modifiers": [
-      "(\u00d71.25)  Has Supremacy Traditions Tradition\n",
+      "(\u00d71.25)  Has Unyielding Traditions Tradition\n",
       "(\u00d71.25)  Research Leader (Physics):\n    \u2022   Is Particles Expert\n"
     ]
   },
@@ -1229,6 +1334,7 @@
       "Unlocks Building: Mote Harvesting Traps",
       "Reveals Resource: Volatile Motes ([[volatile_motes]])"
     ],
+    "icon": "tech_volatile_motes",
     "is_dangerous": false,
     "is_rare": false,
     "is_start_tech": false,
@@ -1301,7 +1407,7 @@
     ],
     "is_dangerous": false,
     "is_rare": true,
-    "is_start_tech": false,
+    "is_start_tech": "no",
     "key": "tech_akx_worm_1",
     "name": "Entropic Recursion",
     "prerequisites": [],
@@ -1323,7 +1429,7 @@
     ],
     "is_dangerous": false,
     "is_rare": true,
-    "is_start_tech": false,
+    "is_start_tech": "no",
     "key": "tech_akx_worm_3",
     "name": "Omega Theory",
     "prerequisites": [
@@ -1475,8 +1581,7 @@
     "description": "By harnessing the energy produced by matter/antimatter annihilations, our efficiency at generating ship power will be orders of magnitude better than fusion.",
     "dlc": [],
     "feature_unlocks": [
-      "\u00a7HUnlocks Component:\u00a7! Antimatter Reactor",
-      "Unlocks Component: Antimatter Reactor"
+      "\u00a7HUnlocks Component:\u00a7! Antimatter Reactor"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -1554,8 +1659,7 @@
     "description": "Sensors that detect the subspace fluctuations left in the wake of traveling starships. Their sensitivity and range is greater than that of a gravitic sensor array.",
     "dlc": [],
     "feature_unlocks": [
-      "\u00a7HUnlocks Component:\u00a7! Subspace Sensors",
-      "Unlocks Component: Subspace Sensors"
+      "\u00a7HUnlocks Component:\u00a7! Subspace Sensors"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -1580,7 +1684,8 @@
     "description": "Quantum superposition of energy coils, simultaneously drained and charged.",
     "dlc": [],
     "feature_unlocks": [
-      "\u00a3energy\u00a3 Energy Credits from \u00a3job_technician\u00a3 Technicians: +20%"
+      "\u00a3energy\u00a3 Energy Credits from \u00a3job_technician\u00a3 [GetTechnicianPlural]: +20%",
+      "\u00a3energy\u00a3 Energy from Starbase Constructions: +10%"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -1633,6 +1738,7 @@
     "feature_unlocks": [
       "Unlocks Feature: Wormhole Travel"
     ],
+    "icon": "tech_wormhole_generation_3",
     "is_dangerous": false,
     "is_rare": true,
     "is_start_tech": false,
@@ -1826,7 +1932,7 @@
     "description": "Three dimensions, inextricable from the fourth.",
     "dlc": [],
     "feature_unlocks": [
-      "\u00a3physics\u00a3 Physics Research from \u00a3job_researcher\u00a3 Researchers: +20%"
+      "\u00a3physics\u00a3 Physics Research from \u00a3job_researcher\u00a3 [GetResearcherPlural]: +20%"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -1854,8 +1960,10 @@
     "description": "Evolving artificial intellects are opening the door to the possibility for true synthetic sapience.",
     "dlc": [],
     "feature_unlocks": [
-      "Research Speed: +5%"
+      "Research Speed: +5%",
+      "Unlocks Feature: Auto-Research Technologies"
     ],
+    "icon": "tech_positronic_implants",
     "is_dangerous": false,
     "is_rare": false,
     "is_start_tech": false,
@@ -1878,7 +1986,8 @@
     "description": "Expanding possibilities through the application of limited cybernetics.",
     "dlc": [],
     "feature_unlocks": [
-      "Research Speed: +5%"
+      "Research Speed: +5%",
+      "Unlocks Feature: Auto-Research Technologies"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -1945,6 +2054,7 @@
       "Unlocks Component: Autonomous Ship Intellect (Carrier)",
       "Unlocks Component: Autonomous Ship Intellect (Platform)"
     ],
+    "icon": "tech_combat_computers_3",
     "is_dangerous": false,
     "is_rare": true,
     "is_start_tech": false,
@@ -1994,11 +2104,11 @@
     "base_factor": 2.0,
     "base_weight": 45,
     "category": "Computing",
-    "cost": 8000,
+    "cost": 16000,
     "description": "Using advanced AIs, we can reliably predict consumer demand before it exists.",
     "dlc": [],
     "feature_unlocks": [
-      "\u00a3job_artisan\u00a3 Artisans Output: +10%"
+      "\u00a3job_artisan\u00a3 [GetArtisan] Output: +10%"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -2017,6 +2127,58 @@
   },
   {
     "area": "physics",
+    "base_factor": 1.0,
+    "base_weight": 50,
+    "category": "Computing",
+    "cost": 20000,
+    "description": "Our latest advances in encryption exploit recently discovered quirks of physics to require inputting a specialized key before it has been generated.",
+    "dlc": [],
+    "feature_unlocks": [
+      "Encryption: +2"
+    ],
+    "is_dangerous": false,
+    "is_rare": false,
+    "is_start_tech": false,
+    "key": "tech_encryption_3",
+    "name": "Negative-Time Keys",
+    "prerequisites": [
+      "tech_encryption_2",
+      "tech_physics_3"
+    ],
+    "tier": 4,
+    "weight_modifiers": [
+      "(\u00d71.25)  Research Leader (Physics):\n    \u2022   Is Computing Expert\n",
+      "(\u00d70.1)  None of the following:\n    \u2022   Is AI controlled\n    \u2022   Has first_spynetwork country flag\n"
+    ]
+  },
+  {
+    "area": "physics",
+    "base_factor": 1.0,
+    "base_weight": 50,
+    "category": "Computing",
+    "cost": 20000,
+    "description": "Our operatives can access data from adjacent realities without risking setting off alarms in this reality.",
+    "dlc": [],
+    "feature_unlocks": [
+      "Codebreaking: +2"
+    ],
+    "is_dangerous": false,
+    "is_rare": false,
+    "is_start_tech": false,
+    "key": "tech_decryption_3",
+    "name": "Quasi-Dimensional Reflection",
+    "prerequisites": [
+      "tech_decryption_2",
+      "tech_physics_3"
+    ],
+    "tier": 4,
+    "weight_modifiers": [
+      "(\u00d71.25)  Research Leader (Physics):\n    \u2022   Is Computing Expert\n",
+      "(\u00d70.1)  None of the following:\n    \u2022   Is AI controlled\n    \u2022   Has first_spynetwork country flag\n"
+    ]
+  },
+  {
+    "area": "physics",
     "base_factor": 2.0,
     "base_weight": 40,
     "category": "Particles",
@@ -2024,8 +2186,7 @@
     "description": "These generators extract vacuum energy, providing an almost limitless supply of ship power. There is no more efficient way to generate energy.",
     "dlc": [],
     "feature_unlocks": [
-      "\u00a7HUnlocks Component:\u00a7! Zero Point Reactor",
-      "Unlocks Component: Zero Point Reactor"
+      "\u00a7HUnlocks Component:\u00a7! Zero Point Reactor"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -2076,8 +2237,7 @@
     "description": "Advanced sensors that rely on rotating tachyon beams to detect ship movements even at extreme distances.",
     "dlc": [],
     "feature_unlocks": [
-      "\u00a7HUnlocks Component:\u00a7! Tachyon Sensors",
-      "Unlocks Component: Tachyon Sensors"
+      "\u00a7HUnlocks Component:\u00a7! Tachyon Sensors"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -2426,8 +2586,7 @@
     "description": "These generators appear to somehow draw energy directly from dark matter, providing more ship power than should be possible according to the laws of physics.",
     "dlc": [],
     "feature_unlocks": [
-      "\u00a7HUnlocks Component:\u00a7! Dark Matter Reactor",
-      "Unlocks Component: Dark Matter Reactor"
+      "\u00a7HUnlocks Component:\u00a7! Dark Matter Reactor"
     ],
     "is_dangerous": false,
     "is_rare": true,
@@ -2625,8 +2784,7 @@
     "dlc": [],
     "feature_unlocks": [
       "\u00a7HUnlocks Component:\u00a7! Jump Drive",
-      "Unlocks Feature: Jump Drive Travel",
-      "Unlocks Component: Jump Drive"
+      "Unlocks Feature: Jump Drive Travel"
     ],
     "is_dangerous": true,
     "is_rare": true,
@@ -2793,7 +2951,7 @@
     ],
     "is_dangerous": false,
     "is_rare": false,
-    "is_start_tech": true,
+    "is_start_tech": "yes",
     "key": "tech_planetary_defenses",
     "name": "Planetary Defenses",
     "prerequisites": [],
@@ -2813,7 +2971,7 @@
     ],
     "is_dangerous": false,
     "is_rare": false,
-    "is_start_tech": true,
+    "is_start_tech": "yes",
     "key": "tech_interplanetary_commerce",
     "name": "Interplanetary Commerce",
     "prerequisites": [],
@@ -2831,7 +2989,7 @@
     "feature_unlocks": [],
     "is_dangerous": false,
     "is_rare": false,
-    "is_start_tech": true,
+    "is_start_tech": "yes",
     "key": "tech_industrial_farming",
     "name": "Industrial Agriculture",
     "prerequisites": [],
@@ -2851,7 +3009,7 @@
     ],
     "is_dangerous": false,
     "is_rare": false,
-    "is_start_tech": true,
+    "is_start_tech": "yes",
     "key": "tech_colonization_1",
     "name": "New Worlds Protocol",
     "prerequisites": [
@@ -2879,7 +3037,7 @@
     ],
     "is_dangerous": false,
     "is_rare": false,
-    "is_start_tech": true,
+    "is_start_tech": "yes",
     "key": "tech_planetary_government",
     "name": "Planetary Government",
     "prerequisites": [],
@@ -2899,7 +3057,7 @@
     ],
     "is_dangerous": false,
     "is_rare": false,
-    "is_start_tech": true,
+    "is_start_tech": "yes",
     "key": "tech_holo_entertainment",
     "name": "Holo-Entertainment",
     "prerequisites": [],
@@ -2917,12 +3075,16 @@
     "feature_unlocks": [
       "Unlocks Building: Autochthon Monument",
       "Unlocks Building: Temple",
+      "Unlocks Building: Sacrificial Temple",
       "Unlocks Building: Simulation Site",
-      "Unlocks Building: Corporate Culture Site"
+      "Unlocks Building: Corporate Culture Site",
+      "Unlocks Edict: Sacrifice: Togetherness",
+      "Unlocks Edict: Sacrifice: Harmony",
+      "Unlocks Edict: Sacrifice: Bounty"
     ],
     "is_dangerous": false,
     "is_rare": false,
-    "is_start_tech": true,
+    "is_start_tech": "yes",
     "key": "tech_cultural_heritage",
     "name": "Sociocultural History",
     "prerequisites": [],
@@ -2944,7 +3106,7 @@
     ],
     "is_dangerous": false,
     "is_rare": false,
-    "is_start_tech": true,
+    "is_start_tech": "yes",
     "key": "tech_hive_node",
     "name": "Synaptic Structures",
     "prerequisites": [],
@@ -2982,6 +3144,7 @@
     "description": "Trade across interstellar distances presents a new set of challenges to overcome. It is critical to achieve the transfer of goods from one system to another in a timely and above all cost efficient manner.",
     "dlc": [],
     "feature_unlocks": [],
+    "icon": "tech_offworld_trading",
     "is_dangerous": false,
     "is_rare": false,
     "is_start_tech": false,
@@ -3005,7 +3168,8 @@
     "description": "Farming techniques can be further refined through sophisticated computer simulations of different environments and weather patterns. This allows for more predictable crop yields.",
     "dlc": [],
     "feature_unlocks": [
-      "\u00a3food\u00a3 Food from \u00a3job_farmer\u00a3 Farmers: +20%"
+      "\u00a3food\u00a3 Food from \u00a3job_farmer\u00a3 [GetFarmerPlural]: +20%",
+      "\u00a3food\u00a3 Food from Starbase Constructions: +10%"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -3086,7 +3250,7 @@
     "description": "Studying the different forms of life that appear on our world helps us better understand ourselves and the life that surrounds us.",
     "dlc": [],
     "feature_unlocks": [
-      "\u00a3society\u00a3 Society Research from \u00a3job_researcher\u00a3 Researchers: +20%"
+      "\u00a3society\u00a3 Society Research from \u00a3job_researcher\u00a3 [GetResearcherPlural]: +20%"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -3388,7 +3552,7 @@
     "description": "Ancient warring tribes, historical nations in conflict, now unified in empire. We must not, will not, crumble.",
     "dlc": [],
     "feature_unlocks": [
-      "Monthly Unity: +2",
+      "Monthly \u00a3unity\u00a3 Unity: +2",
       "Unlocks Feature: Additional Edicts (Campaigns)"
     ],
     "is_dangerous": false,
@@ -3451,9 +3615,9 @@
     "prerequisites": [],
     "tier": 1,
     "weight_modifiers": [
-      "(\u00d71.5)  Number of enslaved planets greater than 9\n",
-      "(\u00d72.0)  Number of enslaved planets greater than 19\n",
-      "(\u00d72.0)  Number of enslaved planets greater than 29\n",
+      "(\u00d71.5)  Number of enslaved pops greater than 9\n",
+      "(\u00d72.0)  Number of enslaved pops greater than 19\n",
+      "(\u00d72.0)  Number of enslaved pops greater than 29\n",
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Statecraft Expert\n",
       "(\u00d70.0)  Any of the following:\n    \u2022   Does NOT allow Slavery\n    \u2022   NOT any owned Pop:\n        \u2022   Pop is enslaved\n"
     ]
@@ -3539,7 +3703,8 @@
     "description": "Sophisticated genetic engineering of crops helps increase yield and further improves both taste and nutrient levels.",
     "dlc": [],
     "feature_unlocks": [
-      "\u00a3food\u00a3 Food from \u00a3job_farmer\u00a3 Farmers: +20%",
+      "\u00a3food\u00a3 Food from \u00a3job_farmer\u00a3 [GetFarmerPlural]: +20%",
+      "\u00a3food\u00a3 Food from Starbase Constructions: +10%",
       "Unlocks Edict: Nutritional Plenitude",
       "Unlocks Edict: Expanded Breeding Program"
     ],
@@ -3569,7 +3734,7 @@
     "description": "Studying the life that arises on other worlds and beyond allows us to understand fundamental aspects of biology that were previously beyond our reach.",
     "dlc": [],
     "feature_unlocks": [
-      "\u00a3society\u00a3 Society Research from \u00a3job_researcher\u00a3 Researchers: +20%"
+      "\u00a3society\u00a3 Society Research from \u00a3job_researcher\u00a3 [GetResearcherPlural]: +20%"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -3675,6 +3840,7 @@
     "feature_unlocks": [
       "Unlocks Building: Cyto-Revitalization Centers"
     ],
+    "icon": "tech_frontier_health",
     "is_dangerous": false,
     "is_rare": false,
     "is_start_tech": false,
@@ -3802,6 +3968,7 @@
     "weight_modifiers": [
       "(\u00d70.0)  All of the following:\n    \u2022   Is the Lithoid Empire\n    \u2022   Has Devouring Swarm Government Civic\n",
       "(\u00d71.25)  Has Expansion Traditions Tradition\n",
+      "(\u00d71.25)  Has Aquatic Trait\n",
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is New Worlds Expert\n"
     ]
   },
@@ -3857,7 +4024,7 @@
       "(\u00d71.25)  Has Xenophile Ethic\n",
       "(\u00d71.5)  Has Fanatic Xenophile Ethic\n",
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Biology Expert\n",
-      "(\u00d70.0)  None of the following:\n    \u2022   Has found_presapients country flag\n    \u2022   Any Planet within Borders:\n        \u2022   Any Pop:\n            \u2022   This Species is NOT pre-sapient\n"
+      "(\u00d70.0)  None of the following:\n    \u2022   Has found_presapients country flag\n    \u2022   Any Planet within Borders:\n        \u2022   Any empire Pop:\n            \u2022   This Species is NOT pre-sapient\n"
     ]
   },
   {
@@ -4141,6 +4308,32 @@
   },
   {
     "area": "society",
+    "base_factor": 4.0,
+    "base_weight": 70,
+    "category": "New Worlds",
+    "cost": 6000,
+    "description": "Stronger alloys allow us to create prefabricated buildings, providing our colonies with the improved infrastructure.",
+    "dlc": [],
+    "feature_unlocks": [
+      "Building Slots: +1",
+      "Colony Development Speed: +25%"
+    ],
+    "is_dangerous": false,
+    "is_rare": false,
+    "is_start_tech": false,
+    "key": "tech_planetary_infrastructure_1",
+    "name": "Ceramo-Metal Infrastructure",
+    "prerequisites": [
+      "tech_colonial_centralization",
+      "tech_ship_armor_2"
+    ],
+    "tier": 2,
+    "weight_modifiers": [
+      "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is New Worlds Expert\n"
+    ]
+  },
+  {
+    "area": "society",
     "base_factor": 0.5,
     "base_weight": 75,
     "category": "Biology",
@@ -4204,6 +4397,7 @@
     "dlc": [],
     "feature_unlocks": [
       "Administrative Capacity: +10",
+      "Base Intel Level: +10",
       "Unlocks Building: Administrative Park",
       "Unlocks Building: Network Junction"
     ],
@@ -4235,6 +4429,7 @@
     "feature_unlocks": [
       "Faction Influence Gain: +1"
     ],
+    "icon": "tech_autonomous_agents",
     "is_dangerous": false,
     "is_rare": false,
     "is_start_tech": false,
@@ -4262,7 +4457,8 @@
     "description": "Semi-independent units have proved critical to the success of the greater whole.",
     "dlc": [],
     "feature_unlocks": [
-      "Monthly Influence: +1"
+      "Monthly Influence: +1",
+      "Available Envoys: +1"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -4336,7 +4532,8 @@
     "description": "Seeing is believing, and belief begets reality.",
     "dlc": [],
     "feature_unlocks": [
-      "Unlocks Building: Holotemple"
+      "Unlocks Building: Holotemple",
+      "Unlocks Building: Grim Holotemple"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -4361,7 +4558,8 @@
     "description": "By clustering networks of macroscopic synaptic nodes, maximum meganeuron transmission per available surface area can be attained.",
     "dlc": [],
     "feature_unlocks": [
-      "Unlocks Building: Synaptic Clusters"
+      "Unlocks Building: Synaptic Clusters",
+      "Unlocks Edict: Synaptic Reinforcement"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -4435,6 +4633,31 @@
   {
     "area": "society",
     "base_factor": 1.0,
+    "base_weight": 70,
+    "category": "Statecraft",
+    "cost": 6000,
+    "description": "As our planets become more developed, we can gain significant improvements to our throughput.",
+    "dlc": [],
+    "feature_unlocks": [
+      "description: Capital Buildings:\n  Resources from \u00a3job\u00a3 Jobs: \u00a7G+10%\u00a7!\n  Upkeep from \u00a3job\u00a3 Jobs: \u00a7R+10%\u00a7!"
+    ],
+    "is_dangerous": false,
+    "is_rare": false,
+    "is_start_tech": false,
+    "key": "tech_capital_productivity_1",
+    "name": "Improved Production",
+    "prerequisites": [
+      "tech_planetary_unification"
+    ],
+    "tier": 2,
+    "weight_modifiers": [
+      "(\u00d70.25)  Does NOT have Prosperity Traditions Finished Tradition\n",
+      "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Statecraft Expert\n"
+    ]
+  },
+  {
+    "area": "society",
+    "base_factor": 1.0,
     "base_weight": 0,
     "category": "Biology",
     "cost": 6000,
@@ -4485,7 +4708,7 @@
     ],
     "is_dangerous": false,
     "is_rare": true,
-    "is_start_tech": false,
+    "is_start_tech": "no",
     "key": "tech_akx_worm_2",
     "name": "Doctrine: Strange Loop",
     "prerequisites": [],
@@ -4593,7 +4816,8 @@
     "description": "Infusing crop strands with small amounts of nano-machines help create a type of produce that is ultra resilient, and the chemical composition of which can be tailored and altered during its entire lifetime.",
     "dlc": [],
     "feature_unlocks": [
-      "\u00a3food\u00a3 Food from \u00a3job_farmer\u00a3 Farmers: +20%"
+      "\u00a3food\u00a3 Food from \u00a3job_farmer\u00a3 [GetFarmerPlural]: +20%",
+      "\u00a3food\u00a3 Food from Starbase Constructions: +10%"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -4741,7 +4965,8 @@
     "weight_modifiers": [
       "(\u00d71.25)  Has Hive Mind Authority\n",
       "(\u00d71.25)  Is some degree of Xenophile\n",
-      "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Biology Expert\n"
+      "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Biology Expert\n",
+      "(\u00d71.25)  All of the following:\n    \u2022   Has Necrophage Origin\n    \u2022   Has Necrophage Trait\n"
     ]
   },
   {
@@ -4753,7 +4978,8 @@
     "description": "Through glandular biological tailoring we can change the environmental tolerance of a species to suit our needs.",
     "dlc": [],
     "feature_unlocks": [
-      "Unlocks Feature: Habitability Modification"
+      "Unlocks Feature: Habitability Modification",
+      "Unlocks Building: House of Apotheosis"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -4766,7 +4992,8 @@
     "tier": 3,
     "weight_modifiers": [
       "(\u00d71.25)  Has Hive Mind Authority\n",
-      "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Biology Expert\n"
+      "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Biology Expert\n",
+      "(\u00d71.25)  All of the following:\n    \u2022   Has Necrophage Origin\n    \u2022   Has Necrophage Trait\n"
     ]
   },
   {
@@ -4993,6 +5220,7 @@
     "prerequisites": [],
     "tier": 3,
     "weight_modifiers": [
+      "(\u00d70.0)  Has Gestalt Consciousness Ethic\n",
       "(\u00d70.5)  Is NOT some degree of Spiritualist\n",
       "(\u00d72.0)  Has Fanatic Spiritualist Ethic\n",
       "(\u00d72.0)  Research Leader (Society):\n    \u2022   Is Maniacal\n",
@@ -5001,7 +5229,7 @@
       "(\u00d72.0)  All of the following:\n    \u2022   Is in a Federation\n    \u2022   Federation:\n        \u2022   Has Scientific Inspiration Federation Perk\n        \u2022   Any Federation Member:\n            \u2022   Has Psionic Theory Technology\n",
       "(\u00d72.0)  Any empire Pop:\n    \u2022   Population has Psionic Trait\n",
       "(\u00d71.25)  All of the following:\n    \u2022   Any empire Pop:\n        \u2022   Population has Latent Psionic Trait\n    \u2022   NOT any owned Pop:\n        \u2022   Population has Psionic Trait\n",
-      "(\u00d70.0)  All of the following:\n    \u2022   Is some degree of Materialist\n    \u2022   None of the following:\n        \u2022   Research Leader (Society):\n            \u2022   Is Psionics Expert\n        \u2022   Any empire Pop:\n            \u2022   Population has Psionic Trait\n        \u2022   Any empire Pop:\n            \u2022   Population has Latent Psionic Trait\n"
+      "(\u00d70.0)  All of the following:\n    \u2022   Is some degree of Materialist\n    \u2022   None of the following:\n        \u2022   Research Leader (Society):\n            \u2022   Is Psionics Expert\n        \u2022   Any empire Pop:\n            \u2022   Any of the following:\n                \u2022   Population has Psionic Trait\n                \u2022   Population has Latent Psionic Trait\n"
     ]
   },
   {
@@ -5082,11 +5310,11 @@
     "name": "Global Production Strategy",
     "prerequisites": [
       "tech_alloys_1",
-      "tech_luxuries_1",
       "tech_colonial_centralization"
     ],
     "tier": 3,
     "weight_modifiers": [
+      "(\u00d70.0)  None of the following:\n    \u2022   Has Nano-Circuit Assembly Technology\n    \u2022   Does NOT use Consumer Goods\n",
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Statecraft Expert\n"
     ]
   },
@@ -5100,6 +5328,7 @@
     "dlc": [],
     "feature_unlocks": [
       "Administrative Capacity: +10",
+      "Base Intel Level: +10",
       "Unlocks Building: Administrative Complex",
       "Unlocks Building: System Conflux"
     ],
@@ -5160,8 +5389,10 @@
     "dlc": [],
     "feature_unlocks": [
       "Leader Level Cap: +1",
-      "Leader Upkeep: -10%"
+      "Leader Upkeep: -10%",
+      "Available Envoys: +1"
     ],
+    "icon": "tech_collective_self",
     "is_dangerous": false,
     "is_rare": false,
     "is_start_tech": false,
@@ -5190,6 +5421,7 @@
     "feature_unlocks": [
       "Resources from \u00a3job\u00a3 Jobs: +5%"
     ],
+    "icon": "tech_resource_processing_algorithms",
     "is_dangerous": false,
     "is_rare": false,
     "is_start_tech": false,
@@ -5214,6 +5446,7 @@
     "feature_unlocks": [
       "Resources from \u00a3job\u00a3 Jobs: +5%"
     ],
+    "icon": "tech_artificial_moral_codes",
     "is_dangerous": false,
     "is_rare": false,
     "is_start_tech": false,
@@ -5341,7 +5574,8 @@
     "description": "Through our understanding of physics and field manipulation, our holy places shall we seen and felt by all.",
     "dlc": [],
     "feature_unlocks": [
-      "Unlocks Building: Sacred Nexus"
+      "Unlocks Building: Sacred Nexus",
+      "Unlocks Building: Temple of Grand Sacrifice"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -5395,6 +5629,7 @@
       "Unlocks Component: Medium Psionic Barrier",
       "Unlocks Component: Large Psionic Barrier"
     ],
+    "icon": "tech_psionic_barrier",
     "is_dangerous": false,
     "is_rare": true,
     "is_start_tech": false,
@@ -5515,6 +5750,32 @@
   {
     "area": "society",
     "base_factor": 1.0,
+    "base_weight": 70,
+    "category": "Statecraft",
+    "cost": 12000,
+    "description": "Increased population density gives us an opportunity to further increase productivity.",
+    "dlc": [],
+    "feature_unlocks": [
+      "description: Upgraded Capital Buildings:\n  Resources from \u00a3job\u00a3 Jobs: \u00a7G+20%\u00a7!\n  Upkeep from \u00a3job\u00a3 Jobs: \u00a7R+20%\u00a7!"
+    ],
+    "is_dangerous": false,
+    "is_rare": false,
+    "is_start_tech": false,
+    "key": "tech_capital_productivity_2",
+    "name": "Efficiencies of Scale",
+    "prerequisites": [
+      "tech_colonial_centralization",
+      "tech_capital_productivity_1"
+    ],
+    "tier": 3,
+    "weight_modifiers": [
+      "(\u00d70.25)  Does NOT have Prosperity Traditions Finished Tradition\n",
+      "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Statecraft Expert\n"
+    ]
+  },
+  {
+    "area": "society",
+    "base_factor": 1.0,
     "base_weight": 60,
     "category": "Psionics",
     "cost": 10000,
@@ -5599,7 +5860,8 @@
     "description": "The process of synthetically replicating crops requires a lot of collected waste to create a small amount of produce, but nevertheless provides a significant boost to agricultural output.",
     "dlc": [],
     "feature_unlocks": [
-      "\u00a3food\u00a3 Food from \u00a3job\u00a3 Jobs: +15%"
+      "\u00a3food\u00a3 Food from \u00a3job\u00a3 Jobs: +15%",
+      "\u00a3food\u00a3 Food from Starbase Constructions: +10%"
     ],
     "is_dangerous": false,
     "is_rare": true,
@@ -5629,7 +5891,7 @@
     "description": "Having the opportunity to study the multitudes of life lets us find some common ground for all living beings. The foundational building blocks of life.",
     "dlc": [],
     "feature_unlocks": [
-      "\u00a3society\u00a3 Society Research from \u00a3job_researcher\u00a3 Researchers: +20%"
+      "\u00a3society\u00a3 Society Research from \u00a3job_researcher\u00a3 [GetResearcherPlural]: +20%"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -5929,6 +6191,37 @@
   },
   {
     "area": "society",
+    "base_factor": 0.5,
+    "base_weight": 40,
+    "category": "Psionics",
+    "cost": 20000,
+    "description": "Telepaths can monitor the citizenry for incorrect thoughts, but with some study they could also correct thought abberations that they find.",
+    "dlc": [],
+    "feature_unlocks": [
+      "Unlocks Edict: Thought Enforcement"
+    ],
+    "is_dangerous": false,
+    "is_rare": true,
+    "is_start_tech": false,
+    "key": "tech_thought_enforcement",
+    "name": "Thought Enforcement",
+    "prerequisites": [
+      "tech_telepathy"
+    ],
+    "tier": 4,
+    "weight_modifiers": [
+      "(\u00d70.5)  NOT Research Leader (Society):\n    \u2022   Is Psionics Expert\n",
+      "(\u00d71.5)  Has Technological Ascendancy Ascension Perk\n",
+      "(\u00d72.0)  All of the following:\n    \u2022   Is in a Federation\n    \u2022   Federation:\n        \u2022   Has Scientific Inspiration Federation Perk\n        \u2022   Any Federation Member:\n            \u2022   Has Thought Enforcement Technology\n",
+      "(\u00d72.0)  All of the following:\n    \u2022   Is some degree of Spiritualist\n    \u2022   Has Authoritarian Ethic\n",
+      "(\u00d73.0)  All of the following:\n    \u2022   Is some degree of Spiritualist\n    \u2022   Has Fanatic Authoritarian Ethic\n",
+      "(\u00d72.0)  Has Police State Government Civic\n",
+      "(\u00d72.0)  Research Leader (Society):\n    \u2022   Is Maniacal\n",
+      "(\u00d74.0)  Research Leader (Society):\n    \u2022   Is Psionics Expert\n"
+    ]
+  },
+  {
+    "area": "society",
     "base_factor": 1.0,
     "base_weight": 40,
     "category": "New Worlds",
@@ -5987,6 +6280,62 @@
   },
   {
     "area": "society",
+    "base_factor": 4.0,
+    "base_weight": 35,
+    "category": "New Worlds",
+    "cost": 24000,
+    "description": "Advances in metallurgy permit us to build vastly larger and more durable structures, greatly improving the infrastructure of our colonies.",
+    "dlc": [],
+    "feature_unlocks": [
+      "Building Slots: +1",
+      "Colony Development Speed: +25%"
+    ],
+    "is_dangerous": false,
+    "is_rare": false,
+    "is_start_tech": false,
+    "key": "tech_planetary_infrastructure_2",
+    "name": "Durasteel Infrastructure",
+    "prerequisites": [
+      "tech_galactic_administration",
+      "tech_ship_armor_4",
+      "tech_planetary_infrastructure_1"
+    ],
+    "tier": 4,
+    "weight_modifiers": [
+      "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is New Worlds Expert\n"
+    ]
+  },
+  {
+    "area": "society",
+    "base_factor": 0.5,
+    "base_weight": 40,
+    "category": "Statecraft",
+    "cost": 20000,
+    "description": "Further advancements in the field of subdermal implants can provide detailed information regarding the movements and actions of the implanted.",
+    "dlc": [],
+    "feature_unlocks": [
+      "Unlocks Edict: Tracking Implants"
+    ],
+    "is_dangerous": false,
+    "is_rare": true,
+    "is_start_tech": false,
+    "key": "tech_tracking_implants",
+    "name": "Tracking Implants",
+    "prerequisites": [
+      "tech_subdermal_stimulation",
+      "tech_galactic_bureaucracy"
+    ],
+    "tier": 4,
+    "weight_modifiers": [
+      "(\u00d70.2)  None of the following:\n    \u2022   Has Curator Insight Modifier\n    \u2022   Research Leader (Society):\n        \u2022   Is Curator\n    \u2022   Research Leader (Society):\n        \u2022   Is Statecraft Expert\n",
+      "(\u00d72.0)  All of the following:\n    \u2022   Is some degree of Materialist\n    \u2022   Is some degree of Authoritarian\n",
+      "(\u00d71.5)  Has Technological Ascendancy Ascension Perk\n",
+      "(\u00d72.0)  All of the following:\n    \u2022   Is in a Federation\n    \u2022   Federation:\n        \u2022   Has Scientific Inspiration Federation Perk\n        \u2022   Any Federation Member:\n            \u2022   Has Tracking Implants Technology\n",
+      "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Statecraft Expert\n"
+    ]
+  },
+  {
+    "area": "society",
     "base_factor": 1.0,
     "base_weight": 40,
     "category": "Statecraft",
@@ -6007,6 +6356,32 @@
     ],
     "tier": 4,
     "weight_modifiers": [
+      "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Statecraft Expert\n"
+    ]
+  },
+  {
+    "area": "society",
+    "base_factor": 1.0,
+    "base_weight": 70,
+    "category": "Statecraft",
+    "cost": 24000,
+    "description": "Continued advancements in technology allow our most developed planets to reach productivity levels unheard of in earlier times.",
+    "dlc": [],
+    "feature_unlocks": [
+      "description: Major Capital Buildings:\n  Resources from \u00a3job\u00a3 Jobs: \u00a7G+30%\u00a7!\n  Upkeep from \u00a3job\u00a3 Jobs: \u00a7R+30%\u00a7!"
+    ],
+    "is_dangerous": false,
+    "is_rare": false,
+    "is_start_tech": false,
+    "key": "tech_capital_productivity_3",
+    "name": "Maximized Productivity",
+    "prerequisites": [
+      "tech_galactic_administration",
+      "tech_capital_productivity_2"
+    ],
+    "tier": 4,
+    "weight_modifiers": [
+      "(\u00d70.25)  Does NOT have Prosperity Traditions Finished Tradition\n",
       "(\u00d71.25)  Research Leader (Society):\n    \u2022   Is Statecraft Expert\n"
     ]
   },
@@ -6203,6 +6578,7 @@
       "Unlocks Feature: Genetic Resequencing",
       "Unlocks Feature: Advanced Traits"
     ],
+    "icon": "tech_clone_soldier_fertility",
     "is_dangerous": false,
     "is_rare": true,
     "is_start_tech": false,
@@ -6222,8 +6598,7 @@
     "dlc": [],
     "feature_unlocks": [
       "\u00a7HUnlocks Component:\u00a7! Psi Jump Drive",
-      "Unlocks Feature: Jump Drive Travel",
-      "Unlocks Component: Psi Jump Drive"
+      "Unlocks Feature: Jump Drive Travel"
     ],
     "is_dangerous": true,
     "is_rare": true,
@@ -6250,7 +6625,7 @@
     "description": "Our history is a repeating cycle of dramatic technological, political, and cultural leaps; these leaps are often preceded by periods of upheaval and followed by times of relative stability. By identifying the core, recurring premises of these leaps, we may be able to effectively short-circuit the cycle for our own benefit.",
     "dlc": [],
     "feature_unlocks": [
-      "Ascension Perks: +1",
+      "Ascension Perks Unlocked: +1",
       "Unlocks Feature: Unity Ambitions"
     ],
     "is_dangerous": false,
@@ -6280,6 +6655,7 @@
       "Unlocks Component: Medium Psionic Shield",
       "Unlocks Component: Large Psionic Shield"
     ],
+    "icon": "tech_psionic_barrier",
     "is_dangerous": false,
     "is_rare": true,
     "is_start_tech": false,
@@ -6540,7 +6916,7 @@
     "feature_unlocks": [],
     "is_dangerous": false,
     "is_rare": false,
-    "is_start_tech": true,
+    "is_start_tech": "yes",
     "key": "tech_solar_panel_network",
     "name": "Orbital Energy Conversion",
     "prerequisites": [
@@ -6562,7 +6938,7 @@
     ],
     "is_dangerous": false,
     "is_rare": false,
-    "is_start_tech": true,
+    "is_start_tech": "yes",
     "key": "tech_space_exploration",
     "name": "Space Exploration",
     "prerequisites": [
@@ -6584,7 +6960,7 @@
     ],
     "is_dangerous": false,
     "is_rare": false,
-    "is_start_tech": true,
+    "is_start_tech": "yes",
     "key": "tech_corvettes",
     "name": "Corvettes",
     "prerequisites": [
@@ -6606,7 +6982,7 @@
     ],
     "is_dangerous": false,
     "is_rare": false,
-    "is_start_tech": true,
+    "is_start_tech": "yes",
     "key": "tech_starbase_1",
     "name": "Starbase Construction",
     "prerequisites": [
@@ -6628,7 +7004,7 @@
     ],
     "is_dangerous": false,
     "is_rare": false,
-    "is_start_tech": true,
+    "is_start_tech": "yes",
     "key": "tech_starbase_2",
     "name": "Starport",
     "prerequisites": [
@@ -6648,7 +7024,7 @@
     "feature_unlocks": [],
     "is_dangerous": false,
     "is_rare": false,
-    "is_start_tech": true,
+    "is_start_tech": "yes",
     "key": "tech_assault_armies",
     "name": "Interplanetary Expeditionary Forces",
     "prerequisites": [
@@ -6672,7 +7048,7 @@
     ],
     "is_dangerous": false,
     "is_rare": false,
-    "is_start_tech": true,
+    "is_start_tech": "yes",
     "key": "tech_ship_armor_1",
     "name": "Nanocomposite Materials",
     "prerequisites": [],
@@ -6688,12 +7064,11 @@
     "description": "Simple yet moderately effective chemical thrusters that rely on combustible propellant to function.",
     "dlc": [],
     "feature_unlocks": [
-      "\u00a7HUnlocks Component:\u00a7! Chemical Thruster",
-      "Unlocks Component: Chemical Thrusters"
+      "\u00a7HUnlocks Component:\u00a7! Chemical Thruster"
     ],
     "is_dangerous": false,
     "is_rare": false,
-    "is_start_tech": true,
+    "is_start_tech": "yes",
     "key": "tech_thrusters_1",
     "name": "Chemical Thrusters",
     "prerequisites": [],
@@ -6711,7 +7086,7 @@
     "feature_unlocks": [],
     "is_dangerous": false,
     "is_rare": false,
-    "is_start_tech": true,
+    "is_start_tech": "yes",
     "key": "tech_space_defense_station_1",
     "name": "Deep Space Defenses",
     "prerequisites": [
@@ -6733,9 +7108,10 @@
       "Unlocks Building: Alloy Foundries",
       "Unlocks Building: Civilian Industries"
     ],
+    "icon": "tech_space_construction",
     "is_dangerous": false,
     "is_rare": false,
-    "is_start_tech": true,
+    "is_start_tech": "yes",
     "key": "tech_basic_industry",
     "name": "Industrial Base",
     "prerequisites": [],
@@ -6751,9 +7127,10 @@
     "description": "The application of mechanical engineering to mineral extraction is a fundamental requirement for any industrial society.",
     "dlc": [],
     "feature_unlocks": [],
+    "icon": "tech_space_construction",
     "is_dangerous": false,
     "is_rare": false,
-    "is_start_tech": true,
+    "is_start_tech": "yes",
     "key": "tech_mechanized_mining",
     "name": "Mechanized Mining",
     "prerequisites": [],
@@ -6775,7 +7152,7 @@
     ],
     "is_dangerous": false,
     "is_rare": false,
-    "is_start_tech": true,
+    "is_start_tech": "yes",
     "key": "tech_space_construction",
     "name": "Offworld Construction",
     "prerequisites": [],
@@ -6797,7 +7174,7 @@
     ],
     "is_dangerous": false,
     "is_rare": false,
-    "is_start_tech": true,
+    "is_start_tech": "yes",
     "key": "tech_mass_drivers_1",
     "name": "Mass Drivers",
     "prerequisites": [],
@@ -6817,7 +7194,7 @@
     ],
     "is_dangerous": false,
     "is_rare": false,
-    "is_start_tech": true,
+    "is_start_tech": "yes",
     "key": "tech_flak_batteries_1",
     "name": "Flak Battery",
     "prerequisites": [],
@@ -6837,7 +7214,7 @@
     ],
     "is_dangerous": false,
     "is_rare": false,
-    "is_start_tech": true,
+    "is_start_tech": "yes",
     "key": "tech_missiles_1",
     "name": "Nuclear Missiles",
     "prerequisites": [],
@@ -7025,7 +7402,8 @@
     "description": "New fracking techniques will allow us to tap into previously unattainable pockets of geothermal resources deep beneath the planet's crust.",
     "dlc": [],
     "feature_unlocks": [
-      "\u00a3minerals\u00a3 Minerals from \u00a3job_miner\u00a3 Miners: +20%"
+      "\u00a3minerals\u00a3 Minerals from \u00a3job_miner\u00a3 [GetMinerPlural]: +20%",
+      "\u00a3minerals\u00a3 Minerals from Starbase Constructions: +10%"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -7124,7 +7502,7 @@
     "description": "Advanced instrumentation allows for the study and practical application of physical systems at nanometric scales.",
     "dlc": [],
     "feature_unlocks": [
-      "\u00a3engineering\u00a3 Engineering Research from \u00a3job_researcher\u00a3 Researchers: +20%"
+      "\u00a3engineering\u00a3 Engineering Research from \u00a3job_researcher\u00a3 [GetResearcherPlural]: +20%"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -7179,8 +7557,7 @@
     "description": "These powerful thrusters provide additional combat speed but consume a great deal of power.",
     "dlc": [],
     "feature_unlocks": [
-      "\u00a7HUnlocks Component:\u00a7! Afterburners",
-      "Unlocks Component: Afterburners"
+      "\u00a7HUnlocks Component:\u00a7! Afterburners"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -7309,6 +7686,7 @@
       "Machine Modification Points: +1",
       "Unlocks Feature: Robomodding"
     ],
+    "icon": "tech_robomodding",
     "is_dangerous": false,
     "is_rare": false,
     "is_start_tech": false,
@@ -7359,6 +7737,7 @@
     "feature_unlocks": [
       "L-Gate Insight Gained: \u00a7G+1\u00a7!"
     ],
+    "icon": "tech_lgate_activation",
     "is_dangerous": false,
     "is_rare": true,
     "is_start_tech": false,
@@ -7503,7 +7882,7 @@
       "(\u00d73.0)  Number of years since game start is greater than 35\n",
       "(\u00d74.0)  Number of years since game start is greater than 40\n",
       "(\u00d75.0)  Number of Starport greater than or equal to 3\n",
-      "(\u00d71.25)  Has Supremacy Traditions Tradition\n",
+      "(\u00d71.25)  Has Unyielding Traditions Tradition\n",
       "(\u00d71.25)  Research Leader (Engineering):\n    \u2022   Is Voidcraft Expert\n"
     ]
   },
@@ -7618,8 +7997,7 @@
     "description": "These electric thrusters use beams of ions to generate thrust without the need for propellant.",
     "dlc": [],
     "feature_unlocks": [
-      "\u00a7HUnlocks Component:\u00a7! Ion Thruster",
-      "Unlocks Component: Ion Thrusters"
+      "\u00a7HUnlocks Component:\u00a7! Ion Thruster"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -7718,7 +8096,8 @@
     "description": "These massive drills are needed to access the rich mineral deposits that can often be found close to a planet's core.",
     "dlc": [],
     "feature_unlocks": [
-      "\u00a3minerals\u00a3 Minerals from \u00a3job_miner\u00a3 Miners: +20%"
+      "\u00a3minerals\u00a3 Minerals from \u00a3job_miner\u00a3 [GetMinerPlural]: +20%",
+      "\u00a3minerals\u00a3 Minerals from Starbase Constructions: +10%"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -7768,7 +8147,7 @@
     "description": "The widespread use of advanced ceramics in industry can improve metallurgical yields.",
     "dlc": [],
     "feature_unlocks": [
-      "\u00a3job_foundry\u00a3 Metallurgists Output: +10%"
+      "\u00a3job_foundry\u00a3 [GetAlloyProducer] Output: +10%"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -7793,7 +8172,7 @@
     "description": "The production and understanding of supersolids are of immeasurable value to any and every space-age civilization.",
     "dlc": [],
     "feature_unlocks": [
-      "\u00a3engineering\u00a3 Engineering Research from \u00a3job_researcher\u00a3 Researchers: +20%"
+      "\u00a3engineering\u00a3 Engineering Research from \u00a3job_researcher\u00a3 [GetResearcherPlural]: +20%"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -8033,6 +8412,7 @@
       "Unlocks Building: Gas Extraction Wells",
       "Reveals Resource: Exotic Gases ([[exotic_gases]])"
     ],
+    "icon": "tech_exotic_gases",
     "is_dangerous": false,
     "is_rare": false,
     "is_start_tech": false,
@@ -8162,6 +8542,7 @@
     "feature_unlocks": [
       "Robot Modification Points: +1"
     ],
+    "icon": "tech_binary_motivators",
     "is_dangerous": false,
     "is_rare": false,
     "is_start_tech": false,
@@ -8187,7 +8568,7 @@
     "description": "Microscopic tools that can assist our replication units in creating the more complex circuitry needed for new drones.",
     "dlc": [],
     "feature_unlocks": [
-      "Pop Assembly Speed: +10%",
+      "Mechanical Pop Assembly Speed: +10%",
       "Unlocks Building: Upgraded Drone Storage"
     ],
     "is_dangerous": false,
@@ -8337,7 +8718,7 @@
       "(\u00d73.0)  Number of years since game start is greater than 65\n",
       "(\u00d74.0)  Number of years since game start is greater than 70\n",
       "(\u00d75.0)  Number of Starhold greater than or equal to 3\n",
-      "(\u00d71.25)  Has Supremacy Traditions Tradition\n",
+      "(\u00d71.25)  Has Unyielding Traditions Tradition\n",
       "(\u00d71.25)  Research Leader (Engineering):\n    \u2022   Is Voidcraft Expert\n"
     ]
   },
@@ -8461,8 +8842,7 @@
     "description": "An advanced form of electric propulsion, plasma thrusters afford ships greater sublight speeds and maneuverability.",
     "dlc": [],
     "feature_unlocks": [
-      "\u00a7HUnlocks Component:\u00a7! Plasma Thruster",
-      "Unlocks Component: Plasma Thrusters"
+      "\u00a7HUnlocks Component:\u00a7! Plasma Thruster"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -8511,7 +8891,8 @@
     "description": "Advanced spectrometry combines with fracking techniques and chemical flushing to rapidly exploit shallow and mid-depth deposits.",
     "dlc": [],
     "feature_unlocks": [
-      "\u00a3minerals\u00a3 Minerals from \u00a3job_miner\u00a3 Miners: +20%"
+      "\u00a3minerals\u00a3 Minerals from \u00a3job_miner\u00a3 [GetMinerPlural]: +20%",
+      "\u00a3minerals\u00a3 Minerals from Starbase Constructions: +10%"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -8585,8 +8966,7 @@
     "description": "This improved version of the standard afterburners provide an even greater boost to a ship's combat speed.",
     "dlc": [],
     "feature_unlocks": [
-      "\u00a7HUnlocks Component:\u00a7! Advanced Afterburners",
-      "Unlocks Component: Advanced Afterburners"
+      "\u00a7HUnlocks Component:\u00a7! Advanced Afterburners"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -8848,7 +9228,7 @@
     "description": "Modelled on organic DNA, these microscopic machine intellects are capable of autonomously assembling most components needed for new drones.",
     "dlc": [],
     "feature_unlocks": [
-      "Pop Assembly Speed: +10%"
+      "Mechanical Pop Assembly Speed: +10%"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -8999,7 +9379,7 @@
       "(\u00d73.0)  Number of years since game start is greater than 95\n",
       "(\u00d74.0)  Number of years since game start is greater than 100\n",
       "(\u00d75.0)  Number of Star Fortress greater than or equal to 3\n",
-      "(\u00d71.25)  Has Supremacy Traditions Tradition\n",
+      "(\u00d71.25)  Has Unyielding Traditions Tradition\n",
       "(\u00d71.25)  Research Leader (Engineering):\n    \u2022   Is Voidcraft Expert\n"
     ]
   },
@@ -9114,8 +9494,7 @@
     "description": "These highly advanced fusion-powered thrusters provide ships with unmatched maneuverability and speed under sublight conditions.",
     "dlc": [],
     "feature_unlocks": [
-      "\u00a7HUnlocks Component:\u00a7! Impulse Thruster",
-      "Unlocks Component: Impulse Thrusters"
+      "\u00a7HUnlocks Component:\u00a7! Impulse Thruster"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -9140,7 +9519,7 @@
     "description": "By replacing antiquated ceramo-metal equipment with cutting edge technology, we can run our forges hotter and longer, increasing production.",
     "dlc": [],
     "feature_unlocks": [
-      "\u00a3job_foundry\u00a3 Metallurgists Output: +10%"
+      "\u00a3job_foundry\u00a3 [GetAlloyProducer] Output: +10%"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -9166,7 +9545,7 @@
     "description": "The study of superfluidity promises to marry quantum mechanics with the fundamental interaction of gravity.",
     "dlc": [],
     "feature_unlocks": [
-      "\u00a3engineering\u00a3 Engineering Research from \u00a3job_researcher\u00a3 Researchers: +20%"
+      "\u00a3engineering\u00a3 Engineering Research from \u00a3job_researcher\u00a3 [GetResearcherPlural]: +20%"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -9242,7 +9621,8 @@
     "weight_modifiers": [
       "(\u00d70.0)  Has robots_outlawed Policy\n",
       "(\u00d70.0)  Has Outlawed Policy\n",
-      "(\u00d71.25)  Research Leader (Engineering):\n    \u2022   Is Industry Expert\n    \u2022   Skill level is greater than 3\n"
+      "(\u00d71.25)  Research Leader (Engineering):\n    \u2022   Is Industry Expert\n    \u2022   Skill level is greater than 3\n",
+      "(\u00d70.33)  All of the following:\n    \u2022   Has Necrophage Origin\n    \u2022   Has Necrophage Trait\n"
     ]
   },
   {
@@ -9495,6 +9875,7 @@
     "feature_unlocks": [
       "Robot Modification Points: +1"
     ],
+    "icon": "tech_nanite_assemblers",
     "is_dangerous": false,
     "is_rare": true,
     "is_start_tech": false,
@@ -9635,6 +10016,7 @@
     "feature_unlocks": [
       "Unlocks Component: Nanobot Diffuser"
     ],
+    "icon": "tech_btc_1",
     "is_dangerous": false,
     "is_rare": true,
     "is_start_tech": false,
@@ -9649,6 +10031,26 @@
       "(\u00d72.0)  All of the following:\n    \u2022   Is in a Federation\n    \u2022   Federation:\n        \u2022   Has Scientific Inspiration Federation Perk\n        \u2022   Any Federation Member:\n            \u2022   Has Atmospheric Nanobot Dispersal Technology\n",
       "(\u00d70.2)  None of the following:\n    \u2022   Research Leader (Engineering):\n        \u2022   Is Maniacal\n    \u2022   Research Leader (Engineering):\n        \u2022   Is Curator\n    \u2022   Research Leader (Engineering):\n        \u2022   Is Voidcraft Expert\n"
     ]
+  },
+  {
+    "area": "engineering",
+    "base_factor": 0.0,
+    "base_weight": 20,
+    "category": "Voidcraft",
+    "cost": 20000,
+    "description": "A beam of directed tachyon energy is fired into the star, triggering a supernova. The incredible energy released by this event is then used to generate vast quantities of dark matter.\n\n\u00a7RWhen the star detonates, ALL colonies, megastructures, and stations in the system are destroyed - including our own. All fleets in the system will go MIA. The Star-Eater itself is the only exception.\u00a7!",
+    "dlc": [],
+    "feature_unlocks": [
+      "Unlocks Component: Star Cracker"
+    ],
+    "is_dangerous": false,
+    "is_rare": true,
+    "is_start_tech": false,
+    "key": "tech_btc_1",
+    "name": "Star Cracker",
+    "prerequisites": [],
+    "tier": 5,
+    "weight_modifiers": []
   },
   {
     "area": "engineering",
@@ -10072,8 +10474,7 @@
     "description": "These ship thrusters utilize Dark Matter technology to generate propulsion in a manner that appears to defy numerous laws of physics.",
     "dlc": [],
     "feature_unlocks": [
-      "\u00a7HUnlocks Component:\u00a7! Dark Matter Thrusters",
-      "Unlocks Component: Dark Matter Thrusters"
+      "\u00a7HUnlocks Component:\u00a7! Dark Matter Thrusters"
     ],
     "is_dangerous": false,
     "is_rare": true,

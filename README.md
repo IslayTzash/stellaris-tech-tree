@@ -2,7 +2,7 @@
 
 This provides a set of files to view the technology tree for the 4x strategy game Stellaris.
 
-You can view the latest live snaphsot at [https://islaytzash.github.io/stellaris-tech-tree/public/vanilla/](https://islaytzash.github.io/stellaris-tech-tree/public/vanilla/)
+You can view the latest live snaphsot at [https://islaytzash.github.io/stellaris-tech-tree/public/](https://islaytzash.github.io/stellaris-tech-tree/public/)
 
 Predominantly this repository contains a python3 tool to generate a HTML/CSS rendering of the tech tree information from the game files.
 * /script/ contains the python code to parse the game files
@@ -30,16 +30,24 @@ Techs requiring a specific DLC are highlighted in yellow.  There really arean't 
 
 # File Generation
 
-1. Copy config.example.py to config.py.   Edit accordingly.  For windows, I use the values below with triple quotes.
+1. Install python and python prerequisite libraries.
+```
+pip install -r requirements.txt
+```
+2. Copy config.example.py to config.py.   Edit accordingly.  For windows, I use the values below with triple quotes.
 ```
     game_dir = """C:\Games\Steam\steamapps\common\Stellaris"""
     workshop_dir = """C:\Games\Steam\steamapps\workshop\content\281990"""
 ```
-2. Run the python script.   It will may print warnings about some items which aren't handled properly.  It will generate public/vanilla/techs.json.
+3. Run the python image extraction script.
+```
+    python script\image_converter.py vanilla
+```
+3. Run the python parser script.   It will may print warnings about some items which aren't handled properly.  It will generate public/vanilla/techs.json.
 ```
     python script\parse.py vanilla
 ```
-3. After parsing, you need to serve the /public/ directory from a web server.   Unfortunately it won't work if
+4. After parsing, you need to serve the /public/ directory from a web server.   Unfortunately it won't work if
 you try to open the files directly from your local disk.   You can easily run a webserver by switching into the public directory and running
 ```python -m http.server 8000``` and connect to [http://localhost:8000](http://localhost:8000) in your browser.
 
@@ -148,6 +156,10 @@ leader_trait_expertise_voidcraft:0 "Expertise: Voidcraft"
 ```
 
 Items that show up with a @, $, or Brittish pound sign are replaceable parameters within a field and get hit with another level of substitution.
+
+The program uses two parsers to read the YAML.
+* ruamel.yaml - is used to read the English localization files and some weight information
+* a custom yacc based parser is used to read the game rule files
 
 # Overview of Web Display Project
 

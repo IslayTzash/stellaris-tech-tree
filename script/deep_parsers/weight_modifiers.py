@@ -49,7 +49,7 @@ class WeightModifiers:
         if f:
             return f(value)
         else:
-            print(" ** Please add localize function to weight_modifiers.py: " + gkey)
+            print(" ** Please add localize function to weight_modifiers.py: {0}, returning {1}".format(gkey, value))
             return value
 
     ########################################################################################
@@ -250,6 +250,9 @@ class WeightModifiers:
     def _localize_uses_cloaks(self, value):
         return self._localize_basic_negatable_statement(value, 'Does NOT use Cloaking')
 
+    def _localize_country_uses_consumer_goods(self, value):
+        return self._localize_basic_negatable_statement(value, 'Does NOT use Consumer Goods')
+
     def _localize_is_colony(self, value):
         return self._localize_basic_negatable_statement(value, 'Is NOT a Colony')
 
@@ -279,6 +282,9 @@ class WeightModifiers:
 
     def _localize_is_galactic_community_member(self, value):
         return self._localize_basic_negatable_statement(value, 'Is NOT a galactic community member')
+
+    def _localize_is_earth_story_empire(self, value):
+        return self._localize_basic_negatable_statement(value, 'Is NOT an Earth Story Empire')
 
     ## These guys are backwards, leave them alone
 
@@ -422,9 +428,9 @@ class WeightModifiers:
     def _localize_has_level(self, value):
         return self._localize_basic_operator_rule(value, 'Skill level is')
 
-    def _localize_count_owned_pops(self, value):
-        return self._localize_basic_operator_rule(value[1]['count'], 'Number of enslaved planets')
-
+    def _localize_count_owned_pop(self, value):
+        return self._localize_basic_operator_rule(value[1]['count'], 'Number of enslaved pops')
+        
     def _localize_has_resource(self, value):
         return self._localize_basic_operator_rule(value[1]['amount'], self._localizer.get(value[0]['type']))
 

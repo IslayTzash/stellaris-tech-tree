@@ -19,7 +19,7 @@ class FeatureUnlocks:
 
     # Modifiers gained as a result of completing research
     def parse(self, tech_key, tech_data):
-        return (self._modifiers(tech_data)
+        all = (self._modifiers(tech_data)
             + self._unlocks(tech_data)
             + self._feature_flags(tech_data)
             + self._army_attachment_unlocks(tech_key)
@@ -31,14 +31,20 @@ class FeatureUnlocks:
             + self._resource_unlocks(tech_key)
             + self._spaceport_module_unlocks(tech_key)
             + self._tile_blocker_unlocks(tech_key))
+        return self._dedupe_list(all)
 
 
     def _dedupe_list(self, original):
-        """Remove duplicates and items that differ by pularalness from lists.  Also elements which are None."""
+        """Remove duplicates and items that differ by pularalness or colorization from lists.  Also elements which are None."""
         newlist = []
+        normlist = []
         for i in original:
-            if i is not None and i not in newlist and i+'s' not in newlist and re.sub(r's$', '', i) not in newlist:
+            if i is None:
+                continue
+            s = re.sub("(\u00a7[H!])|(s+$)", '', i).lower()
+            if s not in normlist:
                 newlist.append(i)
+                normlist.append(s)
         return newlist
 
     def _expand_modifiers(self, modifier, has_description_parameters):

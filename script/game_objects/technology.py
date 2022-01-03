@@ -4,7 +4,7 @@ from json import JSONEncoder
 from .game_object import GameObject
 
 class Technology(GameObject):
-    def __init__(self, tech, armies, army_attachments, buildable_pops,
+    def __init__(self, tech, icon_remaps, armies, army_attachments, buildable_pops,
                  buildings, components, edicts, policies, resources,
                  spaceport_modules, tile_blockers, localizer,
                  start_with_tier_zero=True):
@@ -26,15 +26,23 @@ class Technology(GameObject):
             iter(key for key in tech_data if list(key.keys())[0] == 'tier')
         )['tier']
 
-        self.cost = self._cost(tech_data)
-        self.base_weight = self._base_weight(tech_data)
+        icon = self._valueOrDefault(tech_data, 'icon', None)
+        if icon:
+            self.icon = icon
+            if icon in icon_remaps:
+                self.icon = icon_remaps[icon]
+        elif self.key in icon_remaps:
+            self.icon  = icon_remaps[self.key]
+
+        self.cost = self._valueOrDefault(tech_data, 'cost', '0')
+        self.base_weight = self._valueOrDefault(tech_data, 'weight', 0)
         self.base_factor = self._base_factor(tech_data)
         self.weight_modifiers = self._weight_modifiers(tech_data)
         self.prerequisites = self._prerequisites(tech_data)
         self.is_start_tech = self._is_start_tech(tech_data,
                                                  start_with_tier_zero)
-        self.is_dangerous = self._is_dangerous(tech_data)
-        self.is_rare = self._is_rare(tech_data)
+        self.is_dangerous = self._boolFromYes(tech_data, 'is_dangerous')
+        self.is_rare = self._boolFromYes(tech_data, 'is_rare')
         self.dlc = self._dlc(tech_data)
 
         unlock_parser = FeatureUnlocks(armies, army_attachments,
@@ -45,36 +53,10 @@ class Technology(GameObject):
         self.feature_unlocks = unlock_parser.parse(self.key, tech_data)
 
     def _is_start_tech(self, tech_data, start_with_tier_zero):
-        try:
-            yes_no = next(iter(key for key in tech_data
-                               if list(key.keys())[0] == 'start_tech'))['start_tech']
-            is_start_tech = True if yes_no == 'yes' else False
-        except StopIteration:
+        is_start_tech = self._valueOrDefault(tech_data, 'start_tech', None)
+        if is_start_tech is None:
             is_start_tech = True if self.tier == 0 and start_with_tier_zero else False
-
         return is_start_tech
-
-    def _is_dangerous(self, tech_data):
-        try:
-            yes_no = next(iter(
-                key for key in tech_data
-                if list(key.keys())[0] == 'is_dangerous'
-            ))['is_dangerous']
-            is_dangerous = True if yes_no == 'yes' else False
-        except StopIteration:
-            is_dangerous = False
-
-        return is_dangerous
-
-    def _is_rare(self, tech_data):
-        try:
-            yes_no = next(iter(key for key in tech_data
-                               if list(key.keys())[0] == 'is_rare'))['is_rare']
-            is_rare = True if yes_no == 'yes' else False
-        except StopIteration:
-            is_rare = False
-
-        return is_rare
 
     def _description(self):
         try:
@@ -90,36 +72,9 @@ class Technology(GameObject):
     def _prerequisites(self, tech_data):
         if self.key in ['tech_biolab_1', 'tech_physics_lab_1',
                         'tech_engineering_lab_1']:
-            prerequisites = ['tech_basic_science_lab_1']
+            return ['tech_basic_science_lab_1']
         else:
-            try:
-                prerequisites = next(iter(
-                    subkey for subkey in tech_data
-                    if list(subkey.keys())[0] == 'prerequisites'
-                ))['prerequisites']
-            except (StopIteration):
-                prerequisites = []
-
-        return prerequisites
-
-    def _cost(self, tech_data):
-        try:
-            string = next(iter(key for key
-                               in tech_data
-                               if list(key.keys())[0] == 'cost'))['cost']
-        except StopIteration:
-            string = '0'
-        return string
-
-    def _base_weight(self, tech_data):
-        try:
-            weight = next(iter(key for key
-                               in tech_data
-                               if list(key.keys())[0] == 'weight'))['weight']
-        except StopIteration:
-            weight = 0
-
-        return weight
+            return super()._prerequisites(tech_data)
 
     def _base_factor(self, tech_data):
         try:
@@ -134,13 +89,7 @@ class Technology(GameObject):
 
     def _weight_modifiers(self, tech_data):
         wm = WeightModifiers(self._localizer)
-        try:
-            unparsed_modifiers = next(iter(
-                key for key in tech_data if list(key.keys())[0] == 'weight_modifier'
-            ))['weight_modifier']
-        except StopIteration:
-            unparsed_modifiers = []
-
+        unparsed_modifiers = self._valueOrDefault(tech_data, 'weight_modifier', [])
         return [wm.parse(modifier['modifier'])
                 for modifier in unparsed_modifiers
                 if list(modifier.keys()) == ['modifier']]

@@ -1,12 +1,12 @@
 'use strict';
 
 const AREAS = ['physics', 'society', 'engineering']
-const TIERS = [1, 2, 3, 4, 5]
+const TIERS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
 
 let config = {
     container: '#tech-tree',
     rootOrientation: 'WEST',
-    nodeAlign: 'TOP',
+    nodeAlign: 'CENTER',
     hideRootNode: true,
     siblingSeparation: 20,
     subTeeSeparation:  20,
@@ -69,9 +69,9 @@ function subst_icons_and_colors(str, extra_css_class = "")
 {
 	return str
 		// £ is \u00a3 for embedding icons
-		.replace(new RegExp(/£(\w+)£/,'g'), '<img class="resource ' + extra_css_class + '" src="../icons/$1.png" />')
+		.replace(new RegExp(/£(\w+)£/,'g'), '<img class="resource ' + extra_css_class + '" src="img/$1.png" />')
 		// TODO: We don't need both forms in the json?   This is used for feature unlocks
-		.replace(/\(\[\[(\w+)\]\]\)/g, '<img class="resource ' + extra_css_class + '" src="../icons/$1.png" />')
+		.replace(/\(\[\[(\w+)\]\]\)/g, '<img class="resource ' + extra_css_class + '" src="img/$1.png" />')
 		// § is \u00a7 for changing text colors
 		.replace(/[\u00a7][A-Z][^\u00a7]*[\u00a7][!]/g, colorize)
 		;
@@ -160,11 +160,16 @@ $(document).ready(function() {
 			if (tech.tier > maxTier) {
 				maxTier = tech.tier;
 			}
+			let icon = tech.icon
+			if (!icon) {
+				icon = tech.key
+			}
 			return {
 				HTMLid: tech.key,
 				HTMLclass: tech.area + (tech.dlc && tech.dlc.length > 0 ? " dlc" : "") + (tech.is_rare ? ' rare' : '') + (tech.is_dangerous ? ' dangerous' : ''),
+				minLevel: 0,
 				data: tech,
-				innerHTML: '<div class="icon" style="background-image:url(img/' + tech.key + '.png)"></div>'
+				innerHTML: '<div class="icon" style="background-image:url(img/' + icon + '.png)"></div>'
 					+ '<p class="node-name" title="' + tech.name + '">' + tech.name + '</p>'
 					+ '<p class="node-title">' + (tech.category + tier) + '</p>'
 					+ '<p class="node-desc">' + ( tech.start_tech || tech.tier == 0 ? '' : cost + ',' + weight) + '</p>'
@@ -276,7 +281,15 @@ $(document).ready(function() {
 			}
 
 			// Build up dummy pseudonodes so high leveled techs are never rendered in a column lower than their tier
-			let age = compute_age(tech);
+			// let age = compute_age(tech);
+			let age = tech.data.tier
+			if (tech.data.key === 'tech_pd_tracking_3')
+			{
+				console.log('AGE ' + tech.data.key + ' ' + age);
+			}
+			// tech.minLevel = age; 
+			
+			age = compute_age(tech);
 			if (age < tech.data.tier && !SPECIAL_NODES.includes(tech.parent))
 			{
 				// console.log("Bumping " + tech.data.name + ' from ' + age + ' to ' + tech.data.tier);
@@ -295,6 +308,8 @@ $(document).ready(function() {
 			Object.entries(tierNodes[area]).forEach(([k, v]) => techlist.push(v));
 		});
 		console.timeEnd('rearrange')
+
+		console.log('Techlist size = ' + techlist.length)
 
 		console.time('new Treant')
 		new Treant(techlist);
