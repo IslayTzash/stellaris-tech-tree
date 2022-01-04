@@ -357,6 +357,9 @@ class WeightModifiers:
     def _localize_any_planet_within_border(self, values):
         return self._localize_basic_container_rule(values, 'Any Planet within Borders')
 
+    def _localize_not_any_planet_within_border(self, values):
+        return self._localize_basic_container_rule(values, 'NOT any Planet within Borders')
+
     def _localize_not_any_owned_planet(self, values):
         return self._localize_basic_container_rule(values, 'NOT any owned Planet')
 
@@ -371,6 +374,12 @@ class WeightModifiers:
 
     def _localize_any_member(self, values):
         return self._localize_basic_container_rule(values, 'Any Federation Member')
+
+    def _localize_owner(self, values):
+        return self._localize_basic_container_rule(values, 'Owner')
+
+    def _localize_not_owner(self, values):
+        return self._localize_basic_container_rule(values, 'Owner does NOT')
 
     ########################################################################################
 

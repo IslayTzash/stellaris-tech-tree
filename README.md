@@ -30,7 +30,7 @@ Techs requiring a specific DLC are highlighted in yellow.  There really arean't 
 
 # File Generation
 
-1. Install python and python prerequisite libraries.
+1. Install python 3.5 or later and prerequisite libraries.
 ```
 pip install -r requirements.txt
 ```

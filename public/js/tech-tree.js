@@ -67,6 +67,10 @@ function colorize(s, extra_css_class)
 
 function subst_icons_and_colors(str, extra_css_class = "")
 {
+	if (typeof str !== 'string' ) {
+		console.log('Invalid string:', str);
+		return String(str);
+	}
 	return str
 		// £ is \u00a3 for embedding icons
 		.replace(new RegExp(/£(\w+)£/,'g'), '<img class="resource ' + extra_css_class + '" src="img/$1.png" />')

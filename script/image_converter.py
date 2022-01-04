@@ -15,6 +15,7 @@ This script requires the python Pillow graphics library.
 """
 
 import json
+import pathlib
 import re
 
 from configuration import Configuration
@@ -90,6 +91,7 @@ class ImageConverter:
             print("Error converting {0} to {1}: {2}".format(in_file, out_file, e))
 
     def run(self):
+        pathlib.Path(self.outdir).mkdir(parents=True, exist_ok=True)
         for directory in self.config.directories:
             for subdir, subdir_options in self.subdirs.items():
                 in_dir = path.join(directory, 'gfx', 'interface', 'icons', subdir)
@@ -108,7 +110,7 @@ class ImageConverter:
                 if VERBOSE and path.exists(in_file):
                     print("Converted {0} => {1}".format(in_file, out_file))
 
-        with open(path.join(self.outdir, 'remaps.json'), 'w') as fp:
+        with open(path.join(self.outdir, 'remaps.json'), 'w', encoding="utf-8") as fp:
             json.dump(self.remaps, fp, indent=4, sort_keys=True)
 
         print('Converted {0} files with {1} duplicates.'.format(len(self.hashes), len(self.remaps)))

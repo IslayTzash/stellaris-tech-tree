@@ -65,8 +65,9 @@ class FeatureUnlocks:
             if m == 'ADD_NAVAL_CAPACITY_FROM_SOLDIERS':
                 return '([[fleet_size_icon]]) Naval Capacity from ([[job_soldier]]) Soldiers: +2'
             else:
-                print(' ** No match for modifier tooltip: ' + m)
-                return { 'tooltip': m }
+                l = self._localizer.get(m)
+                print(' ** No handler for custom modifier tooltip "{0}" will use: {1}'.format(m,re.sub('[\r\n]+',' ',l)))
+                return l
 
         if m in ['yes', 'no', 'YES', 'NO', 'Yes', 'No']:
             value = m

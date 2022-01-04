@@ -40,6 +40,7 @@ class Parser:
     SKIP_MATCH = 'skip_match'
 
     # Special handling for known modules
+    MASS_EFFECT_BEYOND_THE_STARS = 'me_bts'
     NEW_HORIZONS = 'new_horizons'
 
     def get_file_paths(self, directory):
@@ -102,6 +103,9 @@ class Parser:
             print('loading {0} [{1}]'.format(filename, file_path))
             raw_data = self.read_and_sanitize_raw_yaml_file(file_path)
             file_data = self.yaml.load(raw_data)
+            if file_data['l_english'] is None:
+                print('Ignoring contents of {0}, there are no localization keys.'.format(file_path))
+                continue
             try:
                 for k,v in file_data['l_english'].items():
                     loc_data[str(k)] = str(v)
@@ -110,23 +114,32 @@ class Parser:
                 sys.exit()
         return loc_data
 
-    def extract_at_vars(self, entries, avlist = []):
+    def extract_at_vars(self, entries, avdict = {}):
         for e in entries:
-            if list(e)[0].startswith('@'):
-                at_var = list(e)[0]
-                avlist[at_var] = e[at_var]
-                # print(' -- ATVAR[{}] = {}'.format(at_var, e[at_var]))
-        return avlist
+            try:
+                if list(e)[0].startswith('@'):
+                    at_var = list(e)[0]
+                    avdict[at_var] = e[at_var]
+                    # print(' -- ATVAR[{}] = {}'.format(at_var, e[at_var]))
+            except Exception as ex:
+                print('** Failed to extract atvar from {} {}'.format(type(e), repr(e)))
+                raise
+        return avdict
 
-    def replace_local_at_var(self, s):
-        if s in self.local_at_vars:
-            return str(self.local_at_vars[s])
-        print('No match for ATVAR "{}" in {}'.format(s, repr(self.local_at_vars)))
+    def replace_at_vars(self, s, file_local_at_vars = None):
+        if s in self.at_vars:
+            return str(self.at_vars[s])
+        if s in file_local_at_vars:
+            return str(file_local_at_vars[s])
+        print('No match for ATVAR "{}"'.format(s))
+        print('Local ATVARs {}'.format(repr(file_local_at_vars)))
+        # print('All   ATVARs {}'.format(repr(self.at_vars)))
         return s
 
     def normalize_game_data(self, contents):
         """Normalize game data files that will be loaded with the yacc based parser"""
-        contents = re.sub('#.*$', '', contents)
+        # Remove all comments - lets hope no one puts a # within a quoted string
+        contents = re.sub(r"""#[^\r\n]*[\r\n]+""", '', contents)
         # New Horizons mod has their own data corruption
         if self.config.mod == Parser.NEW_HORIZONS:
             if "_jem'hadar" in contents:
@@ -163,20 +176,22 @@ class Parser:
             if skip_re and skip_re.search(file_path):
                 continue
             print('parse {}'.format(file_path))
-            contents = open(file_path).read()
+            contents = open(file_path, encoding="utf-8").read()
             contents = self.normalize_game_data(contents)
+            #if r"""00_capital_buildings.txt""" in file_path:
+            #    print(contents)
             try:
                 p = self.yacc_parser.parse(contents)
             except Exception as e:
                 # print(contents)
                 raise
             if doAtSubst:
-                self.local_at_vars = self.extract_at_vars(p, self.at_vars.copy())
-                contents = re.sub(r'(?:[^\n\t])(@[^ \n\t]+)', lambda x: self.replace_local_at_var(x.group(1)), contents)
+                local_ats = self.extract_at_vars(p)
+                contents = re.sub(r'(?:[^\n\t])(@[^ \n\t]+)', lambda x: self.replace_at_vars(x.group(1), local_ats), contents)
                 try:
                     p = self.yacc_parser.parse(contents)
                 except Exception as e:
-                    print(contents)
+                    # print(contents)
                     raise
             parsed += p
         return parsed
@@ -203,6 +218,10 @@ class Parser:
             Parser.TILE_BLOCKER :  { Parser.CLASS: Parser.TILE_BLOCKER, Parser.DIR: path.join('common', 'deposits'), Parser.DATA: []},
             Parser.TECHNOLOGY: { Parser.CLASS: Parser.TECHNOLOGY, Parser.DIR: path.join('common', 'technology'), Parser.DATA: [], Parser.SKIP_PARSE: True}
         }
+
+        # TODO: Figure out what's really wrong with this file
+        if self.config.mod == Parser.MASS_EFFECT_BEYOND_THE_STARS:
+            self.game_objects[Parser.TILE_BLOCKER][Parser.SKIP_MATCH] = ['btr_blockers.txt']
 
         self.early_game_objects = {
             Parser.LOC_SCRIPT :  { Parser.CLASS: Parser.LOC_SCRIPT, Parser.DIR: path.join('common', 'scripted_loc'), Parser.DATA: [], 
@@ -243,7 +262,7 @@ class Parser:
         skip_re = re.compile(r'(?:{})_'.format('|'.join(self.skip_files_that_match)))
         for directory in self.config.directories:
             print('+ Loading localization strings from %s' % directory)
-            loc_dir = path.join(directory, 'localisation/english')
+            loc_dir = path.join(directory, path.join('localisation','english'))
             if not path.isdir(loc_dir):
                 continue
             loc_file_paths += [path.join(loc_dir, filename) for filename
@@ -271,7 +290,7 @@ class Parser:
         icon_remaps = {}
         img_dup_filename = path.join('public', self.config.mod, 'img', 'remaps.json')
         if path.exists(img_dup_filename):
-            with open(img_dup_filename, 'r') as json_file:
+            with open(img_dup_filename, 'r', encoding="utf-8") as json_file:
                 icon_remaps = json.load(json_file)
 
         print('Processing files . . .')
@@ -303,7 +322,7 @@ class Parser:
         technologies.sort(key=lambda tech: {'physics': 1, 'society': 2, 'engineering': 3}[tech.area] * 100 + tech.tier)
 
         filename = path.join('public', self.config.mod, 'techs.json')
-        with open(filename, 'w') as outfile:
+        with open(filename, 'w', encoding="utf-8") as outfile:
             json.dump(technologies, outfile, indent=2, separators=(',', ': '),
                 cls=TechnologyJSONEncoder, sort_keys=True)
 
