@@ -22,9 +22,9 @@ Hover over the two icons on the right of each tech tile to see more information:
 
 | Icon |  Details |
 | ---  | ---      |
-| upper … ellipsis icon | The tech description, including its rare/dangerous indication and any required DLC.  It will also list out the tech prerequistes as a tech may have multiple prerequisistes but only one is indicated in the graph lines.   If a tech requires more than one non-starting tier tech, the ... button will be colored orange.
-It will also display any game items that are activated by the tech, i.e. access to ships, weapons, edicts, ...
-| middle ⚄ box icon | The weight modifiers. This can often be a complex set of rules.  When the weight goes to 0 the card will never be chosen.
+| upper … ellipsis icon | The tech description, including its rare/dangerous indication and any required DLC.  It will also list out the tech prerequistes as a tech may have multiple prerequisistes but only one is indicated in the graph lines.   If a tech requires more than one non-starting tier tech, the "…" button will be colored orange.
+| | It will also display any game items that are activated by the tech, i.e. access to ships, weapons, edicts, ...
+| lower ⚄ box icon | The weight modifiers. This can often be a complex set of rules.  When the weight goes to 0 the card will never be chosen.
 
 Techs requiring a specific DLC are highlighted in yellow.  There really arean't a lot.  There is currently no way to change the display based on owned DLCs.
 
@@ -32,12 +32,12 @@ Techs requiring a specific DLC are highlighted in yellow.  There really arean't 
 
 1. Install python 3.5 or later and prerequisite libraries.
 ```
-pip install -r requirements.txt
+    pip install -r requirements.txt
 ```
 2. Copy config.example.py to config.py.   Edit accordingly.  For windows, I use the values below with triple quotes.
 ```
-    game_dir = """C:\Games\Steam\steamapps\common\Stellaris"""
-    workshop_dir = """C:\Games\Steam\steamapps\workshop\content\281990"""
+    game_dir = r"""C:\Games\Steam\steamapps\common\Stellaris"""
+    workshop_dir = r"""C:\Games\Steam\steamapps\workshop\content\281990"""
 ```
 3. Run the python image extraction script.
 ```
@@ -163,7 +163,7 @@ The program uses two parsers to read the Stellaris game data files.
 
 # Overview of Web Display Project
 
-The tech tree viewer uses a Treant.js for displaying the tree.  It appears to have been designed for displaying corporate org charts.
+The tech tree viewer uses a [Treant.js](http://fperucic.github.io/treant-js/) for displaying the tree.  It appears to have been designed for displaying corporate org charts.
 
 The techs.json file is loaded by tech-tree.js and rebuilt into the json expected by Treant.
 
